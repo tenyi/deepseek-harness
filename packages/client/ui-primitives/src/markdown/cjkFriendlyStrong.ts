@@ -1,4 +1,4 @@
-﻿/** Let asterisk strong emphasis close after punctuation when CJK prose continues without whitespace. */
+/** Let asterisk strong emphasis close after punctuation when CJK prose continues without whitespace. */
 
 import { attention } from 'micromark-core-commonmark'
 import { unicodePunctuation } from 'micromark-util-character'

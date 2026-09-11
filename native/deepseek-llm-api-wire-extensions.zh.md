@@ -1,4 +1,4 @@
-﻿# DeepSeek 官方 LLM API 協議擴展
+# DeepSeek 官方 LLM API 協議擴展
 
 [English](deepseek-llm-api-wire-extensions.md) | 中文
 

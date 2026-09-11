@@ -1,4 +1,4 @@
-﻿---
+---
 description: "具有顯式快照、訂閱與生命周期所有權的瀏覽器可觀察狀態存儲。"
 kind: "package-library"
 ---

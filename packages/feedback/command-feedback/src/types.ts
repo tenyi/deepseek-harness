@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Public vocabulary of Session-level feedback: the fixed category taxonomy,
  * the `feedback/record` event payload, and the `sessionFeedback.record`
  * Remote request and result types. Types only; the runtime category tuple is

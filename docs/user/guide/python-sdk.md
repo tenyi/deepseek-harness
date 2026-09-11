@@ -1,4 +1,4 @@
-﻿# Get started with the Python SDK
+# Get started with the Python SDK
 
 English | [中文](python-sdk.zh.md)
 

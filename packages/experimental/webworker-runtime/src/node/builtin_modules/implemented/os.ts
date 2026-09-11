@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:os` for the worker: every value points into the VFS or reports the fixed
  * platform identity the host tree is built for (`linux`, one CPU). Values are
  * real rather than throwing because several `[Service.init]` bodies read them

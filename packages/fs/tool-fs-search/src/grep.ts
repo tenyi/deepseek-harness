@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The model-facing `grep` tool: search file contents with a ripgrep regular
  * expression. Execution spawns the packaged ripgrep binary
  * (`@vscode/ripgrep`) directly through the subprocess seam with a plain argv

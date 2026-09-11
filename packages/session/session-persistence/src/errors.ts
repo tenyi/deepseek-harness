@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Stable failures exposed by the session-persistence service and its handles,
  * including the format refusals shared by every backend: a stored log this
  * build cannot faithfully interpret is refused, never misread, and the

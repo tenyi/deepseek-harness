@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The third-party memory examples stay config-only. This suite parses every
  * checked-in overlay, verifies its package pin, transport, and secret handling, then replaces
  * only the upstream endpoint with the package-owned keyless MCP fixture and

@@ -1,4 +1,4 @@
-﻿# Client Resources
+# Client Resources
 
 English | [中文](client-resources.zh.md)
 

@@ -1,4 +1,4 @@
-﻿/** Host-native script identity conversion for normalized source and debugger values. */
+/** Host-native script identity conversion for normalized source and debugger values. */
 
 import { inspectorId } from '../../../shared/identity.ts'
 import type { RuntimeScriptKey } from '../../../shared/cdp/ids.ts'

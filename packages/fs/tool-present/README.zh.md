@@ -1,4 +1,4 @@
-﻿---
+---
 description: "通過 present 聲明交付可訪問的文件；配置、Session 歸屬與源文件打開。"
 kind: "package-reference"
 ---

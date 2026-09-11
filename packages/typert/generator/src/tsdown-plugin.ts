@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Optional tsdown (rolldown) plugin face of the typert generator. It lowers
  * standard decorators in TypeScript dependencies before bundling, then emits
  * model-driven face artifacts at the package output root. Packages without a

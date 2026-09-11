@@ -1,4 +1,4 @@
-﻿---
+---
 description: "客戶端資源模型：按協議注冊的提供方把 URL 地址解析為實時值，任何 slot 組件都通過 useResource 標準鉤子讀取。"
 kind: "package-reference"
 ---

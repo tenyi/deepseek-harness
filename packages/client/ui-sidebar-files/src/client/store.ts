@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The file tree's view state: which directories are expanded, and what each
  * loaded level contains.
  *

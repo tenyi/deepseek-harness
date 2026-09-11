@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Load-time validation and routed-model policy resolution for compaction-basic.
  *
  * @module @deepseek-ai/dsh-compaction-basic/config

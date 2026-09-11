@@ -1,4 +1,4 @@
-﻿# Cookbook: adding a Remote API
+# Cookbook: adding a Remote API
 
 English | [中文](adding-a-remote-api.zh.md)
 

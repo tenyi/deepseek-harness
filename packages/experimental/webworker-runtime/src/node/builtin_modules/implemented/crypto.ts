@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:crypto` for the worker: WebCrypto for randomness, `@noble/hashes` for the
  * synchronous digests Node's streaming Hash object provides (SubtleCrypto is
  * async, and every caller here hashes synchronously).

@@ -1,4 +1,4 @@
-﻿/** Node-half composition diagnostics for package metadata and built client bundles. */
+/** Node-half composition diagnostics for package metadata and built client bundles. */
 
 import { mkdirSync, mkdtempSync, realpathSync, rmSync, statSync, writeFileSync } from 'node:fs'
 import type { IncomingMessage, ServerResponse } from 'node:http'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The browser roster of a `dsh --profile`, read from its bundle patch files
  * the way the launcher composes them: each bundle's `dsh.bundle.patch` list is
  * parsed with the include plugin's YAML dialect (`entryListSchema`) and

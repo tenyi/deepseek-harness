@@ -1,4 +1,4 @@
-﻿# 會話投影
+# 會話投影
 
 [English](session-projection.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Plan mode for users and maintainers choosing, configuring, or debugging the per-agent planning feature with deployment guidance, a /plan command, and a user-reviewed exit."
 kind: "package-reference"
 ---

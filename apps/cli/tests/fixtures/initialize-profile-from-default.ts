@@ -1,4 +1,4 @@
-﻿/** Synchronize competing source-process profile initialization for the race acceptance test. */
+/** Synchronize competing source-process profile initialization for the race acceptance test. */
 
 import { existsSync, writeFileSync } from 'node:fs'
 import { setTimeout as delay } from 'node:timers/promises'

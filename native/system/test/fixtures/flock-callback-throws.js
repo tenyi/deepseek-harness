@@ -1,4 +1,4 @@
-﻿/** Isolate an uncaught native-callback exception from the test runner. */
+/** Isolate an uncaught native-callback exception from the test runner. */
 import { loadFlockBinding } from './flock-binding.js';
 
 const binding = loadFlockBinding();

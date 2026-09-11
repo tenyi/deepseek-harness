@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: switching models in the composer is how this deployment's
+// Web e2e scenario: switching models in the composer is how this deployment's
 // default is chosen. The gesture writes the shared `agent-default-model` settings section, a
 // session created afterwards starts from it, and a session that already logged
 // a route keeps deriving from its own log — the tier order the gateway

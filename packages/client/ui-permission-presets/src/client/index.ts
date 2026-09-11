@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Permission preset plugin, browser half — a popupSelect DECORATION hung on
  * the host `/permission` command: one flat list of presets, current value
  * marked active, a pick executes the switch. The decoration owns only the

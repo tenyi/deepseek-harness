@@ -1,4 +1,4 @@
-﻿/** Package-owned relationship invariant for webhook-origin prompt admission. */
+/** Package-owned relationship invariant for webhook-origin prompt admission. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-agent'

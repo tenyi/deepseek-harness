@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Behavioural check of this package's `node:fs` bridge over a real MemoryVfs:
  * encoding branches, Dirent, file descriptors, FileHandle append/replace semantics,
  * and Node's error codes.

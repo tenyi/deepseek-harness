@@ -1,4 +1,4 @@
-﻿/** RuntimeBackend over the typed Worker-to-Client transport. */
+/** RuntimeBackend over the typed Worker-to-Client transport. */
 
 import type {
   ClientCallArgument,

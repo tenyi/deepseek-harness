@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Loop-level reconstructability: every request the loop sends is a pure function of the
  * session log — messages derive at the step/start boundary and the header is the latest
  * request/header snapshot. Each request extends its predecessor unless a logged compaction

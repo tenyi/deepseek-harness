@@ -1,4 +1,4 @@
-﻿- dialog "確認啟用完全權限？":
+- dialog "確認啟用完全權限？":
   - heading "確認啟用完全權限？" [level=2]
   - button "關閉":
     - img

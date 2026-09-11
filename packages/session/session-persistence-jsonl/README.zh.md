@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與維護者的隨產品交付 JSONL 會話持久化后端說明，用于選擇、配置或排查帶可選 Zstandard 壓縮的逐會話持久日志。"
 kind: "package-reference"
 ---

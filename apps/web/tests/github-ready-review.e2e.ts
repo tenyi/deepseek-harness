@@ -1,4 +1,4 @@
-﻿/** Keyless assembled-Web evidence for GitHub ready-for-review Session creation. */
+/** Keyless assembled-Web evidence for GitHub ready-for-review Session creation. */
 
 import { createHmac } from 'node:crypto'
 import { createServer } from 'node:http'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的設置外殼、無特定功能歸屬文案與持久化產品引導命名空間：「通用」分區、觸發控件界面框架與引導賬本投影。"
 kind: "package-reference"
 ---

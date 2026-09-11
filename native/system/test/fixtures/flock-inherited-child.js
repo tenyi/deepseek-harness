@@ -1,4 +1,4 @@
-﻿/** fd 4 is inherited through spawn's stdio mapping, never reopened by path. */
+/** fd 4 is inherited through spawn's stdio mapping, never reopened by path. */
 import assert from 'node:assert/strict';
 import { on } from 'node:events';
 import { closeSync, fstatSync } from 'node:fs';

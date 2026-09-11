@@ -1,4 +1,4 @@
-﻿/** DebuggerBackend implementation over one native Node inspector session. */
+/** DebuggerBackend implementation over one native Node inspector session. */
 
 import type { RuntimeBackendObjectHandle } from '../../../shared/cdp/ids.ts'
 import { isJsonValue } from '../../../shared/json.ts'

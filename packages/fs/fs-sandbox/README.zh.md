@@ -1,4 +1,4 @@
-﻿---
+---
 description: "強制沙箱的 `ctx.fs` 后端：面向把模型文件變更限制在會話工作區內的部署方與維護者。"
 kind: "package-reference"
 ---

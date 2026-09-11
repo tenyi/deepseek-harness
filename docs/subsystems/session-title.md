@@ -1,4 +1,4 @@
-﻿# Session Titles
+# Session Titles
 
 English | [中文](session-title.zh.md)
 

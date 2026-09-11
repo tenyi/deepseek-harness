@@ -1,4 +1,4 @@
-﻿---
+---
 description: "為 macOS arm64 POSIX 鎖提供預編譯 system.node。"
 kind: "package-library"
 ---

@@ -1,4 +1,4 @@
-﻿# Run native Electron cleanup and NSIS replacement checks against the prepared Windows target.
+# Run native Electron cleanup and NSIS replacement checks against the prepared Windows target.
 param(
   [Parameter(Mandatory)][string]$Electron,
   [Parameter(Mandatory)][string]$Makensis,

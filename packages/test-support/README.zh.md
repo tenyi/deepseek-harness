@@ -1,4 +1,4 @@
-﻿---
+---
 description: "test-support 組地圖：面向編寫與運行倉庫測試的開發者，提供無密鑰測試 harness、LLM（大語言模型） mock 與回放服務器以及 Loader 冒煙測試輔助。"
 kind: "package-group"
 ---

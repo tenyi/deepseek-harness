@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Containment tests for lexical canonical paths and filesystem-identity aliases.
  */
 

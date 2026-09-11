@@ -1,4 +1,4 @@
-﻿/** Durable Team mailbox admission, target-local dispatch, acknowledgement, and recovery. */
+/** Durable Team mailbox admission, target-local dispatch, acknowledgement, and recovery. */
 
 import { randomUUID } from 'node:crypto'
 import type { Context } from '@deepseek-ai/cordis'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Agent service: live registry, factory delegation, and process-local
  * initiator scope. Concrete creation and driving belong to the loop.
  *

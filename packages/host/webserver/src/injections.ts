@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Structured index injections: the typed rows plugins contribute to the boot
  * HTML instead of raw `tapIndex` string transforms. Rows are pure
  * JSON-serializable data because one table feeds two renderers: the served

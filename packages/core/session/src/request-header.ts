@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Request-header reconstruction utilities over full `request/header` session
  * events. Anyone holding a session log reconstructs the {@link EpochHeader}
  * any request was built under by taking the latest canonical snapshot; the

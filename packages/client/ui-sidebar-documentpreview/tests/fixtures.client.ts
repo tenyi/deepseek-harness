@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared harness for the body specs: a real store instance, a real face over a
  * scripted paged read, a scripted `useResource`, and the owner props a tab
  * record carries.

@@ -1,4 +1,4 @@
-﻿/** Message value types, identity, and immutable construction helpers. */
+/** Message value types, identity, and immutable construction helpers. */
 
 import { randomUUID } from '@deepseek-ai/dsh-util-crypto'
 import { brandString } from '@deepseek-ai/dsh-brand'

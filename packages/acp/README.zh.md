@@ -1,4 +1,4 @@
-﻿---
+---
 description: "ACP（Agent Client Protocol）包組：通過 JSON-RPC stdio 將全新 harness agent（智能體）暴露給程序化客戶端的僅面向自動化的服務器。"
 kind: "package-group"
 ---

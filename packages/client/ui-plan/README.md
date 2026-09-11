@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Plan-mode status chip for the Web GUI: the composer control that shows plan mode is on and turns it off; for users and maintainers of plan mode."
 kind: "package-reference"
 ---

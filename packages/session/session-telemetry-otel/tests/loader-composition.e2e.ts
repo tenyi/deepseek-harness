@@ -1,4 +1,4 @@
-﻿/**
+/**
  * REAL-composition tier: explicit feedback through the shipped headless
  * Loader profile with a mock model and real shell. The collector observes
  * only the redacted authorized prefix; the canonical log keeps every event.

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The two run options a command inside a process worker supplies: the
  * filesystem it acts on, and the callback that reports output before the run
  * settles. `src/shell/process/child.ts` passes a message-backed filesystem and

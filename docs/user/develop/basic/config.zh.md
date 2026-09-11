@@ -1,4 +1,4 @@
-﻿# 插件配置
+# 插件配置
 
 [English](config.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿import type { UserConfig } from 'tsdown'
+import type { UserConfig } from 'tsdown'
 import { clientBundle } from '../../client/tsdown.client.ts'
 
 const worker: UserConfig = {

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Tests for the LOCAL spill backend: `saveText` writes a session-scoped file and
  * returns a locator + byte length + retrieval hint, filename sanitization
  * neutralizes traversal, the configured `root` is honored (and the private

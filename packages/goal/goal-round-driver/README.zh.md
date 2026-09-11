@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向選擇、組合或排查自動 Goal Round 的用戶與維護者的同會話續行驅動器說明。"
 kind: "package-reference"
 ---

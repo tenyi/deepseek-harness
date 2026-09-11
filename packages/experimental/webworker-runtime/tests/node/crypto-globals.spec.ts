@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The crypto global patch and the shim UUID it installs: on an insecure
  * origin the platform withholds `crypto.randomUUID` while product code calls
  * it off the global, so the worker fills the one missing method — and leaves

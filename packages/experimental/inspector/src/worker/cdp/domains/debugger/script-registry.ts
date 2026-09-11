@@ -1,4 +1,4 @@
-﻿/** Connection-local routing from CDP ScriptId values to realm source backends. */
+/** Connection-local routing from CDP ScriptId values to realm source backends. */
 
 import type { RuntimeScriptKey } from '../../../../shared/cdp/ids.ts'
 import type { RuntimeScript } from '../../../../shared/cdp/index.ts'

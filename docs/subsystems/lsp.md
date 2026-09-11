@@ -1,4 +1,4 @@
-﻿# LSP navigation
+# LSP navigation
 
 English | [中文](lsp.zh.md)
 

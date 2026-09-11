@@ -1,4 +1,4 @@
-﻿# Tool authoring reference
+# Tool authoring reference
 
 English | [中文](adding-a-tool.zh.md)
 

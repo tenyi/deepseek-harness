@@ -1,4 +1,4 @@
-﻿---
+---
 description: "DeepSeek Harness 包工作區：packages/ 下的 npm 包如何分組、每個組負責什么，以及約束它們的約定。"
 kind: "package-group"
 ---

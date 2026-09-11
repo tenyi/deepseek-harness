@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的共享 Workspace 瀏覽器與選擇器插件：分組或扁平的會話行、添加、重命名、重排序、搜索、fork、歸檔，以及目錄流選取子 slot。"
 kind: "package-reference"
 ---

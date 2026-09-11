@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Host transport for the settings-namespace scope contract. This file owns the
  * per-namespace derivation over the shared {@link SettingsDescribeMirror} and
  * the serialized write path. Reads never touch the wire here: the

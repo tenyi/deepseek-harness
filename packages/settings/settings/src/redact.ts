@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Structural secret redaction for settings values. `role('secret')` fields are
  * removed from a value before it crosses a wire boundary; a sidecar records
  * each schema-declared secret position and whether it currently holds a value,

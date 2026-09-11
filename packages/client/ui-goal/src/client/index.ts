@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Goal surface plugin, browser half: the GoalBar entry in the
  * conversation.input.dock strip. The durable goal arrives through
  * `useProjection('goal')`. A registrant-private activation hook source owns

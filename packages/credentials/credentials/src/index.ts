@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Service Definition for the credential-reference capability seam (`ctx.credentials`). Settings and composition files carry
  * *references* to secrets — environment-variable names — while providers own
  * the actual values and their storage. Consumers resolve a reference once per

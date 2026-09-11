@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Settings shell, ownerless copy, and durable product-onboarding namespace for the dsh web client: the General section, trigger chrome, and onboarding ledger projection."
 kind: "package-reference"
 ---

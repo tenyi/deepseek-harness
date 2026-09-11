@@ -1,4 +1,4 @@
-﻿/** Serializable Desktop failure diagnostics. */
+/** Serializable Desktop failure diagnostics. */
 
 /**
  * Preserve nested diagnostics when sending failures to a renderer.

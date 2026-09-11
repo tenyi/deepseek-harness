@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Composer editor projections: one EditorState, three pure text views.
  * detectText feeds trigger detection and TokenSpan coordinates (every chip
  * counts as one U+FFFC — the opaque-reference invariant); clipboardText

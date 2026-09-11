@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared wire protocol for the DeepSeek Harness SDK runtime: the
  * newline-delimited JSON-RPC stdio transport plus the named request, result,
  * and notification types both wire ends speak. The runtime server plugin

@@ -1,4 +1,4 @@
-﻿/** Staged editor for the Host-owned subagent model allowlist. */
+/** Staged editor for the Host-owned subagent model allowlist. */
 
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type { ModelProviderGroup } from '@deepseek-ai/dsh-api-remotes/client'

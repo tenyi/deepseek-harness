@@ -1,4 +1,4 @@
-﻿/** ACL/token-specific Win32 constants. */
+/** ACL/token-specific Win32 constants. */
 
 /** OpenProcess access required to query the current process token. */
 export const PROCESS_QUERY_INFORMATION = 0x0400

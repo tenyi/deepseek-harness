@@ -1,4 +1,4 @@
-﻿// Keyless browser coverage for image attachments submitted while a turn is
+// Keyless browser coverage for image attachments submitted while a turn is
 // running, through the shipped Web composition and real HTTP/SSE wire. A
 // text-plus-image submission queues as one occurrence whose dock row renders
 // the durable thumbnail, survives a stop as parked work, and delivers as the

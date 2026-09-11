@@ -1,4 +1,4 @@
-﻿# The authoring lane drives the location affordance. A real desktop open
+# The authoring lane drives the location affordance. A real desktop open
 # would pop a file manager on the machine running the tests and the
 # capability itself is platform-detected (macOS yes, headless Linux CI no),
 # so both native-open owners are pinned headless: `hasDocument` is false everywhere and

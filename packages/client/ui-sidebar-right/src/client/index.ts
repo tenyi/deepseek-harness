@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser half: fill the frame's right column with the panel, put the expand
  * button in the conversation header, and own the seats a tab type registers
  * into.

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Workspace-authorized model-facing session history tools for agent developers and maintainers choosing, configuring, or debugging prior-session search, tracing, and event reads."
 kind: "package-reference"
 ---

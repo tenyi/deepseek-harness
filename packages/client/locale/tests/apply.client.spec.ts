@@ -1,4 +1,4 @@
-﻿/** locale apply wiring: service + dictionaries provision, declaration-aware
+/** locale apply wiring: service + dictionaries provision, declaration-aware
  * Language row registration, snapshot projection into the row store, and
  * recovery after an HMR collapse of the declaring entry. */
 import { Context } from '@deepseek-ai/cordis'

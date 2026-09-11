@@ -1,4 +1,4 @@
-﻿/** Trajectory-owned conversion from durable Session events to ledger view data. */
+/** Trajectory-owned conversion from durable Session events to ledger view data. */
 
 import type { ContentBlock, StreamChunk } from '@deepseek-ai/dsh-llm/types'
 import type {

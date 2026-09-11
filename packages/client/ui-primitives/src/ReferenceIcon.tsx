@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import {
   IconBrowseOutline16, IconFolderClose16,
 } from './icons/index.tsx'

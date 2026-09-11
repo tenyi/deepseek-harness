@@ -1,4 +1,4 @@
-﻿/** E2B PTY allocation and process-session ownership for the subprocess seam. */
+/** E2B PTY allocation and process-session ownership for the subprocess seam. */
 
 import { Buffer } from 'node:buffer'
 import { randomUUID } from 'node:crypto'

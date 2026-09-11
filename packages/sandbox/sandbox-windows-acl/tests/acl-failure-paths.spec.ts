@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ACL failure-path tests with minimal stub binding tables: every checked
  * Win32 call in the lock, read-merge-write, and
  * grant-skip sequence has a failing counterpart, and each failure closes the

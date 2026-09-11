@@ -1,4 +1,4 @@
-﻿# 事件系統
+# 事件系統
 
 [English](events.md) | 中文
 

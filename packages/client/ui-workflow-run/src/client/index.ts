@@ -1,4 +1,4 @@
-﻿/** Browser plugin for durable workflow-run Conversation Nodes. */
+/** Browser plugin for durable workflow-run Conversation Nodes. */
 
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'

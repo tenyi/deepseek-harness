@@ -1,4 +1,4 @@
-﻿# 在網絡代理后面運行 DSH
+# 在網絡代理后面運行 DSH
 
 [English](network-proxy.md) | 中文
 

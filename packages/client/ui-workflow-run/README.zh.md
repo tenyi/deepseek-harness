@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的持久化工作流運行 Conversation Node：把頂層工作流運行重建為帶嵌套成員折疊的獨立聊天節點。"
 kind: "package-reference"
 ---

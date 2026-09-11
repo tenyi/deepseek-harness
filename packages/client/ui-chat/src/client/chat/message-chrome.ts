@@ -1,4 +1,4 @@
-﻿// Shared time-label helpers for user/assistant IconActions rows.
+// Shared time-label helpers for user/assistant IconActions rows.
 
 import type { Translate } from '@deepseek-ai/dsh-client-ui-slots'
 

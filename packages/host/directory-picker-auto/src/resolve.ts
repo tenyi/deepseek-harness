@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Boot-time backend resolution for the adaptive directory-picker composition:
  * one pure decision from sampled host facts to a concrete backend kind. The
  * caller samples exactly once per boot, so the mounted capability stays

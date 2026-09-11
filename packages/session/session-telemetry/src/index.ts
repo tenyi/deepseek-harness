@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SessionTelemetryBackend Service Definition for the DeepSeek Harness.
  *
  * This package owns the CAPTURE side of session-event reporting — the complete

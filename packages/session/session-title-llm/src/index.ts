@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared route, framing, timeout, assembly, and validation policy for
  * model-backed session-title providers.
  * @module @deepseek-ai/dsh-session-title-llm

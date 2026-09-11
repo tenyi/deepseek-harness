@@ -1,4 +1,4 @@
-﻿/** Package-owned durable clock-context invariants. @module @deepseek-ai/dsh-time-context/invariant */
+/** Package-owned durable clock-context invariants. @module @deepseek-ai/dsh-time-context/invariant */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { Session, SessionEvent } from '@deepseek-ai/dsh-session'

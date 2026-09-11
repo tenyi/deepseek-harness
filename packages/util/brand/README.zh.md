@@ -1,4 +1,4 @@
-﻿---
+---
 description: "供擁有易混淆領域值的包使用的名義字符串與數字類型及無狀態構造函數。"
 kind: "package-library"
 ---

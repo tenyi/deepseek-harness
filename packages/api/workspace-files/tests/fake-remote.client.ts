@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The Remote slice, scripted: stats answered by the spec, one push source per
  * opened `changes` generation, and a supervisor that runs one generation and
  * classifies its end the way the real one does.

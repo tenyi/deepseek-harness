@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Connection plugin browser-half apply: ctx.connection handle mounting, mode
  * selection off the page URL, and single-consumer connection-loop ownership.
  */

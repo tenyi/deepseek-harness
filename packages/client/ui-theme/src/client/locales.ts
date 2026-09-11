@@ -1,4 +1,4 @@
-﻿/** `settings.theme` namespace dictionaries (the Appearance and font-size rows' copy). */
+/** `settings.theme` namespace dictionaries (the Appearance and font-size rows' copy). */
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {

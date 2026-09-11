@@ -1,4 +1,4 @@
-﻿/** Installed PDF.js parses and draws a deterministic fixture using a real worker thread. */
+/** Installed PDF.js parses and draws a deterministic fixture using a real worker thread. */
 import { Worker as Thread, type Transferable } from 'node:worker_threads'
 import { describe, expect, it } from 'vitest'
 import { getDocument, PDFWorker } from 'pdfjs-dist/legacy/build/pdf.mjs'

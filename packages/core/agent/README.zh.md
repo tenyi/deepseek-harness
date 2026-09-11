@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向插件、UI 與編排器的 Agent 句柄、實時注冊表、進程本地發起方作用域，以及 agent/* 事件詞匯。"
 kind: "package-reference"
 ---

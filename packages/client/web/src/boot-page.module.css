@@ -1,4 +1,4 @@
-﻿/* The framework-free boot page cannot depend on theme delivery succeeding. */
+/* The framework-free boot page cannot depend on theme delivery succeeding. */
 
 .boot {
   --dsh-boot-bg: #fff;

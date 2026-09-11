@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `file` protocol's provider: a workspace file's metadata as a stream of
  * `RemoteResult` frames.
  *

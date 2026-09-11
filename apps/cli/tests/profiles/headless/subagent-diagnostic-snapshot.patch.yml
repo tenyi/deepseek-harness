@@ -1,4 +1,4 @@
-﻿# Patch for resuming one seeded corrupt-child diagnostic over the shipped headless profile.
+# Patch for resuming one seeded corrupt-child diagnostic over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

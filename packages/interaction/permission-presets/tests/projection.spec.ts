@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `permissions` projection unit and the `/permission` command: mounting
  * the permission service beside the projection registry serves the whole
  * select (table options + effective current value, `custom` appended exactly

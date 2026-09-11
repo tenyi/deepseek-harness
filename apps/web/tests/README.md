@@ -1,4 +1,4 @@
-﻿# apps/web browser e2e
+# apps/web browser e2e
 
 English | [中文](README.zh.md)
 

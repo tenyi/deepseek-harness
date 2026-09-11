@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的 pwsh 工具，供選擇、配置或排查 Windows 上一次性 PowerShell 執行、后臺任務與沙箱升權的使用者與維護者閱讀。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿# Right Sidebar
+# Right Sidebar
 
 English | [中文](sidebar-right.zh.md)
 

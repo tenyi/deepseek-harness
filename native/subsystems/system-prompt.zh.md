@@ -1,4 +1,4 @@
-﻿# 系統提示詞組裝
+# 系統提示詞組裝
 
 [English](system-prompt.md) | 中文
 

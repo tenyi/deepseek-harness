@@ -1,4 +1,4 @@
-﻿/** Shared branded-identifier construction without assigning protocol ownership. */
+/** Shared branded-identifier construction without assigning protocol ownership. */
 
 import type { Branded } from '@deepseek-ai/dsh-brand'
 

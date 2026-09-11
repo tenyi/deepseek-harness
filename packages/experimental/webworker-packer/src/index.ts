@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Build-time packer for the browser runtime's VFS image.
  * @module @deepseek-ai/dsh-experimental-webworker-packer
  */

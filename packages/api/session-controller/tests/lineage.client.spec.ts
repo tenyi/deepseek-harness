@@ -1,4 +1,4 @@
-﻿/**
+/**
  * flattenLineage: root ordering, DFS child expansion, orphan degradation, and
  * cycle fail-soft (every entry always emitted, no infinite walk).
  */

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "按 preset cordis.yml 文件進行按會話的 agent（智能體）組裝，供選擇、配置或排查 agent preset 的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

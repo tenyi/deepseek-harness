@@ -1,4 +1,4 @@
-﻿/** ui-theme apply wiring: service provision, settings dictionaries riding the
+/** ui-theme apply wiring: service provision, settings dictionaries riding the
  * locale service, declaration-aware Appearance row registration, snapshot
  * projection into the row store, and HMR collapse recovery. */
 import { Context } from '@deepseek-ai/cordis'

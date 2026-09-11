@@ -1,4 +1,4 @@
-﻿---
+---
 description: "建議性循環衛生 guard：當 agent（智能體）重復完全相同的工具調用時提醒模型，供選擇、配置或排查此插件的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ClientSessions: root sessions service — list snapshot store (manager
  * projection; carries `current`, the persisted selection every
  * session-scoped surface keys off), Agent scope tree (mintScope pattern: no-op plugin

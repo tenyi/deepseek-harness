@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Session-addressed browser file uploads with streaming intake, progress, cancellation, and staged receipts for later prompts."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的工作流工具：運行扇出 subagent 的 JavaScript 編排腳本，供選擇或配置模型驅動編排的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

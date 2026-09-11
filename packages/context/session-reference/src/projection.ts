@@ -1,4 +1,4 @@
-﻿/** Current-surface projection and byte-bounded rendering. */
+/** Current-surface projection and byte-bounded rendering. */
 
 import { isCompactCheckpointSource } from '@deepseek-ai/dsh-compaction'
 import type { SessionSurfaceSnapshot } from '@deepseek-ai/dsh-session-query'

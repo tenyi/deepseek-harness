@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Host 與 Client 會話控制：創建、恢復、提示、跟隨歷史并投影實時會話狀態。"
 kind: "package-reference"
 ---

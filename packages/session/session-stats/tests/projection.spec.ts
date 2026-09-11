@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `sessionStats` projection unit: mounting the plugin beside the
  * projection registry serves whole-log counts and wall times folded from step
  * boundaries, chunks, tool pairs, and assembled messages; compositions

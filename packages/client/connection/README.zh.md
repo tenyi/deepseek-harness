@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI 的瀏覽器與 Host 之間的通訊協定層：Remote RPC、帶重連的事件流投遞、精確 Fetch 路由、/api HTTP 橋與瀏覽器信任柵欄。"
 kind: "package-reference"
 ---

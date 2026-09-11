@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The card that declares a provider pi-ai does not ship — an OpenAI-compatible
  * gateway, a self-hosted server, or a provider newer than the installed
  * catalog.

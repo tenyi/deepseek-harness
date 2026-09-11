@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的本地工作區 @file 補全提供方，用于啟用、調整規模或排查 ctx.fileReferences 的發現能力。"
 kind: "package-reference"
 ---

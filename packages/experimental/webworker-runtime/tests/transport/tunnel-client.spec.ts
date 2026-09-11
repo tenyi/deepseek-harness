@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Check the page half of the tunnel against hand-fed frames: a stub worker replaces
  * the real one, so every reply shape — unary, streamed, refused, aborted — can be
  * delivered on demand and the client's reaction observed directly.

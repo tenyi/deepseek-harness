@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Interaction limits: the four-pane cap, the five dock regions, and divider
  * clamping. The model itself stays unbounded; these rules gate dispatch.
  */

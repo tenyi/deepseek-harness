@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The guide tab's body: a chain host, and the guide it falls back to.
  *
  * The chain is the replacement seam. A product with its own idea of what an

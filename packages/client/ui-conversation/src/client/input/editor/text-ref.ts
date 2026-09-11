@@ -1,4 +1,4 @@
-﻿/** Editable reference tokens share chip hover styling while retaining ordinary text semantics. */
+/** Editable reference tokens share chip hover styling while retaining ordinary text semantics. */
 import clsx from 'clsx'
 import type { EditorConfig, LexicalEditor, SerializedTextNode } from 'lexical'
 import { TextNode } from 'lexical'

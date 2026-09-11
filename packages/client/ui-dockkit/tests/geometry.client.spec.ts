@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Drag geometry: point tests, dock-zone resolution against a real rectangle,
  * tab-strip insertion slots, the drag threshold, and divider arithmetic.
  */

@@ -1,4 +1,4 @@
-﻿/** Validate packaged Desktop update artifacts before any network upload begins. */
+/** Validate packaged Desktop update artifacts before any network upload begins. */
 
 import { createHash } from 'node:crypto'
 import { createReadStream } from 'node:fs'

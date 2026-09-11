@@ -1,4 +1,4 @@
-﻿---
+---
 description: "One-shot task mode for dsh: run a single task from the command line and get the final answer printed, for users scripting or automating dsh."
 kind: "package-bundle"
 ---

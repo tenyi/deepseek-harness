@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh app bin 的應用自有命令行：應用從啟動器剩余參數中解析自己的 flag、--help 與退出行為。"
 kind: "package-library"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pure types of the goal domain: the ONE home of the `goal` projection-key
  * declaration plus the durable payload vocabulary it carries, free of this
  * package's host-side imports (cordis events, dsh-agent, dsh-llm, the

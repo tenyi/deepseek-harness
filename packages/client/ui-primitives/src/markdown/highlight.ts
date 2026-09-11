@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The client's ONE syntax highlighter: a synchronous fine-grained shiki core
  * (JavaScript regex engine — no oniguruma WASM, bundle-friendly) with an
  * explicit grammar allowlist and a CSS-variables theme. Colors live in the

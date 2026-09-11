@@ -1,4 +1,4 @@
-﻿// Cloning the anchor preserves its layout context. Fixed positioning lets the
+// Cloning the anchor preserves its layout context. Fixed positioning lets the
 // bubble escape ancestor overflow clipping without a portal.
 
 import { cloneElement, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'

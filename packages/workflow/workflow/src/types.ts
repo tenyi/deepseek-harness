@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Workflow seam vocabulary: the request/run/result types a workflow engine
  * consumes and produces, plus the fields in the `workflow/*` event payloads.
  * Types only (plus the id-brand factory), per the package convention.

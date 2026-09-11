@@ -1,4 +1,4 @@
-﻿# Plan Mode
+# Plan Mode
 
 English | [中文](plan.zh.md)
 

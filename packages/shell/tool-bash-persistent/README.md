@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The model-facing persistent bash tool for users and maintainers choosing, configuring, or debugging owner-scoped shell state that survives across calls."
 kind: "package-reference"
 ---

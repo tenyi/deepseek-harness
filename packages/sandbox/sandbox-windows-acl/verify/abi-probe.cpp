@@ -1,4 +1,4 @@
-﻿#include <Windows.h>
+#include <Windows.h>
 #include <sddl.h>
 #include <AclAPI.h>
 #include <cstdio>

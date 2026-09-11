@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared spec fixtures. The kit has no notion of a guide or a preview tab, so
  * the suites supply their own content families — exactly as an embedder does.
  */

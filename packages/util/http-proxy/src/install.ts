@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Proxy installation: the transport half of this package. It owns undici's global dispatcher and the
  * process-wide record of which policy is active.
  *

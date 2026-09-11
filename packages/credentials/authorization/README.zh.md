@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的授權 flow 注冊表：獲取配置無法提供的憑據，因為拿到它需要與人對話。"
 kind: "package-reference"
 ---

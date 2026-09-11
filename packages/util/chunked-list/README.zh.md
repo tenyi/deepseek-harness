@@ -1,4 +1,4 @@
-﻿---
+---
 description: "用于 projection state 的不可變的僅追加列表，提供有界追加復制、按插入順序迭代和 Zod 檢查點校驗。"
 kind: "package-library"
 ---

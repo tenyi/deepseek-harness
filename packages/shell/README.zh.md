@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與維護者的 bash 能力家族說明，用于選擇并組合 shell 執行器、沙箱化與面向模型的 bash 與 pwsh 工具。"
 kind: "package-group"
 ---

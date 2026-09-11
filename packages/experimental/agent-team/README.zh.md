@@ -1,4 +1,4 @@
-﻿---
+---
 description: "在一個會話中運行一個小型具名 agent（智能體）團隊：成員之間的持久消息與共享任務板，用于組合實驗性 Team 插件的部署。"
 kind: "package-reference"
 ---

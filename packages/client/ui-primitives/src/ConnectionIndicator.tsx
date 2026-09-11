@@ -1,4 +1,4 @@
-﻿import { IconCheckOutline16, IconWarningOutline16 } from './icons/index.tsx'
+import { IconCheckOutline16, IconWarningOutline16 } from './icons/index.tsx'
 import css from './ConnectionIndicator.module.css'
 
 /** Visual state rendered by {@link ConnectionIndicator}. */

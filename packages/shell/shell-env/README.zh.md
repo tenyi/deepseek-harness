@@ -1,4 +1,4 @@
-﻿---
+---
 description: "受管 DSH_* shell 環境，供選擇、配置或擴展每次模型 shell 調用所運行環境的使用者與維護者閱讀。"
 kind: "package-reference"
 ---

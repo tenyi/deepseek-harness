@@ -1,4 +1,4 @@
-﻿// Web e2e scenarios: the settings surface — the modal shell (trigger, nav,
+// Web e2e scenarios: the settings surface — the modal shell (trigger, nav,
 // section switching, both close paths), the Appearance preference row (the
 // real theme gesture — click 深色 and the whole cascade runs: ThemeRuntime preference -> Host settings
 // -> theme/change -> ui-layout's presenter -> body attribute -> alias token +

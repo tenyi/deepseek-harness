@@ -1,4 +1,4 @@
-﻿/**
+/**
  * DeepSeek LLM API extension registry: plugins own independent top-level request
  * fields while the official adapter performs one preparation and acceptance transaction.
  * @module @deepseek-ai/dsh-deepseek-llm-api-extensions

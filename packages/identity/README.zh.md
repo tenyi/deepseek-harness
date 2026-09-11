@@ -1,4 +1,4 @@
-﻿---
+---
 description: "identity 包組：由遙測、反饋與 DeepSeek 提供方請求共享的匿名關聯 id，每個 harness home 一個。"
 kind: "package-group"
 ---

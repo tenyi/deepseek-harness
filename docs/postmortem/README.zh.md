@@ -1,4 +1,4 @@
-﻿# 事故復盤（postmortem）
+# 事故復盤（postmortem）
 
 [English](README.md) | 中文
 

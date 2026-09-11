@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The feedback dialog and its acknowledgement and failure toasts, rendered as one entry
  * of `conversation.input.overlay` so each Session owns exactly one of each.
  * The Modal and the Toast both portal to `document.body`; the overlay slot

@@ -1,4 +1,4 @@
-﻿# Session References
+# Session References
 
 English | [中文](session-reference.zh.md)
 

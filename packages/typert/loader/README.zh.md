@@ -1,4 +1,4 @@
-﻿---
+---
 description: "生成的 Typert 產物所用的 Loader 集成：已掛載的包如何自動把宿主側反射與 schema 貢獻給運行時注冊表。"
 kind: "package-reference"
 ---

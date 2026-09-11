@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `node:events` shim's dispatch semantics. Harness code registers on this
  * class through the module proxy table and branches on what it returns, so the
  * cases below pin the parts a hand-written emitter gets wrong: the boolean

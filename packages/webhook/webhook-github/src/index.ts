@@ -1,4 +1,4 @@
-﻿/** Signed GitHub HTTP adapter for the provider-neutral webhook runtime. */
+/** Signed GitHub HTTP adapter for the provider-neutral webhook runtime. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { credentialRef } from '@deepseek-ai/dsh-credentials'

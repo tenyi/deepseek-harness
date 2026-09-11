@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Host-workspace discovery for `@file` completion. The index contains paths
  * only: selected values remain ordinary prompt text and file contents stay
  * behind the model-facing `read` tool.

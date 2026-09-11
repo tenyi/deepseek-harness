@@ -1,4 +1,4 @@
-﻿---
+---
 description: "應用 Remote 裝配：為 Client 消費方選擇帶類型的 Host 能力與轉發事件。"
 kind: "package-reference"
 ---

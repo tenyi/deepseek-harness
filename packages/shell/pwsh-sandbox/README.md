@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The sandbox-consuming PowerShell executor for deployments and maintainers choosing, configuring, or debugging confined PowerShell command execution with denial facts."
 kind: "package-reference"
 ---

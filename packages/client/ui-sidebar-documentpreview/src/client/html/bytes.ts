@@ -1,4 +1,4 @@
-﻿/** UTF-8 decoding for file bytes and encoding only for the iframe's script payload. */
+/** UTF-8 decoding for file bytes and encoding only for the iframe's script payload. */
 
 const BASE64_CHUNK_BYTES = 0x8000
 

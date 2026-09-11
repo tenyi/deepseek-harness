@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Unit + real-load-path coverage for @deepseek-ai/dsh-tool-call-timeout-policy. The
  * timeout-wins cases drive the deadline under fake timers (deterministic — no
  * wall-clock race) and use a COOPERATIVE tool that settles only when its

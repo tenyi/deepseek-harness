@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向讓進程外 SDK 客戶端在 DeepSeek Harness 運行時中打開會話并驅動 agent 的部署的 stdio JSON-RPC 服務插件。"
 kind: "package-reference"
 ---

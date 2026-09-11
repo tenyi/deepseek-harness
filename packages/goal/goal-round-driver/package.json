@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "@deepseek-ai/dsh-goal-round-driver",
   "description": "Race-fenced same-session goal-round driver",
   "version": "0.1.5-rc.2",

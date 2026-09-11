@@ -1,4 +1,4 @@
-﻿/** Realm-neutral Console events emitted by Runtime backends. */
+/** Realm-neutral Console events emitted by Runtime backends. */
 
 import type { RuntimeRemoteObject } from './remote-object.ts'
 import type { RuntimeExceptionDetails, RuntimeStackTrace } from './errors.ts'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared, non-plugin hook protocol library: matching, command execution and
  * decoding, restrictive outcome merging, durable event helpers, and detached
  * run quiescence. Claude Code and Codex bridges own their distinct payloads,

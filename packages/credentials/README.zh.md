@@ -1,4 +1,4 @@
-﻿---
+---
 description: "憑據能力族的包映射：憑據引用 seam、環境與文件提供方、授權 flow 注冊表，以及引用如何讓機密值留在配置之外。"
 kind: "package-group"
 ---

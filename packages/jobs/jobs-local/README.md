@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The process-local background-job registry for users and maintainers composing, sizing, or debugging in-process jobs: per-owner admission, lifecycle, and teardown."
 kind: "package-reference"
 ---

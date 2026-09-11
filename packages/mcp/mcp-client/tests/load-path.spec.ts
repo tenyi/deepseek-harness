@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Real-load-path guard for @deepseek-ai/dsh-mcp-client. `mcp-client` is a
  * NAMESPACE plugin with `inject` — so a stray `export default apply` would
  * make the cordis Loader's `unwrapExports` (`exports.default ?? exports`)

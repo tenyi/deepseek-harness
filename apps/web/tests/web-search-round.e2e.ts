@@ -1,4 +1,4 @@
-﻿// Web e2e scenario for the shipped default search composition. A real browser
+// Web e2e scenario for the shipped default search composition. A real browser
 // drives `web_search`; the model stream is replayed while the real DeepSeek
 // provider calls a deterministic local Anthropic-compatible endpoint through
 // the real credentials service.

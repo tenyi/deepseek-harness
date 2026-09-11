@@ -1,4 +1,4 @@
-﻿# Session Query
+# Session Query
 
 English | [中文](session-query.zh.md)
 

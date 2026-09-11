@@ -1,4 +1,4 @@
-﻿/** Incremental full-text index for the trajectory ledger. */
+/** Incremental full-text index for the trajectory ledger. */
 
 import type { TrajectoryTurnModel } from './layout.ts'
 import type { TrajectoryCellProps } from './trajectory-record.ts'

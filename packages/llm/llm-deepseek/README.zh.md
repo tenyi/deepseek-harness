@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的 DeepSeek chat-completions 適配器說明：配置 deepseek-official 路由、thinking 與圖片輸入。"
 kind: "package-reference"
 ---

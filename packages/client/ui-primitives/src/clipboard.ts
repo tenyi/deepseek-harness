@@ -1,4 +1,4 @@
-﻿// Host clipboard write shared by Web UI copy controls. Success feedback stays
+// Host clipboard write shared by Web UI copy controls. Success feedback stays
 // with each control; this helper only reports whether the host accepted a write.
 
 /**

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * PowerShell executable resolution, dependency-free so non-package consumers
  * (the repository's coverage-gate probe in `vitest.config.ts`) can share the
  * ONE resolution definition with the executor and its suites — a probe that

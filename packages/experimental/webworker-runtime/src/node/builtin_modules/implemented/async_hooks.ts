@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:async_hooks` for the worker: `AsyncLocalStorage` over an EXPLICIT-SWITCH
  * model with two fallbacks. A browser has no async-context tracking, so the store
  * a read answers is decided by three slots, in this order:

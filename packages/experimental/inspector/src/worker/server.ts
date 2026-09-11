@@ -1,4 +1,4 @@
-﻿/** Inspector Worker assembly over one Host source port and one loopback endpoint. */
+/** Inspector Worker assembly over one Host source port and one loopback endpoint. */
 
 import type { MessagePort } from 'node:worker_threads'
 import type { InspectorWorkerBoot } from '../shared/bridge/messages/control.ts'

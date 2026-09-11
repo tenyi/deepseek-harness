@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The SQLite FTS5 full-text search backend for session history, for deployments and maintainers choosing, configuring, or debugging full-text search over the query service."
 kind: "package-reference"
 ---

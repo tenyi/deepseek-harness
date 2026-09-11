@@ -1,4 +1,4 @@
-﻿# 實操手冊：添加 workspace 包
+# 實操手冊：添加 workspace 包
 
 [English](adding-a-package.md) | 中文
 

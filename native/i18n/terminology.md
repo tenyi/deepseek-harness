@@ -1,4 +1,4 @@
-﻿# Terminology
+# Terminology
 
 本表約定本倉庫的中英術語統一譯法。
 

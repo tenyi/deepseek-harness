@@ -1,4 +1,4 @@
-﻿# 連接第三方記憶 MCP 服務
+# 連接第三方記憶 MCP 服務
 
 [English](mcp-memory.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方的 OpenTelemetry 會話遙測后端說明，用于選擇模式、配置導出器或排查哪些數據離開本機。"
 kind: "package-reference"
 ---

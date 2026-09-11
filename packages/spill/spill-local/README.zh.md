@@ -1,4 +1,4 @@
-﻿---
+---
 description: "本地文件系統 spill 后端：spill 文本如何保存到私有會話級文件，并用 read 或 grep 取回。"
 kind: "package-reference"
 ---

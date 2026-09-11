@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Local Service Provider for the bash capability seam over the subprocess
  * capability seam. Public commands run as `bash -c` in a provider-managed range
  * through `ctx.subprocess`; subclasses may reuse the same mechanics with an

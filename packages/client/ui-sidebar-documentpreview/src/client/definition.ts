@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Stage one of this package's registration: what the `text` tab type IS.
  *
  * The type claims every `dsh-resource://file/session/<sessionId>/<path>`

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Canonical Session-log ratings, categories, and notes for finalized assistant messages."
 kind: "package-reference"
 ---

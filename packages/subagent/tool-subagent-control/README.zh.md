@@ -1,4 +1,4 @@
-﻿---
+---
 description: "供用戶與維護者在組合或調試可繼續子級控制功能時使用的全局 send_message、interrupt_agent 與 list_agents 工具。"
 kind: "package-reference"
 ---

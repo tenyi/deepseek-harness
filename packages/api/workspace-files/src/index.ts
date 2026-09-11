@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Workspace file service: read-only file previews, workspace directory
  * listings, and the filesystem-observation change feed, exposed as
  * `workspaceFiles`.

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向 DeepSeek Harness 會話日志的模型側 todo_write 工具：整表替換、單一會話歸屬與 todos 投影，供選擇、配置或排查該工具的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

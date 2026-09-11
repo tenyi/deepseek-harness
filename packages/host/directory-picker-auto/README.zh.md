@@ -1,4 +1,4 @@
-﻿---
+---
 description: "目錄選擇 seam 的自適應選擇器：在啟動時判定一次 web GUI 宿主的處境，并掛載匹配的原生或瀏覽后端。"
 kind: "package-reference"
 ---

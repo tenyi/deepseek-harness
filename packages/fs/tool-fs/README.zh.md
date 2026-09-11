@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的 read、read_image、write 與 edit 工具：供組合或排查 agent 文件系統訪問的用戶與維護者使用。"
 kind: "package-reference"
 ---

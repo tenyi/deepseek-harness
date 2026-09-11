@@ -1,4 +1,4 @@
-﻿- banner:
+- banner:
   - navigation "Session hierarchy":
     - button "Inline code links" [disabled]
   - button "More actions":

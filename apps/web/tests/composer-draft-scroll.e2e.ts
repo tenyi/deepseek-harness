@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: a composer draft longer than the 14-line cap scrolls,
+// Web e2e scenario: a composer draft longer than the 14-line cap scrolls,
 // reveals the caret, and holds no second scroll offset.
 //
 // The composer is ONE contenteditable surface (see

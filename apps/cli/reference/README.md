@@ -1,4 +1,4 @@
-﻿# `dsh` CLI behavior reference
+# `dsh` CLI behavior reference
 
 English | [中文](README.zh.md)
 

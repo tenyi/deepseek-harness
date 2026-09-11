@@ -1,4 +1,4 @@
-﻿/**
+/**
  * React renderer for declarative slots. Per-entry bindings enforce child
  * authorization, and entry boundaries contain registrant failures.
  */

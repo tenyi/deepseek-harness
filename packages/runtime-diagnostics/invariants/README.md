@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Runtime invariant checks for live compositions: the registry service that runs package-owned checks, for users and maintainers choosing, configuring, or debugging them."
 kind: "package-reference"
 ---

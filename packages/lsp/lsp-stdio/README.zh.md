@@ -1,4 +1,4 @@
-﻿---
+---
 description: "ctx.lsp 的 stdio 語言服務器提供方：配置好的服務器命令、擴展名映射與有邊界的臨時打開查詢，供組合本地代碼導航的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

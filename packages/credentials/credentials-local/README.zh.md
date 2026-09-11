@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的文件型憑據提供方：選擇、配置或排查本地憑據存儲及其環境分層。"
 kind: "package-reference"
 ---

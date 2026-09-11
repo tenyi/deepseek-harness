@@ -1,4 +1,4 @@
-﻿/** Exercise notarization overlap and artifact isolation without Apple credentials or network. */
+/** Exercise notarization overlap and artifact isolation without Apple credentials or network. */
 
 import { cp, mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'

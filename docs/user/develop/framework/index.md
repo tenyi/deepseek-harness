@@ -1,4 +1,4 @@
-﻿# Plugins and lifecycle
+# Plugins and lifecycle
 
 English | [中文](index.zh.md)
 

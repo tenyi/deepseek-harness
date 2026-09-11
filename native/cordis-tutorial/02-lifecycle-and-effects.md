@@ -1,4 +1,4 @@
-﻿# 2. Lifecycle and effects
+# 2. Lifecycle and effects
 
 English | [中文](02-lifecycle-and-effects.zh.md)
 

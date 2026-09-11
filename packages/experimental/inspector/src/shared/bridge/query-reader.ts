@@ -1,4 +1,4 @@
-﻿/** Query-backed adapter for the transport-independent Cordis tree reader. */
+/** Query-backed adapter for the transport-independent Cordis tree reader. */
 
 import type { CordisRuntimeTreeReader } from '../cordis/reader.ts'
 import type { InspectorQueryRequester } from './messages/query/commands.ts'

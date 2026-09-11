@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The filesystem package group: the ctx.fs provider contract, local and sandbox-enforcing backends, the read-before-edit policy plugin, and the model-facing file and search tools."
 kind: "package-group"
 ---

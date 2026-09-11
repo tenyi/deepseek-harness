@@ -1,4 +1,4 @@
-﻿/**
+/**
  * CommonJS module loader over the worker VFS. It fills the `loader.internal`
  * seam Cordis uses for every entry import, and backs the `node:module`
  * `createRequire` proxy that `typert-loader`, `client-modules`, and the plugin

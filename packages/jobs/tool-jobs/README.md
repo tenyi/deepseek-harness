@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The model-facing background-job controls for users and maintainers choosing, configuring, or debugging job_output, job_list, job_kill, and completion notices."
 kind: "package-reference"
 ---

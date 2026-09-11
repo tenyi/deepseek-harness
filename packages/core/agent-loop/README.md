@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The default agent driver for users and maintainers choosing, configuring, or debugging how agents are created and how turns and steps run."
 kind: "package-reference"
 ---

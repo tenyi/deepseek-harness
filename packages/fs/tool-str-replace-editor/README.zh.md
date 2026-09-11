@@ -1,4 +1,4 @@
-﻿---
+---
 description: "基于 `ctx.fs` 的獨立 str_replace_editor 工具：供為 agent（智能體）組合 Claude Code 風格文件編輯能力的用戶與維護者使用。"
 kind: "package-reference"
 ---

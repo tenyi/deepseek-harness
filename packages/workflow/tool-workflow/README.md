@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The model-facing workflow tool: run a JavaScript orchestration script that fans out subagents, for users and maintainers choosing or configuring model-driven orchestration."
 kind: "package-reference"
 ---

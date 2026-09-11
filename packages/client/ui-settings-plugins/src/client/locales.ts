@@ -1,4 +1,4 @@
-﻿/** Locale bundles for the plugin configuration section and its plugin cards. */
+/** Locale bundles for the plugin configuration section and its plugin cards. */
 
 /** Locale keys these surfaces render. */
 export type PluginsSettingsLocaleKey =

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Windows process-table operations for terminal readiness, signalling, and
  * teardown: Toolhelp32 snapshot enumeration with GetProcessTimes creation-time
  * identity and process-handle wait-state liveness, the shell pid as a pseudo

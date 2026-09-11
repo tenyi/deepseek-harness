@@ -1,4 +1,4 @@
-﻿/** Explicit failure for Client-style CDP bridge commands misrouted to the Host. */
+/** Explicit failure for Client-style CDP bridge commands misrouted to the Host. */
 
 import { HOST_CDP_BRIDGE_REASON } from './stack.ts'
 

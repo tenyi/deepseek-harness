@@ -1,4 +1,4 @@
-﻿/** SourceBackend implementation over native Node Debugger notifications. */
+/** SourceBackend implementation over native Node Debugger notifications. */
 
 import type { RuntimeScriptKey } from '../../../shared/cdp/ids.ts'
 import type { RuntimeScript } from '../../../shared/cdp/index.ts'

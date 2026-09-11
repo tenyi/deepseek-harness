@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Incremental canonical session-log upload for deployments enabling official DeepSeek request metadata."
 kind: "package-reference"
 ---

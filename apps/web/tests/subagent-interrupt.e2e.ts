@@ -1,4 +1,4 @@
-﻿// Web e2e scenario (browserless): the subagents interrupt Remote against the real
+// Web e2e scenario (browserless): the subagents interrupt Remote against the real
 // composition. A live continuable child holds its model turn open through a
 // replay hang entry; plain HTTP queues a follow-up, interrupts the turn, and
 // proves from the real session state that the turn aborted, the follow-up

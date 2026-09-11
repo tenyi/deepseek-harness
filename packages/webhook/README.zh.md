@@ -1,4 +1,4 @@
-﻿---
+---
 description: "經驗證的外部事件、程序化規則與即發即棄 DSH 會話創建的包映射。"
 kind: "package-group"
 ---

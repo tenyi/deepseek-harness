@@ -1,4 +1,4 @@
-﻿# Webhook runtime
+# Webhook runtime
 
 English | [中文](webhook.zh.md)
 

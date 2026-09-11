@@ -1,4 +1,4 @@
-﻿// Keyless browser e2e: the shipped DeepSeek adapter stays mounted while its
+// Keyless browser e2e: the shipped DeepSeek adapter stays mounted while its
 // credential is absent, both ordered steps share the shipped modal chrome,
 // and the inline key write lands in an isolated harness home without a reload
 // or model call.

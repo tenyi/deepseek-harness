@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Command definition identities and execution ids for discovery and lifecycle pairing.
  *
  * The `Branded<B>` primitive lives in `@deepseek-ai/dsh-brand`; this module

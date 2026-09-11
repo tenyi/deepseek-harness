@@ -1,4 +1,4 @@
-﻿/** Per-CDP-connection routing and projection for every realm's Runtime objects. */
+/** Per-CDP-connection routing and projection for every realm's Runtime objects. */
 
 import type {
   RuntimeCompletion,

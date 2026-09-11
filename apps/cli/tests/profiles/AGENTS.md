@@ -1,4 +1,4 @@
-﻿# AGENTS.md — Profile integration tests
+# AGENTS.md — Profile integration tests
 
 This tree owns cross-package behavior of shipped `dsh` profiles. Start product scenarios through `apps/cli/src/bin.ts --profile <name>`; a test-only Loader driver is allowed only when the public profile output cannot expose the asserted internal evidence.
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The E2B control-plane URL, derived the way the SDK derives it.
  * @module @deepseek-ai/dsh-e2b/src/api-url.ts
  */

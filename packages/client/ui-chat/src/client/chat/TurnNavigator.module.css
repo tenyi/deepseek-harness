@@ -1,4 +1,4 @@
-﻿/* Zero-height sticky slot, like the back-to-bottom control: the rail floats
+/* Zero-height sticky slot, like the back-to-bottom control: the rail floats
    over the transcript's right gutter without extending scrollHeight. */
 .slot {
   position: sticky;

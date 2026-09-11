@@ -1,4 +1,4 @@
-﻿row=todo_write
+row=todo_write
 title=Update to-do list
 summary=1/4 completed · 實現 fixture 樣本
 suffix=+1

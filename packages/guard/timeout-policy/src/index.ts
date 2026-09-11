@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Cooperative tool-call timeout enforcer. A tool declares `timeoutMs` and
  * promises to honor `exec.signal`; this wrapper arms that deadline and maps its
  * own expiry to `TOOL_TIMEOUT` without racing or abandoning the tool promise.

@@ -1,4 +1,4 @@
-﻿import { SessionFormatError, SessionFormatUnsupportedMigrationError } from './error.ts'
+import { SessionFormatError, SessionFormatUnsupportedMigrationError } from './error.ts'
 import {
   snapshotSessionFormatHeader,
   sessionFormatCount,

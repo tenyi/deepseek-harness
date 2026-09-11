@@ -1,4 +1,4 @@
-﻿import * as nativeCommand from '@deepseek-ai/dsh-native-command'
+import * as nativeCommand from '@deepseek-ai/dsh-native-command'
 import { Context } from '@deepseek-ai/cordis'
 import AgentRegistry from '@deepseek-ai/dsh-agent'
 import SessionStore from '@deepseek-ai/dsh-session'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * pi-ai assistant event translation into the Harness streaming protocol.
  *
  * pi-ai tool-call arguments are parsed objects while the Harness keeps their

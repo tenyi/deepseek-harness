@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SlotRegistry terminal-design account:
  * built-in 'root', the three load-time throws (duplicate declaration /
  * undeclared contribution / cross-scope store handle), the renderer installation

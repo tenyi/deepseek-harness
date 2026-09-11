@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { absoluteFileAddress, parseFileAddress, sessionFileAddress } from '../src/file-address.ts'
 
 describe('file addresses', () => {

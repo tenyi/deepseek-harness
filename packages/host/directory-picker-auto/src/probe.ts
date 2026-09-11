@@ -1,4 +1,4 @@
-﻿/**
+/**
  * PATH probe for the native backend's Linux chooser binaries: one boot-time
  * sampled fact for the resolver, so an attended Linux host without
  * zenity/kdialog keeps the working `browse` interaction instead of a backend

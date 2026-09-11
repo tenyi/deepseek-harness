@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Language preference row registered into the General section item slot
  * (figma 501:30011 'Setting-Cell'): title + selector pill opening the locale
  * menu. Registered by this package — the locale feature owns its own

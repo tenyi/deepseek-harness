@@ -1,4 +1,4 @@
-﻿/** `conversation` namespace dictionaries. */
+/** `conversation` namespace dictionaries. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'conversation'

@@ -1,4 +1,4 @@
-﻿/** RuntimeBackend implementation over one native Node inspector session. */
+/** RuntimeBackend implementation over one native Node inspector session. */
 
 import { inspectorId } from '../../../shared/identity.ts'
 import type { RuntimeBackendObjectHandle } from '../../../shared/cdp/ids.ts'

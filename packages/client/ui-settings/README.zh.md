@@ -1,4 +1,4 @@
-﻿---
+---
 description: "設置領域底座插件：設置命名空間 scope 服務、schema 服務，以及 dsh Web 客戶端的規范設置 slot 類型約定。"
 kind: "package-reference"
 ---

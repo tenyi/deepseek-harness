@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Positional pricing shared by measurement and the context-breakdown fold:
  * measurement retains attachment details for route pricing; breakdown keeps
  * only retained node identities, heuristic prices, and system classification.

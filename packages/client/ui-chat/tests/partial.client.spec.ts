@@ -1,4 +1,4 @@
-﻿/**
+/**
  * PartialAccumulator: six-variant chunk folding, sparse-index compaction, and
  * the block/snapshot reference discipline (a delta swaps only that block).
  */

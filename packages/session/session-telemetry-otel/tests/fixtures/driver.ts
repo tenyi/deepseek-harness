@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Test driver: start a mock OTLP/HTTP collector, boot the telemetry Loader
  * composition against it, explicitly share feedback on a credential-bearing

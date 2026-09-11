@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared subprocess harness for keyless example smokes that boot a real
  * `cordis.yml` through an app bin and Cordis Loader.
  *

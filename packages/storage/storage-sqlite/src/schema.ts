@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Schema + open-time helpers for the SQLite storage backend: the physical
  * layout version, the database open/configure sequence (permissions, pragmas,
  * version stamp/reject), and the unit metadata tables. Unit record tables are

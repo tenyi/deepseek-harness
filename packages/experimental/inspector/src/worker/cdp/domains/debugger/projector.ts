@@ -1,4 +1,4 @@
-﻿/** CDP projection for realm-neutral scripts and debugger events. */
+/** CDP projection for realm-neutral scripts and debugger events. */
 
 import type { RuntimeDebuggerEvent, RuntimeDebuggerLocation, RuntimeScript, RuntimeStackTrace } from '../../../../shared/cdp/index.ts'
 import type { RuntimeBackendObjectHandle } from '../../../../shared/cdp/ids.ts'

@@ -1,4 +1,4 @@
-﻿/** Turn-aware trajectory event ledger with a local record inspector. */
+/** Turn-aware trajectory event ledger with a local record inspector. */
 
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import type { CSSProperties, ReactNode } from 'react'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The web-search provider's card: its endpoint, its per-request search budget,
  * and the key — which is written through the credentials domain, never into
  * the settings section, so the literal never rides a response.

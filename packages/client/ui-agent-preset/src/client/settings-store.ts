@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Agent-preset roster store shared by the display surfaces.
  *
  * Options come from one `agentPresets.list` call. Writes target the settings

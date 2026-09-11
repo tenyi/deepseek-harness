@@ -1,4 +1,4 @@
-﻿---
+---
 description: "In-process fork subagent backend for users and maintainers choosing, configuring, or debugging children seeded with the parent's completed turns."
 kind: "package-reference"
 ---

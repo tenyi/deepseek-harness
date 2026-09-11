@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fresh-process ACP subagent client. Drives one child session and owns cancellation and
  * quiescent disposal.
  *

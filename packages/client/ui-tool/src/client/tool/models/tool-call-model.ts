@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pure row-model derivation for tool summary rows: variant classification,
  * one-line summary, expansion-time body input, and flattened result output
  * from the frozen call slice. Input material comes from the call ARGUMENTS;

@@ -1,4 +1,4 @@
-﻿/** Connection generation readiness, loss, retry, and sink isolation. */
+/** Connection generation readiness, loss, retry, and sink isolation. */
 
 import { describe, expect, it, vi } from 'vitest'
 import type { ConnectionGenerationSource, ConnectionState } from '../src/client/connection.ts'

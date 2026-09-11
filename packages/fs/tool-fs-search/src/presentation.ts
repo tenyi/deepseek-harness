@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Result-time search-card presentation for `grep` and `glob`. Both tools land on
  * one `card: 'search'` render intent ({@link SearchResultView}) with two
  * `shape`-discriminated variants: `grep` projects its matches grouped by file

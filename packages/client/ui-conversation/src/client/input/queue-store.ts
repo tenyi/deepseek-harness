@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Queue read face for the InputState.queue projection (frozen contract in
  * ../contract/input.ts): a uSES-compatible observable over one session's
  * transient inbox rows. The Session snapshot already keeps the queue array

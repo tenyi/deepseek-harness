@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Model-visible messages owned by continuable-subagent orchestration.
  *
  * @module @deepseek-ai/dsh-subagent/continuation-messages

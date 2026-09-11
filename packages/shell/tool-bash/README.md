@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The model-facing bash tool for users and maintainers choosing, configuring, or debugging one-shot command execution, background jobs, and sandbox escalation."
 kind: "package-reference"
 ---

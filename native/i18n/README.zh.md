@@ -1,4 +1,4 @@
-﻿# 雙語文檔
+# 雙語文檔
 
 [English](README.md) | 中文
 

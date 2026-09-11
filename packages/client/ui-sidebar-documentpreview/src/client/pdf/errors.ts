@@ -1,4 +1,4 @@
-﻿/** Structured PDF worker failures; the renderer's locale owns visible explanations. */
+/** Structured PDF worker failures; the renderer's locale owns visible explanations. */
 export class PdfWorkerFailure extends Error {
   /** Distinguishes Worker startup/transport failures from document parsing errors. */
   readonly kind = 'worker'

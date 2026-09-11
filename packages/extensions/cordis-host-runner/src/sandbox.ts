@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `node:vm` sandbox a dynamic package's HOST half evaluates in: a fresh realm whose globals
  * are a tagged write-through console, the `harness` registration helpers, the encoding primitives
  * a bare vm context lacks, and callable traps over the Node APIs the sandbox deliberately

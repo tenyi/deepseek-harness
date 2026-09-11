@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的持久 bash 工具，供選擇、配置或排查跨調用保留的按所有者隔離 shell 狀態的使用者與維護者閱讀。"
 kind: "package-reference"
 ---

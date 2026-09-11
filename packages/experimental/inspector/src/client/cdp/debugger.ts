@@ -1,4 +1,4 @@
-﻿/** Client active debugging is not exposed by the source bridge. */
+/** Client active debugging is not exposed by the source bridge. */
 
 import type { InspectorSourceCapability } from '../../shared/bridge/messages/observation.ts'
 

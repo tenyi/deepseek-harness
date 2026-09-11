@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Derive the working directory a filesystem tool resolves relative paths against: the calling
  * agent's per-session workspace (`exec.agent.session.header.cwd`), so each session's
  * `read`/`write`/`edit` act on its workspace, not the server's launch directory.

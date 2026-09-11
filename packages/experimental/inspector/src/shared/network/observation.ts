@@ -1,4 +1,4 @@
-﻿/** Full-capture fetch observations sent to the Inspector Worker. */
+/** Full-capture fetch observations sent to the Inspector Worker. */
 
 /** One header entry; arrays retain duplicate header names. */
 export type InspectorHeader = readonly [name: string, value: string]

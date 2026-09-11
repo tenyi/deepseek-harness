@@ -1,4 +1,4 @@
-﻿# Real-product test overlay: the CLI, provider, Web servers, webhook runtime,
+# Real-product test overlay: the CLI, provider, Web servers, webhook runtime,
 # adapter, rule, Workspace, Session, and Agent all remain production modules.
 
 - insert:

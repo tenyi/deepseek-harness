@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The browser twin of the tool-cordis context facade: a whitelist of
  * lifecycle-safe verbs plus optional `ctx.get()` lookup and declared-service
  * property access, with

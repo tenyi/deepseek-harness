@@ -1,4 +1,4 @@
-﻿---
+---
 description: "當前 Cordis Loader 插件狀態的只讀投影，并附帶每個 agent preset（智能體預設）的組合：面向 web GUI 宿主客戶端的 pluginInventory 服務及其 pluginInventory/list Remote。"
 kind: "package-reference"
 ---

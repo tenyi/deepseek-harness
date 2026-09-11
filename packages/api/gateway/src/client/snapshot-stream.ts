@@ -1,4 +1,4 @@
-﻿/** Baseline-and-delta protocol layered over a reconnecting Remote stream. */
+/** Baseline-and-delta protocol layered over a reconnecting Remote stream. */
 
 import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
 import type { RemoteStream } from './remote-stream.ts'

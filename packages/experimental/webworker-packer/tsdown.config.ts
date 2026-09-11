@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
 /**
  * The packer ships TWO entries: the library (`index`) and the `dsh-pack-vfs-image`

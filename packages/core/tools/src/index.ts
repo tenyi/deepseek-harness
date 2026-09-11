@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Tool registry, model presentation modes, and pre/guard/around/post/result
  * execution pipeline.
  * @module @deepseek-ai/dsh-tools

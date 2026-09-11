@@ -1,4 +1,4 @@
-﻿# Web Client Slots
+# Web Client Slots
 
 [English](slots.md) | 中文
 

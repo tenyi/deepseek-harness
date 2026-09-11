@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 // Assembled POSIX home-path display: the fixture Host home is `/home/fixture`
 // and a second Workspace lives under it. The sidebar hover card must show
 // `~/Documents/project` while copy still writes the full path.

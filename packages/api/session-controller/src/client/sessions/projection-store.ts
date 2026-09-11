@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Generic per-session projection value store (push model; see the
  * session-projection subsystem page, docs/subsystems/session-projection.md):
  * the host is the only computation site; the client holds finished

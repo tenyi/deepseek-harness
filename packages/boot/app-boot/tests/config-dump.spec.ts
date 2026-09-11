@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `renderConfigDump` behavior: the offline composition must equal what
  * `boot()` mounts (same parser, same patch algorithm), print `!!js`
  * expressions verbatim, separate source-file runs with comment lines while

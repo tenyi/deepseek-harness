@@ -1,4 +1,4 @@
-﻿/** Session-addressed, cold-readable skill catalog Remote. */
+/** Session-addressed, cold-readable skill catalog Remote. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-agent-presets/types'

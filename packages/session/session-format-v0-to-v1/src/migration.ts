@@ -1,4 +1,4 @@
-﻿import {
+import {
   SessionFormatError,
   SessionFormatUnsupportedMigrationError,
   defineSessionFormatMigration,

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向在協議邊界接收調用方所報時區的維護者，說明 IANA 時區校驗與規范化。"
 kind: "package-library"
 ---

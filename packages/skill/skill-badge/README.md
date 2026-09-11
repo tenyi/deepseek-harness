@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The bundled 'powered by dsh' badge skill for users and maintainers enabling, using, or debugging the optional badge provider."
 kind: "package-reference"
 ---

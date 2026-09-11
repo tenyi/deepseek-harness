@@ -1,4 +1,4 @@
-﻿/** Real JSONL publication and provider-neutral message preservation across the V2 PTC rename. */
+/** Real JSONL publication and provider-neutral message preservation across the V2 PTC rename. */
 
 import { Context } from '@deepseek-ai/cordis'
 import { Session, SessionId } from '@deepseek-ai/dsh-session'

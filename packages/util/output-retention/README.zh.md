@@ -1,4 +1,4 @@
-﻿---
+---
 description: "為必須限制返回上下文量的工具提供有界的面向模型輸出：項與文本 retainer，以及標準化的省略頁腳。"
 kind: "package-library"
 ---

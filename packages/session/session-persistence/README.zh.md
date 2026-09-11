@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的持久會話存儲 seam 說明，用于選擇持久化后端、恢復會話，或按共享服務約定構建后端。"
 kind: "package-reference"
 ---

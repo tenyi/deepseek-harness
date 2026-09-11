@@ -1,4 +1,4 @@
-﻿# 6. 組合與 HMR（熱模塊替換）
+# 6. 組合與 HMR（熱模塊替換）
 
 [English](06-composition-and-hmr.md) | 中文
 

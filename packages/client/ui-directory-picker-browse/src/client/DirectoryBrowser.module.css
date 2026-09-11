@@ -1,4 +1,4 @@
-﻿/* Doubled class beats Modal's own .dialog regardless of stylesheet order. */
+/* Doubled class beats Modal's own .dialog regardless of stylesheet order. */
 /* Short viewports clamp the card: header/footer are flex-none and the
  * columns scroll, so shrinking the height keeps Open/Cancel reachable
  * instead of clipping them below a fixed overlay. */

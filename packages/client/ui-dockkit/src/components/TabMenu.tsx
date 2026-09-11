@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The per-tab context menu, opened by a secondary press on the chip. It carries
  * the close gesture and whatever the embedder appends; the copy and float
  * gestures have no menu item — copying is an embedder API, floating is a drag

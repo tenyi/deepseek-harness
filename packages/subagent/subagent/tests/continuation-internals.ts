@@ -1,4 +1,4 @@
-﻿/** Package-private continuation owners used to place deterministic lifecycle races. */
+/** Package-private continuation owners used to place deterministic lifecycle races. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { SessionId } from '@deepseek-ai/dsh-session'

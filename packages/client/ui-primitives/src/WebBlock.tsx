@@ -1,4 +1,4 @@
-﻿import clsx from 'clsx'
+import clsx from 'clsx'
 import { MarkdownText, type MarkdownLabels } from './markdown/MarkdownText.tsx'
 import { LinkIcon } from './LinkIcon.tsx'
 import css from './WebBlock.module.css'

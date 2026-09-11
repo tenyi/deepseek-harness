@@ -1,4 +1,4 @@
-﻿/** Incrementally highlighted source; the document owner supplies the accumulated text and wrap preference. */
+/** Incrementally highlighted source; the document owner supplies the accumulated text and wrap preference. */
 import type { ReactNode } from 'react'
 import type { PropsLocale } from '@deepseek-ai/dsh-client-ui-slots'
 import { CodeBlock } from '@deepseek-ai/dsh-client-ui-primitives'

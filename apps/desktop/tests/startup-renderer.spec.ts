@@ -1,4 +1,4 @@
-﻿import { readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { runInContext } from 'node:vm'
 import { fileURLToPath } from 'node:url'
 import { JSDOM } from 'jsdom'

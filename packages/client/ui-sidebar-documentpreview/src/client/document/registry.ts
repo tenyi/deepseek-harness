@@ -1,4 +1,4 @@
-﻿/** File-extension preview registrations; component dispatch belongs to the keyed document slot. */
+/** File-extension preview registrations; component dispatch belongs to the keyed document slot. */
 import { notifySubscribers } from '@deepseek-ai/dsh-client-store'
 
 /** How the document owner delivers file contents to a renderer. */

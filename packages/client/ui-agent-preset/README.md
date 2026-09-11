@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Agent-preset surfaces for the Web GUI: picker visibility and default settings, the new-session chip, the session-header label, and preset roster management; for users and maintainers of agent composition."
 kind: "package-reference"
 ---

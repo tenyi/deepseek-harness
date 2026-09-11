@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Behavioral tests against the REAL launcher binary on a real kernel: the
  * CLI contract (usage errors, exit codes, argv passthrough) and the
  * confinement world-proofs (denied writes stay off disk, grants land).

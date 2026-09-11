@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared browser platform modules. Seeding, bundling externals, and Vite
  * aliases consume this list so their module identities cannot drift.
  * @module @deepseek-ai/dsh-client-web/src/platform

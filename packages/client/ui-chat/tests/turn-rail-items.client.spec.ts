@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 
 import { describe, expect, it } from 'vitest'
 import { mergeTurnRailItems } from '../src/client/chat/turn-rail-items.ts'

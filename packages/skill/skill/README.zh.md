@@ -1,4 +1,4 @@
-﻿---
+---
 description: "skill（技能）提供方注冊表，供選擇、配置或排查來自任意來源的 skill 如何被合并、解析與加載的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/** Worker-side admission, execution, and bounded settlement of non-CDP queries. */
+/** Worker-side admission, execution, and bounded settlement of non-CDP queries. */
 
 import type { CordisRuntimeTreeReader } from '../../shared/cordis/reader.ts'
 import type { InspectorSourceGeneration, InspectorSourceId } from '../../shared/bridge/ids.ts'

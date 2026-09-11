@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The LLM capability group: a provider-neutral model-call service, the DeepSeek and pi-ai provider adapters, request-retry execution, and replay-aware token measurement."
 kind: "package-group"
 ---

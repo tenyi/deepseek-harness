@@ -1,4 +1,4 @@
-﻿/** Node filesystem watching over the active in-memory VFS. */
+/** Node filesystem watching over the active in-memory VFS. */
 import { Buffer } from 'buffer'
 import { EventEmitter } from './events.ts'
 import { captureAsyncContext, runWithAsyncContext } from './async_hooks.ts'

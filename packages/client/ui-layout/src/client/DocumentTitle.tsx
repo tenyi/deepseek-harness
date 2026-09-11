@@ -1,4 +1,4 @@
-﻿/** Browser title selection follows the active main panel without subscribing the frame. */
+/** Browser title selection follows the active main panel without subscribing the frame. */
 import { useEffect } from 'react'
 import type { PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 

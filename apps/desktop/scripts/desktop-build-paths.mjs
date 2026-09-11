@@ -1,4 +1,4 @@
-﻿/** Resolve build-owned Desktop paths without sharing mutable state across release targets. */
+/** Resolve build-owned Desktop paths without sharing mutable state across release targets. */
 
 import { join, resolve } from 'node:path'
 

@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * ask_user_question toolview acceptance: `waiting` summary while running,
  * answered-count from the result JSON once settled (skipped answers

@@ -1,4 +1,4 @@
-﻿# Subagent
+# Subagent
 
 [English](subagent.md) | 中文
 

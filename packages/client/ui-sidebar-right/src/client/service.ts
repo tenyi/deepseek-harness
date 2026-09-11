@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `ctx.sidebarRight`: what other plugins may ask of this column.
  *
  * The surface is per session and its state lives in that session's store

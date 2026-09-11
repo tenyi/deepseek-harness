@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Session object lifecycle, event-window transport, commands, and resync
  * behavior, driven through the assembled client: every Remote call a Session
  * makes crosses the roster's own Connection through the tier's `remote.<ns>`

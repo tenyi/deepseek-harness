@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ClientSessions: list store projection (manager → {ids, byId, current}
  * with derived titles), the current-selection account (open validation and
  * persisted mask semantics), scope-tree

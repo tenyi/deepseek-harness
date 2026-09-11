@@ -1,4 +1,4 @@
-﻿---
+---
 description: "In-app directory-browsing surface: the Miller-column Select Workspace Directory dialog that fills workspace directory flows; for users and maintainers of the Web picking experience."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "通過作用域交互路徑響應 Host 權限請求的瀏覽器批準界面。"
 kind: "package-reference"
 ---

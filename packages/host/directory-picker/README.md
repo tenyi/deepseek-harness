@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Workspace-directory picking seam for the web GUI host: the service contract, capability vocabulary, and error codes the native and browse backends implement."
 kind: "package-reference"
 ---

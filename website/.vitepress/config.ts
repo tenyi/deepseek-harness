@@ -1,4 +1,4 @@
-﻿/** VitePress configuration for the locally projected documentation site. */
+/** VitePress configuration for the locally projected documentation site. */
 
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'

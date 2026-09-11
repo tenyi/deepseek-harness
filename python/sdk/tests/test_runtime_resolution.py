@@ -1,4 +1,4 @@
-﻿"""Keyless runtime-resolution tests; launch coverage lives in test_bundled_runtime.py."""
+"""Keyless runtime-resolution tests; launch coverage lives in test_bundled_runtime.py."""
 
 from __future__ import annotations
 

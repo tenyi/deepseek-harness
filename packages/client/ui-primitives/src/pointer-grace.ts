@@ -1,4 +1,4 @@
-﻿import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 
 /**
  * Grace before a pointer-dismissed popup closes. Covers the anchor->popup gap

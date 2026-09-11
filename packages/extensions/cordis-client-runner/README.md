@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Browser half of dynamic Cordis packages for users and maintainers choosing, composing, or debugging how a page answers run requests and loads browser-half code."
 kind: "package-reference"
 ---

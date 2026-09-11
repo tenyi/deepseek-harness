@@ -1,4 +1,4 @@
-﻿---
+---
 description: "本次運行環境的不可變快照，記住每個值來自哪一層；供必須以不信任壓平 process.env 的方式解析面向用戶值的包使用。"
 kind: "package-library"
 ---

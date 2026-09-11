@@ -1,4 +1,4 @@
-﻿/* Independent system flock(2) oracle; stdin commands produce flushed JSON lines. */
+/* Independent system flock(2) oracle; stdin commands produce flushed JSON lines. */
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>

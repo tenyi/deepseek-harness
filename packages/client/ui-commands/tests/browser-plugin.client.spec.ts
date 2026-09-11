@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ui-commands browser half on a real cordis Context with fake slash/slots
  * faces and real session scopes: the plugin body mounts CommandUiRuntime as
  * `command`, the popupSelect shell registers into conversation.input.overlay

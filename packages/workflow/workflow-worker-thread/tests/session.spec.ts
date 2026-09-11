@@ -1,4 +1,4 @@
-﻿import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { MessageChannel } from 'node:worker_threads'
 import type { MessagePort } from 'node:worker_threads'
 import { HostToWorkerType, WorkerToHostType } from '../src/protocol.ts'

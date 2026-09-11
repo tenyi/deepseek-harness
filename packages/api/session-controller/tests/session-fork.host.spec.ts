@@ -1,4 +1,4 @@
-﻿/** Session Controller fork boundaries, lineage, and inherited model routing. */
+/** Session Controller fork boundaries, lineage, and inherited model routing. */
 
 import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

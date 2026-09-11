@@ -1,4 +1,4 @@
-﻿# Agent Teams
+# Agent Teams
 
 [English](agent-team.md) | 中文
 

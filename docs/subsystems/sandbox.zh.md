@@ -1,4 +1,4 @@
-﻿# 進程沙箱
+# 進程沙箱
 
 [English](sandbox.md) | 中文
 

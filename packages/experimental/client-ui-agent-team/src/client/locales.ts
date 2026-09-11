@@ -1,4 +1,4 @@
-﻿/** Agent Teams Web dictionaries. */
+/** Agent Teams Web dictionaries. */
 
 /** Locale namespace owned by the Agent Teams Web UI. */
 export const NS = 'agent-team'

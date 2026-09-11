@@ -1,4 +1,4 @@
-﻿import { Buffer } from 'node:buffer'
+import { Buffer } from 'node:buffer'
 
 let pending = Buffer.alloc(0)
 let source = ''

@@ -1,4 +1,4 @@
-﻿{"type":"session_event","sessionId":"{{sessionId}}","event":{"type":"agent/inbox/spliced","seq":3,"time":0,"data":{"target":"next-turn","start":0,"inserted":[{"content":[{"type":"text","text":"say pong"}],"source":{"kind":"user"},"role":"user","id":"{{sessionId}}"}]}}}
+{"type":"session_event","sessionId":"{{sessionId}}","event":{"type":"agent/inbox/spliced","seq":3,"time":0,"data":{"target":"next-turn","start":0,"inserted":[{"content":[{"type":"text","text":"say pong"}],"source":{"kind":"user"},"role":"user","id":"{{sessionId}}"}]}}}
 {"type":"session_event","sessionId":"{{sessionId}}","event":{"type":"turn/start","seq":4,"time":0,"data":{"turn":1}}}
 {"type":"session_event","sessionId":"{{sessionId}}","event":{"type":"agent/inbox/spliced","seq":5,"time":0,"data":{"target":"next-turn","start":0,"removedCount":1,"inserted":[]}}}
 {"type":"session_event","sessionId":"{{sessionId}}","event":{"type":"step/start","seq":6,"time":0,"data":{"turn":1,"step":1}}}

@@ -1,4 +1,4 @@
-﻿/** Test-only direct Remote face over the Session Controller's internal controllers. */
+/** Test-only direct Remote face over the Session Controller's internal controllers. */
 
 import { SessionLogOffset } from '@deepseek-ai/dsh-session'
 import type { Context } from '@deepseek-ai/cordis'

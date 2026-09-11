@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的模型設置與產品引導插件：提供方行、API 密鑰管理、模型列表與 DeepSeek 首次運行彈窗。"
 kind: "package-reference"
 ---

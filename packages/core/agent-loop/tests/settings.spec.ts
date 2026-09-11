@@ -1,4 +1,4 @@
-﻿/** The `agent-loop` settings section layered over the composition entry. */
+/** The `agent-loop` settings section layered over the composition entry. */
 
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

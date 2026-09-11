@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向需要跨調用終端狀態的 agent（智能體）的 6 個持久終端工具，帶所有者隔離、有界結果與可選后臺發送。"
 kind: "package-reference"
 ---

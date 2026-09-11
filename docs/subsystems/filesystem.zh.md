@@ -1,4 +1,4 @@
-﻿# 文件系統
+# 文件系統
 
 [English](filesystem.md) | 中文
 

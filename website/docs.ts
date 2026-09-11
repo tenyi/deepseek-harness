@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Canonical publication manifest for the documentation website.
  *
  * Markdown stays in its owning repository tier. This manifest maps each

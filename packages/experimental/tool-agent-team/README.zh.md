@@ -1,4 +1,4 @@
-﻿---
+---
 description: "九個讓模型創建、發消息與協調 teammate 的工具，供掛載實驗性 Team 插件的組合使用。"
 kind: "package-reference"
 ---

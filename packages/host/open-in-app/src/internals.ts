@@ -1,4 +1,4 @@
-﻿/** Test seams for host facts and process adapters; production keeps the empty defaults. */
+/** Test seams for host facts and process adapters; production keeps the empty defaults. */
 
 import type { OpenInAppInternals } from './resolver.ts'
 

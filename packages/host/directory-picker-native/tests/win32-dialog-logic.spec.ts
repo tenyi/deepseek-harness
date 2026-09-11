@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The COM conversation's sequencing against fake bindings: outcome mapping
  * (selection / cancellation / HRESULT failures at every step) and the
  * release-on-every-path guarantee, all platform-independent.

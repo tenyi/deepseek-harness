@@ -1,4 +1,4 @@
-﻿/** Standard ACP updates derived from committed DSH session events. */
+/** Standard ACP updates derived from committed DSH session events. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { SessionUpdate, ToolCallContent } from '@agentclientprotocol/sdk'

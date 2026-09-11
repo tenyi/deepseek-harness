@@ -1,4 +1,4 @@
-﻿/** Instance-owned concurrency bound for native image transformations. */
+/** Instance-owned concurrency bound for native image transformations. */
 
 /**
  * Preserve Error rejections and normalize non-Error native binding values.

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Browser-host wire layer for the web GUI: Remote RPC, event-stream delivery with reconnect, exact Fetch routes, the /api HTTP bridge, and the browser-trust fence."
 kind: "package-reference"
 ---

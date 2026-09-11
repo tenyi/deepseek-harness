@@ -1,4 +1,4 @@
-﻿---
+---
 description: "plan 組的包映射：引導 agent（智能體）先探索和設計再執行的計劃模式功能，供用戶和維護者瀏覽該組。"
 kind: "package-group"
 ---

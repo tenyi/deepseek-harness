@@ -1,4 +1,4 @@
-﻿/** Attachment identifier brand. @module @deepseek-ai/dsh-attachment/brand */
+/** Attachment identifier brand. @module @deepseek-ai/dsh-attachment/brand */
 
 import type { Branded } from '@deepseek-ai/dsh-brand'
 

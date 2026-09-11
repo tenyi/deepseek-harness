@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的共享模型標題生成策略說明，用于配置標題提供方或排查輔助 LLM 請求。"
 kind: "package-library"
 ---

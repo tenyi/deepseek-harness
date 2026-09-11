@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The chat flow's font-size-axis adoption as CSS text. jsdom has no layout,
  * so these read the declarations that make think text, compaction rows, the
  * message clock, and the icon-action buttons follow the Settings font-size

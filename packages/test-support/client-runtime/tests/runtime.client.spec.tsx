@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * SlotTestRuntime behavior: root declaration + rendering, session
  * add/update/switch/remove through the real renderer, shared store identity

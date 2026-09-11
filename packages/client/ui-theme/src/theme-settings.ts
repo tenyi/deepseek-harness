@@ -1,4 +1,4 @@
-﻿/** Theme preferences stored in the Host user-settings document. */
+/** Theme preferences stored in the Host user-settings document. */
 
 import z from '@deepseek-ai/schemastery'
 

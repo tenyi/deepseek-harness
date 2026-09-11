@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { parseInboundFrame } from '../../src/transport/frames.ts'
 
 describe('tunnel init frame', () => {

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的后臺任務控制，供選擇、配置或排查 job_output、job_list、job_kill 與完成通知的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

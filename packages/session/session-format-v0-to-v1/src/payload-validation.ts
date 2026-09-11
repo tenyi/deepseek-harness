@@ -1,4 +1,4 @@
-﻿import { SessionFormatError, sessionFormatCount, sessionFormatSafeInteger } from '@deepseek-ai/dsh-session-format'
+import { SessionFormatError, sessionFormatCount, sessionFormatSafeInteger } from '@deepseek-ai/dsh-session-format'
 import { deepEqualJson } from '@deepseek-ai/dsh-util-values'
 import type {
   SessionFormatEvent,

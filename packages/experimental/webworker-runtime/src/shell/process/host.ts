@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Starting and supervising shell processes from the host worker.
  *
  * A process is a Web Worker started from this same bundle, told by its first

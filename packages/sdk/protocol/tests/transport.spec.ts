@@ -1,4 +1,4 @@
-﻿import { once } from 'node:events'
+import { once } from 'node:events'
 import { PassThrough, Writable } from 'node:stream'
 import { describe, expect, it } from 'vitest'
 import { JsonRpcLineTransport, JsonRpcResponseError } from '../src/index.ts'

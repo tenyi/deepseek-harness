@@ -1,4 +1,4 @@
-﻿/** The experimental Web bundle must carry one parseable Team Client layer. */
+/** The experimental Web bundle must carry one parseable Team Client layer. */
 
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'

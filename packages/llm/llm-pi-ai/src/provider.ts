@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Construction of the pi-ai `Provider` that one configured route registers into
  * the adapter's `Models` collection.
  *

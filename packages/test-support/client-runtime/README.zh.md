@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向瀏覽器功能測試的 jsdom slot 測試運行時，供測試作者針對生產機制檢驗 slot、存儲與渲染。"
 kind: "package-library"
 ---

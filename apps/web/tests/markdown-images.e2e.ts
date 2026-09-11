@@ -1,4 +1,4 @@
-﻿// Real browser image loading and failure fallbacks through the shipped Web composition.
+// Real browser image loading and failure fallbacks through the shipped Web composition.
 import { open, writeFile } from 'node:fs/promises'
 import { createServer, type Server } from 'node:http'
 import { join } from 'node:path'

@@ -1,4 +1,4 @@
-﻿/** The `stat` endpoint: the same gates as `read`, answering identity and freshness without content. */
+/** The `stat` endpoint: the same gates as `read`, answering identity and freshness without content. */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mkdir, symlink, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'

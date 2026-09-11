@@ -1,4 +1,4 @@
-﻿/** Host controller that owns the Inspector Worker and Host observation source. */
+/** Host controller that owns the Inspector Worker and Host observation source. */
 
 import { randomBytes, randomUUID } from 'node:crypto'
 import { tmpdir } from 'node:os'

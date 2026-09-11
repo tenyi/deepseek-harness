@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向組合壓縮（compaction）部署場景的工具輸出修剪：選擇大小限制或排查超大工具結果為何被縮短。"
 kind: "package-reference"
 ---

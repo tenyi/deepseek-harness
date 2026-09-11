@@ -1,4 +1,4 @@
-﻿/** Shared exact-object readers for versioned Inspector wire protocols. */
+/** Shared exact-object readers for versioned Inspector wire protocols. */
 
 import { inspectorId, type InspectorId } from './identity.ts'
 import { isPlainObject } from './json.ts'

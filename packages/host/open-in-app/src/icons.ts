@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Host icon extraction for resolved open-in-app applications, one strategy
  * per platform: macOS converts the resolved bundle's `.icns` to a 128px PNG
  * (`plutil` + `sips`); Windows extracts the resolved executable's associated

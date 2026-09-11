@@ -1,4 +1,4 @@
-﻿# Typert 遠程調用
+# Typert 遠程調用
 
 [English](typert.md) | 中文
 

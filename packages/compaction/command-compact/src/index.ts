@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Human-facing `/compact` command over the backend-independent compaction seam.
  * @module @deepseek-ai/dsh-command-compact
  */

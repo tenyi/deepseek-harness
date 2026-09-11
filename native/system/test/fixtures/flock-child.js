@@ -1,4 +1,4 @@
-﻿/** IPC-controlled lock holder; acknowledgements follow settled syscalls or close. */
+/** IPC-controlled lock holder; acknowledgements follow settled syscalls or close. */
 import assert from 'node:assert/strict';
 import { once, on } from 'node:events';
 import { closeSync, openSync } from 'node:fs';

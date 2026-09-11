@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Package map for the durable session data plane: the persistence seam and its backends, checkpoint policy, projections, log-backed titles, and outbound session telemetry."
 kind: "package-group"
 ---

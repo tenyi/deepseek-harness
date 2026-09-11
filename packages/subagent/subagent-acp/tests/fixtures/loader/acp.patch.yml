@@ -1,4 +1,4 @@
-﻿# Test-only ACP provider patch over the shipped headless profile. The parent
+# Test-only ACP provider patch over the shipped headless profile. The parent
 # omits `cwd` so both scenarios exercise parent-session inheritance.
 - id: headless-startup
   disabled: true

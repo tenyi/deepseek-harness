@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 // The streaming fence arm: StreamingHighlightSession's incremental
 // tokenization equals from-scratch tokenization at every appended prefix, and
 // CodeBlock's `streaming` arm renders the same token tree as the settled

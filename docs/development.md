@@ -1,4 +1,4 @@
-﻿# Development guide
+# Development guide
 
 English | [中文](development.zh.md)
 

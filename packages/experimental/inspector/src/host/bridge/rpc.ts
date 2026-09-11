@@ -1,4 +1,4 @@
-﻿/** Host-side non-CDP query bridge over the Worker MessagePort. */
+/** Host-side non-CDP query bridge over the Worker MessagePort. */
 
 import type { MessagePort } from 'node:worker_threads'
 import type { InspectorSourceDescriptor } from '../../shared/bridge/messages/observation.ts'

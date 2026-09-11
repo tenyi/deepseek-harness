@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Projection value store (push model; session-projection subsystem page:
  * docs/subsystems/session-projection.md): the single
  * higher-seq-wins rule on both paths (a stale baseline cannot overwrite a

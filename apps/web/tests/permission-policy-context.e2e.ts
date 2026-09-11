@@ -1,4 +1,4 @@
-﻿// Web acceptance for current sandbox-policy context. A real Chromium drives
+// Web acceptance for current sandbox-policy context. A real Chromium drives
 // the shipped /permission command through all three presets; record mode uses
 // the real provider, while replay keeps the same provider-authored behavior
 // keyless. Assertions read the exact durable header, runtime-context messages,

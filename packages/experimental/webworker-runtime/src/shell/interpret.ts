@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The interpreter: it walks the parsed command line and runs the command table
  * against the VFS. Structure (`;` `&` `|` `|&` `&&` `||`, subshells, groups,
  * redirections, prefix assignments) is honored here; what a command *does*

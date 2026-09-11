@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copying, reading, and deleting locally authored presets.
  *
  * Authoring is confined to a `user` root: the shipped `.system` set is part of

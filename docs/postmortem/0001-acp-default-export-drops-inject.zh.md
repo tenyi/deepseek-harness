@@ -1,4 +1,4 @@
-﻿# 事故復盤（postmortem）0001：ACP（Agent Client Protocol）服務器在連接時崩潰——`export default` 丟棄了插件的 `inject`
+# 事故復盤（postmortem）0001：ACP（Agent Client Protocol）服務器在連接時崩潰——`export default` 丟棄了插件的 `inject`
 
 [English](0001-acp-default-export-drops-inject.md) | 中文
 

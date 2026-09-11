@@ -1,4 +1,4 @@
-﻿/** The standalone SDK-minimal bundle's complete declared Cordis tree. */
+/** The standalone SDK-minimal bundle's complete declared Cordis tree. */
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'

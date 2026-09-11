@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Versionless, JSON-lines wire protocol between the Node host and the CPython subprocess. Frames
  * travel on the child's fd 3 (one JSON object per line), leaving stdout/stderr free for the
  * program's own output. Host treats every inbound frame as hostile because model code can post

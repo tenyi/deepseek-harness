@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Resolver behavior over a deterministic command runner and an in-process
  * PATH-resolution fake: per-platform locator chains, the one-pass catalog
  * resolution map, registry/desktop parsing, and launch-outcome

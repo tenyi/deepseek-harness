@@ -1,4 +1,4 @@
-﻿/** Platform process-table inspection for terminal readiness, signals, and teardown. */
+/** Platform process-table inspection for terminal readiness, signals, and teardown. */
 
 import { closeSync, openSync, readFileSync, readdirSync, readlinkSync, readSync, statSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'

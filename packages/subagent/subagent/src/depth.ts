@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Delegation-depth accounting: the recursion budget a parent passes to its
  * children. Kept apart from the service so composition helpers can read it
  * without importing the registry.

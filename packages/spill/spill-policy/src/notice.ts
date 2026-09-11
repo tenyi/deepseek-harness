@@ -1,4 +1,4 @@
-﻿/** Browser-safe formatting and recognition of persisted spill-policy notices. */
+/** Browser-safe formatting and recognition of persisted spill-policy notices. */
 import { describeOmitted, type Omitted } from '@deepseek-ai/dsh-output-retention'
 import type { SpillRef } from '@deepseek-ai/dsh-spill'
 

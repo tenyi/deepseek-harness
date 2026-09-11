@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The projection-cache domain declaration: one `sessions` table keyed by
  * {@link SessionId}, each record the full projection checkpoint for one
  * session (`key → {ver, seq, val}` rows). The spec object is the single

@@ -1,4 +1,4 @@
-﻿/** Trajectory toolbar: timeline and ledger fold controls. */
+/** Trajectory toolbar: timeline and ledger fold controls. */
 
 import type { TranslateNS } from '@deepseek-ai/dsh-client-ui-slots'
 import { IconSearchOutline16 } from '@deepseek-ai/dsh-client-ui-primitives'

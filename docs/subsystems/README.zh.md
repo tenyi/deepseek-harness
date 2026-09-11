@@ -1,4 +1,4 @@
-﻿# 子系統
+# 子系統
 
 [English](README.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The complete V2-to-V3 Session conversion: system heads, audited references, PTC and preset names, canonical envelopes, preservation, and refusal."
 kind: "package-library"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * End-to-end spec of the packer's actual product: an image this package builds must
  * mount in the runtime's VFS and be `require`-able by the runtime's module loader,
  * which holds no transform of its own.

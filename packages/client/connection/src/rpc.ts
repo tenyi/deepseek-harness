@@ -1,4 +1,4 @@
-﻿/** Generic unary RPC contracts shared by the Host and Client Connection halves. */
+/** Generic unary RPC contracts shared by the Host and Client Connection halves. */
 
 import type { Branded } from '@deepseek-ai/dsh-brand'
 

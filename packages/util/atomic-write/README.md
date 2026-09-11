@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Atomic file replacement and cross-process writer locking for packages that must never leave partial, symlink-hijacked, or wider-permission content on disk."
 kind: "package-library"
 ---

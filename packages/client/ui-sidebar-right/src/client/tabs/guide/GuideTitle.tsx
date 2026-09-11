@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The guide type's chip title: the compass before the type's label. Registered
  * under `sidebar.right.pane.tab.title`; without it the chip would show the
  * bare label. Both guide glyphs live here: the compass the chip and the body's

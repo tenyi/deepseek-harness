@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Whole-log turn outline for clients and maintainers composing or debugging the turnOutline projection unit behind full-session turn navigation."
 kind: "package-reference"
 ---

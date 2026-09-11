@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的文件型設置提供方：選擇、配置或排查 YAML/JSON 設置文檔及其熱重載。"
 kind: "package-reference"
 ---

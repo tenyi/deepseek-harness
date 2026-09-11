@@ -1,4 +1,4 @@
-﻿# Extensions
+# Extensions
 
 English | [中文](extensions.zh.md)
 

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Typed Client-to-Host calls and streams: dispatch, validation, cancellation, reconnection, and forwarded Host events."
 kind: "package-reference"
 ---

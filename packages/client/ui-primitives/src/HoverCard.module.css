@@ -1,4 +1,4 @@
-﻿/* Block, not inline-flex: consumers wrap full-width list rows and an
+/* Block, not inline-flex: consumers wrap full-width list rows and an
  * inline wrapper would shrink them; the card still measures this rect. */
 .root {
   position: relative;

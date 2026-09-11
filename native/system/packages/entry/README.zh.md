@@ -1,4 +1,4 @@
-﻿---
+---
 description: "預編譯 Landlock 啟動器與異步 POSIX flock 的 JavaScript 入口。"
 kind: "package-library"
 ---

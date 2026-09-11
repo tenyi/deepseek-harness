@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Vocabulary for the fs-observation-policy plugin: the minimal execution-context
  * fields used to derive an observed-state owner by narrowing the opaque `object`
  * actor the `fs/*` events carry.

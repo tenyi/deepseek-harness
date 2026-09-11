@@ -1,4 +1,4 @@
-﻿/** Root-scoped controller for the right Sidebar's Session content. */
+/** Root-scoped controller for the right Sidebar's Session content. */
 import type { PropsRenderSlots, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 import type {} from '../contract/slots.ts'
 

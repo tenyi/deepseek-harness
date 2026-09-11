@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The Node-compatibility layer's refusals and its small answering faces.
  *
  * Two contracts live here. Every replaced symbol must be PRESENT — a missing

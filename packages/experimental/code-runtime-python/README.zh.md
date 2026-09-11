@@ -1,4 +1,4 @@
-﻿---
+---
 description: "CPython 子進程代碼 runtime：為 Python 模型代碼實現 dsh-code-runtime seam，及其使用的 fd-3 wire 協議。"
 kind: "package-reference"
 ---

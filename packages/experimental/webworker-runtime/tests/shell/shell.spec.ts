@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The in-worker shell: structure (pipelines, chaining, subshells, redirections,
  * expansion) and the command table's effects on a real MemoryVfs.
  *

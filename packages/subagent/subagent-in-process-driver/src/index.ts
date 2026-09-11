@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared driver for in-process ONE-SHOT subagent providers. The agent factory's
  * creation transaction owns unpublished setup and rollback; after publication
  * the returned AgentHandle is the one quiescent lifecycle owner held by the

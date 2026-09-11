@@ -1,4 +1,4 @@
-﻿/** Closed command/result protocol for Runtime operations executed by a Client. */
+/** Closed command/result protocol for Runtime operations executed by a Client. */
 
 import type { ClientRemoteObjectHandle } from '../../ids.ts'
 import type {

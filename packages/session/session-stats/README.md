@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Whole-log conversation counts and wall times for clients and maintainers choosing, composing, or debugging the sessionStats projection unit."
 kind: "package-reference"
 ---

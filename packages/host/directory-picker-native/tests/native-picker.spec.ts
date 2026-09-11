@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Native picker tier selection and the execFile adapter: the Win32 dialog
  * primary (failures surface as-is, no fallback tier), the abort rule, and
  * the POSIX command tiers (osascript, Zenity → KDialog).

@@ -1,4 +1,4 @@
-﻿# 會話標題
+# 會話標題
 
 [English](session-title.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿- dialog "復制預設 · 復制自 極簡模式":
+- dialog "復制預設 · 復制自 極簡模式":
   - heading "復制預設 · 復制自 極簡模式" [level=2]
   - button "關閉":
     - img

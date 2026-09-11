@@ -1,4 +1,4 @@
-﻿- banner:
+- banner:
   - navigation "Session hierarchy":
     - button "Math rendering" [disabled]
   - button "More actions":

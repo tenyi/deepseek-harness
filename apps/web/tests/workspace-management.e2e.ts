@@ -1,4 +1,4 @@
-﻿// Web e2e scenarios: workspace management — adding a workspace through the
+// Web e2e scenarios: workspace management — adding a workspace through the
 // composed directory dialog (its own New folder affordance is the product's
 // one creation route), the dialog's path editor walking the panes with the
 // typed draft, same-basename directory adoption, the rename round

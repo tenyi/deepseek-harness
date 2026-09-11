@@ -1,4 +1,4 @@
-﻿import type { TurnBoundaryProjection } from './types.ts'
+import type { TurnBoundaryProjection } from './types.ts'
 import type {} from '@deepseek-ai/dsh-session-projection'
 
 declare module '@deepseek-ai/dsh-session-projection/types' {

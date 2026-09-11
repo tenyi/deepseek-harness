@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向 Windows 上選擇、配置或排查受限令牌進程隔離的用戶與維護者的 Windows 寫入限制沙箱后端。"
 kind: "package-library"
 ---

@@ -1,4 +1,4 @@
-﻿// Trusted non-loopback Web access cannot call the loopback-only settings API;
+// Trusted non-loopback Web access cannot call the loopback-only settings API;
 // the notice therefore advances for this browser process and returns on reload.
 import type { Browser, Page } from 'playwright'
 import { chromium } from 'playwright'

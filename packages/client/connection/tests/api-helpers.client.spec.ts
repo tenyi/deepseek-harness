@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Contract-layer helpers: transport-error folding and response unwrapping.
  * (The assistant block classifier half of the legacy spec lives in
  * runtime/tests — the classifier moved there.)

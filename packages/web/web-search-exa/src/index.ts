@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Exa-backed `WebSearchProvider` plugin. It contributes to the `ctx.web`
  * registry without owning the service.
  *

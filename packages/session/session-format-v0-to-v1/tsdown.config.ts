@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
 /** Build the frozen adjacent-migration library. */
 export default defineConfig({

@@ -1,4 +1,4 @@
-﻿/** Real CLI and DeepSeek evidence for a GitHub webhook-created Session. */
+/** Real CLI and DeepSeek evidence for a GitHub webhook-created Session. */
 
 import type { ChildProcess } from 'node:child_process'
 import { spawn } from 'node:child_process'

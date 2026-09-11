@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的工作區指令上下文說明，用于啟用、設置預算或排查 AGENTS.md/CLAUDE.md 的加載與刷新。"
 kind: "package-reference"
 ---

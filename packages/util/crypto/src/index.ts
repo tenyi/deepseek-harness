@@ -1,4 +1,4 @@
-﻿/**
+/**
  * UUID minting that works in every JavaScript context this repository ships
  * to. `crypto.randomUUID` is a secure-context Web API — a page or worker
  * served over plain HTTP on a LAN address has no such method — while

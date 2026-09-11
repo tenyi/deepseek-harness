@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的右側 Sidebar：每會話一個停靠面、兩種呈現形態、導航控制器 ctx.sidebarRight、tab 類型注冊表 ctx.sidebarRightTabs 與 Tab 域。"
 kind: "package-reference"
 ---

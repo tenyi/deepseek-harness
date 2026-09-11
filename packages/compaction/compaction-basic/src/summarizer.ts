@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Default one-shot summarization and durable checkpoint framing.
  *
  * @module @deepseek-ai/dsh-compaction-basic/summarizer

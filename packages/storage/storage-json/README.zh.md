@@ -1,4 +1,4 @@
-﻿---
+---
 description: "JSON 存儲后端：面向在配置根目錄下選擇、配置或排查整單元文件與逐記錄文件的宿主與維護者。"
 kind: "package-reference"
 ---

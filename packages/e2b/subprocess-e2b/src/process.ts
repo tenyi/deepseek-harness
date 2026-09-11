@@ -1,4 +1,4 @@
-﻿/** One asynchronously-started E2B command projected onto the subprocess seam. */
+/** One asynchronously-started E2B command projected onto the subprocess seam. */
 
 import { Buffer } from 'node:buffer'
 import { PassThrough, Writable } from 'node:stream'

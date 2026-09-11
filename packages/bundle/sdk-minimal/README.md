@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Standalone single-tool SDK profile for users who need a minimal cross-platform coding agent without the shared base bundle."
 kind: "package-bundle"
 ---

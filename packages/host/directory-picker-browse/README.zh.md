@@ -1,4 +1,4 @@
-﻿---
+---
 description: "目錄選擇 seam 的應用內瀏覽后端：為 web GUI 宿主提供單層目錄列舉與子目錄創建，也能服務于遠程客戶端。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿# apps/web 瀏覽器 e2e
+# apps/web 瀏覽器 e2e
 
 [English](README.md) | 中文
 

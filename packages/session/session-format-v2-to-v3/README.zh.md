@@ -1,4 +1,4 @@
-﻿---
+---
 description: "完整的 V2 到 V3 會話轉換：系統頭節點、經過審計的引用、PTC 與預設名稱、規范信封、保留與拒絕規則。"
 kind: "package-library"
 ---

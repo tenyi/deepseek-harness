@@ -1,4 +1,4 @@
-﻿/** Agent-preset vocabulary shared by discovery, mounting, and consumers. */
+/** Agent-preset vocabulary shared by discovery, mounting, and consumers. */
 
 /**
  * Where a preset's composition came from. A `system` preset ships with the

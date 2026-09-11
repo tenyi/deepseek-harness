@@ -1,4 +1,4 @@
-﻿// Only a structured checkpoint uses the compaction marker; all other outcomes
+// Only a structured checkpoint uses the compaction marker; all other outcomes
 // retain the command's complete settlement text.
 
 import type { ChatViewSlotProps, CommandRowOwnerProps } from '../contract/slots.ts'

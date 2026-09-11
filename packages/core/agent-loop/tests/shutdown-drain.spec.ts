@@ -1,4 +1,4 @@
-﻿/** Root-fiber shutdown drains buffered session events durably (both mount orders). */
+/** Root-fiber shutdown drains buffered session events durably (both mount orders). */
 
 import { describe, expect, it, afterEach } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

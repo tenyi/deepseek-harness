@@ -1,4 +1,4 @@
-﻿import type { AssistantBlock } from '../contract/snapshot.ts'
+import type { AssistantBlock } from '../contract/snapshot.ts'
 
 /**
  * Collect visible prose from one Assistant lifecycle.

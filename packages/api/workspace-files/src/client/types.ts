@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `file` protocol's resource metadata, navigation params, Client errors,
  * and internal change-feed notices.
  */

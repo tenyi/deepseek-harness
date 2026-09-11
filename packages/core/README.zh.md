@@ -1,4 +1,4 @@
-﻿---
+---
 description: "core 分組地圖：構成產品 API 主干的會話日志、系統提示詞組裝、工具注冊表、agent（智能體）詞匯與默認循環。"
 kind: "package-group"
 ---

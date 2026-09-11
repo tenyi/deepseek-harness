@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI Host 側的包映射：HTTP 與 SPA 服務器、工作區目錄選擇實現、open-in-app 啟動路由和插件清單投影。"
 kind: "package-group"
 ---

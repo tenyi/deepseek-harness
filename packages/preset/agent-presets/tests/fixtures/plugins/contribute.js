@@ -1,4 +1,4 @@
-﻿// A preset row: registers one tool and one prompt section, both named from
+// A preset row: registers one tool and one prompt section, both named from
 // config. Import-free on purpose — the Loader resolves entry modules through
 // Node's ESM resolver, which cannot see this workspace's TypeScript sources.
 export const name = 'contribute'

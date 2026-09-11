@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Claude Code 與 Codex 橋接背后的共享鉤子規則——鉤子能做什么、運行時會發生什么——供 hooks 子系統的用戶與維護者閱讀。"
 kind: "package-library"
 ---

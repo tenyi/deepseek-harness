@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `todos` projection provider (session-projection RFC knife 4 — the "a
  * fourth domain is just its own registrations" acceptance probe): mounting
  * tool-todo beside the registry serves the whole current list with a

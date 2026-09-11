@@ -1,4 +1,4 @@
-﻿/** Browser attachment plugin: fills conversation's composer and image slots. */
+/** Browser attachment plugin: fills conversation's composer and image slots. */
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-client-ui-chat/client'
 import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'

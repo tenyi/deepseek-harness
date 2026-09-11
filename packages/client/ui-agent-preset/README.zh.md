@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI 的 agent（智能體） preset 界面：選擇器可見性與默認設置、新建會話 chip、會話標題標簽與 preset 名單管理分區；供 agent 組裝的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

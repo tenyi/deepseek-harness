@@ -1,4 +1,4 @@
-﻿import { useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from 'react'
+import { useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from 'react'
 import clsx from 'clsx'
 import {
   Button, IconCheckOutline14, IconChevronDownOutline14, IconChevronLeftOutline14,

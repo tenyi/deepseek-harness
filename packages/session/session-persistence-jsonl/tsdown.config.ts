@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
 /** Build the backend and its path-loaded verifier as separate bundles. */
 export default defineConfig(({ env }) => env?.DSH_BUILD_FACE === 'client' ? [] : [

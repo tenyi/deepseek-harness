@@ -1,4 +1,4 @@
-﻿/** Blank New Session folding through the shipped Web composition. */
+/** Blank New Session folding through the shipped Web composition. */
 
 import { readFile } from 'node:fs/promises'
 import { basename, join } from 'node:path'

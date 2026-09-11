@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The web access service (ctx.web): how deployments and plugin authors search the web and fetch URLs through interchangeable providers, with one selection policy and error vocabulary."
 kind: "package-reference"
 ---

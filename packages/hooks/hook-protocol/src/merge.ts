@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Merge matched hooks into one most-restrictive outcome. Permission precedence
  * is `deny > ask > allow`; the first `continue:false` stop is sticky; reasons
  * for the winning rank are joined; and context and system messages accumulate

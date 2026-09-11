@@ -1,4 +1,4 @@
-﻿/** Realm-neutral Runtime, Console, Source, and Debugger protocol types. */
+/** Realm-neutral Runtime, Console, Source, and Debugger protocol types. */
 
 export * from './capabilities.ts'
 export * from './console.ts'

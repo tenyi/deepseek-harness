@@ -1,4 +1,4 @@
-﻿---
+---
 description: "web GUI 瀏覽器側的包映射：外殼啟動、瀏覽器與宿主通信、共享客戶端服務、本地化、開發重載與 UI 功能插件。"
 kind: "package-group"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向插件作者與維護者的作用域注冊庫，用于構建按 agent（智能體）或按分組隔離貢獻的注冊表或事件接口。"
 kind: "package-library"
 ---

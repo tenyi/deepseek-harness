@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The spill-policy PLUGIN: a `tools/post-execute` result transformer that keeps
  * oversized plain-text tool results out of the model's context. When a final
  * result's UTF-8 size exceeds `maxInlineBytes`, it saves the FULL text to a

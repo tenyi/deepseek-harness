@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web 會話日志 ZIP 導出：Host 流式傳輸、認證下載路由、Session Header 操作與 /export 命令。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的側邊欄外殼插件：品牌行、New Session 操作、折疊控件、可感知滾動的區域席位與底部固定的 Settings 席位。"
 kind: "package-reference"
 ---

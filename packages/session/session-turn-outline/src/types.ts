@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pure types of the turn-outline domain: the ONE home of the `turnOutline`
  * projection-key declaration, free of this package's host-side value imports
  * (zod, the projection definition). Host consumers import `./types`; client

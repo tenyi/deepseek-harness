@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的 pi-ai 多提供方適配器說明：通過 pi-ai 目錄與手工聲明網關路由 harness LLM（大語言模型）服務。"
 kind: "package-reference"
 ---

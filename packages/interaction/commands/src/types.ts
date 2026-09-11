@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Durable command event vocabulary and the registry's Cordis event
  * declaration, shared with type-only consumers. Client-safe: nothing here
  * reaches a Host-only symbol, so a Client compilation face reads the same

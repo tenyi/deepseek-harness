@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的系統提示詞組裝說明，用于添加提示詞段、變量、工具 schema 來源或配置面向模型的提示詞。"
 kind: "package-reference"
 ---

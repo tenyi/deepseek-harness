@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的 web GUI 客戶端模塊系統說明：宿主側組合啟動圖并提供插件 bundle，瀏覽器側按需加載，用于組合或排查客戶端插件。"
 kind: "package-reference"
 ---

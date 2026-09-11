@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Driver tests: the child-process message protocol mapped onto the promise,
  * the WM_CLOSE abort service (including the show-race retry and the kill
  * last resort) against fakes, plus the real spawn plumbing: hosts that cannot

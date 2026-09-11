@@ -1,4 +1,4 @@
-﻿---
+---
 description: "SPA dist server for the Web shell: claims the webserver fallback seat and serves the built frontend with traversal rejection and SPA index fallback."
 kind: "package-reference"
 ---

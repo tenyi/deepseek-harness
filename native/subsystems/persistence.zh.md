@@ -1,4 +1,4 @@
-﻿# 會話持久化
+# 會話持久化
 
 [English](persistence.md) | 中文
 

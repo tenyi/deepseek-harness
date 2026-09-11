@@ -1,4 +1,4 @@
-﻿/** Recorded source-file delivery, edits, reload, deletion, and Session ZIP behavior. */
+/** Recorded source-file delivery, edits, reload, deletion, and Session ZIP behavior. */
 import { readFile, unlink, mkdir, mkdtemp, writeFile, rm, realpath } from 'node:fs/promises'
 import { join, delimiter } from 'node:path'
 import { fileURLToPath } from 'node:url'

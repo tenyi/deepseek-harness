@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * FeedbackDialog rendering: the modal shows the seven category chips, the
  * detail box, and the hint while a target is open; a chip toggles the

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Unit tests for the backend-shared storage validation helpers and the
  * stable error vocabulary.
  */

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Materializes values leaving the script vm into plain JSON before they cross the worker
  * boundary, and renders thrown script values without rejecting the run. The walk rejects
  * values that JSON cannot preserve but trusts model-written workflow scripts: getters and proxy traps may

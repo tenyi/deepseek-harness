@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The quiet-column rule as CSS text: the state SidebarRoot toggles
  * (pointer-scrollbars.spec.tsx) hides a scrollbar only through this rule, and
  * ui-theme's gate checks the rebinding contract's shape without knowing which

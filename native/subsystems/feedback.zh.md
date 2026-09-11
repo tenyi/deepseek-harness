@@ -1,4 +1,4 @@
-﻿# 消息反饋
+# 消息反饋
 
 [English](feedback.md) | 中文
 

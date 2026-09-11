@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的 ask_user_question 功能：接管編輯器的提問 UI 與 plan-review 審批卡片。"
 kind: "package-reference"
 ---

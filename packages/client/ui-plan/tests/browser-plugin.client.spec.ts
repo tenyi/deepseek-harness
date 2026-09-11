@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ui-plan browser half on a real SlotRegistry: the plugin occupies the
  * conversation-declared `conversation.input.plan` single seat with the active
  * plan status chip; the injected face executes /plan off and folds admission

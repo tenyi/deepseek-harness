@@ -1,4 +1,4 @@
-﻿/** Versioned control messages and framed byte transport for the Desktop Host child. */
+/** Versioned control messages and framed byte transport for the Desktop Host child. */
 
 /** Protocol version implemented by the Electron shell and installed dsh Host. */
 export const DESKTOP_HOST_PROTOCOL_VERSION = 3 as const

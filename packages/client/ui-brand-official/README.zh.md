@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向側欄的官方 DeepSeek Harness 品牌填充，僅在官方構建中生效；供選擇或替換品牌呈現的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

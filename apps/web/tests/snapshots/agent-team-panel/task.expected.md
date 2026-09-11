@@ -1,4 +1,4 @@
-﻿- button "Agent Team" [expanded]:
+- button "Agent Team" [expanded]:
   - img
   - text: Agent Team
 - dialog "Agent Team":

@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * PopupSelectView interaction spec: the search input takes
  * focus on open and plain typing filters locally, ↑↓ move the filtered

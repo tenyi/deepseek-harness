@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Structural not-implemented stubs: a replaced module must expose every symbol
  * its importers name (a missing CommonJS symbol degrades to `undefined` at call
  * time instead of failing at link time), and every one of those symbols must

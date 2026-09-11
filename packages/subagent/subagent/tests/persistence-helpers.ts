@@ -1,4 +1,4 @@
-﻿/** Handle-based session-persistence helpers shared by the subagent test suites. */
+/** Handle-based session-persistence helpers shared by the subagent test suites. */
 
 import type { SessionEvent, SessionHeader, SessionId, SessionLogOffset } from '@deepseek-ai/dsh-session'
 import type { SessionPersistence } from '@deepseek-ai/dsh-session-persistence'

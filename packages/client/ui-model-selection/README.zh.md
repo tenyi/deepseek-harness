@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI 的模型選擇：/model 彈窗與 composer 模型位共用一份按提供方分組的會話級目錄；供模型路由的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

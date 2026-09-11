@@ -1,4 +1,4 @@
-﻿/**
+/**
  * MessageFeedbackController: the browser-local object layer over one Session's
  * message-feedback sidecar. These specs pin the per-item compare-and-set
  * contract — every mutation sends the version last observed, a conflict

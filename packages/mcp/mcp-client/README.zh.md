@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與維護者的 MCP 客戶端橋接說明，用于選擇、配置或排查連接到外部 MCP 服務器、并將其工具注冊到 ctx.tools 的插件。"
 kind: "package-reference"
 ---

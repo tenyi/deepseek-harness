@@ -1,4 +1,4 @@
-﻿# 實操手冊：新增一個 Remote API
+# 實操手冊：新增一個 Remote API
 
 [English](adding-a-remote-api.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Generic pi-ai-backed implementation of the Harness LLM seam.
  *
  * Each resolution produces one **immutable** snapshot — the profiles plus a

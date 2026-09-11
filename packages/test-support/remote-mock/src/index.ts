@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Endpoint-named mock for Typert Remote traffic: a table of unary answers and
  * stream scripts keyed by `<namespace>/<method>`, scripted-stream control, a
  * carrier log, and the Connection carrier face the `connection` plugin

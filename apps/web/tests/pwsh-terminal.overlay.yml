@@ -1,4 +1,4 @@
-﻿# The pwsh terminal-card lane swaps the shipped bash stack for the PowerShell
+# The pwsh terminal-card lane swaps the shipped bash stack for the PowerShell
 # twin: the bash executor row is disabled, the pwsh executor is inserted, and
 # the host tool-pwsh row is enabled by id. The pwsh-sandbox row is disabled
 # too so the inserted pwsh-local is the lone executor on every platform. The

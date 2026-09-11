@@ -1,4 +1,4 @@
-﻿/** Host-side source layout invariants. */
+/** Host-side source layout invariants. */
 
 import { readdir, readFile } from 'node:fs/promises'
 import { dirname, relative, resolve, sep } from 'node:path'

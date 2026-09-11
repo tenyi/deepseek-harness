@@ -1,4 +1,4 @@
-﻿# Bash Executor
+# Bash Executor
 
 English | [中文](shell.zh.md)
 

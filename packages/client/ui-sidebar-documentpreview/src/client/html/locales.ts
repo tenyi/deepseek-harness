@@ -1,4 +1,4 @@
-﻿/** Locale-owned HTML implementation name and iframe status text. */
+/** Locale-owned HTML implementation name and iframe status text. */
 export const zh = {
   title: 'HTML',
   frame: 'HTML 文檔預覽',

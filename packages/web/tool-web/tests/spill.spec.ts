@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Showcase integration: the real `web_fetch` tool + the real spill stack
  * (`dsh-spill-local` backend + `dsh-spill-policy`), exercised through
  * `ctx.tools.execute()`. Proves the Agent Note's default local-backend path — a large

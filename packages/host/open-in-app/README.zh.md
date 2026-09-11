@@ -1,4 +1,4 @@
-﻿---
+---
 description: "open-in-app 的主機半邊：在 macOS、Windows、Linux 上把已安裝的編輯器、Git GUI、終端與文件管理器解析為已驗證的啟動器，并以三條 webServer 路由提供目錄、圖標與啟動端點。"
 kind: "package-reference"
 ---

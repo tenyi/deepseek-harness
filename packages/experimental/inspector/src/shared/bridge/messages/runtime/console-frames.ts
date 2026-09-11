@@ -1,4 +1,4 @@
-﻿/** Typed transport for Client Console sessions and events. */
+/** Typed transport for Client Console sessions and events. */
 
 import type { ClientRemoteObjectHandle, ClientRuntimeSessionId, InspectorSourceGeneration, InspectorSourceId } from '../../ids.ts'
 import { isPlainObject } from '../../../json.ts'

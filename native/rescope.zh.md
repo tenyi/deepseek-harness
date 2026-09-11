@@ -1,4 +1,4 @@
-﻿# Vendored 包改名
+# Vendored 包改名
 
 [English](rescope.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿/** Chat-owned locale namespace and dictionaries. */
+/** Chat-owned locale namespace and dictionaries. */
 
 /** Namespace for Chat target, node, statistics, and details copy. */
 export const NS = 'chat'

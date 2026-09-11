@@ -1,4 +1,4 @@
-﻿---
+---
 description: "目錄選擇 seam 的原生 OS 選擇器后端：為坐在 web GUI 宿主屏幕前的操作者每次打開一個平臺選擇器。"
 kind: "package-reference"
 ---

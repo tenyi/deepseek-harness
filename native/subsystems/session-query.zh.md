@@ -1,4 +1,4 @@
-﻿# 會話查詢
+# 會話查詢
 
 [English](session-query.md) | 中文
 

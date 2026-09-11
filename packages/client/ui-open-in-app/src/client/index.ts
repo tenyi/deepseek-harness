@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser half of open-in-app: one Session-header split button opening the
  * session's workspace directory (the summary's `cwd`) in the remembered
  * installed application. Availability arrives once per page from the host

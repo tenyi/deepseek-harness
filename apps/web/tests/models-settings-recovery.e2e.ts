@@ -1,4 +1,4 @@
-﻿/** Stored catalog drift remains repairable through the assembled Models settings page. */
+/** Stored catalog drift remains repairable through the assembled Models settings page. */
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'

@@ -1,4 +1,4 @@
-﻿/** Download and verify the upstream Node.js runtime and copy the pinned pnpm CLI. */
+/** Download and verify the upstream Node.js runtime and copy the pinned pnpm CLI. */
 
 import { createHash } from 'node:crypto'
 import { spawnSync } from 'node:child_process'

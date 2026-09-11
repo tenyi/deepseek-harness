@@ -1,4 +1,4 @@
-﻿# Local endpoint and isolated-path patch over the shipped headless profile.
+# Local endpoint and isolated-path patch over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

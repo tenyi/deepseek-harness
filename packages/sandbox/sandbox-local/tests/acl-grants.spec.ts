@@ -1,4 +1,4 @@
-﻿/**
+/**
  * windows-acl grant ownership through the real LocalSandboxProvider: one
  * standing capability per workspace plus one random, distinct, revocable
  * temp capability per live session/workspace pair. The Win32 grant surface

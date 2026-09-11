@@ -1,4 +1,4 @@
-﻿# Cookbook: 新增設置卡片
+# Cookbook: 新增設置卡片
 
 [English](adding-a-settings-card.md) | 中文
 

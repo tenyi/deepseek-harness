@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Bundled `dsh-badge` skill provider.
  *
  * @module @deepseek-ai/dsh-skill-badge

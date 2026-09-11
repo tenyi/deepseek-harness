@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Goal surface for the Web GUI: the composer-context strip that shows the current goal and edits, pauses, resumes, or clears it; for users and maintainers of the goal experience."
 kind: "package-reference"
 ---

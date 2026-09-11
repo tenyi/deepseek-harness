@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * Stage one, as the registry sees it: the type is a page that claims no
  * address, sits in the builtin band, and offers the guide page one entry that

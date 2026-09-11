@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Windows durable namespace helpers for the JSONL backend.
  *
  * POSIX publishes a newly-created log by creating a directory entry and then

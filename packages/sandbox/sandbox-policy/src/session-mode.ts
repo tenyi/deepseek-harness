@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Per-session sandbox-mode override: the session log as the store. A runtime
  * switch (a UI policy control or test scenario) is recorded as one
  * `sandbox/mode` event on the session it applies to;

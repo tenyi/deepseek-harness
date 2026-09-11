@@ -1,4 +1,4 @@
-﻿/** Release the gated background SDK child only after job_output starts waiting. */
+/** Release the gated background SDK child only after job_output starts waiting. */
 
 import { writeFileSync } from 'node:fs'
 import type { Context } from '@deepseek-ai/cordis'

@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: seeded history. A recorded session seeded cold through
+// Web e2e scenario: seeded history. A recorded session seeded cold through
 // the REAL persistence API renders purely from the log — the surface nothing
 // else covers: sidebar cold listing, cold history paging without Agent
 // activation, history-page tool views, and the client's log-ordered transcript

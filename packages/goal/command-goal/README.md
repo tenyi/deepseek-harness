@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The human-facing /goal slash command for users and maintainers choosing, composing, or debugging goal control in UI command planes."
 kind: "package-reference"
 ---

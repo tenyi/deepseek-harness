@@ -1,4 +1,4 @@
-﻿---
+---
 description: "基于 waterfall 的問答服務，用于工具、權限插件、本地 answerer 與 Agent-scoped Web 交互。"
 kind: "package-reference"
 ---

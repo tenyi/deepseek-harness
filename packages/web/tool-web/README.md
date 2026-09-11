@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The model-facing web tools (web_search, web_fetch) over ctx.web: how deployments enable, configure, and observe the search and fetch tools the model sees."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿# Minimal tool-pwsh composition: real app boot path, real pwsh executor, real
+# Minimal tool-pwsh composition: real app boot path, real pwsh executor, real
 # foreground + background tool calls; driven by the package's loader.spec.ts.
 - id: system-prompt
   name: '@deepseek-ai/dsh-system-prompt'

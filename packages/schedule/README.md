@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The schedule group map: session-local durable reminders over the session log, for users and maintainers navigating the group."
 kind: "package-group"
 ---

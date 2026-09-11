@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared `/` menu ranker: case-insensitive ordered-subsequence matching,
  * prefix hits first, alignment score next, source order for ties.
  */

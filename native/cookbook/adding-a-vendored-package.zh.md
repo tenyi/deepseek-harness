@@ -1,4 +1,4 @@
-﻿# 實操手冊：添加一個 vendored 包
+# 實操手冊：添加一個 vendored 包
 
 [English](adding-a-vendored-package.md) | 中文
 

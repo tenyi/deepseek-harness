@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Real-backend end-to-end: LocalSandboxProvider (win32 chain → the
  * windows-acl runner), SandboxPolicyService, and SandboxPwshExecutor with
  * REAL pwsh spawns confined through the runner — the debug-instance

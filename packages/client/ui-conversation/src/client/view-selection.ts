@@ -1,4 +1,4 @@
-﻿import type { ViewTab } from './contract/views.ts'
+import type { ViewTab } from './contract/views.ts'
 
 const DEFAULT_VIEW_ID = 'chat'
 

@@ -1,4 +1,4 @@
-﻿/** What the browser half registers, and that it all leaves with the fiber. */
+/** What the browser half registers, and that it all leaves with the fiber. */
 
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, vi } from 'vitest'

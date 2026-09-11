@@ -1,4 +1,4 @@
-﻿<!-- 由 scripts/gen-module-graph.ts 生成——請勿手工編輯。
+<!-- 由 scripts/gen-module-graph.ts 生成——請勿手工編輯。
      運行 `pnpm run gen-module-graph` 重新生成。 -->
 
 # 共享實例依賴關系圖

@@ -1,4 +1,4 @@
-﻿// detectTrigger word-boundary, position, guard-tier, and span behavior.
+// detectTrigger word-boundary, position, guard-tier, and span behavior.
 // URL rule pinned here: '/' is dead when its predecessor is
 // another '/' (second slash of '//') or a ':' itself preceded by a
 // non-whitespace char (scheme separator) — this is the concrete rule chosen

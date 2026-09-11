@@ -1,4 +1,4 @@
-﻿import { afterEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
+import { afterEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
 import type {
   RpcRequest,
   RpcResponse,

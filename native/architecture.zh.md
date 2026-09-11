@@ -1,4 +1,4 @@
-﻿# DeepSeek Harness 架構
+# DeepSeek Harness 架構
 
 [English](architecture.md) | 中文
 

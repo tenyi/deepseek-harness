@@ -1,4 +1,4 @@
-﻿// Card view model: what a definition card can and cannot derive from the frozen
+// Card view model: what a definition card can and cannot derive from the frozen
 // call/result slice.
 
 import { describe, expect, it } from 'vitest'

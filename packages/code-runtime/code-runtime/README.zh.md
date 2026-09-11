@@ -1,4 +1,4 @@
-﻿---
+---
 description: "抽象代碼執行 seam（`ctx.codeRuntime`），供用戶與維護者組合、消費或構建后端，以針對宿主提供的綁定運行一段模型編寫的程序。"
 kind: "package-reference"
 ---

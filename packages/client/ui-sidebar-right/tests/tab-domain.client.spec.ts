@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The Tab domain: what a record carries that the layout does not, and how long.
  *
  * Every assertion here is a lifetime rule a tab type relies on through its

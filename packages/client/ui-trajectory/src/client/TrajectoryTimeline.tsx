@@ -1,4 +1,4 @@
-﻿/** Chrome-Network-style overview timeline for focusing the trajectory ledger. */
+/** Chrome-Network-style overview timeline for focusing the trajectory ledger. */
 
 import {
   memo, useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent,

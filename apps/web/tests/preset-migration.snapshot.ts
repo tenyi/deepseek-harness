@@ -1,4 +1,4 @@
-﻿/** Cold V2 restoration mounts the shipped PTC preset and publishes only a V3 successor. */
+/** Cold V2 restoration mounts the shipped PTC preset and publishes only a V3 successor. */
 
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'

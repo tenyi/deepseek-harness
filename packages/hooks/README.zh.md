@@ -1,4 +1,4 @@
-﻿---
+---
 description: "hooks 組地圖：在 agent（智能體）運行期間使用現有的 Claude Code 與 Codex shell 鉤子配置，供瀏覽本組的用戶與維護者閱讀。"
 kind: "package-group"
 ---

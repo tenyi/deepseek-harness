@@ -1,4 +1,4 @@
-﻿/** Per-DevTools-session read-only DOM projection over Cordis tree snapshots. */
+/** Per-DevTools-session read-only DOM projection over Cordis tree snapshots. */
 
 import { realmObjectExpression } from '../../../../shared/cordis/object-registry.ts'
 import type { InspectorSourceDescriptor } from '../../../../shared/bridge/messages/observation.ts'

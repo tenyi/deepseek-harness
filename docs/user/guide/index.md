@@ -1,4 +1,4 @@
-﻿# Use the Web UI
+# Use the Web UI
 
 English | [中文](index.zh.md)
 

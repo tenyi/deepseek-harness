@@ -1,4 +1,4 @@
-﻿/* Every color resolves through a `--dsw-alias-*` token. Bare `--border` /
+/* Every color resolves through a `--dsw-alias-*` token. Bare `--border` /
  * `--surface` / `--text-*` names, which nothing in this app defines, would
  * render the light-mode literals written as their fallbacks and stay light
  * under the dark theme. */

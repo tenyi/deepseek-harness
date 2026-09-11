@@ -1,4 +1,4 @@
-﻿// TrajectoryTurn: sticky Turn header plus the padded Message/Step body.
+// TrajectoryTurn: sticky Turn header plus the padded Message/Step body.
 
 import type { ReactNode } from 'react'
 import { TrajectoryTurnHeader } from './TrajectoryTurnHeader.tsx'

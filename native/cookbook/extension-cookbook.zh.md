@@ -1,4 +1,4 @@
-﻿# 實操手冊：擴展插件形態
+# 實操手冊：擴展插件形態
 
 [English](extension-cookbook.md) | 中文
 

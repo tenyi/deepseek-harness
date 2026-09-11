@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Consumer-surface tests for the `pwsh` tool over a FAKE bash executor,
  * exercised through `ctx.tools.execute()` so nothing bypasses the tool
  * registry. The fake executor makes every seam outcome scriptable — output

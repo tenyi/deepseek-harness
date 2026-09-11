@@ -1,4 +1,4 @@
-﻿{"type":"session","version":3,"id":"subagent-inheritance-child","createdAt":2,"isSeeded":false,"delegationDepth":1}
+{"type":"session","version":3,"id":"subagent-inheritance-child","createdAt":2,"isSeeded":false,"delegationDepth":1}
 {"type":"turn/start","data":{"turn":1}}
 {"type":"step/start","data":{"turn":1,"step":1}}
 {"type":"system/message","data":{"turn":1,"step":1,"message":{"role":"system","content":[],"source":{"kind":"plugin","plugin":"@deepseek-ai/dsh-system-prompt"},"id":"child-system-head"}},"surfaceOp":"append"}

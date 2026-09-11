@@ -1,4 +1,4 @@
-﻿---
+---
 description: "ctx.web 的匿名公共 HTTP(S) 抓取后端：部署方如何掛載有界、安全的 URL 抓取，含同源重定向與僅文本解碼。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的部署默認模型選擇說明，用于選擇、配置或調試新創建的 agent（智能體）初始使用哪個模型。"
 kind: "package-reference"
 ---

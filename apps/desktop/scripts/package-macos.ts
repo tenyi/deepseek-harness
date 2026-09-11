@@ -1,4 +1,4 @@
-﻿/** Build the ZIP and DMG from separate signed application copies with overlapping notarization. */
+/** Build the ZIP and DMG from separate signed application copies with overlapping notarization. */
 
 import { execFile } from 'node:child_process'
 import { mkdtemp, rename, rm, stat } from 'node:fs/promises'

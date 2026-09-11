@@ -1,4 +1,4 @@
-﻿/** Environment-independent backend interfaces for inspected JavaScript realms. */
+/** Environment-independent backend interfaces for inspected JavaScript realms. */
 
 import type { RuntimeBackendObjectHandle, RuntimeScriptKey } from './ids.ts'
 import type {

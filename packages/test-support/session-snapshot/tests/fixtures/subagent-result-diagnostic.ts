@@ -1,4 +1,4 @@
-﻿/** Deterministic provider for model-visible foreground and Job diagnostic snapshots. */
+/** Deterministic provider for model-visible foreground and Job diagnostic snapshots. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import {

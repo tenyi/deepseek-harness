@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Plan mode is logged per-agent collaboration state: while active, a
  * deployment-owned guidance section is included in each model request, and
  * `exit_plan_mode` presents the completed plan for user review, while the

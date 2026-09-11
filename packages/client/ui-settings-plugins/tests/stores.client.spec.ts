@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The staged card form: what a draft shows before it is written, which wire
  * call a save reaches, and what happens to drafts the Host did not accept.
  */

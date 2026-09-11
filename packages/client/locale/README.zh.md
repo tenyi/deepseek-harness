@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與插件作者的 web GUI 本地化說明：zh/en 偏好、瀏覽器派生回退、類型化命名空間字典與框架翻譯席位。"
 kind: "package-reference"
 ---

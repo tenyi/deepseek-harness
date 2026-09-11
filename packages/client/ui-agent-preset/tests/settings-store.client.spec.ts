@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The agent-preset roster store: it derives the display options from one
  * roster call and treats an empty roster as "this deployment composes no
  * presets" rather than as a failure. The management section writes each

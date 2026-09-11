@@ -1,4 +1,4 @@
-﻿# Session 格式版本與發布狀態
+# Session 格式版本與發布狀態
 
 [English](session-format-status.md) | 中文
 

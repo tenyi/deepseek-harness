@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向注冊可信外部事件策略并創建 Workspace 會話的維護者，說明 webhook 規則運行時。"
 kind: "package-reference"
 ---

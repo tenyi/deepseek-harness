@@ -1,4 +1,4 @@
-﻿/**
+/**
  * jsdom slot test runtime: a real small runtime — Cordis `Context`, the
  * renderer-owned `SlotRegistry`, the `ui-session` adapter, and the UI renderer — assembled around
  * test-owned session/workspace doubles and a fail-loud file-upload stub, so feature specs exercise

@@ -1,4 +1,4 @@
-﻿/** Chat-owned Slot declarations and composed component props. */
+/** Chat-owned Slot declarations and composed component props. */
 import type { MessageId } from '@deepseek-ai/dsh-llm/brand'
 import type { SessionId, SessionSeq } from '@deepseek-ai/dsh-session/types'
 import type {

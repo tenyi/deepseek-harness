@@ -1,4 +1,4 @@
-﻿/** Operations and values exchanged with a Client realm's read-only source catalog. */
+/** Operations and values exchanged with a Client realm's read-only source catalog. */
 
 import type { RuntimeScriptKey } from '../../../cdp/ids.ts'
 import type { RuntimeScript } from '../../../cdp/index.ts'

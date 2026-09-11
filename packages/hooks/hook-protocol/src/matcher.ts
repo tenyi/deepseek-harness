@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Matcher shared by both hook dialects. Claude treats alphanumeric/underscore/
  * pipe patterns as literal alternatives and other patterns as regex; Codex
  * treats every non-empty pattern as an unanchored regex. Missing, empty, and

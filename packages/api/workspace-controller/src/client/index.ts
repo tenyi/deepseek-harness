@@ -1,4 +1,4 @@
-﻿/** Workspace-specific adapter for the Gateway-owned snapshot stream lifecycle. */
+/** Workspace-specific adapter for the Gateway-owned snapshot stream lifecycle. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import {

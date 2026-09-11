@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向客戶端與維護者的全日志會話計數與墻鐘時間說明，用于選擇、組合或排查 sessionStats 投影單元。"
 kind: "package-reference"
 ---

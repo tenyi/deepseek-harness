@@ -1,4 +1,4 @@
-﻿/**
+/**
  * FeedbackDialogController: one draft per open, submission routed by target,
  * success closes and acknowledges, failure keeps the draft with its code, a
  * settlement from a superseded open closes nothing, and the toast sequence

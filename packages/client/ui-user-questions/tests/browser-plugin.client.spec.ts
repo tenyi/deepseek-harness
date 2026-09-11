@@ -1,4 +1,4 @@
-﻿/** Scoped Remote Event wiring for the browser question consumer. */
+/** Scoped Remote Event wiring for the browser question consumer. */
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, vi } from 'vitest'
 import { SlotRegistry } from '@deepseek-ai/dsh-client-ui-renderer/client'

@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { parseSessionFormatLogFilename, sessionFormatLogFilename } from '../src/index.ts'
 
 describe('canonical Session log filenames', () => {

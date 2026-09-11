@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { mergeHookOutputs } from '@deepseek-ai/dsh-hook-protocol'
 import type { HookOutput } from '@deepseek-ai/dsh-hook-protocol'
 

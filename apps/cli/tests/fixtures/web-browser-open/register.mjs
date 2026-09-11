@@ -1,4 +1,4 @@
-﻿import { existsSync, rmSync } from 'node:fs'
+import { existsSync, rmSync } from 'node:fs'
 import { registerHooks } from 'node:module'
 import { join } from 'node:path'
 

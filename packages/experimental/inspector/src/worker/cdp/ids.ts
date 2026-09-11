@@ -1,4 +1,4 @@
-﻿/** Opaque identifiers owned by one Worker-side Chrome DevTools connection. */
+/** Opaque identifiers owned by one Worker-side Chrome DevTools connection. */
 
 import type { InspectorId } from '../../shared/identity.ts'
 

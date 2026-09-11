@@ -1,4 +1,4 @@
-﻿# Python contributor workflows
+# Python contributor workflows
 
 English | [中文](development.zh.md)
 

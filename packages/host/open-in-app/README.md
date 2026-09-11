@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Host half of open-in-app: resolving installed editors, Git GUIs, terminals, and file managers to verified launchers on macOS, Windows, and Linux, and serving the catalog, icons, and launch endpoint as three webServer routes."
 kind: "package-reference"
 ---

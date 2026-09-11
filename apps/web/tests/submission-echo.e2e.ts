@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 // Local submission echo over the BUILT client graph (keyless fixture Connection RPC
 // transport): a text-plus-image send paints its echo bubble synchronously on
 // the submit keystroke — before serialization, transport, or the fixture's

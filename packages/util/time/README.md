@@ -1,4 +1,4 @@
-﻿---
+---
 description: "IANA time-zone validation and canonicalization for maintainers accepting a caller-reported zone at a wire boundary."
 kind: "package-library"
 ---

@@ -1,4 +1,4 @@
-﻿/** Process-local assistant state retained for reconnecting Web followers. */
+/** Process-local assistant state retained for reconnecting Web followers. */
 
 import type { AssistantStreamFrame } from '@deepseek-ai/dsh-agent'
 import { AssistantStreamAccumulator } from '@deepseek-ai/dsh-llm'

@@ -1,4 +1,4 @@
-﻿import { createServer, type IncomingHttpHeaders, type ServerResponse } from 'node:http'
+import { createServer, type IncomingHttpHeaders, type ServerResponse } from 'node:http'
 
 /** One deterministic response emitted by the package-private Messages server. */
 export type MessagesBehavior =

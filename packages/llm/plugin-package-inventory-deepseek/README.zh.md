@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向發送官方 DeepSeek 請求的部署，說明活躍 Loader 包清單元數據。"
 kind: "package-reference"
 ---

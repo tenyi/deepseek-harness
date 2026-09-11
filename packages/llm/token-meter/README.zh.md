@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的具備回放感知的 token 與上下文壓力計量說明：評估提示詞規模或構建壓縮（compaction）與占用顯示。"
 kind: "package-reference"
 ---

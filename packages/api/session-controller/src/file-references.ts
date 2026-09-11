@@ -1,4 +1,4 @@
-﻿/** Session Controller adapter for Agent-scoped file-reference discovery. */
+/** Session Controller adapter for Agent-scoped file-reference discovery. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { Agent } from '@deepseek-ai/dsh-agent'

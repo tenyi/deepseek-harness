@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Display resolution: shipped presets resolve through dictionary keys, and
  * user-authored metadata is never translated.
  */

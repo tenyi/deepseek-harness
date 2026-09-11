@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared suite helper: keep this package's stand-in parent out of a scripted
  * model corpus.
  * @module park-parent

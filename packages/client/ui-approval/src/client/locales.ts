@@ -1,4 +1,4 @@
-﻿/** `approval` namespace dictionaries. */
+/** `approval` namespace dictionaries. */
 
 /** Simplified Chinese dictionary and key-set source of truth. */
 export const zh = {

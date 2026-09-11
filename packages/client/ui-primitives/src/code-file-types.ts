@@ -1,4 +1,4 @@
-﻿/** Code and configuration categories with embedded full-color glyphs. */
+/** Code and configuration categories with embedded full-color glyphs. */
 export const CODE_FILE_TYPES = [
   'angular',
   'c',

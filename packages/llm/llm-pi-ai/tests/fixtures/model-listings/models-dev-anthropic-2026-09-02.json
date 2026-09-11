@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "anthropic",
   "env": [
     "ANTHROPIC_API_KEY"

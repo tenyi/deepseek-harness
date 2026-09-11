@@ -1,4 +1,4 @@
-﻿---
+---
 description: "構建時 Typert 生成器：源代碼類型分析、與編譯器無關的模型與產物生成，供接入 Typert 發布或消費生成產物的維護者閱讀。"
 kind: "package-library"
 ---

@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "@deepseek-ai/dsh-session",
   "description": "Event-sourced session store for the DeepSeek Harness",
   "version": "0.1.5-rc.2",

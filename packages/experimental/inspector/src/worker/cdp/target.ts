@@ -1,4 +1,4 @@
-﻿/** Minimal page-target CDP methods required to expose Network, Console, and Sources together. */
+/** Minimal page-target CDP methods required to expose Network, Console, and Sources together. */
 
 import type { CdpRequest } from './protocol.ts'
 

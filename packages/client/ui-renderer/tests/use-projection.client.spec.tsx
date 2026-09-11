@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * useProjection standard-kit delivery (session-projection subsystem page:
  * docs/subsystems/session-projection.md): the fifth

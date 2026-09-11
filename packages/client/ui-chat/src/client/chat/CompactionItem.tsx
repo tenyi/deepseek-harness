@@ -1,4 +1,4 @@
-﻿// A compaction marker does not replace shadowed transcript rows. It is
+// A compaction marker does not replace shadowed transcript rows. It is
 // expandable only when the current window includes its cited summary.
 
 import { memo, useMemo, useState } from 'react'

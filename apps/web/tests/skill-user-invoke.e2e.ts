@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: a user invokes a disable-model-invocation skill through
+// Web e2e scenario: a user invokes a disable-model-invocation skill through
 // the composer (issue #1470). The entered `/name args` line claims into
 // skill.invoke: the real host forwards the gesture as an ordinary user
 // prompt, injects the rendered body as instructions context named after the

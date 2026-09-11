@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Frozen released-v1 Session reader and cardinality-changing migration that embeds Assistant streams in released v2 events."
 kind: "package-reference"
 ---

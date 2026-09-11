@@ -1,4 +1,4 @@
-﻿/** CDP Network projection over the Worker-owned normalized network store. */
+/** CDP Network projection over the Worker-owned normalized network store. */
 
 import { Buffer } from 'node:buffer'
 import type { InspectorHeader } from '../../../../shared/network/observation.ts'

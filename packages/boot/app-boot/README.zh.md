@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh profile 與臨時 Python SDK 運行時的共享 Loader 啟動支持：環境層、patch、診斷與配置預覽。"
 kind: "package-library"
 ---

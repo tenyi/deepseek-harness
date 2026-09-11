@@ -1,4 +1,4 @@
-﻿/**
+/**
  * In-memory settings provider fixture: the smallest real subclass of the Service Definition,
  * used by the base-class behavior suite in place of a file- or network-backed
  * provider. Kept in `tests/` because production providers live in their own

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SubmitMachine: the pure per-session submit-plane state machine.
  * Events in, effects out; zero React / DOM / cordis. Package-private; the
  * SessionInput shell owns editor state and executes the returned effects.

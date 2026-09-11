@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Queue snapshot semantics: authoritative replacement after every host-side
  * change, reconnect re-baselining, pre-instantiation buffering, editable-text
  * projection, and snapshot reference stability.

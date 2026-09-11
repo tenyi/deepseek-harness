@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Host routes over a real WebServer booted through the vendored Loader
  * (the REAL-composition requirement), asserting the HTTP surface: the
  * connection trust fence, the one-pass catalog resolution the routes share,

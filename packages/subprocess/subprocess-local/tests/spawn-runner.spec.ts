@@ -1,4 +1,4 @@
-﻿import { EventEmitter } from 'node:events'
+import { EventEmitter } from 'node:events'
 import { spawnSync } from 'node:child_process'
 import {
   existsSync,

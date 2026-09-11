@@ -1,4 +1,4 @@
-﻿/** Host-to-Worker lifecycle messages and Worker readiness results. */
+/** Host-to-Worker lifecycle messages and Worker readiness results. */
 
 /** Fully resolved Worker configuration. */
 export interface InspectorWorkerConfig {

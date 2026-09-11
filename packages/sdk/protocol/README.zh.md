@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向客戶端與服務端實現者的 SDK 協議格式（wire format）說明：Harness 運行時與其 SDK 客戶端之間使用的按換行分幀 JSON-RPC 傳輸，以及具名的請求、結果與通知類型。"
 kind: "package-library"
 ---

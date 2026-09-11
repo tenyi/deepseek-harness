@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * createSlotRenderer machinery account over a behavioral fake host: root
  * outlet + per-kind child outlets, standard-kit synthesis (renderSlot

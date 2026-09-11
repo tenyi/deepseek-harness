@@ -1,4 +1,4 @@
-﻿/** CDP-independent snapshot model for a Cordis Context and Fiber tree. */
+/** CDP-independent snapshot model for a Cordis Context and Fiber tree. */
 
 import {
   type InspectorObjectHandle,

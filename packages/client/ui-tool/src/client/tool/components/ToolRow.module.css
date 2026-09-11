@@ -1,4 +1,4 @@
-﻿/* Tool summary row (figma 122:9479): 24px single line at the default size —
+/* Tool summary row (figma 122:9479): 24px single line at the default size —
    [16 leading] gap6 [title 13/24] gap8 [2x2 dot] gap8 [summary FILL truncate].
    The Settings font-size preference rides the body-published axis: the shared
    DisclosureRow chrome scales the row height and leading glyph by the body px

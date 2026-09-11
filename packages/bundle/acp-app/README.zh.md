@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向啟動持久 harness agent（智能體）的用戶與維護者，說明純自動化 ACP（Agent Client Protocol）stdio 應用 profile。"
 kind: "package-bundle"
 ---

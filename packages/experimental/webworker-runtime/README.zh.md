@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向構建或排查實驗性 Web 預覽運行時的維護者，說明瀏覽器 worker 中的 harness 托管。"
 kind: "package-library"
 ---

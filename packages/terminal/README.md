@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Package map for the persistent terminal capability family: the owner-scoped ctx.terminals service, the shell backend that starts interactive bash or pwsh, and the six model-facing tools."
 kind: "package-group"
 ---

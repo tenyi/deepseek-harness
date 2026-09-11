@@ -1,4 +1,4 @@
-﻿# Bilingual documentation
+# Bilingual documentation
 
 English | [中文](README.zh.md)
 

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The goal group map: one durable completion objective per session, with model tools, a human command, and automatic continuation, for users and maintainers navigating the group."
 kind: "package-group"
 ---

@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 // The image render intent on the web side: the pure imageCardModel derivation over
 // a settled call's persisted metadata and raw envelope, and the chat tool row that
 // consumes it — the keyed ReadImageRow composing ToolRow with the image card as its

@@ -1,4 +1,4 @@
-﻿import type { ChatNode } from './chat-nodes.ts'
+import type { ChatNode } from './chat-nodes.ts'
 
 /** Current process range and finalized answer boundary derived from one Turn. */
 export interface TurnProcessSpec {

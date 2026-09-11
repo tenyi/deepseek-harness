@@ -1,4 +1,4 @@
-﻿/** Worker-owned routing between synthetic Client contexts and source generations. */
+/** Worker-owned routing between synthetic Client contexts and source generations. */
 
 import { randomUUID } from 'node:crypto'
 import type {

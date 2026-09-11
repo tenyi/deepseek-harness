@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Permission preset surfaces for the Web GUI: the General settings default row and the /permission picker for the current session; for users and maintainers of permission policy."
 kind: "package-reference"
 ---

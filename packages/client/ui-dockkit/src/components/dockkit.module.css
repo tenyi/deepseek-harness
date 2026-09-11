@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Docking-kit styles. One sheet on purpose: a consumer bundle de-duplicates
  * injected stylesheets by `<pluginId>/<basename>`, so a second sheet whose file
  * name matches one in the embedding package would be dropped silently. Keeping

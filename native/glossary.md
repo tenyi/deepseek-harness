@@ -1,4 +1,4 @@
-﻿# Glossary
+# Glossary
 
 English | [中文](glossary.zh.md)
 

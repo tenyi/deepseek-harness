@@ -1,4 +1,4 @@
-﻿import type { ChatNode } from '../contract/chat-nodes.ts'
+import type { ChatNode } from '../contract/chat-nodes.ts'
 import type {
   ChatLocationNodeIndex, ChatNodeStore, ChatTurnProcessPresentation,
 } from '../contract/snapshot.ts'

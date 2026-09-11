@@ -1,4 +1,4 @@
-﻿---
+---
 description: "In-process spawn subagent backend for users and maintainers choosing, configuring, or debugging fresh-child delegation."
 kind: "package-reference"
 ---

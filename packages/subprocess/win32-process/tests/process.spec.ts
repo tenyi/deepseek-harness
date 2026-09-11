@@ -1,4 +1,4 @@
-﻿import koffi from 'koffi'
+import koffi from 'koffi'
 import { describe, expect, it, vi } from 'vitest'
 import {
   Win32Error,

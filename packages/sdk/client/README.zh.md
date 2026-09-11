@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向以子進程方式啟動 DeepSeek Harness 運行時、并通過 stdio JSON-RPC 驅動 agent（智能體）輪次的調用方的 TypeScript SDK 客戶端：DeepSeekHarness 運行 API 與低層 HarnessClient。"
 kind: "package-library"
 ---

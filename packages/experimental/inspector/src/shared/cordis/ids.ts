@@ -1,4 +1,4 @@
-﻿/** Opaque identifiers owned by a realm-local Cordis object registry. */
+/** Opaque identifiers owned by a realm-local Cordis object registry. */
 
 import type { InspectorId } from '../identity.ts'
 

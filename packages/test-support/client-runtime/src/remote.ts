@@ -1,4 +1,4 @@
-﻿/** Test-owned Remote face: `$on` subscriptions with an explicit test event driver. */
+/** Test-owned Remote face: `$on` subscriptions with an explicit test event driver. */
 import type { Context } from '@deepseek-ai/cordis'
 
 // Value re-export for spec-side failure construction: the api-remotes facade

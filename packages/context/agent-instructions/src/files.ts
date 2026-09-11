@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Instruction-file discovery and bounded, abort-aware provider reads.
  *
  * @module @deepseek-ai/dsh-agent-instructions/files

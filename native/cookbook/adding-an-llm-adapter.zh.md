@@ -1,4 +1,4 @@
-﻿# 實操手冊：添加 LLM（大語言模型）適配器
+# 實操手冊：添加 LLM（大語言模型）適配器
 
 [English](adding-an-llm-adapter.md) | 中文
 

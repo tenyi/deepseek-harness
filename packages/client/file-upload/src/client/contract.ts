@@ -1,4 +1,4 @@
-﻿import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import type { SessionId } from '@deepseek-ai/dsh-session/types'
 import type { RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
 import type { FileUploadValue } from '../types.ts'
 

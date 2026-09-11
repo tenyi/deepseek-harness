@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Node-API v8 binding for asynchronous flock(LOCK_EX | LOCK_NB).
  * The caller owns fd through completion; this module never opens, duplicates,
  * closes, or explicitly unlocks it. The callback receives zero or a positive

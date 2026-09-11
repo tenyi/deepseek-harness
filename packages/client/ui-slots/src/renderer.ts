@@ -1,4 +1,4 @@
-﻿/** React-free contracts between the slot host and an installed renderer. */
+/** React-free contracts between the slot host and an installed renderer. */
 import type { Context } from '@deepseek-ai/cordis'
 import type { ReactNode } from 'react'
 import type { ObservableSnapshot } from '@deepseek-ai/dsh-client-store'

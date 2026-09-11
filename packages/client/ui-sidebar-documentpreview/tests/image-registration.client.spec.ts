@@ -1,4 +1,4 @@
-﻿/** Image metadata, keyed slot, dictionary, and disposal registration. */
+/** Image metadata, keyed slot, dictionary, and disposal registration. */
 import { Context } from '@deepseek-ai/cordis'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { DocumentPreviewRegistry } from '../src/client/document/registry.ts'

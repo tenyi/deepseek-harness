@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The escalation vocabulary and choreography shared by every sandbox-enforcing
  * tool family (`@deepseek-ai/dsh-tool-bash`, `@deepseek-ai/dsh-tool-fs`): the
  * strictly-wider ladder, the argument-pairing validation, the model-facing

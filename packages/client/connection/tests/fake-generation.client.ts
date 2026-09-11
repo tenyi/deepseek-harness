@@ -1,4 +1,4 @@
-﻿/** Test-local programmable Connection generation source. */
+/** Test-local programmable Connection generation source. */
 import type { ConnectionGenerationSource } from '../src/client/connection.ts'
 
 type StreamItem = { kind: 'end' } | { kind: 'fail'; error: unknown }

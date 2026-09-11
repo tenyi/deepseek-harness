@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Function plugin registering the `turnOutline` projection unit: the
  * whole-log turn outline (turn number, `turn/start` seq, bounded prompt
  * preview) served through the session-projection seam — registry snapshot,

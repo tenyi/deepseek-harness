@@ -1,4 +1,4 @@
-﻿/** Host registry for model-visible, read-only Cordis capability queries. */
+/** Host registry for model-visible, read-only Cordis capability queries. */
 
 import { Service } from '@deepseek-ai/cordis'
 import type { Context } from '@deepseek-ai/cordis'

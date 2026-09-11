@@ -1,4 +1,4 @@
-﻿# 測試策略
+# 測試策略
 
 [English](testing.md) | 中文
 

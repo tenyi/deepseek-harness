@@ -1,4 +1,4 @@
-﻿/** Exact-read Session query used by the descriptor-less child snapshot. */
+/** Exact-read Session query used by the descriptor-less child snapshot. */
 
 import SessionQueryEngine from '@deepseek-ai/dsh-session-query'
 

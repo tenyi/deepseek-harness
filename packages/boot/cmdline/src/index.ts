@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @deepseek-ai/dsh-cmdline — the command line a dsh launcher hands to the app
  * it boots.
  *

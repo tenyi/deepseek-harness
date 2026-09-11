@@ -1,4 +1,4 @@
-﻿!include "LogicLib.nsh"
+!include "LogicLib.nsh"
 
 !macro customInstall
   Push $0

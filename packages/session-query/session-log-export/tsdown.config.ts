@@ -1,4 +1,4 @@
-﻿import { clientBundle } from '../../client/tsdown.client.ts'
+import { clientBundle } from '../../client/tsdown.client.ts'
 
 export default clientBundle(
   '@deepseek-ai/dsh-session-log-export',

@@ -1,4 +1,4 @@
-﻿/** Desktop-owned host links and validation of the external plugin dependency graph. */
+/** Desktop-owned host links and validation of the external plugin dependency graph. */
 
 import { createHash } from 'node:crypto'
 import { existsSync, lstatSync, mkdirSync, readFileSync, readlinkSync, realpathSync, readdirSync, symlinkSync, unlinkSync, writeFileSync } from 'node:fs'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Profile discovery, initialization, and patch-layer composition for the
  * `dsh --profile` launcher family.
  *

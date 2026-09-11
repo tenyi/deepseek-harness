@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The store's write set: pages keyed by their first line, invalidated by a newer
  * file version; a view that survives a reset; one bucket per tab, dropped on
  * `forget` so a closed tab leaves nothing behind.

@@ -1,4 +1,4 @@
-﻿/** Live Session queue, jobs, and projection state with reconnect baselines. */
+/** Live Session queue, jobs, and projection state with reconnect baselines. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { Agent, InboxState } from '@deepseek-ai/dsh-agent'

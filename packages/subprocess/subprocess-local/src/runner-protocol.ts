@@ -1,4 +1,4 @@
-﻿/** Closed private transports shared by the native subprocess runner. */
+/** Closed private transports shared by the native subprocess runner. */
 
 import {
   chmodSync,

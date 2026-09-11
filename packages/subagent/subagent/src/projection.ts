@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pure session projections for subagent identity (mode/label) and active-turn
  * duration.
  *

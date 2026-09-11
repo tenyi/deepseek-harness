@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的「插件」設置分區：功能自有的標簽頁、可配置宿主平面插件卡片，以及 settings.plugin.item 擴展點。"
 kind: "package-reference"
 ---

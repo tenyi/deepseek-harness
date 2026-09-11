@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Generic-task adaptation for background bash process handles.
  *
  * @module @deepseek-ai/dsh-tool-bash/background

@@ -1,4 +1,4 @@
-﻿/** Read-only Host plugin inventory registered into Web Settings. */
+/** Read-only Host plugin inventory registered into Web Settings. */
 
 import type {} from '@deepseek-ai/dsh-client-locale/client'
 import type { Context as ClientContext } from '@deepseek-ai/cordis'

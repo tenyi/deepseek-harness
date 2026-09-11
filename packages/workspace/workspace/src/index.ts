@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Workspace entity registry (`ctx.workspaceRegistry`): durable workspace records,
  * stable registry order, and header-validated session membership over the
  * domain data form.

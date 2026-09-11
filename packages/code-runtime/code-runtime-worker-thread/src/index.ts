@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Worker-thread code runtime: a fresh worker runs each host-type-stripped TypeScript program
  * and bridges bindings over its message port. This is containment, not a security boundary:
  * model code has bash-equivalent trust despite an empty environment, a heap cap, measured

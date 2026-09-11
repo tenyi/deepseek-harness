@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向在 UI 命令平面中選擇、組合或排查 goal 控制的用戶與維護者的 /goal 斜杠命令說明。"
 kind: "package-reference"
 ---

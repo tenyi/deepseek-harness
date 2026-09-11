@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Transport factory: creates the appropriate MCP transport based on the
  * plugin's resolved config. Stdio spawns a child process (with credential
  * scrubbing); Streamable HTTP connects to a URL.

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The feedback package group: user feedback on sessions and assistant messages, for users and maintainers choosing, composing, or debugging feedback capture."
 kind: "package-group"
 ---

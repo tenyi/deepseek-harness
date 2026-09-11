@@ -1,4 +1,4 @@
-﻿/** Full-file reads retain the ordinary file gates and never return a silently truncated result. */
+/** Full-file reads retain the ordinary file gates and never return a silently truncated result. */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mkdir, symlink, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'

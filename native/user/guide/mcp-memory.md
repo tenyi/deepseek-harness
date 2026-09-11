@@ -1,4 +1,4 @@
-﻿# Connect a third-party memory MCP server
+# Connect a third-party memory MCP server
 
 English | [中文](mcp-memory.zh.md)
 

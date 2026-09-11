@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的計劃模式說明：用于選擇、配置或排查帶部署引導、/plan 命令與經用戶評審退出的逐 agent（智能體）規劃功能。"
 kind: "package-reference"
 ---

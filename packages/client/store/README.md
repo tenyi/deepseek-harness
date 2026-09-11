@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Observable browser state stores with explicit snapshots, subscriptions, and lifecycle ownership."
 kind: "package-library"
 ---

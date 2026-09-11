@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * The two conversation-adjacent surfaces: the new-session chip naming the
  * next session's preset, and the session header's read-only label. The split

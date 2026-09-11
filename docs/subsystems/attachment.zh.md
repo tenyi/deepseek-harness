@@ -1,4 +1,4 @@
-﻿# 持久附件
+# 持久附件
 
 [English](attachment.md) | 中文
 

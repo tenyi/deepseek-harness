@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Child-scoped structured-output tool, prompt instruction, terminal guard, and authoritative
  * result capture for in-process subagents. Each child registers its real schema on its own
  * scope, so concurrent runs do not interact and disposal leaves no global residue. The prompt

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Filesystem discovery of agent presets. A preset is a directory holding
  * {@link COMPOSITION_FILE}, optionally beside a {@link METADATA_FILE} carrying
  * its display text; the directory name is the preset id. Discovery

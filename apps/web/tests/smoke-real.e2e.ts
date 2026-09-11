@@ -1,4 +1,4 @@
-﻿// Real-host smoke: spawn `dsh web` with a real key, walk the full flow
+// Real-host smoke: spawn `dsh web` with a real key, walk the full flow
 // list in a real chromium, screenshot every screen into .artifacts/ for the
 // figma comparison pass. Self-skips without DEEPSEEK_API_KEY (repo e2e
 // convention); vitest.web.config.ts loads the repo-root .env before this file

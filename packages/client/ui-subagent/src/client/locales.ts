@@ -1,4 +1,4 @@
-﻿/** `subagent` namespace dictionaries. */
+/** `subagent` namespace dictionaries. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'subagent'

@@ -1,4 +1,4 @@
-﻿/** Per-DevTools-connection sessions opened from the shared realm registry. */
+/** Per-DevTools-connection sessions opened from the shared realm registry. */
 
 import { randomUUID } from 'node:crypto'
 import { inspectorId } from '../../shared/identity.ts'

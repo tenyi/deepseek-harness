@@ -1,4 +1,4 @@
-﻿/**
+/**
  * UserText's font-size-axis adoption as CSS text. jsdom has no layout, so
  * this reads the declaration that keeps inline reference glyphs riding the
  * consumer's text size in both surfaces the projection serves (bubble and

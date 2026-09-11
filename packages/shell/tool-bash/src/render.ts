@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Model-facing result rendering for the bash tool.
  *
  * @module @deepseek-ai/dsh-tool-bash/render

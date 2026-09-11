@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The shared Typert Remote protocol: decorators, wire descriptors, codecs, and provider contracts used by business packages, generated artifacts, the Host Gateway, and the Client API."
 kind: "package-library"
 ---

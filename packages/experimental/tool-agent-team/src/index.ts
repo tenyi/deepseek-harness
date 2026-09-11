@@ -1,4 +1,4 @@
-﻿/** Scoped model-facing tools for the opt-in Agent Teams runtime. */
+/** Scoped model-facing tools for the opt-in Agent Teams runtime. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'

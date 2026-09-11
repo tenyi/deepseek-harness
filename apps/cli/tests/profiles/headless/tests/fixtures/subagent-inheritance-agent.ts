@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Loader fixture that resumes the seeded read-only parent before CLI dispatch.
  * @module subagent-inheritance-agent
  */

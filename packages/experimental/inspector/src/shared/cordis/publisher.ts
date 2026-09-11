@@ -1,4 +1,4 @@
-﻿/** Shared Host/Client publication of browser-safe Cordis snapshots. */
+/** Shared Host/Client publication of browser-safe Cordis snapshots. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { CORDIS_TREE_TOPIC } from '../bridge/messages/cordis.ts'

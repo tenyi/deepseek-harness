@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The sandbox-enforcing ctx.fs backend for deployments and maintainers confining model file mutations to a session workspace."
 kind: "package-reference"
 ---

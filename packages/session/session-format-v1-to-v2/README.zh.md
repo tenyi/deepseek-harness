@@ -1,4 +1,4 @@
-﻿---
+---
 description: "凍結的已發布 v1 Session 讀取器，以及把 Assistant 流嵌入已發布 v2 事件的基數變化遷移。"
 kind: "package-reference"
 ---

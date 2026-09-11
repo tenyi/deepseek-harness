@@ -1,4 +1,4 @@
-﻿/** GitHub HTTP authentication, parsing, and fire-and-forget dispatch. */
+/** GitHub HTTP authentication, parsing, and fire-and-forget dispatch. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { IncomingMessage, ServerResponse } from 'node:http'

@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * Ownerless-copy registrations inside the assembled web client: the five
  * seats, the `settings` dictionaries, the locale-following nav label, the

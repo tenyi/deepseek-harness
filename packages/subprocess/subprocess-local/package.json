@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "@deepseek-ai/dsh-subprocess-local",
   "description": "Local-subprocess implementation of the DeepSeek Harness subprocess seam",
   "version": "0.1.5-rc.2",

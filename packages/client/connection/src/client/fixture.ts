@@ -1,4 +1,4 @@
-﻿// Standalone browser fixture for UI development without a server.
+// Standalone browser fixture for UI development without a server.
 
 import {
   createAssistantMessage,

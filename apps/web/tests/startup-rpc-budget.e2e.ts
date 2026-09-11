@@ -1,4 +1,4 @@
-﻿// Cold boot may issue at most two settings/describe calls regardless of client
+// Cold boot may issue at most two settings/describe calls regardless of client
 // plugin count. No model call or replay fixture is involved.
 import type { Browser, Page } from 'playwright'
 import { chromium } from 'playwright'

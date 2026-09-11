@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The configurable-plugins tab's card list.
  *
  * The tab dispatches its slot by settings namespace, so what it renders is

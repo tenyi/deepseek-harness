@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The worker bundle's module proxy table: the ONLY platform fork of the host
  * tree. Entries replace Node builtins, external npm packages, and the native
  * flock subpath; other workspace and vendored modules are mounted as they ship.

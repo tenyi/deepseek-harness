@@ -1,4 +1,4 @@
-﻿/** Model-facing discovery of LLM routes available to child Agents. */
+/** Model-facing discovery of LLM routes available to child Agents. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type LlmRuntime from '@deepseek-ai/dsh-llm'

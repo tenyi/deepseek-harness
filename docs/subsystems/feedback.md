@@ -1,4 +1,4 @@
-﻿# Message Feedback
+# Message Feedback
 
 English | [中文](feedback.zh.md)
 

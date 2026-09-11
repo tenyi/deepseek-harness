@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Run one minimal-agent turn through the bundled Python SDK runtime."""
 
 from __future__ import annotations

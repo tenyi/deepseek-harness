@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: every visible permission picker gates Full access behind
+// Web e2e scenario: every visible permission picker gates Full access behind
 // the same locale-aware, in-page risk confirmation. Zero model calls: the
 // scenario boots the shipped Web composition and exercises the real
 // permission projection, client command path, HTTP RPC, and pushed update.

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The session-log record of which preset a session actually runs.
  *
  * The creation header names the preset a session STARTED with, and it is

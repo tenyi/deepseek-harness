@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared in-process child composition: the delegation-depth budget, the
  * durable session metadata, the resolved child `AgentOptions`, the delegated
  * policy seed, and the scoped setup a child agent needs. Both the one-shot

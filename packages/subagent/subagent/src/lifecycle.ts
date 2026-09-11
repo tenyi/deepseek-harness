@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Lifecycle-edge publication for both subagent shapes: the contained emitter,
  * the one-shot run observer, and the continuable Activation observer.
  *

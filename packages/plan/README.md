@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Package map for the plan group: the plan-mode feature that guides the agent to explore and design before executing, for users and maintainers navigating the group."
 kind: "package-group"
 ---

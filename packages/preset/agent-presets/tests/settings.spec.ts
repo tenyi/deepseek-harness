@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The default preset is a user setting behind the preset picker. While the
  * picker is hidden, `config.default` remains the deployment's safe default;
  * once shown, the settings document overrides it and is hot-reloaded.

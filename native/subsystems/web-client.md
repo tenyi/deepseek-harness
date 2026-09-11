@@ -1,4 +1,4 @@
-﻿# Web Client architecture
+# Web Client architecture
 
 English | [中文](web-client.zh.md)
 

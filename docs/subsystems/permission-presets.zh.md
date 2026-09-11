@@ -1,4 +1,4 @@
-﻿# 權限預設
+# 權限預設
 
 [English](permission-presets.md) | 中文
 

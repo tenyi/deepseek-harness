@@ -1,4 +1,4 @@
-﻿# Session-local Schedule
+# Session-local Schedule
 
 English | [中文](schedule.zh.md)
 

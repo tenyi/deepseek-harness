@@ -1,4 +1,4 @@
-﻿# This optional Profile layer registers the dormant Claude Code provider. Agent
+# This optional Profile layer registers the dormant Claude Code provider. Agent
 # presets separately decide whether one session receives its delegation tool.
 
 - insert:

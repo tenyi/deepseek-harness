@@ -1,4 +1,4 @@
-﻿---
+---
 description: "SQLite 存儲后端：面向在單個數據庫文件中選擇、配置或排查按行存儲文檔的 KV 存儲的宿主與維護者。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿# 用戶憑據
+# 用戶憑據
 
 [English](credentials.md) | 中文
 

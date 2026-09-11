@@ -1,4 +1,4 @@
-﻿---
+---
 description: "為 Linux x64 提供預編譯 Landlock 啟動器和 POSIX flock addon。"
 kind: "package-library"
 ---

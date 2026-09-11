@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The file-backed credentials provider for users and maintainers choosing, configuring, or debugging the local credential store and its environment layering."
 kind: "package-reference"
 ---

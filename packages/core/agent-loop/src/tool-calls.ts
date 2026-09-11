@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Schedules one assistant step's tool calls. Exclusive calls form barriers;
  * parallel calls use a bounded rolling pool and are reclassified before start.
  * Dispatch may overlap, while policy, results, and result context remain

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "schedule 組地圖：基于會話日志的會話本地持久提醒，供瀏覽本組的用戶與維護者閱讀。"
 kind: "package-group"
 ---

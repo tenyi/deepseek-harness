@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser-safe Workspace path and display helpers.
  * @module @deepseek-ai/dsh-util-workspace-path
  */

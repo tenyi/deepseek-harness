@@ -1,4 +1,4 @@
-﻿/** Explicit Client debugger capability until a pause-safe page agent exists. */
+/** Explicit Client debugger capability until a pause-safe page agent exists. */
 
 import type { DebuggerBackend, RealmCapability } from '../../../shared/cdp/realm.ts'
 

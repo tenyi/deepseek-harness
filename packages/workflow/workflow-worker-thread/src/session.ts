@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The worker-side half of the engine: {@link runWorkerSession} wires one MessagePort to one
  * {@link WorkflowExecution} — hook progress and child starts go out as messages, run control
  * and child lifecycle come back in — and posts the run's terminal result exactly once. Keeping it

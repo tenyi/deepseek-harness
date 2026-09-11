@@ -1,4 +1,4 @@
-﻿/** Notarize and qualify macOS disk images after electron-builder creates them. */
+/** Notarize and qualify macOS disk images after electron-builder creates them. */
 
 import { notarize } from '@electron/notarize'
 import { rmSync } from 'node:fs'

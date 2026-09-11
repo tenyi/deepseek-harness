@@ -1,4 +1,4 @@
-﻿---
+---
 description: "settings 與憑據配置界面的 Host Remote owner，涵蓋脫敏讀取、寫入、憑據引用與原生文檔打開。"
 kind: "package-reference"
 ---

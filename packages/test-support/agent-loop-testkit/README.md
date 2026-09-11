@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Prerequisite mounting, production AgentLoop drivers, and explicit Inbox stubs for agent-loop tests."
 kind: "package-library"
 ---

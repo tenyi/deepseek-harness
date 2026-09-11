@@ -1,4 +1,4 @@
-﻿---
+---
 description: "會話壓縮（compaction）功能家族的包映射：自動壓縮、按需 /compact 命令與工具輸出修剪。"
 kind: "package-group"
 ---

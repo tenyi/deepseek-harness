@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Provider-side vocabulary for OUT-OF-PROCESS subagent backends — the pieces
  * that enforce this seam's own contracts around a child in another process:
  * the no-capabilities advertisement, timing-bound validation, child

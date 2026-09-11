@@ -1,4 +1,4 @@
-﻿// Browser geometry for the sidebar scrollbar reservation and theme. Headless
+// Browser geometry for the sidebar scrollbar reservation and theme. Headless
 // Chromium uses overlay scrollbars, so the reserved band and `timeCoveredBy`
 // together distinguish reserved space from a bar painted over content. Its
 // computed pseudo-element style also folds in `:hover`, so the test reads that

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The windows-acl confinement runner: the argv-prefix wrapper the sandbox
  * seam spawns in place of the caller's command. It creates the
  * WRITE_RESTRICTED token with the workspace write-SID allowlist, spawns the

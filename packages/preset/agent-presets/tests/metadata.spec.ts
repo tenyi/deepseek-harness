@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Display metadata is presentation, never capability: every way of getting it
  * wrong degrades to "this preset has no display text" rather than to a
  * preset that cannot be discovered or mounted. It also cannot carry identity

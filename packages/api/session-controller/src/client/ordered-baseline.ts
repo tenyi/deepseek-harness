@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Merge an authoritative baseline without moving identities already visible to
  * the client. Baseline-only identities are inserted relative to the nearest
  * following known identity; identities absent from the baseline are removed.

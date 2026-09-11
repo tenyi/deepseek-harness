@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Model-facing Cordis runtime tools for agents and maintainers choosing, composing, or debugging dynamic-package workflows."
 kind: "package-reference"
 ---

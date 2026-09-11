@@ -1,4 +1,4 @@
-﻿/** Worker-side Network projection behavior. */
+/** Worker-side Network projection behavior. */
 
 import { describe, expect, it, vi } from 'vitest'
 import { NetworkDomain, type NetworkSink } from '../src/worker/cdp/domains/network/session.ts'

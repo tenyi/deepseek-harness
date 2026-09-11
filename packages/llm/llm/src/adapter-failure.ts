@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Normalization for values thrown by a final LLM adapter boundary.
  *
  * @module @deepseek-ai/dsh-llm/adapter-failure

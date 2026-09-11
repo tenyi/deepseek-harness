@@ -1,4 +1,4 @@
-﻿/** Session commands whose activation policy is explicit at each Remote method. */
+/** Session commands whose activation policy is explicit at each Remote method. */
 
 import { randomUUID } from 'node:crypto'
 import type { Context } from '@deepseek-ai/cordis'

@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * Trajectory turn chrome and layout fold: expand blocks, usage on Message,
  * tool own-duration, group wall-span descriptions, in-flight rows.

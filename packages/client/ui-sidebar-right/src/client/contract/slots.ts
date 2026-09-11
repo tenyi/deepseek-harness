@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The right Sidebar's extension seats and its copy namespace.
  *
  * Four seats, each with a different reason to exist:

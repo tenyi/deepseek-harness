@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Package-owned invariant companion for `@deepseek-ai/dsh-workspace`.
  * @module @deepseek-ai/dsh-workspace/invariant
  */

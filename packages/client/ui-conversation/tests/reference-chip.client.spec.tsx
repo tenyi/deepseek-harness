@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * ReferenceChip visual face: icon selection per appearance, the trigger
  * marker fallback, label truncation container, and invalid styling.

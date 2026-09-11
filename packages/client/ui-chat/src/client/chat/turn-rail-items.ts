@@ -1,4 +1,4 @@
-﻿/**
+/**
  * View-layer union of the host turn outline and the loaded rail items. The
  * conversation snapshot never carries projection values, so this merge is the
  * one place the rail's two sources meet: the `turnOutline` projection names

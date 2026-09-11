@@ -1,4 +1,4 @@
-﻿---
+---
 description: "用戶設置能力族的包映射：解析各 namespace 配置的 ctx.settings 服務，以及存儲它的 YAML/JSON 文件提供方。"
 kind: "package-group"
 ---

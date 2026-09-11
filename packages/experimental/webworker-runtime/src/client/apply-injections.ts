@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Page-side interpreter for the structured index injection table. The served
  * form renders the same rows into index.html text; a static worker page has
  * no served HTML, so it executes the table directly. Rows execute strictly in

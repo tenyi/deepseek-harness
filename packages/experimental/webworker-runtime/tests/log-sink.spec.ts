@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The worker host's log sink: the seam that makes a failing plugin visible.
  *
  * Cordis's `LoggerService` accepts every message and, with no exporter mounted,

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Domain data form (`ctx.storage.domain`): schema-validated, change-emitting
  * KV domains over storage backends. The single implementation of the domain
  * layer — consumers depend on this package and never touch backends directly.

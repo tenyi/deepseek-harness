@@ -1,4 +1,4 @@
-﻿---
+---
 description: "OpenTelemetry session-telemetry backend for deployments choosing a mode, configuring the exporter, or tracing what leaves the machine."
 kind: "package-reference"
 ---

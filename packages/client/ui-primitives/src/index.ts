@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Cordis-free React primitives styled only through `--dsw-*` tokens.
  */
 

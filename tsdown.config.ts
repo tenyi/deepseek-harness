@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 import { typertPlugin } from './packages/typert/generator/lib/types/tsdown-plugin.js'
 
 function isBuildFaceClient(value: unknown): boolean {

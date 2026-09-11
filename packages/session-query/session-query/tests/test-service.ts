@@ -1,4 +1,4 @@
-﻿import SessionQueryEngine from '@deepseek-ai/dsh-session-query'
+import SessionQueryEngine from '@deepseek-ai/dsh-session-query'
 import type {
   SessionEventSearchPage,
   SessionEventSearchRequest,

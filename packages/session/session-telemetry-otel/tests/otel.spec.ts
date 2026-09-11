@@ -1,4 +1,4 @@
-﻿/**
+/**
  * OTel backend unit tier: wire assertions against a scripted `node:http`
  * mock collector through the SDK's REAL pipeline (BatchLogRecordProcessor →
  * OTLP/HTTP JSON), config fail-loud cases, and the real-Loader-path guard

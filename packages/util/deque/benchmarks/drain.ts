@@ -1,4 +1,4 @@
-﻿import { performance } from 'node:perf_hooks'
+import { performance } from 'node:perf_hooks'
 import { Deque } from '../src/index.ts'
 
 const sizes = [250_000, 500_000, 1_000_000, 2_000_000]

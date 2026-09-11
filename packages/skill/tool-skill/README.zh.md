@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的 skill（技能）目錄與加載工具，供希望了解 agent（智能體）看到的內容或配置會話 skill 目錄的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

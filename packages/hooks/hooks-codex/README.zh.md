@@ -1,4 +1,4 @@
-﻿---
+---
 description: "在 agent 運行期間使用你現有的 Codex hooks.json 鉤子配置——阻塞提示詞與工具、附加上下文或強制繼續——供本橋接的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

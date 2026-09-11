@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The agent-preset Remote namespace: the path-free roster a client reads, the
  * composition view behind the read-only viewer, and the per-session switch —
  * which is the only one of the three that mutates an agent.

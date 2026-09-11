@@ -1,4 +1,4 @@
-﻿# 壓縮（compaction）
+# 壓縮（compaction）
 
 [English](compaction.md) | 中文
 

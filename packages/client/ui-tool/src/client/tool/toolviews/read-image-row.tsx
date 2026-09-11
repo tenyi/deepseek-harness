@@ -1,4 +1,4 @@
-﻿// read_image toolview registrant: the keyed toolview hole for the read_image
+// read_image toolview registrant: the keyed toolview hole for the read_image
 // tool. The row composes the shared read-family assembly and feeds it the durable
 // image reference as ToolRow's `image` card material, so the image renders through
 // the Tool-owned `tool.call.images` slot inside the collapsed-by-default expanded

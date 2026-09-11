@@ -1,4 +1,4 @@
-﻿/** File identity and explicit default-app or file-manager actions for one delivery. */
+/** File identity and explicit default-app or file-manager actions for one delivery. */
 import { useRef, useState } from 'react'
 import { resolveWorkspacePath } from '@deepseek-ai/dsh-util-workspace-path'
 import {

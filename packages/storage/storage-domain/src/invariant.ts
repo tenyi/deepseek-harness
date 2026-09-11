@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Package-owned invariant companion for `@deepseek-ai/dsh-storage-domain`: every
  * `domain/changed` event must agree with the emitting domain's authoritative
  * in-memory state (the owned event-stream ↔ mutable-data relationship of this

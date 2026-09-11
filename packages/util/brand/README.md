@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Nominal string and number types with stateless constructors for packages that own confusable domain values."
 kind: "package-library"
 ---

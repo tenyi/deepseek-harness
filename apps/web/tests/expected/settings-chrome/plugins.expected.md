@@ -1,4 +1,4 @@
-﻿- listitem:
+- listitem:
   - button "tool-subagent, tool-subagent, 已啟用":
     - strong: tool-subagent
     - text: 已啟用

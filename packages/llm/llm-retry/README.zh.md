@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的重試執行器說明：在持久 agent（智能體）步驟邊界上配置按提供方路由的模型請求恢復。"
 kind: "package-reference"
 ---

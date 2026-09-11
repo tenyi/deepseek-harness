@@ -1,4 +1,4 @@
-﻿# 遙測（telemetry）
+# 遙測（telemetry）
 
 [English](session-telemetry.md) | 中文
 

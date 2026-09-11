@@ -1,4 +1,4 @@
-﻿# 3. Services
+# 3. Services
 
 English | [中文](03-services.zh.md)
 

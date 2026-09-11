@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The worker's process shim: the layout-derived environment and the Node 22
  * `getBuiltinModule` face, which must answer the loader's module proxies for
  * builtin ids and undefined for everything else — never an image resolution.

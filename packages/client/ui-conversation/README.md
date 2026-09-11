@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Target-neutral conversation assembly and browser shell: event and view registries, per-session bindings, input state, slots, and temporary composer takeovers."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿# 服務與依賴
+# 服務與依賴
 
 [English](service.md) | 中文
 

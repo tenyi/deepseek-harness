@@ -1,4 +1,4 @@
-﻿# Web Client 架構
+# Web Client 架構
 
 [English](web-client.md) | 中文
 

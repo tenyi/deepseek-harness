@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The local filesystem skill provider for users and maintainers authoring local skills or configuring how project, custom, and user skill roots are discovered and watched."
 kind: "package-reference"
 ---

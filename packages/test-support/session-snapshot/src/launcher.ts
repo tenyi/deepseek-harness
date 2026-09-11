@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared launcher for ACP tests that drive an agent subprocess over JSON-RPC
  * stdio. It owns source-or-built launch resolution, workspace environment,
  * stdout tee, SDK client, update collection, permission fallback, and process

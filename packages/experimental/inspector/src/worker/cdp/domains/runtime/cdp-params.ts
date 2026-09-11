@@ -1,4 +1,4 @@
-﻿/** Validation and normalization of CDP Runtime parameters routed to a Client realm. */
+/** Validation and normalization of CDP Runtime parameters routed to a Client realm. */
 
 import type { RuntimeBackendObjectHandle } from '../../../../shared/cdp/ids.ts'
 import { isJsonValue, isPlainObject, type InspectorJsonValue } from '../../../../shared/json.ts'

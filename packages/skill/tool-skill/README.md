@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The model-facing skill catalog and loader tool for users and maintainers understanding what agents see, or configuring the session skill catalog."
 kind: "package-reference"
 ---

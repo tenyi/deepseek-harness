@@ -1,4 +1,4 @@
-﻿/**
+/**
  * How one composition row's `name` reaches a module.
  *
  * A preset composition is read by `Include`, which rewrites its context's

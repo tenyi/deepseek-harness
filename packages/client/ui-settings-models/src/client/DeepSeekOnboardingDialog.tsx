@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Official-DeepSeek first-run step. Readiness comes from the same
  * provider/settings/credential join as the Models page: any provider the user
  * can already talk to ends the step, and only a user with none is offered the

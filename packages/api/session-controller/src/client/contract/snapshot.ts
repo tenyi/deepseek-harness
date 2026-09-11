@@ -1,4 +1,4 @@
-﻿/** Session-owned observable state excluding Conversation target data. */
+/** Session-owned observable state excluding Conversation target data. */
 import type { ContentBlock } from '@deepseek-ai/dsh-llm/types'
 import type { FileAttachmentRef } from '@deepseek-ai/dsh-attachment'
 import type { MessageId } from '@deepseek-ai/dsh-llm/brand'

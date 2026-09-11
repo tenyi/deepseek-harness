@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { requestImageDimensions } from '../src/index.ts'
 
 describe('request image dimensions', () => {

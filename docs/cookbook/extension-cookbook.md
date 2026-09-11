@@ -1,4 +1,4 @@
-﻿# Cookbook: extension plugin shapes
+# Cookbook: extension plugin shapes
 
 English | [中文](extension-cookbook.zh.md)
 

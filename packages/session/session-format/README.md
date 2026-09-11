@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Pure adjacent Session format planning, lossless JSON value checks, header-only migration, and physical codec dispatch."
 kind: "package-library"
 ---

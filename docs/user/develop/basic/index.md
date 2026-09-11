@@ -1,4 +1,4 @@
-﻿# Your first plugin
+# Your first plugin
 
 English | [中文](index.zh.md)
 

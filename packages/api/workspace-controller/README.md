@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Host and Client workspace control: mutate workspace navigation and follow its complete projection."
 kind: "package-reference"
 ---

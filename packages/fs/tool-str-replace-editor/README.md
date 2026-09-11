@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The standalone str_replace_editor tool over ctx.fs for users and maintainers composing Claude-Code-style file editing for agents."
 kind: "package-reference"
 ---

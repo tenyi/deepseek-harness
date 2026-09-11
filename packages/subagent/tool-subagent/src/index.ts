@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Model-facing delegation through one configured `ctx.subagents` provider.
  * Provider lifecycle controls tool registration and context-sensitive schema
  * wording. Foreground calls always dispose the run after collection.

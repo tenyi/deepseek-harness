@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Deliverables plugin, node half. Registers the response-format guidance that
  * lets the browser half recognize final-response file references and serves
  * authenticated native opens of declared files. The browser

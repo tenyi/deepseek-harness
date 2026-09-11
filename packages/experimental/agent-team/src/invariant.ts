@@ -1,4 +1,4 @@
-﻿/** Agent Teams runtime invariant companion. */
+/** Agent Teams runtime invariant companion. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { InvariantFailure, InvariantInstaller } from '@deepseek-ai/dsh-invariants'

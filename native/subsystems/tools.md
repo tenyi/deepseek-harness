@@ -1,4 +1,4 @@
-﻿# Tools
+# Tools
 
 English | [中文](tools.zh.md)
 

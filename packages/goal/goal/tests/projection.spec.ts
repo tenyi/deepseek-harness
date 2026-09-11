@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `goal` projection unit: mounting GoalService beside the registry
  * serves the current whole goal on the history tail page with a consistent
  * asOfSeq; before the first create the value is null; a clear tombstone

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Out-of-process ACP subagent backend. Each child has its own process, session, model, and
  * tools, so it shares no Cordis context and advertises no parent-enforced start capabilities;
  * the ONE thing it reads off `request.parent` is the session's workspace cwd (see

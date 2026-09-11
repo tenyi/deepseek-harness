@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Cross-session snapshot preparation. Hosts adapt mentions into structured
  * references; this service owns exact reads, projection, budgets, and durable context.
  *

@@ -1,4 +1,4 @@
-﻿# `dsh` CLI（命令列介面）行為參考
+# `dsh` CLI（命令列介面）行為參考
 
 [English](README.md) | 中文
 

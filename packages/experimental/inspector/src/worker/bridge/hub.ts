@@ -1,4 +1,4 @@
-﻿/** Worker-owned source generations, observation dispatch, and extension transport. */
+/** Worker-owned source generations, observation dispatch, and extension transport. */
 
 import { jsonByteLength, type InspectorJsonValue } from '../../shared/json.ts'
 import {

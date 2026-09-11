@@ -1,4 +1,4 @@
-﻿# Session Persistence
+# Session Persistence
 
 English | [中文](persistence.zh.md)
 

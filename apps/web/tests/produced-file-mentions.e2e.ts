@@ -1,4 +1,4 @@
-﻿/** Web e2e coverage for unique, ambiguous, and unknown inline file references. */
+/** Web e2e coverage for unique, ambiguous, and unknown inline file references. */
 import type { Browser, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it, onTestFailed } from 'vitest'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的會話本地持久提醒說明：schedule_create、schedule_list 與 schedule_delete 工具及 live owner 交付，用于選擇、配置或排查本包。"
 kind: "package-reference"
 ---

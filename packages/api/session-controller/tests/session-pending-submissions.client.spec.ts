@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Local submission echoes: synchronous insertion, observed/failed retirement,
  * and settlement callbacks. Prompts and the follow stream cross the assembled
  * Gateway client and are answered by endpoint name.

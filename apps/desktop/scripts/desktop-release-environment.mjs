@@ -1,4 +1,4 @@
-﻿/** Resolve public release identifiers supplied by the packaging environment. */
+/** Resolve public release identifiers supplied by the packaging environment. */
 
 /** Environment variable that supplies the Electron application identifier. */
 export const DESKTOP_APP_ID_ENV = 'DSH_DESKTOP_APP_ID'

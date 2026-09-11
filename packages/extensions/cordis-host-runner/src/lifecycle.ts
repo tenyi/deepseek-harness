@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Host-half fiber lifecycle over the `cordis-dynamic` group: settle a
  * sandbox-produced plugin as a child fiber (never leaving a failed fiber
  * mounted), and report the services a settled-but-pending fiber still waits

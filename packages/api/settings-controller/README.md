@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Host Remote owner for settings and credential configuration surfaces, including redacted reads, writes, credential references, and native document opening."
 kind: "package-reference"
 ---

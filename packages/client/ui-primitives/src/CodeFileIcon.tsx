@@ -1,4 +1,4 @@
-﻿import { useId } from 'react'
+import { useId } from 'react'
 import type { ReactNode } from 'react'
 import type { IconProps } from './icons/props.ts'
 import type { CodeFileType } from './code-file-types.ts'

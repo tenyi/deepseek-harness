@@ -1,4 +1,4 @@
-﻿// Expanded bodies for the context disclosure, one per durable context form.
+// Expanded bodies for the context disclosure, one per durable context form.
 // The producer declares the form; this module only chooses a presentation for
 // it. Every form falls back to OpaqueBody, which is the documented default for
 // an absent, unknown, or malformed form — a resumed or foreign log must render

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "隨包附帶的「powered by dsh」徽章 skill（技能），供啟用、使用或排查該可選徽章提供方的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

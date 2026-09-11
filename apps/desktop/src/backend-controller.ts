@@ -1,4 +1,4 @@
-﻿/** Owns one backend startup and its quiescent teardown independently of windows. */
+/** Owns one backend startup and its quiescent teardown independently of windows. */
 
 import { desktopErrorState } from './startup-error.ts'
 

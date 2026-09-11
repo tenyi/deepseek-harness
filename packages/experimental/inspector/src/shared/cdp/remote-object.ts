@@ -1,4 +1,4 @@
-﻿/** Realm-neutral JavaScript value descriptions used by Inspector backends. */
+/** Realm-neutral JavaScript value descriptions used by Inspector backends. */
 
 import type { InspectorObjectReference } from '../cordis/object-reference.ts'
 import type { InspectorJsonValue } from '../json.ts'

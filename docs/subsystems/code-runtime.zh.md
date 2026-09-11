@@ -1,4 +1,4 @@
-﻿# 代碼運行時
+# 代碼運行時
 
 [English](code-runtime.md) | 中文
 

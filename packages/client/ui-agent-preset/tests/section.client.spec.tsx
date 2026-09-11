@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * The management section's rendering rules: which actions a row offers depends
  * on its trust, a shipped composition opens in a read-only viewer, creation is

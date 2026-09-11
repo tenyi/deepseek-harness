@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `@vscode/ripgrep` stub. The package's only export is the binary path, read at
  * module scope by search plugins; the path stays a plain string so construction
  * succeeds, and the loud failure comes from the child_process stub when something

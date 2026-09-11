@@ -1,4 +1,4 @@
-﻿# Workspaces
+# Workspaces
 
 English | [中文](workspace.zh.md)
 

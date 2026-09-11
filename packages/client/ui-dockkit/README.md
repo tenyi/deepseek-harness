@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Docking layout kit for the dsh web client: a split tree of tabbed panes with invertible operations, planners, a linear history, and the components that render and drive it."
 kind: "package-reference"
 ---

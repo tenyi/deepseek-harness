@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SessionManager orchestration: lazy resident instances, list lifecycle, host
  * frame routing, and control baselines for uninstantiated sessions.
  */

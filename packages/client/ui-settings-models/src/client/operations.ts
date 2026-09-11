@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The Host reads and writes the Models cards perform, as callbacks built in the
  * plugin body. Cards receive these instead of a context: the outcomes name what
  * a card renders — a stored view, a stale revision, a refusal message — so the

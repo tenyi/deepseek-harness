@@ -1,4 +1,4 @@
-﻿/** Busy-Enter preference stored in the Host user-settings document. */
+/** Busy-Enter preference stored in the Host user-settings document. */
 
 import z from '@deepseek-ai/schemastery'
 

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Session feedback: the `/feedback` command, the `sessionFeedback` Host Remote behind the Web feedback dialog, and the fixed category taxonomy; for users and maintainers choosing, composing, or debugging feedback capture."
 kind: "package-reference"
 ---

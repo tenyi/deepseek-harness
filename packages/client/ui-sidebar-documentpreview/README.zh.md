@@ -1,4 +1,4 @@
-﻿---
+---
 description: "右側 Sidebar 的文檔預覽：共享文件加載與控件，可選 Markdown、代碼、圖片、PDF 和 HTML 渲染器，并以純文本兜底。"
 kind: "package-reference"
 ---

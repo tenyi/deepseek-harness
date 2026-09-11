@@ -1,4 +1,4 @@
-﻿/** Direct one-shot Agent driving, durable aggregation, flushing, and exit mapping. */
+/** Direct one-shot Agent driving, durable aggregation, flushing, and exit mapping. */
 
 import { afterEach, describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "應用內目錄瀏覽表面：填充工作區目錄流程的 Miller 分欄「選擇工作區目錄」對話框；供 Web 拾取體驗的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向 Linux、macOS 或 Windows 上選擇、配置或排查進程隔離的用戶與維護者的本地各平臺沙箱后端。"
 kind: "package-reference"
 ---

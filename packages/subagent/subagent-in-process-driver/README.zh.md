@@ -1,4 +1,4 @@
-﻿---
+---
 description: "共享進程內 subagent 運行驅動器，供維護者與后端作者理解或擴展 spawn 與 fork 的運行生命周期。"
 kind: "package-library"
 ---

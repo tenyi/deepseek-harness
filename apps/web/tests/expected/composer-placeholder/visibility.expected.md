@@ -1,4 +1,4 @@
-﻿- Empty draft: placeholder visible
+- Empty draft: placeholder visible
 - Single space: placeholder hidden
 - Consecutive spaces: placeholder hidden
 - Focus restored: placeholder hidden

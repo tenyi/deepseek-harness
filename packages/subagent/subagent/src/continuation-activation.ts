@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Process-local Activation ownership for continuable subagents: admission,
  * parent-child residency, serialized delivery, settlement, and disposal.
  *

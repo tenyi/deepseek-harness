@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pack rule tables: the one place the image's include/exclude decisions live.
  * Patterns are picomatch globs. Exclude patterns match tree-root-relative
  * paths (so `src/**` drops only a root-level source tree), page-asset

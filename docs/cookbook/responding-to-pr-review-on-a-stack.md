@@ -1,4 +1,4 @@
-﻿# Responding to review across a stacked PR chain
+# Responding to review across a stacked PR chain
 
 English | [中文](responding-to-pr-review-on-a-stack.zh.md)
 

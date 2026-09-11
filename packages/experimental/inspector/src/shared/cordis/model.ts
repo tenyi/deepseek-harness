@@ -1,4 +1,4 @@
-﻿/** Consumer-neutral Cordis runtime tree shared by non-CDP readers. */
+/** Consumer-neutral Cordis runtime tree shared by non-CDP readers. */
 
 import { CORDIS_TREE_MAX_DEPTH } from './snapshot.ts'
 import { inspectorId, type InspectorId } from '../identity.ts'

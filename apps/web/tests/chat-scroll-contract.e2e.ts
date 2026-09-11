@@ -1,4 +1,4 @@
-﻿// Browser geometry contracts for a long Chat transcript. These scenarios are
+// Browser geometry contracts for a long Chat transcript. These scenarios are
 // deliberately virtualizer-neutral: they assert semantic-row position,
 // bottom ownership, interaction state, and the real outer scroll host rather
 // than DOM cardinality or implementation-specific spacer markup.

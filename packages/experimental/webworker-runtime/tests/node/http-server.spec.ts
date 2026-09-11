@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `node:http` seam the worker's webserver boots through: no socket exists,
  * so `createServer` retains the request listener for the tunnel to feed and
  * `listen` reports success on its own.

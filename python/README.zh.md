@@ -1,4 +1,4 @@
-﻿# DeepSeek Harness Python SDK
+# DeepSeek Harness Python SDK
 
 [English](README.md) | 中文
 

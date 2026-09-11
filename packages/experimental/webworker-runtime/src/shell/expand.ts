@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Word expansion: one parsed argument becomes the zero or more fields a
  * program receives in its argv. Covers the segment kinds the grammar produces
  * — literal text, variables (with `:-` / `:+` forms), command substitution,

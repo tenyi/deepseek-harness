@@ -1,4 +1,4 @@
-﻿---
+---
 description: "在 Host Team 層之后，為 Web profile 添加公開發布的實驗性 Agent Teams 面板。"
 kind: "package-bundle"
 ---

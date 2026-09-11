@@ -1,4 +1,4 @@
-﻿---
+---
 description: "瀏覽器 UI 渲染器：React slot 綁定、ctx.uiRenderer 與 dsh Web 客戶端組裝后的應用根。"
 kind: "package-reference"
 ---

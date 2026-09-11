@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的進程內 fork subagent 后端說明，用于選擇、配置或排查以父級已完成輪次作初始內容的子 agent（智能體）。"
 kind: "package-reference"
 ---

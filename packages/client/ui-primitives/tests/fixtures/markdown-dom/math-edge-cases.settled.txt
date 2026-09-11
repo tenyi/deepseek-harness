@@ -1,4 +1,4 @@
-﻿<div class="_markdown_404681">
+<div class="_markdown_404681">
   <p>
     #text "Trusted commands stay off: "
     <span class="katex">

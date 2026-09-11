@@ -1,4 +1,4 @@
-﻿/**
+/**
  * AclWriteGrant failure-path tests with minimal stub binding tables: create
  * fails closed on SID-parse failure,
  * dispose aggregates revocation and SID-free failures into an

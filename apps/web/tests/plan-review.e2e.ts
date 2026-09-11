@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: the plan-review takeover. The shipped composition mounts
+// Web e2e scenario: the plan-review takeover. The shipped composition mounts
 // plan mode and its client seat, so `/plan <task>` enters plan mode for real
 // and the recorded turn ends on exit_plan_mode blocking against the live
 // userInteraction seam. The composer is then occupied by the plan decision

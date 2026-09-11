@@ -1,4 +1,4 @@
-﻿# The dsh-web-app bundle patch: the browser surface over the dsh-base layer.
+# The dsh-web-app bundle patch: the browser surface over the dsh-base layer.
 # Applied after dsh-base's insert; rows here override base rows by id, with
 # the profile's own cordis.patch.yml and any --patch overlays still to come.
 #

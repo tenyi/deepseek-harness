@@ -1,4 +1,4 @@
-﻿---
+---
 description: "使用并排查實驗性 Web Agent Teams roster、共享任務板與 teammate 導航面板。"
 kind: "package-reference"
 ---

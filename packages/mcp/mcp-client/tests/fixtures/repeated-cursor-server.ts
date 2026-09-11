@@ -1,4 +1,4 @@
-﻿/** MCP wire fixture returning a repeated discovery cursor over empty pages. */
+/** MCP wire fixture returning a repeated discovery cursor over empty pages. */
 
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'

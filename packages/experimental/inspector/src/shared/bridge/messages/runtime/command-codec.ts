@@ -1,4 +1,4 @@
-﻿/** Exact wire decoder for Client Runtime commands. */
+/** Exact wire decoder for Client Runtime commands. */
 
 import { isJsonValue, isPlainObject } from '../../../json.ts'
 import { exactKeys, optionalBoolean, optionalNonNegativeNumber, optionalString, wireId } from '../../../validation.ts'

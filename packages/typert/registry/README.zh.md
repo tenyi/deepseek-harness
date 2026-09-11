@@ -1,4 +1,4 @@
-﻿---
+---
 description: "運行時 Typert 注冊表：保存生成的包反射、實時 Zod schema 與 Remote 調用描述符，并按需為消費方解析。"
 kind: "package-reference"
 ---

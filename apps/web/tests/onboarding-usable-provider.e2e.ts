@@ -1,4 +1,4 @@
-﻿// Keyless browser e2e: a user who configures some OTHER provider is not asked
+// Keyless browser e2e: a user who configures some OTHER provider is not asked
 // for the official DeepSeek key again, and the first-run setup card is a card
 // they can close. The shipped DeepSeek adapter stays mounted without a
 // credential throughout, so the only thing that ends onboarding here is the

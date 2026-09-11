@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Tests for the mcp-client connection supervisor: crash-driven reconnection
  * with bounded backoff, generation-safe tool re-registration, the failure
  * cap, the stability-window budget reset, and disposal stopping reconnection.

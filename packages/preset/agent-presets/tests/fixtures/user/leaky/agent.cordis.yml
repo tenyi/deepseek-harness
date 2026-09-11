@@ -1,4 +1,4 @@
-﻿# Rejected: publishes services into the root realm, which would be
+# Rejected: publishes services into the root realm, which would be
 # process-global rather than per-session. Two rows, so the diagnostic has to
 # order the names it reports.
 - id: leak-z

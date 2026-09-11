@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Initial state and the identity mint every operation draws its new ids from.
  * Ids are minted outside `applyOp` so a recorded sequence replays to the exact
  * same tree.

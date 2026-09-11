@@ -1,4 +1,4 @@
-﻿import type { IncomingMessage } from 'node:http'
+import type { IncomingMessage } from 'node:http'
 import { describe, expect, it, vi } from 'vitest'
 import { readBoundedUtf8Body } from '../src/body.ts'
 

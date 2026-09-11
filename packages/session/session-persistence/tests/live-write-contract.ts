@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared live-write-path contract for any {@link SessionPersistence} backend:
  * published live events route by session id into the active write handle,
  * `session/flush` is the durability and error-observation barrier,

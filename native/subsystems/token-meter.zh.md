@@ -1,4 +1,4 @@
-﻿# Token 計量
+# Token 計量
 
 [English](token-meter.md) | 中文
 

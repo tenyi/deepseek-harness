@@ -1,4 +1,4 @@
-﻿/**
+/**
  * One-shot Claude Code lifecycle: invoke the official Agent SDK, place its
  * real CLI process under the shared subprocess owner, map only strict SDK
  * success to completion, and dispose to whole-range quiescence.

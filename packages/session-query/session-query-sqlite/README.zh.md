@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與維護者的 SQLite FTS5 會話歷史全文搜索后端，用于選擇、配置或排查查詢服務之上的全文搜索。"
 kind: "package-reference"
 ---

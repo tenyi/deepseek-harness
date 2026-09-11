@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Runtime the transformed modules call at every suspension point.
  *
  * `pause` snapshots every ambient store and hands back a token that **always

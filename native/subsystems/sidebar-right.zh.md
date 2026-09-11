@@ -1,4 +1,4 @@
-﻿# 右側 Sidebar
+# 右側 Sidebar
 
 [English](sidebar-right.md) | 中文
 

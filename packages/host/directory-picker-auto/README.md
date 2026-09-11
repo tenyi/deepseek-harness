@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Adaptive chooser of the directory-picker seam: resolves the web GUI host's situation once at boot and mounts the matching native or browse backend."
 kind: "package-reference"
 ---

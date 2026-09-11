@@ -1,4 +1,4 @@
-﻿---
+---
 description: "疊加在 dsh-base 上公開發布的實驗性 Agent Teams profile 層，提供 Team-scoped 協作工具并保留一次性 delegation。"
 kind: "package-bundle"
 ---

@@ -1,4 +1,4 @@
-﻿/** Worker-owned lifecycle model for active Host and Client JavaScript realms. */
+/** Worker-owned lifecycle model for active Host and Client JavaScript realms. */
 
 import type { InspectorSourceGeneration, InspectorSourceId } from '../../shared/bridge/ids.ts'
 import type { InspectorRealmCapabilities } from '../../shared/cdp/capabilities.ts'

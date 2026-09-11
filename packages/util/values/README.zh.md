@@ -1,4 +1,4 @@
-﻿---
+---
 description: "供運行時包使用的無損 JSON 校驗、分離式快照、深度凍結、結構相等與窮盡聯合類型輔助函數。"
 kind: "package-library"
 ---

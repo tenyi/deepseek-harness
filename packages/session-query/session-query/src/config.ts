@@ -1,4 +1,4 @@
-﻿/** Public configuration and typed failures for the combined session-query service. */
+/** Public configuration and typed failures for the combined session-query service. */
 
 import { HarnessError } from '@deepseek-ai/dsh-llm'
 

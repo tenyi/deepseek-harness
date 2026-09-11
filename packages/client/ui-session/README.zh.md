@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向 Session Controller 列表、交互狀態與逐會話上下文的 React 與 Slot 適配器。"
 kind: "package-reference"
 ---

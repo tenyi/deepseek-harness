@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Tool bridge: discovers MCP tools, registers them on the harness ToolRuntime
  * under deterministic server-qualified public names, and handles re-sync when
  * the server's tool list changes.

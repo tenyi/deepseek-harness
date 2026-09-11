@@ -1,4 +1,4 @@
-﻿/**
+/**
  * LocalSandboxProvider tests. No real runner is assumed to exist on the test
  * host: `runnerCommand` injects deterministic runner argvs, and `internals`
  * injects probe verdicts plus fake Landlock launcher / `sandbox-exec`

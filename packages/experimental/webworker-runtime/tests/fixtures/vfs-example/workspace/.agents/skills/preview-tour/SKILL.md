@@ -1,4 +1,4 @@
-﻿---
+---
 name: preview-tour
 description: Inspect the bundled Preview workspace and its deterministic Session examples.
 ---

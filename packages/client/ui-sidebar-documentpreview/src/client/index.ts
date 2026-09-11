@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser half: register `text` as a right-Sidebar tab type.
  *
  * The type reaches the Sidebar through its public path only: the definition into

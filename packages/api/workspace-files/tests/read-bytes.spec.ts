@@ -1,4 +1,4 @@
-﻿/** The `readBytes` endpoint: the byte window it cuts, its defaults and cap, and the gates it shares with `read`. */
+/** The `readBytes` endpoint: the byte window it cuts, its defaults and cap, and the gates it shares with `read`. */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mkdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'

@@ -1,4 +1,4 @@
-﻿/** Shell chrome and General-nav dictionaries; feature rows own their copy. */
+/** Shell chrome and General-nav dictionaries; feature rows own their copy. */
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {

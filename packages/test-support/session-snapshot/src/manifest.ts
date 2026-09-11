@@ -1,4 +1,4 @@
-﻿/** Parse and validate one recorded-session snapshot manifest. */
+/** Parse and validate one recorded-session snapshot manifest. */
 
 import { isAbsolute } from 'node:path'
 import * as yaml from 'js-yaml'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fill the `crypto.randomUUID` gap on insecure origins. Browsers expose
  * `randomUUID` only in secure contexts, and a preview served over plain HTTP
  * on a LAN address is not one — while product code (bundled and VFS-loaded

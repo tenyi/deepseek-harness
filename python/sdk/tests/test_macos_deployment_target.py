@@ -1,4 +1,4 @@
-﻿"""Tests for macOS runtime wheel deployment-target validation."""
+"""Tests for macOS runtime wheel deployment-target validation."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿# 用戶命令
+# 用戶命令
 
 [English](commands.md) | 中文
 

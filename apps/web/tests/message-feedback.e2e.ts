@@ -1,4 +1,4 @@
-﻿// Keyless browser regression for durable per-message feedback. Cold-seeds a
+// Keyless browser regression for durable per-message feedback. Cold-seeds a
 // settled two-turn transcript (zero model calls), records a Like through the
 // feedback dialog, replaces it through the same dialog with a Dislike, proves
 // the judgment survives a full page reload from the Host's canonical log, then

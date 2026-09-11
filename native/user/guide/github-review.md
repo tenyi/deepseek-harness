@@ -1,4 +1,4 @@
-﻿# Create review Sessions from GitHub webhooks
+# Create review Sessions from GitHub webhooks
 
 English | [中文](github-review.zh.md)
 

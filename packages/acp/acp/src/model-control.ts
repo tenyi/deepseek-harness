@@ -1,4 +1,4 @@
-﻿/** Standard ACP session configuration over one Agent's model selection. */
+/** Standard ACP session configuration over one Agent's model selection. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { SessionConfigOption, SessionConfigValueId } from '@agentclientprotocol/sdk'

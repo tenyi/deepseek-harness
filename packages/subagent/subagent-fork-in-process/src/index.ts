@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The in-process FORK subagent backend: registers a {@link SubagentProvider} on
  * `ctx.subagents` that runs each child as a child {@link Agent} SEEDED with a prefix of the
  * parent's session log — so the child inherits the parent's conversation context instead of

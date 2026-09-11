@@ -1,4 +1,4 @@
-﻿# LSP 導航
+# LSP 導航
 
 [English](lsp.md) | 中文
 

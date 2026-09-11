@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Provider-side request-image pricing for DeepSeek routes: reproduces the
  * adapter's deterministic request projection (per-model pixel budget,
  * oldest-first offload under the raw-byte and count budgets) and prices every

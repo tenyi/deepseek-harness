@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Sidebar shell: column geometry and global panel navigation.
  * Collapse is a slide plus crossfade:
  * content freezes at its expanded width (inline style) and fades out in place

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Theme bootstrap row for the browser's pre-plugin interval. Each index
  * render embeds the current durable built-in preference and content font size;
  * the browser resolves only `system`, then writes the same DOM fields

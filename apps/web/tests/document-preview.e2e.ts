@@ -1,4 +1,4 @@
-﻿/** Keyless document-preview smoke through a real Session, Files tab, and shipped renderers. */
+/** Keyless document-preview smoke through a real Session, Files tab, and shipped renderers. */
 import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, relative } from 'node:path'

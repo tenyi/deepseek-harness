@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Host-filesystem implementation of `ctx.fs`. Realpath-derived target identity makes aliases
  * share stale guards, and writes through a symlink update its target without replacing the link.
  * @module @deepseek-ai/dsh-fs-local

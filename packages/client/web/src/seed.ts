@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Platform-singleton module-table. These are the ONLY entities the shell
  * shares into the frozen module table — fetch bundles resolve their externals
  * against exactly this set through the loader's require. Keys come from the

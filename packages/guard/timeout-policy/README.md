@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Cooperative time limit for cancellation-aware tool calls, mapping a settled timeout to a clear model error for users and maintainers choosing or debugging the plugin."
 kind: "package-reference"
 ---

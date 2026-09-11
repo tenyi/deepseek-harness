@@ -1,4 +1,4 @@
-﻿// Proves `allowParallelInProgress` is real configurability and not a constant:
+// Proves `allowParallelInProgress` is real configurability and not a constant:
 // the flag is set in a cordis.yml booted through the real Loader, and both faces
 // it controls — the model-facing description and the accepted input — follow it.
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'

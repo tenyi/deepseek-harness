@@ -1,4 +1,4 @@
-﻿import type { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 import {
   JsonBlock as LocalizedJsonBlock,
   MarkdownText as LocalizedMarkdownText,

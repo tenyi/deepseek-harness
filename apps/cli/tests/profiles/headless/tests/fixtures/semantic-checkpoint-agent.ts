@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Loader fixture that publishes the semantic-checkpoint session before CLI dispatch.
  * @module semantic-checkpoint-agent
  */

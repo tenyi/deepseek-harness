@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與維護者的沙箱 Bash 執行器說明，用于選擇、配置或排查受限命令執行及其拒絕與升權事實。"
 kind: "package-reference"
 ---

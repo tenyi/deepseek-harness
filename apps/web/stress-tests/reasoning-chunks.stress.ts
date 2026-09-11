@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Opt-in browser stress reproduction for reasoning-stream renderer stalls.
  * The fixture emits 100,000 individual chunks through the normal async
  * carrier; the test measures event-loop and scheduled-interaction delay while

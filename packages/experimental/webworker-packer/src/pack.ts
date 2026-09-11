@@ -1,4 +1,4 @@
-﻿/**
+/**
  * VFS image packer: turns one composed profile plus a package index into the single
  * gzip-compressed tar the browser runtime inflates and mounts as its filesystem.
  *

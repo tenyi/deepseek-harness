@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * MenuView rendering spec, props-direct: closed store
  * renders null, groups render in roster order under localized title rows

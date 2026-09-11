@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Agent presets: each session composes its model-facing plugin set from one
  * preset `cordis.yml`, mounted ONCE per preset under a standing scope and
  * joined by every agent that names it.

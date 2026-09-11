@@ -1,4 +1,4 @@
-﻿/**
+/**
  * DeepSeek vision-token accounting: the provider's published image-token
  * calculator (api-docs.deepseek.com, Token & Token Usage) ported verbatim in
  * its current `v41` configuration. The provider scales an image below

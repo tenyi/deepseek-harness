@@ -1,4 +1,4 @@
-﻿/**
+/**
  * LayoutController: the cross-plugin panel-action face behind ctx.layout.
  * Panel geometry and main-panel selection live in the root layout store;
  * the current-session selection lives with the runtime sessions service, and

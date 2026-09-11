@@ -1,4 +1,4 @@
-﻿import {
+import {
   type AssistantLiveChunkEvent, type SessionEventLike, type SessionEventLikeEntry,
 } from '@deepseek-ai/dsh-api-session-controller/client'
 import { notifySubscribers } from '@deepseek-ai/dsh-client-store'

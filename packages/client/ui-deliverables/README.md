@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Produced-files and clickable file references for the Web GUI: the deliverables row a finished turn ends with, and inline-code links in the closing prose; for users and maintainers of the deliverables experience."
 kind: "package-reference"
 ---

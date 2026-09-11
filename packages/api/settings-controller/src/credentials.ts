@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Host owner of the `credentials` Remote namespace: the reference half of
  * `ctx.credentials` as a browser configuration page reads and writes it.
  *

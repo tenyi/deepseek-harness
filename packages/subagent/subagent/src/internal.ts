@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Continuation integration markers and host adapters outside the public
  * Service Definition and model-facing Agent messaging contract.
  * @module @deepseek-ai/dsh-subagent/internal

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Shared resolution of the DeepSeek Harness home and user-data paths for packages that need one consistent root, tilde expansion, and stable watch paths."
 kind: "package-library"
 ---

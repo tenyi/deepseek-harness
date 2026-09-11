@@ -1,4 +1,4 @@
-﻿/** Locale preference stored in the Host user-settings document. */
+/** Locale preference stored in the Host user-settings document. */
 
 import z from '@deepseek-ai/schemastery'
 

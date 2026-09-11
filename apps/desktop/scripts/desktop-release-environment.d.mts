@@ -1,4 +1,4 @@
-﻿/** Environment variable that supplies the Electron application identifier. */
+/** Environment variable that supplies the Electron application identifier. */
 export const DESKTOP_APP_ID_ENV: 'DSH_DESKTOP_APP_ID'
 
 /** Environment variable that supplies electron-builder's macOS certificate qualifier. */

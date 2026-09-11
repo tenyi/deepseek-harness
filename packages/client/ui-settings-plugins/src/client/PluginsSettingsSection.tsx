@@ -1,4 +1,4 @@
-﻿/** Plugins settings section: localized tabs around feature-owned pages. */
+/** Plugins settings section: localized tabs around feature-owned pages. */
 
 import { useEffect, useId, useRef, useState } from 'react'
 import type {

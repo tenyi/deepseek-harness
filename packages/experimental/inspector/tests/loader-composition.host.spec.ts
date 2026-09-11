@@ -1,4 +1,4 @@
-﻿/** Host Loader composition behavior. */
+/** Host Loader composition behavior. */
 
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'

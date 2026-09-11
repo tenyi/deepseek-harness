@@ -1,4 +1,4 @@
-﻿// Browser geometry for a pending approval whose model-supplied command would
+// Browser geometry for a pending approval whose model-supplied command would
 // push the actions outside the viewport without a capped text region.
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'

@@ -1,4 +1,4 @@
-﻿# Python 貢獻者工作流
+# Python 貢獻者工作流
 
 [English](development.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿- dialog "Settings":
+- dialog "Settings":
   - navigation:
     - text: Settings
     - button "General":

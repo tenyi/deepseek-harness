@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared form model behind every plugin card.
  *
  * A card stages what the user types and writes it only when they save. Each

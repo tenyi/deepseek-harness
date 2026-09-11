@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Command UI plugin, browser half: CommandUiRuntime (`ctx.commandUi`) owning the
  * capability-keyed directory cache, the '/' command source, the client
  * contribution registry, and the per-session popupSelect controllers; the

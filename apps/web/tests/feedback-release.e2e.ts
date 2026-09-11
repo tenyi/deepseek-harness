@@ -1,4 +1,4 @@
-﻿// Recorded model replay drives the shipped feedback UI and canonical log.
+// Recorded model replay drives the shipped feedback UI and canonical log.
 // The loopback collector must receive each authorized suffix before the next UI action.
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'

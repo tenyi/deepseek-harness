@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的主題與正文字號設置：--dsw-* token 樣式表、ThemeRuntime 狀態、「通用」設置行與插件前引導。"
 kind: "package-reference"
 ---

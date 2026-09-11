@@ -1,4 +1,4 @@
-﻿import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
+import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
 /** Browser owner for the Gateway multiplexed Remote stream socket. */
 
 import {

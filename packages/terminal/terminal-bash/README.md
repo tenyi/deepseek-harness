@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The shipped shell backend for persistent terminal sessions: interactive bash or pwsh under the shared sandbox policy, with readiness detection and bounded line-oriented output."
 kind: "package-reference"
 ---

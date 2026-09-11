@@ -1,4 +1,4 @@
-﻿# Background Task Runtime
+# Background Task Runtime
 
 English | [中文](jobs.zh.md)
 

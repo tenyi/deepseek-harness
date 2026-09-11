@@ -1,4 +1,4 @@
-﻿---
+---
 description: "SDK 家族的包映射：JSON-RPC 協議，以及供進程外 SDK 使用的 TypeScript 客戶端與服務器。"
 kind: "package-group"
 ---

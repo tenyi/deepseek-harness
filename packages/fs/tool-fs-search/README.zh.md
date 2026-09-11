@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的 glob 與 grep 發現工具：供組合或排查 agent（智能體）工作區搜索的用戶與維護者使用。"
 kind: "package-reference"
 ---

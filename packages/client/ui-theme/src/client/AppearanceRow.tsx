@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Appearance preference row registered into the General section item slot
  * (figma 501:30012 'Frame 2117131228'): title + three preference cubes.
  * Registered by this package — the theme feature owns its own settings

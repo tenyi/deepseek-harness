@@ -1,4 +1,4 @@
-﻿---
+---
 description: "持久終端能力家族的包映射：限定所有者范圍的 ctx.terminals 服務、啟動交互式 bash 或 pwsh 的 shell 后端，以及 6 個面向模型的工具。"
 kind: "package-group"
 ---

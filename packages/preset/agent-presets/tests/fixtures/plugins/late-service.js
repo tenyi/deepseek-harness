@@ -1,4 +1,4 @@
-﻿// Publishes into the ROOT realm only after its plugin body returned, escaping
+// Publishes into the ROOT realm only after its plugin body returned, escaping
 // the one-shot mount audit. Exercises the package invariant.
 export const name = 'late-service'
 export function apply(ctx, config) {

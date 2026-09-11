@@ -1,4 +1,4 @@
-﻿/** Producer-to-UI regression for shell results bounded by the real spill policy. */
+/** Producer-to-UI regression for shell results bounded by the real spill policy. */
 import { Context } from '@deepseek-ai/cordis'
 import type { Agent } from '@deepseek-ai/dsh-agent'
 import type { ToolResultNode } from '@deepseek-ai/dsh-client-ui-chat/client'

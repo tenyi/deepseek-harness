@@ -1,4 +1,4 @@
-﻿/** Package-owned workflow lifecycle invariants. @module @deepseek-ai/dsh-workflow/invariant */
+/** Package-owned workflow lifecycle invariants. @module @deepseek-ai/dsh-workflow/invariant */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { InvariantFailure, InvariantInstaller } from '@deepseek-ai/dsh-invariants'

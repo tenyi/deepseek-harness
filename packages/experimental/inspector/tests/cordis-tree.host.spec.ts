@@ -1,4 +1,4 @@
-﻿/** Host-driven Cordis tree integration. */
+/** Host-driven Cordis tree integration. */
 
 import { Context } from '@deepseek-ai/cordis'
 import WebSocket, { type RawData } from 'ws'

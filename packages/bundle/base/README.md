@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The shared dsh core: model access, tools, durable sessions, and safety defaults for every dsh --profile surface, for users composing or customizing a profile."
 kind: "package-bundle"
 ---

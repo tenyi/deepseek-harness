@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Slash pipeline spec over the split architecture. InputTriggerService keeps only
  * the source roster (duplicate throw, disposal dropping live menu groups in
  * every session controller) and per-session controller resolution; all

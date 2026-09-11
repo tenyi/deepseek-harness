@@ -1,4 +1,4 @@
-﻿---
+---
 description: "共享工具家族的包映射：原子文件寫入、品牌化 id、雙端隊列、JSON 值、harness 主目錄路徑、啟動環境、原生命令、輸出保留、時區與超時。"
 kind: "package-group"
 ---

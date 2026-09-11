@@ -1,4 +1,4 @@
-﻿import { memo, useMemo } from 'react'
+import { memo, useMemo } from 'react'
 import type { PropsRenderSlots } from '@deepseek-ai/dsh-client-ui-slots'
 import type {
   ChatNodeViewProps, CommandRowOwnerProps,

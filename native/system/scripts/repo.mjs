@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Shared helpers for the repo scripts: package discovery, the checked-in
  * prebuild matrix, and binary verification. The package matrix is explicit

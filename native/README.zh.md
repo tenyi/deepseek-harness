@@ -1,4 +1,4 @@
-﻿# native/
+# native/
 
 [English](README.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The operation engine: one pure `applyOp` that returns the next state plus the
  * operations that undo it. No React, no DOM, no ambient state — replaying the
  * same operations over the same initial state always yields the same result,

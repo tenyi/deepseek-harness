@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Replay-safe, model-free tool-result pruning service.
  *
  * @module @deepseek-ai/dsh-compaction-tool-result-pruner

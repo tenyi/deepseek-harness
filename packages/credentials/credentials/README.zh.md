@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的憑據 seam：在不把機密值寫進配置的前提下解析、描述或存儲憑據——引用值與持久化記錄。"
 kind: "package-reference"
 ---

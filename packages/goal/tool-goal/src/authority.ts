@@ -1,4 +1,4 @@
-﻿/** Execution-time authority checks for the model-facing goal tools. */
+/** Execution-time authority checks for the model-facing goal tools. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { Agent } from '@deepseek-ai/dsh-agent'

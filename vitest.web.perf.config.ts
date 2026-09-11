@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'vitest/config'
+import { defineConfig } from 'vitest/config'
 import webConfig from './vitest.web.config.ts'
 import { vitestExecArgv } from './vitest.shared.ts'
 

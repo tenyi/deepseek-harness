@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Host 與 Client 工作區控制：修改工作區導航并跟隨其完整投影。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser half: `ctx.resources` (protocol-registered providers, pinning, live
  * sources) and the `useResource` global standard hook.
  */

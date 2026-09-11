@@ -1,4 +1,4 @@
-﻿/** A directory listing the spec settles by hand, one deferred result per call. */
+/** A directory listing the spec settles by hand, one deferred result per call. */
 import { vi } from 'vitest'
 import type { Mock } from 'vitest'
 import type { RemoteResult } from '@deepseek-ai/dsh-api-remotes/client'

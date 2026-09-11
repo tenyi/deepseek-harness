@@ -1,4 +1,4 @@
-﻿import { useEffect, useLayoutEffect, useRef, type RefObject } from 'react'
+import { useEffect, useLayoutEffect, useRef, type RefObject } from 'react'
 
 /**
  * Apply searchable hidden state without unmounting a stable subtree.

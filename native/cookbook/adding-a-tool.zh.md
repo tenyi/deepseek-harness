@@ -1,4 +1,4 @@
-﻿# 工具編寫參考
+# 工具編寫參考
 
 [English](adding-a-tool.md) | 中文
 

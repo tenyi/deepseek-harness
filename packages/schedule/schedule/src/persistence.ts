@@ -1,4 +1,4 @@
-﻿/** Schedule-owned use of the shared session durability barrier. */
+/** Schedule-owned use of the shared session durability barrier. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { Session } from '@deepseek-ai/dsh-session'

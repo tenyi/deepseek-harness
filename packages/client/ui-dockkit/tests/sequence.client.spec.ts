@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Sequence behavior: linear history, exact inverses, the focus-run undo step, and
  * the redo branch a new operation discards.
  */

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Model-facing workspace instruction rendering within an explicit byte budget.
  *
  * @module @deepseek-ai/dsh-agent-instructions/render

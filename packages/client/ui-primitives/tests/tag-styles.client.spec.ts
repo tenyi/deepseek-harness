@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Tag's palette as CSS text. CSS Modules resolve to class-name maps in the
  * component suites, so a tone whose rule is missing renders on the inherited
  * color and `tag.client.spec.tsx` — which asserts the `data-tone` attribute —

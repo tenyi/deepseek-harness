@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Agent-preset surface plugin, browser half — three surfaces over one roster:
  * a chip on the new-session screen for the session about to start, a
  * read-only label in the session header, and a settings section that manages

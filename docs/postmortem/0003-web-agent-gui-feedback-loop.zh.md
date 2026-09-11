@@ -1,4 +1,4 @@
-﻿# 事故復盤（postmortem） 0003：Web agent（智能體）驗收了替代服務器，而非其當前 GUI
+# 事故復盤（postmortem） 0003：Web agent（智能體）驗收了替代服務器，而非其當前 GUI
 
 [English](0003-web-agent-gui-feedback-loop.md) | 中文
 

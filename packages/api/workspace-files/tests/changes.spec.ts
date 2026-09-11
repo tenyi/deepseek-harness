@@ -1,4 +1,4 @@
-﻿/** The `changes` stream: driven by `fs/observed`, filtered by the workspace root, ended by its signal. */
+/** The `changes` stream: driven by `fs/observed`, filtered by the workspace root, ended by its signal. */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { join } from 'node:path'
 import type { Context } from '@deepseek-ai/cordis'

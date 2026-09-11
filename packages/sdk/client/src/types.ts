@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Types for the TypeScript SDK client: launch options, notification shapes,
  * and owned activity results.
  *

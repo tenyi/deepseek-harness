@@ -1,4 +1,4 @@
-﻿// Keyless assembled-browser coverage for the /feedback command over the
+// Keyless assembled-browser coverage for the /feedback command over the
 // shipped Web bundles and the real host wire. The command plane settles
 // without a model turn: the host appends the log-only command/run +
 // feedback/record + command/done lifecycle, and the transcript renders the

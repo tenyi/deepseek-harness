@@ -1,4 +1,4 @@
-﻿/** Node differential checks for the Worker filesystem watcher and stream faces. */
+/** Node differential checks for the Worker filesystem watcher and stream faces. */
 import {
   closeSync as closeNodeSync,
   createReadStream as createNodeReadStream,

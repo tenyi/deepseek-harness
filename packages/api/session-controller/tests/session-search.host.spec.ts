@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Session Controller search projection: list-equivalent visibility, fixed message
  * filters and result bound, cancellation mapping, and unavailable/failure
  * behavior.

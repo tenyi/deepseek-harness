@@ -1,4 +1,4 @@
-﻿/** Materialize the complete production runtime before publishing Desktop resources. */
+/** Materialize the complete production runtime before publishing Desktop resources. */
 
 import { spawn, execFile } from 'node:child_process'
 import { copyFileSync, cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'

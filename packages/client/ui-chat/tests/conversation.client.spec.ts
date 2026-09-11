@@ -1,4 +1,4 @@
-﻿/** Chat-owned event-to-view projection. */
+/** Chat-owned event-to-view projection. */
 
 import { describe, expect, it } from 'vitest'
 import { AttachmentId } from '@deepseek-ai/dsh-attachment'

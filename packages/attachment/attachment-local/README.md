@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Local storage for your attached images below DSH_HOME, for users and maintainers choosing or debugging where image attachments are kept."
 kind: "package-reference"
 ---

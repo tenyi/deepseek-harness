@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ReferenceChipNode: one inline reference as an atomic Lexical decorator.
  * The node IS the occurrence — NodeKey carries identity, the node carries
  * the owner's insert-time projections (label/appearance/clipboardText), and

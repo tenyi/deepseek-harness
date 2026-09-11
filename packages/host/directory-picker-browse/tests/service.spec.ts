@@ -1,4 +1,4 @@
-﻿/** Behavior of the browse backend over a real temporary directory tree. */
+/** Behavior of the browse backend over a real temporary directory tree. */
 
 import { mkdir, mkdtemp, rm, symlink, writeFile } from 'node:fs/promises'
 import { homedir, tmpdir } from 'node:os'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:fs` bridge over the worker's in-memory VFS. `MemoryVfs` owns paths,
  * bytes, the directory tree, and Node's error codes; this module adds only what
  * is Node-API-shaped and not VFS business: Buffer results, `Dirent` objects,

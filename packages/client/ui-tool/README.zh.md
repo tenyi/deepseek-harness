@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的 Client 工具展示插件：完整調用樹的組合、按工具名稱鍵控的視圖 slot，以及內置原子工具卡片。"
 kind: "package-reference"
 ---

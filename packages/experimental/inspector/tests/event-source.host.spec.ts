@@ -1,4 +1,4 @@
-﻿/** Consumer-neutral Server-Sent Event parsing behavior. */
+/** Consumer-neutral Server-Sent Event parsing behavior. */
 
 import { describe, expect, it } from 'vitest'
 import { InspectorEventSourceParser } from '../src/shared/network/event-source.ts'

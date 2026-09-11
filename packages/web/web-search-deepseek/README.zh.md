@@ -1,4 +1,4 @@
-﻿---
+---
 description: "ctx.web 的 DeepSeek 搜索提供方：部署方如何通過 Anthropic 兼容 Messages API 掛載 DeepSeek 原生 web 搜索，并逐次解析憑據。"
 kind: "package-reference"
 ---

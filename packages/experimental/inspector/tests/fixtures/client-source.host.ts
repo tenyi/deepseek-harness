@@ -1,4 +1,4 @@
-﻿/** Host-side controller for the isolated Client test fixture. */
+/** Host-side controller for the isolated Client test fixture. */
 
 import { Worker } from 'node:worker_threads'
 import type { InspectorClientBootstrap } from '../../src/shared/bridge/messages/control.ts'

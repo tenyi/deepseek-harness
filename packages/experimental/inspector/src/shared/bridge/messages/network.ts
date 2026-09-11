@@ -1,4 +1,4 @@
-﻿/** Observation topic names carried by the internal bridge for captured fetches. */
+/** Observation topic names carried by the internal bridge for captured fetches. */
 
 /** Complete set of fetch observation topics. */
 export const FETCH_TOPICS = [

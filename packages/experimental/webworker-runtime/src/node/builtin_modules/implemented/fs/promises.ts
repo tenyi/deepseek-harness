@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:fs/promises` face: the promise members of the VFS bridge, re-exported as
  * named bindings so `import { readFile } from 'node:fs/promises'` resolves. The
  * member set is checked against Node where it is built, on `promises` in

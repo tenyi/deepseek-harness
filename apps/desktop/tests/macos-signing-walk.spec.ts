@@ -1,4 +1,4 @@
-﻿/** Exercise the installed macOS signer against Framework file and directory aliases. */
+/** Exercise the installed macOS signer against Framework file and directory aliases. */
 
 import { mkdirSync, mkdtempSync, realpathSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import { createRequire } from 'node:module'

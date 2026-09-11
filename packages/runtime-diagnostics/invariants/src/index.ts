@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Configurable registry for package-owned runtime invariant contributions.
  * Every workspace package registers checks from a `./invariant` companion;
  * ordinary package entrypoints stay independent of diagnostics.

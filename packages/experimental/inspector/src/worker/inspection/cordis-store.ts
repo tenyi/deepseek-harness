@@ -1,4 +1,4 @@
-﻿/** Worker-owned repository of CDP-independent Cordis tree snapshots. */
+/** Worker-owned repository of CDP-independent Cordis tree snapshots. */
 
 import {
   parseCordisTreeSnapshot,

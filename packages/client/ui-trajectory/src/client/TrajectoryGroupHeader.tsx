@@ -1,4 +1,4 @@
-﻿// TrajectoryGroupHeader: "Message" or "Step N" row with optional description.
+// TrajectoryGroupHeader: "Message" or "Step N" row with optional description.
 
 import css from './TrajectoryGroupHeader.module.css'
 

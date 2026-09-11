@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向把已認證 JSON 事件路由到 webhook 運行時的部署，說明帶簽名的 GitHub webhook 適配器。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The model-facing persistent pwsh tool for users and maintainers choosing, configuring, or debugging owner-scoped PowerShell state that survives across calls."
 kind: "package-reference"
 ---

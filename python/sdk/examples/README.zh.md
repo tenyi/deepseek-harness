@@ -1,4 +1,4 @@
-﻿# Python SDK 示例
+# Python SDK 示例
 
 [English](README.md) | 中文
 

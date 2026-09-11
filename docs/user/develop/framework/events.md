@@ -1,4 +1,4 @@
-﻿# Event system
+# Event system
 
 English | [中文](events.zh.md)
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The in-process SPAWN subagent backend: registers a {@link SubagentProvider} on
  * `ctx.subagents` that runs each child as a fresh child {@link Agent} on the same cordis
  * context (its own session, own system prompt, zero parent context). The cheapest transport,

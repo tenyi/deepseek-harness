@@ -1,4 +1,4 @@
-﻿/** Default-browser startup over a real Loader tree and listening Web server. */
+/** Default-browser startup over a real Loader tree and listening Web server. */
 
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'

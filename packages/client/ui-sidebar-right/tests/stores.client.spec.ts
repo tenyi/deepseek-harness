@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The store shell over the docking kit: every action is one settled intent
  * recorded as one history entry, or no entry when it changes nothing.
  *

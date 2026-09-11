@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的按 harness home 劃分的匿名身份說明，用于追蹤遙測、反饋確認與 DeepSeek 提供方請求如何關聯記錄。"
 kind: "package-library"
 ---

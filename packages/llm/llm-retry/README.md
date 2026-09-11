@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The retry executor for users and maintainers configuring provider-routed model-request recovery at durable agent-step boundaries."
 kind: "package-reference"
 ---

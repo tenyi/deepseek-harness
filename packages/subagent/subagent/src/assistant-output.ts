@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Canonical selection of a child's final assistant output. Backend run results
  * and `subagent/end.lastAssistantMessage` apply the same rule: select the last
  * non-empty assistant message. An empty-content message records usage only

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "LLM（大語言模型）能力包組：一個提供方無關的模型調用服務、DeepSeek 與 pi-ai 提供方適配器、請求重試執行，以及具備回放感知的 token 計量。"
 kind: "package-group"
 ---

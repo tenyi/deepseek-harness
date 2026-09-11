@@ -1,4 +1,4 @@
-﻿/** Durable EOF refusals preserve historical generations and never fall back from native V3. */
+/** Durable EOF refusals preserve historical generations and never fall back from native V3. */
 
 import { Context } from '@deepseek-ai/cordis'
 import { SessionId } from '@deepseek-ai/dsh-session'

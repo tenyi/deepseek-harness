@@ -1,4 +1,4 @@
-﻿/** Host registry and HTTP adapter for generic Connection RPC channels. */
+/** Host registry and HTTP adapter for generic Connection RPC channels. */
 
 import { Context, Service } from '@deepseek-ai/cordis'
 import type { WebRoute } from '@deepseek-ai/dsh-host-webserver'

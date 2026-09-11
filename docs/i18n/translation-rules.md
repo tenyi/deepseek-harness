@@ -1,4 +1,4 @@
-﻿# Translation rules
+# Translation rules
 
 English | [中文](translation-rules.zh.md)
 

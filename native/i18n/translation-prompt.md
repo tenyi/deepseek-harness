@@ -1,4 +1,4 @@
-﻿# Translation prompt (pipeline asset)
+# Translation prompt (pipeline asset)
 
 本文件是自動翻譯流水線的 prompt 模板；從 `# Translation Prompt` 開始的正文會逐字進入模型請求，因此本文件不參與雙語配對（見 [README.md](README.md) 排除清單）。模板正文與內嵌 few-shot 正誤例由 jingtingxiang 基于對存量譯文的質量評審撰寫，是流水線行為的拍板基線。渲染時把 [terminology.md](terminology.md) 整表填入 `{{terminology}}`；除此之外不注入任何其他倉庫文件（translation-rules.md 約束人和 agent 的翻譯工作，不注入本模板）。[style-samples.md](style-samples.md) 定義文體，模板中的 Examples 只用于說明典型問題，兩者沖突時以文體樣例為準。本模板遵循 [提示詞 v4 約定 Agent Note](../../.agents/notes/archived/process/2026-07-23-translation-prompt-v4-contract.md) 記錄的兼容協議。修改本文件會改變翻譯行為，需正常經過 PR 評審。
 

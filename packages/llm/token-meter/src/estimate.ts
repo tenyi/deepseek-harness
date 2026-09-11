@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fixed-density heuristic token pricing shared by the meter service and the
  * pure context-breakdown projection, so both surfaces price identical content
  * to identical numbers.

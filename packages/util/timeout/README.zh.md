@@ -1,4 +1,4 @@
-﻿---
+---
 description: "共享超時運算、截止時間融合與超時和取消分類，供需要限制調用方超時提示、啟動 deadline 并在之后區分二者的能力使用。"
 kind: "package-library"
 ---

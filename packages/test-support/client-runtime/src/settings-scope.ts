@@ -1,4 +1,4 @@
-﻿/** Test double for the client settings-scope seam. */
+/** Test double for the client settings-scope seam. */
 import { vi } from 'vitest'
 import type {
   SettingsScope, SettingsScopeSnapshot,

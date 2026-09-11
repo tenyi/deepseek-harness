@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: the agent-preset settings section as copy-only authoring.
+// Web e2e scenario: the agent-preset settings section as copy-only authoring.
 // The browser never edits composition text — a shipped preset opens in a
 // read-only viewer, the copy dialog collects an id and an optional display
 // name, and the host copies the whole directory. The section's other job is

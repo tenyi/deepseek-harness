@@ -1,4 +1,4 @@
-﻿---
+---
 description: "會話反饋：`/feedback` 命令、Web 反饋彈窗背后的 `sessionFeedback` Host Remote，以及固定的分類表；供用戶與維護者選擇、組合或排查反饋采集。"
 kind: "package-reference"
 ---

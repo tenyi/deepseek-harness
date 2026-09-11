@@ -1,4 +1,4 @@
-﻿/** Markdown implementation labels and primitive chrome. */
+/** Markdown implementation labels and primitive chrome. */
 export const zh = {
   'viewer.label': 'Markdown',
   'code.copy': '復制',

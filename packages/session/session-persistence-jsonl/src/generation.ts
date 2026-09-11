@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Durable whole-generation publication for JSONL Session artifacts.
  *
  * Format packages transform parsed JSON values. This module owns the physical

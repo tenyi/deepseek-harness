@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Normal column geometry: the right column shrinks, then loses its track,
  * before the center drops below its minimum. The sidebar never concedes here;
  * AppFrame supplies its effective preference after responsive collapse.

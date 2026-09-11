@@ -1,4 +1,4 @@
-﻿// Icon-row Turn-stat actions: a database pill labelled with the turn total
+// Icon-row Turn-stat actions: a database pill labelled with the turn total
 // click-opens the per-Turn usage dialog, and a clock pill labelled with the
 // turn wall time click-opens the Turn-time dialog. Both sit right of the
 // branch action in the tail's IconActions row, ahead of the plain clock text.

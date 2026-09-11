@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與消費方的持久終端會話說明，用于選擇、組合或擴展限定所有者范圍的 ctx.terminals 服務。"
 kind: "package-reference"
 ---

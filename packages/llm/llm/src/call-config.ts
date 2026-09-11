@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Conversation call configuration and freeze utilities. Provider routing,
  * model, reasoning effort, and sampling values are request-header state that
  * can affect cache reuse; request waterfalls replace them and the loop logs

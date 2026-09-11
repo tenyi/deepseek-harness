@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The LSP capability seam (ctx.lsp): provider selection by file extension, four normalized code-navigation operations, and structured errors, for users and maintainers composing or extending code navigation."
 kind: "package-reference"
 ---

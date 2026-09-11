@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Real-composition guard for the dynamic-configuration chain: LlmRuntime,
  * settings-file, credentials-local, and llm-deepseek boot from a test-only
  * cordis.yml through the actual Loader + Include path, external edits of

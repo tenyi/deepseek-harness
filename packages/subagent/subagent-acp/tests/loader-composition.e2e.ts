@@ -1,4 +1,4 @@
-﻿import { realpathSync } from 'node:fs'
+import { realpathSync } from 'node:fs'
 import { readFile, readdir } from 'node:fs/promises'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'

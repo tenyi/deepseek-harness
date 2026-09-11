@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Renderer invariant companion: the 'slots/changed' emission-order audit —
  * a fired key must already carry a bumped version (emission follows the
  * applied mutation), bogus payloads fail loud, foreign events pass.

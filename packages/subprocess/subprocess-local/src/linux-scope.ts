@@ -1,4 +1,4 @@
-﻿/** Linux user-systemd scope launch and managed-range ownership. */
+/** Linux user-systemd scope launch and managed-range ownership. */
 
 import { execFile, spawn, spawnSync } from 'node:child_process'
 import { randomBytes } from 'node:crypto'

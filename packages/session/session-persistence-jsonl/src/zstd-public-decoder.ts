@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Public-API synchronous Zstandard frame decoder fallback.
  * @module dsh-session-persistence-jsonl/zstd-public-decoder
  */

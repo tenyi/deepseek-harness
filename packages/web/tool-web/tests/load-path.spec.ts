@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Real Loader-path guard for an injected namespace plugin. A default export would make
  * `unwrapExports` collapse the namespace and drop `inject`, causing access to `ctx.web` to fail.
  * Hand-built mounting bypasses that path, so this test unwraps through the real Loader first; see

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Full-corpus import gate: every built bundle in the workspace —
  * `packages/<group>/<package>/lib/index.js` and `vendor/<package>/lib/index.js`
  * — must be importable by Node's ESM loader. A bundle that stops importing (a

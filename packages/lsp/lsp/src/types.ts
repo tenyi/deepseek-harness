@@ -1,4 +1,4 @@
-﻿/**
+/**
  * LSP seam vocabulary: the normalized request, provider, and result contracts. Types only — the
  * {@link LspError} taxonomy and the {@link LspProviderId} brand factory are runtime and live in
  * `index.ts`. Positions and ranges are zero-based UTF-16, matching the protocol; the model-facing

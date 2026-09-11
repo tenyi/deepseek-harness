@@ -1,4 +1,4 @@
-﻿/** Shared JSON and exact-field validation behavior. */
+/** Shared JSON and exact-field validation behavior. */
 
 import { describe, expect, it } from 'vitest'
 import { inspectorId } from '../src/shared/identity.ts'

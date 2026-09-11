@@ -1,4 +1,4 @@
-﻿// Web e2e contract for a conversation grown through the real composer rather
+// Web e2e contract for a conversation grown through the real composer rather
 // than pre-seeded history. Twelve deterministic replay turns exercise repeated
 // send/settle/render cycles, including two real bash executions and one long,
 // multi-chunk final turn. Assertions stay semantic: no host timing, heap, or

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh 的瀏覽器 GUI：交互式聊天、模型與設定管理、工作階段歷史，供執行 dsh web 表層的使用者使用。"
 kind: "package-bundle"
 ---

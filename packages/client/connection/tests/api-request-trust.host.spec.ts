@@ -1,4 +1,4 @@
-﻿/** Behavior of the /api browser-trust fence (rebinding + cross-site defense). */
+/** Behavior of the /api browser-trust fence (rebinding + cross-site defense). */
 
 import { describe, expect, it } from 'vitest'
 import { assertTrustedAuthority, isTrustedApiRequest } from '../src/api-request-trust.ts'

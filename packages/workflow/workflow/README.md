@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The workflow orchestration capability: run a model-written script that fans out subagents, for users and maintainers choosing or building on ctx.workflowEngine."
 kind: "package-reference"
 ---

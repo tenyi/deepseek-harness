@@ -1,4 +1,4 @@
-﻿/** Shared modal chrome for every step registered by this onboarding plugin. */
+/** Shared modal chrome for every step registered by this onboarding plugin. */
 
 import { useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'

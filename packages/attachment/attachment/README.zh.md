@@ -1,4 +1,4 @@
-﻿---
+---
 description: "持久圖片與文件附件，供用戶與維護者在提示詞與命令中附加、復用或排查上傳內容。"
 kind: "package-reference"
 ---

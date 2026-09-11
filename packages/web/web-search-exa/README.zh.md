@@ -1,4 +1,4 @@
-﻿---
+---
 description: "ctx.web 的 Exa 搜索提供方：部署方如何掛載廠商原生 web 搜索，獲得可移植 snippet 與發布日期。"
 kind: "package-reference"
 ---

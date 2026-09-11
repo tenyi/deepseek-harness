@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與維護者的默認 POSIX Bash 執行器說明，用于選擇、配置或排查基于 shell seam 的非隔離命令執行。"
 kind: "package-reference"
 ---

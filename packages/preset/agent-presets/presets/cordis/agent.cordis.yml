@@ -1,4 +1,4 @@
-﻿# The `cordis` agent preset: the standard coding agent, plus the ability to
+# The `cordis` agent preset: the standard coding agent, plus the ability to
 # read and write the runtime it is running in.
 #
 # It exists so a person can ask an agent to author another agent. Everything in

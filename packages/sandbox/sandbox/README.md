@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The process-sandbox service contract for users and maintainers composing, using, or extending same-world subprocess confinement."
 kind: "package-reference"
 ---

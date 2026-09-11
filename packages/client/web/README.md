@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web boot kernel for the web GUI: two-stage boot of the client plugin tree, the framework-free boot page, and the shared module table, for users and maintainers composing or debugging the browser application."
 kind: "package-library"
 ---

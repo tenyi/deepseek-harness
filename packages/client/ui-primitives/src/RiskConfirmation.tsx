@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Controlled risk acknowledgement dialog shared by product surfaces that
  * must gate a sensitive action behind an explicit checkbox.
  */

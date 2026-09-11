@@ -1,4 +1,4 @@
-﻿; Compile with OUTPUT_FILE and RESULT_FILE in a private test directory, then run silently.
+; Compile with OUTPUT_FILE and RESULT_FILE in a private test directory, then run silently.
 Unicode true
 RequestExecutionLevel user
 SilentInstall silent

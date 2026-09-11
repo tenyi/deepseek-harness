@@ -1,4 +1,4 @@
-﻿// Browser geometry for the input card across Chat and Trajectory. The browser
+// Browser geometry for the input card across Chat and Trajectory. The browser
 // must expose layout-consuming scrollbars, and an uncompensated control keeps
 // equal rectangles from passing vacuously.
 import { fileURLToPath } from 'node:url'

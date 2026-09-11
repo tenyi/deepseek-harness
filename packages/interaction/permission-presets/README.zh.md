@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶的權限預設：供選擇、配置或排查把沙箱模式與審批策略捆綁在一起的 Permissions 選擇器的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

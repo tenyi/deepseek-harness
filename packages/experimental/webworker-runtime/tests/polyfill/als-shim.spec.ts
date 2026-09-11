@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Behavioural check of the folding AsyncLocalStorage shim: the two shapes the
  * agent service actually uses (nested instances; a boundary whose operation
  * returns a promise), the hook layer that carries a registration context into a

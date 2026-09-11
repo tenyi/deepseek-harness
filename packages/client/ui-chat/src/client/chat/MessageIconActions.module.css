@@ -1,4 +1,4 @@
-﻿/* Shared message IconActions row (user + assistant). Parent modules own
+/* Shared message IconActions row (user + assistant). Parent modules own
    layout offsets via the composed className. Row containers gate visibility
    by recency through data-actions-reveal. */
 

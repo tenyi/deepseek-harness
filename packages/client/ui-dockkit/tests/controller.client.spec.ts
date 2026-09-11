@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Controller behavior: the interaction vocabulary the UI calls, including tab
  * identity (focus an existing tab, or open an explicit copy), the guide tab a
  * split seats, drop resolution, floating, and the notification contract.

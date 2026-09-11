@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `sessionStats` projection unit: a pure fold of step boundaries, stream
  * embedded streams, tool pairs, and assembled assistant messages into whole-log counts
  * and wall times.

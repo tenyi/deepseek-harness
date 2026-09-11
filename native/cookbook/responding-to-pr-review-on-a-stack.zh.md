@@ -1,4 +1,4 @@
-﻿# 在堆疊 PR 鏈中回應評審意見
+# 在堆疊 PR 鏈中回應評審意見
 
 [English](responding-to-pr-review-on-a-stack.md) | 中文
 

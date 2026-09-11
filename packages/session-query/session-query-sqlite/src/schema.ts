@@ -1,4 +1,4 @@
-﻿/** SQLite schema for the disposable session full-text read model. */
+/** SQLite schema for the disposable session full-text read model. */
 
 import type { DatabaseSync } from 'node:sqlite'
 import { mkdir, open } from 'node:fs/promises'

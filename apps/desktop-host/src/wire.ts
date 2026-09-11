@@ -1,4 +1,4 @@
-﻿/** Framed request and response bytes for the Electron Desktop Host transport. */
+/** Framed request and response bytes for the Electron Desktop Host transport. */
 
 /** Protocol version shared with the Electron shell. */
 export const DESKTOP_HOST_PROTOCOL_VERSION = 3 as const

@@ -1,4 +1,4 @@
-﻿/** Streaming terminal-control sanitizer for the line-oriented first release. */
+/** Streaming terminal-control sanitizer for the line-oriented first release. */
 
 import { Buffer } from 'node:buffer'
 

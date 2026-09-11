@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的 subagent 委派工具，供用戶與維護者配置、組合或排查基于 subagent 提供方的委派。"
 kind: "package-reference"
 ---

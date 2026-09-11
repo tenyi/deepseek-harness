@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /** Static dependency discovery has an injected file reader and never exposes it to the iframe. */
 import { describe, expect, it, vi } from 'vitest'
 import { packHtml } from '../src/client/html/pack.ts'

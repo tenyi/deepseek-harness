@@ -1,1 +1,1 @@
-﻿- paragraph: "Reminder: Review the release window."
+- paragraph: "Reminder: Review the release window."

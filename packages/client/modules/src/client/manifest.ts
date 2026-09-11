@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Client module system: the browser peer of Node's internal ESM loader, built
  * as a lazy CJS table. The vendored cordis Loader consumes this object
  * through its `internal` contract (the only call site is `EntryTree.import` →

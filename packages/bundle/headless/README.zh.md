@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh 的一次性任務模式：從命令行運行單個任務并打印最終答案，供用戶腳本化或自動化 dsh。"
 kind: "package-bundle"
 ---

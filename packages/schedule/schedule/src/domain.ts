@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Strict Schedule decoding, replay, time validation, and framing.
  * @module @deepseek-ai/dsh-schedule
  */

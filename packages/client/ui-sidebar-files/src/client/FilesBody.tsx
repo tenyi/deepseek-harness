@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The file tree's body: the session's workspace root, listed one level at a time.
  *
  * Everything the tree keeps lives in its store, keyed by tab; everything it asks

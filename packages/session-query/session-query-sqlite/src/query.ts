@@ -1,4 +1,4 @@
-﻿/** Request normalization, parameterized predicates, and result presentation. */
+/** Request normalization, parameterized predicates, and result presentation. */
 
 import {
   SessionQueryError,

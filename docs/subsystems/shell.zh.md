@@ -1,4 +1,4 @@
-﻿# Bash 執行器
+# Bash 執行器
 
 [English](shell.md) | 中文
 

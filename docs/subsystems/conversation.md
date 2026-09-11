@@ -1,4 +1,4 @@
-﻿# Conversation assembly
+# Conversation assembly
 
 English | [中文](conversation.zh.md)
 

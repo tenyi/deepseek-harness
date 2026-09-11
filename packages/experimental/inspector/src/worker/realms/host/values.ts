@@ -1,4 +1,4 @@
-﻿/** Small validators for values returned by Node's native Inspector protocol. */
+/** Small validators for values returned by Node's native Inspector protocol. */
 
 /**
  * Test whether a native protocol value is a non-array object record.

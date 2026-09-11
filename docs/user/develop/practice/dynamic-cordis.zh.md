@@ -1,4 +1,4 @@
-﻿# 用 Cordis 工具擴展運行中的智能體
+# 用 Cordis 工具擴展運行中的智能體
 
 [English](dynamic-cordis.md) | 中文
 

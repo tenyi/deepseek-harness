@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The one-shot app's ordinary command-line provider over a real Loader tree:
  * the task becomes injected runner config, while help and usage errors leave
  * the consumer pending.

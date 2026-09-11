@@ -1,4 +1,4 @@
-﻿/**
+/**
  * TeX-to-React via KaTeX, replicating the rehype-katex pipeline this renderer
  * replaced: the same three-arm error chain (strict render, `strict: 'ignore'`
  * retry, error span) and a DOM-identical element tree, so settled math keeps

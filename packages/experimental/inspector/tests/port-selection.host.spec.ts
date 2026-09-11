@@ -1,4 +1,4 @@
-﻿/** Host Worker port-selection behavior. */
+/** Host Worker port-selection behavior. */
 
 import { createServer, type Server } from 'node:http'
 import type { AddressInfo } from 'node:net'

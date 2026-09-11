@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Semantic check of the suspension runtime (`src/polyfill/async-context/als-runtime.ts`): the object the
  * transformed modules call at every suspension point.
  *

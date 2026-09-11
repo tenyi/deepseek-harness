@@ -1,4 +1,4 @@
-﻿---
+---
 description: "DSH_HOME 下附加圖片的本地存儲，供用戶與維護者選擇或排查圖片附件的存放位置。"
 kind: "package-reference"
 ---

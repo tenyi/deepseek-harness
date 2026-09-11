@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web @file 與 @session 引用 source：候選項、排序，以及原子行內引用（統一的文件/會話選取）。"
 kind: "package-reference"
 ---

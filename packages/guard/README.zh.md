@@ -1,4 +1,4 @@
-﻿---
+---
 description: "循環衛生 guard 家族的包映射：建議性重復工具提醒與單次工具調用超時策略，供選擇或組合 guard 的用戶與維護者閱讀。"
 kind: "package-group"
 ---

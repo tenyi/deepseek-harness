@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Vocabulary for the spill-policy plugin: the minimal structural view of a tool
  * execution the policy needs to derive the owning session for a spill artifact.
  *

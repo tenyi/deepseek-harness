@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Model-facing subagent delegation tool for users and maintainers configuring, composing, or debugging delegation over a subagent provider."
 kind: "package-reference"
 ---

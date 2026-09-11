@@ -1,4 +1,4 @@
-﻿/** Source-safe Agent Teams browser registration and Remote mount lifecycle. */
+/** Source-safe Agent Teams browser registration and Remote mount lifecycle. */
 
 import type {
   TeamMemberView as TeamRosterMember,

@@ -1,4 +1,4 @@
-﻿# Plugin configuration
+# Plugin configuration
 
 English | [中文](config.zh.md)
 

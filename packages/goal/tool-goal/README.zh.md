@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向選擇、組合或排查 get_goal、create_goal 與 update_goal 的用戶與維護者的模型側 goal 工具說明。"
 kind: "package-reference"
 ---

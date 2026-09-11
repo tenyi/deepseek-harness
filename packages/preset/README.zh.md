@@ -1,4 +1,4 @@
-﻿---
+---
 description: "preset 組地圖：按會話從 preset 文件組裝 agent，供瀏覽本組的用戶與維護者閱讀。"
 kind: "package-group"
 ---

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Test driver: boot the tool-pwsh Loader composition, execute one real
  * foreground and one real background pwsh command through the tool registry,

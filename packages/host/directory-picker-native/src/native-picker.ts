@@ -1,4 +1,4 @@
-﻿/** Cross-platform native single-directory chooser behind the native backend's capability. */
+/** Cross-platform native single-directory chooser behind the native backend's capability. */
 
 import { runNativeCommand, type NativeCommandRunner } from '@deepseek-ai/dsh-native-command'
 import { pickWin32Directory } from './win32-dialog.ts'

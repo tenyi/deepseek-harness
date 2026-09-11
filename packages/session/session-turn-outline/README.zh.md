@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向組合或調試 turnOutline 投影單元的客戶端與維護者的全量輪次大綱說明，支撐整會話輪次導航。"
 kind: "package-reference"
 ---

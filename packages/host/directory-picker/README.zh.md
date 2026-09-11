@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向 web GUI 宿主的工作區目錄選擇 seam：原生與瀏覽后端所實現的服務約定、能力詞匯與錯誤碼。"
 kind: "package-reference"
 ---

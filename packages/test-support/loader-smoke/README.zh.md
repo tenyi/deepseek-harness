@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向無密鑰示例冒煙測試的共享子進程與直接 agent（智能體） harness，供測試作者啟動真實 Loader 組合。"
 kind: "package-library"
 ---

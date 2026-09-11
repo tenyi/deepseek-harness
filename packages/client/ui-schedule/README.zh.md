@@ -1,4 +1,4 @@
-﻿---
+---
 description: "說明活動 Schedule 提醒的只讀 Web 目錄，供用戶選擇該界面，也供維護者了解其 projection、時間與無障礙行為。"
 kind: "package-reference"
 ---

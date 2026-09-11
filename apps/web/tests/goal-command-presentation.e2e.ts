@@ -1,4 +1,4 @@
-﻿// Web e2e: /goal opts its command input into the human transcript while the
+// Web e2e: /goal opts its command input into the human transcript while the
 // command remains log-only. The shipped composition runs with no model adapter,
 // so an accidental turn fails loud in addition to the event-level assertions.
 import { fileURLToPath } from 'node:url'

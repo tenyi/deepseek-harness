@@ -1,4 +1,4 @@
-﻿/** Cross-platform native path opener behavior. */
+/** Cross-platform native path opener behavior. */
 type ExecFileCallback = (
   error: (Error & { code?: string | number }) | null,
   stdout: string,

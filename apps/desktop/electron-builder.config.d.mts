@@ -1,4 +1,4 @@
-﻿/** Electron-builder fields asserted by the Desktop release tests. */
+/** Electron-builder fields asserted by the Desktop release tests. */
 export interface DesktopElectronBuilderConfig {
   readonly appId: string
   readonly directories: {

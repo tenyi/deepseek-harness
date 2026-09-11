@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的 ralph 工具：固定前臺 agent loop（智能體循環），讓全新 agent 圍繞一個不可變目標迭代，供選擇或配置此類迭代的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Single replay-aware token-meter service for request and surface pressure.
  *
  * @module @deepseek-ai/dsh-token-meter

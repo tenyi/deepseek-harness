@@ -1,4 +1,4 @@
-﻿/** Replay-stable view models for Cordis lifecycle Tool calls. */
+/** Replay-stable view models for Cordis lifecycle Tool calls. */
 
 import type { ToolCallViewProps } from '@deepseek-ai/dsh-client-ui-tool/client'
 import type {

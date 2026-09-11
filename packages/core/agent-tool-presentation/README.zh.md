@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的 agent（智能體）平面呈現選擇器說明，用于選擇、配置或調試 agent preset 的模型看到其工具的哪種形態。"
 kind: "package-reference"
 ---

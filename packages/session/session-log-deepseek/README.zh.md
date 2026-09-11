@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向啟用官方 DeepSeek 請求元數據的部署，增量上傳規范會話日志。"
 kind: "package-reference"
 ---

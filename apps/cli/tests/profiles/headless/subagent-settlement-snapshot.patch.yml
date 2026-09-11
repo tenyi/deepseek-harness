@@ -1,4 +1,4 @@
-﻿# Replay-backed continuable child settlement patch over the shipped headless profile.
+# Replay-backed continuable child settlement patch over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The read-only Web catalog for active Schedule reminders, for users choosing the surface and maintainers of its projection, timing, and accessibility behavior."
 kind: "package-reference"
 ---

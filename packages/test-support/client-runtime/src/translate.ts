@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Test double of the locale lookup chain: a translate stub over plain
  * dictionaries, mirroring LocaleRuntime's resolution order (first dictionary
  * that owns the key wins, then the key itself stays visible) and its

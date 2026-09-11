@@ -1,4 +1,4 @@
-﻿import type { TypertContext, TypertLookup } from '@deepseek-ai/dsh-typert-protocol'
+import type { TypertContext, TypertLookup } from '@deepseek-ai/dsh-typert-protocol'
 import type { AgentId } from './types.ts'
 
 /** Host-only live Agent object. */

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Dynamic-package runner, browser half: the load engine that turns one browser
  * half's source into a live cordis plugin (closure → guard → module table →
  * loader entry, ./runtime.ts), plus the retract announcement that unloads it.

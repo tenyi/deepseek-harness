@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Domain declaration vocabulary. A spec object is the single source of a
  * domain's identity, layout, and record schemas: the owning package defines
  * it once with {@link defineDomain} and both the type surface and the runtime

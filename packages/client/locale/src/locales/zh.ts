@@ -1,4 +1,4 @@
-﻿/** zh base dictionary for the common namespace: cross-feature standard words. */
+/** zh base dictionary for the common namespace: cross-feature standard words. */
 export const zh = {
   'ok': '確定',
   'cancel': '取消',

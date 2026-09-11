@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 // The fixture corpus is a DOM compatibility baseline; review diffs as
 // user-visible Markdown changes rather than regenerating them for refactors.
 // One intentional divergence from the original react-markdown recording:

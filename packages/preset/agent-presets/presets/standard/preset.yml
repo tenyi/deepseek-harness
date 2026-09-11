@@ -1,3 +1,3 @@
-﻿name: 標準模式
+name: 標準模式
 description: 功能完整的編碼 Agent，支持文件編輯、Shell、文件與網頁檢索、Skills、計劃、目標、子代理和工作流。
 order: 1

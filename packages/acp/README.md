@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The Agent Client Protocol package group: the automation-only server that exposes fresh harness agents to programmatic clients over JSON-RPC stdio."
 kind: "package-group"
 ---

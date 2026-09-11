@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Interaction limits and dock geometry. The model itself is unbounded; these
  * are the V1 rules the interaction layer enforces before it dispatches, kept
  * pure so they can be asserted without a browser.

@@ -1,4 +1,4 @@
-﻿# Cookbook: adding an LLM adapter
+# Cookbook: adding an LLM adapter
 
 English | [中文](adding-an-llm-adapter.zh.md)
 

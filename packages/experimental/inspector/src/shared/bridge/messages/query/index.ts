@@ -1,4 +1,4 @@
-﻿/** Public exports for the non-CDP Inspector query protocol. */
+/** Public exports for the non-CDP Inspector query protocol. */
 
 export * from './codec.ts'
 export * from './commands.ts'

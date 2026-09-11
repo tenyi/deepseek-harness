@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SkillNameProjector: the step's `skill-invocation` injections attach to the
  * direct messages of the same batch, incrementally — an assistant-only apply
  * must neither scan the store nor re-emit message Nodes.

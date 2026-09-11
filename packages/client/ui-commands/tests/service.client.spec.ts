@@ -1,4 +1,4 @@
-﻿/**
+/**
  * CommandUiRuntime tests on a real cordis Context with fake slash/connection
  * faces and real session scopes (createScope): session-keyed candidate
  * synthesis (host catalog by sessionId + contributions by availability,

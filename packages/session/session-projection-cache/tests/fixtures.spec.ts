@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Cross-version recovery over archived on-disk artifacts. `fixtures/` holds
  * real `session_projcache` media, each produced by driving the named release
  * through its own web app (session created over RPC, real model turns, a

@@ -1,4 +1,4 @@
-﻿/** Current installed Session validation used after vocabulary-aware format restoration. */
+/** Current installed Session validation used after vocabulary-aware format restoration. */
 
 import {
   SESSION_FORMAT_VERSION,

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Model-facing Consumer of the `ctx.shell` capability seam. Background calls
  * register process handles with `ctx.jobs`; their work uses job cancellation
  * rather than the tool-call signal after an id is returned.

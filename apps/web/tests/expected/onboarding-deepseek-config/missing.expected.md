@@ -1,4 +1,4 @@
-﻿- dialog "添加一個 API Key 開始使用":
+- dialog "添加一個 API Key 開始使用":
   - heading "添加一個 API Key 開始使用" [level=2]
   - paragraph: 配置 DeepSeek 官方模型，即可開始使用。
   - text: API 密鑰

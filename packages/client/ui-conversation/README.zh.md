@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Target-neutral 對話裝配與瀏覽器 shell：事件和視圖注冊表、逐會話 binding、輸入狀態、slot 與臨時 composer takeover。"
 kind: "package-reference"
 ---

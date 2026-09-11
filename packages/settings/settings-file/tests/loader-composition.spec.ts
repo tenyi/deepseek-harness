@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Real-composition guard: the provider and a consumer plugin boot from a
  * test-only cordis.yml through the actual Loader + Include path, an external
  * edit of settings.yaml hot-publishes into the consumer's scope, and the same

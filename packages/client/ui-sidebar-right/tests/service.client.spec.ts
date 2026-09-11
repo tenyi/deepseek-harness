@@ -1,4 +1,4 @@
-﻿/**
+/**
  * What `ctx.sidebarRight` promises other plugins.
  *
  * The service is root-scoped and the surface is per session, so every command

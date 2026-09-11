@@ -1,4 +1,4 @@
-﻿---
+---
 description: "與通道無關的一次性審批 seam；供組合應答者、設置策略或排查以拒絕方式關閉的權限決定的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

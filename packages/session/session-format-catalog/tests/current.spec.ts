@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import type { SessionFormatArtifact, SessionFormatHeader } from '@deepseek-ai/dsh-session-format'
 import {
   validateInstalledCurrentSessionArtifact,

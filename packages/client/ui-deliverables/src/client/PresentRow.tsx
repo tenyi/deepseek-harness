@@ -1,4 +1,4 @@
-﻿/** Present call status and expandable durable result text. */
+/** Present call status and expandable durable result text. */
 import { useState } from 'react'
 import { DisclosureRow, StateDot } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { ToolCallViewProps } from '@deepseek-ai/dsh-client-ui-tool/client'

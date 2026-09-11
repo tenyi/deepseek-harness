@@ -1,4 +1,4 @@
-﻿/** Native namespace mocks shared by local callers and the Connection carrier. */
+/** Native namespace mocks shared by local callers and the Connection carrier. */
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { RemoteMock, frames, ok, openStream, type StreamHandle } from '../src/index.ts'
 

@@ -1,4 +1,4 @@
-﻿/** Worker-side bridge dependencies for one connected Client realm. */
+/** Worker-side bridge dependencies for one connected Client realm. */
 
 import type { ClientRuntimeRouter, ClientRuntimeTarget } from '../../bridge/runtime-rpc.ts'
 import type { ClientSourceRouter } from '../../bridge/source-rpc.ts'

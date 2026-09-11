@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向啟動 JSON-RPC harness 運行時的用戶與維護者，說明 SDK stdio 應用 profile。"
 kind: "package-bundle"
 ---

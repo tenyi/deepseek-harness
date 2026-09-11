@@ -1,4 +1,4 @@
-﻿/** Restricted-token adapters over the shared Win32 process owner. */
+/** Restricted-token adapters over the shared Win32 process owner. */
 
 import {
   spawnInheritedJobProcess,

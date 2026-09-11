@@ -1,4 +1,4 @@
-﻿// The Tool-owned keyed-slot type chain: registration shape and composed
+// The Tool-owned keyed-slot type chain: registration shape and composed
 // atomic-view props. Generic slot-system duals live in ui-slots tests.
 import { describe, expect, it } from 'vitest'
 import type { ReactNode } from 'react'

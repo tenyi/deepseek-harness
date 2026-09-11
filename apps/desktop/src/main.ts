@@ -1,4 +1,4 @@
-﻿/** Electron shell: desktop project ownership, custom protocol, windows, and lifecycle. */
+/** Electron shell: desktop project ownership, custom protocol, windows, and lifecycle. */
 
 import { readFile, writeFile } from 'node:fs/promises'
 import { extname, join, normalize, resolve, sep } from 'node:path'

@@ -1,4 +1,4 @@
-﻿# 擴展
+# 擴展
 
 [English](extensions.md) | 中文
 

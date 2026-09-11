@@ -1,4 +1,4 @@
-﻿# Web UI 樣式參考
+# Web UI 樣式參考
 
 [English](web-styling.md) | 中文
 

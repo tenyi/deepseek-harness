@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The koffi-backed bindings against a mocked `koffi` module (the same
  * technique as dsh-session-persistence-jsonl's win32 suite): a small in-memory
  * COM world stands in for ole32/user32/kernel32, keeping the vtable dispatch,

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * WorkspaceBrowser spacing contract, asserted against the CSS text on disk:
  * row fills share the shell's trailing inset, the stable scrollbar counts
  * inside it, and flat, grouped, and search views keep their intended rhythm.

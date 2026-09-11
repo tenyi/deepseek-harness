@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Harness 的出站 HTTP 代理支持：從啟動環境解析出的一份策略，如何覆蓋到 Node fetch 本來會直連的每一個請求。"
 kind: "package-reference"
 ---

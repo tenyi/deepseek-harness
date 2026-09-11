@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Release verification. Always: every published package carries one shared
  * version, and — when running from a tag or publishing — the

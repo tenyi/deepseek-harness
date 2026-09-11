@@ -1,4 +1,4 @@
-﻿/** Regression coverage for ACP example teardown. */
+/** Regression coverage for ACP example teardown. */
 
 import { access, mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'

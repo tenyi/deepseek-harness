@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Service Definition for the subprocess capability seam (`ctx.subprocess`): execution-world executable lookup,
  * fully specified provider-managed process ranges with raw or
  * collected stdio, and one terminal-process primitive. Command defaulting,

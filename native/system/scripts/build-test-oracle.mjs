@@ -1,4 +1,4 @@
-﻿/** Build the independent POSIX flock oracle used by native behavior tests. */
+/** Build the independent POSIX flock oracle used by native behavior tests. */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';

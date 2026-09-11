@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import {
   compressZstdFrame, createZstdFrameDecoder, decompressZstdFrame, scanZstdFrames,
 } from '../src/zstd.ts'

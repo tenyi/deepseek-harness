@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Local per-platform sandbox backends for users and maintainers choosing, configuring, or debugging process confinement on Linux, macOS, or Windows."
 kind: "package-reference"
 ---

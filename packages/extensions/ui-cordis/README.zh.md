@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Cordis 動態插件瀏覽器面說明，供選擇、組合或排查面板、工具卡片與 @pluginId 輸入的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

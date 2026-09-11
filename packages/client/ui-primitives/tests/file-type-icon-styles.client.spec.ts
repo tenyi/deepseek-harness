@@ -1,4 +1,4 @@
-﻿/** FileTypeIcon's default per-category palette as CSS text. */
+/** FileTypeIcon's default per-category palette as CSS text. */
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'

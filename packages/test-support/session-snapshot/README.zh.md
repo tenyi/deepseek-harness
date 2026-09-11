@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向無密鑰 profile 測試的會話日志快照支持：manifest（元數據清單）、身份脫敏、規范化、workspace 檢查與協議適配器。"
 kind: "package-library"
 ---

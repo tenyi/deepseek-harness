@@ -1,4 +1,4 @@
-﻿/** Lossless range encoding for JSONL `sourceEventSeqs` arrays. */
+/** Lossless range encoding for JSONL `sourceEventSeqs` arrays. */
 
 import { SessionSeq } from './types.ts'
 import type { SessionSeq as SessionSeqType } from './types.ts'

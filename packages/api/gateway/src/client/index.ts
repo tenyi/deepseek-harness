@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Client projection of generated Typert Remote descriptors. Contributions
  * install traced `remote.<namespace>` services; no JavaScript Proxy
  * participates in method lookup, invocation, or type exposure.

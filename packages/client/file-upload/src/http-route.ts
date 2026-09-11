@@ -1,4 +1,4 @@
-﻿/** Authenticated raw-byte upload route registered on the Connection fetch registry. */
+/** Authenticated raw-byte upload route registered on the Connection fetch registry. */
 
 import { brandString } from '@deepseek-ai/dsh-brand'
 import type { SessionId } from '@deepseek-ai/dsh-session'

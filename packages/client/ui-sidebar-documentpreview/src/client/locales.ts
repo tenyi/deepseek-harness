@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `sidebarDocumentPreview` namespace dictionaries.
  *
  * The failure lines are the point of this file: a preview that cannot show a

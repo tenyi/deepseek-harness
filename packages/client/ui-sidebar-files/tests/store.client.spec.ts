@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The tree's write set, one tab at a time.
  *
  * Two facts here are load-bearing for the body: a collapsed level keeps what it

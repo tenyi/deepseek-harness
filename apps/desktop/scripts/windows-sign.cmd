@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 setlocal DisableDelayedExpansion
 set "signTool=%DSH_DESKTOP_WINDOWS_SIGNTOOL%"
 set "certificateFile=%DSH_DESKTOP_WINDOWS_CER_FILE%"

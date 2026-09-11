@@ -1,4 +1,4 @@
-﻿/** Startup diagnostics through the shipped headless profile and real MCP stdio transport. */
+/** Startup diagnostics through the shipped headless profile and real MCP stdio transport. */
 
 import { fileURLToPath } from 'node:url'
 import { expect, it } from 'vitest'

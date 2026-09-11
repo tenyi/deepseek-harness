@@ -1,4 +1,4 @@
-﻿/** Build and launch the unpackaged Electron shell against the current workspace. */
+/** Build and launch the unpackaged Electron shell against the current workspace. */
 
 import { spawn } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'

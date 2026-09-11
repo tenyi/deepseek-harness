@@ -1,4 +1,4 @@
-﻿---
+---
 description: "worker-thread 工作流引擎：在宿主事件循環之外執行由模型編寫的編排腳本，供選擇或配置執行隔離的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

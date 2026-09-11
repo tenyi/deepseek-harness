@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向選擇、掛載或排查持久 workspace 記錄與會話頭校驗成員資格的宿主的 Workspace 實體注冊表（ctx.workspaceRegistry）說明。"
 kind: "package-reference"
 ---

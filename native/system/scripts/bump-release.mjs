@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Bump the launcher workspace root and packages/* to one version, refresh the
  * repository lockfile, and verify. Usage: `pnpm release:bump <major|minor|patch|x.y.z>`.

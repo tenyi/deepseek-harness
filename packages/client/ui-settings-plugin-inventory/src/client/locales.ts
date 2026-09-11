@@ -1,4 +1,4 @@
-﻿/** Copy dictionaries for the plugin inventory Settings section. */
+/** Copy dictionaries for the plugin inventory Settings section. */
 
 /** Simplified Chinese dictionary and key source of truth. */
 export const zh = {

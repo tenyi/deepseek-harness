@@ -1,4 +1,4 @@
-﻿/** Framework-neutral snapshot and store contracts. */
+/** Framework-neutral snapshot and store contracts. */
 
 /** Minimal observable snapshot source shared by controllers, stores, and render adapters. */
 export interface ObservableSnapshot<T> {

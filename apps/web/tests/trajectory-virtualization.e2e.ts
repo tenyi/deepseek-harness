@@ -1,4 +1,4 @@
-﻿// Browser contract for the tail-paged, virtualized Trajectory ledger. The
+// Browser contract for the tail-paged, virtualized Trajectory ledger. The
 // scenario proves that semantic row identity survives an older-page prepend,
 // DOM mounting stays bounded, and every scroll range remains reachable.
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'

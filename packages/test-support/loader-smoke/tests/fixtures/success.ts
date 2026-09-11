@@ -1,4 +1,4 @@
-﻿/** Successful subprocess fixture for the Loader-smoke harness. */
+/** Successful subprocess fixture for the Loader-smoke harness. */
 
 let input = ''
 process.stdin.setEncoding('utf8')

@@ -1,4 +1,4 @@
-﻿/** Stream scripts and the pushable, abort-aware stream a script drives. */
+/** Stream scripts and the pushable, abort-aware stream a script drives. */
 
 import type { StreamRecord } from './log.ts'
 

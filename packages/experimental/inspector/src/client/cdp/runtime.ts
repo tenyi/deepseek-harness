@@ -1,4 +1,4 @@
-﻿/** Client-realm executor for the typed Runtime command protocol. */
+/** Client-realm executor for the typed Runtime command protocol. */
 
 import type {
   ClientCallArgument,

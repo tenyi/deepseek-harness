@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Advisory loop-hygiene guard that nudges the model out of identical tool-call loops, for users and maintainers choosing, configuring, or debugging the plugin."
 kind: "package-reference"
 ---

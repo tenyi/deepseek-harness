@@ -1,4 +1,4 @@
-﻿# Client 模塊
+# Client 模塊
 
 [English](client-modules.md) | 中文
 

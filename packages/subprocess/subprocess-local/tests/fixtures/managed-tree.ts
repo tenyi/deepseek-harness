@@ -1,4 +1,4 @@
-﻿import { spawn } from 'node:child_process'
+import { spawn } from 'node:child_process'
 import { rename, writeFile } from 'node:fs/promises'
 
 const [statePath] = process.argv.slice(2)

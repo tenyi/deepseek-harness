@@ -1,4 +1,4 @@
-﻿/** Sign runtime code and verify that packaged macOS artifacts carry the company release identity. */
+/** Sign runtime code and verify that packaged macOS artifacts carry the company release identity. */
 
 import { spawn, spawnSync } from 'node:child_process'
 import { resolve } from 'node:path'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The scoped-registration library for plugin authors and maintainers building registries or event surfaces that isolate contributions per agent or per group."
 kind: "package-library"
 ---

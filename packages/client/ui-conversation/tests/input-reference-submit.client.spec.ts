@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Reference-submit transaction coverage: chips serialize through their
  * owner, stay resident through Host rejection, and clear only after an
  * accepted prompt.

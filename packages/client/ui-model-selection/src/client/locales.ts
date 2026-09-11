@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `model` namespace dictionaries.
  *
  * `trigger.selectAria` intentionally matches `trigger.fallback` but remains a

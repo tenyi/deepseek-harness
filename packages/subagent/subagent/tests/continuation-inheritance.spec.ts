@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Continuable-child delegation policy: a fresh continuable start seeds the
  * parent's explicit sandbox override and the pinned `approval/policy: never`
  * onto the child's own log as `source: 'delegation'` events, and a cold

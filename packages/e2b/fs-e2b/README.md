@@ -1,4 +1,4 @@
-﻿---
+---
 description: "File operations inside the shared remote sandbox: what the agent can do with files there, when to use it, and what to expect — for deployers and maintainers of the E2B family."
 kind: "package-reference"
 ---

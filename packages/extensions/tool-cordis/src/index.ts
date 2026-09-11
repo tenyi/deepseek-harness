@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Model-facing Cordis runtime/package inspection, define, run, stop, and remove tools.
  * @module @deepseek-ai/dsh-tool-cordis
  */

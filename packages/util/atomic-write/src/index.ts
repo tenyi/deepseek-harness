@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Zero-dependency atomic file replacement and writer coordination.
  * `writeFileAtomic` writes a random-suffix sibling with exclusive create and
  * the caller's permission bits, then renames it over the target, so readers

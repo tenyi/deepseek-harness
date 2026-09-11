@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:tty` for the browser worker. The host has no terminal-backed file
  * descriptors, so terminal detection is always false.
  */

@@ -1,4 +1,4 @@
-﻿# Web UI style reference
+# Web UI style reference
 
 English | [中文](web-styling.zh.md)
 

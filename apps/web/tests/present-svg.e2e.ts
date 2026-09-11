@@ -1,4 +1,4 @@
-﻿/** A file request elicits explicit SVG delivery without naming the present tool. */
+/** A file request elicits explicit SVG delivery without naming the present tool. */
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'

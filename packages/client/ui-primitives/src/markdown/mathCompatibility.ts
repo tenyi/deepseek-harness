@@ -1,4 +1,4 @@
-﻿/** Extend upstream dollar-only math syntax with TeX delimiters while reusing its token vocabulary. */
+/** Extend upstream dollar-only math syntax with TeX delimiters while reusing its token vocabulary. */
 
 import { factorySpace } from 'micromark-factory-space'
 import type {} from 'micromark-extension-math'

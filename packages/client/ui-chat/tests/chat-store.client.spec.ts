@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { createChatStore } from '../src/client/stores.ts'
 
 describe('createChatStore', () => {

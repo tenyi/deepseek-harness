@@ -1,4 +1,4 @@
-﻿# LLM adapters
+# LLM adapters
 
 English | [中文](llm-adapter.zh.md)
 

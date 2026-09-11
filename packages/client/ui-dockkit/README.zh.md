@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的停靠布局套件：帶可逆操作的標簽格分裂樹、planner、線性歷史，以及渲染并驅動它的組件。"
 kind: "package-reference"
 ---

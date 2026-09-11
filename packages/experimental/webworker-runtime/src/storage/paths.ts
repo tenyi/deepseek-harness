@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Virtual root of the worker host's in-memory filesystem. Kept
  * in one module so the process shim, the path/os shims, and the VFS image
  * collector cannot drift apart.

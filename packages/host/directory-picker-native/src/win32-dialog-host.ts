@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Real-process half of the Win32 dialog driver: spawn the dialog child
  * process (source or built plane) and close a dialog thread's windows. The
  * module itself loads everywhere (the import chain from native-picker.ts is

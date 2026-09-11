@@ -1,4 +1,4 @@
-﻿/** Single-sample LAN-trust resolution for the /api browser-trust fence (`resolveLanTrust`). */
+/** Single-sample LAN-trust resolution for the /api browser-trust fence (`resolveLanTrust`). */
 
 import { describe, expect, it, vi } from 'vitest'
 import { resolveLanTrust } from '../src/index.ts'

@@ -1,4 +1,4 @@
-﻿/** `trajectory` namespace dictionaries for the complete trajectory surface. */
+/** `trajectory` namespace dictionaries for the complete trajectory surface. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'trajectory'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Structured composition reads for plugin-listing surfaces: the plugin rows
  * each preset names, with each row's effective enablement. A preset with a
  * live standing mount answers from that mount's Loader entries — evaluated

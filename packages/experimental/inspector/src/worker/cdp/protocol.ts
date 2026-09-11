@@ -1,4 +1,4 @@
-﻿/** Minimal CDP request and transport types owned by the Worker. */
+/** Minimal CDP request and transport types owned by the Worker. */
 
 import { isPlainObject } from '../../shared/json.ts'
 

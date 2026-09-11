@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: the configurable tab in Plugins settings — the cards a
+// Web e2e scenario: the configurable tab in Plugins settings — the cards a
 // deployment's exposed host-plane namespaces produce, one field edited through the real
 // wire down to `$DSH_HOME/settings.yaml`, and the override badge and reset
 // that layering produces. Zero model calls: everything is client state plus

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Node-private synchronous Zstandard frame decoder optimization.
  * @module dsh-session-persistence-jsonl/zstd-private-decoder
  */

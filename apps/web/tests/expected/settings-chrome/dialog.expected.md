@@ -1,4 +1,4 @@
-﻿- dialog "設置":
+- dialog "設置":
   - navigation:
     - text: 設置
     - button "通用設置":

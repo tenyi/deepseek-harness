@@ -1,4 +1,4 @@
-﻿# Compaction
+# Compaction
 
 English | [中文](compaction.zh.md)
 

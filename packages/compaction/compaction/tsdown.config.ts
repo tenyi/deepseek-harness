@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
 /** Builds each published entry as a self-contained file admitted by the package whitelist. */
 export default defineConfig([

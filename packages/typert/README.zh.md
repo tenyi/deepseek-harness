@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Typert 組地圖：構建時類型圖生成器、運行時注冊表、Loader 集成與共享 Remote 協議，它們共同支撐類型化的 Host 到 Client 調用。"
 kind: "package-group"
 ---

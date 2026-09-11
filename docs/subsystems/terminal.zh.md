@@ -1,4 +1,4 @@
-﻿# 持久 PTY 會話
+# 持久 PTY 會話
 
 [English](terminal.md) | 中文
 

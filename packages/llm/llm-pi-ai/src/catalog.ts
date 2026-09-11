@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Materialization of one provider route's model catalog. The installed pi-ai
  * catalog supplies defaults keyed by model id, and a profile's own model
  * entries override them field by field, so a route naming a catalog provider

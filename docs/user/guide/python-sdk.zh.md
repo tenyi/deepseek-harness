@@ -1,4 +1,4 @@
-﻿# Python SDK 入門
+# Python SDK 入門
 
 [English](python-sdk.md) | 中文
 

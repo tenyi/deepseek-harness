@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與維護者的本地 PowerShell 執行器說明，用于選擇、配置或排查基于 shell seam 的非隔離 PowerShell 命令執行。"
 kind: "package-reference"
 ---

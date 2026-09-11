@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Add the published experimental Agent Teams panel to a Web profile after the Host Team layer."
 kind: "package-bundle"
 ---

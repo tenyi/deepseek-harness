@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "@deepseek-ai/dsh-shell-env",
   "description": "Tool-independent managed DSH_* shell environment registry",
   "version": "0.1.5-rc.2",

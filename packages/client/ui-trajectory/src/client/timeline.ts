@@ -1,4 +1,4 @@
-﻿/** Operation-sequence and recorded-time projections for the trajectory overview. */
+/** Operation-sequence and recorded-time projections for the trajectory overview. */
 
 import type { TrajectoryTurnModel } from './layout.ts'
 import type { TrajectoryTranslate } from './locales.ts'

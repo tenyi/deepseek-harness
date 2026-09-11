@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Stage one of tab-type registration: how the registry decides who opens an
  * address.
  *

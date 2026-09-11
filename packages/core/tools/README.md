@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The tool registry and execution pipeline for tool authors and maintainers registering, restricting, presenting, or debugging model-facing tools."
 kind: "package-reference"
 ---

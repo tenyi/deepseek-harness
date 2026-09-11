@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Out-of-process SDK subagent backend. Each child is a complete DeepSeek
  * Harness runtime in its own process — own named profile and patch composition,
  * session, model route, and tools — driven over stdio JSON-RPC through the

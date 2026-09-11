@@ -1,4 +1,4 @@
-﻿.bubble {
+.bubble {
   position: fixed;
   z-index: 100;
   /* Fixed-position shrink-to-fit measures only the space from `left` to the

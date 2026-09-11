@@ -1,4 +1,4 @@
-﻿// Web e2e scenarios: lifecycle & chrome — the workspace-aware first-send
+// Web e2e scenarios: lifecycle & chrome — the workspace-aware first-send
 // flow over the real wire, reload recovery, and the dark-mode token cascade.
 // One tiny recorded turn (text-only) drives the whole spec: the empty-state
 // hero materializes a real Workspace + Session on first send (the jsdom

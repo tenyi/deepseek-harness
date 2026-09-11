@@ -1,4 +1,4 @@
-﻿---
+---
 description: "feedback 包組：關于會話與 assistant 消息的用戶反饋，供用戶與維護者選擇、組合或排查反饋采集。"
 kind: "package-group"
 ---

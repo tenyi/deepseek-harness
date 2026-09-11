@@ -1,4 +1,4 @@
-﻿/**
+/**
  * A minimal mock ACP AGENT, run as a subprocess, for the keyless
  * `dsh-subagent-acp` tests. It speaks the agent side of ACP over stdio and is
  * fully scripted by environment variables — no model, no network:

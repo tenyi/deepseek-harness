@@ -1,4 +1,4 @@
-﻿/** Shared types for target-owned context-source projections. */
+/** Shared types for target-owned context-source projections. */
 
 /**
  * Which model-facing role a logged non-user message plays.

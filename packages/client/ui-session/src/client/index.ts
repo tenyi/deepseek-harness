@@ -1,4 +1,4 @@
-﻿/** Session Controller adapter for React selector hooks and Slot scope data. */
+/** Session Controller adapter for React selector hooks and Slot scope data. */
 import { Service, type Context } from '@deepseek-ai/cordis'
 import type {
   ISessions,

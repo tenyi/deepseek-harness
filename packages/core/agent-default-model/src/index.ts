@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Default model selection for an Agent without a session-specific selection.
  *
  * @module @deepseek-ai/dsh-agent-default-model

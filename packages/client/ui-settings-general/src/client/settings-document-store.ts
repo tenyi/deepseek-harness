@@ -1,4 +1,4 @@
-﻿/** State owner for the optional local settings-document action. */
+/** State owner for the optional local settings-document action. */
 
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 // Type-only: pulls the ctx.remote merge into this program.

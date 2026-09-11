@@ -1,4 +1,4 @@
-﻿# LLM 適配器
+# LLM 適配器
 
 [English](llm-adapter.md) | 中文
 

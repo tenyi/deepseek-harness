@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser-safe `@file` token grammar shared by terminal and web clients.
  *
  * @module @deepseek-ai/dsh-file-reference/grammar

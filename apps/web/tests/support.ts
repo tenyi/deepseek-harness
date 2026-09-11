@@ -1,4 +1,4 @@
-﻿// Shared plumbing for the web smoke tests (dist location, free port, failure shots).
+// Shared plumbing for the web smoke tests (dist location, free port, failure shots).
 import { existsSync, mkdirSync } from 'node:fs'
 import { createServer } from 'node:net'
 import { join } from 'node:path'

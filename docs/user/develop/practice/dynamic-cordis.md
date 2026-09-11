@@ -1,4 +1,4 @@
-﻿# Extend a running agent with Cordis tools
+# Extend a running agent with Cordis tools
 
 English | [中文](dynamic-cordis.zh.md)
 

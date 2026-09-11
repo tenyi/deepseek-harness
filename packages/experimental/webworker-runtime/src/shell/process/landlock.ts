@@ -1,4 +1,4 @@
-﻿/** Landlock launcher parsing and per-process VFS enforcement for the worker shell. */
+/** Landlock launcher parsing and per-process VFS enforcement for the worker shell. */
 import { resolve } from '../../module-system/posix-path.ts'
 import { DSH_TMP } from '../../storage/paths.ts'
 import { filesystemError } from '../fs-access.ts'

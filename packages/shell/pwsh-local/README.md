@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The local PowerShell executor for deployments and maintainers choosing, configuring, or debugging unconfined PowerShell command execution over the shell seam."
 kind: "package-reference"
 ---

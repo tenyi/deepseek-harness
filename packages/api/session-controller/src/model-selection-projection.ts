@@ -1,4 +1,4 @@
-﻿/** Durable model-selection intent and request-use projection. */
+/** Durable model-selection intent and request-use projection. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { SessionEvent } from '@deepseek-ai/dsh-session'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "runtime-diagnostics 組地圖：針對運行中組合的包自有運行時不變式檢查，供瀏覽本組的用戶與維護者參考。"
 kind: "package-group"
 ---

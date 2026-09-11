@@ -1,4 +1,4 @@
-﻿# Composer draft scrolling (14-line cap, one editable surface, one scrollport)
+# Composer draft scrolling (14-line cap, one editable surface, one scrollport)
 
 ## At the start of the draft
 

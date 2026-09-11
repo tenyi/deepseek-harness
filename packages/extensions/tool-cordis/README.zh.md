@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向 agent（智能體）與維護者的 Cordis 運行時工具說明，用于選擇、組合或排查動態包工作流。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿<div class="_markdown_404681">
+<div class="_markdown_404681">
   <div class="_block_9aea57 md-code-block">
     <div class="_bannerWrap_9aea57">
       <div class="_banner_9aea57" data-code-block-banner="true">

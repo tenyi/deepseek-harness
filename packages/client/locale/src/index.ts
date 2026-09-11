@@ -1,4 +1,4 @@
-﻿/** Host registration for the browser locale preference. */
+/** Host registration for the browser locale preference. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-settings'

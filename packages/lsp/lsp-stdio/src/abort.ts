@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared cancellation helpers for the local LSP provider's host-I/O, queue, and protocol phases.
  * @module @deepseek-ai/dsh-lsp-stdio/abort
  */

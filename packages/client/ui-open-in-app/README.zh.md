@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web 會話頭部 \"Open In...\" 分體按鈕：在記住的應用中打開會話 workspace 目錄，并列出主機探測到已安裝的全部應用。"
 kind: "package-reference"
 ---

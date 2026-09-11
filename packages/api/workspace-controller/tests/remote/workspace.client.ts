@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The Remote side of one Workspace registry under test: default answers for
  * every `workspace/*` command a `ClientWorkspaceModel` calls, builders for the
  * rows and frames of the `workspace/follow` stream, and a script that hands

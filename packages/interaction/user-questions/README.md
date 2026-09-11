@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Waterfall-based question and answer service for tools, permission plugins, local answerers, and Agent-scoped Web interactions."
 kind: "package-reference"
 ---

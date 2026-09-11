@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Web shell library entry. The shell's product is {@link AppWebEntry} —
  * apps/web's Vite entry runs it against #root. The boot page and fiber-state
  * projection remain internal; the static module table and its platform words

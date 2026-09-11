@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ui-permission browser half on a real cordis Context with fake command/
  * sessions faces: the plugin hangs the /permission popup decoration on the
  * host command; options flatten the session's permissions projection with

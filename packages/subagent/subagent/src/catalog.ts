@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Parent-owned durable subagent catalog events and their chunked projection.
  *
  * @module @deepseek-ai/dsh-subagent/catalog

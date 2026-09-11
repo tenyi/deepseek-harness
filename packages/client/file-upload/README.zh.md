@@ -1,4 +1,4 @@
-﻿---
+---
 description: "按 Session 尋址上傳瀏覽器文件，提供流式接收、進度、取消和供后續 prompt 使用的暫存憑證。"
 kind: "package-reference"
 ---

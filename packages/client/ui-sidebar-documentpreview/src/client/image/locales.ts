@@ -1,4 +1,4 @@
-﻿/** Locale-owned image renderer labels and status text. */
+/** Locale-owned image renderer labels and status text. */
 export const zh = {
   title: '圖片',
   preview: '圖片預覽：{name}',

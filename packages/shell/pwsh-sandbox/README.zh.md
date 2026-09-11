@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與維護者的沙箱 PowerShell 執行器說明，用于選擇、配置或排查受限 PowerShell 命令執行及其拒絕事實。"
 kind: "package-reference"
 ---

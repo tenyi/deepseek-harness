@@ -1,4 +1,4 @@
-﻿# Cookbook: adding a vendored package
+# Cookbook: adding a vendored package
 
 English | [中文](adding-a-vendored-package.zh.md)
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Test helper: drive `ctx.llm.stream()` through a `BlockAssembler` and return
  * the assembled message + usage + finish reason. This exercises the same
  * streaming path production uses (the loop), rather than a service-level

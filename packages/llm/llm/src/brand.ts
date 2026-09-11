@@ -1,4 +1,4 @@
-﻿/**
+/**
  * dsh-llm's owned branded ids: tool-call correlation and provider request
  * diagnostics.
  *

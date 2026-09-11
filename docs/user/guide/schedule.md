@@ -1,4 +1,4 @@
-﻿# Schedule session-local reminders
+# Schedule session-local reminders
 
 English | [中文](schedule.zh.md)
 

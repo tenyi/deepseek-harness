@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Local sandbox backend. It selects the platform runner chain (Linux bwrap then
  * Landlock; macOS Seatbelt; Windows the ACL restricted-token runner), functionally probes
  * competing candidates once, and reports each wrap's enforcement and stderr

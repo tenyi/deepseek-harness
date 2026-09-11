@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向構建或排查實驗性預覽部署的維護者，說明瀏覽器 worker 虛擬文件系統（VFS）鏡像打包。"
 kind: "package-library"
 ---

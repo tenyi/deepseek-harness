@@ -1,4 +1,4 @@
-﻿import type { Context } from '@deepseek-ai/cordis'
+import type { Context } from '@deepseek-ai/cordis'
 import { LlmAdapter, type StreamChunk } from '@deepseek-ai/dsh-llm'
 
 /** Deterministic one-step adapter for the time-context Loader fixture. */

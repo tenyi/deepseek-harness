@@ -1,4 +1,4 @@
-﻿/* Drag events must keep reaching the page so the owner's enter/leave count
+/* Drag events must keep reaching the page so the owner's enter/leave count
    stays balanced. */
 .mask {
   position: fixed;

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Agent-preset management controller: the roster as a list, a copy dialog as
  * the only way a preset is created, and a read-only viewer over the shipped
  * compositions.

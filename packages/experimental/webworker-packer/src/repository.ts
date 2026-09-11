@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Repository knowledge for the packer: where this tree's workspaces, profile
  * composition, and config trees are, and how to report a pack.
  *

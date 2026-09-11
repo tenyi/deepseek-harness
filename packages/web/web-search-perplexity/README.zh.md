@@ -1,4 +1,4 @@
-﻿---
+---
 description: "ctx.web 的 Perplexity 搜索提供方：部署方如何掛載 OpenAI 兼容的 Perplexity 搜索，獲得生成答案與引用。"
 kind: "package-reference"
 ---

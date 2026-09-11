@@ -1,4 +1,4 @@
-﻿# User Credentials
+# User Credentials
 
 English | [中文](credentials.zh.md)
 

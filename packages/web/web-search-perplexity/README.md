@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The Perplexity-backed search provider for ctx.web: how deployments mount OpenAI-compatible Perplexity search with generated answers and citations."
 kind: "package-reference"
 ---

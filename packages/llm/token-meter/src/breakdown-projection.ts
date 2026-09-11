@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Heuristic composition of the current retained surface, independent of route
  * image pricing and provider usage. Positional entries preserve system-prompt
  * classification across replacements without retaining historical messages.

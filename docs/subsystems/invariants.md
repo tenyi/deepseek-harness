@@ -1,4 +1,4 @@
-﻿# Runtime Invariants
+# Runtime Invariants
 
 English | [中文](invariants.zh.md)
 

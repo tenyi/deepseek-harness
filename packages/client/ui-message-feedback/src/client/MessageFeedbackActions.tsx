@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Per-message feedback controls: the Like/Dislike pair inside the assistant
  * message's IconActions row, between copy and branch. Either rating opens the
  * Session's feedback dialog, whose submission records that judgment with its

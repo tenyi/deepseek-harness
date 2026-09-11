@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Worker 線程代碼執行，面向組裝、容量規劃或調試已發布 TypeScript 后端的用戶與維護者；該后端在全新的 Node worker 中運行每個程序。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Session-local durable reminders: the schedule_create, schedule_list, and schedule_delete tools and live-owner delivery, for users and maintainers choosing, configuring, or debugging the package."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Client mirror of the Host settings document: the one `settings.describe`
  * reader in the browser. Every settings consumer derives from this store —
  * per-namespace scopes through `SettingsScopeBinder.bind`, cross-namespace

@@ -1,4 +1,4 @@
-﻿const api = window.dshDesktop
+const api = window.dshDesktop
 
 async function main() {
   const locale = await api.locale()

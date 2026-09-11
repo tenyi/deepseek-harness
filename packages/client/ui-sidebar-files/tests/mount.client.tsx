@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Mount the body over a real store instance and a scripted listing.
  *
  * The component reads a handful of its props; the rest of the standard kit is

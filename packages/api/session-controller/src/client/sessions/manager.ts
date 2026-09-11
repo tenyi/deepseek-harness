@@ -1,4 +1,4 @@
-﻿// SessionManager: the instance cluster Map<SessionId, Session> (lazy-built, resident) + the frame
+// SessionManager: the instance cluster Map<SessionId, Session> (lazy-built, resident) + the frame
 // dispatch entry + list state, constructed and held by ClientSessions (one per browser client).
 // List data never enters zustand; React connects via subscribe/getListSnapshot.
 

@@ -1,4 +1,4 @@
-﻿/** Real worker-thread carrier for the installed PDF.js worker in the Node smoke. */
+/** Real worker-thread carrier for the installed PDF.js worker in the Node smoke. */
 import { parentPort, workerData } from 'node:worker_threads'
 
 const listeners = new Map()

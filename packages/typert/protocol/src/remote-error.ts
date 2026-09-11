@@ -1,4 +1,4 @@
-﻿/** The one Remote failure class shared by owners, the Gateway, and consumers. */
+/** The one Remote failure class shared by owners, the Gateway, and consumers. */
 
 import type { RemoteErrorCode, RemoteErrorDetailsMap, RemoteFailure } from './types.ts'
 

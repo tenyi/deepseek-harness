@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Derive the workspace root an `lsp` call resolves against from the calling
  * agent's session. A missing cwd fails as `LSP_WORKSPACE_REQUIRED` because the
  * local provider must canonicalize a real workspace before starting a server.

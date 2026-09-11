@@ -1,4 +1,4 @@
-﻿/** Pure provider-independent predicates for logical sessions and event text. */
+/** Pure provider-independent predicates for logical sessions and event text. */
 
 import type {
   SessionEventResultFilter,

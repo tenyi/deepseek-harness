@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The wrapper contract packed bodies are emitted against, and the image-entry
  * types the pack pass consumes.
  *

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "對話 UI 的附件呈現：混合草稿附件欄、文檔拖放目標、歷史圖片畫廊與原圖燈箱；供 Web 附件體驗的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

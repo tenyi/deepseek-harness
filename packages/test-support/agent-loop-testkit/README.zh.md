@@ -1,4 +1,4 @@
-﻿---
+---
 description: "為 agent-loop 測試提供先決依賴掛載、生產 AgentLoop 驅動與職責明確的 Inbox 樁。"
 kind: "package-library"
 ---

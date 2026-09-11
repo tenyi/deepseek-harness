@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:util/types` face: the predicate subset, re-exported from the util shim so
  * both specifiers share one implementation. The predicates are checked against
  * Node where they are built, on `types` in `../util.ts`.

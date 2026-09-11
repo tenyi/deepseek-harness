@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The skill provider registry for users and maintainers choosing, configuring, or debugging how skills from any source are merged, resolved, and loaded."
 kind: "package-reference"
 ---

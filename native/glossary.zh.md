@@ -1,4 +1,4 @@
-﻿# 術語表
+# 術語表
 
 [English](glossary.md) | 中文
 

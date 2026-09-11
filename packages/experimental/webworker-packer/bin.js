@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Stable link target for the `dsh-pack-vfs-image` bin, forwarding to the build
  * product.

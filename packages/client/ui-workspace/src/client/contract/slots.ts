@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ui-workspace contracts. Two registrations share this package:
  *
  * - WorkspaceBrowser fills the sidebar shell's `sidebar.workspaces` hole —

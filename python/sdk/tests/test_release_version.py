@@ -1,4 +1,4 @@
-﻿"""Tests for repository-owned Python release versions."""
+"""Tests for repository-owned Python release versions."""
 
 from __future__ import annotations
 

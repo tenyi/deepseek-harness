@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Signed GitHub webhook adapter for deployments routing authenticated JSON events into the webhook runtime."
 kind: "package-reference"
 ---

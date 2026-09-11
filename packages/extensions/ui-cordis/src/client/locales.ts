@@ -1,4 +1,4 @@
-﻿/** Cordis dynamic-plugin UI dictionaries. */
+/** Cordis dynamic-plugin UI dictionaries. */
 
 export const NS = 'cordis'
 

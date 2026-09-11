@@ -1,4 +1,4 @@
-﻿/** Session creation and adoption rules for Agent preset identity. */
+/** Session creation and adoption rules for Agent preset identity. */
 
 import { mkdtempSync, realpathSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'

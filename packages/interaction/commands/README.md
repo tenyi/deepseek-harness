@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Human slash-command registry for interactive UIs: plugin-owned commands that run directly against an agent without creating a model message, for users and maintainers composing or extending command surfaces."
 kind: "package-reference"
 ---

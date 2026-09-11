@@ -1,4 +1,4 @@
-﻿/** Realm-neutral values used by active debugger backends. */
+/** Realm-neutral values used by active debugger backends. */
 
 import type { InspectorJsonValue } from '../json.ts'
 import type { RuntimeScriptKey } from './ids.ts'

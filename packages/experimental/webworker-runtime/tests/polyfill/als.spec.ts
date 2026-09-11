@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Sync-stack AsyncLocalStorage semantics plus the causality faces the module
  * loader's `await` rewriting consumes: run boundaries, ambient snapshots, and
  * the context root the tunnel dispatches at.

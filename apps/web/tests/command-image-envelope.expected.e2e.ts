@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 // The command attachment envelope over the BUILT client graph (real
 // bundles via AppWebEntry, keyless fixture Connection RPC): an enter
 // submission carrying composer attachments resolves only through a command whose

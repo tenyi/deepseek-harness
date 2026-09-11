@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Process plumbing for the local subprocess service: ordinary process launch
  * with per-stream stdio dispositions, tail-keep collection with spill
  * files, provider-owned range signalling, and common termination scheduling.

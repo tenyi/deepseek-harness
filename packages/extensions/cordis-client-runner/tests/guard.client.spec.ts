@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @vitest-environment jsdom
  *
  * Guard facade account: the whitelist a dynamic plugin's `apply` sees, the

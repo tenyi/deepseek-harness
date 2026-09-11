@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Global send_message, interrupt_agent, and list_agents tools for users and maintainers composing or debugging continuable-child control."
 kind: "package-reference"
 ---

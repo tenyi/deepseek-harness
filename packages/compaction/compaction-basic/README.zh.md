@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署場景的自動會話壓縮（compaction）：用于選擇、調優或排查隨 token 壓力上升對較早歷史進行摘要的方式。"
 kind: "package-reference"
 ---

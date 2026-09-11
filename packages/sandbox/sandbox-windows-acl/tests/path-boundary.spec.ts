@@ -1,4 +1,4 @@
-﻿/** Canonical path-overlap checks that keep workspace and temp capabilities separate. */
+/** Canonical path-overlap checks that keep workspace and temp capabilities separate. */
 
 import { mkdirSync, mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'

@@ -1,4 +1,4 @@
-﻿/** `deliverables` namespace dictionaries. */
+/** `deliverables` namespace dictionaries. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'deliverables'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Prebuilt system primitives for Linux confinement and POSIX Session write locks."
 kind: "package-library"
 ---

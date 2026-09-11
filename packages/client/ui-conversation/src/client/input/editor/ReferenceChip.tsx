@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Visual body of one inline reference chip: the DecoratorNode's React
  * face. Pure display — identity, invalidation, and lifecycle live on the
  * ReferenceChipNode; this component renders whatever the node carries.

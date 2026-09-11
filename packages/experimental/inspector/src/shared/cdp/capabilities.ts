@@ -1,4 +1,4 @@
-﻿/** Explicit operation support advertised by each Inspector realm. */
+/** Explicit operation support advertised by each Inspector realm. */
 
 /** Runtime operations implemented by a realm backend. */
 export type RuntimeOperation =

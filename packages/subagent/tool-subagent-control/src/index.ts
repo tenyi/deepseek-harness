@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The globally named `send_message` and `interrupt_agent` tools: thin
  * model-facing adapters over `ctx.subagents.sendMessage()` and
  * `ctx.subagents.interrupt()`. They perform no lifecycle routing of their own —

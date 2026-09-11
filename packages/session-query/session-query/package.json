@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "@deepseek-ai/dsh-session-query",
   "description": "Combined session query service contract with concrete reads, traces, and filters",
   "version": "0.1.5-rc.2",

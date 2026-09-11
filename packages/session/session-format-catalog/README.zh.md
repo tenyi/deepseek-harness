@@ -1,4 +1,4 @@
-﻿---
+---
 description: "供持久化讀取方使用的構建期靜態第一方 Session 格式編解碼器與相鄰遷移裝配。"
 kind: "package-library"
 ---

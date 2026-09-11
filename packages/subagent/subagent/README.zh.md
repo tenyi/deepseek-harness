@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的 subagent 委派 seam，用于選擇提供方后端、組裝委派工具或排查子 agent（智能體）運行問題。"
 kind: "package-reference"
 ---

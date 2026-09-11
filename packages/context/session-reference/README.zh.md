@@ -1,4 +1,4 @@
-﻿---
+---
 description: "跨會話快照引用與持久的不受信任模型上下文，供啟用或排查 ctx.sessionReferenceResolver 的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

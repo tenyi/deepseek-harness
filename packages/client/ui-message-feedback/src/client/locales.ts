@@ -1,4 +1,4 @@
-﻿/** `feedback` namespace dictionaries. */
+/** `feedback` namespace dictionaries. */
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {

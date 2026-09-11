@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Whole-client test carrier: boots an {@link AssemblyPlan} through the
  * production `bootClient` over an in-process module table, with a
  * `RemoteMock` installed as the Connection carrier through `__DSH_TRANSPORT__.rpc`.

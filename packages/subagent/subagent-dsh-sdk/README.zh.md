@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的進程外 SDK subagent 后端，用于選擇委派提供方、配置子 Harness 運行時，或排查本地嵌套子 agent（智能體）的運行問題。"
 kind: "package-reference"
 ---

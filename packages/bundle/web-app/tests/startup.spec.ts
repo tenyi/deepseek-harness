@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The Web command-line provider over a real Loader tree: its ordinary service
  * releases a consumer whose config reads `ctx.webStartup` directly.
  */

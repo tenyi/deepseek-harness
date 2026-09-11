@@ -1,4 +1,4 @@
-﻿/** Parent-side invocation and bootstrap state for the private native runner. */
+/** Parent-side invocation and bootstrap state for the private native runner. */
 
 import type { StdioOptions } from 'node:child_process'
 import { accessSync, constants as fsConstants, lstatSync, statSync } from 'node:fs'

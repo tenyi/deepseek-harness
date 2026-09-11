@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The process model: a command runs in its own worker, reaches the VFS only by
  * message, and dies when the host says so.
  *

@@ -1,4 +1,4 @@
-﻿import { chromium } from 'playwright'
+import { chromium } from 'playwright'
 import { expect, it } from 'vitest'
 import { newEnglishPage } from './support.ts'
 

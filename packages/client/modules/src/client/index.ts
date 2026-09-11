@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser half (the standard `./client` export): the module-system class and
  * wire contract, plus the enrollment plugin face. The module system itself is
  * built by the shell kernel BEFORE cordis exists (the bootstrap exception —

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "領域數據形式（ctx.storageDomain）：面向在存儲后端之上選擇、掛載或排查經過 schema 校驗、發出變更事件的 KV 領域的宿主與維護者。"
 kind: "package-reference"
 ---

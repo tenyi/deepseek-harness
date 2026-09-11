@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Run your existing Codex hooks.json hook config during agent runs — block prompts and tools, attach context, or force continuation — for users and maintainers of the bridge."
 kind: "package-reference"
 ---

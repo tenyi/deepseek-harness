@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The context group map: request-context plugins that add durable, model-visible context without defining tools, for users and maintainers navigating the group."
 kind: "package-group"
 ---

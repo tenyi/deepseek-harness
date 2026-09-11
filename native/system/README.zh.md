@@ -1,4 +1,4 @@
-﻿---
+---
 description: "為 Linux 進程隔離與 POSIX 會話寫鎖提供預編譯系統原語。"
 kind: "package-library"
 ---

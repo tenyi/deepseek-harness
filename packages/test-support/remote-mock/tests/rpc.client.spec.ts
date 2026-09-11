@@ -1,4 +1,4 @@
-﻿/** The Connection carrier face: payload forms, streams, unmatched rejections, and abort. */
+/** The Connection carrier face: payload forms, streams, unmatched rejections, and abort. */
 import { describe, expect, it } from 'vitest'
 import { RemoteMock, ok, openStream } from '../src/index.ts'
 

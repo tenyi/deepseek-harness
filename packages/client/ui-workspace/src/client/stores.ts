@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The workspace browser's viewing store: the session-list grouping mode,
  * persisted across reloads. Module level exports the factory only (a
  * module-level handle would pin the store identity across plugin reloads);

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /** Private entry owned by the Python single-file runtime packaging. */
 
 const selectorName = 'DSH_SUBPROCESS_RUNNER'

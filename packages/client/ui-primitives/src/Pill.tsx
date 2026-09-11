@@ -1,4 +1,4 @@
-﻿// Pill: capsule at the 24px text-line size, selectable when given `onClick`
+// Pill: capsule at the 24px text-line size, selectable when given `onClick`
 // (view switcher tabs, filters) and a static span otherwise — TerminalBlock's
 // exit status is the read-only case. The 11px read-only badge is `Tag`; size
 // separates the two as much as interactivity does.

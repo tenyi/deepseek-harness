@@ -1,4 +1,4 @@
-﻿// Test-local programmable Remote fake (NOT the fixture: fixture is a demo
+// Test-local programmable Remote fake (NOT the fixture: fixture is a demo
 // data source on a real clock; behavior tests need per-case responses and
 // deferred-controlled timing). Session streams are hand pumps: pushFollow/pushControl.
 import type {

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Incremental chunk-to-message assembler. This is the single canonical assembly
  * algorithm used by the agent loop to build an assistant message from a chunk
  * stream while logging the raw chunks for replay fidelity.

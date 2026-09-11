@@ -1,4 +1,4 @@
-﻿---
+---
 description: "瀏覽器安全的 Workspace 路徑輔助函數：拼接相對路徑、縮寫 POSIX 主目錄并生成顯示標題。"
 kind: "package-library"
 ---

@@ -1,4 +1,4 @@
-﻿# Code Runtime
+# Code Runtime
 
 English | [中文](code-runtime.zh.md)
 

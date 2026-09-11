@@ -1,4 +1,4 @@
-﻿/** Desktop transaction cleanup that unlinks directory links without visiting their targets. */
+/** Desktop transaction cleanup that unlinks directory links without visiting their targets. */
 
 import { lstatSync, readdirSync, rmdirSync, unlinkSync } from 'node:fs'
 import { join } from 'node:path'

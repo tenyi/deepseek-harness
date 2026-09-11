@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Decorator render loop: portals every decorator node's React face into its
  * host element (what @lexical/react's composer does internally, scoped to
  * this composer's needs). Chip DOM identity rides the NodeKey — text edits

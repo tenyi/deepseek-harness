@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Build this host's declared system binaries. Landlock is a static musl
  * executable; flock uses stable Node-API with separate Linux libc builds.
  * Node headers come from the Node installation running this script.

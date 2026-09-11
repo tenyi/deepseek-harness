@@ -1,4 +1,4 @@
-﻿/** Realm-neutral bounded buffering for Host and Client observation sources. */
+/** Realm-neutral bounded buffering for Host and Client observation sources. */
 
 import type { InspectorSourceGeneration, InspectorSourceId } from './ids.ts'
 import { isJsonValue, jsonByteLength, type InspectorJsonValue } from '../json.ts'

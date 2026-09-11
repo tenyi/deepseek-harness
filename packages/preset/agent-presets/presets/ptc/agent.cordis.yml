@@ -1,4 +1,4 @@
-﻿# The `ptc` agent preset: the standard coding agent, presented as PTC mode.
+# The `ptc` agent preset: the standard coding agent, presented as PTC mode.
 #
 # Most of `standard` is here unchanged. The deliberate exception is the
 # general-purpose `workflow` tool: PTC mode uses `run_code` as its model-authored

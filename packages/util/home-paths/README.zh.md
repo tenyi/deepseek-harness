@@ -1,4 +1,4 @@
-﻿---
+---
 description: "DeepSeek Harness 主目錄與用戶數據路徑的共享解析，供需要統一根目錄、波浪號展開與穩定監聽路徑的包使用。"
 kind: "package-library"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The Tab domain: what a tab record carries that the layout does not.
  *
  * One `TabOccurrence` per open record, keyed by (session, tab id): where the

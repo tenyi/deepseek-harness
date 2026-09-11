@@ -1,4 +1,4 @@
-﻿# Post-mortem 0001: ACP server crashed on connect — `export default` dropped the plugin's `inject`
+# Post-mortem 0001: ACP server crashed on connect — `export default` dropped the plugin's `inject`
 
 English | [中文](0001-acp-default-export-drops-inject.zh.md)
 

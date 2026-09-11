@@ -1,4 +1,4 @@
-﻿---
+---
 description: "進程沙箱包組：隔離 seam、各平臺后端、共享策略解析器與 Windows 寫入限制檔。"
 kind: "package-group"
 ---

@@ -1,4 +1,4 @@
-﻿# 維護 dsh-code-review skill
+# 維護 dsh-code-review skill
 
 [English](maintaining-dsh-code-review.md) | 中文
 

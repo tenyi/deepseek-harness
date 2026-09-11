@@ -1,4 +1,4 @@
-﻿/** Shared narrowing for raw Tool call and result fields consumed by card models. */
+/** Shared narrowing for raw Tool call and result fields consumed by card models. */
 import type { ToolCallBlock, ToolResultNode } from '@deepseek-ai/dsh-client-ui-chat/client'
 
 /** A parsed, in-window Tool call whose arguments are a JSON object. */

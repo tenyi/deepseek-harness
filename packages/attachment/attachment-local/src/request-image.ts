@@ -1,4 +1,4 @@
-﻿/** Deterministic cached image versions for model requests. */
+/** Deterministic cached image versions for model requests. */
 
 import { createHash, randomUUID } from 'node:crypto'
 import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises'

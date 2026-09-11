@@ -1,4 +1,4 @@
-﻿---
+---
 description: "可選的按輪次 tmux 位置上下文，供啟用或調優 agent（智能體）的會話、window 與 pane 感知的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

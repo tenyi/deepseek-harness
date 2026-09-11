@@ -1,4 +1,4 @@
-﻿# SessionTelemetryBackend
+# SessionTelemetryBackend
 
 English | [中文](session-telemetry.zh.md)
 

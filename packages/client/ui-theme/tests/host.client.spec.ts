@@ -1,4 +1,4 @@
-﻿import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it } from 'vitest'
 import type { IndexInjection } from '@deepseek-ai/dsh-host-webserver'
 import { SettingsProvider, type SettingsNamespace } from '@deepseek-ai/dsh-settings'

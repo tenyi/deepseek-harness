@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
 /**
  * Node-only backend. The Win32 dialog worker builds as its own CJS entry

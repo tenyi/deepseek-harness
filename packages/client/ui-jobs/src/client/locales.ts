@@ -1,4 +1,4 @@
-﻿/** `job` namespace dictionaries. */
+/** `job` namespace dictionaries. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'job'

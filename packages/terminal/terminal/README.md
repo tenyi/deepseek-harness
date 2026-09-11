@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Persistent terminal sessions for deployments and consumers choosing, composing, or extending the owner-scoped ctx.terminals service."
 kind: "package-reference"
 ---

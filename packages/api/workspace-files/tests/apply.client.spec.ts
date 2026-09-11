@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The plugin body: one `file` provider registered into `ctx.resources` for the
  * fiber's lifetime, reading through `ctx.remote` in the Session each address names.
  */

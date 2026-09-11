@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `command` namespace dictionaries: the composer menu's section headings,
  * the client face (title, description, claim token) of the built-in Host
  * commands whose catalog descriptors carry English text only, and the

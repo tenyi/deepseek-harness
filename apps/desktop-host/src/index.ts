@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Electron child-process entry: boots the desktop project without a listening
  * socket and carries API plus validated Web assets over framed byte pipes.
  * @module @deepseek-ai/dsh-desktop-host

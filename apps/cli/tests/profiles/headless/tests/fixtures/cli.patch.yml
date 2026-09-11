@@ -1,4 +1,4 @@
-﻿# Keyless model and isolated-path patch over the shipped headless profile.
+# Keyless model and isolated-path patch over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

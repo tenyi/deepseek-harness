@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Browser-worker VFS image packaging for maintainers building or debugging the experimental preview deployment."
 kind: "package-library"
 ---

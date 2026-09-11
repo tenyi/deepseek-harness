@@ -1,4 +1,4 @@
-﻿/* The takeover seats where the input card sits, centered on the InputBar
+/* The takeover seats where the input card sits, centered on the InputBar
    axis at the shared content width (input card - 32): sides = clearance +
    16px so the relation also holds on narrow viewports. */
 .frame {

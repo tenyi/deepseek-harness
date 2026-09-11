@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Failure-path tests for the lazy packaged-ripgrep resolution. The success
  * path (the real `@vscode/ripgrep` module) is exercised throughout
  * tools.spec.ts; here the module is mocked to throw at evaluation, proving a

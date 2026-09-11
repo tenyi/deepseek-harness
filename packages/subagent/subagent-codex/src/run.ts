@@ -1,4 +1,4 @@
-﻿/**
+/**
  * One-shot Codex child lifecycle: spawn the real app-server through the
  * subprocess seam, publish only after initialization and ephemeral thread
  * creation, flatten post-publication failures, and dispose to whole-range

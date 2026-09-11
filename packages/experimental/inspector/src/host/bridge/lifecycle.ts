@@ -1,4 +1,4 @@
-﻿/** Failure containment and shutdown coordination for the Inspector Worker. */
+/** Failure containment and shutdown coordination for the Inspector Worker. */
 
 import type { Worker } from 'node:worker_threads'
 import type { InspectorHostControl, InspectorWorkerControl } from '../../shared/bridge/messages/control.ts'

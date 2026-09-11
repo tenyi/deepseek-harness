@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The agent-preset management controller: a copy dialog is the only way a
  * preset is created, the shipped compositions open in a read-only viewer, and
  * the way into a custom preset's files is the location action — opened on a

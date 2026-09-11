@@ -1,4 +1,4 @@
-﻿/** `settings.permission` namespace dictionaries (the Permission row's copy). */
+/** `settings.permission` namespace dictionaries (the Permission row's copy). */
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {

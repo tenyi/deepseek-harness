@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser trajectory plugin contributing one entry to the conversation view
  * slot without defining a service.
  */

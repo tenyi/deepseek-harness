@@ -1,4 +1,4 @@
-﻿/** Slot-facing re-exports of the React-free store contracts. */
+/** Slot-facing re-exports of the React-free store contracts. */
 
 export type {
   ActionsDecl,

@@ -1,4 +1,4 @@
-﻿/** Win32 call failure with the exact API name and error code. */
+/** Win32 call failure with the exact API name and error code. */
 export class Win32Error extends Error {
   /** Win32 function whose checked result failed. */
   readonly api: string

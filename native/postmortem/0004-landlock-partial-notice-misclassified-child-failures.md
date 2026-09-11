@@ -1,4 +1,4 @@
-﻿# Post-mortem 0004: Landlock partial-enforcement notice misclassified child failures
+# Post-mortem 0004: Landlock partial-enforcement notice misclassified child failures
 
 English | [中文](0004-landlock-partial-notice-misclassified-child-failures.zh.md)
 

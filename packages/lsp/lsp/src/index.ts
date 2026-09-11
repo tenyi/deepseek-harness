@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Service Definition for the LSP capability seam (`ctx.lsp`): a language-server provider registry and per-query,
  * order-independent selection over normalized goToDefinition/findReferences/goToImplementation/
  * hover queries.

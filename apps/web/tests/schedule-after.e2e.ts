@@ -1,4 +1,4 @@
-﻿/** Keyless assembled-Web evidence for conversational Schedule delivery. */
+/** Keyless assembled-Web evidence for conversational Schedule delivery. */
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'

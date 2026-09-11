@@ -1,4 +1,4 @@
-﻿/** Signed local npm package set that supplies the Desktop-owned dsh runtime and private Host. */
+/** Signed local npm package set that supplies the Desktop-owned dsh runtime and private Host. */
 
 import { createHash } from 'node:crypto'
 import { existsSync, lstatSync, readFileSync, readdirSync } from 'node:fs'

@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /** Accumulated document rendering through the real streaming CodeBlock. */
 import { readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'

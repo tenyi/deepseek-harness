@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Integration tests: the REAL local subprocess service plus the PACKAGED
  * ripgrep binary (`@vscode/ripgrep`), exercised through `ctx.tools.execute()`.
  * These verify the WORLD — actual files on disk are discovered and grepped,

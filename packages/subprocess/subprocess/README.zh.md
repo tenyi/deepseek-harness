@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向組合作者與能力消費方的子進程服務（`ctx.subprocess`）說明：啟動、觀察并終止受管子進程與終端會話。"
 kind: "package-reference"
 ---

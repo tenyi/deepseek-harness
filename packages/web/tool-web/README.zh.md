@@ -1,4 +1,4 @@
-﻿---
+---
 description: "構建于 ctx.web 之上的面向模型 web 工具（web_search、web_fetch）：部署方如何啟用、配置并觀察模型看到的搜索與抓取工具。"
 kind: "package-reference"
 ---

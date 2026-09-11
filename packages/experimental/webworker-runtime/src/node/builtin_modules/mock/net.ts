@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:net` for the worker. Nothing accepts or dials a socket here: the fake
  * HTTP server never emits `upgrade`, so only the address predicates and a
  * constructible-but-loud Socket are reachable.

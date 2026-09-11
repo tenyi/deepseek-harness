@@ -1,4 +1,4 @@
-﻿/** Shared status derivation over Host inventory and this page's Client live set. */
+/** Shared status derivation over Host inventory and this page's Client live set. */
 
 import type { DynamicCordisLivePackage } from '@deepseek-ai/dsh-cordis-client-runner/client'
 import type {

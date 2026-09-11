@@ -1,4 +1,4 @@
-﻿# LLM（大語言模型）流式輸出
+# LLM（大語言模型）流式輸出
 
 [English](llm-streaming.md) | 中文
 

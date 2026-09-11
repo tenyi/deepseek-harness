@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Failure-path unit tests with minimal stub binding tables: the spawn
  * helpers must close every handle they created before throwing, and
  * every generic process failure remains owned by the shared package.

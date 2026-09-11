@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Answering "which models can this provider serve?" for the configuration
  * surface's "fetch available models" action.
  *

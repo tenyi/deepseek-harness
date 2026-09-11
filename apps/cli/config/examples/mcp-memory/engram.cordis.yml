@@ -1,4 +1,4 @@
-﻿# Opt-in reference for Engram 1.20.0. Install the pinned `engram` executable
+# Opt-in reference for Engram 1.20.0. Install the pinned `engram` executable
 # first; storage and project selection remain Engram-owned.
 - insert:
     - id: memory-engram

@@ -1,4 +1,4 @@
-﻿/** Provider-neutral webhook deliveries, rules, and Session requests. */
+/** Provider-neutral webhook deliveries, rules, and Session requests. */
 
 import type { JsonValue } from '@deepseek-ai/dsh-util-values'
 import type { WebhookDeliveryId, WebhookRuleId, WebhookSourceId } from './brand.ts'

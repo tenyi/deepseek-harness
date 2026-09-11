@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Uncompressed ustar archive: the VFS image format. One fetch delivers the
  * whole tree, and the reader hands out subarray views into the fetched buffer,
  * so mounting copies nothing and no inflate step runs inside the worker.

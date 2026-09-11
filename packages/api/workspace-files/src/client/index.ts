@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser half: the `file` resource provider over `remote.workspaceFiles`.
  *
  * `types.ts` is what the protocol publishes, `change-feed.ts` shares one Host

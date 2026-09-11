@@ -1,4 +1,4 @@
-﻿---
+---
 description: "web 訪問服務（ctx.web）：部署方與插件作者如何通過可互換的提供方搜索 web 與抓取 URL，以及統一的選擇策略與錯誤詞匯。"
 kind: "package-reference"
 ---

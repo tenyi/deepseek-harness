@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Semantic check of the worker module transform (`src/compile/transform.ts`): what the
  * emitted CommonJS body looks like for each module form, how suspension points
  * are rewritten, that line numbers survive, which forms are refused, and that

@@ -1,4 +1,4 @@
-﻿/** Stream scripts, live stream control, cancellation, and the built-in `$events` opening. */
+/** Stream scripts, live stream control, cancellation, and the built-in `$events` opening. */
 import { describe, expect, it } from 'vitest'
 import { RemoteMock, frames, openStream } from '../src/index.ts'
 

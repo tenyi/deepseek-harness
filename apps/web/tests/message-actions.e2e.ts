@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: message IconActions + clocks. Cold-seeds a deterministic
+// Web e2e scenario: message IconActions + clocks. Cold-seeds a deterministic
 // completed-turn-tail fork case with an unchanged resume header (zero model
 // calls) and pins the settled conversation aria after the footers are
 // focus-revealed — the surface package jsdom tests cannot substitute for

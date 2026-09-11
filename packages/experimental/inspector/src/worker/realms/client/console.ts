@@ -1,4 +1,4 @@
-﻿/** ConsoleBackend over the typed Client Console event transport. */
+/** ConsoleBackend over the typed Client Console event transport. */
 
 import type { ClientRuntimeSessionId } from '../../../shared/bridge/ids.ts'
 import type { RuntimeBackendObjectHandle } from '../../../shared/cdp/ids.ts'

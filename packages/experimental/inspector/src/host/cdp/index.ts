@@ -1,4 +1,4 @@
-﻿/** Source-side CDP capability declarations for the Host realm. */
+/** Source-side CDP capability declarations for the Host realm. */
 
 import type { InspectorSourceCapability } from '../../shared/bridge/messages/observation.ts'
 import { consoleBridgeCapability } from './console.ts'

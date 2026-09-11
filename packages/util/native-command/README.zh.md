@@ -1,4 +1,4 @@
-﻿---
+---
 description: "宿主原生命令與路徑打開工具，提供無 shell 執行、取消、桌面探測與 WSL 路徑交接。"
 kind: "package-library"
 ---

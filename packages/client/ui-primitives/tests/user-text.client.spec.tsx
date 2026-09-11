@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * Inline projection of sent user text: decoration never breaks a single-line
  * message (bubble regression), and wire session forms fold to their label

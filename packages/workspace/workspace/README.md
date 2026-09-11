@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Workspace entity registry (ctx.workspaceRegistry) for hosts choosing, mounting, or debugging durable workspace records and header-validated session membership."
 kind: "package-reference"
 ---

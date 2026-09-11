@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared exit-status parse contract: the inverse of the `[exit code: N]` /
  * `[killed by signal: X]` markers `dsh-tool-bash` and `dsh-tool-pwsh` append.
  * Both tools' presenter suites round-trip their own renderers through this

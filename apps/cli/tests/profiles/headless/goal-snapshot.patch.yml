@@ -1,4 +1,4 @@
-﻿# Replay-backed goal patch over the shipped headless profile.
+# Replay-backed goal patch over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

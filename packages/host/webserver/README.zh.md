@@ -1,4 +1,4 @@
-﻿---
+---
 description: "web GUI 宿主的 HTTP 服務器：具名路由與 upgrade 注冊、index 轉換，以及服務 Web 殼 SPA dist 的唯一回退席位。"
 kind: "package-reference"
 ---

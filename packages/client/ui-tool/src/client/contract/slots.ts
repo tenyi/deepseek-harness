@@ -1,4 +1,4 @@
-﻿/** Tool UI slot declarations and their composed component props. */
+/** Tool UI slot declarations and their composed component props. */
 import type {
   HostObservable, InjectFace, PropsLocale, PropsRenderSlots, PropsRuntime,
 } from '@deepseek-ai/dsh-client-ui-slots'

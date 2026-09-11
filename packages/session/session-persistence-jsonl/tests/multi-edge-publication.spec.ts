@@ -1,4 +1,4 @@
-﻿/** Durable composition of historical chunk collapse and V3 system/reference migration. */
+/** Durable composition of historical chunk collapse and V3 system/reference migration. */
 
 import { Context } from '@deepseek-ai/cordis'
 import { Session, SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'

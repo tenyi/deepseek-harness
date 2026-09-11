@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的進程內 spawn subagent 后端說明，用于選擇、配置或排查全新子級委派。"
 kind: "package-reference"
 ---

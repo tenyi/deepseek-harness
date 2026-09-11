@@ -1,4 +1,4 @@
-﻿/** Model guidance shared by the Cordis dynamic-plugin tools. */
+/** Model guidance shared by the Cordis dynamic-plugin tools. */
 
 export const CORDIS_SYSTEM_PROMPT = `# Dynamic Cordis Plugins
 

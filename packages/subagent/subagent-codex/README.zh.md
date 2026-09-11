@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的一次性 Codex subagent 提供方，用于選擇產品后端、安裝 Profile bundle 或配置無人值守的 Codex 委派。"
 kind: "package-bundle"
 ---

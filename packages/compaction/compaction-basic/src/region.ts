@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Surface retention selection and the shared log-recorded compaction
  * transaction for automatic open-turn and manual idle-session compaction.
  *

@@ -1,4 +1,4 @@
-﻿# 用戶交互
+# 用戶交互
 
 [English](user-questions.md) | 中文
 

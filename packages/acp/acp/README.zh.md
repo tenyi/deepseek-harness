@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向程序化客戶端與維護者的僅自動化 ACP（Agent Client Protocol）服務器，用于通過 JSON-RPC stdio 驅動 DeepSeek Harness agent（智能體）。"
 kind: "package-reference"
 ---

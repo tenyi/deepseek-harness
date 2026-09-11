@@ -1,4 +1,4 @@
-﻿- banner:
+- banner:
   - navigation "Session hierarchy":
     - button "CJK strong emphasis" [disabled]
   - button "More actions":

@@ -1,4 +1,4 @@
-﻿/** Desktop-only omissions from already installed production npm packages. */
+/** Desktop-only omissions from already installed production npm packages. */
 
 /**
  * Identify build and diagnostic files omitted from the immutable Desktop runtime.

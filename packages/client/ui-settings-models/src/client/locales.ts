@@ -1,4 +1,4 @@
-﻿/** Copy dictionaries for the Models settings section. */
+/** Copy dictionaries for the Models settings section. */
 
 /** English strings (the key-set source of truth for this pair). */
 export const en = {

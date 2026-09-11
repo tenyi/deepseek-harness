@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Assembled-app regression: a parent-only read-only override is seeded into
  * its child log and confines a real write under a wider deployment default.
  */

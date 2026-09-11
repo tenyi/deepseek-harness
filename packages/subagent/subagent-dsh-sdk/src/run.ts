@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fresh-process SDK subagent client. Drives one child DeepSeek Harness
  * runtime over stdio JSON-RPC through `@deepseek-ai/dsh-sdk-client` and owns
  * cancellation and quiescent disposal. It publishes after the child

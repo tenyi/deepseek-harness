@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:url` for the worker: the two conversions the host tree uses, plus the
  * WHATWG classes the browser already provides. VFS paths are POSIX, so the
  * file-URL mapping is the simple percent-encoding pair.

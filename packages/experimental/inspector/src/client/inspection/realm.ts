@@ -1,4 +1,4 @@
-﻿/** Stable Client source identity with a fresh descriptor for each WebSocket generation. */
+/** Stable Client source identity with a fresh descriptor for each WebSocket generation. */
 
 import { randomUUID } from '@deepseek-ai/dsh-util-crypto'
 import { inspectorId } from '../../shared/identity.ts'

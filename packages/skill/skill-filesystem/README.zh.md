@@ -1,4 +1,4 @@
-﻿---
+---
 description: "本地文件系統 skill 提供方，供編寫本地 skill 或配置項目、自定義與用戶 skill 根目錄如何被發現與監視的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

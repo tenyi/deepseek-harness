@@ -1,4 +1,4 @@
-﻿# Naming
+# Naming
 
 ## npm packages
 

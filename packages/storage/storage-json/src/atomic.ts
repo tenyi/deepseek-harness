@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Atomic whole-file replacement for the JSON backend.
  *
  * Publish protocol: write a same-directory temp file, fsync it, then

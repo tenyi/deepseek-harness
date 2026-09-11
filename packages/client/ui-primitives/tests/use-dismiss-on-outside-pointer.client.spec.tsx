@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /** The outside-pointer dismissal primitive as observable popover behavior. */
 import { cleanup, fireEvent, render } from '@testing-library/react'
 import { useRef, useState } from 'react'

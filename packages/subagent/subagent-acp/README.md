@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The out-of-process ACP subagent backend for users and maintainers choosing a delegation provider, configuring a child ACP agent command, or debugging remote child runs."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Application mount through a dependency fiber, so replacing `uiRenderer`
  * remounts the application. Shared by `AppWebEntry` and the test carrier.
  * @module @deepseek-ai/dsh-client-web/src/mount

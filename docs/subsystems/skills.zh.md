@@ -1,4 +1,4 @@
-﻿# Skills
+# Skills
 
 [English](skills.md) | 中文
 

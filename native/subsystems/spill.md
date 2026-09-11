@@ -1,4 +1,4 @@
-﻿# Spill Storage
+# Spill Storage
 
 English | [中文](spill.zh.md)
 

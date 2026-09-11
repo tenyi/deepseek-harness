@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `sidebarRight` namespace dictionaries.
  *
  * Everything a user reads in this column is here, including the strings handed

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The composable persona row presets mount to give one agent its own system-prompt persona, for users and maintainers configuring or debugging it."
 kind: "package-reference"
 ---

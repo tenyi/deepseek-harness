@@ -1,4 +1,4 @@
-﻿/** Plan projection behavior. */
+/** Plan projection behavior. */
 
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

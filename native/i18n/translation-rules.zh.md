@@ -1,4 +1,4 @@
-﻿# 翻譯規則
+# 翻譯規則
 
 [English](translation-rules.md) | 中文
 

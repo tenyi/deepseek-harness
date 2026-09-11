@@ -1,4 +1,4 @@
-﻿import { Service } from '@deepseek-ai/cordis'
+import { Service } from '@deepseek-ai/cordis'
 
 /** Service whose public annotations are intentionally absent. */
 export class WritableService extends Service {

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Semantic durability checkpoints for model requests, top-level tool dispatch,
  * and completed agent steps.
  * @module @deepseek-ai/dsh-session-checkpoint-policy

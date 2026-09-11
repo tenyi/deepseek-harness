@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI 的客戶端命令 API：/ 命令 source、三類派發、會話級命令目錄，以及面向業務包的 popupSelect 與 action 注冊；供斜杠命令的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

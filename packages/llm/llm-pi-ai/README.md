@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The pi-ai-backed multi-provider adapter for users and maintainers routing the harness LLM service through pi-ai catalogs and hand-declared gateways."
 kind: "package-reference"
 ---

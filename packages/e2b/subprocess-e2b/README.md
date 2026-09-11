@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Shell commands and terminals inside the shared remote sandbox: what the agent can run there, how output is handled, and what to expect — for deployments and maintainers of the E2B family."
 kind: "package-reference"
 ---

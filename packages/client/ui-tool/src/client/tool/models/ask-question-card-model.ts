@@ -1,4 +1,4 @@
-﻿/** Pure ask-user transcript card data shared by its presenter and renderer. @module */
+/** Pure ask-user transcript card data shared by its presenter and renderer. @module */
 
 interface AnsweredQuestionCardItem {
   id: string

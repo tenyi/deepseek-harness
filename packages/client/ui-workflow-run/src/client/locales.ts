@@ -1,4 +1,4 @@
-﻿/** `workflowRun` namespace dictionaries. */
+/** `workflowRun` namespace dictionaries. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'workflowRun'

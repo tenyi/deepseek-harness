@@ -1,4 +1,4 @@
-﻿// Web e2e scenarios for both steering entry points: QueueDock strictly
+// Web e2e scenarios for both steering entry points: QueueDock strictly
 // transfers one queued occurrence, while the complementary composer gestures
 // choose Queue or Steer. The question tool supplies a deterministic pending-
 // steering snapshot before the step can drain.

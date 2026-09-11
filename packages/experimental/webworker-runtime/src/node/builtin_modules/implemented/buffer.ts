@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:buffer` for the worker, backed by the `buffer` npm package (feross), and
  * the matching `globalThis.Buffer` install. Node code treats Buffer as ambient,
  * so the global must exist before any host module evaluates.

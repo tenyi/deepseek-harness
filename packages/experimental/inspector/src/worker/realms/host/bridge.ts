@@ -1,4 +1,4 @@
-﻿/** Per-DevTools-connection bridge to the Host main thread's real V8 inspector target. */
+/** Per-DevTools-connection bridge to the Host main thread's real V8 inspector target. */
 
 import { Session } from 'node:inspector'
 import type { NativeProtocolNotification } from '../../../shared/cdp/realm.ts'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "All-messages LLM session-title provider for users and maintainers choosing a title strategy or debugging automatic title generation."
 kind: "package-reference"
 ---

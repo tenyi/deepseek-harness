@@ -1,4 +1,4 @@
-﻿/** Incremental UTF-8 parser for Server-Sent Events carried by captured responses. */
+/** Incremental UTF-8 parser for Server-Sent Events carried by captured responses. */
 
 import type { InspectorEventSourceMessage } from './observation.ts'
 

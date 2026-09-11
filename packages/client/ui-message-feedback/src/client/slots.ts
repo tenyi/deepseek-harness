@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The injected faces of this package's two entries. The
  * 'conversation.chat.assistant-actions' and 'conversation.input.overlay'
  * slots are declared and typed by ui-chat and ui-conversation; this package

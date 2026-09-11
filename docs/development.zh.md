@@ -1,4 +1,4 @@
-﻿# 開發指南
+# 開發指南
 
 [English](development.md) | 中文
 

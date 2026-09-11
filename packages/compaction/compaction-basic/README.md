@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Automatic conversation condensation for deployments choosing, tuning, or debugging how older history is summarized as token pressure builds."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿// An enclosing `[data-conversation-scroll]` owns scrolling when present;
+// An enclosing `[data-conversation-scroll]` owns scrolling when present;
 // otherwise this view owns it. Each row subscribes to one stable node key.
 
 import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ComponentProps } from 'react'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * workspaceWriteSid tests: the per-workspace write identity is deterministic
  * (the same canonical path always derives the same SID — the property the
  * cross-session grant reuse rests on), capability-shaped, distinct across

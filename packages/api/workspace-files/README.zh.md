@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向 Web GUI 的工作區文件服務：通過組合文件系統進行有界文件讀取，并在 Session 工作區根內列舉目錄和觀察已埋點的文件系統操作。"
 kind: "package-reference"
 ---

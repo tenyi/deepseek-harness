@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Composer blocks: the one way another plugin stops a session's input.
  *
  * The composer cannot read the plugins that would know — the dependency runs

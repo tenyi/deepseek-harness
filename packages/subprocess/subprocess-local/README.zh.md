@@ -1,4 +1,4 @@
-﻿---
+---
 description: "子進程服務的本地宿主提供方：在宿主機器上運行由 OS 所有的受管范圍與真實終端會話，并明確披露較弱的 fallback。"
 kind: "package-reference"
 ---

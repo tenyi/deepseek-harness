@@ -1,4 +1,4 @@
-﻿---
+---
 description: "preset 掛載的可組裝人設行，讓單個 agent 擁有自己的系統提示詞人設，供配置或排查它的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

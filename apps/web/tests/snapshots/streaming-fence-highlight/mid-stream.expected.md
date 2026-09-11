@@ -1,4 +1,4 @@
-﻿- banner:
+- banner:
   - navigation "Session hierarchy":
     - button "Stream one TypeScript fence for" [disabled]
   - img

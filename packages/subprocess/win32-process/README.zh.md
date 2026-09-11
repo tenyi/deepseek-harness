@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向實現或排查 Windows ACL 沙箱與普通子進程 Job runner 的維護者，說明底層 Win32 進程原語。"
 kind: "package-library"
 ---

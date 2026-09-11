@@ -1,4 +1,4 @@
-﻿/** Composer menu grouping, localized labels, descriptions, and icons. */
+/** Composer menu grouping, localized labels, descriptions, and icons. */
 import type { ComponentType } from 'react'
 import type { InputTriggerCandidate } from '@deepseek-ai/dsh-client-ui-input-trigger/client'
 import {

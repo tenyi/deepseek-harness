@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The subprocess group map: the shared child-process service and its local host provider, for users and maintainers navigating the group."
 kind: "package-group"
 ---

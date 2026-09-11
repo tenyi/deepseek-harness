@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Package map for the application's Remote layer: typed Client-to-Host capability calls, results, and forwarded events, for users and maintainers navigating the group."
 kind: "package-group"
 ---

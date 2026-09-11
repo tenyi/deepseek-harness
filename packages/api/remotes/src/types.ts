@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Type face of the forwarded-Host-event allowlist: the consumer key projection
  * and the selection seat it fills. The allowlist VALUE lives in
  * `./remote-events.ts`, keeping this module type-only per the package

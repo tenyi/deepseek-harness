@@ -1,4 +1,4 @@
-﻿- dialog "刪除 minimax-cn？":
+- dialog "刪除 minimax-cn？":
   - heading "刪除 minimax-cn？" [level=2]
   - button "關閉":
     - img

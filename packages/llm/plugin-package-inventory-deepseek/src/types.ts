@@ -1,4 +1,4 @@
-﻿/** Wire types for the active DeepSeek plugin package inventory. */
+/** Wire types for the active DeepSeek plugin package inventory. */
 
 /** One exact active plugin package version. */
 export interface DeepSeekPluginPackageIdentity {

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * JSON-RPC methods and notifications for out-of-process harness SDKs.
  * The surrounding context owns plugins, persistence, and configured adapters.
  *

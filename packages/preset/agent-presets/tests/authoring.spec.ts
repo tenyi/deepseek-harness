@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Authoring a preset copies an existing one's directory into the deployment's
  * `user` root — copy is the only authoring write, so no caller ever supplies
  * composition text. The id is a directory name, so its pattern is a

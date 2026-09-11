@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Agent-presets settings section: the roster as cards, a copy dialog as the
  * only way a preset is created, and a read-only viewer over the shipped
  * compositions.

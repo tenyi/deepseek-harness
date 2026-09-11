@@ -1,4 +1,4 @@
-﻿/** V2 content admission refuses entire generations without publishing a valid prefix. */
+/** V2 content admission refuses entire generations without publishing a valid prefix. */
 
 import { Context } from '@deepseek-ai/cordis'
 import { SessionId } from '@deepseek-ai/dsh-session'

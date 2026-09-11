@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser-side locale registry. Bound translation functions retain stable
  * identity for injected consumers. The plugin also registers the Language
  * preference row into the settings General section — the locale feature owns

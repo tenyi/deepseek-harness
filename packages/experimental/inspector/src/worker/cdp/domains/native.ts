@@ -1,4 +1,4 @@
-﻿/** Explicit adapter for Host-only native CDP methods during realm migration. */
+/** Explicit adapter for Host-only native CDP methods during realm migration. */
 
 import { respondToCdpRequest, type CdpRequest, type CdpTransport } from '../protocol.ts'
 import type { NativeDomainBackend } from '../../../shared/cdp/realm.ts'

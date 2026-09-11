@@ -1,4 +1,4 @@
-﻿# 會話引用
+# 會話引用
 
 [English](session-reference.md) | 中文
 

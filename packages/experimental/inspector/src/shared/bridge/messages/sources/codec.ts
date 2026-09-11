@@ -1,4 +1,4 @@
-﻿/** Exact decoders for Client source catalog operations and values. */
+/** Exact decoders for Client source catalog operations and values. */
 
 import { isPlainObject } from '../../../json.ts'
 import type { RuntimeScript } from '../../../cdp/index.ts'

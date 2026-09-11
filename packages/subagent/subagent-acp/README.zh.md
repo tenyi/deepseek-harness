@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的進程外 ACP（Agent Client Protocol）subagent 后端，用于選擇委派提供方、配置子 ACP agent（智能體）命令或排查遠程子 agent 運行問題。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/** Worker and shared protocol behavior. */
+/** Worker and shared protocol behavior. */
 
 import { describe, expect, it, vi } from 'vitest'
 import { INSPECTOR_PROTOCOL_VERSION, parseSourceFrame, parseWorkerSourceFrame } from '../src/shared/bridge/messages/observation.ts'

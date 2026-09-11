@@ -1,4 +1,4 @@
-﻿/** Bounded Markdown-to-text projection shared by trajectory consumers. */
+/** Bounded Markdown-to-text projection shared by trajectory consumers. */
 
 import { extractMarkdownPlainText } from '@deepseek-ai/dsh-client-ui-primitives'
 

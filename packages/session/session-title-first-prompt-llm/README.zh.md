@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向用戶與維護者的首消息 LLM（大語言模型）會話標題提供方說明，用于選擇標題策略或排查自動標題生成。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/** Dispatch of validated Worker frames accepted by the Host MessagePort. */
+/** Dispatch of validated Worker frames accepted by the Host MessagePort. */
 
 import type {
   SourceAcceptedFrame,

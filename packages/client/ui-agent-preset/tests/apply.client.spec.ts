@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Registration: the General row, the settings section, the new-session chip,
  * and the header label all come from one apply, and each defers until the slot
  * it fills has been declared. A pushed settings change refreshes the surfaces

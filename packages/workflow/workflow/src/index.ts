@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Service Definition for the workflow capability seam. Service Providers execute orchestration scripts;
  * observe-only lifecycle events never expose run control.
  * @module @deepseek-ai/dsh-workflow

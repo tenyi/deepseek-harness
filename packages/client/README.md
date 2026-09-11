@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Package map for the web GUI browser half: shell boot, browser-host communication, shared client services, localization, development reload, and the UI feature plugins."
 kind: "package-group"
 ---

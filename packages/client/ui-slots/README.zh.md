@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的 slot 注冊表純核心：SlotMap 聲明合并、單一 register 組合 API、四 share props 類型、store 席位與渲染器安裝約定。"
 kind: "package-library"
 ---

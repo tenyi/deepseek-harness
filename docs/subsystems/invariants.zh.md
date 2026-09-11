@@ -1,4 +1,4 @@
-﻿# 運行時不變式
+# 運行時不變式
 
 [English](invariants.md) | 中文
 

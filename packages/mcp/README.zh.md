@@ -1,4 +1,4 @@
-﻿---
+---
 description: "MCP 包組：掛載外部 Model Context Protocol 服務器，讓它們的工具可以作為原生工具調用。"
 kind: "package-group"
 ---

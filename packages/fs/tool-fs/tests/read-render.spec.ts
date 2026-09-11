@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Cordis-free tests for the line-windowing module: offset/limit windows, byte
  * caps, per-line truncation, CRLF stripping, offset-past-EOF rejection, and the
  * capped line buffer for newline-free giant lines — all over an async-iterable

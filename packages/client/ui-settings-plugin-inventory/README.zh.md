@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端設置中按作用域分組的只讀插件清單標簽頁：Agent 預設組合在前，全局平面收在折疊分組里，搜索跨兩組。"
 kind: "package-reference"
 ---

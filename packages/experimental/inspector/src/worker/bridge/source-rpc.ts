@@ -1,4 +1,4 @@
-﻿/** Worker-owned request routing for Client read-only source catalogs. */
+/** Worker-owned request routing for Client read-only source catalogs. */
 
 import { randomUUID } from 'node:crypto'
 import type {

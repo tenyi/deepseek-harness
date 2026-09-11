@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Opt-in request-preparation tmux-location context. Eligible step attempts
  * append durable, source-attributed context naming the tmux session, window,
  * and pane this agent process runs in, plus the window's pane-tree layout.

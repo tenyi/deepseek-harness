@@ -1,4 +1,4 @@
-﻿# Input card position across the Chat and Trajectory tabs
+# Input card position across the Chat and Trajectory tabs
 
 ## Wide viewport (1680px, card at its cap)
 

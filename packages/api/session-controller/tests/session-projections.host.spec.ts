@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Session Controller projection paths: the history tail page's
  * projections block reads the registry's watermark snapshot (asOfSeq = last
  * event seq, one consistent cut); loadOlder pages never carry the block; a

@@ -1,4 +1,4 @@
-﻿/** Load the private callback API to test native completion independently of its Promise wrapper. */
+/** Load the private callback API to test native completion independently of its Promise wrapper. */
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 

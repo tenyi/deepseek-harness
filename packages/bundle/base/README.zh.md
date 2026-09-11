@@ -1,4 +1,4 @@
-﻿---
+---
 description: "共享的 dsh 核心：為每個 dsh --profile 表層提供模型訪問、工具、持久會話與安全默認值，供用戶組合或定制 profile。"
 kind: "package-bundle"
 ---

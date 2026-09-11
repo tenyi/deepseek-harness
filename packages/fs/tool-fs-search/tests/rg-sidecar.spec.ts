@@ -1,4 +1,4 @@
-﻿import { join, parse } from 'node:path'
+import { join, parse } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 const { dependencyRgPath, existsSync } = vi.hoisted(() => ({

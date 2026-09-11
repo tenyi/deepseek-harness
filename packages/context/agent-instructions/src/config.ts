@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Configuration normalization for workspace instruction discovery and rendering.
  *
  * @module @deepseek-ai/dsh-agent-instructions/config

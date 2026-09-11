@@ -1,4 +1,4 @@
-﻿/** Realm-neutral script metadata used by source backends. */
+/** Realm-neutral script metadata used by source backends. */
 
 import type { RuntimeScriptKey } from './ids.ts'
 

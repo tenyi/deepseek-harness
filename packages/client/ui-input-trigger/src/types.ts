@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Input-trigger provider contract. Types only — no runtime code. The
  * conversation input layer owns and exports the shared machine currency;
  * this module re-exports it for trigger providers.

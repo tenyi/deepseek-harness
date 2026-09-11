@@ -1,4 +1,4 @@
-﻿/** Native delivery actions resolve the viewed Session's current workspace files. */
+/** Native delivery actions resolve the viewed Session's current workspace files. */
 import { mkdtemp, rm, readFile, writeFile, mkdir, realpath, symlink, unlink } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Channel-neutral one-shot approval seam for users and maintainers composing answerers, setting policy, or debugging fail-closed permission decisions."
 kind: "package-reference"
 ---

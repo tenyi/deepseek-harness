@@ -1,4 +1,4 @@
-﻿# 7. 進入 harness
+# 7. 進入 harness
 
 [English](07-into-the-harness.md) | 中文
 

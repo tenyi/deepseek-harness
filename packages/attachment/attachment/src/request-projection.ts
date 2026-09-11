@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pure request-projection geometry shared by attachment providers and
  * provider-side request pricing. @module @deepseek-ai/dsh-attachment/request-projection
  */

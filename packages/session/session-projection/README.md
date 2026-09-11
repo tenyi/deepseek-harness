@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The session-projection registry for developers serving whole current values of log-derived per-session state to client carriers, and for maintainers of the drive contract."
 kind: "package-reference"
 ---

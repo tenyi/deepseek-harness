@@ -1,4 +1,4 @@
-﻿# 事故復盤（postmortem） 0004：Landlock 部分強制執行通知導致子進程失敗被誤歸類
+# 事故復盤（postmortem） 0004：Landlock 部分強制執行通知導致子進程失敗被誤歸類
 
 [English](0004-landlock-partial-notice-misclassified-child-failures.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿# Two failing rows inside a group. The Loader wraps the group's own
+# Two failing rows inside a group. The Loader wraps the group's own
 # AggregateError into a plain Error carrying only its message, so without
 # following `cause` the diagnostic ends at "loader entries failed to apply" and
 # names neither row.

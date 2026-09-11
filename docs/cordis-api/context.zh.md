@@ -1,4 +1,4 @@
-﻿<!-- 英文源文件由 scripts/gen-cordis-catalog.ts 生成；本中文文件是通過雙語配對維護的經評審對側。
+<!-- 英文源文件由 scripts/gen-cordis-catalog.ts 生成；本中文文件是通過雙語配對維護的經評審對側。
      更新時先運行 `pnpm run gen-cordis-catalog` 更新英文，再更新本文件并運行 `pnpm run verify-translation-pairing --write docs/cordis-api/context.md` 重新記錄配對。 -->
 
 # 上下文

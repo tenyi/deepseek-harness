@@ -1,4 +1,4 @@
-﻿/** Synchronous schema introspection and immutable settings-draft edits. */
+/** Synchronous schema introspection and immutable settings-draft edits. */
 import { Service } from '@deepseek-ai/cordis'
 import type { Context } from '@deepseek-ai/cordis'
 import Schema from '@deepseek-ai/schemastery'

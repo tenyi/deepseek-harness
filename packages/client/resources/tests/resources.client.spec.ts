@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The resource lifecycle: one address opens when its first holder arrives,
  * stays open across holder changes, and closes when the last one leaves.
  * Providers are scripted feeds so every transition is driven by the spec,

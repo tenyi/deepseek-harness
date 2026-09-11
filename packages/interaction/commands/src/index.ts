@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Plugin-owned human-command registry shared by interactive UI adapters.
  * @module @deepseek-ai/dsh-commands
  */

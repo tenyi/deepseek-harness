@@ -1,4 +1,4 @@
-﻿/**
+/**
  * A dependency-light **retention** library: bounded model-facing output for
  * tools that must cap how much context they return. A caller feeds items or
  * text chunks into a bounded object, then gets the retained content plus exact

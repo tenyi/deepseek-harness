@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SubmitMachine behavior: enter routing, adjudication outcomes, the claimed
  * lifecycle and its integrity watch, settlement (commit-draft and claim
  * re-entry decisions), anti-backwash, and per-session isolation. Text-edit

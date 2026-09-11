@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Preview acceptance: the browser-only worker deployment boots the real Cordis
  * tree out of the packed VFS image and reaches an interactive page.
  *

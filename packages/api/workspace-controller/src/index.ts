@@ -1,4 +1,4 @@
-﻿/** Host Workspace Remote owner: explicit commands and reconnect-safe state. */
+/** Host Workspace Remote owner: explicit commands and reconnect-safe state. */
 
 import { Context } from '@deepseek-ai/cordis'
 import { Remote, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'

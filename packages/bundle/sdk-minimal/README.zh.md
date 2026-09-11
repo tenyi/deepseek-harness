@@ -1,4 +1,4 @@
-﻿---
+---
 description: "供需要不含共享 base bundle 的極簡跨平臺 coding agent（編程智能體）的用戶使用的獨立單工具 SDK profile。"
 kind: "package-bundle"
 ---

@@ -1,4 +1,4 @@
-﻿# 通過 GitHub Webhook 創建評審會話
+# 通過 GitHub Webhook 創建評審會話
 
 [English](github-review.md) | 中文
 

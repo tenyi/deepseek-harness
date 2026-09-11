@@ -1,4 +1,4 @@
-﻿/** Open declared source files verified by the viewed Session's filesystem. */
+/** Open declared source files verified by the viewed Session's filesystem. */
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-api-session-controller'
 import type {} from '@deepseek-ai/dsh-api-workspace-files'

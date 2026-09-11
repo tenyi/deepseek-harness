@@ -1,4 +1,4 @@
-﻿/**
+/**
  * REAL-composition coverage: a test-only cordis.yml booted through the
  * vendored Loader mounts the webserver row plus the adaptive chooser, and the
  * assertions observe the durable outcome — which backend and surface entries

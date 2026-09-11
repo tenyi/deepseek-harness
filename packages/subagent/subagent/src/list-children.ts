@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Read-only enumeration of durable subagent children and descendant trees
  * through the Session query service. Candidates come from one live-preferred
  * corpus; each child's mode/label is the registered `subagent` projection

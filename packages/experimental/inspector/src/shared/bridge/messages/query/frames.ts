@@ -1,4 +1,4 @@
-﻿/** Versioned frames for source-to-Worker non-CDP queries. */
+/** Versioned frames for source-to-Worker non-CDP queries. */
 
 import type { InspectorId, InspectorSourceGeneration, InspectorSourceId } from '../../ids.ts'
 import { INSPECTOR_PROTOCOL_VERSION } from '../../version.ts'

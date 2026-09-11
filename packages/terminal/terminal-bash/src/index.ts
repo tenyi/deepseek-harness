@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Persistent shell PTY backend over the subprocess terminal primitive, shared
  * sandbox policy, bounded output, and provider-owned session cleanup.
  * @module @deepseek-ai/dsh-terminal-bash

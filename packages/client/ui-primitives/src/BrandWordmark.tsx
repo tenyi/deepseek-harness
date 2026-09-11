@@ -1,4 +1,4 @@
-﻿import type { IconProps } from './icons/props.ts'
+import type { IconProps } from './icons/props.ts'
 
 /** Display options for the official brand wordmark. */
 export interface BrandWordmarkProps extends IconProps {

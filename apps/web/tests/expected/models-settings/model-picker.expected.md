@@ -1,4 +1,4 @@
-﻿- dialog "選擇要添加的模型":
+- dialog "選擇要添加的模型":
   - heading "選擇要添加的模型" [level=2]
   - button "關閉":
     - img

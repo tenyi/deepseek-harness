@@ -1,4 +1,4 @@
-﻿# 僅限 Session 內的 Schedule
+# 僅限 Session 內的 Schedule
 
 [English](schedule.md) | 中文
 

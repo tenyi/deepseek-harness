@@ -1,4 +1,4 @@
-﻿# CLI contract: landlock-run
+# CLI contract: landlock-run
 
 This file pins the launcher's externally observable behavior — the cross-repo compatibility surface between the binaries and every consumer. Consumers interact with it through the entry package (`launcherPath`/`probe`/`grantArgs`) and the launcher protocol; changing anything below requires a version bump for the whole package family and a note in the release notes.
 

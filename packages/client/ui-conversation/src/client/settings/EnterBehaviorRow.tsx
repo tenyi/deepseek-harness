@@ -1,4 +1,4 @@
-﻿/** General Settings row for the Composer's busy-state Enter preference. */
+/** General Settings row for the Composer's busy-state Enter preference. */
 import { useState } from 'react'
 import type { SnapshotStore } from '@deepseek-ai/dsh-client-store'
 import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'

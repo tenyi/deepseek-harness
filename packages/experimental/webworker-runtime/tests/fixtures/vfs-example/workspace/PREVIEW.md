@@ -1,4 +1,4 @@
-﻿# Preview Workspace
+# Preview Workspace
 
 This deterministic workspace is bundled with the browser-only preview.
 

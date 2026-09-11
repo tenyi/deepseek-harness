@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI 的 plan 模式狀態徽章：顯示 plan 模式已開啟并可將其關閉的 composer 控件；供 plan 模式的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿import {
+import {
   useLayoutEffect, useMemo, useRef, useState,
   type FocusEvent, type MouseEvent, type ReactNode,
 } from 'react'

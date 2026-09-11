@@ -1,4 +1,4 @@
-﻿/** Recovery timing validation before a loop or Host bootstrap is published. */
+/** Recovery timing validation before a loop or Host bootstrap is published. */
 import { describe, expect, it } from 'vitest'
 import { resolveConnectionConfig } from '../src/recovery-config.ts'
 

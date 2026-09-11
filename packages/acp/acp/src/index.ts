@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Automation-only Agent Client Protocol server over JSON-RPC stdio.
  *
  * The bridge exposes persistent harness sessions to trusted programmatic

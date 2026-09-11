@@ -1,4 +1,4 @@
-﻿# 2. 生命周期與 effect
+# 2. 生命周期與 effect
 
 [English](02-lifecycle-and-effects.md) | 中文
 

@@ -1,4 +1,4 @@
-﻿/** Locale namespace owned by Session export browser feedback. */
+/** Locale namespace owned by Session export browser feedback. */
 export const NS = 'session-log-download'
 
 /** Simplified-Chinese Session export strings. */

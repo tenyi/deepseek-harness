@@ -1,4 +1,4 @@
-﻿/** Published dsh web + pnpm dev:web → browser HMR, with no page reload. */
+/** Published dsh web + pnpm dev:web → browser HMR, with no page reload. */
 
 import { existsSync, globSync, statSync } from 'node:fs'
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'

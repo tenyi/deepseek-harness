@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Prepack gate for platform packages: refuse to pack a tarball whose
  * declared binaries are missing or built for the wrong architecture.

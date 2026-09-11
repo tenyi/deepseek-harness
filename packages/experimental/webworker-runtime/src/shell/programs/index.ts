@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The command table: every program name this shell can run. A browser worker
  * spawns no processes, so this table IS the machine's `/bin` — a name that is
  * not here reports `command not found`, exactly as a real shell would for a

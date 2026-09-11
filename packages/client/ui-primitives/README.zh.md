@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端共享的 React UI 原子組件：控件、圖標、Markdown 與數學公式渲染，以及終端/讀取/差異/搜索/網頁輸出卡片（零 Cordis）。"
 kind: "package-library"
 ---

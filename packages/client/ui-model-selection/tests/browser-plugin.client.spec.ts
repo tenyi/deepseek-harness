@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ui-model-selection browser half on a real cordis Context with fake command/slots/
  * connection faces and real session scopes: the plugin mounts ModelDirectoryResolver
  * as `models`, the /model contribution and the conversation.input.model

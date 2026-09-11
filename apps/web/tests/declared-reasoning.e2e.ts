@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: a hand-declared model's `reasoningEfforts` reaches the
+// Web e2e scenario: a hand-declared model's `reasoningEfforts` reaches the
 // composer's effort pane — the levels a settings profile declares are exactly
 // what the picker offers, and picking one records it with the Agent default.
 // Zero model calls: declaring, describing, and switching are settings/llm

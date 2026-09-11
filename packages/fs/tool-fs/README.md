@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The model-facing read, read_image, write, and edit tools for users and maintainers composing or debugging filesystem access for agents."
 kind: "package-reference"
 ---

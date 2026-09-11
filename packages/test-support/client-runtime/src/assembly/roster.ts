@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Client roster: the ordered package-name rows a whole-client test boots, and
  * the plan that annotates one with the rows the test provides itself. `webApp`
  * and `bundleRoster` (`./bundle-roster.ts`) read rosters from the bundle patch

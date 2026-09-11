@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The Agent handle, live registry, process-local initiator scope, and agent/* event vocabulary for plugins, UI, and orchestrators building or extending agents."
 kind: "package-reference"
 ---

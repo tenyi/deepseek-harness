@@ -1,4 +1,4 @@
-﻿/** Read-only projection of the current Cordis Loader plugin entries. */
+/** Read-only projection of the current Cordis Loader plugin entries. */
 
 import type { Context, FiberState } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/cordis-plugin-loader'

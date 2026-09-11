@@ -1,4 +1,4 @@
-﻿/** Browser entry for the Web client. */
+/** Browser entry for the Web client. */
 import { AppWebEntry } from '@deepseek-ai/dsh-client-web'
 
 const el = document.getElementById('root')

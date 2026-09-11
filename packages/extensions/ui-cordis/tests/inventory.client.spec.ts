@@ -1,4 +1,4 @@
-﻿// The inventory store: how the panel's rows arrive, what a failed read leaves
+// The inventory store: how the panel's rows arrive, what a failed read leaves
 // behind, and why a read is single-flight.
 
 import { describe, expect, it, vi } from 'vitest'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的 skill 引用與專屬 skill 工具行：/ 觸發的 skill source 與 skill 調用卡片。"
 kind: "package-reference"
 ---

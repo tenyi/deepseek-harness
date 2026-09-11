@@ -1,4 +1,4 @@
-﻿/** `plan` namespace dictionaries (the composer plan chip's copy). */
+/** `plan` namespace dictionaries (the composer plan chip's copy). */
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {

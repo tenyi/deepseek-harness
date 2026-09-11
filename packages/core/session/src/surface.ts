@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Surface layer on top of the session event log: an ordered view of events
  * that produce LLM messages. The append-only log remains the source of truth.
  *

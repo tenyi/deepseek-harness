@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:sqlite` stub. The web profile configures session-query-sqlite with
  * `:memory:` and `openAt: never`, so no database is opened during the acceptance
  * chain; reaching the constructor means that configuration changed.

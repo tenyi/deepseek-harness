@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * A retained render binding dies with its entry. Re-registering the same key
  * creates a new binding rather than reviving the stale closure.

@@ -1,4 +1,4 @@
-﻿# Three-role capability design
+# Three-role capability design
 
 English | [中文](index.zh.md)
 

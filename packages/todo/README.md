@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The todo group map: the model-facing todo_write tool over the session log, for users and maintainers navigating the group."
 kind: "package-group"
 ---

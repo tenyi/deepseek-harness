@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The worker's module transform: one acorn parse turns an ES module into a
  * CommonJS body **and** routes every suspension point through the ambient-store
  * protocol.

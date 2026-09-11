@@ -1,4 +1,4 @@
-﻿# Web Access
+# Web Access
 
 English | [中文](web.zh.md)
 

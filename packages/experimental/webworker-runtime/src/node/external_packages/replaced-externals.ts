@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Exact package or subpath specifiers served from the worker bundle. Kept
  * import-free for the runtime builtin table and the VFS image collector.
  * Whole-package entries are omitted from the image; subpath entries leave

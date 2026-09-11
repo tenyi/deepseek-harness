@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Session Controller model-directory and selection behavior: dynamic provider grouping,
  * provider-local catalog failures, logged-selection restoration without stale
  * catalog injection, advisory pass-through models, and the prompt-assembly

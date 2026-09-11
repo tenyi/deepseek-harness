@@ -1,4 +1,4 @@
-﻿/** Reuse the composition-only parent adapter shared by the product providers. */
+/** Reuse the composition-only parent adapter shared by the product providers. */
 
 export {
   apply,

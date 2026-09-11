@@ -1,4 +1,4 @@
-﻿.confirmation {
+.confirmation {
   width: min(440px, 100%);
   max-height: calc(100vh - 48px);
   overflow: hidden;

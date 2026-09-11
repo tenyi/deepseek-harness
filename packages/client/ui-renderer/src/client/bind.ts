@@ -1,4 +1,4 @@
-﻿/**
+/**
  * uSES bridge: turns any bare observable snapshot source into a typed
  * selector hook. Client-side-rendered only, so no server snapshot is wired.
  * This is the ONE hook constructor in the client stack — engines and hosts

@@ -1,4 +1,4 @@
-﻿# Todo
+# Todo
 
 English | [中文](todo.zh.md)
 

@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * ui-goal browser half on a real cordis Context with fake slots/api/
  * sessions faces: the plugin registers the GoalBar dock entry at

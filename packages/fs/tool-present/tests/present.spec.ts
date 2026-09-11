@@ -1,4 +1,4 @@
-﻿/** Explicit deliveries commit only after a successful final tool result. */
+/** Explicit deliveries commit only after a successful final tool result. */
 import { mkdtemp, rm, writeFile, symlink } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, relative } from 'node:path'

@@ -1,4 +1,4 @@
-﻿/** Client-side non-CDP query bridge over the active Worker WebSocket. */
+/** Client-side non-CDP query bridge over the active Worker WebSocket. */
 
 import type { InspectorSourceDescriptor } from '../../shared/bridge/messages/observation.ts'
 import { InspectorQueryConnection } from '../../shared/bridge/rpc.ts'

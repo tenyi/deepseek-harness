@@ -1,4 +1,4 @@
-﻿/** Sidebar shell style contracts shared with its slot-owned controls. */
+/** Sidebar shell style contracts shared with its slot-owned controls. */
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'

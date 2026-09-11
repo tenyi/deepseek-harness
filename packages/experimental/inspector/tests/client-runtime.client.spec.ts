@@ -1,4 +1,4 @@
-﻿/** Client-face Runtime behavior. */
+/** Client-face Runtime behavior. */
 
 import { afterEach, describe, expect, it } from 'vitest'
 import { ClientRuntimeExecutor } from '../src/client/cdp/runtime.ts'

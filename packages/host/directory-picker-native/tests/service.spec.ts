@@ -1,4 +1,4 @@
-﻿/** Registration/capability behavior of the native backend (the seam's cordis half). */
+/** Registration/capability behavior of the native backend (the seam's cordis half). */
 
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

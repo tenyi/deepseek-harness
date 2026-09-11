@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:util` for the worker: the members harness code actually imports. Node's
  * inspect output is only used in diagnostics, so a JSON-shaped rendering is
  * enough; `promisify` follows Node's error-first callback convention exactly

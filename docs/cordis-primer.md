@@ -1,4 +1,4 @@
-﻿# Cordis Primer
+# Cordis Primer
 
 English | [中文](cordis-primer.zh.md)
 

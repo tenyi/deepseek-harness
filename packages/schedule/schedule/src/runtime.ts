@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Disposable live timer projection for one exact root agent.
  * @module @deepseek-ai/dsh-schedule
  */

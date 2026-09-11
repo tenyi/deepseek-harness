@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser-facing subagent control assembly: the catalog view sampled against
  * the live Agent registry, one browser zone's validation, and the stable
  * failure codes the Remote surface answers with.

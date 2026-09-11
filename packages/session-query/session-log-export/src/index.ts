@@ -1,4 +1,4 @@
-﻿/** Session-log download command and Host-owned streaming route. */
+/** Session-log download command and Host-owned streaming route. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { CommandDefinitionId } from '@deepseek-ai/dsh-commands/brand'

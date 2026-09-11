@@ -1,4 +1,4 @@
-﻿/** `sidebar` namespace dictionaries for shell controls and global panels. */
+/** `sidebar` namespace dictionaries for shell controls and global panels. */
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {

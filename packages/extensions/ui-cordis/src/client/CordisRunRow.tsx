@@ -1,4 +1,4 @@
-﻿/** `cordis_run` card and the host seat for Package-owned interactive UI. */
+/** `cordis_run` card and the host seat for Package-owned interactive UI. */
 
 import { useEffect } from 'react'
 import {

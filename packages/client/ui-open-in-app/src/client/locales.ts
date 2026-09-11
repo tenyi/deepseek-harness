@@ -1,4 +1,4 @@
-﻿/** `open-in-app` namespace dictionaries. */
+/** `open-in-app` namespace dictionaries. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'open-in-app'

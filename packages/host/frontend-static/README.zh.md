@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web 殼的 SPA dist 服務器：占據 webserver 回退席位，以遍歷拒絕與 SPA index 回退服務已構建的前端。"
 kind: "package-reference"
 ---

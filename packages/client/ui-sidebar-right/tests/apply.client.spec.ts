@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The plugin's wiring, and its removal when the plugin goes.
  *
  * The registry and the navigation controller are real, because "provided"

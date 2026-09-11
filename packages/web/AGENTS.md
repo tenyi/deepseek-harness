@@ -1,4 +1,4 @@
-﻿# AGENTS.md — Web Packages
+# AGENTS.md — Web Packages
 
 These rules supplement the package conventions in [packages/AGENTS.md](../AGENTS.md).
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `process` global the worker needs before any VFS module runs. Cordis
  * reads `process.env` and `process.versions.node` while the Loader is
  * constructed, and `cordis.yml` keeps its `!!js process.*` expressions, so the

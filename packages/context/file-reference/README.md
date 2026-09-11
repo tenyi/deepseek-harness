@@ -1,4 +1,4 @@
-﻿---
+---
 description: "File-reference discovery and @file mention grammar for host-backed UIs, for users and maintainers choosing the seam or pairing it with a provider."
 kind: "package-reference"
 ---

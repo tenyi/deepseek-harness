@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Model-facing `str_replace_editor` over the Harness filesystem seam.
  * @module @deepseek-ai/dsh-tool-str-replace-editor
  */

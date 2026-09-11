@@ -1,4 +1,4 @@
-﻿/** Copy owned by the PDF renderer. */
+/** Copy owned by the PDF renderer. */
 export const zh = {
   title: 'PDF',
   pageImage: 'PDF 第 {page} 頁',

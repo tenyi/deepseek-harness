@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Six model-facing persistent terminal tools with owner isolation, bounded results, and optional background sends for agents that need cross-call terminal state."
 kind: "package-reference"
 ---

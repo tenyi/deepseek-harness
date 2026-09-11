@@ -1,4 +1,4 @@
-﻿/** Read-only `cordis_define` card with Host and Client source tabs. */
+/** Read-only `cordis_define` card with Host and Client source tabs. */
 
 import { useId, useState, type ReactNode } from 'react'
 import {

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "基于 user-questions seam 的模型側 ask_user_question 工具；供組合或排查交互式 agent（智能體）表面的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

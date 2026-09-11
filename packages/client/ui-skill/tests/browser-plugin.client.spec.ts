@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ui-skill browser half: source and keyed toolview registration +
  * locale dictionaries + source duplicate-name proof +
  * fiber-teardown removal (HMR safety) against the real InputTriggerService, then

@@ -1,4 +1,4 @@
-﻿/** `schedule.catalog` namespace dictionaries. */
+/** `schedule.catalog` namespace dictionaries. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'schedule.catalog'

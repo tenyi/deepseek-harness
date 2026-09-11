@@ -1,4 +1,4 @@
-﻿# System Prompt Assembly
+# System Prompt Assembly
 
 English | [中文](system-prompt.zh.md)
 

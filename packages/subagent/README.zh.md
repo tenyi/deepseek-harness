@@ -1,4 +1,4 @@
-﻿---
+---
 description: "subagent 包組：委派 seam、其進程內與進程外后端，以及面向模型的委派工具。"
 kind: "package-group"
 ---

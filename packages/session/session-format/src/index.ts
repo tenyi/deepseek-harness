@@ -1,4 +1,4 @@
-﻿/** Pure adjacent streaming Session format migration machinery. */
+/** Pure adjacent streaming Session format migration machinery. */
 
 export * from './chain.ts'
 export * from './catalog.ts'

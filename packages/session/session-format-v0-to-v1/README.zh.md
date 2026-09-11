@@ -1,4 +1,4 @@
-﻿---
+---
 description: "凍結的已發布 v0 會話標頭、事件與打包行解碼器，以及到 v1 的恒等轉換。"
 kind: "package-library"
 ---

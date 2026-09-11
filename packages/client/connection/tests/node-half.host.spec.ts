@@ -1,4 +1,4 @@
-﻿/** Node half: registers the /api prefix route bridging to the api gateway. */
+/** Node half: registers the /api prefix route bridging to the api gateway. */
 import { EventEmitter } from 'node:events'
 import { createServer, request as httpRequest } from 'node:http'
 import { Readable } from 'node:stream'

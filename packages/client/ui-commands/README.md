@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Client command API for the Web GUI: the / command source, three dispatch kinds, the per-session command directory, and popupSelect and action registration for business packages; for users and maintainers of slash commands."
 kind: "package-reference"
 ---

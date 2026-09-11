@@ -1,4 +1,4 @@
-﻿---
+---
 description: "lsp 組地圖：通過 LSP seam、其 stdio 提供方與面向模型的 lsp 工具實現的語言服務器代碼導航，供瀏覽本組的用戶與維護者閱讀。"
 kind: "package-group"
 ---

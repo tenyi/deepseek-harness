@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向部署方與后端作者的會話遙測捕獲 seam 說明，用于選擇上報后端、掛載脫敏規則或實現后端約定。"
 kind: "package-library"
 ---

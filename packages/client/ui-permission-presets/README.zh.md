@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI 的權限預設界面：通用設置中的默認行與切換當前會話的 /permission 選擇器；供權限策略的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

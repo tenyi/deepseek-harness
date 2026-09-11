@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web 后臺任務界面：列出本會話可見任務的會話頭部動作；供后臺任務體驗的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿# Test-only SDK provider patch over the shipped headless profile. The child
+# Test-only SDK provider patch over the shipped headless profile. The child
 # is a complete sdk profile; the parent omits `cwd` to exercise inheritance.
 - id: headless-startup
   disabled: true

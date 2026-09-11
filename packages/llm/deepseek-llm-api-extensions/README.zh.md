@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向提供方插件的官方 DeepSeek 請求擴展注冊表，用于貢獻具有生命周期歸屬的頂層 API 字段。"
 kind: "package-reference"
 ---

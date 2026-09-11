@@ -1,4 +1,4 @@
-﻿/** Filesystem-seam source access for the generic stdio LSP provider. */
+/** Filesystem-seam source access for the generic stdio LSP provider. */
 
 import { Buffer } from 'node:buffer'
 import type { FileSystem, FsTarget } from '@deepseek-ai/dsh-fs'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The stdio language-server provider for ctx.lsp: configured server commands, extension mappings, and bounded transient-open queries, for users and maintainers composing local code navigation."
 kind: "package-reference"
 ---

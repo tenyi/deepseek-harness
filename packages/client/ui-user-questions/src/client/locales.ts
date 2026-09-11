@@ -1,4 +1,4 @@
-﻿/** `question` namespace dictionaries. */
+/** `question` namespace dictionaries. */
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {

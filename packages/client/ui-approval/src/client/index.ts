@@ -1,4 +1,4 @@
-﻿/** Browser approval consumer over the existing scoped Remote Event waterfall. */
+/** Browser approval consumer over the existing scoped Remote Event waterfall. */
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-api-remotes/client'
 import type {} from '@deepseek-ai/dsh-api-session-controller/client'

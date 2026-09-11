@@ -1,4 +1,4 @@
-﻿/** Covers fail-closed per-call classification and model-schema isolation. */
+/** Covers fail-closed per-call classification and model-schema isolation. */
 
 import { describe, expect, expectTypeOf, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

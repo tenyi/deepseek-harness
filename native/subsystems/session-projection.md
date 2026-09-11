@@ -1,4 +1,4 @@
-﻿# Session Projections
+# Session Projections
 
 English | [中文](session-projection.zh.md)
 

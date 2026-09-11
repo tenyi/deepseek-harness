@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
 /** Build the runtime and invariant companion as independent package exports. */
 export default defineConfig([

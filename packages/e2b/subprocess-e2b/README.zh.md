@@ -1,4 +1,4 @@
-﻿---
+---
 description: "共享遠程沙箱內的 shell 命令與終端：agent（智能體）可以在那里運行什么、輸出如何處理，以及可以期待什么——面向 E2B 家族的部署方與維護者。"
 kind: "package-reference"
 ---

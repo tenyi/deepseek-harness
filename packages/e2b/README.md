@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The E2B remote-runtime group map: file and command work inside one remote Linux sandbox, for users and maintainers of the E2B family."
 kind: "package-group"
 ---

@@ -1,4 +1,4 @@
-﻿/** Complete HTML rendered in a script-enabled opaque iframe, without parent application access. */
+/** Complete HTML rendered in a script-enabled opaque iframe, without parent application access. */
 import { useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import type { PropsLocale } from '@deepseek-ai/dsh-client-ui-slots'

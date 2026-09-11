@@ -1,1 +1,1 @@
-﻿{ "steps": [{ "op": "initialize" }, { "op": "newSession" }, { "op": "prompt", "text": "pin" }] }
+{ "steps": [{ "op": "initialize" }, { "op": "newSession" }, { "op": "prompt", "text": "pin" }] }

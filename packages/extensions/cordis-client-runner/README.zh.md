@@ -1,4 +1,4 @@
-﻿---
+---
 description: "動態 Cordis 包的瀏覽器半說明，供選擇、組合或排查頁面如何應答運行請求并裝載瀏覽器半代碼的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

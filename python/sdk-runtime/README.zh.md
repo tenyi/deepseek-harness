@@ -1,4 +1,4 @@
-﻿# deepseek-harness-runtime-bin
+# deepseek-harness-runtime-bin
 
 [English](README.md) | 中文
 

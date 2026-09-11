@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The agent-preset chip on the new-session screen, beside the workspace
  * picker.
  *

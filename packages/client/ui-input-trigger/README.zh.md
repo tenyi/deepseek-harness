@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI 的輸入觸發流水線：光標處的 / 與 @ 檢測、分組候選菜單，以及把 pick 路由到已注冊 source；供斜杠命令與引用的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI 的外殼布局：三欄 AppFrame（右欄作為貼邊面板的軌道）、面板幾何服務與主題呈現；供窗口外殼的使用者與維護者閱讀。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/** Complete dependency validation for current Team task snapshots. */
+/** Complete dependency validation for current Team task snapshots. */
 
 import type { TeamTaskId, TeamTaskSnapshot } from './types.ts'
 

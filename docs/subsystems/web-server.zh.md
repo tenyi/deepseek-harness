@@ -1,4 +1,4 @@
-﻿# HTTP 服務器
+# HTTP 服務器
 
 [English](web-server.md) | 中文
 

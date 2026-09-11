@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Deterministic real-process proofs for runner classification: the real local
  * provider and sandbox bash executor exercise direct runner-spawn failures
  * and a POSIX fake Landlock launcher that prints its notice before exec.

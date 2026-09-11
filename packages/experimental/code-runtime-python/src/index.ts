@@ -1,4 +1,4 @@
-﻿/**
+/**
  * CPython subprocess code runtime: a fresh `python3` process runs each model program under an
  * asyncio event loop with top-level ``await``. Binding calls travel on fd 3 as JSON-lines,
  * leaving stdout/stderr free for the program's own output. This is containment, not a security

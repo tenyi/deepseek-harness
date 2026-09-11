@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Settings domain base plugin: the settings-namespace scope service, schema service, and the canonical settings slot-type contract for the dsh web client."
 kind: "package-reference"
 ---

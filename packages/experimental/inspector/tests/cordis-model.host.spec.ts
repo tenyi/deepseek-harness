@@ -1,4 +1,4 @@
-﻿/** Validation and projection of the shared Cordis tree representations. */
+/** Validation and projection of the shared Cordis tree representations. */
 
 import { describe, expect, it } from 'vitest'
 import { parseCordisRuntimeTree } from '../src/shared/cordis/model.ts'

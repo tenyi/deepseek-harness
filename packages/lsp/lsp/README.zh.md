@@ -1,4 +1,4 @@
-﻿---
+---
 description: "LSP 能力 seam（ctx.lsp）：按文件擴展名選擇提供方、四種規范化的代碼導航操作與結構化錯誤，供組合或擴展代碼導航的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

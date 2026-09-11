@@ -1,4 +1,4 @@
-﻿# User Settings
+# User Settings
 
 English | [中文](settings.zh.md)
 

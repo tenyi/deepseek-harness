@@ -1,4 +1,4 @@
-﻿---
+---
 description: "純函數式相鄰會話格式規劃、無損 JSON 值檢查、僅標頭遷移與物理編解碼分派。"
 kind: "package-library"
 ---

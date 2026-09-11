@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The address-to-read translation: a `dsh-resource://file/session/<id>/<path>`
  * address names the session the read runs under and the workspace-relative path
  * it hands the Host; absolute paths also travel inside the Session address.

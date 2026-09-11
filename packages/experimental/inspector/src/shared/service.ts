@@ -1,4 +1,4 @@
-﻿/** Cordis service API shared by the Host and Client plugin faces. */
+/** Cordis service API shared by the Host and Client plugin faces. */
 
 import type { CordisRuntimeTreeReader } from './cordis/reader.ts'
 import { createQueryCordisRuntimeTreeReader } from './bridge/query-reader.ts'

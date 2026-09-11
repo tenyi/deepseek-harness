@@ -1,4 +1,4 @@
-﻿/** Client-local object handles and CDP-compatible RemoteObject serialization. */
+/** Client-local object handles and CDP-compatible RemoteObject serialization. */
 
 import {
   inspectorId,

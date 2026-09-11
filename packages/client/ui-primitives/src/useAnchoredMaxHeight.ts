@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Viewport-fit hook for bottom-anchored overlays (slash menu, popupSelect):
  * the element's bottom edge is laid out independent of its height, so it
  * grows upward and only the top edge can collide with the viewport — clamp

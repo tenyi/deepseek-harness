@@ -1,4 +1,4 @@
-﻿/** Default Agent model settings layered over a real settings provider. */
+/** Default Agent model settings layered over a real settings provider. */
 
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

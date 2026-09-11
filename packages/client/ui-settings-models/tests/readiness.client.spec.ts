@@ -1,4 +1,4 @@
-﻿/** Pure first-run readiness projection over the shared Models join. */
+/** Pure first-run readiness projection over the shared Models join. */
 import { describe, expect, it } from 'vitest'
 import type { CredentialInfo } from '@deepseek-ai/dsh-api-remotes/client'
 import type { ModelsSettingsState, ProviderRow } from '../src/client/store.ts'

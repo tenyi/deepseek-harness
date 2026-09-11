@@ -1,4 +1,4 @@
-﻿/**
+/**
  * call-config unit tests: field-wise LlmCallConfig equality (the real-change
  * detector behind logged changed headers) and the deepFreeze ownership helper
  * the loop applies to every built request.

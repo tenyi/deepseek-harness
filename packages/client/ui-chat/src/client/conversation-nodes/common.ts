@@ -1,4 +1,4 @@
-﻿import type {
+import type {
   ConversationLocation, ConversationNodeContext,
 } from '@deepseek-ai/dsh-client-ui-conversation/client'
 import type {

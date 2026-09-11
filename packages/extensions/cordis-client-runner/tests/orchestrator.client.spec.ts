@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Run-orchestration account: the order the halves run in (and what a host-only
  * definition skips), what each failure answers the host, and what a surface can
  * read while it happens. The host seam and the load engine are stood in, because

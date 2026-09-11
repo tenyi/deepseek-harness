@@ -1,4 +1,4 @@
-﻿---
+---
 description: "共享核心、瀏覽器 GUI、一次性任務、ACP（Agent Client Protocol）與 SDK 應用表層的現成 dsh profile 組合包。"
 kind: "package-group"
 ---

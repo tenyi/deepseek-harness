@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Execution types for the bash executor seam. Background job semantics belong
  * to `@deepseek-ai/dsh-jobs`; this seam exposes only process handles. The
  * managed-environment and captured-output vocabulary is owned by the

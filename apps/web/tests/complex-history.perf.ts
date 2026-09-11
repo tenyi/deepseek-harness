@@ -1,4 +1,4 @@
-﻿// Opt-in browser benchmark for high-cardinality workspace and history
+// Opt-in browser benchmark for high-cardinality workspace and history
 // rendering. It reports measurements without timing assertions because host
 // speed is not a correctness contract; structural assertions keep the number
 // of workspaces and history entries from silently shrinking.

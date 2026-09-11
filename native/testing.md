@@ -1,4 +1,4 @@
-﻿# Testing policy
+# Testing policy
 
 English | [中文](testing.zh.md)
 

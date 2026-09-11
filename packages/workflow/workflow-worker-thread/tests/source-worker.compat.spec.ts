@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Keyless runtime smoke for the source-mode workflow worker. The Node
  * compatibility matrix runs this WHOLE file, so renaming or removing its test
  * cannot turn the runtime proof into a successful zero-match filter.

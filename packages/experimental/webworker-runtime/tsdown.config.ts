@@ -1,4 +1,4 @@
-﻿import { createRequire } from 'node:module'
+import { createRequire } from 'node:module'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'tsdown'

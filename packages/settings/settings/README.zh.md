@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向插件作者與維護者的用戶設置服務：注冊可配置 namespace、讀取解析值或接入配置界面。"
 kind: "package-reference"
 ---

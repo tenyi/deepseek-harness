@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The in-host filesystem for shell runs: {@link ShellFileSystem} straight over
  * the mounted VFS, plus the path and diagnostic helpers every program shares.
  *

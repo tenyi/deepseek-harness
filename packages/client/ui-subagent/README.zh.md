@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的 subagent 對話目錄、續接路由 UI 與 '@' 引用 source。"
 kind: "package-reference"
 ---

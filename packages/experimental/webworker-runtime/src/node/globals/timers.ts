@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Node-shaped timer handles. The browser's `setTimeout`/`setInterval` return
  * numeric ids, while harness and vendored code calls `.unref()` on the handle
  * (`client-hmr`'s poll interval, cordis's timer plugin). The wrappers return a

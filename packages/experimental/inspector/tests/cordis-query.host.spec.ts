@@ -1,4 +1,4 @@
-﻿/** Host-driven Cordis query integration. */
+/** Host-driven Cordis query integration. */
 
 import { Context } from '@deepseek-ai/cordis'
 import { afterEach, describe, expect, it, vi } from 'vitest'

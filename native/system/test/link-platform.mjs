@@ -1,4 +1,4 @@
-﻿/** Link the downloaded platform artifact for dependency-free ABI tests. */
+/** Link the downloaded platform artifact for dependency-free ABI tests. */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';

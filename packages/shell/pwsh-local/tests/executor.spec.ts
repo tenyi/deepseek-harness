@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Real-process tests for `@deepseek-ai/dsh-pwsh-local`: the LOCAL subprocess
  * service plus a REAL pwsh executable, exercised through the executor seam
  * (`resolve` → `run`/`start`). These verify the world — actual PowerShell

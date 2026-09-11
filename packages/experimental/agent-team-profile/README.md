@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Published experimental Agent Teams profile layer over dsh-base with Team-scoped coordination tools and one-shot delegation."
 kind: "package-bundle"
 ---

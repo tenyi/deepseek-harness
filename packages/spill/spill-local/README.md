@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The local filesystem spill backend: how spilled text is saved to private session-scoped files and retrieved with read or grep."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Browser half: register `files` as a right-Sidebar tab type.
  *
  * The public two-stage path, unmodified: the type into `ctx.sidebarRightTabs`,

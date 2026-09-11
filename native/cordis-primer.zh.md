@@ -1,4 +1,4 @@
-﻿# Cordis 入門
+# Cordis 入門
 
 [English](cordis-primer.md) | 中文
 

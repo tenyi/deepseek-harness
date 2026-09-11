@@ -1,4 +1,4 @@
-﻿- banner:
+- banner:
   - navigation "Session hierarchy":
     - button "Reference order target" [disabled]
   - button "More actions":

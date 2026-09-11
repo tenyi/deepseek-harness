@@ -1,4 +1,4 @@
-﻿/** The `read` endpoint: its four gates and the line window it cuts. */
+/** The `read` endpoint: its four gates and the line window it cuts. */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mkdir, rm, symlink, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'

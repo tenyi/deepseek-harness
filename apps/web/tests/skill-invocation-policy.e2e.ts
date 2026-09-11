@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: the real host serves every user-invocable skill to the
+// Web e2e scenario: the real host serves every user-invocable skill to the
 // browser slash source — user-only (disable-model-invocation) entries appear
 // with their marker while user-disabled quadrants stay hidden. A real
 // chromium connects a fresh workspace seeded with all four policy quadrants;

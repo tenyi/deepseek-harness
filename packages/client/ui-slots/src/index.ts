@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Slot registry pure core. Owners declare slot
  * contracts by merging into {@link SlotMap}; one `register` call contributes a
  * component AND (optionally) declares child slots, a store seat, and the

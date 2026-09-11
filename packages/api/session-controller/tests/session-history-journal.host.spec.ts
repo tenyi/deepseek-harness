@@ -1,4 +1,4 @@
-﻿/** Raw Session journal transport and message-aligned pagination coverage. */
+/** Raw Session journal transport and message-aligned pagination coverage. */
 
 import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "context 組概覽：不定義工具、為每次請求添加持久且模型可見上下文的插件，供瀏覽本組的用戶與維護者閱讀。"
 kind: "package-group"
 ---

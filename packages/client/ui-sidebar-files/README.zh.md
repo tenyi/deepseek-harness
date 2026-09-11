@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端右側 Sidebar 的文件樹 tab 類型：通過網絡逐層列出會話工作區根目錄，按資源地址把文件打開到 Sidebar。"
 kind: "package-reference"
 ---

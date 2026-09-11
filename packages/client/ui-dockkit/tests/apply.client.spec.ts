@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Model and operation-engine behavior: what each operation does to the tree, and
  * that applying its inverse returns the exact state it started from.
  */

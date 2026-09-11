@@ -1,4 +1,4 @@
-﻿---
+---
 description: "共享的 Typert Remote 協議：業務包、生成產物、Host Gateway 與 Client API 使用的裝飾器、wire 描述符、編解碼器與提供方約定。"
 kind: "package-library"
 ---

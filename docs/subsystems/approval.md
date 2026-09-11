@@ -1,4 +1,4 @@
-﻿# User Approval
+# User Approval
 
 English | [中文](approval.zh.md)
 

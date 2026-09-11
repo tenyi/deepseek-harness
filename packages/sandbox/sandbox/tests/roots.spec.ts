@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Tests for the writable-root derivation: the mode's meaning as a canonical
  * allow-list. Pinned here so the fs fence and the Seatbelt profile — both
  * deriving from `writableRoots` — cannot drift.

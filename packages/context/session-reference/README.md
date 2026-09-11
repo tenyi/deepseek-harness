@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Cross-session snapshot references and durable untrusted model context, for users and maintainers enabling or debugging ctx.sessionReferenceResolver."
 kind: "package-reference"
 ---

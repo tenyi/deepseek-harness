@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Text renderers for `cordis_runtime_inspect`. Live facts come from the service store and
  * the plugin registry; what each service CAN DO comes from the generated
  * `api-catalog.ts`. This module owns the join of the two plus presentation: which

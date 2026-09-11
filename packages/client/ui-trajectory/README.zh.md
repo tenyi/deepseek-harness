@@ -1,4 +1,4 @@
-﻿---
+---
 description: "dsh Web 客戶端的 Trajectory 視圖：按輪次組織的事件記錄表加交互式時間概覽，注冊進對話視圖環。"
 kind: "package-reference"
 ---

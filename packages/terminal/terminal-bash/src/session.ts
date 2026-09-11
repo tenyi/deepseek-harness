@@ -1,4 +1,4 @@
-﻿/** Persistent PTY session with bounded output, readiness, and terminal-protocol replies. */
+/** Persistent PTY session with bounded output, readiness, and terminal-protocol replies. */
 
 import { Buffer } from 'node:buffer'
 import { createRequire } from 'node:module'

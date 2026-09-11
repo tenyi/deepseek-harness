@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web GUI 的 goal 界面：顯示當前目標并支持編輯、暫停、恢復或清除的 composer 上下文條帶；供 goal 體驗的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

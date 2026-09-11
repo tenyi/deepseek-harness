@@ -1,1 +1,1 @@
-﻿{ "steps": [{ "op": "initialize" }, { "op": "newSession" }, { "op": "promptExpectError", "text": "blocked" }] }
+{ "steps": [{ "op": "initialize" }, { "op": "newSession" }, { "op": "promptExpectError", "text": "blocked" }] }

@@ -1,4 +1,4 @@
-﻿# 核心
+# 核心
 
 [English](core.md) | 中文
 

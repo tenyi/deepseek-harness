@@ -1,4 +1,4 @@
-﻿# 用戶設置
+# 用戶設置
 
 [English](settings.md) | 中文
 

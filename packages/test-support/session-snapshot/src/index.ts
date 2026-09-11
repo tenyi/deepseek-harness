@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Session-log snapshot support behind the keyless snapshot tier
  * (`pnpm run test:snapshot`). The current ACP adapter has four layers: the
  * shared subprocess/client launcher ({@link launchAcpTestAgent}), the scripted

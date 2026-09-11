@@ -1,4 +1,4 @@
-﻿/**
+/**
  * OpenTelemetry Service Provider for the DeepSeek Harness telemetry capability.
  *
  * Composes the OTel JS SDK as-is — a `LoggerProvider` with a

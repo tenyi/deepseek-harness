@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Page half of the postMessage tunnel. It
  * turns fetch-shaped calls into `req` frames and rebuilds Responses from the
  * worker's `res` / `res-head`+`res-chunk`+`res-end` frames, so every consumer

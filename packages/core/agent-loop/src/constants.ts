@@ -1,4 +1,4 @@
-﻿/** Shared agent-loop scheduler defaults.
+/** Shared agent-loop scheduler defaults.
  * @module dsh-agent-loop/constants
  */
 

@@ -1,4 +1,4 @@
-﻿/** Client realm definition assembled from independent Runtime, Console, and Source backends. */
+/** Client realm definition assembled from independent Runtime, Console, and Source backends. */
 
 import { randomUUID } from 'node:crypto'
 import { inspectorId } from '../../../shared/identity.ts'

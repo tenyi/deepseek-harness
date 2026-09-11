@@ -1,4 +1,4 @@
-﻿// Recorded-session Sidebar geometry and per-Session view state through the shipped browser composition.
+// Recorded-session Sidebar geometry and per-Session view state through the shipped browser composition.
 import { mkdir, readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { join } from 'node:path'

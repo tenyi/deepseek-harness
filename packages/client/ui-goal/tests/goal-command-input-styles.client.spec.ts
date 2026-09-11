@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The command-input bubble's typography as CSS text. jsdom has no layout, so
  * this reads the declarations that make the bubble share the user bubble's
  * face and size axis: the shared projection sets the `/goal` chip in the code

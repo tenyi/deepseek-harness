@@ -1,4 +1,4 @@
-﻿/** `reference` namespace dictionaries for the unified `@` source. */
+/** `reference` namespace dictionaries for the unified `@` source. */
 
 import type {} from '@deepseek-ai/dsh-client-ui-slots'
 

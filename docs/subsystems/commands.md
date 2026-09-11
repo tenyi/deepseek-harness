@@ -1,4 +1,4 @@
-﻿# Human Commands
+# Human Commands
 
 English | [中文](commands.zh.md)
 

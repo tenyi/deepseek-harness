@@ -1,4 +1,4 @@
-﻿---
+---
 description: "工具結果 spill 策略：部署如何用預覽和可檢索的 spill 文件把過大的純文本工具結果擋在模型上下文之外。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: full-session stats over paged history. A deterministic
+// Web e2e scenario: full-session stats over paged history. A deterministic
 // 28-turn log (56 chat messages — more than one 50-message history page)
 // seeded cold through the REAL persistence API must render whole-log turn/step
 // counts from the sessionStats projection on first open, and loading the

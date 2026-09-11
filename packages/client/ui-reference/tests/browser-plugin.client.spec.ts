@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Web reference source coverage: Remote-backed file/session discovery,
  * deterministic ordering and labels, quoted-path suppression, pick projections, codec
  * round-trip, and registration lifecycle.

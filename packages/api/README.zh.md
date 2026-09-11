@@ -1,4 +1,4 @@
-﻿---
+---
 description: "應用 Remote 層的包映射：類型化的 Client 到 Host 能力調用、結果與轉發事件，供用戶與維護者瀏覽該組。"
 kind: "package-group"
 ---

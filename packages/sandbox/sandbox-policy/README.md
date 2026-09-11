@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The shared per-call sandbox policy resolver and current model context for users and maintainers composing, configuring, or debugging file-effect policy across enforcing capabilities."
 kind: "package-reference"
 ---

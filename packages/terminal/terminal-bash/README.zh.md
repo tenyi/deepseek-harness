@@ -1,4 +1,4 @@
-﻿---
+---
 description: "持久終端會話的隨產品交付的 shell 后端：在共享沙箱策略下啟動交互式 bash 或 pwsh，帶就緒檢測與有界逐行輸出。"
 kind: "package-reference"
 ---

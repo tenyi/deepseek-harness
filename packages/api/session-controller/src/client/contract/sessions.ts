@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The outward sessions-service face — what `ctx.sessions` exposes to feature
  * packages. Transport entry points and implementation internals stay on
  * the concrete class. Widening this interface is the

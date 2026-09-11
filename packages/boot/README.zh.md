@@ -1,4 +1,4 @@
-﻿---
+---
 description: "boot 包組：dsh app bin 如何啟動——環境加載、profile 與 patch 層、清晰的啟動失敗信息，以及由應用持有的命令行。"
 kind: "package-group"
 ---

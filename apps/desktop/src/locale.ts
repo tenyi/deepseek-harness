@@ -1,4 +1,4 @@
-﻿/** Typed English and Chinese copy owned by the Electron shell. */
+/** Typed English and Chinese copy owned by the Electron shell. */
 
 export const en = {
   application: 'Application',

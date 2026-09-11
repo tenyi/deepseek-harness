@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * TestClient over the web profile's roster read from its bundles: production
  * `bootClient` over in-process modules, every Remote call answered by a

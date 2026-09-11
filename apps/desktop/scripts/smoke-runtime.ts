@@ -1,4 +1,4 @@
-﻿/** Boot the materialized target runtime without access to a user's Harness profile. */
+/** Boot the materialized target runtime without access to a user's Harness profile. */
 
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'

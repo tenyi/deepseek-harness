@@ -1,4 +1,4 @@
-﻿# 客戶端資源
+# 客戶端資源
 
 [English](client-resources.md) | 中文
 

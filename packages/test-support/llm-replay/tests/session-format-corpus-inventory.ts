@@ -1,4 +1,4 @@
-﻿/** Exact historical conversion refusals; current-generation fixtures never qualify. */
+/** Exact historical conversion refusals; current-generation fixtures never qualify. */
 export const expectedUnsupported: Readonly<Partial<Record<string, { sourceVersion: number; reason: string }>>> = {
   'packages/experimental/webworker-runtime/tests/fixtures/vfs-example/home/sessions/--dsh-workspace--/preview-architecture-review/session.v2.jsonl': {
     sourceVersion: 2,

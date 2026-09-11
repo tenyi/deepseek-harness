@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向開發者與維護者的 shell 執行器 seam 說明，用于選擇、組合或實現基于 ctx.shell 的命令執行。"
 kind: "package-reference"
 ---

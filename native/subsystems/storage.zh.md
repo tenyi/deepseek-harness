@@ -1,4 +1,4 @@
-﻿# 存儲
+# 存儲
 
 [English](storage.md) | 中文
 

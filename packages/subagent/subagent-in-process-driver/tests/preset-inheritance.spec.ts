@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Composition inheritance: a child runs on the preset its parent runs on.
  *
  * With every model-facing row on the agent plane, the tool registry's global

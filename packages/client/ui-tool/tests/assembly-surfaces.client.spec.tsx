@@ -1,4 +1,4 @@
-﻿import { toolSessionEvents } from './tool-fixtures.client.ts'
+import { toolSessionEvents } from './tool-fixtures.client.ts'
 // @vitest-environment jsdom
 /** Tool assembly acceptance through the real ui-conversation host. */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'

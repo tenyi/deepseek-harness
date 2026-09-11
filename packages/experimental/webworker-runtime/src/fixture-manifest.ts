@@ -1,4 +1,4 @@
-﻿/** Browser-readable catalog of built-in Preview filesystem overlays. */
+/** Browser-readable catalog of built-in Preview filesystem overlays. */
 
 /** Manifest format version emitted beside the base VFS image. */
 export const PREVIEW_FIXTURE_MANIFEST_VERSION = 1

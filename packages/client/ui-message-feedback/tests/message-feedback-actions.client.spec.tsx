@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * MessageFeedbackActions rendering and gestures: the rating buttons reflect the
  * shared view with the filled glyph for a recorded rating, either unrecorded

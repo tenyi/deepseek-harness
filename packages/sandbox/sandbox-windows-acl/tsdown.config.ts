@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
 // The confinement runner builds as its own entry (path-loaded by
 // dsh-sandbox-local's win32 chain), inlining the sandbox primitives while

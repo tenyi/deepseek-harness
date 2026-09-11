@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Service Definition and drive registry for the session-projection capability seam: the merge-extensible state and client-view type
  * tables, the `ProjectionDefinition` state-driven computation unit contract,
  * and the `ctx.sessionProjections` registry that DRIVES every registered unit

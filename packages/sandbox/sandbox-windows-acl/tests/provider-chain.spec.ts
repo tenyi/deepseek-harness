@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The win32 chain's argv contract, denial dialect, and runner-failure rules,
  * exercised through the REAL LocalSandboxProvider.confine() with an injected
  * platform and runner argv prefix. Platform-independent assertions: they run

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Package map for the credential capability family: the credential-reference seam, the environment-and-file provider, the authorization flow registry, and how references keep secret values out of configuration."
 kind: "package-group"
 ---

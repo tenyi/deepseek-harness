@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
 /**
  * Build index and the invariant companion as separate single-entry bundles.

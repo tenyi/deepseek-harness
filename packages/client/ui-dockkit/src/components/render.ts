@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Prop shares the kit's own components pass among themselves. These are internal
  * to the package — the outward contracts are in `adapter.ts`.
  */

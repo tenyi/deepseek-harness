@@ -1,4 +1,4 @@
-﻿/** Question composer props and one pending Remote waterfall response. */
+/** Question composer props and one pending Remote waterfall response. */
 import type { PropsLocale, PropsRuntime, PropsStore } from '@deepseek-ai/dsh-client-ui-slots'
 // The client module declares the conversation.composer SlotMap entry required by PropsRuntime.
 import type { SessionId } from '@deepseek-ai/dsh-session/types'

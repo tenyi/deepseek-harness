@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Durable session skill catalog and model-facing `skill` loader tool.
  *
  * @module @deepseek-ai/dsh-tool-skill

@@ -1,4 +1,4 @@
-﻿/** Workspace-backed Session creation for one settled webhook rule result. */
+/** Workspace-backed Session creation for one settled webhook rule result. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { randomUUID } from 'node:crypto'

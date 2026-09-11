@@ -1,4 +1,4 @@
-﻿/** Process-local assistant attempt framing and durable stream accumulation. */
+/** Process-local assistant attempt framing and durable stream accumulation. */
 
 import {
   AssistantStreamAccumulator,

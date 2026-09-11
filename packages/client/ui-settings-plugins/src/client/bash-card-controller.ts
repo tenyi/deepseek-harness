@@ -1,4 +1,4 @@
-﻿/** The shell card's staged form over the `bash` settings namespace. */
+/** The shell card's staged form over the `bash` settings namespace. */
 
 import type { SnapshotStore } from '@deepseek-ai/dsh-client-store'
 import type { SettingsScope } from '@deepseek-ai/dsh-client-ui-settings/client'

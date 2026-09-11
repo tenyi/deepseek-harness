@@ -1,4 +1,4 @@
-﻿# Scoped Registration
+# Scoped Registration
 
 English | [中文](scope.zh.md)
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Direct mdast→React markdown renderer. Replaces the react-markdown /
  * remark-rehype pipeline with one switch over parsed nodes so streaming can
  * cache frozen blocks as React elements; the rendered DOM is pinned

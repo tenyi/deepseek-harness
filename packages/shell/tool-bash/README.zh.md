@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向模型的 bash 工具，供選擇、配置或排查一次性命令執行、后臺任務與沙箱升權的使用者與維護者閱讀。"
 kind: "package-reference"
 ---

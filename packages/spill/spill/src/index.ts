@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Service Definition for the spill storage capability seam (`ctx.spillStore`): an abstract service defining WHAT a
  * spill backend does — persist oversized text and return a model-facing
  * locator plus retrieval guidance — without saying HOW. Implementations

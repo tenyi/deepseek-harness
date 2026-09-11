@@ -1,4 +1,4 @@
-﻿# `@deepseek-ai/dsh`
+# `@deepseek-ai/dsh`
 
 [English](README.md) | 中文
 

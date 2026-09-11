@@ -1,4 +1,4 @@
-﻿/** Measurable virtual-row grouping and durable identity contracts. */
+/** Measurable virtual-row grouping and durable identity contracts. */
 
 import { describe, expect, it } from 'vitest'
 import type { TrajectoryCellProps } from '../src/client/trajectory-record.ts'

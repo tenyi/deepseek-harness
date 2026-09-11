@@ -1,4 +1,4 @@
-﻿/** Shared quality ladder and lazy candidate execution for normalization and request-image encoders. */
+/** Shared quality ladder and lazy candidate execution for normalization and request-image encoders. */
 
 import type { Sharp } from 'sharp'
 

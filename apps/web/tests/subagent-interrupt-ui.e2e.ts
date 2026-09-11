@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: the composer's independent Stop interrupts a running
+// Web e2e scenario: the composer's independent Stop interrupts a running
 // continuable child. The child holds its model turn open through a replay
 // hang entry; the browser proves Send and Stop coexist, the parent-offline
 // disabled-Send-with-Stop composer, the subagents/interruptByParent

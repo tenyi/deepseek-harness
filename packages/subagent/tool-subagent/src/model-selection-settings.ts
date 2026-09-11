@@ -1,4 +1,4 @@
-﻿/** Host-owned opt-in setting for model-selectable subagent delegation. */
+/** Host-owned opt-in setting for model-selectable subagent delegation. */
 
 import { Context, Service } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'

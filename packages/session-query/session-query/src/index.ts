@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Service Definition for combined session-history reads, traces, filters, and full-text search.
  *
  * @module @deepseek-ai/dsh-session-query

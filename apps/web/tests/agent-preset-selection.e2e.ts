@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: agent-preset selection. Every lane mounts the plugin's
+// Web e2e scenario: agent-preset selection. Every lane mounts the plugin's
 // own shipped presets; this is the lane that puts them in front of a browser.
 //
 // Two surfaces, one host rule: a session's composition is fixed when the

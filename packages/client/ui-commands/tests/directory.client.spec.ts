@@ -1,4 +1,4 @@
-﻿/**
+/**
  * CommandDirectory unit tests over the session-key axis: per-key status
  * transitions and epoch guard, key isolation across sessions, soft
  * invalidation (invalidateAll), the reconnect hard reset (resetConnected:

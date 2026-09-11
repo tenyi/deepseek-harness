@@ -1,4 +1,4 @@
-﻿/**
+/**
  * TypeScript client SDK for the DeepSeek Harness runtime: spawn the
  * same-version `dsh --profile sdk` runtime as a subprocess and drive agent
  * turns over stdio JSON-RPC. `DeepSeekHarness` is the high-level run API;

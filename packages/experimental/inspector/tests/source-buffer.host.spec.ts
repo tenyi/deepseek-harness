@@ -1,4 +1,4 @@
-﻿/** Worker-side source buffer behavior. */
+/** Worker-side source buffer behavior. */
 
 import { MessageChannel } from 'node:worker_threads'
 import { describe, expect, it, vi } from 'vitest'

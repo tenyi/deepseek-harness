@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Concrete agent-loop plugin: creates scoped ReactLoopAgents, publishes them
  * through the agent/session registries, and owns their ordered teardown.
  *

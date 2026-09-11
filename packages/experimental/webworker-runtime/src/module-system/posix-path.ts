@@ -1,4 +1,4 @@
-﻿/**
+/**
  * POSIX path helpers for the worker VFS: one absolute root, no drive letters,
  * no symlinks.
  *

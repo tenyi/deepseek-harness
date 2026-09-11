@@ -1,4 +1,4 @@
-﻿/**
+/**
  * A docking layout kit: a split tree of tabbed panes with invertible operations,
  * and the React components that render and drive it.
  *

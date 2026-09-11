@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向宿主驅動 UI 的文件引用發現與 @file mention 語法，供選擇該 seam 或為其搭配提供方的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

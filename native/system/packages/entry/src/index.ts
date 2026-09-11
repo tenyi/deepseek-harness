@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The JavaScript API over the prebuilt `landlock-run` launcher: resolve the
  * binary for this host, build its grant argv, and run its functional probe.
  *

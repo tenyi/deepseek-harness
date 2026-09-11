@@ -1,4 +1,4 @@
-﻿/** Realm-neutral Runtime operations and results. */
+/** Realm-neutral Runtime operations and results. */
 
 import type { InspectorJsonObject, InspectorJsonValue } from '../json.ts'
 import type { RuntimeExceptionDetails } from './errors.ts'

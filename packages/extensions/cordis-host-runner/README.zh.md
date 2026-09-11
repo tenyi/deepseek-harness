@@ -1,4 +1,4 @@
-﻿---
+---
 description: "動態 Cordis 包的 host 半說明，供選擇、組合或排查注冊表、沙箱與運行往返的 agent（智能體）與維護者閱讀。"
 kind: "package-reference"
 ---

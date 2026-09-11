@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Adaptive chooser of the directory-picker seam: resolves the host's
  * situation once at boot (bind host, SSH launch, display session, Linux
  * chooser binary) and mounts the matching interaction — `native` or `browse`

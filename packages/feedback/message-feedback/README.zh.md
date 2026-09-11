@@ -1,4 +1,4 @@
-﻿---
+---
 description: "在權威 Session 日志中保存已完成 assistant 消息的評分、分類與備注。"
 kind: "package-reference"
 ---

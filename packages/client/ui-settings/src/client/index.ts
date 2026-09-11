@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Settings domain base plugin, browser half. Provides `ctx.settingsScope`, the
  * settings-namespace scope service every preference row binds its durable
  * section through, and owns the one `settings.describe` reader in the browser:

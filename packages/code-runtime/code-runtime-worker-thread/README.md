@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Worker-thread code execution for users and maintainers composing, sizing, or debugging the shipped TypeScript backend that runs each program in a fresh Node worker."
 kind: "package-reference"
 ---

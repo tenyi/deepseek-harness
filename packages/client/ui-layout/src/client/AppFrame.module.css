@@ -1,4 +1,4 @@
-﻿.frame {
+.frame {
   position: relative; /* anchors the drag handles, which straddle column borders */
   display: grid;
   grid-template-rows: 100%;

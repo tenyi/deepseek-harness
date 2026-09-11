@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 // Incremental streaming behavior: a MarkdownText kept mounted across
 // append-only rerenders must show, at every step, exactly the DOM a fresh
 // mount of the same prefix shows, while reusing the frozen blocks' DOM nodes

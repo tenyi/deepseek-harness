@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向替換僅安全上下文可用的 crypto.randomUUID 調用的維護者，說明跨運行時 UUID 生成。"
 kind: "package-library"
 ---

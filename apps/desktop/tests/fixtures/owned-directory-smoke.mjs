@@ -1,4 +1,4 @@
-﻿/** Built Desktop cleanup smoke; run with Electron and ELECTRON_RUN_AS_NODE=1. */
+/** Built Desktop cleanup smoke; run with Electron and ELECTRON_RUN_AS_NODE=1. */
 
 import assert from 'node:assert/strict'
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, symlinkSync, writeFileSync } from 'node:fs'

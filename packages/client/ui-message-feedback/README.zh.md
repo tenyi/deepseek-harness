@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web 反饋界面：已定稿助手消息動作行中的 Like/Dislike 對、兩種評分與 `/feedback` 共用的反饋彈窗，以及確認和失敗 toast；供反饋體驗的用戶與維護者閱讀。"
 kind: "package-reference"
 ---

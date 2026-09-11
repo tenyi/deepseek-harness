@@ -1,4 +1,4 @@
-﻿/** Shared Host/Client owner of correlated non-CDP query requests. */
+/** Shared Host/Client owner of correlated non-CDP query requests. */
 
 import { inspectorId, type InspectorSourceGeneration, type InspectorSourceId } from './ids.ts'
 import { jsonByteLength, type InspectorJsonValue } from '../json.ts'

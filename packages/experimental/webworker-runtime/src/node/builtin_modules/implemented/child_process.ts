@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:child_process` over the worker's own shell.
  *
  * A browser worker cannot fork, so this module IS the machine's process layer:

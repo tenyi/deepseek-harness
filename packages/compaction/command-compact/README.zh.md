@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向交互式組合的按需 /compact 命令：它做什么、你會看到什么，以及如何掛載。"
 kind: "package-reference"
 ---

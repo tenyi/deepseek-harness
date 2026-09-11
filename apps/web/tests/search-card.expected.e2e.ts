@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 // Assembled search-card snapshot: boots the real built workspace client bundles
 // through AppWebEntry's ModuleLoader path against the keyless
 // fixture Connection RPC (no API key, no model round), opens the fixture

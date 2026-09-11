@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: the Models settings page end to end through the real
+// Web e2e scenario: the Models settings page end to end through the real
 // wire — the add card offers the dormant pi-ai catalog, a blank key saves a
 // reference-free profile for provider-native auth, and typing an API key later
 // stores it write-only under the derived reference (`MINIMAX_CN_API_KEY`)

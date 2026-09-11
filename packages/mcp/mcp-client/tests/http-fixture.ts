@@ -1,4 +1,4 @@
-﻿/** Keyless stateless Streamable HTTP MCP fixture for integration tests. */
+/** Keyless stateless Streamable HTTP MCP fixture for integration tests. */
 
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'

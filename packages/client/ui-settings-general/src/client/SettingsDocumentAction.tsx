@@ -1,4 +1,4 @@
-﻿/** Optional settings-header action for opening a file-backed Host document. */
+/** Optional settings-header action for opening a file-backed Host document. */
 
 import { useEffect } from 'react'
 import type { ReactNode } from 'react'

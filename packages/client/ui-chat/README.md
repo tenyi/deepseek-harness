@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Browser Chat target that renders Session conversation nodes, historical images, actions, localization, and scroll state."
 kind: "package-reference"
 ---

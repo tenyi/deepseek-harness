@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The shared hook rules behind the Claude Code and Codex bridges — what a hook can do and what happens when it runs — for users and maintainers of the hooks subsystem."
 kind: "package-library"
 ---

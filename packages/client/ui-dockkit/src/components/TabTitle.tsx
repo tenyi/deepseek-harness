@@ -1,4 +1,4 @@
-﻿/**
+/**
  * A chip's title: one line, clipped at the chip's inset, never ellipsized.
  * While the text is wider than its box the span carries
  * `data-dockkit-tab-clipped`, and the stylesheet fades the text out at the

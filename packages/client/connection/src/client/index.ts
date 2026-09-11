@@ -1,4 +1,4 @@
-﻿/** Browser wire client: Remote transport and connection generations. */
+/** Browser wire client: Remote transport and connection generations. */
 import type { Context } from '@deepseek-ai/cordis'
 import {
   ConnectionController,

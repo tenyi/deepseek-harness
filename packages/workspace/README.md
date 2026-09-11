@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The workspace group map: the persistent workspace entity family, durable directory records, and header-validated session membership, for users and maintainers navigating the group."
 kind: "package-group"
 ---

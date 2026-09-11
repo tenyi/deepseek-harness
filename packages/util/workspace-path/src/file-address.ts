@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The `dsh-resource://file/…` address grammar: how a file is named across the
  * Sidebar and the resource model, built and parsed without touching a
  * filesystem.

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Active Loader package inventory metadata for deployments sending official DeepSeek requests."
 kind: "package-reference"
 ---

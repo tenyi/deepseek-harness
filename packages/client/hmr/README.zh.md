@@ -1,4 +1,4 @@
-﻿---
+---
 description: "僅用于開發環境的瀏覽器客戶端插件熱重載：重建插件 bundle 后原地替換運行中的插件，供開發者迭代 web GUI。"
 kind: "package-reference"
 ---

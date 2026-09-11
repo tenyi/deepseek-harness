@@ -1,4 +1,4 @@
-﻿/** The agent-loop card's staged form over the `agent-loop` settings namespace. */
+/** The agent-loop card's staged form over the `agent-loop` settings namespace. */
 
 import type { SnapshotStore } from '@deepseek-ai/dsh-client-store'
 import type { SettingsScope } from '@deepseek-ai/dsh-client-ui-settings/client'

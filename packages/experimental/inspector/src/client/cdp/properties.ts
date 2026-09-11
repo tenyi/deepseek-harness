@@ -1,4 +1,4 @@
-﻿/** Lazy Client property enumeration for `Runtime.getProperties`. */
+/** Lazy Client property enumeration for `Runtime.getProperties`. */
 
 import type {
   ClientRuntimeGetPropertiesCommand,

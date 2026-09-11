@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Change-event vocabulary of the domain data form. Every durable write emits
  * one event after the backend resolves durability, carrying the new snapshot
  * and an operation discriminant — never the old value (a diffing consumer

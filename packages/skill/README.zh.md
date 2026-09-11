@@ -1,4 +1,4 @@
-﻿---
+---
 description: "skill（技能）組地圖：由提供方發現并經會話目錄與 skill 工具加載的可復用 agent（智能體）指令，供瀏覽本組的用戶與維護者閱讀。"
 kind: "package-group"
 ---

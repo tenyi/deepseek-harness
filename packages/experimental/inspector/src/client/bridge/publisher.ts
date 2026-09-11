@@ -1,4 +1,4 @@
-﻿/** Buffered Client observation publication across reconnecting WebSockets. */
+/** Buffered Client observation publication across reconnecting WebSockets. */
 
 import { InspectorSourceBuffer, type InspectorSourceBufferOptions } from '../../shared/bridge/buffer.ts'
 import type { InspectorJsonValue } from '../../shared/json.ts'

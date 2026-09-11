@@ -1,4 +1,4 @@
-﻿// contextBreakdown projection: heuristic system/tools/message composition,
+// contextBreakdown projection: heuristic system/tools/message composition,
 // plus the shared estimator's pricing branches.
 
 import { afterEach, describe, expect, it } from 'vitest'

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向快照測試的無密鑰 LLM（大語言模型）回放插件，供測試作者針對已記錄模型 transcript（文本記錄）啟動真實 agent（智能體）。"
 kind: "package-reference"
 ---

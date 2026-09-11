@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * ui-message-feedback browser half on a real cordis Context with fake slots/remote
  * faces: the plugin registers the feedback entry at

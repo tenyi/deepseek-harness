@@ -1,4 +1,4 @@
-﻿// Web e2e scenario: the single-line produced-files summary a finished turn
+// Web e2e scenario: the single-line produced-files summary a finished turn
 // ends with. Cold-seeds ten writes (zero model calls), then verifies the real
 // assembled lane adapts from a coarse width budget and offers no folder
 // handoff: chips open in the right Sidebar's text preview, which has no

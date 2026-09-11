@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pure formatting and coordinate conversion for the `lsp` tool: one-based↔zero-based UTF-16 cursor
  * conversion, workspace-grouped location rendering with `file:`-URI resolution, complete-result
  * capping, and UI presentation. No I/O — a UI may call the presenter on live streaming and on

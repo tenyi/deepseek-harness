@@ -1,4 +1,4 @@
-﻿/** Typed preload operations exposed only by the Electron shell. */
+/** Typed preload operations exposed only by the Electron shell. */
 
 import type { DesktopPluginRecord } from './project-manager.ts'
 import type { DesktopLocale } from './locale.ts'

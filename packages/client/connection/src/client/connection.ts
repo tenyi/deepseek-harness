@@ -1,4 +1,4 @@
-﻿/** Connection generation readiness, cancellation, and continuous recovery. */
+/** Connection generation readiness, cancellation, and continuous recovery. */
 import { resolveConnectionConfig, type ConnectionRecoveryConfig } from '../recovery-config.ts'
 
 export type { ConnectionRecoveryConfig } from '../recovery-config.ts'

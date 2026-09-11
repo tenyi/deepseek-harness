@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向 Host 與瀏覽器 Client Cordis 運行時的實驗性 Chrome DevTools 檢查，包括 Console 求值、Sources、Network 采集、Elements 樹和獨立于 CDP 的查詢 API。"
 kind: "package-reference"
 ---

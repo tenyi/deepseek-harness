@@ -1,4 +1,4 @@
-﻿/**
+/**
  * In-process module arrival: dynamic `/client` imports resolve through the
  * repository path aliases, provided rows replace them, the bootstrap row is the
  * static namespace, and the resulting module system serves the vendored Loader

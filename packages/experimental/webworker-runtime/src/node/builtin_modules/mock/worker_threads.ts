@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `node:worker_threads` stub. Nested workers are unsupported, so the workflow
  * and code-runtime plugin bodies mount and fail on use. The
  * thread-identity values are real: they say "this is the main thread", which is

@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * Composer editor pure core: ReferenceChipNode semantics, the three-view
  * projections, and detect-span application. Headless editors drive every

@@ -1,4 +1,4 @@
-﻿# Durable Attachments
+# Durable Attachments
 
 English | [中文](attachment.zh.md)
 

@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
 /** Build the package root and invariant companion as independent bundles. */
 export default defineConfig([

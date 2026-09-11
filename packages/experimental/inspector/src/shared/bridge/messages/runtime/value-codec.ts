@@ -1,4 +1,4 @@
-﻿/** Exact wire decoder for Client Runtime results and RemoteObject data. */
+/** Exact wire decoder for Client Runtime results and RemoteObject data. */
 
 import { isJsonValue, isPlainObject } from '../../../json.ts'
 import { exactKeys, exactObject, optionalBoolean, optionalString, wireId } from '../../../validation.ts'

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Keyless snapshot-test LLM replay. It derives one model-call script per
  * recorded session from v3 embedded Assistant streams and explicitly marked local
  * compaction calls, then binds fresh live sessions to parent/child scripts by

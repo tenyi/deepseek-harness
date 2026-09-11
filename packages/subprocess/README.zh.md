@@ -1,4 +1,4 @@
-﻿---
+---
 description: "subprocess 組地圖：共享的子進程服務及其本地宿主提供方，供瀏覽本組的用戶與維護者閱讀。"
 kind: "package-group"
 ---

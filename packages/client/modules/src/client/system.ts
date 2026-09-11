@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ClientModuleSystem — the implementation behind the {@link ClientModuleLoader}
  * contract. The conceptual contract (lazy CJS model, resolution branch order) is
  * documented on the public interfaces in `./manifest.ts`; this file owns the

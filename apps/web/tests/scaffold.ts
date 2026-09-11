@@ -1,4 +1,4 @@
-﻿// Shared scaffold for the keyless browser e2e lane (Agent Note:
+// Shared scaffold for the keyless browser e2e lane (Agent Note:
 // .agents/notes/implemented/testing/2026-07-24-web-gui-browser-e2e-lane.md).
 // Boots the REAL web composition — the dsh-base and dsh-web-app bundle
 // patches over the empty profile root through the vendored Loader (the same

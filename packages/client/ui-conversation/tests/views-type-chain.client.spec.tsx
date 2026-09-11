@@ -1,4 +1,4 @@
-﻿// Target-neutral View-ring type chain and runtime ledger projection.
+// Target-neutral View-ring type chain and runtime ledger projection.
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it } from 'vitest'
 import type { ReactNode } from 'react'

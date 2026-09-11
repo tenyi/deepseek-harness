@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The three adapters between pi-ai's auth model and the harness credential
  * plane. Every pi-ai-specific concept stays on this side of them: the harness
  * seams they consume — `ctx.credentials` records and `ctx.authorization` flows —

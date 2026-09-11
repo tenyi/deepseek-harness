@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `IncomingMessage`/`ServerResponse` synthesis for tunnel requests. The app's
  * `node:http` proxy reports a successful bind and captures the webserver's
  * request listener; the tunnel feeds that listener these pairs, so the real

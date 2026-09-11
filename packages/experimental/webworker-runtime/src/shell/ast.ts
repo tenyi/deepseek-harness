@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The parsed command line, as this shell names it.
  *
  * `@yarnpkg/parsers` re-exports only part of its grammar's type map from the

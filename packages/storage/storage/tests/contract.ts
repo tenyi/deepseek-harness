@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared KV-backend conformance suite. Each backend's spec file calls
  * {@link runKvBackendContract} with a factory bound to its own medium; the
  * suite asserts every clause of the `src/backend.ts` contract so both

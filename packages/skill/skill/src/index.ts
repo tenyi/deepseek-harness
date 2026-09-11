@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Agent skill provider registry.
  *
  * This package owns the Service Definition role of the skill capability seam.

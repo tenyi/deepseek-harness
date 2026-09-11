@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Local-filesystem implementation of `ctx.fileReferences`.
  *
  * @module @deepseek-ai/dsh-file-reference-local

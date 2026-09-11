@@ -1,4 +1,4 @@
-﻿/**
+/**
  * InputTriggerService (`ctx.inputTriggers`): the root half of the trigger pipeline — the
  * stateless source registry plus the per-session controller map. Every piece
  * of mutable interaction state (hit, menu, fetch) lives on the

@@ -1,4 +1,4 @@
-﻿/** Self-contained recovery document for an unavailable shell renderer or preload. */
+/** Self-contained recovery document for an unavailable shell renderer or preload. */
 
 import type { DesktopLocale } from './locale.ts'
 

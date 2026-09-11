@@ -1,4 +1,4 @@
-﻿---
+---
 description: "SQLite storage backend for hosts and maintainers choosing, configuring, or debugging document-per-row KV storage in one database file."
 kind: "package-reference"
 ---

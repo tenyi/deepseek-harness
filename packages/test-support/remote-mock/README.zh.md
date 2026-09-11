@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Typert Remote 流量的端點具名 mock：一元應答與流腳本的表、活流控制、日志與 Connection 載體面，供測試作者在沒有 Host 的情況下啟動真實瀏覽器客戶端。"
 kind: "package-library"
 ---

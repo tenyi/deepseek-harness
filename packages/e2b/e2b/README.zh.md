@@ -1,4 +1,4 @@
-﻿---
+---
 description: "E2B 文件與命令工作的共享遠程 Linux 沙箱：配置、生命周期，以及啟動與關閉時會發生什么。"
 kind: "package-reference"
 ---

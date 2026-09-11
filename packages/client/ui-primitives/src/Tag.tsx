@@ -1,4 +1,4 @@
-﻿// Tag: read-only capsule badge. The selectable capsule button is `Pill` —
+// Tag: read-only capsule badge. The selectable capsule button is `Pill` —
 // a tag takes no `onClick` and no `active`, and carries no copy of its own.
 
 import type { ReactNode } from 'react'

@@ -1,4 +1,4 @@
-﻿// Component-local calendar-day tick: memoized message rows keep stable props
+// Component-local calendar-day tick: memoized message rows keep stable props
 // across midnight, so the IconActions clock needs a local day seat that
 // re-fires at the next local midnight without reaching for framework hooks.
 

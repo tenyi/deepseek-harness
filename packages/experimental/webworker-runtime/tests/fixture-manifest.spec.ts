@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import {
   parsePreviewFixtureManifest, PREVIEW_FIXTURE_MANIFEST_VERSION,
 } from '../src/fixture-manifest.ts'

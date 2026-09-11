@@ -1,4 +1,4 @@
-﻿/** Prepare the disposable npm-project view used by an unpackaged Electron shell. */
+/** Prepare the disposable npm-project view used by an unpackaged Electron shell. */
 
 import {
   existsSync,

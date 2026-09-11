@@ -1,4 +1,4 @@
-﻿/** Conversion from Client wire values to realm-neutral Runtime values. */
+/** Conversion from Client wire values to realm-neutral Runtime values. */
 
 import type {
   ClientRuntimeExceptionDetails,

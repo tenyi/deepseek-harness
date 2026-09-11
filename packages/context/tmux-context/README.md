@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Opt-in per-turn tmux location context for users and maintainers enabling or tuning the agent's session, window, and pane awareness."
 kind: "package-reference"
 ---

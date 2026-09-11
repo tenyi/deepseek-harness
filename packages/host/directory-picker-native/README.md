@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Native-OS-chooser backend of the directory-picker seam: opens one platform chooser per pick for operators sitting at the web GUI host's display."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Linear operation history over `applyOp`. Recording is total — every operation
  * lands in the sequence, focus moves included — and grouped by intent: the
  * operations one gesture or command produced form one entry, so stepping lands

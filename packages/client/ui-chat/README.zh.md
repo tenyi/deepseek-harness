@@ -1,4 +1,4 @@
-﻿---
+---
 description: "渲染會話對話節點、歷史圖片、操作、本地化和滾動狀態的瀏覽器 Chat target。"
 kind: "package-reference"
 ---

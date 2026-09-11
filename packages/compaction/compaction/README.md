@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Shared compaction contract for backend implementers and deployers: what conversation condensation does, when to use it, and how to build a backend."
 kind: "package-reference"
 ---

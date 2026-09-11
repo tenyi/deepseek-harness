@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Model selection for the Web GUI: the /model popup and the composer model seat over one per-session provider-grouped directory; for users and maintainers of model routing."
 kind: "package-reference"
 ---

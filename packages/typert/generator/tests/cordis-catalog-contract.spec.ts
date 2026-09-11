@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Model-extraction and negative-path contracts for the Cordis catalog generator
  * (`scripts/gen-cordis-catalog.ts`).
  */

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "帶類型的 Client 到 Host 調用與流：分派、校驗、取消、重連與轉發的 Host 事件。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "spill 存儲服務：保存超大工具文本或已捕獲的會話引用，并返回可用于取回內容的定位信息。"
 kind: "package-reference"
 ---

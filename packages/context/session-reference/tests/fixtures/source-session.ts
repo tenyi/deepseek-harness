@@ -1,4 +1,4 @@
-﻿/** Deterministic projected source shared by reference snapshot and Loader tests. */
+/** Deterministic projected source shared by reference snapshot and Loader tests. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { createMessage, createUserMessage } from '@deepseek-ai/dsh-llm'

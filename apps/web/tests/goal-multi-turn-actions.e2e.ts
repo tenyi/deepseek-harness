@@ -1,4 +1,4 @@
-﻿// Keyless replay of a real two-round Goal run. Each autonomous round ends as
+// Keyless replay of a real two-round Goal run. Each autonomous round ends as
 // its own turn, so the first answer must keep its IconActions when Goal opens
 // round two and the final answer must own a second, distinct action row.
 import { mkdir, readFile, writeFile } from 'node:fs/promises'

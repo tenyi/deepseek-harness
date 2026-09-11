@@ -1,4 +1,4 @@
-﻿/** Opaque identifiers owned by the cross-realm Inspector bridge. */
+/** Opaque identifiers owned by the cross-realm Inspector bridge. */
 
 import type { InspectorId } from '../identity.ts'
 

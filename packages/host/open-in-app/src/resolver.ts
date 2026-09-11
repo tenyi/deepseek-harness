@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Platform resolution for the open-in-app catalog: each entry's locator
  * chain resolves to a verified {@link OpenInAppResolvedLaunch} — a
  * launcher this host actually holds — and one resolution pass yields the

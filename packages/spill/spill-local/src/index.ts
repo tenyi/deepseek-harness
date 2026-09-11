@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `LocalSpillStore`: the host-filesystem implementation of the
  * `@deepseek-ai/dsh-spill` storage seam. Persists oversized text to a
  * private, session-scoped file (see `./store.ts` for the traversal-safe naming

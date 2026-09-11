@@ -1,4 +1,4 @@
-﻿/** General Settings row for completed-Turn transcript presentation. */
+/** General Settings row for completed-Turn transcript presentation. */
 
 import { useState } from 'react'
 import type { SnapshotStore } from '@deepseek-ai/dsh-client-store'

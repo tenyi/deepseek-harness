@@ -1,4 +1,4 @@
-﻿# Process Sandbox
+# Process Sandbox
 
 English | [中文](sandbox.zh.md)
 

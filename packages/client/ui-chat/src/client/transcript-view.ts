@@ -1,4 +1,4 @@
-﻿/** Host-backed completed-Turn transcript presentation policy. */
+/** Host-backed completed-Turn transcript presentation policy. */
 
 import { createSnapshotStore, type SnapshotStore } from '@deepseek-ai/dsh-client-store'
 import type { SettingsScope } from '@deepseek-ai/dsh-client-ui-settings/client'

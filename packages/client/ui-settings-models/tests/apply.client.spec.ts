@@ -1,4 +1,4 @@
-﻿/** Models section registration: slot declaration injection, the locale-following label thunk, and HMR recovery. */
+/** Models section registration: slot declaration injection, the locale-following label thunk, and HMR recovery. */
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { resolveSlotLabel } from '@deepseek-ai/dsh-client-ui-slots'

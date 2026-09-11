@@ -1,4 +1,4 @@
-﻿# Sessions
+# Sessions
 
 English | [中文](session.zh.md)
 

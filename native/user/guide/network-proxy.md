@@ -1,4 +1,4 @@
-﻿# Run DSH behind a network proxy
+# Run DSH behind a network proxy
 
 English | [中文](network-proxy.zh.md)
 

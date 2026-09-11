@@ -1,4 +1,4 @@
-﻿---
+---
 description: "文本 spill 能力家族的包映射：存儲服務、本地后端與結果策略各自提供什么。"
 kind: "package-group"
 ---

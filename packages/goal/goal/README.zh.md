@@ -1,4 +1,4 @@
-﻿---
+---
 description: "面向選擇、配置或排查同會話持久 goal 服務的用戶與維護者：每會話一個持久的完成目標。"
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿/** Test-scoped Remote mock and lazy client boot, owned by native Vitest fixtures. */
+/** Test-scoped Remote mock and lazy client boot, owned by native Vitest fixtures. */
 import { test, type TestAPI } from 'vitest'
 import { RemoteMock, type MockedRemote } from '@deepseek-ai/dsh-remote-mock'
 import type { AssemblyPlan } from './roster.ts'

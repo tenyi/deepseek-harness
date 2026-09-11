@@ -1,4 +1,4 @@
-﻿# 用戶審批
+# 用戶審批
 
 [English](approval.md) | 中文
 

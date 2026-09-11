@@ -1,4 +1,4 @@
-﻿/** Host file-upload service: streamed intake and Agent-scoped staged receipts. */
+/** Host file-upload service: streamed intake and Agent-scoped staged receipts. */
 
 import { randomUUID } from 'node:crypto'
 import type { Context } from '@deepseek-ai/cordis'

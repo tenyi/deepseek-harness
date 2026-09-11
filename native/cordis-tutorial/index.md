@@ -1,4 +1,4 @@
-﻿# Cordis tutorial
+# Cordis tutorial
 
 English | [中文](index.zh.md)
 

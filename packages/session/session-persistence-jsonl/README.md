@@ -1,4 +1,4 @@
-﻿---
+---
 description: "The shipped JSONL session-persistence backend for deployments and maintainers choosing, configuring, or debugging per-session durable logs with optional Zstandard compression."
 kind: "package-reference"
 ---

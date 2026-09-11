@@ -1,4 +1,4 @@
-﻿# Deterministic Agent Teams patch over the shipped headless profile.
+# Deterministic Agent Teams patch over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

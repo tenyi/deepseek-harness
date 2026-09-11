@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Web Session-header \"Open In...\" split button: launches the remembered application on the session workspace directory and lists every application the host probed as installed."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Immutable append-only lists for projection state, with bounded append copying, insertion-order iteration, and Zod checkpoint validation."
 kind: "package-library"
 ---

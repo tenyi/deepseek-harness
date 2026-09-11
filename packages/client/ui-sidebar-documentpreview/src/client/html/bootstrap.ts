@@ -1,4 +1,4 @@
-﻿/** A fixed bootstrap runs inside the opaque iframe; no Host callbacks enter its document. */
+/** A fixed bootstrap runs inside the opaque iframe; no Host callbacks enter its document. */
 import { decodeText, encodeText } from './bytes.ts'
 
 /** One statically declared local script or stylesheet, already read under the source file's authority. */

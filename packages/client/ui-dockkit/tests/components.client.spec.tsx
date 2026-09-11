@@ -1,4 +1,4 @@
-﻿// @vitest-environment jsdom
+// @vitest-environment jsdom
 /**
  * Component-level behaviour of the kit's React surface, driven by props alone:
  * no cordis, no slot registry, no scaffold. These assert what a user sees and

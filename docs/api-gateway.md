@@ -1,4 +1,4 @@
-﻿# API Gateway
+# API Gateway
 
 English | [中文](api-gateway.zh.md)
 

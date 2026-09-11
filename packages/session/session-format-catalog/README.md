@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Build-static first-party Session format codec and adjacent migration assembly for persistence readers."
 kind: "package-library"
 ---

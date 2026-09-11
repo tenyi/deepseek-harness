@@ -1,4 +1,4 @@
-﻿/** Closed non-CDP Inspector query and result model. */
+/** Closed non-CDP Inspector query and result model. */
 
 import type { CordisRuntimeTree } from '../../../cordis/model.ts'
 

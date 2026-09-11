@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Producer of the `changes` stream: every `fs/observed` emission whose target
  * lies inside a generation's workspace root becomes one frame of that
  * generation. Instrumented filesystem operations emit these observations; the

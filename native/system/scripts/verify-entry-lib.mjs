@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Prepack gate for entry packages: refuse to pack a tarball whose built
  * `lib/` is missing. Entry `files` lists use globs, and a glob matching

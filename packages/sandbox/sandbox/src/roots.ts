@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The writable-root derivation shared by every enforcement dialect that
  * expresses a mode as a canonical allow-list: `workspace-write` means "the
  * workspace root plus the platform temp areas", and this module is that

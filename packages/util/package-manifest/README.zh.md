@@ -1,4 +1,4 @@
-﻿---
+---
 description: "包身份、運行時要求和 DSH 插件元數據的共享 TypeScript 聲明。"
 kind: "package-library"
 ---

@@ -1,4 +1,4 @@
-﻿# Deterministic provider-retry patch over the shipped headless profile.
+# Deterministic provider-retry patch over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

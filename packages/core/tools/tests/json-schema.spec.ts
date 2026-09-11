@@ -1,4 +1,4 @@
-﻿import { runInNewContext } from 'node:vm'
+import { runInNewContext } from 'node:vm'
 import { describe, expect, it } from 'vitest'
 import {
   assertObjectJsonSchema,

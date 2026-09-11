@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The plugin's registrations, and their removal when the plugin goes.
  *
  * The registry is real, because "registered" means what it says a type is; the

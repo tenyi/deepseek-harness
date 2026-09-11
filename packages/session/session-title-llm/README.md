@@ -1,4 +1,4 @@
-﻿---
+---
 description: "Shared model-backed title generation policy for users and maintainers configuring title providers or debugging auxiliary LLM requests."
 kind: "package-library"
 ---

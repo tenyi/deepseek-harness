@@ -1,4 +1,4 @@
-﻿.indicator {
+.indicator {
   flex: none;
   display: inline-grid;
   grid-template-columns: 14px max-content;

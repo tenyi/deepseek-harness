@@ -1,4 +1,4 @@
-﻿# Activation-failure patch over the shipped headless profile.
+# Activation-failure patch over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

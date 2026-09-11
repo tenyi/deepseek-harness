@@ -1,4 +1,4 @@
-﻿/**
+/**
  * `sidebarFiles` namespace dictionaries, and the namespace's declaration.
  *
  * The failure lines name what the tree could not list, one code each, because a
