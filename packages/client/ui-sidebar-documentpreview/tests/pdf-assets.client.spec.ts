@@ -1,4 +1,4 @@
-/** PDF binary resources are exact-name, local data with independent transferable buffers. */
+﻿/** PDF binary resources are exact-name, local data with independent transferable buffers. */
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { createPdfBinaryDataFactory, type PdfAssetMap } from '../src/client/pdf/assets.ts'
 

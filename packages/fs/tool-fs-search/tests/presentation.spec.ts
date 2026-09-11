@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Unit tests for the search-card presentation layer (`src/presentation.ts`): the
  * canonical value → `presentationMeta` projections (`grepSearchMeta`,
  * `globSearchMeta`, `groupMatchesByFile`) and the defensive `meta` → view

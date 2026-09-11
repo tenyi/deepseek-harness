@@ -1,4 +1,4 @@
----
+﻿---
 description: "The skill group map: reusable agent instructions discovered from providers and loaded through the session catalog and skill tool, for users and maintainers navigating the group."
 kind: "package-group"
 ---

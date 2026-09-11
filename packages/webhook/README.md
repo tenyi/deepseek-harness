@@ -1,4 +1,4 @@
----
+﻿---
 description: "Package map for verified external events, programmatic rules, and fire-and-forget DSH Session creation."
 kind: "package-group"
 ---

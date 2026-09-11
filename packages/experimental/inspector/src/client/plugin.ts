@@ -1,4 +1,4 @@
-/** Client Cordis plugin that publishes browser observations directly to the Inspector Worker. */
+﻿/** Client Cordis plugin that publishes browser observations directly to the Inspector Worker. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { parseInspectorClientBootstrap } from '../shared/bridge/control-codec.ts'

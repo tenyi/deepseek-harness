@@ -1,4 +1,4 @@
----
+﻿---
 description: "The one-shot Codex subagent provider for users and maintainers choosing a product backend, installing a Profile bundle, or configuring an unattended Codex delegation."
 kind: "package-bundle"
 ---

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The browse picking occupant (package-internal; the `./client` surface
  * exposes only the Loader exports). Same-package tests exercise it directly
  * through this module.

@@ -1,4 +1,4 @@
-/** Bare Vite must fail before it can present a bootless shell as a working GUI. */
+﻿/** Bare Vite must fail before it can present a bootless shell as a working GUI. */
 
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { join } from 'node:path'

@@ -1,4 +1,4 @@
----
+﻿---
 description: "Circular deque for Host and browser packages that need amortized constant-time queue operations, immediate release of removed entries, and bounded vacant storage."
 kind: "package-library"
 ---

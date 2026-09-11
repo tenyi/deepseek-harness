@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Sidebar slot contract: the registrant-side props composition for the
  * layout-owned `sidebar` slot, plus the holes this shell declares. The shell
  * owns column geometry, the brand row, New Session, and global panel rows;

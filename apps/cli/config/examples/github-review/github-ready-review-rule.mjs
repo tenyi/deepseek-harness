@@ -1,4 +1,4 @@
-import z from '@deepseek-ai/schemastery'
+﻿import z from '@deepseek-ai/schemastery'
 import { WebhookRuleId } from '@deepseek-ai/dsh-webhook'
 
 export const name = 'github-ready-review-rule'

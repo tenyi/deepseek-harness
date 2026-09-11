@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One sentence per endpoint code, and the transport's own words for anything else.
  */
 import { describe, expect, it } from 'vitest'

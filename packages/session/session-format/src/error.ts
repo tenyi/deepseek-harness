@@ -1,4 +1,4 @@
-/** Error raised when a durable Session artifact cannot be restored or migrated losslessly. */
+﻿/** Error raised when a durable Session artifact cannot be restored or migrated losslessly. */
 export class SessionFormatError extends Error {
   override readonly name: string = 'SessionFormatError'
 }

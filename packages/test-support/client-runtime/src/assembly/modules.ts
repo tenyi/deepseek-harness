@@ -1,4 +1,4 @@
-/**
+﻿/**
  * In-process module arrival: import every roster row's `/client` module (or
  * the plan's replacement) and register each as a pre-arrived factory on a
  * production `ClientModuleSystem`, so neither the Loader's `internal.import`

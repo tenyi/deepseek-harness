@@ -1,4 +1,4 @@
-/** ui-theme apply wiring: service provision, settings dictionaries riding the
+﻿/** ui-theme apply wiring: service provision, settings dictionaries riding the
  * locale service, declaration-aware Appearance row registration, snapshot
  * projection into the row store, and HMR collapse recovery. */
 import { Context } from '@deepseek-ai/cordis'
@@ -95,8 +95,8 @@ describe('ui-theme apply', () => {
     const before = await bench()
     declareItems(before.slots)
     await before.ctx.plugin({ inject: [...inject], apply }).await()
-    expect(before.locale.bind(SETTINGS_NS)('appearance.title')).toBe('外观')
-    expect(before.locale.bind(SETTINGS_NS)('fontSize.title')).toBe('字号大小')
+    expect(before.locale.bind(SETTINGS_NS)('appearance.title')).toBe('外觀')
+    expect(before.locale.bind(SETTINGS_NS)('fontSize.title')).toBe('字號大小')
     before.locale.setLocale('en')
     expect(before.locale.bind(SETTINGS_NS)('appearance.title')).toBe('Appearance')
     const entry = before.slots.entries(SLOT).find(e => e.component === AppearanceRow)!

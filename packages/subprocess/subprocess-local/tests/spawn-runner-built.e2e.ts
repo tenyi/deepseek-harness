@@ -1,4 +1,4 @@
-import { spawn } from 'node:child_process'
+﻿import { spawn } from 'node:child_process'
 import type { Buffer } from 'node:buffer'
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'

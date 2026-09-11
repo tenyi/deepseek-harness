@@ -1,4 +1,4 @@
-/** Builtin image metadata and keyed document-body registration. */
+﻿/** Builtin image metadata and keyed document-body registration. */
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '../index.ts'
 import type { DocumentPreviewDefinition } from '../document/registry.ts'

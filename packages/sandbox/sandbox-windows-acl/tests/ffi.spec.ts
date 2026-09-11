@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Sandbox-specific FFI tests with stub binding tables: temp-path decoding,
  * invalid-handle checks, pointer-at-offset decoding, and the bounded SID
  * comparison's early exits. Pure stubs — no real Win32

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Persisted projection cache (`ctx.sessionProjectionCache`): durable
  * checkpoints of every projection unit's state, one record per session on
  * the `session_projcache` domain (`per-record` layout — the shipped json

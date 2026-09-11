@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The frames a shell process and its host exchange.
  *
  * A command runs in its own Web Worker, which owns no filesystem: the VFS

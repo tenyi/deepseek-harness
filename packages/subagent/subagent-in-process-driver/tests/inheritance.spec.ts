@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Delegation policy through child session events appended before publication:
  * the parent's sandbox override plus the pinned `approval/policy: never`.
  */

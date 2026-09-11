@@ -1,4 +1,4 @@
-/** Reconstruct durable steering identity from the event-sourced agent inbox. */
+﻿/** Reconstruct durable steering identity from the event-sourced agent inbox. */
 
 import type { SessionEvent } from '@deepseek-ai/dsh-session/types'
 import type { InboxTarget } from '@deepseek-ai/dsh-agent/types'

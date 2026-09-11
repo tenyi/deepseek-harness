@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Durable session-persistence Service Definition (`ctx.sessionPersistence`). Backends store
  * {@link SessionEvent}s as the event-sourced log and carry non-replayable
  * {@link SessionHeader} metadata separately; callers address one stored

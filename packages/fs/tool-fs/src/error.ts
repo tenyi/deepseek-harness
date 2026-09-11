@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-facing diagnostics for guarded-mutation failures. Providers and
  * policies retain operation-specific causes, while this package owns the
  * stable message shown to the model.

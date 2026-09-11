@@ -1,4 +1,4 @@
-/** Composer submission vocabulary shared by the input and settings domains. */
+﻿/** Composer submission vocabulary shared by the input and settings domains. */
 
 import type { BusyEnterBehavior } from '../../submission-settings.ts'
 

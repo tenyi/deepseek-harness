@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Default responses for every Remote endpoint the web assembly calls while
  * booting and rendering with no sessions, no workspaces, and default settings.
  * The comment above each row names the plugin that calls it; endpoints boot

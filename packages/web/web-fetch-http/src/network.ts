@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Public-network resolution and address-pinned HTTP transport for `web-fetch-http`.
  * One DNS answer set is validated before Undici receives it through a custom lookup,
  * so the connection cannot resolve the hostname again to a private address.

@@ -1,5 +1,5 @@
----
-description: "面向部署方的 OpenTelemetry 会话遥测后端说明，用于选择模式、配置导出器或排查哪些数据离开本机。"
+﻿---
+description: "面向部署方的 OpenTelemetry 會話遙測后端說明，用于選擇模式、配置導出器或排查哪些數據離開本機。"
 kind: "package-reference"
 ---
 
@@ -9,36 +9,36 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-session-telemetry-otel` 仅在新的显式反馈后通过 OTel JS SDK 导出会话记录，适用于所有用户和提供方，包括 `deepseek-official`。`FEEDBACK_ONLY` 释放截至该反馈的权威日志前缀，包含上下文；后续记录等待下一次显式反馈。`DISABLED` 不构造传输。SDK 批处理可完成已授权的上传，无需另一次用户交互或模型调用。部署方负责脱敏规则。
+`dsh-session-telemetry-otel` 僅在新的顯式反饋后通過 OTel JS SDK 導出會話記錄，適用于所有用戶和提供方，包括 `deepseek-official`。`FEEDBACK_ONLY` 釋放截至該反饋的權威日志前綴，包含上下文；后續記錄等待下一次顯式反饋。`DISABLED` 不構造傳輸。SDK 批處理可完成已授權的上傳，無需另一次用戶交互或模型調用。部署方負責脫敏規則。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-当部署方需要通过 OpenTelemetry 日志导出会话记录时挂载此插件。选择一个模式、给导出器一个端点，并决定是否在 seam 上挂载脱敏规则。
+當部署方需要通過 OpenTelemetry 日志導出會話記錄時掛載此插件。選擇一個模式、給導出器一個端點，并決定是否在 seam 上掛載脫敏規則。
 
 ### 模式
 
-| `mode` | 行为 |
+| `mode` | 行為 |
 |---|---|
-| `FEEDBACK_ONLY` | 默认值。文本反馈、评分创建或修改、备注修改和撤回释放尚未交接的前缀，截止该权威反馈事件；后续记录等待 |
-| `DISABLED` | 不构造协调器、提供方、处理器或导出器；没有遥测记录离开进程。活跃会话反馈在本地告警；冷会话修改保持静默 |
+| `FEEDBACK_ONLY` | 默認值。文本反饋、評分創建或修改、備注修改和撤回釋放尚未交接的前綴，截止該權威反饋事件；后續記錄等待 |
+| `DISABLED` | 不構造協調器、提供方、處理器或導出器；沒有遙測記錄離開進程。活躍會話反饋在本地告警；冷會話修改保持靜默 |
 
-程序化 TypeScript 配置使用导出的 `SessionTelemetryMode` 枚举；原始字符串字面量不可赋值。`FULL` 会被拒绝，不是别名。[`sharing` 属性](../session-telemetry/README.zh.md#the-sharing-disclosure)报告 `feedback-only` 或 `disabled`，不代表投递回执。`/feedback` 确认文本只确认记录。
+程序化 TypeScript 配置使用導出的 `SessionTelemetryMode` 枚舉；原始字符串字面量不可賦值。`FULL` 會被拒絕，不是別名。[`sharing` 屬性](../session-telemetry/README.zh.md#the-sharing-disclosure)報告 `feedback-only` 或 `disabled`，不代表投遞回執。`/feedback` 確認文本只確認記錄。
 
 ### 最小配置
 
-上传模式需要导出器 URL，并原样接受 SDK 选项块：
+上傳模式需要導出器 URL，并原樣接受 SDK 選項塊：
 
 ```yaml
 - id: sessionTelemetry-otel
@@ -53,99 +53,99 @@ kind: "package-reference"
     processor: {}            # optional; passed verbatim to BatchLogRecordProcessor
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
 | `mode` | `FEEDBACK_ONLY` | 共享策略：`FEEDBACK_ONLY` 或 `DISABLED` |
-| `exporter.url` | 上传模式必填 | 完整 OTLP 日志端点；必须能解析为 `http(s)` |
-| `exporter`、`processor` | — | 原样传给 SDK 导出器与批处理器 |
-| `shutdownTimeoutMillis` | `3,000` | SDK 完整关闭序列的外层截止时间 |
+| `exporter.url` | 上傳模式必填 | 完整 OTLP 日志端點；必須能解析為 `http(s)` |
+| `exporter`、`processor` | — | 原樣傳給 SDK 導出器與批處理器 |
+| `shutdownTimeoutMillis` | `3,000` | SDK 完整關閉序列的外層截止時間 |
 
-直接调用 `ctx.sessionTelemetry.emit()` 在任何模式下都是空操作，不能绕过反馈授权。继承的父会话反馈不授权子会话导出：子会话需要新的自身反馈。授权后的前缀包含继承的上下文。
+直接調用 `ctx.sessionTelemetry.emit()` 在任何模式下都是空操作，不能繞過反饋授權。繼承的父會話反饋不授權子會話導出：子會話需要新的自身反饋。授權后的前綴包含繼承的上下文。
 
-模型请求、请求头、Session 创建或接纳、恢复，以及插件挂载或 HMR（热模块替换）均不授权捕获。仅凭已存储的反馈不会触发任何操作。SDK 定时刷新和关闭可以完成先前已授权的批次，但绝不捕获新记录。
+模型請求、請求頭、Session 創建或接納、恢復，以及插件掛載或 HMR（熱模塊替換）均不授權捕獲。僅憑已存儲的反饋不會觸發任何操作。SDK 定時刷新和關閉可以完成先前已授權的批次，但絕不捕獲新記錄。
 
-### 哪些数据会离开本机
+### 哪些數據會離開本機
 
-在上传模式中，记录携带 seam 的 `sessionTelemetry/record` waterfall（瀑布式事件）返回的完整 `event.data`——消息内容、工具参数与结果、系统提示词与工具 schema、todo 文本、压缩（compaction）摘要、反馈文本，以及会话 `cwd`。提供方凭据绝不会出现：适配器的 API key 是构造函数参数而非会话事件，因此它们在结构上就不存在于日志中，也就不存在于遥测中。`DISABLED` 不构造 SDK 流水线，也不把任何捕获内容交给后端。
+在上傳模式中，記錄攜帶 seam 的 `sessionTelemetry/record` waterfall（瀑布式事件）返回的完整 `event.data`——消息內容、工具參數與結果、系統提示詞與工具 schema、todo 文本、壓縮（compaction）摘要、反饋文本，以及會話 `cwd`。提供方憑據絕不會出現：適配器的 API key 是構造函數參數而非會話事件，因此它們在結構上就不存在于日志中，也就不存在于遙測中。`DISABLED` 不構造 SDK 流水線，也不把任何捕獲內容交給后端。
 
-### 失败与关闭
+### 失敗與關閉
 
-配置错误会在插件加载时失败：缺少或非 `http(s)` 的 `exporter.url`、非正整数的 `processor.maxExportBatchSize`（SDK 会接受该值，随后却在关闭时挂起）以及无效的 `shutdownTimeoutMillis` 都会在任何记录导出前被拒绝。关闭期间，OTel 会先等待 `exporter.forceFlush()`，再等待处理器有界完成 promise；如果该传输 promise 始终不结算，本包会在 `shutdownTimeoutMillis` 到期时放弃等待、记录已隔离的失败，并让应用继续拆卸——届时仍待处理的记录可能在进程退出时丢失。
+配置錯誤會在插件加載時失敗：缺少或非 `http(s)` 的 `exporter.url`、非正整數的 `processor.maxExportBatchSize`（SDK 會接受該值，隨后卻在關閉時掛起）以及無效的 `shutdownTimeoutMillis` 都會在任何記錄導出前被拒絕。關閉期間，OTel 會先等待 `exporter.forceFlush()`，再等待處理器有界完成 promise；如果該傳輸 promise 始終不結算，本包會在 `shutdownTimeoutMillis` 到期時放棄等待、記錄已隔離的失敗，并讓應用繼續拆卸——屆時仍待處理的記錄可能在進程退出時丟失。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释后端的组合方式；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋后端的組合方式；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-后端是对 OTel JS SDK 的薄适配层：它拥有反馈授权、资源身份与外层关闭截止时间。权威 ledger 记录使用 `@deepseek-ai/dsh-session-telemetry-otel` 插桩作用域；此后端不捕获运维记录。资源身份携带 `service.name`/`service.version`（来自 `dsh-llm` 的 `APP_IDENTITY`）以及匿名 `user.id`（来自 `$DSH_HOME/.anonymous-user-id`），按导出批次携带一次，而非逐条记录。
+后端是對 OTel JS SDK 的薄適配層：它擁有反饋授權、資源身份與外層關閉截止時間。權威 ledger 記錄使用 `@deepseek-ai/dsh-session-telemetry-otel` 插樁作用域；此后端不捕獲運維記錄。資源身份攜帶 `service.name`/`service.version`（來自 `dsh-llm` 的 `APP_IDENTITY`）以及匿名 `user.id`（來自 `$DSH_HOME/.anonymous-user-id`），按導出批次攜帶一次，而非逐條記錄。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：模式解析、fail-closed 校验、SDK 流水线接线、协调器组装、关闭截止时间 |
+| [`src/index.ts`](src/index.ts) | 插件入口：模式解析、fail-closed 校驗、SDK 流水線接線、協調器組裝、關閉截止時間 |
 
-### 捕获接线
+### 捕獲接線
 
-后端使用包含存储历史的按需捕获。只有新的自身 `feedback/record`、`feedback/message-put` 或 `feedback/message-delete` 事件触发活跃会话捕获，并以该事件为上限。冷会话 `feedback/committed` 通知提供已提交的权威快照，不发布存活 Session 或 Agent。同对象交接游标抑制重复捕获。后端不实现 `flush()`；SDK 负责批处理和关闭排空。
+后端使用包含存儲歷史的按需捕獲。只有新的自身 `feedback/record`、`feedback/message-put` 或 `feedback/message-delete` 事件觸發活躍會話捕獲，并以該事件為上限。冷會話 `feedback/committed` 通知提供已提交的權威快照，不發布存活 Session 或 Agent。同對象交接游標抑制重復捕獲。后端不實現 `flush()`；SDK 負責批處理和關閉排空。
 
 ### 字段映射
 
-每条遥测记录映射为一条 SDK 日志记录，携带捕获的时间戳、严重级别、正文和属性。反馈授权的是尚未交接的完整前缀，而非只有反馈载荷。
+每條遙測記錄映射為一條 SDK 日志記錄，攜帶捕獲的時間戳、嚴重級別、正文和屬性。反饋授權的是尚未交接的完整前綴，而非只有反饋載荷。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当后端约定不够用时阅读以下页面。它们从它所实现的 seam 逐步进入子系统参考与它所上报的身份。
+當后端約定不夠用時閱讀以下頁面。它們從它所實現的 seam 逐步進入子系統參考與它所上報的身份。
 
-- [会话遥测 seam](../session-telemetry/README.zh.md)——捕获约定、记录词汇与脱敏 waterfall。
-- [会话遥测子系统](../../../docs/subsystems/session-telemetry.zh.md)——能力拆分与类型声明。
-- [匿名用户身份](../../identity/anonymous-user-id/README.zh.md)——作为 OTel Resource `user.id` 上报的 id。
-- [生成配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-session-telemetry-otel)——每个受支持配置字段及其源声明。
+- [會話遙測 seam](../session-telemetry/README.zh.md)——捕獲約定、記錄詞匯與脫敏 waterfall。
+- [會話遙測子系統](../../../docs/subsystems/session-telemetry.zh.md)——能力拆分與類型聲明。
+- [匿名用戶身份](../../identity/anonymous-user-id/README.zh.md)——作為 OTel Resource `user.id` 上報的 id。
+- [生成配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-session-telemetry-otel)——每個受支持配置字段及其源聲明。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无，因为该后端把 seam 记录转发进 OTel SDK 流水线，不注册任何面向模型的内容。
+無，因為該后端把 seam 記錄轉發進 OTel SDK 流水線，不注冊任何面向模型的內容。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；本包既不组装也不发送提供方请求。
+無；本包既不組裝也不發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明 SDK 行为在何处起主导作用、导出保证止于何处。它们是当前包约束。
+這些限制說明 SDK 行為在何處起主導作用、導出保證止于何處。它們是當前包約束。
 
-- **上游实验性源码树**——`@opentelemetry/sdk-logs` 从上游实验性源码树发布；SDK API 的变动只会落在本包，也仅落在本包，而 seam 约定不动。
-- **真实 collector 行为属于 SDK 导出器**——身份验证、TLS、限流及其他真实 OTLP 部署行为遵循上游 SDK，不由本包自有兼容层处理。
-- **尽力交接**——新冷快照以及重启后的新反馈提交可能重复前缀；接收方按 Session id、格式版本和事件 seq 去重。没有持久化 outbox、投递水位、自动重试承诺或采集端接受保证。OTel 与需显式启用的 DeepSeek API 路径可能重叠。撤回导出删除事件，不是远端擦除。
+- **上游實驗性源碼樹**——`@opentelemetry/sdk-logs` 從上游實驗性源碼樹發布；SDK API 的變動只會落在本包，也僅落在本包，而 seam 約定不動。
+- **真實 collector 行為屬于 SDK 導出器**——身份驗證、TLS、限流及其他真實 OTLP 部署行為遵循上游 SDK，不由本包自有兼容層處理。
+- **盡力交接**——新冷快照以及重啟后的新反饋提交可能重復前綴；接收方按 Session id、格式版本和事件 seq 去重。沒有持久化 outbox、投遞水位、自動重試承諾或采集端接受保證。OTel 與需顯式啟用的 DeepSeek API 路徑可能重疊。撤回導出刪除事件，不是遠端擦除。
 
-- **后端可用性**——本插件禁用或卸载期间提交的反馈会记录在本地，但恢复插件不会自动重放。捕获要求订阅方保持挂载直到观察到提交；在冷写入尚未完成时卸载，可能错过其 flush 后通知。
+- **后端可用性**——本插件禁用或卸載期間提交的反饋會記錄在本地，但恢復插件不會自動重放。捕獲要求訂閱方保持掛載直到觀察到提交；在冷寫入尚未完成時卸載，可能錯過其 flush 后通知。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。模式选择只改变 capture handoff、SDK setup 与本地 diagnostics，不改变可由独立 companion 对照的会话或服务状态。导出在越过后端边界后仍由 SDK 内部处理。
+**運行時不變式：** 不發布伴生入口。模式選擇只改變 capture handoff、SDK setup 與本地 diagnostics，不改變可由獨立 companion 對照的會話或服務狀態。導出在越過后端邊界后仍由 SDK 內部處理。

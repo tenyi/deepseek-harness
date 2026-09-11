@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * The management section's rendering rules: which actions a row offers depends
  * on its trust, a shipped composition opens in a read-only viewer, creation is
@@ -25,7 +25,7 @@ const READY: AgentPresetSectionState = {
   showPicker: true,
   policySaving: false,
   rows: [
-    { id: 'standard', trust: 'system', isDefault: true, name: '标准模式', description: '完整的编码 agent。' },
+    { id: 'standard', trust: 'system', isDefault: true, name: '標準模式', description: '完整的編碼 agent。' },
     { id: 'mine', trust: 'user', isDefault: false },
   ],
   copy: null,
@@ -116,7 +116,7 @@ describe('the preset list', () => {
       error: 'settings write disconnected',
       rows: [
         ...READY.rows,
-        { id: 'cordis', trust: 'system', isDefault: false, name: '创造模式' },
+        { id: 'cordis', trust: 'system', isDefault: false, name: '創造模式' },
       ],
     })
 
@@ -215,7 +215,7 @@ describe('the preset list', () => {
       rows: [
         { id: 'standard', trust: 'system', isDefault: true },
         {
-          id: 'ghost', trust: 'user', isDefault: false, name: '幽灵预设', description: '我自己写的',
+          id: 'ghost', trust: 'user', isDefault: false, name: '幽靈預設', description: '我自己寫的',
           broken: 'the composition file agent.cordis.yml is missing',
         },
       ],
@@ -228,30 +228,30 @@ describe('the preset list', () => {
       .toBe(`${en.brokenBadge}the composition file agent.cordis.yml is missing`)
     // A picker card keeps showing what the preset is; a package specifier in
     // its place would tell a chooser nothing they can act on there.
-    expect(within(ghost).getByText('我自己写的')).toBeTruthy()
+    expect(within(ghost).getByText('我自己寫的')).toBeTruthy()
     // Reachable without a pointer: the disabled body leaves the tab order, so
     // this node is the only reading assistive technology gets.
     expect(within(ghost).getByRole('alert').textContent).toContain('is missing')
     // `aria-disabled`, not `disabled`: the card stays in the tab order so a
     // keyboard reaches the reason the face no longer shows, and refuses the
     // pick itself rather than by being unreachable.
-    const body = within(ghost).getByRole('button', { name: `${en.brokenBadge}: 幽灵预设` })
+    const body = within(ghost).getByRole('button', { name: `${en.brokenBadge}: 幽靈預設` })
     expect(body).toHaveProperty('disabled', false)
     expect(body.getAttribute('aria-disabled')).toBe('true')
     fireEvent.click(body)
     expect(actions.makeDefault).not.toHaveBeenCalled()
     // Copying a broken preset would only mint another broken one; deleting
     // and the location remain — the files are where it gets fixed.
-    const duplicate = within(ghost).getByRole('button', { name: `${en.duplicate}: 幽灵预设` })
+    const duplicate = within(ghost).getByRole('button', { name: `${en.duplicate}: 幽靈預設` })
     expect(duplicate).toHaveProperty('disabled', true)
     expect(duplicate.getAttribute('data-tip')).toBe(en.brokenNoCopy)
-    expect(within(ghost).getByRole('button', { name: `${en.delete}: 幽灵预设` })).toBeTruthy()
-    expect(within(ghost).getByRole('button', { name: `${en.openLocation}: 幽灵预设` })).toBeTruthy()
+    expect(within(ghost).getByRole('button', { name: `${en.delete}: 幽靈預設` })).toBeTruthy()
+    expect(within(ghost).getByRole('button', { name: `${en.openLocation}: 幽靈預設` })).toBeTruthy()
   })
 
   it('withholds the viewer on a broken shipped preset', () => {
     renderSection({
-      rows: [{ id: 'standard', trust: 'system', isDefault: false, name: '标准模式', broken: 'the composition is not valid YAML' }],
+      rows: [{ id: 'standard', trust: 'system', isDefault: false, name: '標準模式', broken: 'the composition is not valid YAML' }],
     })
 
     // There is no readable composition to offer; the reason on the card is
@@ -294,7 +294,7 @@ describe('the preset list', () => {
 
   it('starts a creator-mode draft session and leaves settings', () => {
     const actions = renderSection({
-      rows: [...READY.rows, { id: 'cordis', trust: 'system', isDefault: false, name: '创造模式' }],
+      rows: [...READY.rows, { id: 'cordis', trust: 'system', isDefault: false, name: '創造模式' }],
     })
 
     fireEvent.click(screen.getByRole('button', { name: en.creatorDraft }))
@@ -308,8 +308,8 @@ describe('the preset list', () => {
   it('keeps the empty custom group on screen: heading plus the creator entry', () => {
     renderSection({
       rows: [
-        { id: 'standard', trust: 'system', isDefault: true, name: '标准模式' },
-        { id: 'cordis', trust: 'system', isDefault: false, name: '创造模式' },
+        { id: 'standard', trust: 'system', isDefault: true, name: '標準模式' },
+        { id: 'cordis', trust: 'system', isDefault: false, name: '創造模式' },
       ],
     })
 
@@ -325,14 +325,14 @@ describe('the preset list', () => {
     cleanup()
 
     renderSection({
-      rows: [...READY.rows, { id: 'cordis', trust: 'system', isDefault: false, name: '创造模式' }],
+      rows: [...READY.rows, { id: 'cordis', trust: 'system', isDefault: false, name: '創造模式' }],
     }, { creator: false })
     expect(screen.queryByRole('button', { name: en.creatorDraft })).toBeNull()
     cleanup()
 
     const actions = renderSection({
       authorable: false,
-      rows: [...READY.rows, { id: 'cordis', trust: 'system', isDefault: false, name: '创造模式' }],
+      rows: [...READY.rows, { id: 'cordis', trust: 'system', isDefault: false, name: '創造模式' }],
     })
     const disabled = screen.getByRole('button', { name: en.creatorDraft })
     expect(disabled).toHaveProperty('disabled', true)
@@ -370,7 +370,7 @@ describe('the preset list', () => {
 
 describe('the copy dialog', () => {
   const draft: CopyDraft = {
-    from: 'standard', fromTitle: '标准模式', id: '', name: '', saving: false, error: null,
+    from: 'standard', fromTitle: '標準模式', id: '', name: '', saving: false, error: null,
   }
 
   it('names its source and collects only an id and a display name', () => {
@@ -437,7 +437,7 @@ describe('the copy dialog', () => {
 
 describe('the read-only viewer', () => {
   it('shows the composition text under the preset\'s name', () => {
-    renderSection({ view: { id: 'standard', title: '标准模式', content: '- id: tool-bash\n' } })
+    renderSection({ view: { id: 'standard', title: '標準模式', content: '- id: tool-bash\n' } })
 
     const dialog = screen.getByRole('dialog')
     expect(dialog.getAttribute('aria-label')).toBe(`${en.view} · ${en.presetStandardName}`)
@@ -452,7 +452,7 @@ describe('the read-only viewer', () => {
   })
 
   it('closes through the controller', () => {
-    const actions = renderSection({ view: { id: 'standard', title: '标准模式', content: '- id: x\n' } })
+    const actions = renderSection({ view: { id: 'standard', title: '標準模式', content: '- id: x\n' } })
 
     fireEvent.click(within(screen.getByRole('dialog')).getByText(en.close))
 
@@ -460,7 +460,7 @@ describe('the read-only viewer', () => {
   })
 
   it('dismisses on Escape', () => {
-    const actions = renderSection({ view: { id: 'standard', title: '标准模式', content: '- id: x\n' } })
+    const actions = renderSection({ view: { id: 'standard', title: '標準模式', content: '- id: x\n' } })
 
     fireEvent.keyDown(document, { key: 'Escape' })
 
@@ -513,7 +513,7 @@ describe('a long card description', () => {
     disconnect(): void {}
   }
 
-  const LONG = '始终用简体中文交流的友好通用助手，提供持久 bash 与文件编辑能力。'.repeat(8)
+  const LONG = '始終用簡體中文交流的友好通用助手，提供持久 bash 與文件編輯能力。'.repeat(8)
 
   /** Force the clamp to report an overflow: jsdom lays nothing out, so both heights are 0. */
   function clamp(overflowing: boolean): void {

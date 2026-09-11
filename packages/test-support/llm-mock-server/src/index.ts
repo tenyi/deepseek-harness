@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Scriptable OpenAI-compatible HTTP/SSE server for transport, protocol, and
  * semantic-empty LLM recovery tests. Each accepted chat-completions request
  * consumes one behavior; the server never retries or interprets harness policy.

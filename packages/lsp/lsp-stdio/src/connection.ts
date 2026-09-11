@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A JSON-RPC endpoint over one language server spawned through the subprocess
  * capability. Owns id correlation, outbound requests/notifications, and inbound
  * server→client requests: it answers `workspace/configuration` from static

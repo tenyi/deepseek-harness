@@ -1,4 +1,4 @@
----
+﻿---
 description: "Application Remote assembly: selects typed Host capabilities and forwarded events for Client consumers."
 kind: "package-reference"
 ---

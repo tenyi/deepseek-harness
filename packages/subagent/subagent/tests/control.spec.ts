@@ -1,4 +1,4 @@
-// The browser-facing control surface: catalog assembly against the live Agent
+﻿// The browser-facing control surface: catalog assembly against the live Agent
 // registry, prompt admission, and the stable failure codes each answers with.
 // The durable listing, continuation, and interrupt primitives they wrap have
 // their own specs, so each case scripts them.

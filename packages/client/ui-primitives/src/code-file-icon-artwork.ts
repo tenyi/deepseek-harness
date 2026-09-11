@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Embedded square code-icon artwork. The adjacent manifest records the design
  * export digests; the 48 keys match CODE_FILE_TYPES exactly.
  */

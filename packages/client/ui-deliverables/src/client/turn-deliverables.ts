@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Turn-scoped produced-file Definition and readers. Client-only and
  * model-free: the vocabulary comes from successful first-party mutation
  * calls, never presentation data or the closing prose.

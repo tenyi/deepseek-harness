@@ -1,4 +1,4 @@
-/**
+﻿/**
  * DOM snapshot hygiene: a vitest snapshot serializer that keeps `.snap`
  * files structural. Two normalizations, both on a clone (the live DOM is
  * untouched, so class/tag queries keep working):

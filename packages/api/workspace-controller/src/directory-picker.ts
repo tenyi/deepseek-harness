@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Host directory-picking Remote owner: capability gating, cancellation, and the
  * stable wire failure vocabulary over the `ctx.directoryPicker` seam.
  */

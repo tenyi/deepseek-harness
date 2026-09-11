@@ -1,4 +1,4 @@
-# Test-only patch over the shipped headless profile. The production bundle
+﻿# Test-only patch over the shipped headless profile. The production bundle
 # layers own the agent services, tools, persistence plugin, and defaults.
 - id: headless-startup
   disabled: true

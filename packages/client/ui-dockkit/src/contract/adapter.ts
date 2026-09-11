@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The kit's outward contracts: state in, intents out.
  *
  * Everything host-specific arrives through these — every rendered string, every

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Proxy policy resolution: the pure, transport-free half of this package. It turns the launch
  * environment into one {@link ProxyPolicy}, and answers which proxy
  * (if any) a given URL goes through.

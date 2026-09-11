@@ -1,4 +1,4 @@
-import { memo } from 'react'
+﻿import { memo } from 'react'
 import { projectUserText } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 import { GOAL_COMMAND, type GoalCommandInputData } from './goal-command-input.ts'

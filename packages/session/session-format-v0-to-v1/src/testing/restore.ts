@@ -1,4 +1,4 @@
-import { createSessionFormatCatalog } from '@deepseek-ai/dsh-session-format'
+﻿import { createSessionFormatCatalog } from '@deepseek-ai/dsh-session-format'
 import type {
   SessionFormatArtifact,
   SessionFormatCurrentEncoder,

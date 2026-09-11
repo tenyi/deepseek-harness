@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Service Definition for the authorization capability seam (`ctx.authorization`):
  * obtaining a credential nobody can supply from configuration alone, because
  * getting it requires a conversation with the human — open this page, paste

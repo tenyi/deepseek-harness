@@ -1,4 +1,4 @@
-/** Root/subcall Tool composition with one keyed atomic dispatch path. */
+﻿/** Root/subcall Tool composition with one keyed atomic dispatch path. */
 import { memo, useMemo, type ReactNode } from 'react'
 import type { ToolCallBlock } from '@deepseek-ai/dsh-client-ui-chat/client'
 import type { ToolCallOwnerProps, ToolTreeProps } from '../contract/slots.ts'

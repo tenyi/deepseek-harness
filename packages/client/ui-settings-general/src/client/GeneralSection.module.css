@@ -1,4 +1,4 @@
-/* Feature-contributed rows own their chrome and separators; the section
+﻿/* Feature-contributed rows own their chrome and separators; the section
  * strips the trailing separator wherever the column ends. */
 
 .section {

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The action row every provider card ends with: dismiss on the left, commit on
  * the right.
  *

@@ -1,4 +1,4 @@
----
+﻿---
 description: "Frozen released-v0 Session header, event, and packed-row decoder with the identity conversion to v1."
 kind: "package-library"
 ---

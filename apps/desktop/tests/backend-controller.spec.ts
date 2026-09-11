@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest'
+﻿import { describe, expect, it, vi } from 'vitest'
 import { DesktopBackendController, type DesktopBackendState } from '../src/backend-controller.ts'
 
 function deferred() {

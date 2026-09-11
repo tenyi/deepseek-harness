@@ -1,4 +1,4 @@
----
+﻿---
 description: "Scope-grouped read-only plugin inventory tab in Web Plugins settings for the dsh web client: agent-preset compositions first, the global plane behind a disclosure, search across both."
 kind: "package-reference"
 ---

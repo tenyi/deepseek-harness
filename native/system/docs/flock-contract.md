@@ -1,4 +1,4 @@
-# POSIX flock behavior
+﻿# POSIX flock behavior
 
 `tryLockExclusive(fd)` returns a promise for one `flock(fd, LOCK_EX | LOCK_NB)` attempt. The syscall runs off the JavaScript thread. The caller keeps the descriptor open through completion; the binding does not open, duplicate, or close it. It exposes neither a blocking-wait API nor a shared-lock API.
 

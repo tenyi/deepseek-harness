@@ -1,4 +1,4 @@
----
+﻿---
 description: "Web @file and @session reference source for the composer: candidates, ordering, and atomic inline references (unified file/session picking)."
 kind: "package-reference"
 ---

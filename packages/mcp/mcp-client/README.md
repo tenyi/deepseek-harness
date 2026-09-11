@@ -1,4 +1,4 @@
----
+﻿---
 description: "MCP client bridge for deployments and maintainers choosing, configuring, or debugging connections to external MCP servers whose tools register on ctx.tools."
 kind: "package-reference"
 ---

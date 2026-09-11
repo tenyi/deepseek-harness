@@ -1,4 +1,4 @@
-# A second agent-plane composition, so a switch is a real switch: the tool a
+﻿# A second agent-plane composition, so a switch is a real switch: the tool a
 # joined child sees has to change with it.
 - id: only
   name: ../../plugins/preset-tool.js

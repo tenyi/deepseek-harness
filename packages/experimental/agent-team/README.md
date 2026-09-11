@@ -1,4 +1,4 @@
----
+﻿---
 description: "Run a small team of named agents in one session: durable messages between members and a shared task board, for deployments composing the experimental Team plugins."
 kind: "package-reference"
 ---

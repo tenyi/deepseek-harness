@@ -1,4 +1,4 @@
----
+﻿---
 description: "Scriptable OpenAI-compatible fault server for testing LLM adapters and recovery policy without a provider key, for test authors and demos."
 kind: "package-library"
 ---

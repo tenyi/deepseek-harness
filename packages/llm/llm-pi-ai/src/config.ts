@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Configuration schema and provider-profile validation for the pi-ai adapter.
  * Profiles are a dict keyed by provider route, so the composition base and a
  * user-settings layer merge per provider and the route set is structural.

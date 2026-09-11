@@ -1,4 +1,4 @@
-import { MessageId, createMessage } from '@deepseek-ai/dsh-llm'
+﻿import { MessageId, createMessage } from '@deepseek-ai/dsh-llm'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import { appendFile, mkdtemp, mkdir, rm, readFile, writeFile, readdir, stat, symlink } from 'node:fs/promises'
@@ -487,7 +487,7 @@ describe('JsonlSessionPersistence: format helpers', () => {
     expect(projectKey('/Users/qyj/work/deepseek-harness')).toBe('--Users-qyj-work-deepseek-harness--')
     expect(projectKey('/a/b-c')).toBe(projectKey('/a-b/c'))
     expect(projectKey('C:\\work\\agent')).toBe('--C-work-agent--')
-    expect(projectKey('/开发/~agent')).toBe('--~5F00~53D1-~007Eagent--')
+    expect(projectKey('/開發/~agent')).toBe('--~5F00~53D1-~007Eagent--')
     expect(projectKey('/')).toBe('--root--')
     expect(projectKey('/' + 'x'.repeat(1_000))).toHaveLength(255)
     expect(() => projectKey('')).toThrow(/empty project path/)

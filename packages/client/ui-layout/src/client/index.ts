@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Layout plugin, browser half: one register() call contributes AppFrame into
  * the runtime's built-in 'root' slot and, in the same breath, declares the
  * four child slots (declaration = exclusive render authority), seats the

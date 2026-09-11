@@ -1,5 +1,5 @@
----
-description: "面向部署方与维护者的 MCP 客户端桥接说明，用于选择、配置或排查连接到外部 MCP 服务器、并将其工具注册到 ctx.tools 的插件。"
+﻿---
+description: "面向部署方與維護者的 MCP 客戶端橋接說明，用于選擇、配置或排查連接到外部 MCP 服務器、并將其工具注冊到 ctx.tools 的插件。"
 kind: "package-reference"
 ---
 
@@ -9,27 +9,27 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-mcp-client` 让模型把外部 MCP（Model Context Protocol）服务器的工具当作 harness 原生工具调用。每台服务器配置一条记录，其工具便会以稳定名称出现，例如 `mcp__github__create_issue`。可将它用于文件系统、GitHub、数据库、记忆或其他 MCP 工具服务器；默认不启用任何服务器。工具定义会为每次模型请求增加 token；缓慢或崩溃的服务器可能延迟启动，或让工具调用失败直至恢复。本包只桥接工具；MCP 资源与提示词不受支持。
+`dsh-mcp-client` 讓模型把外部 MCP（Model Context Protocol）服務器的工具當作 harness 原生工具調用。每臺服務器配置一條記錄，其工具便會以穩定名稱出現，例如 `mcp__github__create_issue`。可將它用于文件系統、GitHub、數據庫、記憶或其他 MCP 工具服務器；默認不啟用任何服務器。工具定義會為每次模型請求增加 token；緩慢或崩潰的服務器可能延遲啟動，或讓工具調用失敗直至恢復。本包只橋接工具；MCP 資源與提示詞不受支持。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-当模型需要把外部 MCP 服务器的工具当作原生工具调用时，添加 `dsh-mcp-client`。每台服务器一条配置项就是全部设置：给服务器一个简短的唯一名称和一种传输方式，它的工具就会以 `mcp__<serverName>__<tool>` 形式出现。服务器作为本地程序运行时选择 stdio，作为服务运行时选择 Streamable HTTP。如果你已经用其他客户端连接过 MCP 工具服务器，同样的配置行在这里也能用。
+當模型需要把外部 MCP 服務器的工具當作原生工具調用時，添加 `dsh-mcp-client`。每臺服務器一條配置項就是全部設置：給服務器一個簡短的唯一名稱和一種傳輸方式，它的工具就會以 `mcp__<serverName>__<tool>` 形式出現。服務器作為本地程序運行時選擇 stdio，作為服務運行時選擇 Streamable HTTP。如果你已經用其他客戶端連接過 MCP 工具服務器，同樣的配置行在這里也能用。
 
 ### 最小配置
 
-每台服务器添加一条配置项即可，无需其他内容。harness 启动后，服务器的工具会出现在模型的工具列表中。
+每臺服務器添加一條配置項即可，無需其他內容。harness 啟動后，服務器的工具會出現在模型的工具列表中。
 
 ```yaml
 - id: mcp-github
@@ -52,161 +52,161 @@ kind: "package-reference"
       Authorization: !!js '`Bearer ${process.env.MCP_TOKEN}`'
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
 | `transport` | 必填 | `stdio` 或 `streamable-http` |
-| `serverName` | 必填 | 服务器工具名称的 namespace；`[A-Za-z0-9_-]{1,32}`，在一个注册作用域内唯一 |
-| `command` / `args` / `env` / `cwd` | — | stdio：可执行文件、参数、合并到清洗过的环境之上的额外环境变量、工作目录 |
-| `url` / `headers` | — | streamable-http：端点 URL 与额外请求标头 |
-| `toolCallTimeoutMs` | `60,000` | 每次 `tools/call` 调用的超时 |
-| `failOnStartupError` | `false` | 初始连接或工具同步失败时拒绝插件激活 |
-| `reconnect.enabled` | `true` | 连接丢失后自动重新连接 |
-| `reconnect.initialDelayMs` | `500` | 首次重连延迟；每次连续失败尝试翻倍 |
-| `reconnect.maxDelayMs` | `30,000` | 退避上限；同时是重置尝试预算所需的正常运行时长 |
-| `reconnect.maxAttempts` | `10` | 每次中断内连续失败尝试次数上限，超出后放弃 |
+| `serverName` | 必填 | 服務器工具名稱的 namespace；`[A-Za-z0-9_-]{1,32}`，在一個注冊作用域內唯一 |
+| `command` / `args` / `env` / `cwd` | — | stdio：可執行文件、參數、合并到清洗過的環境之上的額外環境變量、工作目錄 |
+| `url` / `headers` | — | streamable-http：端點 URL 與額外請求標頭 |
+| `toolCallTimeoutMs` | `60,000` | 每次 `tools/call` 調用的超時 |
+| `failOnStartupError` | `false` | 初始連接或工具同步失敗時拒絕插件激活 |
+| `reconnect.enabled` | `true` | 連接丟失后自動重新連接 |
+| `reconnect.initialDelayMs` | `500` | 首次重連延遲；每次連續失敗嘗試翻倍 |
+| `reconnect.maxDelayMs` | `30,000` | 退避上限；同時是重置嘗試預算所需的正常運行時長 |
+| `reconnect.maxAttempts` | `10` | 每次中斷內連續失敗嘗試次數上限，超出后放棄 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-mcp-client)是每个受支持字段的穷尽式真源。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-mcp-client)是每個受支持字段的窮盡式真源。
 
-启动后，服务器的工具会以 `mcp__<serverName>__<tool>` 形式出现——试着用一条提示词调用其中一个。如果初始连接失败，harness 仍会启动，但该服务器的工具不会出现，并会记录一条错误；设置 `failOnStartupError: true` 可让启动失败改为中止 harness。
+啟動后，服務器的工具會以 `mcp__<serverName>__<tool>` 形式出現——試著用一條提示詞調用其中一個。如果初始連接失敗，harness 仍會啟動，但該服務器的工具不會出現，并會記錄一條錯誤；設置 `failOnStartupError: true` 可讓啟動失敗改為中止 harness。
 
-### 工具命名与共存
+### 工具命名與共存
 
-模型看到每个工具都带有稳定的服务器限定名称：`mcp__<serverName>__<rawName>`，例如 `mcp__github__create_issue`——与 Claude Code 和 Codex 使用的命名形态相同。只要服务器保持相同的工具名称，名称就保持不变，因此会话历史与权限规则在重启和重载后仍然有效。两个服务器可以同时提供名为 `search` 的工具，分别以 `mcp__github__search` 和 `mcp__web__search` 共存。
+模型看到每個工具都帶有穩定的服務器限定名稱：`mcp__<serverName>__<rawName>`，例如 `mcp__github__create_issue`——與 Claude Code 和 Codex 使用的命名形態相同。只要服務器保持相同的工具名稱，名稱就保持不變，因此會話歷史與權限規則在重啟和重載后仍然有效。兩個服務器可以同時提供名為 `search` 的工具，分別以 `mcp__github__search` 和 `mcp__web__search` 共存。
 
-- 发布相同工具名称（例如 `search`）的两个服务器会在各自的 namespace 下共存。
-- 两条配置项使用相同的服务器名称时，后加载的一条会在加载时以明确错误失败。
-- 服务器在工具列表中两次列出同一工具时，其工具列表会被作为无效列表拒绝，上一组工具保持可用。
-- `tools/list` 返回重复的非空续传游标时会立即拒绝本次更新，包括经过空页的循环；上一组工具保持可用，后续更新仍可成功。
-- 工具更新与已有工具名称冲突时，该更新会被整体拒绝——绝不会得到该服务器的部分工具集。
+- 發布相同工具名稱（例如 `search`）的兩個服務器會在各自的 namespace 下共存。
+- 兩條配置項使用相同的服務器名稱時，后加載的一條會在加載時以明確錯誤失敗。
+- 服務器在工具列表中兩次列出同一工具時，其工具列表會被作為無效列表拒絕，上一組工具保持可用。
+- `tools/list` 返回重復的非空續傳游標時會立即拒絕本次更新，包括經過空頁的循環；上一組工具保持可用，后續更新仍可成功。
+- 工具更新與已有工具名稱沖突時，該更新會被整體拒絕——絕不會得到該服務器的部分工具集。
 
-### 调用工具与读取结果
+### 調用工具與讀取結果
 
-模型调用 MCP 工具时，调用会以每次调用超时（默认 60 秒）发往远程服务器，并像其他工具调用一样可以取消。结果按块顺序以普通文本返回；资源链接以文本形式显示名称与 URI。如果服务器报告错误，调用会明确失败——模型不会看到虚假的成功。
+模型調用 MCP 工具時，調用會以每次調用超時（默認 60 秒）發往遠程服務器，并像其他工具調用一樣可以取消。結果按塊順序以普通文本返回；資源鏈接以文本形式顯示名稱與 URI。如果服務器報告錯誤，調用會明確失敗——模型不會看到虛假的成功。
 
-当前模型接受图片输入且 harness 启用了附件功能时支持图片；图片会像其他图片一样出现在对话中。不支持图片时——以及服务器返回音频或嵌入资源时——模型会看到清晰的诊断消息，而不是什么都没有。
+當前模型接受圖片輸入且 harness 啟用了附件功能時支持圖片；圖片會像其他圖片一樣出現在對話中。不支持圖片時——以及服務器返回音頻或嵌入資源時——模型會看到清晰的診斷消息，而不是什么都沒有。
 
-### 启动、工具更新与重连
+### 啟動、工具更新與重連
 
-服务器的工具会在 harness 开始首个轮次之前出现。服务器更改工具列表时，模型的工具集会自动更新；更新失败时，上一组工具继续可用。
+服務器的工具會在 harness 開始首個輪次之前出現。服務器更改工具列表時，模型的工具集會自動更新；更新失敗時，上一組工具繼續可用。
 
-服务器连接断开时——例如本地服务器进程崩溃——插件会以从 500 ms 起逐次翻倍、上限 30 s 的延迟自动重连，并刷新工具集；重连进度在日志中可见。中断期间最后已知的工具仍会列出，但对它们的调用会失败，直到服务器恢复。连续失败十次后，该服务器的工具会被移除，重连停止，直到你重载配置或重启 harness；服务器持续连接一段时间后，该计数会重置。设置 `reconnect.enabled: false` 可禁用自动重连——此时工具在断开后仍会列出，但调用失败，直到你重载。编辑配置项会在原地重载服务器连接，未变的名称保持不变。
+服務器連接斷開時——例如本地服務器進程崩潰——插件會以從 500 ms 起逐次翻倍、上限 30 s 的延遲自動重連，并刷新工具集；重連進度在日志中可見。中斷期間最后已知的工具仍會列出，但對它們的調用會失敗，直到服務器恢復。連續失敗十次后，該服務器的工具會被移除，重連停止，直到你重載配置或重啟 harness；服務器持續連接一段時間后，該計數會重置。設置 `reconnect.enabled: false` 可禁用自動重連——此時工具在斷開后仍會列出，但調用失敗，直到你重載。編輯配置項會在原地重載服務器連接，未變的名稱保持不變。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释桥接背后的设计决策，并指出实现它们的代码位置；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋橋接背后的設計決策，并指出實現它們的代碼位置；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-- **服务器限定身份。** 每个 MCP 工具都有稳定的身份 `(serverName, rawName)`。namespace 是本地配置，绝不采用远程 `serverInfo.name`——远程名称不可信、在部署间不唯一、且升级时可能变化，这些都不允许静默重命名面向模型的工具。
-- **命名是固定约定。** 公开名称是 `(serverName, rawName)` 的纯函数，并满足 DeepSeek 函数名称约定；有损规范化会追加 12 位十六进制 SHA-256 hash，使不同身份绝不会折叠。会话历史与权限规则因此能在 HMR（热模块替换）、重新同步和其他服务器变化后保持有效。
-- **原始名称是唯一的协议名称。** `tools/call` 始终收到原始名称；公开名称绝不会发给服务器，也绝不会被解析来还原原始名称。
-- **要么完整世代，要么没有。** 同步会原子地交换世代：获取失败保留上一世代，注册冲突则回滚整个尝试中的世代。
-- **一个规范值，一个投影。** 执行器返回协议完整的规范 `McpResult`；另一个有序投影准备 Native 内容，`finalizeContent` 只在注册表的执行后结果未变时安装它，因此策略块与值替换保持权威。
+- **服務器限定身份。** 每個 MCP 工具都有穩定的身份 `(serverName, rawName)`。namespace 是本地配置，絕不采用遠程 `serverInfo.name`——遠程名稱不可信、在部署間不唯一、且升級時可能變化，這些都不允許靜默重命名面向模型的工具。
+- **命名是固定約定。** 公開名稱是 `(serverName, rawName)` 的純函數，并滿足 DeepSeek 函數名稱約定；有損規范化會追加 12 位十六進制 SHA-256 hash，使不同身份絕不會折疊。會話歷史與權限規則因此能在 HMR（熱模塊替換）、重新同步和其他服務器變化后保持有效。
+- **原始名稱是唯一的協議名稱。** `tools/call` 始終收到原始名稱；公開名稱絕不會發給服務器，也絕不會被解析來還原原始名稱。
+- **要么完整世代，要么沒有。** 同步會原子地交換世代：獲取失敗保留上一世代，注冊沖突則回滾整個嘗試中的世代。
+- **一個規范值，一個投影。** 執行器返回協議完整的規范 `McpResult`；另一個有序投影準備 Native 內容，`finalizeContent` 只在注冊表的執行后結果未變時安裝它，因此策略塊與值替換保持權威。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：`Config` schema、`serverName` 预留、激活等待 |
-| [`src/connection.ts`](src/connection.ts) | 连接监督器：客户端世代、重连策略、尝试预算、dispose（资源释放） |
-| [`src/tools.ts`](src/tools.ts) | 工具桥接：发现、命名、注册交换、执行、图片投影 |
-| [`src/transport.ts`](src/transport.ts) | 传输工厂：带清洗环境的 stdio spawn、Streamable HTTP |
-| — | 不发布运行时不变式伴生入口；MCP 世代会通过工具注册表发挥作用，但桥接在异步重新同步后不提供独立的服务器工具映射快照。 |
+| [`src/index.ts`](src/index.ts) | 插件入口：`Config` schema、`serverName` 預留、激活等待 |
+| [`src/connection.ts`](src/connection.ts) | 連接監督器：客戶端世代、重連策略、嘗試預算、dispose（資源釋放） |
+| [`src/tools.ts`](src/tools.ts) | 工具橋接：發現、命名、注冊交換、執行、圖片投影 |
+| [`src/transport.ts`](src/transport.ts) | 傳輸工廠：帶清洗環境的 stdio spawn、Streamable HTTP |
+| — | 不發布運行時不變式伴生入口；MCP 世代會通過工具注冊表發揮作用，但橋接在異步重新同步后不提供獨立的服務器工具映射快照。 |
 
-### 生命周期与同步
+### 生命周期與同步
 
-`apply` 解析重连策略、在当前注册作用域内预留 `serverName`、启动监督器，并等待初始连接加发现完成。独立 agent（智能体）作用域可以复用相同 namespace，因为其工具与传输彼此隔离；同一作用域内重复会在加载时失败。监督器把所有同步——初始、通知与重连——串行到同一条队列，因此两次同步绝不会交错执行各自的先 dispose 后注册交换。dispose 会取消待执行的重连、关闭活动客户端、等待进行中的尝试与排队同步完全停稳，然后注销当前世代。
+`apply` 解析重連策略、在當前注冊作用域內預留 `serverName`、啟動監督器，并等待初始連接加發現完成。獨立 agent（智能體）作用域可以復用相同 namespace，因為其工具與傳輸彼此隔離；同一作用域內重復會在加載時失敗。監督器把所有同步——初始、通知與重連——串行到同一條隊列，因此兩次同步絕不會交錯執行各自的先 dispose 后注冊交換。dispose 會取消待執行的重連、關閉活動客戶端、等待進行中的嘗試與排隊同步完全停穩，然后注銷當前世代。
 
-监督器监听 `notifications/tools/list_changed` 并排队一次重新同步；获取阶段失败时保留上一世代注册，注册冲突则回滚本次尝试的世代。每次中断共享一个尝试预算：连续失败达到 `maxAttempts` 次后工具被注销、重连停止；连接存活超过 `maxDelayMs` 会重置预算。
+監督器監聽 `notifications/tools/list_changed` 并排隊一次重新同步；獲取階段失敗時保留上一世代注冊，注冊沖突則回滾本次嘗試的世代。每次中斷共享一個嘗試預算：連續失敗達到 `maxAttempts` 次后工具被注銷、重連停止；連接存活超過 `maxDelayMs` 會重置預算。
 
-### 工具执行内部细节
+### 工具執行內部細節
 
-工具调用会发送一次未缓存的 `tools/call` 请求，携带原始 MCP 名称、JSON 参数、中止信号与配置的超时；公开名称绝不会发给服务器，也绝不会被解析还原。规范成功值是 `{ content: JsonValue[], structuredContent? }`，为程序化调用方与 PTC 模式调用方保留完整的 MCP JSON 块。受支持且已声明的 `outputSchema` 会验证 `structuredContent`；不受支持的 schema 词汇回退为不受约束的 `JsonValue`。MCP 的 `isError` 结果会在任何图片持久化之前抛出，使注册表产生失败的工具结果。图片批次会先整体解码并校验，再保存任一成员；任何拒绝都会把每张图片投影为诊断文本。
+工具調用會發送一次未緩存的 `tools/call` 請求，攜帶原始 MCP 名稱、JSON 參數、中止信號與配置的超時；公開名稱絕不會發給服務器，也絕不會被解析還原。規范成功值是 `{ content: JsonValue[], structuredContent? }`，為程序化調用方與 PTC 模式調用方保留完整的 MCP JSON 塊。受支持且已聲明的 `outputSchema` 會驗證 `structuredContent`；不受支持的 schema 詞匯回退為不受約束的 `JsonValue`。MCP 的 `isError` 結果會在任何圖片持久化之前拋出，使注冊表產生失敗的工具結果。圖片批次會先整體解碼并校驗，再保存任一成員；任何拒絕都會把每張圖片投影為診斷文本。
 
-### 环境清洗（stdio）
+### 環境清洗（stdio）
 
-子进程环境以子进程 seam 的 `scrubbedParentEnv()` 为基座——删除匹配 `/KEY|PASSWORD|SECRET|TOKEN/i` 的环境名称与所有 `DSH_*` 名称——再在其上合并配置的 `env`，因此显式覆盖得以保留。实际 spawn 由 MCP SDK 负责；本包共享清洗定义，而非 spawn 路径。
+子進程環境以子進程 seam 的 `scrubbedParentEnv()` 為基座——刪除匹配 `/KEY|PASSWORD|SECRET|TOKEN/i` 的環境名稱與所有 `DSH_*` 名稱——再在其上合并配置的 `env`，因此顯式覆蓋得以保留。實際 spawn 由 MCP SDK 負責；本包共享清洗定義，而非 spawn 路徑。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下页面。它们从共享工具注册表逐步进入桥接的设计证据与可运行的示例配置。
+當包級約定不夠用時閱讀以下頁面。它們從共享工具注冊表逐步進入橋接的設計證據與可運行的示例配置。
 
-- [工具子系统参考](../../../docs/subsystems/tools.zh.md)——接收已桥接工具的 `ToolRuntime` 与 `ctx.tools.register()` 约定。
-- [MCP 客户端插件 Agent Note](../../../.agents/notes/implemented/feature/2026-07-07-mcp-client-plugin.zh.md)——命名不变式、发现与执行设计、备选方案与后果。
-- [规范工具输出约定 Agent Note](../../../.agents/notes/implemented/architecture/2026-07-20-canonical-tool-output-contract.zh.md)——MCP 结果如何映射进规范工具输出约定。
-- [第三方记忆 MCP 指南](../../../docs/user/guide/mcp-memory.zh.md)——使用本包的三份记忆服务器 overlay。
-- [生成配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-mcp-client)——每个受支持配置字段及其源声明。
+- [工具子系統參考](../../../docs/subsystems/tools.zh.md)——接收已橋接工具的 `ToolRuntime` 與 `ctx.tools.register()` 約定。
+- [MCP 客戶端插件 Agent Note](../../../.agents/notes/implemented/feature/2026-07-07-mcp-client-plugin.zh.md)——命名不變式、發現與執行設計、備選方案與后果。
+- [規范工具輸出約定 Agent Note](../../../.agents/notes/implemented/architecture/2026-07-20-canonical-tool-output-contract.zh.md)——MCP 結果如何映射進規范工具輸出約定。
+- [第三方記憶 MCP 指南](../../../docs/user/guide/mcp-memory.zh.md)——使用本包的三份記憶服務器 overlay。
+- [生成配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-mcp-client)——每個受支持配置字段及其源聲明。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### 已发现的 MCP 工具
-
-#### 模型看到什么
-
-初始发现成功后，每个已声明的 MCP 工具都会显示为名为 `mcp__<serverName>__<rawName>`（或其确定性规范化形式）的原生工具，并携带服务器提供的描述与输入 schema。成功的重新同步——包括自动重连后的同步——会替换整个世代；对插件执行 dispose 或重连预算耗尽会移除该世代。
-
-#### Token 影响
-
-工具注册期间，工具描述与输入 schema 会进入每次请求；重新同步会替换而非累积 schema，服务器限定名称也会为每个工具定义和调用增加 token。
-
-#### KV Cache 影响
-
-已发现工具集合及其 schema 不变时，工具定义前缀保持稳定。增加、移除、重命名或更改工具的重新同步会替换定义，并可能使从第一个变化的 schema token 起的复用失效；恢复未变列表的重连会生成完全相同的定义，前缀保持稳定。
-
-### 工具调用历史与结果
+### 已發現的 MCP 工具
 
 #### 模型看到什么
 
-公开工具名称和 JSON 参数保留在 assistant 历史中。规范值始终为程序化调用方与 PTC 模式调用方保留完整的 MCP JSON 块与可选结构化内容；受支持的图片块在确切路由能力得到证明后，按原始顺序与文本一起投影。被拒绝的图片、音频、嵌入资源、资源链接与未知块继续以有界文本诊断可见；MCP `isError` 会在图片持久化之前拒绝调用。
+初始發現成功后，每個已聲明的 MCP 工具都會顯示為名為 `mcp__<serverName>__<rawName>`（或其確定性規范化形式）的原生工具，并攜帶服務器提供的描述與輸入 schema。成功的重新同步——包括自動重連后的同步——會替換整個世代；對插件執行 dispose 或重連預算耗盡會移除該世代。
 
-#### Token 影响
+#### Token 影響
 
-参数、映射后的文本与持久图片引用保留到压缩（compaction）发生时。内联 MCP base64 只存在于执行局部的规范值中，绝不会复制进会话事件；提供方会从附件存储读取经过校验的字节。音频与嵌入资源载荷不会进入模型上下文。
+工具注冊期間，工具描述與輸入 schema 會進入每次請求；重新同步會替換而非累積 schema，服務器限定名稱也會為每個工具定義和調用增加 token。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-仅追加；新可见内容位于可复用请求前缀之后，不会使现有 KV-cache 条目失效。
+已發現工具集合及其 schema 不變時，工具定義前綴保持穩定。增加、移除、重命名或更改工具的重新同步會替換定義，并可能使從第一個變化的 schema token 起的復用失效；恢復未變列表的重連會生成完全相同的定義，前綴保持穩定。
 
-## 已知限制与延期工作
+### 工具調用歷史與結果
+
+#### 模型看到什么
+
+公開工具名稱和 JSON 參數保留在 assistant 歷史中。規范值始終為程序化調用方與 PTC 模式調用方保留完整的 MCP JSON 塊與可選結構化內容；受支持的圖片塊在確切路由能力得到證明后，按原始順序與文本一起投影。被拒絕的圖片、音頻、嵌入資源、資源鏈接與未知塊繼續以有界文本診斷可見；MCP `isError` 會在圖片持久化之前拒絕調用。
+
+#### Token 影響
+
+參數、映射后的文本與持久圖片引用保留到壓縮（compaction）發生時。內聯 MCP base64 只存在于執行局部的規范值中，絕不會復制進會話事件；提供方會從附件存儲讀取經過校驗的字節。音頻與嵌入資源載荷不會進入模型上下文。
+
+#### KV Cache 影響
+
+僅追加；新可見內容位于可復用請求前綴之后，不會使現有 KV-cache 條目失效。
+
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明你无法用本插件做什么、以及何时需要运维注意。它们是当前包约束，不是与其他 MCP 客户端的对比，也不是任务积压。
+這些限制說明你無法用本插件做什么、以及何時需要運維注意。它們是當前包約束，不是與其他 MCP 客戶端的對比，也不是任務積壓。
 
-- **只桥接 MCP 的工具能力**——资源与提示词没有 harness 消费机制，暂缓实现。
-- **启动与发现超时继承自 MCP SDK**——插件不暴露连接或发现超时；每次 `initialize` 与分页 `tools/list` 请求都使用 SDK 默认的 60 秒请求超时，因此无响应的服务器或 cursor chain 在初始同步完成期间可能同时延迟激活与 teardown。
-- **重连在传输关闭时触发**——崩溃的 stdio 子进程会触发重连；Streamable HTTP 失败按请求经 SDK 传输自身的恢复机制暴露，因此不可达的 HTTP 服务器会按调用重试，而非由 supervisor 重新 spawn。
-- **图片是唯一的持久丰富结果桥接**——PNG、JPEG、WebP 与 GIF 在确切能力得到证明后进入 Native 上下文。音频与嵌入资源载荷仍只存在于执行局部并带明确诊断，资源链接只以文本保留名称与 URI。
-- **不强制执行不受支持的 MCP 输出 schema**——已声明 schema 使用 harness 子集之外的词汇时，`structuredContent` 回退为 `JsonValue`。
-- **要求基于任务的 MCP 工具在调用时被拒绝**——要求使用基于任务的执行（task-based execution）扩展的工具会抛出异常而非被桥接；该扩展未实现。
+- **只橋接 MCP 的工具能力**——資源與提示詞沒有 harness 消費機制，暫緩實現。
+- **啟動與發現超時繼承自 MCP SDK**——插件不暴露連接或發現超時；每次 `initialize` 與分頁 `tools/list` 請求都使用 SDK 默認的 60 秒請求超時，因此無響應的服務器或 cursor chain 在初始同步完成期間可能同時延遲激活與 teardown。
+- **重連在傳輸關閉時觸發**——崩潰的 stdio 子進程會觸發重連；Streamable HTTP 失敗按請求經 SDK 傳輸自身的恢復機制暴露，因此不可達的 HTTP 服務器會按調用重試，而非由 supervisor 重新 spawn。
+- **圖片是唯一的持久豐富結果橋接**——PNG、JPEG、WebP 與 GIF 在確切能力得到證明后進入 Native 上下文。音頻與嵌入資源載荷仍只存在于執行局部并帶明確診斷，資源鏈接只以文本保留名稱與 URI。
+- **不強制執行不受支持的 MCP 輸出 schema**——已聲明 schema 使用 harness 子集之外的詞匯時，`structuredContent` 回退為 `JsonValue`。
+- **要求基于任務的 MCP 工具在調用時被拒絕**——要求使用基于任務的執行（task-based execution）擴展的工具會拋出異常而非被橋接；該擴展未實現。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-本开发备注是维护者的工作上下文：开放设计问题与尚未决定的探索方向。它明确不具权威性——已交付行为、限制与既定理由以上文、包代码与所链接的 Agent Note 为准。
+本開發備注是維護者的工作上下文：開放設計問題與尚未決定的探索方向。它明確不具權威性——已交付行為、限制與既定理由以上文、包代碼與所鏈接的 Agent Note 為準。
 
-- 公开名称算法是由测试固定的 v1 约定；发布后更改会破坏会话历史与权限规则。
-- 由 DSH 显式拥有的连接与发现超时是开放的探索方向；SDK 的 60 秒默认值约束着启动与 teardown。
-- Streamable HTTP 的重连归属仍未决定：按请求重试是 SDK 行为，supervisor 也可以拥有 HTTP 世代。
-- 桥接 MCP 资源需要 harness 侧的注入决策（系统提示词、按需或模型触发）；桥接提示词需要 harness 缺少的提示词模板概念。
-- 固定的 MCP SDK 仍在演化；上游破坏性变更需要更新桥接。
+- 公開名稱算法是由測試固定的 v1 約定；發布后更改會破壞會話歷史與權限規則。
+- 由 DSH 顯式擁有的連接與發現超時是開放的探索方向；SDK 的 60 秒默認值約束著啟動與 teardown。
+- Streamable HTTP 的重連歸屬仍未決定：按請求重試是 SDK 行為，supervisor 也可以擁有 HTTP 世代。
+- 橋接 MCP 資源需要 harness 側的注入決策（系統提示詞、按需或模型觸發）；橋接提示詞需要 harness 缺少的提示詞模板概念。
+- 固定的 MCP SDK 仍在演化；上游破壞性變更需要更新橋接。
 
 </details>

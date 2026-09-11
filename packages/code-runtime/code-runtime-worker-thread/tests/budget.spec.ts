@@ -1,4 +1,4 @@
-/** Host budget decisions use controlled clocks and ELU samples; worker execution and binding transport stay real. */
+﻿/** Host budget decisions use controlled clocks and ELU samples; worker execution and binding transport stay real. */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import { WorkerThreadCodeRuntime } from '@deepseek-ai/dsh-code-runtime-worker-thread'

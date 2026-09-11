@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Session-query service error containment and model-safe translation.
  *
  * @module @deepseek-ai/dsh-tool-session-query/service-boundary

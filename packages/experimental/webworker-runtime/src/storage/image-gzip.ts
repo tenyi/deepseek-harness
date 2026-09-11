@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The image byte envelope. The packer writes one gzip member holding the ustar
  * archive, and the worker inflates it with the platform's own decompressor before
  * the tar reader sees a byte — `storage/tar.ts` stays a pure ustar reader with no

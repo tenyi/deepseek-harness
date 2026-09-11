@@ -1,4 +1,4 @@
-/** Cold-safe Session list and search projection. */
+﻿/** Cold-safe Session list and search projection. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-agent-presets'

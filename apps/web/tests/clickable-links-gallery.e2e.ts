@@ -1,4 +1,4 @@
-// Web e2e gallery: every clickable link and artifact form the chat renders,
+﻿// Web e2e gallery: every clickable link and artifact form the chat renders,
 // in one settled keyless turn — the regression anchor for unifying link
 // styles. One fixture turn produces:
 // - prose: Markdown link, reference-style link, mailto link, inline-code URL,

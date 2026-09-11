@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** Exercises Conversation persistence through the real SlotRegistry store axis. */
 import { beforeEach, describe, expect, it } from 'vitest'
 import { SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'

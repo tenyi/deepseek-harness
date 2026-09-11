@@ -1,4 +1,4 @@
----
+﻿---
 description: "Browser-safe Workspace path helpers for joining relative paths, abbreviating POSIX homes, and deriving display titles."
 kind: "package-library"
 ---

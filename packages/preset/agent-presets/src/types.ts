@@ -1,4 +1,4 @@
-/** Client-safe payloads and event declarations owned by the agent-preset domain. */
+﻿/** Client-safe payloads and event declarations owned by the agent-preset domain. */
 import type { SessionId } from '@deepseek-ai/dsh-session/types'
 import type { PresetTrust } from './preset.ts'
 

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node:vm` stub. Script compilation in a separate realm has no browser
  * counterpart; the self-modification and workflow rows mount and report the gap
  * when they try to compile.

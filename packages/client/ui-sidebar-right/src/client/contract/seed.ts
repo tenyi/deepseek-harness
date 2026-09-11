@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The guide tab's identity, the page-address scheme, and default page selection.
  *
  * These live in the contract because two sides need them and neither may read

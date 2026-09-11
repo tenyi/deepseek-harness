@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import { createScope, scopeTarget } from '@deepseek-ai/dsh-scope'
 import { createSystemMessage, createUserMessage, ToolCallId, createMessage, createToolResultMessage, freezeMessage } from '@deepseek-ai/dsh-llm'

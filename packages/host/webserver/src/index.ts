@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @deepseek-ai/dsh-host-webserver — node:http route registration with optional
  * gzip, index injection, and one fallback seat. It knows no harness concepts
  * and serves no files; the composing application owns dist serving. Electron

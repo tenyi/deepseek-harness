@@ -1,4 +1,4 @@
-/** One retained Markdown renderer over the document owner's accumulated text. */
+﻿/** One retained Markdown renderer over the document owner's accumulated text. */
 import { useMemo } from 'react'
 import type { ReactNode } from 'react'
 import { MarkdownText, type MarkdownLabels } from '@deepseek-ai/dsh-client-ui-primitives'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Host-side vocabulary of the goal domain: live views, durable change
  * payloads, message attribution, replay folds, and the scoped `goal/changed`
  * event. Kept separate from ./types.ts (the pure client-safe outlet) because

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Agent-scoped Schedule management tools over the durable session fold.
  * @module @deepseek-ai/dsh-schedule
  */

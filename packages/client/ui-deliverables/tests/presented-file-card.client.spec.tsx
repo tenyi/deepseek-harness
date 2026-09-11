@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** Explicit file actions preserve their destination, availability, and independent failure state. */
 import { cleanup, fireEvent, render } from '@testing-library/react'
 import { afterEach, expect, it, vi } from 'vitest'
@@ -121,7 +121,7 @@ it('shows the basename while retaining the full location for hover and actions',
 
 it.each([
   ['Quarterly summary (.pdf)', 'Quarterly summary'],
-  ['季度总结（PDF）', '季度总结'],
+  ['季度總結（PDF）', '季度總結'],
 ] as const)('omits a trailing parenthesized file suffix from %s', (description, expected) => {
   const p = props()
   const view = render(<PresentedFileCard {...p} file={{ ...p.file, description }} />)

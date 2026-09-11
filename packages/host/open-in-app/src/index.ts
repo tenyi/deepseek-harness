@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Host half of open-in-app: three routes on the composition's `webServer`
  * serving the resolved application catalog, per-application icons, and the
  * launch endpoint the browser split button

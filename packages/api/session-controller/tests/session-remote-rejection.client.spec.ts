@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A rejection from the Remote face, which the generated client raises only for
  * an assembly fault (wrong arity, an unmounted method, a withdrawn
  * contribution), propagates out of the Session command unchanged and records no

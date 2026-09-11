@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The intent layer's stateful embedding: one controller per docking surface,
  * React-free, and itself the observable source the UI subscribes to
  * (`subscribe` + `getSnapshot`, whose reference only changes when the layout

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure sequencing of the Win32 `IFileOpenDialog` folder-picker COM
  * conversation over injectable platform bindings, so every outcome path
  * (selection, cancellation, HRESULT failure, cleanup ordering) is testable on

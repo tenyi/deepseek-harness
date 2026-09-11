@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The summary blank bit means "conversation not started" (no turn has run),
  * not "log empty": standalone plugin events — command lifecycle records,
  * plan/mode, permission knob events, session titles — never flip it, so running /plan or /goal on a

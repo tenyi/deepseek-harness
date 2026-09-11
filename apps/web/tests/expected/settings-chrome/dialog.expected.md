@@ -1,50 +1,50 @@
-- dialog "设置":
+﻿- dialog "設置":
   - navigation:
-    - text: 设置
-    - button "通用设置":
+    - text: 設置
+    - button "通用設置":
       - img
-      - text: 通用设置
+      - text: 通用設置
     - button "模型":
       - img
       - text: 模型
     - button "插件":
       - img
       - text: 插件
-    - button "Agent 预设":
+    - button "Agent 預設":
       - img
-      - text: Agent 预设
-  - button "打开配置文件"
-  - button "关闭":
+      - text: Agent 預設
+  - button "打開配置文件"
+  - button "關閉":
     - img
-    - text: 关闭
-  - text: 权限 选择新会话的默认权限模式
-  - button "工作区内修改":
-    - text: 工作区内修改
+    - text: 關閉
+  - text: 權限 選擇新會話的默認權限模式
+  - button "工作區內修改":
+    - text: 工作區內修改
     - img
-  - text: 语言
+  - text: 語言
   - button "中文":
     - text: 中文
     - img
-  - text: 外观
-  - button "浅色":
+  - text: 外觀
+  - button "淺色":
     - img
-    - text: 浅色
+    - text: 淺色
   - button "深色":
     - img
     - text: 深色
-  - button "跟随系统" [pressed]:
+  - button "跟隨系統" [pressed]:
     - img
-    - text: 跟随系统
-  - text: 字号大小 仅影响会话内容的字号 14
-  - button "增大字号":
+    - text: 跟隨系統
+  - text: 字號大小 僅影響會話內容的字號 14
+  - button "增大字號":
     - img
-  - button "减小字号":
+  - button "減小字號":
     - img
-  - text: px 对话显示 控制已完成轮次的过程内容
-  - button "紧凑":
-    - text: 紧凑
+  - text: px 對話顯示 控制已完成輪次的過程內容
+  - button "緊湊":
+    - text: 緊湊
     - img
-  - text: 繁忙时的发送行为 智能体运行时 Enter 键和发送按钮的行为；Cmd/Ctrl+Enter 使用另一行为
-  - button "排队发送":
-    - text: 排队发送
+  - text: 繁忙時的發送行為 智能體運行時 Enter 鍵和發送按鈕的行為；Cmd/Ctrl+Enter 使用另一行為
+  - button "排隊發送":
+    - text: 排隊發送
     - img

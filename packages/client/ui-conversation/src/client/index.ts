@@ -1,4 +1,4 @@
-/** Browser Conversation assemble core, React adapter, shell, and input plugin. */
+﻿/** Browser Conversation assemble core, React adapter, shell, and input plugin. */
 export { apply, Config, inject } from './apply.ts'
 export type { Config as ConversationConfig } from './apply.ts'
 export { UiConversation } from './conversation/assembly.ts'

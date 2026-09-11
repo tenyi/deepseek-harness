@@ -1,4 +1,4 @@
-/** A file request elicits explicit SVG delivery without naming the present tool. */
+﻿/** A file request elicits explicit SVG delivery without naming the present tool. */
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
@@ -17,7 +17,7 @@ import { connectFreshWorkspaceZh, ZH_BROWSER_LOCALE } from './support.ts'
 const DIR = fileURLToPath(new URL('../../../snapshots/web/present-svg', import.meta.url))
 const FIXTURE = join(DIR, 'session.v3.jsonl')
 const MODE = webSnapshotMode()
-const PROMPT = '简单画一个 SVG 表示冯诺依曼架构, 保存为 von-neumann.svg'
+const PROMPT = '簡單畫一個 SVG 表示馮諾依曼架構, 保存為 von-neumann.svg'
 const FILE = 'von-neumann.svg'
 
 describe('web e2e: requested SVG is explicitly delivered', () => {
@@ -105,9 +105,9 @@ describe('web e2e: requested SVG is explicitly delivered', () => {
     const card = page.locator('[data-presented-file]').filter({ hasText: FILE })
     await card.waitFor({ state: 'visible' })
     expect(await card.count()).toBe(1)
-    expect(await page.getByText('产物', { exact: true }).count()).toBe(0)
+    expect(await page.getByText('產物', { exact: true }).count()).toBe(0)
     if (await page.locator('[data-produced-files-row]').count() > 0) {
-      expect(await page.getByText('本轮文件改动', { exact: true }).count()).toBe(1)
+      expect(await page.getByText('本輪文件改動', { exact: true }).count()).toBe(1)
     }
     expect(tripwire.pageErrors).toEqual([])
     expect(tripwire.warnings).toEqual([])

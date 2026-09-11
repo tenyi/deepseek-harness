@@ -1,4 +1,4 @@
-/** Existing changed-file chips and explicitly declared files for a closing turn. */
+﻿/** Existing changed-file chips and explicitly declared files for a closing turn. */
 import { useEffect, useState } from 'react'
 import type { TurnTailOwnerProps } from '@deepseek-ai/dsh-client-ui-chat/client'
 import { Button, IconChevronDownOutline14, IconChevronUpOutline14 } from '@deepseek-ai/dsh-client-ui-primitives'

@@ -1,4 +1,4 @@
----
+﻿---
 description: "Lossless JSON validation, detached snapshots, deep freezing, structural equality, and exhaustive-union helpers for runtime packages."
 kind: "package-library"
 ---

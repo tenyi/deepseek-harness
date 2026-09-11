@@ -1,4 +1,4 @@
-/** Minimal concrete Session query for Agent Team continuation tests. */
+﻿/** Minimal concrete Session query for Agent Team continuation tests. */
 
 import { SessionLogOffset } from '@deepseek-ai/dsh-session'
 import type { SessionEvent, SessionHeader, SessionId } from '@deepseek-ai/dsh-session'

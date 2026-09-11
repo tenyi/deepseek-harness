@@ -1,4 +1,4 @@
----
+﻿---
 description: "Tool-output trimming for deployments composing compaction: choosing size limits or debugging why oversized tool results get shortened."
 kind: "package-reference"
 ---

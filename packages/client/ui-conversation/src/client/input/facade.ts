@@ -1,4 +1,4 @@
-/**
+﻿/**
  * SessionInput shell: owns the per-session Lexical editor (text + chip
  * truth) and the pure SubmitMachine (phase/claim/attempt), and choreographs
  * everything between them — projections and InputState publication, the

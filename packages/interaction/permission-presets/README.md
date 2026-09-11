@@ -1,4 +1,4 @@
----
+﻿---
 description: "User-facing permission presets for users and maintainers choosing, configuring, or debugging the Permissions selector that bundles sandbox mode with an approval policy."
 kind: "package-reference"
 ---

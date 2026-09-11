@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Runtime of one open domain: authoritative in-memory state, the single
  * per-domain write chain, and change-event emission. Reads are synchronous
  * from memory; every write queues on the chain, awaits backend durability

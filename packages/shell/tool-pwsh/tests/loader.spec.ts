@@ -1,4 +1,4 @@
-/**
+﻿/**
  * REAL-composition tier (packages/AGENTS.md): boot the examples-owned
  * tool-pwsh Loader fixture as a subprocess through the same app/boot path a
  * deployment uses, execute real foreground and background pwsh commands

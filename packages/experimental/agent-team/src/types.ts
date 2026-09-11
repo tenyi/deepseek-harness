@@ -1,4 +1,4 @@
-/** Public Agent Teams identities, durable records, and service request values. */
+﻿/** Public Agent Teams identities, durable records, and service request values. */
 
 import type { Branded } from '@deepseek-ai/dsh-brand'
 import type { ContentBlock } from '@deepseek-ai/dsh-llm/types'

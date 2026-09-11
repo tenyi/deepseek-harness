@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest'
+﻿import { describe, expect, it, vi } from 'vitest'
 import type { AppUpdater } from 'electron-updater'
 import { DESKTOP_HOST_PROTOCOL_VERSION } from '../src/host-protocol.ts'
 import { parseDesktopRelease } from '../src/release.ts'

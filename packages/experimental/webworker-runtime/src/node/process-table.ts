@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The worker's process table. A browser worker cannot fork, so the
  * `node:child_process` shim keeps its own table: one entry per running
  * command, with the pid `process.kill` and the subprocess service's tree

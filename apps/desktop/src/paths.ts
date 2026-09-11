@@ -1,4 +1,4 @@
-/** Filesystem ownership for the Electron-managed desktop installation. */
+﻿/** Filesystem ownership for the Electron-managed desktop installation. */
 
 import { join } from 'node:path'
 import { resolveDshHome } from '@deepseek-ai/dsh-home-paths'

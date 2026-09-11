@@ -1,4 +1,4 @@
-/** Host-only Team state projected incrementally from committed Session events. */
+﻿/** Host-only Team state projected incrementally from committed Session events. */
 
 import { z } from 'zod'
 import { brandString } from '@deepseek-ai/dsh-brand'

@@ -1,4 +1,4 @@
-import { EventEmitter } from 'node:events'
+﻿import { EventEmitter } from 'node:events'
 import { existsSync } from 'node:fs'
 import { dirname } from 'node:path'
 import { PassThrough } from 'node:stream'

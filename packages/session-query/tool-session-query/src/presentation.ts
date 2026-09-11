@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model text rendering and generic tool-call presentation.
  *
  * @module @deepseek-ai/dsh-tool-session-query/presentation

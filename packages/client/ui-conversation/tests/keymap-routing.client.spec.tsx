@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * Keymap routing at the DOM boundary: synthetic keydowns on the
  * contenteditable reach the registered composer commands (the jsdom lane's

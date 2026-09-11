@@ -1,4 +1,4 @@
-import { Context } from '@deepseek-ai/cordis'
+﻿import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, vi } from 'vitest'
 import type { SettingsNamespaceView } from '@deepseek-ai/dsh-api-remotes/client'
 import { SettingsSchemaService } from '@deepseek-ai/dsh-client-ui-settings/src/client/schema.ts'

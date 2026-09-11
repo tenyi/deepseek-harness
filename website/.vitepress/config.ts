@@ -1,4 +1,4 @@
-/** VitePress configuration for the locally projected documentation site. */
+﻿/** VitePress configuration for the locally projected documentation site. */
 
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
@@ -59,8 +59,8 @@ interface GuideModules {
 const guideModules = {
   root: {
     guide: localeCollections.root[0],
-    develop: { label: '开发', collection: localeCollections.root[1] },
-    reference: { label: '参考', collection: localeCollections.root[2] },
+    develop: { label: '開發', collection: localeCollections.root[1] },
+    reference: { label: '參考', collection: localeCollections.root[2] },
   },
   en: {
     guide: localeCollections.en[0],
@@ -163,22 +163,22 @@ const sharedTheme: Pick<DefaultTheme.Config, 'search' | 'socialLinks' | 'editLin
         root: {
           translations: {
             button: {
-              buttonText: '搜索文档',
-              buttonAriaLabel: '搜索文档',
+              buttonText: '搜索文檔',
+              buttonAriaLabel: '搜索文檔',
             },
             modal: {
-              displayDetails: '显示详细列表',
+              displayDetails: '顯示詳細列表',
               resetButtonTitle: '清除搜索',
-              backButtonTitle: '关闭搜索',
-              noResultsText: '未找到相关结果',
+              backButtonTitle: '關閉搜索',
+              noResultsText: '未找到相關結果',
               footer: {
-                selectText: '选择',
-                selectKeyAriaLabel: '回车键',
-                navigateText: '切换',
-                navigateUpKeyAriaLabel: '上方向键',
-                navigateDownKeyAriaLabel: '下方向键',
-                closeText: '关闭',
-                closeKeyAriaLabel: 'Esc 键',
+                selectText: '選擇',
+                selectKeyAriaLabel: '回車鍵',
+                navigateText: '切換',
+                navigateUpKeyAriaLabel: '上方向鍵',
+                navigateDownKeyAriaLabel: '下方向鍵',
+                closeText: '關閉',
+                closeKeyAriaLabel: 'Esc 鍵',
               },
             },
           },
@@ -196,7 +196,7 @@ const sharedTheme: Pick<DefaultTheme.Config, 'search' | 'socialLinks' | 'editLin
       if (typeof editSource !== 'string') throw new Error('Projected documentation page has no editSource frontmatter.')
       return `https://github.com/deepseek-ai/deepseek-harness/edit/master/${editSource}`
     },
-    text: '在 GitHub 上编辑此页',
+    text: '在 GitHub 上編輯此頁',
   },
 }
 
@@ -206,7 +206,7 @@ const base = process.env.DOCS_BASE ?? '/'
 /** Site identity shared by the VitePress configuration and the llms.txt index. */
 const siteIdentity = {
   title: 'DeepSeek Harness',
-  description: '用于构建 Agent Harness 的插件化 SDK',
+  description: '用于構建 Agent Harness 的插件化 SDK',
 }
 
 /**
@@ -313,12 +313,12 @@ export default withMermaid({
   outDir: '.dist',
   locales: {
     root: {
-      label: '简体中文',
+      label: '簡體中文',
       lang: 'zh-CN',
       themeConfig: {
-        siteTitle: siteTitle('技术预览'),
+        siteTitle: siteTitle('技術預覽'),
         nav: [
-          { text: '入门', link: landingLink('root', guideModules.root.guide), activeMatch: '^/guide/' },
+          { text: '入門', link: landingLink('root', guideModules.root.guide), activeMatch: '^/guide/' },
           ...moduleNav('root'),
         ],
         sidebar: {
@@ -326,15 +326,15 @@ export default withMermaid({
           '/develop/': sidebar('root', 'zh-develop'),
           '/reference/': sidebar('root', 'zh-reference'),
         },
-        outline: { label: '本页目录' },
+        outline: { label: '本頁目錄' },
         docFooter: { prev: '上一篇', next: '下一篇' },
-        darkModeSwitchLabel: '外观',
-        lightModeSwitchTitle: '切换到浅色主题',
-        darkModeSwitchTitle: '切换到深色主题',
-        sidebarMenuLabel: '菜单',
-        returnToTopLabel: '返回顶部',
-        langMenuLabel: '切换语言',
-        skipToContentLabel: '跳至内容',
+        darkModeSwitchLabel: '外觀',
+        lightModeSwitchTitle: '切換到淺色主題',
+        darkModeSwitchTitle: '切換到深色主題',
+        sidebarMenuLabel: '菜單',
+        returnToTopLabel: '返回頂部',
+        langMenuLabel: '切換語言',
+        skipToContentLabel: '跳至內容',
       },
     },
     en: {

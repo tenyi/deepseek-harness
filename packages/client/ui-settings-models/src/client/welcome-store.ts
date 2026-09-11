@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Welcome-notice state derived from the welcome settings scope. The scope is
  * the transport: a loopback browser follows the durable Host section, while a
  * remote browser's memory-mode scope never answers and the acknowledgement

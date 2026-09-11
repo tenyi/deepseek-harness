@@ -1,4 +1,4 @@
-/** Standard ACP MCP-server declarations translated into Agent-scoped DSH MCP clients. */
+﻿/** Standard ACP MCP-server declarations translated into Agent-scoped DSH MCP clients. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { createHash } from 'node:crypto'

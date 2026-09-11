@@ -1,4 +1,4 @@
-/**
+﻿/**
  * TestRemote's own contract: subscription and disposal, dispatch driven by the
  * internal plumbing event, the silent drop for an unsubscribed name, and the
  * `$mount` refusal that sends a spec to the real Client Remote service.

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Keyless-by-default ACP snapshot suite factory. Each scenario drives the real
  * subprocess and compares normalized stdout; comparable session fixtures are
  * both replay input and expected output. Record mode refreshes reproducible

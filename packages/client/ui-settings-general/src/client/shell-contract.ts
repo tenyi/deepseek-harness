@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Settings shell contract — the types of the `sidebar.settings` occupant this
  * package renders. They live here rather than in ui-settings because they
  * reference the sidebar's own slot type: ui-settings is the settings domain's

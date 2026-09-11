@@ -1,4 +1,4 @@
-/** `workflowRun` namespace dictionaries. */
+﻿/** `workflowRun` namespace dictionaries. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'workflowRun'
@@ -6,23 +6,23 @@ export const NS = 'workflowRun'
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {
   'run.title': '{name}',
-  'run.members.one': '{count} 个成员',
-  'run.members.other': '{count} 个成员',
-  'run.empty': '没有启动成员',
-  'phase.unassigned': '未分阶段',
-  'phase.empty': '空阶段名',
-  'statusCount.running': '运行中 {count}',
+  'run.members.one': '{count} 個成員',
+  'run.members.other': '{count} 個成員',
+  'run.empty': '沒有啟動成員',
+  'phase.unassigned': '未分階段',
+  'phase.empty': '空階段名',
+  'statusCount.running': '運行中 {count}',
   'statusCount.completed': '已完成 {count}',
-  'statusCount.failed': '失败 {count}',
+  'statusCount.failed': '失敗 {count}',
   'statusCount.cancelled': '已取消 {count}',
-  'statusCount.interrupted': '已中断 {count}',
-  'member.empty': '空成员名',
-  'member.open': '打开 {name}',
-  'status.running': '运行中',
+  'statusCount.interrupted': '已中斷 {count}',
+  'member.empty': '空成員名',
+  'member.open': '打開 {name}',
+  'status.running': '運行中',
   'status.completed': '已完成',
-  'status.failed': '失败',
+  'status.failed': '失敗',
   'status.cancelled': '已取消',
-  'status.interrupted': '已中断',
+  'status.interrupted': '已中斷',
 }
 
 /** English dictionary (same key set). */

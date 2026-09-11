@@ -1,5 +1,5 @@
----
-description: "core 分组地图：构成产品 API 主干的会话日志、系统提示词组装、工具注册表、agent（智能体）词汇与默认循环。"
+﻿---
+description: "core 分組地圖：構成產品 API 主干的會話日志、系統提示詞組裝、工具注冊表、agent（智能體）詞匯與默認循環。"
 kind: "package-group"
 ---
 
@@ -9,54 +9,54 @@ kind: "package-group"
 
 ## 概述
 
-使用 core 包可以构建或扩展能够记录持久会话历史、组装系统提示词、提供工具、选择默认模型并运行模型轮次的 agent。这些包定义每个组合都会使用的共享 API，而可执行的产品组合位于 [`packages/bundle`](../bundle/README.zh.md)。开发 agent 行为或替换其中一项能力时请选择本分组；需要默认可运行组合时，请从 [`dsh-base`](../bundle/base/README.zh.md) 开始。
+使用 core 包可以構建或擴展能夠記錄持久會話歷史、組裝系統提示詞、提供工具、選擇默認模型并運行模型輪次的 agent。這些包定義每個組合都會使用的共享 API，而可執行的產品組合位于 [`packages/bundle`](../bundle/README.zh.md)。開發 agent 行為或替換其中一項能力時請選擇本分組；需要默認可運行組合時，請從 [`dsh-base`](../bundle/base/README.zh.md) 開始。
 
-## 目录
+## 目錄
 
 - [包](#packages)
-- [相关文档](#related-documentation)
-- [开发备注](#dev-note)
+- [相關文檔](#related-documentation)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="packages"></a>
 ## 包
 
-| 包 | 职责 | ctx key |
+| 包 | 職責 | ctx key |
 |---|---|---|
-| [`scope/`](scope/README.zh.md) | 隔离单个 agent 贡献的作用域注册与事件路由 | 库，不使用 ctx key |
-| [`session/`](session/README.zh.md) | 每个 agent 的历史均派生自该仅追加会话事件日志 | `ctx.sessions` |
-| [`system-prompt/`](system-prompt/README.zh.md) | 由有序段、工具 schema 与变量进行的系统提示词组装 | `ctx.systemPrompt` |
-| [`tools/`](tools/README.zh.md) | 供循环分发使用的工具注册表与带防护机制的执行流水线 | `ctx.tools` |
-| [`agent-tool-presentation/`](agent-tool-presentation/README.zh.md) | 为 preset 提供按 agent 的工具呈现方式选择器 | 无 ctx key |
-| [`agent/`](agent/README.zh.md) | 供插件编程使用的 `Agent` 句柄，以及其实时注册表与事件 | `ctx.agents` |
-| [`agent-default-model/`](agent-default-model/README.zh.md) | 入口对全新 agent 应用的部署默认模型选择 | `ctx.agentDefaultModel` |
-| [`agent-loop/`](agent-loop/README.zh.md) | 默认 agent 驱动器：创建 agent 并运行轮次与步骤生命周期 | `ctx.agentLoop` |
+| [`scope/`](scope/README.zh.md) | 隔離單個 agent 貢獻的作用域注冊與事件路由 | 庫，不使用 ctx key |
+| [`session/`](session/README.zh.md) | 每個 agent 的歷史均派生自該僅追加會話事件日志 | `ctx.sessions` |
+| [`system-prompt/`](system-prompt/README.zh.md) | 由有序段、工具 schema 與變量進行的系統提示詞組裝 | `ctx.systemPrompt` |
+| [`tools/`](tools/README.zh.md) | 供循環分發使用的工具注冊表與帶防護機制的執行流水線 | `ctx.tools` |
+| [`agent-tool-presentation/`](agent-tool-presentation/README.zh.md) | 為 preset 提供按 agent 的工具呈現方式選擇器 | 無 ctx key |
+| [`agent/`](agent/README.zh.md) | 供插件編程使用的 `Agent` 句柄，以及其實時注冊表與事件 | `ctx.agents` |
+| [`agent-default-model/`](agent-default-model/README.zh.md) | 入口對全新 agent 應用的部署默認模型選擇 | `ctx.agentDefaultModel` |
+| [`agent-loop/`](agent-loop/README.zh.md) | 默認 agent 驅動器：創建 agent 并運行輪次與步驟生命周期 | `ctx.agentLoop` |
 
-`scope` 提供共享作用域原语；`agent` 负责公开的 `Agent` 约定，而 `agent-loop` 是其默认实现，因此扩展插件依赖 `agent`，驱动器保持可替换。`agent-default-model` 负责入口在会话自身没有选择时应用的部署选择。可运行组合位于 [`packages/bundle`](../bundle/README.zh.md)；本分组只负责可替换的主干组件。
+`scope` 提供共享作用域原語；`agent` 負責公開的 `Agent` 約定，而 `agent-loop` 是其默認實現，因此擴展插件依賴 `agent`，驅動器保持可替換。`agent-default-model` 負責入口在會話自身沒有選擇時應用的部署選擇。可運行組合位于 [`packages/bundle`](../bundle/README.zh.md)；本分組只負責可替換的主干組件。
 
 -----
 
 <a id="related-documentation"></a>
-## 相关文档
+## 相關文檔
 
-- [Core 子系统](../../docs/subsystems/core.zh.md)——逐包循环图与 `Agent` 句柄约定。
-- [会话子系统](../../docs/subsystems/session.zh.md)——会话事件词汇与派生历史。
-- [系统提示词子系统](../../docs/subsystems/system-prompt.zh.md)——提示词段、动态上下文与工具 schema 类型。
-- [工具子系统](../../docs/subsystems/tools.zh.md)——工具执行流水线与呈现词汇。
-- [作用域注册子系统](../../docs/subsystems/scope.zh.md)——这些注册表所依赖的作用域层原语。
-- [架构](../../docs/architecture.zh.md)——轮次流与新行为归属。
-- [基础组合包](../bundle/base/README.zh.md)——默认产品组合。
-- [SDK 最小组合包](../bundle/sdk-minimal/README.zh.md)——完整、独立且功能集经过刻意精简的组合。
+- [Core 子系統](../../docs/subsystems/core.zh.md)——逐包循環圖與 `Agent` 句柄約定。
+- [會話子系統](../../docs/subsystems/session.zh.md)——會話事件詞匯與派生歷史。
+- [系統提示詞子系統](../../docs/subsystems/system-prompt.zh.md)——提示詞段、動態上下文與工具 schema 類型。
+- [工具子系統](../../docs/subsystems/tools.zh.md)——工具執行流水線與呈現詞匯。
+- [作用域注冊子系統](../../docs/subsystems/scope.zh.md)——這些注冊表所依賴的作用域層原語。
+- [架構](../../docs/architecture.zh.md)——輪次流與新行為歸屬。
+- [基礎組合包](../bundle/base/README.zh.md)——默認產品組合。
+- [SDK 最小組合包](../bundle/sdk-minimal/README.zh.md)——完整、獨立且功能集經過刻意精簡的組合。
 
 -----
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

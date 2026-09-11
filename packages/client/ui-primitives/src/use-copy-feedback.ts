@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+﻿import { useCallback, useState } from 'react'
 import { writeClipboard } from './clipboard.ts'
 
 /** How long the `copied` flag stays true after a successful write, in ms. */

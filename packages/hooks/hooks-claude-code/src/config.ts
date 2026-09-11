@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Parse Claude Code's event-to-matcher-group hook format into shared {@link MatcherGroup}s.
  * Only command hooks run; other hook types are returned as skipped so the
  * bridge can warn. Plugin-root and project-directory substitutions are applied

@@ -1,4 +1,4 @@
-/** Observable contiguous Session event window consumed by domain assemblers. */
+﻿/** Observable contiguous Session event window consumed by domain assemblers. */
 import { notifySubscribers, type ObservableSnapshot } from '@deepseek-ai/dsh-client-store'
 import type { LlmAttemptId, StreamChunk } from '@deepseek-ai/dsh-llm'
 import type { SessionEvent } from '@deepseek-ai/dsh-session/types'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pointer ownership shared by the docking surface and the float layer.
  *
  * Capture is hardening, not the mechanism: the window listeners carry the

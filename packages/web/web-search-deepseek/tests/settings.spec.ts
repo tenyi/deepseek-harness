@@ -1,4 +1,4 @@
-/** The `web-search-deepseek` settings section layered over the composition entry. */
+﻿/** The `web-search-deepseek` settings section layered over the composition entry. */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

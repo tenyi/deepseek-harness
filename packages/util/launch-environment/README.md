@@ -1,4 +1,4 @@
----
+﻿---
 description: "An immutable snapshot of this run's environment that remembers which layer supplied each value, for packages that must resolve user-facing values without trusting a flattened process.env."
 kind: "package-library"
 ---

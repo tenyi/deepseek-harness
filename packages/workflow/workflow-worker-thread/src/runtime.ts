@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Per-run worker-side vm hooks, child RPC, concurrency/caps, cancellation, and result serialization; it
  * never touches Cordis. Script values leaving the realm are materialized as plain JSON before
  * messaging. Values entering the trusted model-written realm are passed directly; `args` alone is

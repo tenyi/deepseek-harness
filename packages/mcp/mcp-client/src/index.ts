@@ -1,4 +1,4 @@
-/**
+﻿/**
  * MCP client bridge plugin: connects to an external MCP server and registers
  * its tools on `ctx.tools` under server-qualified public names
  * (`mcp__<serverName>__<rawName>`). Each plugin instance connects to one MCP

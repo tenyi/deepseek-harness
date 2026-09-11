@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Plan control plugin, browser half: occupies the composer's named
  * `conversation.input.plan` seat with an active-state status chip. Plan mode
  * is entered through the command source; while the projection's effective

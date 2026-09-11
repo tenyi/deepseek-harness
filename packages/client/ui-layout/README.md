@@ -1,4 +1,4 @@
----
+﻿---
 description: "Shell layout for the Web GUI: the three-column AppFrame whose right column is a track for an edge-anchored panel, the panel-geometry service, and theme presentation; for users and maintainers of the window chrome."
 kind: "package-reference"
 ---

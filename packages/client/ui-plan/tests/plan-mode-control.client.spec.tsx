@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * PlanChip over the `plan` projection: nothing renders while the capability
  * is absent or the effective target is the default mode; while plan mode is
@@ -32,7 +32,7 @@ function setup(
   return { store, exitPlanMode, view }
 }
 
-const chip = () => screen.getByRole('button', { name: 'plan mode 已开启，按下关闭' })
+const chip = () => screen.getByRole('button', { name: 'plan mode 已開啟，按下關閉' })
 
 describe('PlanChip', () => {
   it('renders nothing for an absent capability or a default-mode target', () => {
@@ -65,7 +65,7 @@ describe('PlanChip', () => {
     resolve(null)
     store.set({ value: { active: true, pending: true } })
     await waitFor(() => {
-      expect(screen.queryByRole('button', { name: 'plan mode 已开启，按下关闭' })).toBeNull()
+      expect(screen.queryByRole('button', { name: 'plan mode 已開啟，按下關閉' })).toBeNull()
     })
   })
 
@@ -81,7 +81,7 @@ describe('PlanChip', () => {
       .mockRejectedValueOnce('socket closed')
     setup({ active: true, pending: false }, exitPlanMode)
     fireEvent.click(chip())
-    expect((await screen.findByText('退出 plan mode 失败')).getAttribute('title')).toBe('host said no')
+    expect((await screen.findByText('退出 plan mode 失敗')).getAttribute('title')).toBe('host said no')
     expect(chip()).toBeTruthy()
 
     fireEvent.click(chip())

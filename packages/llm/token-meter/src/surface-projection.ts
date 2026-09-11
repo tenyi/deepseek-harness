@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The context-pressure projection's O(1) surface-token fold.
  *
  * Its checkpoint keeps scalar totals rather than the retained surface used

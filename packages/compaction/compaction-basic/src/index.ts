@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Basic replay-aware compaction backend.
  *
  * @module @deepseek-ai/dsh-compaction-basic

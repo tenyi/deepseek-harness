@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Negative-path tests for the persistence log catalog generator
  * (`scripts/gen-persistence-catalog.ts`).
  */

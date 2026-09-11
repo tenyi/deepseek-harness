@@ -1,4 +1,4 @@
-/** Frame-wide dynamic Plugin inventory, approvals, versions, and lifecycle actions. */
+﻿/** Frame-wide dynamic Plugin inventory, approvals, versions, and lifecycle actions. */
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { ButtonHTMLAttributes, ReactNode } from 'react'

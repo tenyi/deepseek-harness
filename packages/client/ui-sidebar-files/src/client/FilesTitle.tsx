@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The files type's chip title: the folder sheet before the type's label.
  * Registered under `sidebar.right.pane.tab.title`; without it the chip would
  * show the bare label. The tree in the body draws its own row glyphs and never

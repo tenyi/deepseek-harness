@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared tsdown preset for UI plugin client bundles. Emits a closure-factory
  * artifact: the bundle calls window.__ModuleLoader__.load({id, factory})
  * and resolves externals through the injected require (loader module table —

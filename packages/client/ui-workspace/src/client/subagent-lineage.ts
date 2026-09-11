@@ -1,4 +1,4 @@
-/** UI Workspace-owned projection of descendant counts from Session summaries. */
+﻿/** UI Workspace-owned projection of descendant counts from Session summaries. */
 
 import type { SessionId } from '@deepseek-ai/dsh-session/types'
 

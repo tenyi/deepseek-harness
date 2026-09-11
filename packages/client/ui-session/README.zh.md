@@ -1,5 +1,5 @@
----
-description: "面向 Session Controller 列表、交互状态与逐会话上下文的 React 与 Slot 适配器。"
+﻿---
+description: "面向 Session Controller 列表、交互狀態與逐會話上下文的 React 與 Slot 適配器。"
 kind: "package-reference"
 ---
 # @deepseek-ai/dsh-client-ui-session
@@ -8,40 +8,40 @@ kind: "package-reference"
 
 ## 概述
 
-面向会话控制器状态的 React 与 Slot 适配器。本包在 root scope 提供会话列表和 pending-interaction 钩子，物化逐会话钩子与 prop，并拥有标准 `SessionProvider` 渲染行为，但不接管会话 transport 或 lifecycle 状态。当浏览器功能需要通过标准 React prop 和钩子读取会话状态时，请使用它。
+面向會話控制器狀態的 React 與 Slot 適配器。本包在 root scope 提供會話列表和 pending-interaction 鉤子，物化逐會話鉤子與 prop，并擁有標準 `SessionProvider` 渲染行為，但不接管會話 transport 或 lifecycle 狀態。當瀏覽器功能需要通過標準 React prop 和鉤子讀取會話狀態時，請使用它。
 
-## 目录
+## 目錄
 
-- [模型体验](#model-experience)
-- [已知限制与暂缓事项](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [模型體驗](#model-experience)
+- [已知限制與暫緩事項](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无，因为本包适配浏览器侧 Session 状态，不注册任何面向模型的内容。
+無，因為本包適配瀏覽器側 Session 狀態，不注冊任何面向模型的內容。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；Session selector 与 Slot scope 不会组装模型请求。
+無；Session selector 與 Slot scope 不會組裝模型請求。
 
-## 已知限制与暂缓事项
+## 已知限制與暫緩事項
 
 <a id="known-limitations-and-deferred-work"></a>
 
-- **Pending interaction 是进程本地投影**——浏览器重连后，所属 Remote waterfall（瀑布式事件）必须重放仍未完成的请求。
+- **Pending interaction 是進程本地投影**——瀏覽器重連后，所屬 Remote waterfall（瀑布式事件）必須重放仍未完成的請求。
 
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者工作上下文——点击展开</summary>
+<summary>維護者工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。适配器 materialization 路径已经强制 Session 绑定一致。
+**運行時不變式：** 不發布伴生入口。適配器 materialization 路徑已經強制 Session 綁定一致。

@@ -1,4 +1,4 @@
-# Same id as the shipped preset: proves the earlier root wins.
+﻿# Same id as the shipped preset: proves the earlier root wins.
 - id: shadowed
   name: ../../plugins/contribute.js
   config:

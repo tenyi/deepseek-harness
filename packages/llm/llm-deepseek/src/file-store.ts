@@ -1,4 +1,4 @@
-/** DeepSeek Files API upload reuse, invalidation, and quota recovery. @module dsh-llm-deepseek/file-store */
+﻿/** DeepSeek Files API upload reuse, invalidation, and quota recovery. @module dsh-llm-deepseek/file-store */
 
 import type { RequestImageAttachment } from '@deepseek-ai/dsh-attachment'
 import { LlmError } from '@deepseek-ai/dsh-llm'

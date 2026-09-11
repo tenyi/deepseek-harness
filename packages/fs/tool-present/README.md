@@ -1,4 +1,4 @@
----
+﻿---
 description: "Declare accessible files as deliverables with present; configuration, Session ownership, and source-file opening."
 kind: "package-reference"
 ---

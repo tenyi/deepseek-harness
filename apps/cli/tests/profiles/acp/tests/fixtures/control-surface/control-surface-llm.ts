@@ -1,4 +1,4 @@
-/** Keyless two-model adapter for the generic ACP control-surface conformance test. */
+﻿/** Keyless two-model adapter for the generic ACP control-surface conformance test. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import {

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared execution plumbing for the `glob` / `grep` search tools: the
  * package-owned `SEARCH_*` error vocabulary, one spawn helper that runs the
  * PACKAGED ripgrep binary (`@vscode/ripgrep`) with a plain argv vector and

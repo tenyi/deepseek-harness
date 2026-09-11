@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Same-session goal domain: event-sourced state, compare-and-set mutations,
  * and process-local continuation activation.
  * @module @deepseek-ai/dsh-goal

@@ -1,4 +1,4 @@
-/** Model-visible wrap-up instruction for a terminal autonomous goal update. */
+﻿/** Model-visible wrap-up instruction for a terminal autonomous goal update. */
 
 import type { ContentBlock } from '@deepseek-ai/dsh-llm'
 

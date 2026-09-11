@@ -1,4 +1,4 @@
-/** Shell base styles stay independent from the dynamically loaded theme bundle. */
+﻿/** Shell base styles stay independent from the dynamically loaded theme bundle. */
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'

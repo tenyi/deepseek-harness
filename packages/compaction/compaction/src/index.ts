@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Compaction Service Definition (`ctx.compaction`): providers decide when to
  * compact and replace a history range with one summary node by subclassing
  * {@link CompactionEngine}. This interface necessarily depends on session and LLM

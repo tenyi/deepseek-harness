@@ -1,4 +1,4 @@
-/** Versioned envelopes for Client source catalog operations. */
+﻿/** Versioned envelopes for Client source catalog operations. */
 
 import type {
   ClientSourceRequestId,

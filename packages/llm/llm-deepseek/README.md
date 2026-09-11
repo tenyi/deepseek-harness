@@ -1,4 +1,4 @@
----
+﻿---
 description: "The DeepSeek chat-completions adapter for users and maintainers configuring the deepseek-official route, thinking, and image input."
 kind: "package-reference"
 ---

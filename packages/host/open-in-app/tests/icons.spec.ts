@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Icon extraction per platform over a deterministic command runner and real
  * temp filesystems: macOS `.icns` conversion, Windows PowerShell associated-
  * icon extraction, and Linux desktop-entry/theme lookup. No host application

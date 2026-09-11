@@ -1,4 +1,4 @@
-/** Client SourceBackend over the bounded browser source-catalog transport. */
+﻿/** Client SourceBackend over the bounded browser source-catalog transport. */
 
 import type { ClientScriptDescriptor, ClientSourceResult } from '../../../shared/bridge/messages/sources/index.ts'
 import type { ClientSourceSessionId } from '../../../shared/bridge/ids.ts'

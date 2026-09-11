@@ -1,4 +1,4 @@
-/**
+﻿/**
  * dsh-jobs' owned branded id, carried across the registry, the model-facing
  * control surface, and the client wire.
  *

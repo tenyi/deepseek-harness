@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Function plugin registering the `sessionStats` projection unit: whole-log
  * turn/step counts and LLM/tool/first-token/decode wall times served through
  * the session-projection seam (registry snapshot, change feed, and every

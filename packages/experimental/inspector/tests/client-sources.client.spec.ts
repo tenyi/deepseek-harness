@@ -1,4 +1,4 @@
-/** Client-face source catalog behavior. */
+﻿/** Client-face source catalog behavior. */
 
 import { describe, expect, it } from 'vitest'
 import { ClientSourceCatalog } from '../src/client/cdp/sources.ts'

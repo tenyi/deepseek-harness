@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Feedback surface plugin, browser half: the Like/Dislike entry in the
  * conversation.chat.assistant-actions strip, the feedback dialog and its
  * acknowledgement and failure toasts in conversation.input.overlay, and the `/feedback`

@@ -1,4 +1,4 @@
-/** One-shot Linux exec bootstrap and Windows Job-owning subprocess runner. */
+﻿/** One-shot Linux exec bootstrap and Windows Job-owning subprocess runner. */
 
 import { closeSync } from 'node:fs'
 import {

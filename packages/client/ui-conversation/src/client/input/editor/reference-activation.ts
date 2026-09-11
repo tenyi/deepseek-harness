@@ -1,4 +1,4 @@
-/** Route composer clicks through the live reference owner without editing the draft. */
+﻿/** Route composer clicks through the live reference owner without editing the draft. */
 import {
   $getNearestNodeFromDOMNode, $getSelection, $isRangeSelection,
   CLICK_COMMAND, COMMAND_PRIORITY_LOW,

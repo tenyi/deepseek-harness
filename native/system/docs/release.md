@@ -1,4 +1,4 @@
-# Release
+﻿# Release
 
 Pre-1.0: treat this as a release checklist, not a stability policy.
 

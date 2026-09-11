@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /** Inspect the public Codex provider composition without invoking the product. */
 
 import { resolveConfigPath } from '@deepseek-ai/dsh-app-boot'

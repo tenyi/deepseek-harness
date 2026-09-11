@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Two-process lock e2e holder: creates one session over the given root,
  * materializes two events, prints `holding`, and keeps its kernel write lock
  * until the parent SIGKILLs this process (a crash: release never runs).

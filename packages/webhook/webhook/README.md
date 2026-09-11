@@ -1,4 +1,4 @@
----
+﻿---
 description: "Webhook rule runtime for maintainers registering trusted external-event policies that create Workspace Sessions."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-// Long-history Chat behavior contract that stays valid under a virtualized
+﻿// Long-history Chat behavior contract that stays valid under a virtualized
 // renderer: wheel input only navigates to the semantic target; assertions pin
 // content identity and interaction routing rather than scroll geometry or
 // mounted row counts.

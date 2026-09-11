@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Negative-path tests for the exported-API JSDoc gate (`scripts/verify-export-jsdoc.ts`).
  */
 

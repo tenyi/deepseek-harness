@@ -1,4 +1,4 @@
-/** In-place owner of the reserved desktop profile and its private pnpm state. */
+﻿/** In-place owner of the reserved desktop profile and its private pnpm state. */
 
 import { valid } from 'semver'
 import { spawn } from 'node:child_process'

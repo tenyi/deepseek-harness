@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import {
   assertReleasedV2Header,
   releasedV2SessionFormatCodec,

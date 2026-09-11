@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Tests for the sandbox-policy home: the deployment default (mode +
  * workspaceRoot) the service exposes, and the per-session `sandbox/mode`
  * override kit (fold + write path) every enforcing capability reads.

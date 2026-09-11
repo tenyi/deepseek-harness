@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Compaction checkpoint provenance: the correlated source constructor and type
  * every backend uses for its replacement user message, plus the predicate that
  * recognizes persisted checkpoints.

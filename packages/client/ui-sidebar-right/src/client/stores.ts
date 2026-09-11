@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The store shell over the docking kit: one surface per session, held as plain
  * data so the kit's pure functions are the only thing that ever computes a
  * layout.

@@ -1,4 +1,4 @@
-/** Host HTTP bridge for browser-client RPC. */
+﻿/** Host HTTP bridge for browser-client RPC. */
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 import type {} from '@deepseek-ai/dsh-attachment'

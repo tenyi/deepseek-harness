@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Stage one of the guide type's registration: what it IS.
  */
 import type { TranslateNS } from '@deepseek-ai/dsh-client-locale/client'

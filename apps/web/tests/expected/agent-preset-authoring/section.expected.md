@@ -1,70 +1,70 @@
-- dialog "设置":
+﻿- dialog "設置":
   - navigation:
-    - text: 设置
-    - button "通用设置":
+    - text: 設置
+    - button "通用設置":
       - img
-      - text: 通用设置
+      - text: 通用設置
     - button "模型":
       - img
       - text: 模型
     - button "插件":
       - img
       - text: 插件
-    - button "Agent 预设":
+    - button "Agent 預設":
       - img
-      - text: Agent 预设
-  - button "打开配置文件"
-  - button "关闭":
+      - text: Agent 預設
+  - button "打開配置文件"
+  - button "關閉":
     - img
-    - text: 关闭
-  - heading "Agent 预设" [level=2]
-  - paragraph: 预设即一个会话的 Agent 所运行的插件组装 —— 它的工具、提示词与能力。复制一份既有预设改成自己的，或用「创造模式」让 Agent 帮你创建。
-  - text: 允许切换agent模式 beta
-  - paragraph: 开启后，新任务可选择标准、PTC、创造、极简及自定义模式；关闭后统一使用默认模式（默认为标准模式，可自定义）。仅影响新任务。
-  - switch "允许切换agent模式" [checked]
-  - heading "内置" [level=3]
+    - text: 關閉
+  - heading "Agent 預設" [level=2]
+  - paragraph: 預設即一個會話的 Agent 所運行的插件組裝 —— 它的工具、提示詞與能力。復制一份既有預設改成自己的，或用「創造模式」讓 Agent 幫你創建。
+  - text: 允許切換agent模式 beta
+  - paragraph: 開啟后，新任務可選擇標準、PTC、創造、極簡及自定義模式；關閉后統一使用默認模式（默認為標準模式，可自定義）。僅影響新任務。
+  - switch "允許切換agent模式" [checked]
+  - heading "內置" [level=3]
   - list:
     - listitem:
-      - 'button "新任务默认: 标准模式" [disabled] [pressed]':
-        - text: 标准模式 内置 新任务默认 功能完整的编码 Agent，支持文件编辑、Shell、文件与网页检索、Skills、计划、目标、子代理和工作流。
+      - 'button "新任務默認: 標準模式" [disabled] [pressed]':
+        - text: 標準模式 內置 新任務默認 功能完整的編碼 Agent，支持文件編輯、Shell、文件與網頁檢索、Skills、計劃、目標、子代理和工作流。
         - code: standard
-      - 'button "查看: 标准模式"':
+      - 'button "查看: 標準模式"':
         - img
         - text: 查看
-      - 'button "复制: 标准模式"':
+      - 'button "復制: 標準模式"':
         - img
-        - text: 复制
+        - text: 復制
     - listitem:
-      - 'button "设为默认: PTC 模式"':
-        - text: PTC 模式 内置 功能完整的编码 Agent，但默认不提供 workflow 工具；其他工具通过 PTC 模式 SDK 呈现，让模型用一个 TypeScript 程序组合多步操作。
+      - 'button "設為默認: PTC 模式"':
+        - text: PTC 模式 內置 功能完整的編碼 Agent，但默認不提供 workflow 工具；其他工具通過 PTC 模式 SDK 呈現，讓模型用一個 TypeScript 程序組合多步操作。
         - code: ptc
       - 'button "查看: PTC 模式"':
         - img
         - text: 查看
-      - 'button "复制: PTC 模式"':
+      - 'button "復制: PTC 模式"':
         - img
-        - text: 复制
+        - text: 復制
     - listitem:
-      - 'button "设为默认: 极简模式"':
-        - text: 极简模式 内置 仅提供持久 shell 的单工具编码 Agent。
+      - 'button "設為默認: 極簡模式"':
+        - text: 極簡模式 內置 僅提供持久 shell 的單工具編碼 Agent。
         - code: minimal
-      - 'button "查看: 极简模式"':
+      - 'button "查看: 極簡模式"':
         - img
         - text: 查看
-      - 'button "复制: 极简模式"':
+      - 'button "復制: 極簡模式"':
         - img
-        - text: 复制
+        - text: 復制
     - listitem:
-      - 'button "设为默认: 创造模式"':
-        - text: 创造模式 内置 用于创建自定义 Agent preset：具备标准模式的全部能力，并提供运行时检查、插件实验和 preset 创作指导。
+      - 'button "設為默認: 創造模式"':
+        - text: 創造模式 內置 用于創建自定義 Agent preset：具備標準模式的全部能力，并提供運行時檢查、插件實驗和 preset 創作指導。
         - code: cordis
-      - 'button "查看: 创造模式"':
+      - 'button "查看: 創造模式"':
         - img
         - text: 查看
-      - 'button "复制: 创造模式"':
+      - 'button "復制: 創造模式"':
         - img
-        - text: 复制
-  - heading "自定义" [level=3]
-  - button "用「创造模式」创作自定义预设":
+        - text: 復制
+  - heading "自定義" [level=3]
+  - button "用「創造模式」創作自定義預設":
     - img
-    - text: 用「创造模式」创作自定义预设
+    - text: 用「創造模式」創作自定義預設

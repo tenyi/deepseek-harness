@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The model-facing `web_search` tool: discover current information on the web.
  * Execution goes through `ctx.web` — this module owns only the model-facing
  * schema, argument validation, the result-count bound, and result formatting,

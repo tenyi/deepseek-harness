@@ -1,4 +1,4 @@
----
+﻿---
 description: "The workflow group map: model-authored orchestration scripts that fan out subagents, for users and maintainers navigating the group."
 kind: "package-group"
 ---

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Safe HTTP(S) retrieval for `ctx.web`: validates and pins public IP destinations, follows
  * only same-origin redirects, enforces time and size limits, classifies and decodes text,
  * and leaves presentation to `@deepseek-ai/dsh-tool-web`. Requests carry no browser cookies

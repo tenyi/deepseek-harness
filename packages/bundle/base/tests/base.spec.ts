@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The bundle's substance is its patch file: the `dsh.bundle.patch` manifest
  * field must name a real, parseable patch list.
  */

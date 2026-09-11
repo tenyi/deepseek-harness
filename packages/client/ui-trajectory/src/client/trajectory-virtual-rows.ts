@@ -1,4 +1,4 @@
-/** Pure projection from trajectory records to measurable virtual ledger rows. */
+﻿/** Pure projection from trajectory records to measurable virtual ledger rows. */
 
 import type { TrajectoryCellProps } from './trajectory-record.ts'
 import { trajectoryRecordId } from './trajectory-record.ts'

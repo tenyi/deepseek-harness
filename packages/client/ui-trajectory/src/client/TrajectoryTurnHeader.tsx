@@ -1,4 +1,4 @@
-// TrajectoryTurnHeader: sticky per-turn bar with Input/Output/Think/Time labels.
+﻿// TrajectoryTurnHeader: sticky per-turn bar with Input/Output/Think/Time labels.
 
 import css from './TrajectoryTurnHeader.module.css'
 import type { TrajectoryKey, TrajectoryTranslate } from './locales.ts'

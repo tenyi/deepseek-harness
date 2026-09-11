@@ -1,4 +1,4 @@
-// One-shot boot upgrade of the pre-release flat layout: a key stored by an
+﻿// One-shot boot upgrade of the pre-release flat layout: a key stored by an
 // earlier build must survive the versioned-document change without a hand
 // edit, byte for byte, while everything the recognizer cannot prove flat
 // keeps the loud rejection local.spec exercises.

@@ -1,4 +1,4 @@
-/** Sign final native runtime files before the enclosing Desktop application is signed. */
+﻿/** Sign final native runtime files before the enclosing Desktop application is signed. */
 
 import { createHash } from 'node:crypto'
 import { closeSync, openSync, readSync } from 'node:fs'

@@ -1,4 +1,4 @@
-- banner:
+﻿- banner:
   - navigation "Session hierarchy":
     - button "Clickable links gallery" [disabled]
   - button "More actions":

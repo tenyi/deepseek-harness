@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Client-safe type surface of the user-settings seam: the namespace brand, the
  * commit-origin union, the redacted views a configuration surface reads over
  * the Remote wire, and the seam's Cordis event declarations. Types only — no

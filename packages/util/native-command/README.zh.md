@@ -1,5 +1,5 @@
----
-description: "宿主原生命令与路径打开工具，提供无 shell 执行、取消、桌面探测与 WSL 路径交接。"
+﻿---
+description: "宿主原生命令與路徑打開工具，提供無 shell 執行、取消、桌面探測與 WSL 路徑交接。"
 kind: "package-library"
 ---
 
@@ -9,25 +9,25 @@ kind: "package-library"
 
 ## 概述
 
-`dsh-native-command` 无需 shell 即可运行 Host 可执行文件，并通过桌面打开 Host 文件系统路径。命令运行器捕获 utf8 输出、传播取消，并隐藏 Windows 瞬时控制台。路径打开器支持默认应用与文本编辑器意图、浏览器可渲染文档、WSL 转换与桌面可用性检查。它是库而非插件：没有 `ctx`、无状态、不发事件。
+`dsh-native-command` 無需 shell 即可運行 Host 可執行文件，并通過桌面打開 Host 文件系統路徑。命令運行器捕獲 utf8 輸出、傳播取消，并隱藏 Windows 瞬時控制臺。路徑打開器支持默認應用與文本編輯器意圖、瀏覽器可渲染文檔、WSL 轉換與桌面可用性檢查。它是庫而非插件：沒有 `ctx`、無狀態、不發事件。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-当宿主侧集成需要执行一条原生命令、并需要它的输出或失败信息（或两者兼要）、且绝不能涉及 shell 时，使用本运行器。
+當宿主側集成需要執行一條原生命令、并需要它的輸出或失敗信息（或兩者兼要）、且絕不能涉及 shell 時，使用本運行器。
 
-### 运行一条命令
+### 運行一條命令
 
 ```ts
 import { runNativeCommand } from '@deepseek-ai/dsh-native-command'
@@ -37,81 +37,81 @@ declare const signal: AbortSignal
 const { stdout, stderr } = await runNativeCommand('osascript', ['-e', script], signal)
 ```
 
-退出码为 0 时，调用解析为捕获到的 stdout 与 stderr。任何失败都会以错误拒绝，错误附带退出 `code` 与两路已捕获输出，因此调用方无需重跑命令即可区分工具缺失（`ENOENT`）、取消（`ABORT_ERR`）与真实的命令失败。
+退出碼為 0 時，調用解析為捕獲到的 stdout 與 stderr。任何失敗都會以錯誤拒絕，錯誤附帶退出 `code` 與兩路已捕獲輸出，因此調用方無需重跑命令即可區分工具缺失（`ENOENT`）、取消（`ABORT_ERR`）與真實的命令失敗。
 
-### 注入命令边界
+### 注入命令邊界
 
-`NativeCommandRunner` 类型是宿主集成的可注入命令边界：在集成需要一个可测试边界的位置传入该函数（或其包装层），测试即可替换为假运行器。
+`NativeCommandRunner` 類型是宿主集成的可注入命令邊界：在集成需要一個可測試邊界的位置傳入該函數（或其包裝層），測試即可替換為假運行器。
 
-### 打开 Host 路径
+### 打開 Host 路徑
 
-`openNativePath(path, signal)` 将路径交给默认应用；平台能够确定默认浏览器时，HTML 与 SVG 会优先交给该浏览器。`openNativeTextFile(path, signal)` 选择文本编辑器意图；macOS 使用 `open -t`。WSL 路径先通过 `wslpath -w` 转换，再交给 Windows 桌面。`canOpenNativePath()` 报告当前 Host 是否可能具备桌面目标。
+`openNativePath(path, signal)` 將路徑交給默認應用；平臺能夠確定默認瀏覽器時，HTML 與 SVG 會優先交給該瀏覽器。`openNativeTextFile(path, signal)` 選擇文本編輯器意圖；macOS 使用 `open -t`。WSL 路徑先通過 `wslpath -w` 轉換，再交給 Windows 桌面。`canOpenNativePath()` 報告當前 Host 是否可能具備桌面目標。
 
-`revealNativePath(path, signal)` 在 Finder 或文件资源管理器中选中文件，包含 WSL 路径转换；在桌面 Linux 上通过 `xdg-open` 打开上层目录。`nativeFileManager()` 标识该操作，供 UI 根据 Host 选择文案；桌面是否可用仍由独立的 `canOpenNativePath()` 检查决定。调用方必须先授权绝对文件路径，再执行操作。平台分派由注入运行器的测试覆盖；原生桌面验证由对应平台负责。 Explorer 接收独立参数中的编码文件 URI。退出码 1 按已转交请求处理；取消、找不到可执行文件和其他退出码仍然报错。该确认不能证明桌面窗口已选中文件。
+`revealNativePath(path, signal)` 在 Finder 或文件資源管理器中選中文件，包含 WSL 路徑轉換；在桌面 Linux 上通過 `xdg-open` 打開上層目錄。`nativeFileManager()` 標識該操作，供 UI 根據 Host 選擇文案；桌面是否可用仍由獨立的 `canOpenNativePath()` 檢查決定。調用方必須先授權絕對文件路徑，再執行操作。平臺分派由注入運行器的測試覆蓋；原生桌面驗證由對應平臺負責。 Explorer 接收獨立參數中的編碼文件 URI。退出碼 1 按已轉交請求處理；取消、找不到可執行文件和其他退出碼仍然報錯。該確認不能證明桌面窗口已選中文件。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-命令运行器是 Node `execFile` 的薄包装。路径打开器根据平台与环境事实选择一条无 shell 命令，而调用方继续负责决定允许打开哪个路径。
+命令運行器是 Node `execFile` 的薄包裝。路徑打開器根據平臺與環境事實選擇一條無 shell 命令，而調用方繼續負責決定允許打開哪個路徑。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 命令运行器与路径打开器的公共导出 |
-| [`src/runner.ts`](src/runner.ts) | 无 shell 的 `execFile` 适配器 |
-| [`src/path-opener.ts`](src/path-opener.ts) | 桌面探测、打开意图、浏览器偏好与 WSL 转换 |
-| — | 不发布运行时不变式伴生入口；每次运行都是一次无状态的子进程往返，不拥有事件流或可变运行时数据；相关行为由单元测试保障。 |
+| [`src/index.ts`](src/index.ts) | 命令運行器與路徑打開器的公共導出 |
+| [`src/runner.ts`](src/runner.ts) | 無 shell 的 `execFile` 適配器 |
+| [`src/path-opener.ts`](src/path-opener.ts) | 桌面探測、打開意圖、瀏覽器偏好與 WSL 轉換 |
+| — | 不發布運行時不變式伴生入口；每次運行都是一次無狀態的子進程往返，不擁有事件流或可變運行時數據；相關行為由單元測試保障。 |
 
-### execFile 给了运行器什么
+### execFile 給了運行器什么
 
-`execFile` 以 argv 数组直接 spawn 可执行文件——没有 shell 字符串，参数不经 shell 解释。`signal` 选项在调用方中止触发时终止子进程；`windowsHide` 在 Windows 上抑制瞬时控制台窗口。遇到非零退出或 spawn 错误时，回调把 `code`、`stdout`、`stderr` 挂到被拒绝的错误上，并保留原始错误作为 `cause`。
+`execFile` 以 argv 數組直接 spawn 可執行文件——沒有 shell 字符串，參數不經 shell 解釋。`signal` 選項在調用方中止觸發時終止子進程；`windowsHide` 在 Windows 上抑制瞬時控制臺窗口。遇到非零退出或 spawn 錯誤時，回調把 `code`、`stdout`、`stderr` 掛到被拒絕的錯誤上，并保留原始錯誤作為 `cause`。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当你需要消费方或本工具刻意不属于的通用子进程能力时，阅读以下页面。
+當你需要消費方或本工具刻意不屬于的通用子進程能力時，閱讀以下頁面。
 
-- [原生目录选择器](../../host/directory-picker-native/README.zh.md)——本运行器执行的 OS 选择器命令。
-- [Session Controller](../../api/session-controller/README.zh.md)——打开前解析 Session 相对 workspace 路径。
-- [Settings Controller](../../api/settings-controller/README.zh.md)——选择 settings 文档与 agent-preset 目录。
-- [子进程能力](../../subprocess/subprocess/README.zh.md)——通用子进程 seam，本包并非其组成部分。
+- [原生目錄選擇器](../../host/directory-picker-native/README.zh.md)——本運行器執行的 OS 選擇器命令。
+- [Session Controller](../../api/session-controller/README.zh.md)——打開前解析 Session 相對 workspace 路徑。
+- [Settings Controller](../../api/settings-controller/README.zh.md)——選擇 settings 文檔與 agent-preset 目錄。
+- [子進程能力](../../subprocess/subprocess/README.zh.md)——通用子進程 seam，本包并非其組成部分。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无：宿主侧工具不注册任何面向模型的内容。
+無：宿主側工具不注冊任何面向模型的內容。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-此处没有任何内容进入请求前缀；本包既不组装也不发送提供方请求。
+此處沒有任何內容進入請求前綴；本包既不組裝也不發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明本运行器何时不是合适的工具。它们是当前包约束，不是任务积压。
+這些限制說明本運行器何時不是合適的工具。它們是當前包約束，不是任務積壓。
 
-- **不做输出限量**——两路流在内存中无界缓冲；当前每个调用方只运行输出为一个路径或一行错误的小型原生工具。把它指向输出量可观的命令之前，先接入 `dsh-output-retention` 限量。
+- **不做輸出限量**——兩路流在內存中無界緩沖；當前每個調用方只運行輸出為一個路徑或一行錯誤的小型原生工具。把它指向輸出量可觀的命令之前，先接入 `dsh-output-retention` 限量。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

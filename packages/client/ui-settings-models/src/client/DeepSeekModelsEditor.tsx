@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Curated editor for the direct DeepSeek adapter's advisory model catalog.
  * The settings layer replaces `models` as one array, so the parent supplies
  * the effective inherited rows until the first edit materializes a user

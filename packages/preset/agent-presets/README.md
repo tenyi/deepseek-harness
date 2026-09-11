@@ -1,4 +1,4 @@
----
+﻿---
 description: "Per-session agent composition from preset cordis.yml files, for users and maintainers choosing, configuring, or debugging agent presets."
 kind: "package-reference"
 ---

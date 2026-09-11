@@ -1,4 +1,4 @@
-/** Client range access and type narrowing for aligned Session history records. */
+﻿/** Client range access and type narrowing for aligned Session history records. */
 
 import type {
   SessionHistoryRecord,

@@ -1,4 +1,4 @@
----
+﻿---
 description: "React and Slot adapters for Session Controller lists, interaction state, and per-session context."
 kind: "package-reference"
 ---

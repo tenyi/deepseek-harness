@@ -1,4 +1,4 @@
-/** Electron single-instance ownership before any Desktop profile lifecycle begins. */
+﻿/** Electron single-instance ownership before any Desktop profile lifecycle begins. */
 
 /** Minimal Electron application operations needed for instance ownership. */
 export interface DesktopSingleInstanceApplication {

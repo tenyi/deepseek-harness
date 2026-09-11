@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render } from '@testing-library/react'
@@ -224,7 +224,7 @@ describe('ReadRow keyed toolview', () => {
 
   it('collapses to the path summary; the whole row toggles the read card', () => {
     const view = render(<ReadRow {...rowProps(settled())} />)
-    expect(view.getByText('读取')).toBeTruthy()
+    expect(view.getByText('讀取')).toBeTruthy()
     // Collapsed: the path is the summary link alone, and the card is absent.
     expect(view.getAllByText('src/a.ts').length).toBe(1)
     expect(view.container.querySelector('[data-read]')).toBeNull()
@@ -234,7 +234,7 @@ describe('ReadRow keyed toolview', () => {
     expect(view.getAllByText('src/a.ts').length).toBe(2)
     expect(view.container.querySelector('[data-read]')).not.toBeNull()
     expect(contentTexts(view.container)).toContain('export const a = 1')
-    expect(view.getByText('显示 3 / 180 行')).toBeTruthy()
+    expect(view.getByText('顯示 3 / 180 行')).toBeTruthy()
     // Collapse back in place: the card unmounts, the summary link returns.
     toggleRow(view)
     expect(view.container.querySelector('[data-read]')).toBeNull()

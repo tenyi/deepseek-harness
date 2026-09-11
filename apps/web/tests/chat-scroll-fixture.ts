@@ -1,4 +1,4 @@
-// Synthetic long-chat history for browser behavior contracts. The fixture is
+﻿// Synthetic long-chat history for browser behavior contracts. The fixture is
 // generated through Session so pagination exercises the same event shapes as
 // persisted conversations, while unique markers identify semantic rows
 // without depending on CSS-module names or virtualizer DOM positions.

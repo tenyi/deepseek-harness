@@ -1,4 +1,4 @@
-/** Source checks for the produced-files and explicit-delivery layout. */
+﻿/** Source checks for the produced-files and explicit-delivery layout. */
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'

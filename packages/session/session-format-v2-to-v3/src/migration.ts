@@ -1,4 +1,4 @@
-/** Streaming system-prompt promotion followed by canonical V3 envelope conversion. */
+﻿/** Streaming system-prompt promotion followed by canonical V3 envelope conversion. */
 
 import { createHash } from 'node:crypto'
 import { SessionFormatError, SessionFormatUnsupportedMigrationError, defineSessionFormatMigration, sessionFormatCount } from '@deepseek-ai/dsh-session-format'

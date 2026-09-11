@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Session-scoped draft state for the generic question composer. The Slot
  * registry owns store instances; this module exports only the factory so a
  * plugin reload cannot reuse a module-global handle.

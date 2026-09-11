@@ -1,4 +1,4 @@
-// Web e2e scenario: a cancelled Bash call can settle without terminal-card
+﻿// Web e2e scenario: a cancelled Bash call can settle without terminal-card
 // material. Borrow the real cancellation fixture and prove the keyed Bash row
 // still exposes the recorded command and full error without any model call.
 import { readFile } from 'node:fs/promises'

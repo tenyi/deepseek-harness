@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+﻿import { useCallback, useMemo, useState } from 'react'
 import clsx from 'clsx'
 import { parseAnsiLines, type AnsiLine } from './ansi.ts'
 import { headTailCap } from './head-tail-cap.ts'

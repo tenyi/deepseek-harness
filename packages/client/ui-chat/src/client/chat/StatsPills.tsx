@@ -1,4 +1,4 @@
-// Session stats under the composer, split into two icon pills: a gauge pill
+﻿// Session stats under the composer, split into two icon pills: a gauge pill
 // (turn/step counts + output speed) opening the time-and-speed dialog, and a
 // database pill (total tokens + cache hit) opening the token-usage dialog.
 // Settled-node identity prevents stream-delta updates from rerendering the row.

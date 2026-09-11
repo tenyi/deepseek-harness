@@ -1,4 +1,4 @@
-/**
+﻿/**
  * koffi-backed Win32 bindings for the folder dialog: the COM vtable calls
  * behind {@link Win32DialogBindings} plus the cross-thread window closer the
  * driver uses to service aborts. The module loads on every platform; koffi

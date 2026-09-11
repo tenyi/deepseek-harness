@@ -1,4 +1,4 @@
-/** Build-owned, same-version PDF.js resources; all binary assets are decoded locally. */
+﻿/** Build-owned, same-version PDF.js resources; all binary assets are decoded locally. */
 import workerSource from 'pdfjs-dist/build/pdf.worker.min.mjs?raw'
 
 export { workerSource }

@@ -1,4 +1,4 @@
-/** Wire messages for Gateway-owned Remote streams and event-result RPCs. */
+﻿/** Wire messages for Gateway-owned Remote streams and event-result RPCs. */
 
 import type { Branded } from '@deepseek-ai/dsh-brand'
 

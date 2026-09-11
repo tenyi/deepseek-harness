@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A preset's display metadata: the name and description a picker shows.
  *
  * It lives in its own file because the composition is a top-level list of

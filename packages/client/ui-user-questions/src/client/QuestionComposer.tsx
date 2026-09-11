@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from 'react'
+﻿import { useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from 'react'
 import clsx from 'clsx'
 import {
   Button, IconCheckOutline14, IconChevronDownOutline14, IconChevronLeftOutline14,
@@ -28,7 +28,7 @@ type Feedback = { key: 'error.incomplete' | 'error.unanswered' } | { text: strin
  * @returns Display label plus recommendation state.
  */
 export function parseRecommendedLabel(label: string): { label: string; recommended: boolean } {
-  const suffix = /\s*(?:\((?:recommended|推荐)\)|（(?:recommended|推荐)）)\s*$/i
+  const suffix = /\s*(?:\((?:recommended|推薦)\)|（(?:recommended|推薦)）)\s*$/i
   return suffix.test(label)
     ? { label: label.replace(suffix, ''), recommended: true }
     : { label, recommended: false }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Child-process entry for the Win32 folder dialog: blocks THIS process
  * inside the modal `Show` so the host event loop stays live, reporting over
  * the IPC channel. Spawned as a child process (not a worker thread) so a

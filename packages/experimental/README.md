@@ -1,4 +1,4 @@
----
+﻿---
 description: "The experimental group map: pre-stable prototypes that are private by default, with explicit public Agent Teams packages."
 kind: "package-group"
 ---

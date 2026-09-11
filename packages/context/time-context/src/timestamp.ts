@@ -1,4 +1,4 @@
-/** ISO-shaped time-context timestamp formatting shared by production and replay validation. */
+﻿/** ISO-shaped time-context timestamp formatting shared by production and replay validation. */
 
 type TimestampPart = 'day' | 'hour' | 'minute' | 'month' | 'second' | 'timeZoneName' | 'year'
 

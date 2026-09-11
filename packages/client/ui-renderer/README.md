@@ -1,4 +1,4 @@
----
+﻿---
 description: "Browser UI renderer: React slot bindings, ctx.uiRenderer, and the assembled application root for the dsh web client."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-# Support matrix
+﻿# Support matrix
 
 | Platform package suffix | Builder | Payload |
 |---|---|---|

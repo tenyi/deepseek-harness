@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Slash pipeline spec over the split architecture. InputTriggerService keeps only
  * the source roster (duplicate throw, disposal dropping live menu groups in
  * every session controller) and per-session controller resolution; all
@@ -292,7 +292,7 @@ describe('track', () => {
     const { controller } = controllerBench([reference.source])
     controller.track('@r', 2, { tier: 'plain' }, 1)
     expect(controller.menu.getSnapshot().groups[0]).toMatchObject({ showGroupTitle: false, status: 'pending' })
-    reference.pending[0]!.resolve([{ name: 'README.md', section: '文件与文件夹' }])
+    reference.pending[0]!.resolve([{ name: 'README.md', section: '文件與文件夾' }])
     await tick()
     expect(controller.menu.getSnapshot().groups[0]).toMatchObject({ showGroupTitle: false, status: 'ready' })
   })

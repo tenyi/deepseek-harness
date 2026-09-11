@@ -1,4 +1,4 @@
----
+﻿---
 description: "Development-only hot reload for browser client plugins: rebuilding a plugin bundle swaps the running plugin in place, for developers iterating on the web GUI."
 kind: "package-reference"
 ---

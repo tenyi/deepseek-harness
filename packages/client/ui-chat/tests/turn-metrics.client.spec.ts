@@ -1,4 +1,4 @@
-// Per-turn latency/throughput fold and the footer figure formatters.
+﻿// Per-turn latency/throughput fold and the footer figure formatters.
 
 import { describe, expect, it } from 'vitest'
 import type {

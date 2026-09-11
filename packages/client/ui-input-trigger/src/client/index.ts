@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Slash trigger plugin, browser half: the InputTriggerService (`ctx.inputTriggers`) owning
  * trigger detection, the candidate menu, and the pick pipeline; MenuView
  * self-registers into the conversation.input.overlay slot. Frozen pipeline

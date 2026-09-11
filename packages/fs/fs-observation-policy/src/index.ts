@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Event-only filesystem observation policy; it registers no service. A weak owner/target map
  * records every authoritative presence/absence observation, single-slot intent listeners derive
  * guards from that state, and the provider performs the atomic freshness/no-clobber check. Without

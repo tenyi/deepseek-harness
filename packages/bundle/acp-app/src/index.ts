@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The ACP profile's command-line and stdin-lifetime provider. A successful
  * parse publishes {@link ACP_APP_STARTUP_SERVICE}; the ACP bridge waits for
  * that service, so help starts no transport.

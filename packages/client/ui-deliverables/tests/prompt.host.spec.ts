@@ -1,4 +1,4 @@
-/** Node-half coverage for the model guidance paired with Web file references. */
+﻿/** Node-half coverage for the model guidance paired with Web file references. */
 
 import { Context } from '@deepseek-ai/cordis'
 import { afterEach, describe, expect, it } from 'vitest'

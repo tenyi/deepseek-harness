@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Display resolution for roster presets, shared by every surface that renders
  * preset names: shipped presets resolve through locale dictionary keys, and
  * user-authored metadata is never translated. A pure fold with no imports, so

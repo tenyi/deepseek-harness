@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The failure line one Remote code deserves.
  *
  * Kept apart from the component so the mapping is testable on its own. Codes

@@ -1,4 +1,4 @@
----
+﻿---
 description: "Automation-only ACP stdio application profile for users and maintainers launching persistent harness agents."
 kind: "package-bundle"
 ---

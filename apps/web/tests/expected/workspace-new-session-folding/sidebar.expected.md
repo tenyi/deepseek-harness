@@ -1,4 +1,4 @@
-- tree "Sessions":
+﻿- tree "Sessions":
   - treeitem "{{workspace}} Workspace actions for {{workspace}} New session in {{workspace}}" [expanded]:
     - img
     - text: {{workspace}}

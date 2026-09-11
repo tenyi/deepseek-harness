@@ -1,4 +1,4 @@
-/** Host-side Worker lifecycle behavior. */
+﻿/** Host-side Worker lifecycle behavior. */
 
 import { Worker } from 'node:worker_threads'
 import { describe, expect, it } from 'vitest'

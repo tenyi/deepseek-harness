@@ -1,4 +1,4 @@
----
+﻿---
 description: "The web GUI host's HTTP server: named-route and upgrade registration, index transforms, and the single fallback seat that serves the Web shell's SPA dist."
 kind: "package-reference"
 ---

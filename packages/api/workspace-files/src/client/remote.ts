@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The slice of the Client Remote this package calls: the generated
  * `workspaceFiles` methods by name, and the stream supervisor structurally, so
  * the feed and the provider are testable against a scripted face.

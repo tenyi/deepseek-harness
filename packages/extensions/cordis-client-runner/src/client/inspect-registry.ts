@@ -1,4 +1,4 @@
-/** Browser registry for read-only Cordis capability providers. */
+﻿/** Browser registry for read-only Cordis capability providers. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type {

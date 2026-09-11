@@ -1,4 +1,4 @@
-/**
+﻿/**
  * DeepSeek chat-completions wire format (OpenAI-compatible). Types only.
  *
  * Source of truth: the official API docs at

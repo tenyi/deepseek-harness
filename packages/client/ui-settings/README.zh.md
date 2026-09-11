@@ -1,5 +1,5 @@
----
-description: "设置领域底座插件：设置命名空间 scope 服务、schema 服务，以及 dsh Web 客户端的规范设置 slot 类型约定。"
+﻿---
+description: "設置領域底座插件：設置命名空間 scope 服務、schema 服務，以及 dsh Web 客戶端的規范設置 slot 類型約定。"
 kind: "package-reference"
 ---
 
@@ -9,101 +9,101 @@ kind: "package-reference"
 
 ## 概述
 
-本包使 Web 客户端功能能够公开由宿主设置文档支持的可编辑偏好设置，而无需自行实现传输或 schema 处理。每项功能都可按命名空间读写、原子更新多个字段、校验 schema，并避免静默覆盖并发更改。它还为设置界面框架、页面、标题栏操作、插件标签页和引导流程提供标准扩展点，但自身不渲染任何界面。任何持有偏好设置的功能都可在不依赖呈现包的情况下使用它；设置外壳由单独的包提供。
+本包使 Web 客戶端功能能夠公開由宿主設置文檔支持的可編輯偏好設置，而無需自行實現傳輸或 schema 處理。每項功能都可按命名空間讀寫、原子更新多個字段、校驗 schema，并避免靜默覆蓋并發更改。它還為設置界面框架、頁面、標題欄操作、插件標簽頁和引導流程提供標準擴展點，但自身不渲染任何界面。任何持有偏好設置的功能都可在不依賴呈現包的情況下使用它；設置外殼由單獨的包提供。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-功能插件用本包存储与编辑自己的偏好设置，而无需重新实现传输层或 schema 处理。每个组合挂载一次即可；它注入 `remote` 服务及其 `settings` 命名空间，并持有浏览器中唯一的 `settings.describe` 读取方。
+功能插件用本包存儲與編輯自己的偏好設置，而無需重新實現傳輸層或 schema 處理。每個組合掛載一次即可；它注入 `remote` 服務及其 `settings` 命名空間，并持有瀏覽器中唯一的 `settings.describe` 讀取方。
 
-### 绑定命名空间
+### 綁定命名空間
 
-功能调用 `ctx.settingsScope.bind(spec)` 并传入按命名空间的 spec，得到一个由共享文档镜像派生的 scope。scope 快照携带解析后的分区、组合 `base`、原始 `user`、revision、可写性以及 host/内存模式；字段只要出现在 `user` 中即视为覆盖，即使其值与 `base` 相等，`unset` 会清除该覆盖。写入经 scope 进行：`set` 与 `unset` 提交一个操作，`mutate` 则原子提交多个有序操作。每次写入都以命名空间 revision 作为 `expectedRevision` 围栏，因此来自另一界面的并发写入会被拒绝，而不是被静默覆盖。暂存编辑器可以把开始草拟时读取的 revision 作为固定围栏传入；否则 scope 使用最新排队或镜像 revision。
+功能調用 `ctx.settingsScope.bind(spec)` 并傳入按命名空間的 spec，得到一個由共享文檔鏡像派生的 scope。scope 快照攜帶解析后的分區、組合 `base`、原始 `user`、revision、可寫性以及 host/內存模式；字段只要出現在 `user` 中即視為覆蓋，即使其值與 `base` 相等，`unset` 會清除該覆蓋。寫入經 scope 進行：`set` 與 `unset` 提交一個操作，`mutate` 則原子提交多個有序操作。每次寫入都以命名空間 revision 作為 `expectedRevision` 圍欄，因此來自另一界面的并發寫入會被拒絕，而不是被靜默覆蓋。暫存編輯器可以把開始草擬時讀取的 revision 作為固定圍欄傳入；否則 scope 使用最新排隊或鏡像 revision。
 
-### 填充设置 slot
+### 填充設置 slot
 
-设置界面会注册进本包声明的 slot 类型。外壳（`sidebar.settings` 占位方、导航、界面框架）位于 ui-settings-general；功能页面注册 `settings.section` 贡献；「插件」分区承载 `settings.plugins.tab` 页面；首次使用引导步骤注册 `settings.onboarding`。跨命名空间的表面（schema 内省、已服务命名空间目录、`hasDocument`）通过 `ctx.settingsScope.describe()` 读同一面镜像。
+設置界面會注冊進本包聲明的 slot 類型。外殼（`sidebar.settings` 占位方、導航、界面框架）位于 ui-settings-general；功能頁面注冊 `settings.section` 貢獻；「插件」分區承載 `settings.plugins.tab` 頁面；首次使用引導步驟注冊 `settings.onboarding`。跨命名空間的表面（schema 內省、已服務命名空間目錄、`hasDocument`）通過 `ctx.settingsScope.describe()` 讀同一面鏡像。
 
-### 可观察的成功与失败
+### 可觀察的成功與失敗
 
-绑定后的 scope 会立即反映当前文档 revision；提交成功的写入把应答折回镜像、不再重读。被拒绝或失败的最新写入触发一次镜像恢复读取；被取代的写入把恢复留给后继者。若 spec 未提供 `decode`，则分区不是普通对象或未通过 schema 重建时一律不发布任何值，于是行渲染自己的缺失状态，而不是一份半解码的值。
+綁定后的 scope 會立即反映當前文檔 revision；提交成功的寫入把應答折回鏡像、不再重讀。被拒絕或失敗的最新寫入觸發一次鏡像恢復讀取；被取代的寫入把恢復留給后繼者。若 spec 未提供 `decode`，則分區不是普通對象或未通過 schema 重建時一律不發布任何值，于是行渲染自己的缺失狀態，而不是一份半解碼的值。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本包实现一条归属规则：浏览器保留设置文档的一面共享镜像，每个派生表面都读这同一真源，因此任一时刻看到的都是同一份文档 revision。
+本包實現一條歸屬規則：瀏覽器保留設置文檔的一面共享鏡像，每個派生表面都讀這同一真源，因此任一時刻看到的都是同一份文檔 revision。
 
-### Describe 镜像
+### Describe 鏡像
 
-插件注入 `remote` 及其 `settings` 命名空间，从固定的 `remote.$host` 事实一次性解析 Host 持久化模式，并持有浏览器中唯一的 `settings.describe` 读取方：一面共享镜像，在每次转发的 `settings/document-updated` 事件与 `connection/reset` 时刷新（首次连接也包含在内，关闭「提交落在急切读取与 SSE 订阅之间」的窗口）。跨命名空间表面通过 `ctx.settingsScope.describe()` 读它，这是一个读取/折叠面（`getSnapshot`/`subscribe`/`ensure`，另有把写应答折入的 `acceptView`）。
+插件注入 `remote` 及其 `settings` 命名空間，從固定的 `remote.$host` 事實一次性解析 Host 持久化模式，并持有瀏覽器中唯一的 `settings.describe` 讀取方：一面共享鏡像，在每次轉發的 `settings/document-updated` 事件與 `connection/reset` 時刷新（首次連接也包含在內，關閉「提交落在急切讀取與 SSE 訂閱之間」的窗口）。跨命名空間表面通過 `ctx.settingsScope.describe()` 讀它，這是一個讀取/折疊面（`getSnapshot`/`subscribe`/`ensure`，另有把寫應答折入的 `acceptView`）。
 
 ### Scope 派生
 
-`ctx.settingsScope.bind(spec)` 在调用方的 context 上返回一个由镜像派生的按命名空间 scope：scope 的 disposer 归调用方 fiber 所有，绑定不新增任何线路读取，某一行的激活绝不会阻塞在设置传输层上。写入仍归各 scope：`set` 与 `unset` 是 `mutate` 的单操作形式，后者会复制操作列表，并把多个有序字段操作排在同一个作为 `expectedRevision` 的命名空间 revision 之后。提交成功的 mutation 把应答折回镜像，被拒绝或失败的最新 mutation 触发一次恢复读取，被取代的 mutation 把恢复留给后继者。冷启动读取次数由 `../../../apps/web/tests/startup-rpc-budget.e2e.ts` 钉住；客户端代码中新增直连 `settings.describe` 调用即是对它的回归。
+`ctx.settingsScope.bind(spec)` 在調用方的 context 上返回一個由鏡像派生的按命名空間 scope：scope 的 disposer 歸調用方 fiber 所有，綁定不新增任何線路讀取，某一行的激活絕不會阻塞在設置傳輸層上。寫入仍歸各 scope：`set` 與 `unset` 是 `mutate` 的單操作形式，后者會復制操作列表，并把多個有序字段操作排在同一個作為 `expectedRevision` 的命名空間 revision 之后。提交成功的 mutation 把應答折回鏡像，被拒絕或失敗的最新 mutation 觸發一次恢復讀取，被取代的 mutation 把恢復留給后繼者。冷啟動讀取次數由 `../../../apps/web/tests/startup-rpc-budget.e2e.ts` 釘住；客戶端代碼中新增直連 `settings.describe` 調用即是對它的回歸。
 
-### Schema 服务
+### Schema 服務
 
-`ctx.settingsSchema` 为设置插件执行同步 schema 重建、校验与不可变路径编辑。若 spec 未提供 `decode`，则分区不是普通对象、未通过其重建后的 schema 校验、或携带本客户端无法重建的 schema 信封时，一律不发布任何值。
+`ctx.settingsSchema` 為設置插件執行同步 schema 重建、校驗與不可變路徑編輯。若 spec 未提供 `decode`，則分區不是普通對象、未通過其重建后的 schema 校驗、或攜帶本客戶端無法重建的 schema 信封時，一律不發布任何值。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-以下页面覆盖设置界面家族及其背后的持久化 seam。
+以下頁面覆蓋設置界面家族及其背后的持久化 seam。
 
-- [ui-settings-general](../ui-settings-general/README.zh.md)——设置外壳：触发控件、导航、「通用」分区、引导投影。
-- [ui-settings-plugins](../ui-settings-plugins/README.zh.md)——「插件」分区及其可配置宿主平面卡片。
-- [ui-settings-models](../ui-settings-models/README.zh.md)——建立在本底座之上的 Models 页面与 DeepSeek 引导。
-- [settings](../../settings/README.zh.md)——持久化用户设置 seam 及其文件提供方。
-- [ui-sidebar](../ui-sidebar/README.zh.md)——底部席位承载设置触发控件的侧边栏外壳。
+- [ui-settings-general](../ui-settings-general/README.zh.md)——設置外殼：觸發控件、導航、「通用」分區、引導投影。
+- [ui-settings-plugins](../ui-settings-plugins/README.zh.md)——「插件」分區及其可配置宿主平面卡片。
+- [ui-settings-models](../ui-settings-models/README.zh.md)——建立在本底座之上的 Models 頁面與 DeepSeek 引導。
+- [settings](../../settings/README.zh.md)——持久化用戶設置 seam 及其文件提供方。
+- [ui-sidebar](../ui-sidebar/README.zh.md)——底部席位承載設置觸發控件的側邊欄外殼。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无。该包是浏览器端 UI 插件层，不注册任何面向模型的内容。
+無。該包是瀏覽器端 UI 插件層，不注冊任何面向模型的內容。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；该包既不组装也不发送提供方请求。
+無；該包既不組裝也不發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明设置传输层够不到的地方；它们是当前包约束。
+這些限制說明設置傳輸層夠不到的地方；它們是當前包約束。
 
-- **非 loopback 页面没有持久化设置**：本 Client 在那里禁用 Host 持久化，因此 scope 以 `unavailable` 起步且从不跨线路；尽管 Connection 认证覆盖 API，它支撑的每一行仍在那里无效。
+- **非 loopback 頁面沒有持久化設置**：本 Client 在那里禁用 Host 持久化，因此 scope 以 `unavailable` 起步且從不跨線路；盡管 Connection 認證覆蓋 API，它支撐的每一行仍在那里無效。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。本包只把 `settings.section` ledger 投影为导航，不发出 Cordis 事件，也不持有跨插件可变关系；slot core 会在加载时拒绝冲突。
+**運行時不變式：** 不發布伴生入口。本包只把 `settings.section` ledger 投影為導航，不發出 Cordis 事件，也不持有跨插件可變關系；slot core 會在加載時拒絕沖突。

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * AclWriteGrant tests: the server-side grant materialization — SID parsing
  * fail-closed, ACE add/dispose round-trip against the REAL directory DACL
  * (observed through icacls, the operator's own tool), the recorded path

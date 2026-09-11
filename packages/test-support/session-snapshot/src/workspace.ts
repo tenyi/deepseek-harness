@@ -1,4 +1,4 @@
-/** Capture readable, path-stable workspace state for recorded-session tests. */
+﻿/** Capture readable, path-stable workspace state for recorded-session tests. */
 
 import { readFile, readdir, readlink } from 'node:fs/promises'
 import { join } from 'node:path'

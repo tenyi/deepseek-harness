@@ -1,4 +1,4 @@
-/** ClientRoster: construction, duplicate refusal, order-preserving pick/closure/without with loud unknown names; graphFromRoster. */
+﻿/** ClientRoster: construction, duplicate refusal, order-preserving pick/closure/without with loud unknown names; graphFromRoster. */
 import { createClientModuleSystem, parseBootManifest, type ClientBundleRegistration, type ClientModuleLoaderTarget } from '@deepseek-ai/dsh-client-modules/client'
 import { describe, expect, it } from 'vitest'
 import { ClientRoster, graphFromRoster, type ClientRosterRow } from '../src/assembly/roster.ts'

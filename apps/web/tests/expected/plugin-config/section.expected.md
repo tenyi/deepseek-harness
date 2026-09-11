@@ -1,42 +1,42 @@
-- dialog "设置":
+﻿- dialog "設置":
   - navigation:
-    - text: 设置
-    - button "通用设置":
+    - text: 設置
+    - button "通用設置":
       - img
-      - text: 通用设置
+      - text: 通用設置
     - button "模型":
       - img
       - text: 模型
     - button "插件":
       - img
       - text: 插件
-    - button "Agent 预设":
+    - button "Agent 預設":
       - img
-      - text: Agent 预设
-  - button "打开配置文件"
-  - button "关闭":
+      - text: Agent 預設
+  - button "打開配置文件"
+  - button "關閉":
     - img
-    - text: 关闭
+    - text: 關閉
   - heading "插件" [level=2]
-  - paragraph: 配置和查看本部署已安装的插件。
-  - tablist "插件视图":
+  - paragraph: 配置和查看本部署已安裝的插件。
+  - tablist "插件視圖":
     - tab "插件配置" [selected]
     - tab "插件列表"
   - tabpanel "插件配置":
     - list:
       - listitem:
-        - 'button "展开设置: 终端"':
-          - text: 终端 限制 agent 运行的每一条命令。
+        - 'button "展開設置: 終端"':
+          - text: 終端 限制 agent 運行的每一條命令。
           - img
       - listitem:
-        - 'button "展开设置: Agent 循环"':
-          - text: Agent 循环 Agent 如何派发工具调用。
+        - 'button "展開設置: Agent 循環"':
+          - text: Agent 循環 Agent 如何派發工具調用。
           - img
       - listitem:
-        - 'button "展开设置: Subagent"':
-          - text: Subagent 控制 Agent 为 Subagent 选择模型的权限。
+        - 'button "展開設置: Subagent"':
+          - text: Subagent 控制 Agent 為 Subagent 選擇模型的權限。
           - img
       - listitem:
-        - 'button "展开设置: 网页搜索"':
-          - text: 网页搜索 DeepSeek 搜索提供方。
+        - 'button "展開設置: 網頁搜索"':
+          - text: 網頁搜索 DeepSeek 搜索提供方。
           - img

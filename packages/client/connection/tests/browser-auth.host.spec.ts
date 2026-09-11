@@ -1,4 +1,4 @@
-/** Browser launch-token and persistent-cookie behavior. */
+﻿/** Browser launch-token and persistent-cookie behavior. */
 
 import { createHmac } from 'node:crypto'
 import { afterEach, describe, expect, it, vi } from 'vitest'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Continuable-subagent orchestration behind `ctx.subagents`: stable child ids,
  * descriptor persistence, provider preparation, cold resume, authorization,
  * and message routing. {@link ContinuableActivationRegistry} owns the mutable

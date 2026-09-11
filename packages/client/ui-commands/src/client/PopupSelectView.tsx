@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Official popupSelect shell: renders one session's PopupSelectController
  * store into the conversation.input.overlay anchor. Unlike the slash menu
  * (combobox — textarea keeps focus), this shell HOLDS focus while open: the

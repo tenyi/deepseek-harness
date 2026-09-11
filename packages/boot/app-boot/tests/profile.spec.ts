@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Profile machinery of `dsh-app-boot`: directory resolution and init,
  * manifest round-trips, two-anchor bundle resolution, patch-layer loading,
  * empty-root composition, and the installation module-fallback healing.

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Resolve the public SDK launch configuration to one dsh subprocess.
  * @module @deepseek-ai/dsh-sdk-client/launch
  */

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * landlock-run: self-restrict-then-exec Landlock launcher.
  *
  * The Landlock rung of a consuming sandbox seam, for Linux hosts where

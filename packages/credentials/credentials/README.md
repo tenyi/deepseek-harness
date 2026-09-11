@@ -1,4 +1,4 @@
----
+﻿---
 description: "The credential seam for users and maintainers resolving, describing, or storing credentials — reference values and durable records — without putting secret values in configuration."
 kind: "package-reference"
 ---

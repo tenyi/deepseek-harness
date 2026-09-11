@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared helpers for stylesheet-contract specs: flatten CSS text on disk into
  * rules and enumerate the package stylesheets those contracts range over.
  */

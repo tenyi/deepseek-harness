@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The web-search card's staged form over the `web-search-deepseek` settings
  * namespace.
  *

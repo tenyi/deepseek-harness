@@ -1,4 +1,4 @@
-// Keyless shipped-Web acceptance for the durable workflow Conversation Node.
+﻿// Keyless shipped-Web acceptance for the durable workflow Conversation Node.
 // Reuses the existing recorded workflow parent/child model fixtures; the real
 // workflow tool, worker, subagent provider, Session log, browser plugin graph,
 // and navigation all execute during replay.

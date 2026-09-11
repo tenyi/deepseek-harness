@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Content identity for workspace instruction duplicate suppression.
  *
  * @module @deepseek-ai/dsh-agent-instructions/digest

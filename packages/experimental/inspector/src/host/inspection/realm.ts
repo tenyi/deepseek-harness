@@ -1,4 +1,4 @@
-/** Stable descriptor for the Host observation source generation. */
+﻿/** Stable descriptor for the Host observation source generation. */
 
 import { randomUUID } from 'node:crypto'
 import { inspectorId } from '../../shared/identity.ts'

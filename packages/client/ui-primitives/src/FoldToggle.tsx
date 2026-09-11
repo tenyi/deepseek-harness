@@ -1,4 +1,4 @@
-interface FoldToggleProps {
+﻿interface FoldToggleProps {
   className: string | undefined
   expanded: boolean
   hidden: number

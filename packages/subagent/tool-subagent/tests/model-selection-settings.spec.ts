@@ -1,4 +1,4 @@
-/** Default-off settings and per-session model-selection decisions. */
+﻿/** Default-off settings and per-session model-selection decisions. */
 
 import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

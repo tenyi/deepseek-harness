@@ -1,5 +1,5 @@
----
-description: "E2B 远程运行时组映射：把文件与命令工作放进一个远程 Linux 沙箱，供 E2B 家族的用户与维护者浏览。"
+﻿---
+description: "E2B 遠程運行時組映射：把文件與命令工作放進一個遠程 Linux 沙箱，供 E2B 家族的用戶與維護者瀏覽。"
 kind: "package-group"
 ---
 
@@ -9,42 +9,42 @@ kind: "package-group"
 
 ## 概述
 
-E2B 家族让 agent（智能体）在一个远程 Linux 沙箱中读取和编辑文件、运行 shell 命令并使用终端，而不是在主机上执行这些工作。文件系统工作与命令和终端执行保持分离，但两者使用同一个沙箱。现有的 shell、终端与语言服务器功能无需 E2B 专用工具即可继续工作。harness 进程、模型调用与会话状态仍在本地；沙箱是临时性的实验环境，且默认不包含在已发布的组合中。
+E2B 家族讓 agent（智能體）在一個遠程 Linux 沙箱中讀取和編輯文件、運行 shell 命令并使用終端，而不是在主機上執行這些工作。文件系統工作與命令和終端執行保持分離，但兩者使用同一個沙箱。現有的 shell、終端與語言服務器功能無需 E2B 專用工具即可繼續工作。harness 進程、模型調用與會話狀態仍在本地；沙箱是臨時性的實驗環境，且默認不包含在已發布的組合中。
 
-## 目录
+## 目錄
 
 - [包](#packages)
-- [相关文档](#related-documentation)
-- [开发备注](#dev-note)
+- [相關文檔](#related-documentation)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="packages"></a>
 ## 包
 
-| 包（package） | 职责 | ctx 键 |
+| 包（package） | 職責 | ctx 鍵 |
 |---|---|---|
-| [`e2b`](e2b/README.zh.md) | 承载文件操作与命令执行的共享远程 Linux 沙箱 | `ctx.e2b` |
-| [`fs-e2b`](fs-e2b/README.zh.md) | 远程沙箱内的文件读取、写入、编辑与列表 | `ctx.fs` |
-| [`subprocess-e2b`](subprocess-e2b/README.zh.md) | 远程沙箱内的 shell 命令与交互式终端 | `ctx.subprocess` |
+| [`e2b`](e2b/README.zh.md) | 承載文件操作與命令執行的共享遠程 Linux 沙箱 | `ctx.e2b` |
+| [`fs-e2b`](fs-e2b/README.zh.md) | 遠程沙箱內的文件讀取、寫入、編輯與列表 | `ctx.fs` |
+| [`subprocess-e2b`](subprocess-e2b/README.zh.md) | 遠程沙箱內的 shell 命令與交互式終端 | `ctx.subprocess` |
 
 -----
 
 <a id="related-documentation"></a>
-## 相关文档
+## 相關文檔
 
-- [可移植执行世界决策](../../.agents/notes/implemented/architecture/2026-07-28-portable-execution-world-consumers.zh.md)——执行世界为何可以在不移动 harness 的情况下迁移，以及哪些内容留在本地。
-- [子进程子系统](../../docs/subsystems/subprocess.zh.md)——子进程 seam 约定与生成的 Cordis 接口，包括 `ctx.e2b`。
-- [文件系统子系统](../../docs/subsystems/filesystem.zh.md)——文件系统 seam 约定与生成的 Cordis 接口。
+- [可移植執行世界決策](../../.agents/notes/implemented/architecture/2026-07-28-portable-execution-world-consumers.zh.md)——執行世界為何可以在不移動 harness 的情況下遷移，以及哪些內容留在本地。
+- [子進程子系統](../../docs/subsystems/subprocess.zh.md)——子進程 seam 約定與生成的 Cordis 接口，包括 `ctx.e2b`。
+- [文件系統子系統](../../docs/subsystems/filesystem.zh.md)——文件系統 seam 約定與生成的 Cordis 接口。
 
 -----
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

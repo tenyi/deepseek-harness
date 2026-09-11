@@ -1,4 +1,4 @@
-/** Shared immutable-header checks for logical session source observers. */
+﻿/** Shared immutable-header checks for logical session source observers. */
 
 import type { SessionHeader } from '@deepseek-ai/dsh-session'
 import { SessionQueryError } from './config.ts'

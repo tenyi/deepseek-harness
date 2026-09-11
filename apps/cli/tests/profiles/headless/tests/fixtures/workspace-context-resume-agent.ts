@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Loader fixture that resumes the seeded agent-instructions session.
  * @module workspace-context-resume-agent
  */

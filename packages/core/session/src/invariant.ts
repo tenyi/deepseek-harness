@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Package-owned relational invariants for the session event log. Load this
  * companion beside `@deepseek-ai/dsh-invariants` to enable the checks.
  *

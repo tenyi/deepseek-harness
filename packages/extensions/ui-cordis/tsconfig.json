@@ -1,4 +1,4 @@
-{
+﻿{
   "extends": "../../../tsconfig.base.client.json",
   "compilerOptions": {
     "rootDir": "src",

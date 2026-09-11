@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The preview's own state: the pages it has read, and how the reader views them.
  *
  * The `file` resource carries metadata only, so the text is this type's to fetch

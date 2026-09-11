@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Runtime mirror and labels for Cordis's `FiberState` const enum. A const enum has no runtime
  * object to import, so these values mirror the pinned vendored definition while retaining its
  * type.

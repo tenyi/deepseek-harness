@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The process worker's own half: a fresh worker that received a
  * {@link ShellStartFrame} runs one command here and then closes.
  *

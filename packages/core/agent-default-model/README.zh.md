@@ -1,5 +1,5 @@
----
-description: "面向用户与维护者的部署默认模型选择说明，用于选择、配置或调试新创建的 agent（智能体）初始使用哪个模型。"
+﻿---
+description: "面向用戶與維護者的部署默認模型選擇說明，用于選擇、配置或調試新創建的 agent（智能體）初始使用哪個模型。"
 kind: "package-reference"
 ---
 
@@ -9,27 +9,27 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-agent-default-model` 在会话未指定模型时，为新创建的 agent 提供共享的默认提供方与模型。使用它可以为所有受支持的 agent 入口统一选择起始模型，其中包括 `dsh --profile headless`。设置可用时，用户可以覆盖已配置的选择（包括推理（reasoning）强度），保存的更改会在后续读取中生效。该默认值作用于整个进程；按会话选择模型仍由创建 agent 的入口负责。
+`dsh-agent-default-model` 在會話未指定模型時，為新創建的 agent 提供共享的默認提供方與模型。使用它可以為所有受支持的 agent 入口統一選擇起始模型，其中包括 `dsh --profile headless`。設置可用時，用戶可以覆蓋已配置的選擇（包括推理（reasoning）強度），保存的更改會在后續讀取中生效。該默認值作用于整個進程；按會話選擇模型仍由創建 agent 的入口負責。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-在创建 agent 且未显式给出模型路由的任何地方挂载本包。该服务回答一个问题——新 agent 应该使用哪个模型？——因此创建 agent 的入口查询它，而不必重新实现默认值。
+在創建 agent 且未顯式給出模型路由的任何地方掛載本包。該服務回答一個問題——新 agent 應該使用哪個模型？——因此創建 agent 的入口查詢它，而不必重新實現默認值。
 
-### 配置默认值
+### 配置默認值
 
-组合配置项是默认值的基础：它要求提供方与模型，并且不依赖任何设置提供方也能使用。
+組合配置項是默認值的基礎：它要求提供方與模型，并且不依賴任何設置提供方也能使用。
 
 ```yaml
 - name: '@deepseek-ai/dsh-agent-default-model'
@@ -38,90 +38,90 @@ kind: "package-reference"
     model: deepseek-chat
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `provider` | 必填 | 新 agent 使用的已注册提供方路由 |
+| `provider` | 必填 | 新 agent 使用的已注冊提供方路由 |
 | `model` | 必填 | 新 agent 使用的、由提供方持有的模型 id |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-agent-default-model)是所有受支持字段的完整参考。`reasoningEffort` 刻意不是配置字段：它属于设置层，因此完整保存的选择可以在下一个选定的模型没有推理强度时清除旧值，而组合配置值会再次被继承。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-agent-default-model)是所有受支持字段的完整參考。`reasoningEffort` 刻意不是配置字段：它屬于設置層，因此完整保存的選擇可以在下一個選定的模型沒有推理強度時清除舊值，而組合配置值會再次被繼承。
 
-### 读取与更改默认值
+### 讀取與更改默認值
 
-`currentSelection()` 为新创建的 agent 返回一份独立的 `{ provider, model, reasoningEffort? }`；`saveSelection()` 为后续 agent 保存完整选择。
+`currentSelection()` 為新創建的 agent 返回一份獨立的 `{ provider, model, reasoningEffort? }`；`saveSelection()` 為后續 agent 保存完整選擇。
 
 ```text
 const selection = ctx.agentDefaultModel.currentSelection()
 await ctx.agentDefaultModel.saveSelection({ provider, model, reasoningEffort: 'high' })
 ```
 
-未挂载设置提供方时，`saveSelection()` 不执行任何操作，组合配置项仍为当前值。该服务不校验目录成员关系：提供方路由可以服务未在目录中公布的模型；发起模型请求的消费方负责可用性诊断。
+未掛載設置提供方時，`saveSelection()` 不執行任何操作，組合配置項仍為當前值。該服務不校驗目錄成員關系：提供方路由可以服務未在目錄中公布的模型；發起模型請求的消費方負責可用性診斷。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释该服务如何实现上述行为；可观察约定已在[使用本包](#use-this-package)中完整说明。
+本節解釋該服務如何實現上述行為；可觀察約定已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-该服务是一个组合配置项，带有由设置支撑的数据源。插件配置提供基础 `{ provider, model }`；挂载设置提供方后，`agent-default-model` 设置分节成为实时数据源，所有消费方都通过 `currentSelection()` 读取，因此写入设置后无需在注册层面重建。`reasoningEffort` 只存在于设置 schema 中：配置不能携带它，因为新选择清除推理强度后，该值必须保持清除，而不能再次从组合配置中继承。
+該服務是一個組合配置項，帶有由設置支撐的數據源。插件配置提供基礎 `{ provider, model }`；掛載設置提供方后，`agent-default-model` 設置分節成為實時數據源，所有消費方都通過 `currentSelection()` 讀取，因此寫入設置后無需在注冊層面重建。`reasoningEffort` 只存在于設置 schema 中：配置不能攜帶它，因為新選擇清除推理強度后，該值必須保持清除，而不能再次從組合配置中繼承。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：`AgentDefaultModelConfig` 服务、设置分节安装、`currentSelection`/`saveSelection` |
-| — | 未发布运行时不变式配套项；唯一的可变值关系由设置校验负责。 |
+| [`src/index.ts`](src/index.ts) | 插件入口：`AgentDefaultModelConfig` 服務、設置分節安裝、`currentSelection`/`saveSelection` |
+| — | 未發布運行時不變式配套項；唯一的可變值關系由設置校驗負責。 |
 
-### 行为说明
+### 行為說明
 
-两个公开方法都只是对该数据源进行简单读写：`currentSelection()` 返回一个全新、独立的对象，因此调用方可以持有它，而不会与服务状态共享引用；`saveSelection()` 在存在 `ctx.settings` 时写入完整选择。
+兩個公開方法都只是對該數據源進行簡單讀寫：`currentSelection()` 返回一個全新、獨立的對象，因此調用方可以持有它，而不會與服務狀態共享引用；`saveSelection()` 在存在 `ctx.settings` 時寫入完整選擇。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-包级约定对大多数消费方已经足够；需要周边领域时再阅读以下页面。
+包級約定對大多數消費方已經足夠；需要周邊領域時再閱讀以下頁面。
 
-- [Core 子系统](../../../docs/subsystems/core.zh.md)——`Agent` 句柄与 `AgentOptions` 路由选择。
-- [agent-loop 包](../agent-loop/README.zh.md)——agent 在请求时如何解析提供方与模型。
-- [生成配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-agent-default-model)——每个受支持配置字段及其源声明。
-- [core 分组地图](../README.zh.md)——core 各包如何组合。
+- [Core 子系統](../../../docs/subsystems/core.zh.md)——`Agent` 句柄與 `AgentOptions` 路由選擇。
+- [agent-loop 包](../agent-loop/README.zh.md)——agent 在請求時如何解析提供方與模型。
+- [生成配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-agent-default-model)——每個受支持配置字段及其源聲明。
+- [core 分組地圖](../README.zh.md)——core 各包如何組合。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-通过该服务提供给入口的 `ModelSelection` 间接影响；模型可见请求由请求组装与提供方适配器负责。
+通過該服務提供給入口的 `ModelSelection` 間接影響；模型可見請求由請求組裝與提供方適配器負責。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-更改默认值只影响之后从它解析选择的 agent。请求日志已经指明选择的现有会话仍沿用该选择，因此本服务不会使其已建立的前缀失效。
+更改默認值只影響之后從它解析選擇的 agent。請求日志已經指明選擇的現有會話仍沿用該選擇，因此本服務不會使其已建立的前綴失效。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制界定该服务的范围。它们是当前包约束，不是任务积压。
+這些限制界定該服務的范圍。它們是當前包約束，不是任務積壓。
 
-- **单一的进程级默认值**——该服务只拥有一个默认值；按会话的模型选择仍由入口负责。
-- **没有设置提供方时无法保留**——未挂载设置提供方时，`saveSelection()` 无法为后续 agent 保留选择。
+- **單一的進程級默認值**——該服務只擁有一個默認值；按會話的模型選擇仍由入口負責。
+- **沒有設置提供方時無法保留**——未掛載設置提供方時，`saveSelection()` 無法為后續 agent 保留選擇。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

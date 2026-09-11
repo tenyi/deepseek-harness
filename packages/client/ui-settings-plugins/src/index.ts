@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Plugins settings surface, node half. The empty apply exists so the plugin
  * appears in the host cordis.yml / Loader; the browser half owns the section
  * and its configurable tab through exports["./client"], discovered from the

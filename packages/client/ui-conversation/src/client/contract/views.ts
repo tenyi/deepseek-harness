@@ -1,4 +1,4 @@
-/** Conversation view and session-local presentation state. */
+﻿/** Conversation view and session-local presentation state. */
 
 /**
  * One conversation view tab, projected from a 'conversation.view' slot

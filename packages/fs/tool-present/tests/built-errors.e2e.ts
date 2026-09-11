@@ -1,4 +1,4 @@
-/** Built tool and runtime bundles must preserve their shared structured error classes. */
+﻿/** Built tool and runtime bundles must preserve their shared structured error classes. */
 import { execFile } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'

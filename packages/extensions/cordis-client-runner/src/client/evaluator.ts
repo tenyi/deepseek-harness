@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser-half closure evaluation: the package source runs as the body of an
  * async function whose parameters ARE the symbol surface. Shadowing parameters
  * (setTimeout/fetch/require/…) turn the ambient browser globals into teaching

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Runtime registry for generated Typert reflection, Remote invocations, and
  * dependency-inverted lookup/Context providers. It performs no TypeScript
  * analysis or schema generation.

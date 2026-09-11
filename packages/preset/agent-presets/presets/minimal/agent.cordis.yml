@@ -1,4 +1,4 @@
-# The `minimal` agent preset: a fixed-prompt, single-tool coding-agent composition.
+﻿# The `minimal` agent preset: a fixed-prompt, single-tool coding-agent composition.
 #
 # The persona is the complete system prompt, so global identity, Web orientation,
 # tool guidance, and later assembly listeners cannot add prompt text. Runtime

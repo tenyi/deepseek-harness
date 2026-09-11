@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `ExaSearchProvider`: a `WebSearchProvider` backed by the Exa search API (`POST /search` with
  * highlight contents). It maps the first non-blank highlight to `snippet`, maps
  * `publishedDate` to `publishedAt`, drops entries without a snippet, and omits `content`

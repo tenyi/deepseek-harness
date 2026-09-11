@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Driver-owned durable agent inbox projection and command facade.
  *
  * @module @deepseek-ai/dsh-agent-loop/inbox

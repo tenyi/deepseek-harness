@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Markdown-to-plain-text projection for compact summaries and labels.
  * Parsing shares the renderer's streaming GFM grammar ({@link parseGfm}), so
  * the projection strips exactly the markup the renderer would draw; raw HTML

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node:path` for the worker: the POSIX algorithm, transliterated from Node's
  * implementation. It is NOT a face over the worker host's `posixPath`: that helper
  * normalizes before splitting, so `dirname('/a/b/..')` answers `/` where Node

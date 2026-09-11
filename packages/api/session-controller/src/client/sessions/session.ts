@@ -1,4 +1,4 @@
-// Sessions remain resident after creation so their open Remote sources keep running off-screen.
+﻿// Sessions remain resident after creation so their open Remote sources keep running off-screen.
 
 import type { Context } from '@deepseek-ai/cordis'
 import { randomUUID } from '@deepseek-ai/dsh-util-crypto'

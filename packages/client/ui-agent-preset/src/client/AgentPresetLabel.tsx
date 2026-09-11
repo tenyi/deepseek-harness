@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The session header's agent-preset label.
  *
  * Read-only by construction: a session's composition is fixed once its

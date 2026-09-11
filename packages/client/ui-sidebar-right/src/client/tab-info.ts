@@ -1,4 +1,4 @@
-/** Slot-owned tab information derived from framework-bound store and navigation hooks. */
+﻿/** Slot-owned tab information derived from framework-bound store and navigation hooks. */
 import { useMemo } from 'react'
 import { findTabPane } from '@deepseek-ai/dsh-client-ui-dockkit'
 import type { TabId } from '@deepseek-ai/dsh-client-ui-dockkit'

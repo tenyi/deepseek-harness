@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Workspace browser tree row components (figma Cell set 14:3080): pure presentational —
  * all data and callbacks arrive via props. Hover swaps (folder->chevron,
  * time->ellipsis, action buttons) are CSS-only. Row ... menus are visual-only
@@ -27,7 +27,7 @@ function displayTitle(node: SessionNode, t: RowTranslate): string {
   return node.blank ? t('session.new') : node.title
 }
 
-/** Localized compact relative time ("刚刚"/"5分钟" in zh, "now"/"5min" in en). */
+/** Localized compact relative time ("剛剛"/"5分鐘" in zh, "now"/"5min" in en). */
 function timeLabel(updatedAt: number, now: number, t: RowTranslate): string {
   const { unit, n } = relativeTime(updatedAt, now)
   return unit === 'now' ? t('time.now') : t(`time.${unit}`, { n })

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure geometry for the drag interaction: point tests, dock-zone resolution
  * against a real element rectangle, and tab-strip insertion slots. Kept free of
  * React and DOM types so the drop rules can be asserted without a browser; the

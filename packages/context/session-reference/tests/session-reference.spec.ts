@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
+﻿import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import { agentEvents, installModelSelection, type Agent, type ModelSelectionRef } from '@deepseek-ai/dsh-agent'
 import { CompactionId, compactCheckpointSource } from '@deepseek-ai/dsh-compaction'
@@ -234,15 +234,15 @@ function promptData(text: string): unknown {
 
 describe('session reference URI and inline mentions', () => {
   it('round-trips arbitrary session ids and replaces mentions with readable labels', () => {
-    const sessionId = SessionId('unicode/引号"/slash\\/line\n')
+    const sessionId = SessionId('unicode/引號"/slash\\/line\n')
     const uri = encodeSessionReferenceUri(sessionId)
     expect(decodeSessionReferenceUri(uri)).toBe(sessionId)
 
-    const mention = formatSessionReferenceMention({ sessionId, label: '源]会话' })
+    const mention = formatSessionReferenceMention({ sessionId, label: '源]會話' })
     const parsed = parseSessionReferenceText(`compare ${mention} and ${uri}`)
-    expect(parsed.text).toBe(`compare @源]会话 and @${sessionId}`)
+    expect(parsed.text).toBe(`compare @源]會話 and @${sessionId}`)
     expect(parsed.references).toEqual([
-      { sessionId, label: '源]会话' },
+      { sessionId, label: '源]會話' },
       { sessionId, label: sessionId },
     ])
     expect(formatSessionReferenceMention({ sessionId })).toContain(`@[${sessionId.replaceAll('\\', '\\\\').replaceAll(']', '\\]')}]`)

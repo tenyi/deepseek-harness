@@ -1,4 +1,4 @@
-/** Detached launch settlement with controlled process events and watch time. */
+﻿/** Detached launch settlement with controlled process events and watch time. */
 import { ChildProcess, spawn } from 'node:child_process'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { launchDetachedApp } from '../src/resolver.ts'

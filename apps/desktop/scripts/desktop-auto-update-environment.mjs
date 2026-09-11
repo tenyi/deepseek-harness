@@ -1,4 +1,4 @@
-/** Resolve the Desktop auto-update channel and its Tencent COS destination. */
+﻿/** Resolve the Desktop auto-update channel and its Tencent COS destination. */
 
 import { prerelease, valid } from 'semver'
 

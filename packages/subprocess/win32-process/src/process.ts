@@ -1,4 +1,4 @@
-/** Typed Win32 process operations over the shared binding table. */
+﻿/** Typed Win32 process operations over the shared binding table. */
 
 import koffi from 'koffi'
 import * as abi from './abi.ts'

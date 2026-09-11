@@ -1,1 +1,1 @@
-- paragraph: "Reminder: Check the deployment log."
+﻿- paragraph: "Reminder: Check the deployment log."

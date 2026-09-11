@@ -1,4 +1,4 @@
-/** Content-addressed, owner-private local attachment storage. */
+﻿/** Content-addressed, owner-private local attachment storage. */
 
 import { createHash, randomUUID } from 'node:crypto'
 import { constants, createReadStream } from 'node:fs'

@@ -1,4 +1,4 @@
-/** Appearance and font-size row stores: snapshot-mirror actions and the revision guards. */
+﻿/** Appearance and font-size row stores: snapshot-mirror actions and the revision guards. */
 import { describe, expect, it } from 'vitest'
 import { createAppearanceRowStore, createFontSizeRowStore } from '../src/client/settings-store.ts'
 

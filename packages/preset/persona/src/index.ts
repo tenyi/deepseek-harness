@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A per-agent persona as a composable row.
  *
  * `dsh-system-prompt` owns the global persona as its own config, and registers

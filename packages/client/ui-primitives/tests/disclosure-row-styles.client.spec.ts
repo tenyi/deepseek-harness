@@ -1,4 +1,4 @@
-/**
+﻿/**
  * DisclosureRow's font-size-axis adoption as CSS text. jsdom has no layout,
  * so these read the declarations that make every flow row (tool calls, think,
  * commands) follow the Settings font-size preference: title size on the axis

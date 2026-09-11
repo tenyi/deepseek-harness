@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Detect-coordinate span application: the one place that maps a TokenSpan's
  * numeric [start, end) back onto Lexical points and applies an edit there.
  * Every slash/input-* event (begin-command, insert-reference, insert-text,

@@ -1,4 +1,4 @@
-/** Question-composer Session store behavior. */
+﻿/** Question-composer Session store behavior. */
 import { describe, expect, it } from 'vitest'
 import { createQuestionDraftStore, type QuestionDraftProgress } from '../src/client/draft-store.ts'
 

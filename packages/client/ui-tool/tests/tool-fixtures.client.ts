@@ -1,4 +1,4 @@
-/** Shared Chat-slice and Session-event fixtures for Tool row tests. */
+﻿/** Shared Chat-slice and Session-event fixtures for Tool row tests. */
 import type { SessionLiveEventEntry } from '@deepseek-ai/dsh-api-session-controller/client'
 import { SessionSeq } from '@deepseek-ai/dsh-session/types'
 import { isJsonValue, type JsonValue } from '@deepseek-ai/dsh-util-values'

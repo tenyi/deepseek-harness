@@ -1,48 +1,48 @@
----
-description: "会话检索能力家族的包映射：搜索、追踪与读取实时和持久会话历史，以及 Web 端会话日志导出。"
+﻿---
+description: "會話檢索能力家族的包映射：搜索、追蹤與讀取實時和持久會話歷史，以及 Web 端會話日志導出。"
 kind: "package-group"
 ---
 
-# session-query/：会话检索能力家族
+# session-query/：會話檢索能力家族
 
 [English](README.md) | 中文
 
 ## 概述
 
-`session-query/` 组提供对实时与持久会话历史的检索，且独立于压缩（compaction）：程序化调用方通过一个统一服务查询精确日志、过滤后的列表、关系追踪与全文搜索；SQLite 后端支撑搜索；模型获得五个经工作区授权的工具；Web 界面获得下载会话 ZIP 的 `/export` 命令。搜索结果与模型看到的对话历史一致。本页概述该组；各包的 README 分别说明各自的包级约定。
+`session-query/` 組提供對實時與持久會話歷史的檢索，且獨立于壓縮（compaction）：程序化調用方通過一個統一服務查詢精確日志、過濾后的列表、關系追蹤與全文搜索；SQLite 后端支撐搜索；模型獲得五個經工作區授權的工具；Web 界面獲得下載會話 ZIP 的 `/export` 命令。搜索結果與模型看到的對話歷史一致。本頁概述該組；各包的 README 分別說明各自的包級約定。
 
-## 目录
+## 目錄
 
 - [包](#packages)
-- [相关文档](#related-documentation)
-- [开发备注](#dev-note)
+- [相關文檔](#related-documentation)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="packages"></a>
 ## 包
 
-每个包的 README 都会说明该包在此组中的用途。
+每個包的 README 都會說明該包在此組中的用途。
 
-| 包 | 职责 | ctx 键 |
+| 包 | 職責 | ctx 鍵 |
 |---|---|---|
-| [`session-query/`](session-query/README.zh.md) | 统一的会话历史查询服务：精确读取、关系追踪与过滤 | `ctx.sessionQuery` |
-| [`session-query-sqlite/`](session-query-sqlite/README.zh.md) | 基于 SQLite FTS5 索引的会话历史全文搜索 | 注册到 `ctx.sessionQuery` |
-| [`session-log-export/`](session-log-export/README.zh.md) | Web `/export` 命令与浏览器下载会话 ZIP | `ctx.sessionLogDownload`（浏览器） |
-| [`tool-session-query/`](tool-session-query/README.zh.md) | 面向模型的搜索、追踪与读取会话历史工具 | 注册到 `ctx.tools` |
+| [`session-query/`](session-query/README.zh.md) | 統一的會話歷史查詢服務：精確讀取、關系追蹤與過濾 | `ctx.sessionQuery` |
+| [`session-query-sqlite/`](session-query-sqlite/README.zh.md) | 基于 SQLite FTS5 索引的會話歷史全文搜索 | 注冊到 `ctx.sessionQuery` |
+| [`session-log-export/`](session-log-export/README.zh.md) | Web `/export` 命令與瀏覽器下載會話 ZIP | `ctx.sessionLogDownload`（瀏覽器） |
+| [`tool-session-query/`](tool-session-query/README.zh.md) | 面向模型的搜索、追蹤與讀取會話歷史工具 | 注冊到 `ctx.tools` |
 
 -----
 
 <a id="related-documentation"></a>
-## 相关文档
+## 相關文檔
 
-先从子系统参考了解共享的查询词汇，再看追踪与搜索背后的设计记录。
+先從子系統參考了解共享的查詢詞匯，再看追蹤與搜索背后的設計記錄。
 
-- [会话查询子系统参考](../../docs/subsystems/session-query.zh.md)——逻辑记录、过滤器、搜索页、血缘、有界读取与事件关系。
-- [会话查询关系追踪](../../.agents/notes/archived/feature/2026-07-13-session-query-tracing.md)——追踪语义与校验边界。
-- [SQLite FTS5 会话搜索](../../.agents/notes/archived/feature/2026-07-10-sqlite-session-query-provider.md)——搜索语义、对账与 tokenizer 决策。
+- [會話查詢子系統參考](../../docs/subsystems/session-query.zh.md)——邏輯記錄、過濾器、搜索頁、血緣、有界讀取與事件關系。
+- [會話查詢關系追蹤](../../.agents/notes/archived/feature/2026-07-13-session-query-tracing.md)——追蹤語義與校驗邊界。
+- [SQLite FTS5 會話搜索](../../.agents/notes/archived/feature/2026-07-10-sqlite-session-query-provider.md)——搜索語義、對賬與 tokenizer 決策。
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
-无。
+無。

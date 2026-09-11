@@ -1,4 +1,4 @@
----
+﻿---
 description: "Session-telemetry capture seam for deployments and backend authors choosing a reporting backend, mounting redaction rules, or implementing the backend contract."
 kind: "package-library"
 ---

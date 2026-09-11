@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Canonical Session-log feedback for finalized assistant messages.
  * @module @deepseek-ai/dsh-message-feedback
  */

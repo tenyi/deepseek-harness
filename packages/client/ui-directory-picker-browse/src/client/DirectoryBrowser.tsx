@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The in-app workspace-directory browser (figma Harness 813-23126 family): a
  * 680×500 dialog (clamped to short/narrow viewports — the Miller row scrolls
  * sideways, the columns scroll down) whose header carries the title, the selection-path

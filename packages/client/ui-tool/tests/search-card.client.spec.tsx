@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render } from '@testing-library/react'
@@ -245,7 +245,7 @@ describe('SearchRow keyed card', () => {
     expect(searchRows(view.container)).toContain('12: const foo = 1')
     expect(searchKindOf(view.container)).toBe('matches')
     // The card's copy control lives inside the expanded body.
-    expect(view.getByText('复制')).toBeTruthy()
+    expect(view.getByText('復制')).toBeTruthy()
   })
 
   it('expands to the glob path card', () => {

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Integration tests: the REAL `@deepseek-ai/dsh-pwsh-local` executor plus the
  * `pwsh` tool, exercised through `ctx.tools.execute()` with a real PowerShell
  * process. These verify the world — actual commands run, stdout/stderr come

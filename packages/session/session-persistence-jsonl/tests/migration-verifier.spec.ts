@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
+﻿import { afterEach, describe, expect, it, vi } from 'vitest'
 import { verifyCurrentGenerationInWorker } from '../src/migration-verifier.ts'
 
 const state = vi.hoisted(() => ({ workers: [] as unknown[] }))

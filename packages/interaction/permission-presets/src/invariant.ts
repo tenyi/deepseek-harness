@@ -1,4 +1,4 @@
-/** Package-owned permission-preset event invariants. @module @deepseek-ai/dsh-permission-presets/invariant */
+﻿/** Package-owned permission-preset event invariants. @module @deepseek-ai/dsh-permission-presets/invariant */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { Session, SessionEvent } from '@deepseek-ai/dsh-session'

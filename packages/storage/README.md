@@ -1,4 +1,4 @@
----
+﻿---
 description: "The storage group map: durable non-session data through named backends and the typed domain data form, for users and maintainers navigating the group."
 kind: "package-group"
 ---

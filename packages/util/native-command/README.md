@@ -1,4 +1,4 @@
----
+﻿---
 description: "Host-native command and path-opening utilities with shell-free execution, cancellation, desktop detection, and WSL path handoff."
 kind: "package-library"
 ---

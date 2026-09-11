@@ -1,4 +1,4 @@
-/** Short-lived read-handle access to persisted Team member Sessions. */
+﻿/** Short-lived read-handle access to persisted Team member Sessions. */
 
 import type { SessionEvent, SessionHeader, SessionId , SessionLogOffset } from '@deepseek-ai/dsh-session'
 import type { SessionPersistence } from '@deepseek-ai/dsh-session-persistence'

@@ -1,4 +1,4 @@
----
+﻿---
 description: "The unified session-history query service for consumers and backend authors: exact reads, relationship traces, and provider-independent filters over live and durable session logs."
 kind: "package-reference"
 ---

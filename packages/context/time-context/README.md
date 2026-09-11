@@ -1,4 +1,4 @@
----
+﻿---
 description: "Opt-in per-step clock context with the current time, browser zone, and elapsed time, for users and maintainers enabling or tuning the plugin."
 kind: "package-reference"
 ---

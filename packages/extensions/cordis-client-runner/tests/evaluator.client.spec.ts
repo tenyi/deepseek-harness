@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @vitest-environment jsdom
  *
  * Closure evaluation account: the symbol surface a browser half receives, the

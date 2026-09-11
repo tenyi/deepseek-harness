@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Incremental session-log contribution for official DeepSeek LLM API requests.
  * Accepted sequence watermarks live in the canonical log, so restart recovery
  * can conservatively resend uncertain tails without maintaining another store.

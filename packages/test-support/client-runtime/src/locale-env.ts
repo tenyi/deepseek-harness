@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser-language pin for specs that assert localized copy. A fresh
  * LocaleRuntime with no stored preference opens in the language `navigator`
  * asks for, and jsdom reports the runner's own (`en-US`) — so a spec asserting

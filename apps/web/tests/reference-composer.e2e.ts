@@ -1,4 +1,4 @@
-// Web e2e scenario: the shipped composition discovers local files and cold
+﻿// Web e2e scenario: the shipped composition discovers local files and cold
 // sessions through the real Host, groups both domains in the shared @ menu,
 // and projects each pick as a complete inline range without issuing a model call.
 import { mkdir, writeFile } from 'node:fs/promises'

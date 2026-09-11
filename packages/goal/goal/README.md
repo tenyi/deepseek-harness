@@ -1,4 +1,4 @@
----
+﻿---
 description: "The persisted same-session goal service for users and maintainers choosing, configuring, or debugging one durable completion objective per session."
 kind: "package-reference"
 ---

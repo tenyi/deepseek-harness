@@ -1,4 +1,4 @@
-/** Scoped tool that declares filesystem deliveries in their owning Session. */
+﻿/** Scoped tool that declares filesystem deliveries in their owning Session. */
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 import { FsError } from '@deepseek-ai/dsh-fs'

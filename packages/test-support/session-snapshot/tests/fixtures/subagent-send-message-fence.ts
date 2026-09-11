@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Loader fixture that holds the child until its parent's spawn turn ends,
  * then parks the parent until settlement follows its Agent message.
  * @module subagent-send-message-fence

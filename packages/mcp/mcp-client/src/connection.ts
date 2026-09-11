@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Connection supervisor: owns the MCP client/transport generations for one
  * plugin instance, keeps the harness tool registry in sync with the live
  * generation, and — when the connection drops — restarts the configured

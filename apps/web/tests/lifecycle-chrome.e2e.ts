@@ -1,4 +1,4 @@
-// Web e2e scenarios: lifecycle & chrome — the workspace-aware first-send
+﻿// Web e2e scenarios: lifecycle & chrome — the workspace-aware first-send
 // flow over the real wire, reload recovery, and the dark-mode token cascade.
 // One tiny recorded turn (text-only) drives the whole spec: the empty-state
 // hero materializes a real Workspace + Session on first send (the jsdom
@@ -119,9 +119,9 @@ describe('web e2e: lifecycle & chrome (workspace flow / reload / dark mode)', ()
     try {
       await zhPage.goto(scaffold.authenticatedUrl, { waitUntil: 'load' })
       await zhPage.waitForSelector('[class*="frame"]', { timeout: 30_000 })
-      const launcher = zhPage.getByRole('button', { name: '添加文件或调用指令' })
+      const launcher = zhPage.getByRole('button', { name: '添加文件或調用指令' })
       await launcher.click()
-      const menu = zhPage.getByRole('listbox', { name: '触发候选建议' })
+      const menu = zhPage.getByRole('listbox', { name: '觸發候選建議' })
       await menu.getByRole('option').first().waitFor({ timeout: 10_000 })
       await menu.getByRole('status').waitFor({ state: 'hidden', timeout: 10_000 })
       const snapshot = await captureStableAria(zhPage, '[role="listbox"]', scaffold.workspaceCwd)
@@ -136,8 +136,8 @@ describe('web e2e: lifecycle & chrome (workspace flow / reload / dark mode)', ()
   it.skipIf(MODE === 'record').each([
     { locale: 'en-US', token: '/goal', row: 'Goal Set or view the goal for a long-running task', hint: 'describe the objective for a long-running task' },
     { locale: 'en-US', token: '/plan', row: 'Plan Enter or leave plan mode', hint: 'describe your task to generate plan' },
-    { locale: ZH_BROWSER_LOCALE, token: '/目标', row: '目标 goal 设置或查看长期任务目标', hint: '输入目标，智能体将持续执行' },
-    { locale: ZH_BROWSER_LOCALE, token: '/计划', row: '计划 plan 进入或退出计划模式', hint: '描述你的任务以生成计划' },
+    { locale: ZH_BROWSER_LOCALE, token: '/目標', row: '目標 goal 設置或查看長期任務目標', hint: '輸入目標，智能體將持續執行' },
+    { locale: ZH_BROWSER_LOCALE, token: '/計劃', row: '計劃 plan 進入或退出計劃模式', hint: '描述你的任務以生成計劃' },
   ])('keeps $token claimed across separator edits and hides hints during IME composition', async ({ locale, token, row, hint }) => {
     const inputPage = await browser.newPage({ viewport: { width: 1680, height: 1000 }, locale })
     const inputTripwire = watchConsole(inputPage)
@@ -150,8 +150,8 @@ describe('web e2e: lifecycle & chrome (workspace flow / reload / dark mode)', ()
       await inputPage.getByRole('listbox').getByRole('option', { name: row, exact: true }).click()
       await expect.poll(() => input.textContent()).toBe(`${token} `)
       await input.press('End')
-      await inputPage.keyboard.insertText('这是任务')
-      await expect.poll(() => input.textContent()).toBe(`${token} 这是任务`)
+      await inputPage.keyboard.insertText('這是任務')
+      await expect.poll(() => input.textContent()).toBe(`${token} 這是任務`)
       for (let i = 0; i < 5; i++) await input.press('Backspace')
       const tokenText = () => input.locator('[data-lexical-text][style*="warn-label"]').textContent()
       await expect.poll(() => input.textContent()).toBe(token)
@@ -168,8 +168,8 @@ describe('web e2e: lifecycle & chrome (workspace flow / reload / dark mode)', ()
       await expect.poll(shownHint).toBe('none')
       await cdp.send('Input.imeSetComposition', { text: 'zh', selectionStart: 2, selectionEnd: 2 })
       await expect.poll(shownHint).toBe('none')
-      await cdp.send('Input.insertText', { text: '这' })
-      await expect.poll(() => input.textContent()).toBe(`${token} 这`)
+      await cdp.send('Input.insertText', { text: '這' })
+      await expect.poll(() => input.textContent()).toBe(`${token} 這`)
       await expect.poll(shownHint).toBe('none')
       await input.press('Backspace')
       await expect.poll(shownHint).toBe(JSON.stringify(hint))

@@ -1,4 +1,4 @@
-import type { IconProps } from './icons/props.ts'
+﻿import type { IconProps } from './icons/props.ts'
 
 /** Native viewBox of {@link FISH_LOGO_PATH} (width and height in user units). */
 export const FISH_LOGO_VIEWBOX = { width: 23.16, height: 17.04 }

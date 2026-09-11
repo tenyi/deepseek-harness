@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Worker-thread workflow engine. Each run executes its model-written script in
  * an escapable vm context on a fresh worker and bridges `agent()` calls to host
  * subagents. The thread prevents synchronous script work from blocking the host

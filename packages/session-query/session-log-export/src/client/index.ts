@@ -1,4 +1,4 @@
-/** Browser plugin owning Session export download state and its shared modal. */
+﻿/** Browser plugin owning Session export download state and its shared modal. */
 
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'

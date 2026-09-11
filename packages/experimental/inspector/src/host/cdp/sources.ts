@@ -1,4 +1,4 @@
-/** Host Sources are served directly by the Worker-side Node inspector adapter. */
+﻿/** Host Sources are served directly by the Worker-side Node inspector adapter. */
 
 import type { InspectorSourceCapability } from '../../shared/bridge/messages/observation.ts'
 

@@ -1,4 +1,4 @@
-/** Bounded, escalating process shutdown for the long-lived CLI surfaces. */
+﻿/** Bounded, escalating process shutdown for the long-lived CLI surfaces. */
 
 /** Maximum grace allowed for the application tree to dispose before process exit. */
 export const PROCESS_SHUTDOWN_TIMEOUT_MS = 5_000

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Build the minimal CMD environment for one Electron artifact.
  *
  * @param environment Parent environment.

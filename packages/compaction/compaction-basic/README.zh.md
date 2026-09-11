@@ -1,5 +1,5 @@
----
-description: "面向部署场景的自动会话压缩（compaction）：用于选择、调优或排查随 token 压力上升对较早历史进行摘要的方式。"
+﻿---
+description: "面向部署場景的自動會話壓縮（compaction）：用于選擇、調優或排查隨 token 壓力上升對較早歷史進行摘要的方式。"
 kind: "package-reference"
 ---
 
@@ -9,31 +9,31 @@ kind: "package-reference"
 
 ## 概述
 
-本包让长时 agent（智能体）会话在接近模型上下文上限时仍能正常工作。token 压力上升时，它会把最旧的历史压缩为摘要并保留近期消息；上下文溢出错误发生后，它会压缩并重试。你也可以通过 `/compact` 按需压缩，并选择先修剪超大工具输出。压缩使用一次额外的模型请求，并且只保留该请求返回的摘要文本。它无法缩减系统提示词、工具或会话前缀，也无法拆分单个不可分单元（例如一次超大工具调用）。
+本包讓長時 agent（智能體）會話在接近模型上下文上限時仍能正常工作。token 壓力上升時，它會把最舊的歷史壓縮為摘要并保留近期消息；上下文溢出錯誤發生后，它會壓縮并重試。你也可以通過 `/compact` 按需壓縮，并選擇先修剪超大工具輸出。壓縮使用一次額外的模型請求，并且只保留該請求返回的摘要文本。它無法縮減系統提示詞、工具或會話前綴，也無法拆分單個不可分單元（例如一次超大工具調用）。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与暂缓事项](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與暫緩事項](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-在已提供 LLM（大语言模型）、会话存储与 token 测量的组合中挂载本包，即可获得自动会话压缩。随附 `dsh` 基础配置默认启用它；需要控制压缩发生的时机时请显式挂载。
+在已提供 LLM（大語言模型）、會話存儲與 token 測量的組合中掛載本包，即可獲得自動會話壓縮。隨附 `dsh` 基礎配置默認啟用它；需要控制壓縮發生的時機時請顯式掛載。
 
-### 你会得到什么
+### 你會得到什么
 
-默认设置下你会获得四种行为：会话向模型上下文上限增长时自动压缩；提供方确认上下文溢出错误后的恢复（先压缩再重试该请求）；通过 `/compact` 命令按需压缩；以及——挂载修剪器时——压缩前对超大工具输出的修剪。
+默認設置下你會獲得四種行為：會話向模型上下文上限增長時自動壓縮；提供方確認上下文溢出錯誤后的恢復（先壓縮再重試該請求）；通過 `/compact` 命令按需壓縮；以及——掛載修剪器時——壓縮前對超大工具輸出的修剪。
 
-### 最小可用组合
+### 最小可用組合
 
-挂载会话存储、token 测量、可选修剪器、本后端，以及可选的按需命令：
+掛載會話存儲、token 測量、可選修剪器、本后端，以及可選的按需命令：
 
 ```yaml
 - name: '@deepseek-ai/dsh-session'
@@ -43,7 +43,7 @@ kind: "package-reference"
 - name: '@deepseek-ai/dsh-command-compact'
 ```
 
-你可以通过观察会话越过本来会溢出的位置继续工作、以及运行 `/compact` 立即压缩一次来确认成功。如果组合缺少 LLM、会话存储或 token 测量，插件会加载失败。同一个后端可以服务上下文大小不同的模型；用按模型覆盖为每条路由设置各自的阈值与保留：
+你可以通過觀察會話越過本來會溢出的位置繼續工作、以及運行 `/compact` 立即壓縮一次來確認成功。如果組合缺少 LLM、會話存儲或 token 測量，插件會加載失敗。同一個后端可以服務上下文大小不同的模型；用按模型覆蓋為每條路由設置各自的閾值與保留：
 
 ```yaml
 - name: '@deepseek-ai/dsh-compaction-basic'
@@ -57,133 +57,133 @@ kind: "package-reference"
         retainTokens: 2048
 ```
 
-### 调整压缩开始的时机
+### 調整壓縮開始的時機
 
-所有设置都可选。默认在已路由模型上下文窗口的 80% 处开始压缩，并逐字保留最新的 16%；下表是完整的策略面，生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-compaction-basic)是穷尽式真源。
+所有設置都可選。默認在已路由模型上下文窗口的 80% 處開始壓縮，并逐字保留最新的 16%；下表是完整的策略面，生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-compaction-basic)是窮盡式真源。
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `thresholdRatio` | `0.8` | 在 `floor(routedContextWindow × ratio)` 处开始压缩。 |
-| `retainRatio` | `0.16` | 以已路由上下文窗口的一部分表示逐字保留的近期对话；与 `retainTokens` 互斥。 |
-| `retainTokens` | — | 逐字保留的近期对话绝对预算；与 `retainRatio` 互斥，并且必须低于已解析阈值。 |
-| `summarizationProvider` | `''` | 与 `summarizationModel` 一起设置；空对使用最新已路由请求目标，再回退到 `AgentOptions` 对。 |
-| `summarizationModel` | `''` | 与 `summarizationProvider` 一起设置；空对使用最新已路由请求目标，再回退到 `AgentOptions` 对。 |
-| `maxTokens` | `8192` | 摘要请求的输出上限；可包含推理 token。 |
-| `compactionRetries` | `1` | 压力仍高于阈值时，在首次压缩后进行的额外尝试次数。 |
-| `maxOverflowRetries` | `1` | 已确认上下文窗口溢出后的最大重试次数；`0` 只禁用恢复。 |
-| `modelPolicies` | `[]` | 针对个别模型路由的精确 `{ provider, model, ...partialPolicy }` 覆盖。 |
-| `auto` | `true` | 启用自动压缩与溢出恢复；设为 `false` 则仅手动执行。 |
+| `thresholdRatio` | `0.8` | 在 `floor(routedContextWindow × ratio)` 處開始壓縮。 |
+| `retainRatio` | `0.16` | 以已路由上下文窗口的一部分表示逐字保留的近期對話；與 `retainTokens` 互斥。 |
+| `retainTokens` | — | 逐字保留的近期對話絕對預算；與 `retainRatio` 互斥，并且必須低于已解析閾值。 |
+| `summarizationProvider` | `''` | 與 `summarizationModel` 一起設置；空對使用最新已路由請求目標，再回退到 `AgentOptions` 對。 |
+| `summarizationModel` | `''` | 與 `summarizationProvider` 一起設置；空對使用最新已路由請求目標，再回退到 `AgentOptions` 對。 |
+| `maxTokens` | `8192` | 摘要請求的輸出上限；可包含推理 token。 |
+| `compactionRetries` | `1` | 壓力仍高于閾值時，在首次壓縮后進行的額外嘗試次數。 |
+| `maxOverflowRetries` | `1` | 已確認上下文窗口溢出后的最大重試次數；`0` 只禁用恢復。 |
+| `modelPolicies` | `[]` | 針對個別模型路由的精確 `{ provider, model, ...partialPolicy }` 覆蓋。 |
+| `auto` | `true` | 啟用自動壓縮與溢出恢復；設為 `false` 則僅手動執行。 |
 
-配置错误会快速失败：未知设置、重复的按模型覆盖、两种保留形式同时出现，或比例保留量不低于阈值，都会在加载时拒绝插件。任何绝对 `retainTokens` 预算——顶层或按模型——不低于其阈值时，都会在该模型首次使用时失败，因为该比较需要模型的上下文大小。
+配置錯誤會快速失敗：未知設置、重復的按模型覆蓋、兩種保留形式同時出現，或比例保留量不低于閾值，都會在加載時拒絕插件。任何絕對 `retainTokens` 預算——頂層或按模型——不低于其閾值時，都會在該模型首次使用時失敗，因為該比較需要模型的上下文大小。
 
-### 压缩运行时会发生什么
+### 壓縮運行時會發生什么
 
-最旧的平衡范围会被替换为一条摘要消息，近期尾部保持逐字不变；对话从摘要继续。操作会报告压缩了多少历史项以及估算释放的 token 数。如果没有任何内容可以安全压缩——例如整个对话就是一个不可分单元——则不会有任何改变，也不会向会话日志写入任何内容。如果没有模型可以撰写摘要（既未配置目标，也还没有已路由请求），压缩会失败并给出清晰错误，提示你配置摘要提供方与模型，或先路由一次请求。
+最舊的平衡范圍會被替換為一條摘要消息，近期尾部保持逐字不變；對話從摘要繼續。操作會報告壓縮了多少歷史項以及估算釋放的 token 數。如果沒有任何內容可以安全壓縮——例如整個對話就是一個不可分單元——則不會有任何改變，也不會向會話日志寫入任何內容。如果沒有模型可以撰寫摘要（既未配置目標，也還沒有已路由請求），壓縮會失敗并給出清晰錯誤，提示你配置摘要提供方與模型，或先路由一次請求。
 
-### 通过 /compact 按需压缩
+### 通過 /compact 按需壓縮
 
-挂载 `dsh-command-compact` 后，在聊天 UI 中输入 `/compact` 即可立即压缩，即使未达到压力阈值。命令会报告压缩了多少历史项以及估算节省的 token 数。当 agent 正在轮次中或压缩已在运行时，`/compact` 会报告压缩暂不可用；运行期间你发送的提示词会被接受，并在压缩结束后才开始。
+掛載 `dsh-command-compact` 后，在聊天 UI 中輸入 `/compact` 即可立即壓縮，即使未達到壓力閾值。命令會報告壓縮了多少歷史項以及估算節省的 token 數。當 agent 正在輪次中或壓縮已在運行時，`/compact` 會報告壓縮暫不可用；運行期間你發送的提示詞會被接受，并在壓縮結束后才開始。
 
-### 修剪超大工具输出
+### 修剪超大工具輸出
 
-在本包之前挂载 `dsh-compaction-tool-result-pruner`，即可在压缩过程中修剪超大工具结果。修剪不发起模型调用，并可能完全省去摘要：当修剪后的对话在阈值之内时，压缩会跳过摘要。修剪只在压缩触发条件满足后运行——低于压力的对话绝不会被触碰。
+在本包之前掛載 `dsh-compaction-tool-result-pruner`，即可在壓縮過程中修剪超大工具結果。修剪不發起模型調用，并可能完全省去摘要：當修剪后的對話在閾值之內時，壓縮會跳過摘要。修剪只在壓縮觸發條件滿足后運行——低于壓力的對話絕不會被觸碰。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释后端背后的设计决策；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋后端背后的設計決策；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-该后端建立在四项承诺之上：
+該后端建立在四項承諾之上：
 
-- **一个测量服务为每个决策定价。** 单例 `ctx.tokenMeter` 会在同一个已消费日志 revision 上测量最新规范已记录 envelope 与当前表层。路由适配器声明请求图片定价时，meter 会将其应用于图片历史。压力、近期尾部保留、范围选择与缩减验证使用同一套路由定价的节点数值；已记录的替换影子价仍使用与路由无关的启发式规则，使纯投影 fold 保持一致。
-- **日志记录的标记对就是事务。** 所有入口点共享一个先记录标记的区域事务：验证范围与活动锁，同步追加 `compaction/start`，准备并等待摘要，重新验证，再追加 `compaction/summary` 与替换，最后恰好进行一次闭合尝试。自动调用与显式范围调用要求数字标识的开放轮次归属与整个表层稳定；`compactNow()` 会预留空闲接纳，使用 `turn: null`，允许所选 span 之外追加仅追加上下文，flush 每次已闭合尝试，并在 `finally` 中释放接纳预留。
-- **摘要复用提供方的热前缀。** 逐字回放 surface 节点 0 处 `system/message` 所承载的系统提示词、上次已路由请求的工具与已遮蔽区域消息，使辅助调用成为会话的真正前缀，因此只有尾随指令与摘要输出未缓存。
-- **`summarize()` 是唯一的子类钩子。** 基于模板或远程摘要器的子类可以覆盖它，同时压力、保留、被引用的源事件、缩减验证与已遮蔽 token 计量仍由 token meter 负责。
+- **一個測量服務為每個決策定價。** 單例 `ctx.tokenMeter` 會在同一個已消費日志 revision 上測量最新規范已記錄 envelope 與當前表層。路由適配器聲明請求圖片定價時，meter 會將其應用于圖片歷史。壓力、近期尾部保留、范圍選擇與縮減驗證使用同一套路由定價的節點數值；已記錄的替換影子價仍使用與路由無關的啟發式規則，使純投影 fold 保持一致。
+- **日志記錄的標記對就是事務。** 所有入口點共享一個先記錄標記的區域事務：驗證范圍與活動鎖，同步追加 `compaction/start`，準備并等待摘要，重新驗證，再追加 `compaction/summary` 與替換，最后恰好進行一次閉合嘗試。自動調用與顯式范圍調用要求數字標識的開放輪次歸屬與整個表層穩定；`compactNow()` 會預留空閑接納，使用 `turn: null`，允許所選 span 之外追加僅追加上下文，flush 每次已閉合嘗試，并在 `finally` 中釋放接納預留。
+- **摘要復用提供方的熱前綴。** 逐字回放 surface 節點 0 處 `system/message` 所承載的系統提示詞、上次已路由請求的工具與已遮蔽區域消息，使輔助調用成為會話的真正前綴，因此只有尾隨指令與摘要輸出未緩存。
+- **`summarize()` 是唯一的子類鉤子。** 基于模板或遠程摘要器的子類可以覆蓋它，同時壓力、保留、被引用的源事件、縮減驗證與已遮蔽 token 計量仍由 token meter 負責。
 
-### 自动触发与溢出恢复
+### 自動觸發與溢出恢復
 
-当 `auto: true` 时，串行 `agent/pre-step` listener 会在请求派生前检查压力：它通过 `ctx.tokenMeter` 为最新持久路由请求 envelope 定价，当压力越过路由模型的阈值时，先剪枝，再在保留已定价近期尾部的同时摘要最旧的平衡范围。每个选定范围都从第一个不是 `system/message` 的 surface 节点开始，因此位于 surface 节点 0 的系统提示词永不会被遮蔽；由历史内提示词更新追加的后续 `system/message` 是普通历史，范围可以遮蔽它，agent loop（智能体循环）的投影随后会在二者文本不同时用当前提示词替换节点 0（[决策规则](../../core/agent-loop/README.zh.md#understand-the-implementation)）。`agent/request-error` listener 响应提供方确认的 `CONTEXT_WINDOW_EXCEEDED`：它绕过常规阈值与保留策略，尝试一次最大平衡头部缩减，并且只在表层替换 generation 前进后才授权重试。取消全程保持最终决定权。
+當 `auto: true` 時，串行 `agent/pre-step` listener 會在請求派生前檢查壓力：它通過 `ctx.tokenMeter` 為最新持久路由請求 envelope 定價，當壓力越過路由模型的閾值時，先剪枝，再在保留已定價近期尾部的同時摘要最舊的平衡范圍。每個選定范圍都從第一個不是 `system/message` 的 surface 節點開始，因此位于 surface 節點 0 的系統提示詞永不會被遮蔽；由歷史內提示詞更新追加的后續 `system/message` 是普通歷史，范圍可以遮蔽它，agent loop（智能體循環）的投影隨后會在二者文本不同時用當前提示詞替換節點 0（[決策規則](../../core/agent-loop/README.zh.md#understand-the-implementation)）。`agent/request-error` listener 響應提供方確認的 `CONTEXT_WINDOW_EXCEEDED`：它繞過常規閾值與保留策略，嘗試一次最大平衡頭部縮減，并且只在表層替換 generation 前進后才授權重試。取消全程保持最終決定權。
 
-压力策略从拥有持久路由的适配器解析容量。适配器无法为有效动态路由返回容量时，手动压力路径会抛出目标特定配置错误；自动 listener 会对该精确目标警告一次，并携带完整历史继续。
+壓力策略從擁有持久路由的適配器解析容量。適配器無法為有效動態路由返回容量時，手動壓力路徑會拋出目標特定配置錯誤；自動 listener 會對該精確目標警告一次，并攜帶完整歷史繼續。
 
-### 摘要机制
+### 摘要機制
 
-直接 `ctx.llm.stream()` 调用使用已配置的提供方／模型对与上限，回退到最新已记录请求目标，然后再回退到 `AgentOptions` 对，而不运行仅用于 agent loop 的 `agent/request` 扩展点。该调用将 surface 节点 0 处派生的 `system/message` 作为 `messages` 的首项回放，后接已遮蔽区域消息（包括位于其 surface 位置的被遮蔽历史内 `system/message`），并逐字携带 header 的工具——包括所选适配器必须解析或明确拒绝的图片引用——并将压缩指令作为最后一条 user 消息追加，从而复用提供方的热前缀 cache，而非使它失效。空内容系统头节点不贡献消息，但仍处于压缩范围之外。调用将 `GenerateOptions.purpose` 设为 `compaction`；只有返回文本进入检查点，推理与工具调用都会被排除。图片输出会以 `UNSUPPORTED_CONTENT` 失败，而不是消失。替换 user 消息用 `<compacted-summary>` 标签框定摘要；原始摘要保留在 `compaction/summary` 事件上。
+直接 `ctx.llm.stream()` 調用使用已配置的提供方／模型對與上限，回退到最新已記錄請求目標，然后再回退到 `AgentOptions` 對，而不運行僅用于 agent loop 的 `agent/request` 擴展點。該調用將 surface 節點 0 處派生的 `system/message` 作為 `messages` 的首項回放，后接已遮蔽區域消息（包括位于其 surface 位置的被遮蔽歷史內 `system/message`），并逐字攜帶 header 的工具——包括所選適配器必須解析或明確拒絕的圖片引用——并將壓縮指令作為最后一條 user 消息追加，從而復用提供方的熱前綴 cache，而非使它失效。空內容系統頭節點不貢獻消息，但仍處于壓縮范圍之外。調用將 `GenerateOptions.purpose` 設為 `compaction`；只有返回文本進入檢查點，推理與工具調用都會被排除。圖片輸出會以 `UNSUPPORTED_CONTENT` 失敗，而不是消失。替換 user 消息用 `<compacted-summary>` 標簽框定摘要；原始摘要保留在 `compaction/summary` 事件上。
 
-### 区域事务
+### 區域事務
 
-事务验证表层范围与持久锁，追加 `compaction/start`，通过钩子生成摘要，重新验证稳定性（自动调用要求整个表层、手动调用只要求所选范围），拒绝不缩小源内容的摘要，追加 `compaction/summary` 与替换 `user/message`，并恰好进行一次 `compaction/end` 尝试。活动的未匹配 start 是持久锁：位于较新 `session/end-seed` 之前的未匹配标记是先前生命周期留下的陈旧证据，不会阻塞；位于该边界之后的标记报告 `busy`。闭合失败会有意留下阻塞性的未匹配标记。完成清理与持久化后，取消仍具有最终决定权。
+事務驗證表層范圍與持久鎖，追加 `compaction/start`，通過鉤子生成摘要，重新驗證穩定性（自動調用要求整個表層、手動調用只要求所選范圍），拒絕不縮小源內容的摘要，追加 `compaction/summary` 與替換 `user/message`，并恰好進行一次 `compaction/end` 嘗試。活動的未匹配 start 是持久鎖：位于較新 `session/end-seed` 之前的未匹配標記是先前生命周期留下的陳舊證據，不會阻塞；位于該邊界之后的標記報告 `busy`。閉合失敗會有意留下阻塞性的未匹配標記。完成清理與持久化后，取消仍具有最終決定權。
 
 ### 配置解析
 
-`resolveConfig` 验证并分离默认值，`resolveTargetPolicy` 将精确的提供方／模型覆盖合并到默认值之上，`resolveCompactSpec` 使用适配器拥有的上下文容量将合并后的策略缩放为具体 token 预算。策略解析绝不咨询模型发现（`listModels()`）；只有持久路由的容量才重要。
+`resolveConfig` 驗證并分離默認值，`resolveTargetPolicy` 將精確的提供方／模型覆蓋合并到默認值之上，`resolveCompactSpec` 使用適配器擁有的上下文容量將合并后的策略縮放為具體 token 預算。策略解析絕不咨詢模型發現（`listModels()`）；只有持久路由的容量才重要。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：`BasicCompactionEngine`、自动 listener、入口点分发 |
-| [`src/region.ts`](src/region.ts) | 保留选择与共享的先记录标记压缩事务 |
-| [`src/summarizer.ts`](src/summarizer.ts) | 默认 `ctx.llm.stream()` 摘要、检查点框定、安全摘要投影 |
-| [`src/config.ts`](src/config.ts) | 加载时验证与路由模型策略解析 |
-| [`src/types.ts`](src/types.ts) | `BasicCompactionConfig` 与已解析策略词汇 |
-| — | 不发布运行时不变式配套条目；除所属 seam 强制执行的约定外，本包不公开独立事件序列或可变数据关系。持久标记对仍可在会话日志中观察。 |
+| [`src/index.ts`](src/index.ts) | 插件入口：`BasicCompactionEngine`、自動 listener、入口點分發 |
+| [`src/region.ts`](src/region.ts) | 保留選擇與共享的先記錄標記壓縮事務 |
+| [`src/summarizer.ts`](src/summarizer.ts) | 默認 `ctx.llm.stream()` 摘要、檢查點框定、安全摘要投影 |
+| [`src/config.ts`](src/config.ts) | 加載時驗證與路由模型策略解析 |
+| [`src/types.ts`](src/types.ts) | `BasicCompactionConfig` 與已解析策略詞匯 |
+| — | 不發布運行時不變式配套條目；除所屬 seam 強制執行的約定外，本包不公開獨立事件序列或可變數據關系。持久標記對仍可在會話日志中觀察。 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下页面；它们从共享 seam 逐步进入可选配套工具与决策证据。
+當包級約定不夠用時閱讀以下頁面；它們從共享 seam 逐步進入可選配套工具與決策證據。
 
-- [压缩 seam](../compaction/README.zh.md)——本后端实现的压缩约定。
-- [压缩子系统参考](../../../docs/subsystems/compaction.zh.md)——压缩词汇、结果与服务行为。
-- [工具结果修剪器](../compaction-tool-result-pruner/README.zh.md)——先修剪超大工具输出的可选配套工具。
-- [人类 /compact 命令](../command-compact/README.zh.md)——无需等待压力的按需压缩。
-- [Token meter](../../llm/token-meter/README.zh.md)——决定何时压缩的测量服务。
-- [生成配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-compaction-basic)——每个受支持配置字段及其源声明。
+- [壓縮 seam](../compaction/README.zh.md)——本后端實現的壓縮約定。
+- [壓縮子系統參考](../../../docs/subsystems/compaction.zh.md)——壓縮詞匯、結果與服務行為。
+- [工具結果修剪器](../compaction-tool-result-pruner/README.zh.md)——先修剪超大工具輸出的可選配套工具。
+- [人類 /compact 命令](../command-compact/README.zh.md)——無需等待壓力的按需壓縮。
+- [Token meter](../../llm/token-meter/README.zh.md)——決定何時壓縮的測量服務。
+- [生成配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-compaction-basic)——每個受支持配置字段及其源聲明。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### 会话历史
+### 會話歷史
 
-#### 模型看到的内容
+#### 模型看到的內容
 
-成功步骤越过阈值后，如果已加载可选修剪器，超大工具结果会先被改写。如果仍需摘要，下一个请求会收到下方检查点前导、一个空行、`<compacted-summary>`、根据数据生成的摘要以及 `</compacted-summary>`。溢出恢复会根据使表层前进的任何替换重建立即重试。检查点会替换已选较早范围，后面跟随已保留的近期单元。
+成功步驟越過閾值后，如果已加載可選修剪器，超大工具結果會先被改寫。如果仍需摘要，下一個請求會收到下方檢查點前導、一個空行、`<compacted-summary>`、根據數據生成的摘要以及 `</compacted-summary>`。溢出恢復會根據使表層前進的任何替換重建立即重試。檢查點會替換已選較早范圍，后面跟隨已保留的近期單元。
 
-##### 会话检查点前导
+##### 會話檢查點前導
 
 ```markdown
 This is an automatically generated checkpoint condensing an earlier span of the conversation to free up context. Treat the captured context as established background and build on it without restating it. Continue the task directly from the messages that follow, without acknowledging this checkpoint.
 ```
 
-#### Token 影响
+#### Token 影響
 
-不依赖模型的剪枝可以完全避免辅助调用；否则它会在摘要替换较早范围之前缩减该调用的 transcript（文本记录）。替换会缩减未来输入历史，而非追加第二份副本。摘要会保留到后续压缩将其替换，但不可分的非工具单元仍可能超出预算。
+不依賴模型的剪枝可以完全避免輔助調用；否則它會在摘要替換較早范圍之前縮減該調用的 transcript（文本記錄）。替換會縮減未來輸入歷史，而非追加第二份副本。摘要會保留到后續壓縮將其替換，但不可分的非工具單元仍可能超出預算。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-它是替换，而非仅追加。每个检查点都会使从第一个已替换历史 token 起的复用失效；该范围之前未更改的请求前缀仍可复用。
+它是替換，而非僅追加。每個檢查點都會使從第一個已替換歷史 token 起的復用失效；該范圍之前未更改的請求前綴仍可復用。
 
-### 辅助摘要器请求
+### 輔助摘要器請求
 
-#### 模型看到的内容
+#### 模型看到的內容
 
-摘要模型会接收逐字回放的会话：与上次已路由请求为已遮蔽区域发送的相同系统提示词、工具 schema 与消息，后面跟随一条最终 user 消息，即下方压缩指令。会话模型绝不会看到该私有请求或其推理；只有返回文本会被存储。
+摘要模型會接收逐字回放的會話：與上次已路由請求為已遮蔽區域發送的相同系統提示詞、工具 schema 與消息，后面跟隨一條最終 user 消息，即下方壓縮指令。會話模型絕不會看到該私有請求或其推理；只有返回文本會被存儲。
 
-##### 压缩指令（最终 user 消息）
+##### 壓縮指令（最終 user 消息）
 
 ```markdown
 You are now acting as a compaction engine for this AI coding assistant. Condense the conversation ABOVE into a structured checkpoint that lets another model resume the work with no loss of essential context.
@@ -222,37 +222,37 @@ Rules:
 - If the conversation already contains a <compacted-summary> block, it is a PRIOR checkpoint. Do not copy it forward verbatim: preserve still-true facts, drop stale ones, and merge newer information into a single consolidated summary under the same structure.
 ```
 
-#### Token 影响
+#### Token 影響
 
-这是一次独立模型调用：输入是已回放会话前缀加固定指令，输出受 `maxTokens` 限制。收敛重试可能多次支付这项成本。
+這是一次獨立模型調用：輸入是已回放會話前綴加固定指令，輸出受 `maxTokens` 限制。收斂重試可能多次支付這項成本。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-已回放系统提示词、工具与已遮蔽区域消息与会话最后一个已路由请求逐字匹配，因此提供方的热前缀 cache 可复用至尾随指令之前；只有该指令与摘要输出未缓存。将摘要器路由到不同提供方／模型，或压缩非头部范围，都会放弃该复用。
+已回放系統提示詞、工具與已遮蔽區域消息與會話最后一個已路由請求逐字匹配，因此提供方的熱前綴 cache 可復用至尾隨指令之前；只有該指令與摘要輸出未緩存。將摘要器路由到不同提供方／模型，或壓縮非頭部范圍，都會放棄該復用。
 
-## 已知限制与暂缓事项
+## 已知限制與暫緩事項
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明自动压缩何时不合适，或何时需要特别注意；它们是当前包约束。
+這些限制說明自動壓縮何時不合適，或何時需要特別注意；它們是當前包約束。
 
-- **计量准确度取决于固定启发式规则**——可复用提供方用量缺失时，会回退到字符数加结构开销，而非精确的 token 化；只有在适配器声明了请求图片定价的路由上，图片出现处才携带提供方精确的视觉 token。
-- **溢出分类由适配器维护**——提供方措辞可能改变；两个 DeepSeek 适配器将可识别的上下文限制失败规范化为 `CONTEXT_WINDOW_EXCEEDED`。
-- **部分不可分单元与仅 envelope 溢出仍不在表层压缩范围内**——恢复无法缩减系统／工具／前缀、拆分不可分的非工具节点，或修复不可剪枝剩余部分仍超出窗口的工具单元。可选 pruner 可以缩减原本不可分工具对内的文本型工具结果主体。
-- **`compactRegion` 要求存在未结束的轮次**——在完全关闭的会话上手动调用会抛出异常（「no open turn」），而不是执行压缩。
-- **摘要失败会保留最新持久表层**——任何替换前，自动路径会记录警告，并携带完整超预算历史继续。如果剪枝已落地，后续摘要失败会从该持久剪枝表层继续。因达到 `maxTokens` 而发生的摘要截断（隐藏推理 token 可能会耗尽该额度）遵循同一规则。
+- **計量準確度取決于固定啟發式規則**——可復用提供方用量缺失時，會回退到字符數加結構開銷，而非精確的 token 化；只有在適配器聲明了請求圖片定價的路由上，圖片出現處才攜帶提供方精確的視覺 token。
+- **溢出分類由適配器維護**——提供方措辭可能改變；兩個 DeepSeek 適配器將可識別的上下文限制失敗規范化為 `CONTEXT_WINDOW_EXCEEDED`。
+- **部分不可分單元與僅 envelope 溢出仍不在表層壓縮范圍內**——恢復無法縮減系統／工具／前綴、拆分不可分的非工具節點，或修復不可剪枝剩余部分仍超出窗口的工具單元。可選 pruner 可以縮減原本不可分工具對內的文本型工具結果主體。
+- **`compactRegion` 要求存在未結束的輪次**——在完全關閉的會話上手動調用會拋出異常（「no open turn」），而不是執行壓縮。
+- **摘要失敗會保留最新持久表層**——任何替換前，自動路徑會記錄警告，并攜帶完整超預算歷史繼續。如果剪枝已落地，后續摘要失敗會從該持久剪枝表層繼續。因達到 `maxTokens` 而發生的摘要截斷（隱藏推理 token 可能會耗盡該額度）遵循同一規則。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-本开发备注是维护者的工作上下文，明确不具权威性；已交付行为以上文、包代码与所链接的 Agent Note 为准。
+本開發備注是維護者的工作上下文，明確不具權威性；已交付行為以上文、包代碼與所鏈接的 Agent Note 為準。
 
-- **默认比例，尚未决定**——`thresholdRatio: 0.8` 与 `retainRatio: 0.16` 是固定默认值；存在通过 `modelPolicies` 进行的按模型调优，但没有基于语料的理想值指引记录。
-- **tokenizer 精确测量，暂缓**——token meter 每 token 四字符的启发式对 CJK 文本与 JSON Schema 定价偏低；精确 token 化仍是测量服务的开放方向。
-- **规范错误之外的溢出恢复，尚未决定**——恢复仅针对 `CONTEXT_WINDOW_EXCEEDED` 触发；其他提供方侧上下文失败不参与分类。
+- **默認比例，尚未決定**——`thresholdRatio: 0.8` 與 `retainRatio: 0.16` 是固定默認值；存在通過 `modelPolicies` 進行的按模型調優，但沒有基于語料的理想值指引記錄。
+- **tokenizer 精確測量，暫緩**——token meter 每 token 四字符的啟發式對 CJK 文本與 JSON Schema 定價偏低；精確 token 化仍是測量服務的開放方向。
+- **規范錯誤之外的溢出恢復，尚未決定**——恢復僅針對 `CONTEXT_WINDOW_EXCEEDED` 觸發；其他提供方側上下文失敗不參與分類。
 
 </details>

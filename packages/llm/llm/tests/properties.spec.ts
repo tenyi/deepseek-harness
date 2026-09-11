@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Property-based tests for the BlockAssembler (the property-testing Agent Note).
  *
  * The assembler is protocol-shaped: arbitrary interleavings of block-start,

@@ -1,4 +1,4 @@
-- navigation "Session hierarchy":
+﻿- navigation "Session hierarchy":
   - button "Seeded turn" [disabled]
   - text: /
   - button "1 subagent":

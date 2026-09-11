@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Assembled-app regressions for Session-format lifecycle behavior: released v0
  * migrates before resume without changing its source, while a future format or
  * unknown required event fails loud through the real Loader composition.

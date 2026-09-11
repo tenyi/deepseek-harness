@@ -1,4 +1,4 @@
-/** Realm-stable translation between Client catalog keys and common Runtime script keys. */
+﻿/** Realm-stable translation between Client catalog keys and common Runtime script keys. */
 
 import { inspectorId } from '../../../shared/identity.ts'
 import type { RuntimeScriptKey } from '../../../shared/cdp/ids.ts'

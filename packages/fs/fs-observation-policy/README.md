@@ -1,4 +1,4 @@
----
+﻿---
 description: "The read-before-edit filesystem policy plugin for deployments and maintainers choosing or debugging guarded write and edit behavior."
 kind: "package-reference"
 ---

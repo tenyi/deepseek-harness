@@ -1,4 +1,4 @@
-/** Worker projection from Cordis snapshots to a connection-neutral semantic DOM. */
+﻿/** Worker projection from Cordis snapshots to a connection-neutral semantic DOM. */
 
 import type { CordisTreeNode } from '../../../../shared/cordis/snapshot.ts'
 import type { InspectorSourceDescriptor } from '../../../../shared/bridge/messages/observation.ts'

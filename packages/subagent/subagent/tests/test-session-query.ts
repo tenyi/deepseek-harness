@@ -1,4 +1,4 @@
-/** Minimal concrete Session query for tests that exercise only corpus and point reads. */
+﻿/** Minimal concrete Session query for tests that exercise only corpus and point reads. */
 
 import SessionQueryEngine from '@deepseek-ai/dsh-session-query'
 

@@ -1,5 +1,5 @@
----
-description: "存储枢纽（ctx.storage）：面向选择、挂载或排查具名存储后端与数据形式设施的组合方与维护者。"
+﻿---
+description: "存儲樞紐（ctx.storage）：面向選擇、掛載或排查具名存儲后端與數據形式設施的組合方與維護者。"
 kind: "package-reference"
 ---
 
@@ -9,29 +9,29 @@ kind: "package-reference"
 
 ## 概述
 
-使用 `dsh-storage` 持久保存类型化应用数据，而不将其加入会话历史。将它与受支持的存储介质和领域配置一同挂载后，调用方即可通过公共 `ctx.storageDomain` API 访问记录。工作区记录、会话伴随数据或其他必须在重启后保留且不应成为会话事件的应用状态适合使用它。它仅供宿主代码使用，对模型没有可见影响；无需此类数据的组合可以省略它。
+使用 `dsh-storage` 持久保存類型化應用數據，而不將其加入會話歷史。將它與受支持的存儲介質和領域配置一同掛載后，調用方即可通過公共 `ctx.storageDomain` API 訪問記錄。工作區記錄、會話伴隨數據或其他必須在重啟后保留且不應成為會話事件的應用狀態適合使用它。它僅供宿主代碼使用，對模型沒有可見影響；無需此類數據的組合可以省略它。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-使用本包为组合提供持久的非会话存储：把它与后端和数据形式包一起挂载，宿主包即可通过 `ctx.storageDomain` 读写经过校验的记录。枢纽自身不增加任何可观察行为——它是让整个家族运转起来的交汇点——以下内容就是组合从它得到的一切。
+使用本包為組合提供持久的非會話存儲：把它與后端和數據形式包一起掛載，宿主包即可通過 `ctx.storageDomain` 讀寫經過校驗的記錄。樞紐自身不增加任何可觀察行為——它是讓整個家族運轉起來的交匯點——以下內容就是組合從它得到的一切。
 
-### 何时使用
+### 何時使用
 
-当组合中任何包需要持久化会话事件日志以外的数据——工作区记录、会话伴随数据——时就挂载枢纽。领域数据形式与两个内置后端都依赖它，因此组合的存储行是 `storage` 加一个后端加 `storage-domain`。没有任何此类数据的组合可以省略整个组；agent loop（智能体循环）永远不需要它。
+當組合中任何包需要持久化會話事件日志以外的數據——工作區記錄、會話伴隨數據——時就掛載樞紐。領域數據形式與兩個內置后端都依賴它，因此組合的存儲行是 `storage` 加一個后端加 `storage-domain`。沒有任何此類數據的組合可以省略整個組；agent loop（智能體循環）永遠不需要它。
 
-### 最小组合
+### 最小組合
 
 ```yaml
 - name: '@deepseek-ai/dsh-storage'
@@ -43,100 +43,100 @@ kind: "package-reference"
     backend: json
 ```
 
-这些行加载后，`json` 后端注册自身、`domain` 数据形式挂载；诸如 `dsh-workspace` 之类的消费方随后在已路由后端上打开自己的领域，并通过 `ctx.storageDomain` 读写记录。多个后端可以并排保持挂载；哪个后端服务哪个领域由领域数据形式的配置决定，绝非枢纽的全局选择。
+這些行加載后，`json` 后端注冊自身、`domain` 數據形式掛載；諸如 `dsh-workspace` 之類的消費方隨后在已路由后端上打開自己的領域，并通過 `ctx.storageDomain` 讀寫記錄。多個后端可以并排保持掛載；哪個后端服務哪個領域由領域數據形式的配置決定，絕非樞紐的全局選擇。
 
 ### 你能得到什么
 
-- 已挂载的后端按名称解析，因此同时挂载两个内置后端的组合可以把每个领域按配置路由到任一种介质。
-- 已挂载的数据形式解析为 `ctx.storage.<form>`；领域数据形式还直接以 `ctx.storageDomain` 对外服务。
-- 错误配置会以稳定的 `StorageError` 代码明确报错，而不是静默推迟：未知的后端名称、在其所有者挂载前读取数据形式、或重复注册都会抛出异常。
+- 已掛載的后端按名稱解析，因此同時掛載兩個內置后端的組合可以把每個領域按配置路由到任一種介質。
+- 已掛載的數據形式解析為 `ctx.storage.<form>`；領域數據形式還直接以 `ctx.storageDomain` 對外服務。
+- 錯誤配置會以穩定的 `StorageError` 代碼明確報錯，而不是靜默推遲：未知的后端名稱、在其所有者掛載前讀取數據形式、或重復注冊都會拋出異常。
 
-### 失败与恢复
+### 失敗與恢復
 
-- `backend-not-found`——领域数据形式路由到未挂载的后端；请添加后端包。数据形式会等待所有已配置后端注册，因此行序不会造成失败。
-- `form-not-mounted`——消费方在 `dsh-storage-domain` 加载前读取 `ctx.storage.domain`；请把领域行放在消费方之前。
-- `duplicate-backend`／`duplicate-mount`——同一名称或形式注册了两次；这是组合错误，会明确报错。
+- `backend-not-found`——領域數據形式路由到未掛載的后端；請添加后端包。數據形式會等待所有已配置后端注冊，因此行序不會造成失敗。
+- `form-not-mounted`——消費方在 `dsh-storage-domain` 加載前讀取 `ctx.storage.domain`；請把領域行放在消費方之前。
+- `duplicate-backend`／`duplicate-mount`——同一名稱或形式注冊了兩次；這是組合錯誤，會明確報錯。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-枢纽是一张纯注册表，拥有两个面，设计目标是后端与数据形式可以独立替换，而枢纽无需了解它们的内部实现。
+樞紐是一張純注冊表，擁有兩個面，設計目標是后端與數據形式可以獨立替換，而樞紐無需了解它們的內部實現。
 
-### 设计理念
+### 設計理念
 
-- **后端拥有介质，数据形式拥有语义。** 枢纽从不执行 IO；它只持有名称 → 后端表和形式名 → 设施表。后端包注册其介质所有者，数据形式包挂载其设施，双方都不需要对方的细节。
-- **多个后端并排共存。** 哪个后端服务哪个消费方由消费方自身的配置决定（领域数据形式的路由表），绝非枢纽全局的二选一。
-- **注册与挂载都是 effect。** `register()` 与 `mount()` 返回资源释放函数；释放只移除该次注册的贡献，且不会关闭后端——由所属插件在注销后关闭。
-- **激活不会与注册竞争。** 每个后端插件还会发布一个仅用于生命周期的服务键（`storage.backend.<name>`）；数据形式提供方注入这些键，因此领域数据形式只在所有已配置后端注册后激活，而调用方仍通过枢纽按名称解析后端。
+- **后端擁有介質，數據形式擁有語義。** 樞紐從不執行 IO；它只持有名稱 → 后端表和形式名 → 設施表。后端包注冊其介質所有者，數據形式包掛載其設施，雙方都不需要對方的細節。
+- **多個后端并排共存。** 哪個后端服務哪個消費方由消費方自身的配置決定（領域數據形式的路由表），絕非樞紐全局的二選一。
+- **注冊與掛載都是 effect。** `register()` 與 `mount()` 返回資源釋放函數；釋放只移除該次注冊的貢獻，且不會關閉后端——由所屬插件在注銷后關閉。
+- **激活不會與注冊競爭。** 每個后端插件還會發布一個僅用于生命周期的服務鍵（`storage.backend.<name>`）；數據形式提供方注入這些鍵，因此領域數據形式只在所有已配置后端注冊后激活，而調用方仍通過樞紐按名稱解析后端。
 
-### 后端约定
+### 后端約定
 
-[`src/backend.ts`](src/backend.ts) 是后端实现者的规范性约定，由 `tests/contract.ts` 中的共享一致性套件逐条款检查。一个后端只拥有一种介质，并暴露可选的数据形状分面；`kv` 是唯一的分面，打开单元即可获得一个带版本、全局单例的 schema 句柄，其每次调用均具备原子性，并在完成时保证持久化。单元名与表名必须匹配 `UNIT_NAME_RE`；记录键是任意字符串，绝不进入文件路径。单元不对并发写入做串行化——顺序由调用方负责——介质上记录的版本与描述符不同时拒绝 `version-mismatch`（不做迁移）。
+[`src/backend.ts`](src/backend.ts) 是后端實現者的規范性約定，由 `tests/contract.ts` 中的共享一致性套件逐條款檢查。一個后端只擁有一種介質，并暴露可選的數據形狀分面；`kv` 是唯一的分面，打開單元即可獲得一個帶版本、全局單例的 schema 句柄，其每次調用均具備原子性，并在完成時保證持久化。單元名與表名必須匹配 `UNIT_NAME_RE`；記錄鍵是任意字符串，絕不進入文件路徑。單元不對并發寫入做串行化——順序由調用方負責——介質上記錄的版本與描述符不同時拒絕 `version-mismatch`（不做遷移）。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：`Storage` 服务、数据形式挂载、`StorageForms` 表 |
-| [`src/registry.ts`](src/registry.ts) | `BackendRegistry`：名称 → 后端表、注册资源释放函数 |
-| [`src/backend.ts`](src/backend.ts) | 后端约定：分面、单元、`UNIT_NAME_RE` |
-| [`src/error.ts`](src/error.ts) | 枢纽与每个后端共享的 `StorageError` 代码 |
-| — | 不发布运行时不变式伴生入口；枢纽是纯注册表（名称 → 后端、形式 → 设施），其一致性完全由调用点强制保障（重复项或缺失项会同步明确报错）；它既没有事件流，也没有可变介质可供交叉检查。 |
-| [`tests/contract.ts`](tests/contract.ts) | 针对每个后端运行的共享一致性套件 |
+| [`src/index.ts`](src/index.ts) | 插件入口：`Storage` 服務、數據形式掛載、`StorageForms` 表 |
+| [`src/registry.ts`](src/registry.ts) | `BackendRegistry`：名稱 → 后端表、注冊資源釋放函數 |
+| [`src/backend.ts`](src/backend.ts) | 后端約定：分面、單元、`UNIT_NAME_RE` |
+| [`src/error.ts`](src/error.ts) | 樞紐與每個后端共享的 `StorageError` 代碼 |
+| — | 不發布運行時不變式伴生入口；樞紐是純注冊表（名稱 → 后端、形式 → 設施），其一致性完全由調用點強制保障（重復項或缺失項會同步明確報錯）；它既沒有事件流，也沒有可變介質可供交叉檢查。 |
+| [`tests/contract.ts`](tests/contract.ts) | 針對每個后端運行的共享一致性套件 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当枢纽视角不够用时阅读以下页面：子系统参考是权威约定，Agent Note 记录了家族设计与延期工作。
+當樞紐視角不夠用時閱讀以下頁面：子系統參考是權威約定，Agent Note 記錄了家族設計與延期工作。
 
-- [存储子系统](../../../docs/subsystems/storage.zh.md)——后端约定、领域语义、变更事件与生成的 API。
-- [存储包映射](../README.zh.md)——家族的各包及其在仓库中的位置。
-- [领域 KV 存储 Agent Note](../../../.agents/notes/proposed/architecture/2026-07-24-domain-kv-storage-and-workspace.zh.md)——枢纽、领域数据形式与会话后端迁移背后的设计。
+- [存儲子系統](../../../docs/subsystems/storage.zh.md)——后端約定、領域語義、變更事件與生成的 API。
+- [存儲包映射](../README.zh.md)——家族的各包及其在倉庫中的位置。
+- [領域 KV 存儲 Agent Note](../../../.agents/notes/proposed/architecture/2026-07-24-domain-kv-storage-and-workspace.zh.md)——樞紐、領域數據形式與會話后端遷移背后的設計。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### 后端与形式注册
+### 后端與形式注冊
 
 #### 模型看到什么
 
-无。`ctx.storage` 是宿主侧注册表：枢纽不注册工具、不注入提示词，也不写入会话事件，因此任何请求字段都不会携带本包的数据。
+無。`ctx.storage` 是宿主側注冊表：樞紐不注冊工具、不注入提示詞，也不寫入會話事件，因此任何請求字段都不會攜帶本包的數據。
 
-#### Token 影响
+#### Token 影響
 
-每次请求都不会直接增加 token。
+每次請求都不會直接增加 token。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-与实时请求相互独立：枢纽绝不触碰请求前缀，因此无法使提供方缓存复用失效。
+與實時請求相互獨立：樞紐絕不觸碰請求前綴，因此無法使提供方緩存復用失效。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制定义了枢纽不能做什么。它们是当前包约束，不是任务积压。
+這些限制定義了樞紐不能做什么。它們是當前包約束，不是任務積壓。
 
-- **`kv` 是唯一的数据形状**——后端只实现一个分面；面向会话事件日志的 `log` 分面被推迟到会话后端迁移（[Agent Note](../../../.agents/notes/proposed/architecture/2026-07-24-domain-kv-storage-and-workspace.zh.md)）。
-- **数据形式按需解析**——在领域插件挂载前读取 `ctx.storage.domain` 会抛出 `form-not-mounted`；组装会按相应顺序排列插件，而不是静默推迟。
+- **`kv` 是唯一的數據形狀**——后端只實現一個分面；面向會話事件日志的 `log` 分面被推遲到會話后端遷移（[Agent Note](../../../.agents/notes/proposed/architecture/2026-07-24-domain-kv-storage-and-workspace.zh.md)）。
+- **數據形式按需解析**——在領域插件掛載前讀取 `ctx.storage.domain` 會拋出 `form-not-mounted`；組裝會按相應順序排列插件，而不是靜默推遲。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

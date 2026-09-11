@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browse backend of the directory-picker seam: registers `ctx.directoryPicker`
  * with the `browse` capability — one-level directory listing and child-directory
  * creation over the host filesystem via Node's stdlib (which already carries

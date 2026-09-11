@@ -1,4 +1,4 @@
-# Opt-in GitHub webhook overlay over the shipped Web composition. The second
+﻿# Opt-in GitHub webhook overlay over the shipped Web composition. The second
 # WebServer lives in an isolated realm so exposing it never exposes the UI API.
 
 - insert:

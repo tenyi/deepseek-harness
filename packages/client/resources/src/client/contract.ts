@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The resource model's published face.
  *
  * A resource is one address, and a resource address is a

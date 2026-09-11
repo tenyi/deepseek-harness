@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Untrusted assistant-Markdown renderer over the direct mdast pipeline:
  * `parse.ts` grammars, the incremental streaming parser, and `render.tsx`.
  * While a message streams, all but the trailing two blocks freeze as cached

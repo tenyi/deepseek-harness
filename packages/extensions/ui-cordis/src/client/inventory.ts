@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The host's definition registry as this page last read it, owned by the
  * plugin's apply closure.
  *

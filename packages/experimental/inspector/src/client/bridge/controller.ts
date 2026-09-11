@@ -1,4 +1,4 @@
-/** Browser Client bridge construction for the Cordis plugin entry. */
+﻿/** Browser Client bridge construction for the Cordis plugin entry. */
 
 import type { InspectorClientBootstrap } from '../../shared/bridge/messages/control.ts'
 import { ClientInspectorSource } from './transport.ts'

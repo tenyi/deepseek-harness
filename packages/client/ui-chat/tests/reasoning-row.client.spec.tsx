@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { afterEach, describe, expect, it } from 'vitest'
 import { cleanup, fireEvent, render } from '@testing-library/react'
 import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
@@ -23,7 +23,7 @@ describe('ReasoningRow', () => {
         renderMessageImages={renderMessageImages}
       />,
     )
-    expect(view.getByText('运行中')).toBeTruthy()
+    expect(view.getByText('運行中')).toBeTruthy()
     expect(view.getByText('Newest reasoning tokens').parentElement?.getAttribute('data-follow-end'))
       .toBe('true')
 
@@ -47,7 +47,7 @@ describe('ReasoningRow', () => {
       />,
     )
     const settledSummary = view.getByText('Inspect the session')
-    expect(view.queryByText('运行中')).toBeNull()
+    expect(view.queryByText('運行中')).toBeNull()
     expect(settledSummary.parentElement?.hasAttribute('data-follow-end')).toBe(false)
   })
 

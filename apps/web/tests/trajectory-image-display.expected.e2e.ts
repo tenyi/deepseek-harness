@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 // Trajectory image surfaces over the BUILT client graph (the ptc-fixture
 // idiom: real bundles via AppWebEntry, keyless fixture Connection RPC).
 // Opens the fixture history session whose turn 73 carries an image in BOTH a
@@ -37,7 +37,7 @@ async function openFixtureSession(): Promise<void> {
       expect(group.getAttribute('aria-expanded')).toBe('true')
     })
   }
-  const session = await within(tree).findByText('Fixture 历史会话')
+  const session = await within(tree).findByText('Fixture 歷史會話')
   fireEvent.click(session)
   await waitFor(() => {
     expect(document.querySelectorAll('[data-align] img').length).toBeGreaterThan(0)
@@ -87,7 +87,7 @@ it('renders durable record images in the Trajectory details panel from the share
   if (chatSrc === null || chatSrc === undefined) throw new Error('chat gallery image missing')
 
   fireEvent.click(screen.getByRole('tab', { name: 'Trajectory' }))
-  const userRow = await scrollRowIntoWindow('历史用户图片')
+  const userRow = await scrollRowIntoWindow('歷史用戶圖片')
   fireEvent.click(userRow)
 
   // Selecting the record opens the details panel; the ui-attachment gallery

@@ -1,4 +1,4 @@
-/** What a `RemoteMock` saw: answered calls, opened streams, and requests without a rule. */
+﻿/** What a `RemoteMock` saw: answered calls, opened streams, and requests without a rule. */
 
 /** One unary call, logged when its rule is selected and settled when the rule does. */
 export interface LoggedCall {

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Workspace instruction loader for AGENTS.md-compatible files.
  *
  * Baseline instructions enter durable context before the first request; successful fs

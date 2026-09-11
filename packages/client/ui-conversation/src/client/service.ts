@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Scope-addressed conversation send, cancel, and history orchestration.
  *
  * Scope addressing rides the cordis Service tracker: property access through

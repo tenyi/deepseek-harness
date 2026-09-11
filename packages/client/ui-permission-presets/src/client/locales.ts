@@ -1,19 +1,19 @@
-/** `settings.permission` namespace dictionaries (the Permission row's copy). */
+﻿/** `settings.permission` namespace dictionaries (the Permission row's copy). */
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {
-  'title': '权限',
-  'description': '选择新会话的默认权限模式',
-  'loading': '加载中',
+  'title': '權限',
+  'description': '選擇新會話的默認權限模式',
+  'loading': '加載中',
   'unavailable': '不可用',
-  'preset.readOnly': '仅可查看',
-  'preset.workspaceWrite': '工作区内修改',
-  'preset.fullAccess': '完全权限',
-  'confirm.title': '确认启用完全权限？',
-  'confirm.description': '启用完全权限后，新会话将减少确认步骤，并且可以直接执行更多操作，包括敏感操作、文件修改或外部命令。仅建议在你信任后续任务时使用。',
-  'confirm.acknowledge': '我已了解风险，并愿意继续',
+  'preset.readOnly': '僅可查看',
+  'preset.workspaceWrite': '工作區內修改',
+  'preset.fullAccess': '完全權限',
+  'confirm.title': '確認啟用完全權限？',
+  'confirm.description': '啟用完全權限后，新會話將減少確認步驟，并且可以直接執行更多操作，包括敏感操作、文件修改或外部命令。僅建議在你信任后續任務時使用。',
+  'confirm.acknowledge': '我已了解風險，并愿意繼續',
   'confirm.cancel': '取消',
-  'confirm.enable': '启用完全权限',
+  'confirm.enable': '啟用完全權限',
 } satisfies Record<string, string>
 
 /** The settings.permission namespace key union. */
@@ -37,14 +37,14 @@ export const en = {
 
 /** Simplified Chinese dictionary for the current-session popup gate. */
 export const accessZh = {
-  'preset.readOnly': '仅可查看',
-  'preset.workspaceWrite': '工作区内修改',
-  'preset.fullAccess': '完全权限',
-  'confirm.title': '确认启用完全权限？',
-  'confirm.description': '启用完全权限后，智能体将减少确认步骤，并且可以直接执行更多操作，包括敏感操作、文件修改或外部命令。仅建议在你信任当前任务时使用。',
-  'confirm.acknowledge': '我已了解风险，并愿意继续',
+  'preset.readOnly': '僅可查看',
+  'preset.workspaceWrite': '工作區內修改',
+  'preset.fullAccess': '完全權限',
+  'confirm.title': '確認啟用完全權限？',
+  'confirm.description': '啟用完全權限后，智能體將減少確認步驟，并且可以直接執行更多操作，包括敏感操作、文件修改或外部命令。僅建議在你信任當前任務時使用。',
+  'confirm.acknowledge': '我已了解風險，并愿意繼續',
   'confirm.cancel': '取消',
-  'confirm.enable': '启用完全权限',
+  'confirm.enable': '啟用完全權限',
 } satisfies Record<string, string>
 
 /** Current-session popup-gate key union. */

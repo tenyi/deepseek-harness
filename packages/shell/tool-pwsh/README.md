@@ -1,4 +1,4 @@
----
+﻿---
 description: "The model-facing pwsh tool for users and maintainers choosing, configuring, or debugging one-shot PowerShell execution, background jobs, and sandbox escalation on Windows."
 kind: "package-reference"
 ---

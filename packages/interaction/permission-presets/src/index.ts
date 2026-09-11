@@ -1,4 +1,4 @@
-/**
+﻿/**
  * User-facing permission presets over the independent sandbox-mode and
  * approval-policy knobs. A switch records the selected preset, then writes
  * changed knobs through their canonical setters. Execution, prompt narration,

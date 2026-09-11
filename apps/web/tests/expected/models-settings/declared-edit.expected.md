@@ -1,68 +1,68 @@
-- dialog "设置":
+﻿- dialog "設置":
   - navigation:
-    - text: 设置
-    - button "通用设置":
+    - text: 設置
+    - button "通用設置":
       - img
-      - text: 通用设置
+      - text: 通用設置
     - button "模型":
       - img
       - text: 模型
     - button "插件":
       - img
       - text: 插件
-    - button "Agent 预设":
+    - button "Agent 預設":
       - img
-      - text: Agent 预设
-  - button "打开配置文件"
-  - button "关闭":
+      - text: Agent 預設
+  - button "打開配置文件"
+  - button "關閉":
     - img
-    - text: 关闭
+    - text: 關閉
   - heading "模型" [level=2]
-  - paragraph: 填入各提供方的 API 密钥即可使用其模型。
+  - paragraph: 填入各提供方的 API 密鑰即可使用其模型。
   - list:
     - listitem:
       - text: minimax-cn
-      - img "API 密钥已配置"
-      - button "编辑 minimax-cn": 编辑
-      - button "删除 minimax-cn": 删除
+      - img "API 密鑰已配置"
+      - button "編輯 minimax-cn": 編輯
+      - button "刪除 minimax-cn": 刪除
     - listitem:
-      - text: Acme Gateway 自定义
-      - button "编辑 Acme Gateway (acme-gateway)": 编辑
-      - button "删除 Acme Gateway (acme-gateway)": 删除
-      - text: Acme Gateway acme-gateway API 密钥
-      - textbox "API 密钥":
-        - /placeholder: 输入 API 密钥，或留空使用环境认证
+      - text: Acme Gateway 自定義
+      - button "編輯 Acme Gateway (acme-gateway)": 編輯
+      - button "刪除 Acme Gateway (acme-gateway)": 刪除
+      - text: Acme Gateway acme-gateway API 密鑰
+      - textbox "API 密鑰":
+        - /placeholder: 輸入 API 密鑰，或留空使用環境認證
       - group:
-        - text: 自定义设置 显示名称
-        - textbox "显示名称":
+        - text: 自定義設置 顯示名稱
+        - textbox "顯示名稱":
           - /placeholder: acme-gateway
           - text: Acme Gateway
         - text: API 地址
         - textbox "API 地址":
           - /placeholder: https://gateway.acme.example/v1
           - text: https://gateway.acme.example/v1
-        - text: API 协议
-        - combobox "API 协议":
+        - text: API 協議
+        - combobox "API 協議":
           - option "openai-completions" [selected]
           - option "openai-responses"
           - option "anthropic-messages"
-        - region "模型目录":
-          - text: 模型目录 已自定义模型目录
-          - button "恢复默认模型"
-          - button "获取可用模型"
+        - region "模型目錄":
+          - text: 模型目錄 已自定義模型目錄
+          - button "恢復默認模型"
+          - button "獲取可用模型"
           - textbox "模型 ID 1":
             - /placeholder: 模型 ID
             - text: acme-large
-          - textbox "显示名称 1":
-            - /placeholder: 显示名称
+          - textbox "顯示名稱 1":
+            - /placeholder: 顯示名稱
           - button "容量 1"
-          - button "删除模型 1"
+          - button "刪除模型 1"
           - button "添加模型"
       - button "取消"
       - button "保存"
   - button "添加提供方":
     - img
     - text: 添加提供方
-  - button "添加自定义提供方":
+  - button "添加自定義提供方":
     - img
-    - text: 添加自定义提供方
+    - text: 添加自定義提供方

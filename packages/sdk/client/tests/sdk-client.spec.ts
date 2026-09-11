@@ -1,4 +1,4 @@
-/**
+﻿/**
  * SDK client against a real scripted runtime subprocess
  * (`tests/fake-runtime.ts`, protocol-only — the only faked boundary is the
  * model-owning runtime itself). Covers the turn loop, notification routing

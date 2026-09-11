@@ -1,4 +1,4 @@
-/** The ACP app command provider and stdin shutdown binding. */
+﻿/** The ACP app command provider and stdin shutdown binding. */
 
 import { EventEmitter } from 'node:events'
 import { Context } from '@deepseek-ai/cordis'

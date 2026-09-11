@@ -1,4 +1,4 @@
-/** Test-only Cordis plugin whose disposer announces entry and never settles. */
+﻿/** Test-only Cordis plugin whose disposer announces entry and never settles. */
 
 import { existsSync } from 'node:fs'
 

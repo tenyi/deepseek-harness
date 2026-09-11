@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Tests for the shared escalation vocabulary and choreography: the strictly-
  * wider ladder, the argument-pairing validation, the model-facing markers, and
  * {@link approveEscalation}'s ordered fail-closed sequence. Both enforcing tool

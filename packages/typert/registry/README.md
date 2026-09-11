@@ -1,4 +1,4 @@
----
+﻿---
 description: "The runtime Typert registry: stores generated package reflection, live Zod schemas, and Remote invocation descriptors, and resolves them for consumers."
 kind: "package-reference"
 ---

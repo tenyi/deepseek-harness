@@ -1,4 +1,4 @@
-- banner:
+﻿- banner:
   - navigation "Session hierarchy":
     - button "CJK strong emphasis" [disabled]
   - button "More actions":
@@ -14,28 +14,28 @@
 - heading "CJK strong emphasis" [level=2]
 - paragraph:
   - strong: 注意：
-  - text: 内容
+  - text: 內容
 - paragraph:
   - strong: "Notice:"
-  - text: 内容
+  - text: 內容
 - paragraph:
-  - strong: 事件中间件（waterfall）
-  - text: 实现
+  - strong: 事件中間件（waterfall）
+  - text: 實現
 - paragraph:
-  - strong: 事件中间件(waterfall)
-  - text: 实现
+  - strong: 事件中間件(waterfall)
+  - text: 實現
 - paragraph:
-  - strong: 句号。
-  - text: 后续
+  - strong: 句號。
+  - text: 后續
 - paragraph:
   - strong: Period.
-  - text: 后续
+  - text: 后續
 - paragraph:
   - strong: 提醒！
-  - text: 继续
+  - text: 繼續
 - paragraph:
   - strong: Warning!
-  - text: 继续
+  - text: 繼續
 - paragraph: CJK_STRONG_DONE
 - button "Copy":
   - img

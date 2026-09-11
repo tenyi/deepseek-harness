@@ -1,4 +1,4 @@
----
+﻿---
 description: "The model-facing glob and grep discovery tools for users and maintainers composing or debugging workspace search for agents."
 kind: "package-reference"
 ---

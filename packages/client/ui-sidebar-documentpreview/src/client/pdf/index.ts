@@ -1,4 +1,4 @@
-/** Builtin PDF registration through document metadata and the keyed body slot. */
+﻿/** Builtin PDF registration through document metadata and the keyed body slot. */
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '../index.ts'
 import type { DocumentPreviewDefinition } from '../document/registry.ts'

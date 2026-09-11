@@ -1,4 +1,4 @@
-// Session-header background jobs driven by a real `ctx.jobs` entry. No model
+﻿// Session-header background jobs driven by a real `ctx.jobs` entry. No model
 // call is involved.
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'

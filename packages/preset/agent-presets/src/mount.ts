@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Mount one preset composition under an agent's scope context, then prove the
  * result is usable before the agent is published.
  *

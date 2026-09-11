@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Vocabulary for the filesystem Service Definition (`ctx.fs`): the opaque target/version
  * identities, the metadata `stat` returns, the write-intent and outcome shapes, the
  * literal-edit request/outcome, and the typed error taxonomy.

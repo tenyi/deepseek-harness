@@ -1,4 +1,4 @@
-// Shared plumbing for the web smoke tests (dist location, free port, failure shots).
+﻿// Shared plumbing for the web smoke tests (dist location, free port, failure shots).
 import { existsSync, mkdirSync } from 'node:fs'
 import { createServer } from 'node:net'
 import { join } from 'node:path'
@@ -128,15 +128,15 @@ export async function connectFreshWorkspace(page: Page, root: string, name = 'wo
  */
 export async function connectFreshWorkspaceZh(page: Page, root: string, name = 'workspace'): Promise<void> {
   mkdirSync(join(root, name), { recursive: true })
-  await page.getByRole('textbox', { name: '选择工作区' }).click()
-  const dialog = page.getByRole('dialog', { name: '选择工作区目录' })
+  await page.getByRole('textbox', { name: '選擇工作區' }).click()
+  const dialog = page.getByRole('dialog', { name: '選擇工作區目錄' })
   await dialog.waitFor({ timeout: 10_000 })
-  await dialog.getByRole('button', { name: '编辑路径' }).click()
-  const pathInput = dialog.getByRole('textbox', { name: '编辑路径' })
+  await dialog.getByRole('button', { name: '編輯路徑' }).click()
+  const pathInput = dialog.getByRole('textbox', { name: '編輯路徑' })
   await pathInput.fill(join(root, name))
   await pathInput.press('Enter')
-  await dialog.getByRole('button', { name: '打开', exact: true }).click()
-  await page.locator('[data-composer-input][contenteditable="true"][data-placeholder="描述你想要构建的内容, / 调用指令, @ 文件或对话"]')
+  await dialog.getByRole('button', { name: '打開', exact: true }).click()
+  await page.locator('[data-composer-input][contenteditable="true"][data-placeholder="描述你想要構建的內容, / 調用指令, @ 文件或對話"]')
     .waitFor({ timeout: 15_000 })
 }
 

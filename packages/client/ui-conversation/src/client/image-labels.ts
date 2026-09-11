@@ -1,4 +1,4 @@
-/** Attachment error and limit copy owned by the conversation input flow. */
+﻿/** Attachment error and limit copy owned by the conversation input flow. */
 
 import type { ImageAttachmentLimits } from '@deepseek-ai/dsh-attachment'
 import type { Translate } from '@deepseek-ai/dsh-client-ui-slots'

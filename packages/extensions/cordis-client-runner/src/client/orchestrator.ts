@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Page-side run orchestration for model approvals and direct panel gestures.
  * Host activation always precedes Client loading. The same Plugin-keyed state
  * drives every surface, so remounting a panel never loses an open approval or

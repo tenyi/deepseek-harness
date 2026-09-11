@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `SandboxedFileSystem`: the sandbox-enforcing implementation of the
  * `@deepseek-ai/dsh-fs` Service Definition. It extends `LocalFileSystem` so all
  * text-storage mechanics — resolve, stat, read/stream, list, the atomic

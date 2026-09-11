@@ -1,4 +1,4 @@
-/** Temporary materialized packages for Desktop resource and profile behavior tests. */
+﻿/** Temporary materialized packages for Desktop resource and profile behavior tests. */
 
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'

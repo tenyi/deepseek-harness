@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser half of the native directory-picker backend: fills ui-workspace's
  * two directory-flow holes with a renderless occupant that answers each
  * `open` by driving `directoryPicker/pick` (the node half's OS chooser) and

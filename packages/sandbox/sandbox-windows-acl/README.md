@@ -1,4 +1,4 @@
----
+﻿---
 description: "The Windows write-restriction sandbox backend for users and maintainers choosing, configuring, or debugging restricted-token process confinement on Windows."
 kind: "package-library"
 ---

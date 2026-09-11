@@ -1,4 +1,4 @@
-/** Web presentation fold joining transient Assistant frames to one durable v2 settlement. */
+﻿/** Web presentation fold joining transient Assistant frames to one durable v2 settlement. */
 
 import type {
   SessionAssistantStreamBaseline,

@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** Markdown metadata, deferred slot registration, localization, and unload through the real renderer. */
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { act } from '@testing-library/react'
@@ -63,7 +63,7 @@ describe('Markdown implementation registration', () => {
     const t = locale.bind('documentMarkdown')
     await act(async () => { locale.setLocale('zh') })
     expect(locale.bind('documentMarkdown')).toBe(t)
-    expect(view.getByRole('button', { name: '复制' })).toBeDefined()
+    expect(view.getByRole('button', { name: '復制' })).toBeDefined()
     expect(useTabInfo).not.toHaveBeenCalled()
 
     await feature.dispose()
@@ -73,6 +73,6 @@ describe('Markdown implementation registration', () => {
     expect(t('code.copy')).toBe('code.copy')
     await runtime.mount({ inject: ['slots', 'locale', 'documentPreviews'], apply })
     expect(previews.getSnapshot()).toHaveLength(1)
-    expect(view.getByRole('button', { name: '复制' })).toBeDefined()
+    expect(view.getByRole('button', { name: '復制' })).toBeDefined()
   })
 })

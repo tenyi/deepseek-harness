@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `slash.menu` namespace dictionaries: group titles keyed by source name
  * (the lookup chain returns the key itself, so an unknown source shows its
  * raw name), the pending row, and the listbox and header aria labels.
@@ -8,13 +8,13 @@
 export const zh = {
   'command': '指令',
   'skill': '技能',
-  'subagent': '子智能体',
-  'loading': '正在加载…',
-  'drill.aria': '进入目录',
-  'drill.hint': '进入目录',
+  'subagent': '子智能體',
+  'loading': '正在加載…',
+  'drill.aria': '進入目錄',
+  'drill.hint': '進入目錄',
   'drill.key': 'Tab',
-  'crumbs.aria': '目录导航',
-  'suggestions.aria': '触发候选建议',
+  'crumbs.aria': '目錄導航',
+  'suggestions.aria': '觸發候選建議',
 } satisfies Record<string, string>
 
 /** The slash.menu namespace key union. */

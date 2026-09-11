@@ -1,4 +1,4 @@
-/** Client Session object layer, Agent scopes, and Remote lifecycle wiring. */
+﻿/** Client Session object layer, Agent scopes, and Remote lifecycle wiring. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-agent/types'

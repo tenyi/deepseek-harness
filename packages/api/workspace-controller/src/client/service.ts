@@ -1,4 +1,4 @@
-/** React-free Client Workspace service and command facade. */
+﻿/** React-free Client Workspace service and command facade. */
 
 import { Service, type Context } from '@deepseek-ai/cordis'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'

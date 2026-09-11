@@ -1,4 +1,4 @@
----
+﻿---
 description: "The out-of-process SDK subagent backend for users and maintainers choosing a delegation provider, configuring a child Harness runtime, or debugging local nested child runs."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
----
+﻿---
 description: "Native directory-picker surface: the browser half that drives the host OS chooser for workspace-directory flows; for users and maintainers choosing a picking interaction."
 kind: "package-reference"
 ---

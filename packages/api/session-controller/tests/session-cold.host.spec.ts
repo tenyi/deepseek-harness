@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Cold-session and degenerate-composition paths of the Session Controller:
  * metadata-only listing, Agent-free history reads, subagent ownership
  * isolation, and prompt failure mapping.

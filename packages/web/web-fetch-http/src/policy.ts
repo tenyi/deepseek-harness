@@ -1,4 +1,4 @@
-/**
+﻿/**
  * URL validation and content-type classification for the local HTTP(S) fetch
  * provider — the pure, network-free half. The provider's `fetch()` composes
  * these with transport (redirect following, byte caps, decoding).

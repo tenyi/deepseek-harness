@@ -1,4 +1,4 @@
-// Web e2e scenario: generic file upload round trip. A real chromium picks a
+﻿// Web e2e scenario: generic file upload round trip. A real chromium picks a
 // file through the composer paperclip input; the upload RPC stores the exact
 // bytes below the scaffold's isolated DSH_HOME, the prompt cites the staged
 // reference, request assembly projects the file block to handle text, and the

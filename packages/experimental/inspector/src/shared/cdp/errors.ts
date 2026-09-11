@@ -1,4 +1,4 @@
-/** Realm-neutral JavaScript exception and stack information. */
+﻿/** Realm-neutral JavaScript exception and stack information. */
 
 import type { RuntimeScriptKey } from './ids.ts'
 import type { RuntimeRemoteObject } from './remote-object.ts'

@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 // Local submission echo over the BUILT client graph (keyless fixture Connection RPC
 // transport): a text-plus-image send paints its echo bubble synchronously on
 // the submit keystroke — before serialization, transport, or the fixture's
@@ -38,9 +38,9 @@ it('paints the submission echo on the send keystroke and swaps it for the durabl
     }
   }, { timeout: 5_000 })
   fireEvent.paste(composer, {
-    clipboardData: { items: [], getData: () => '回显这条消息' },
+    clipboardData: { items: [], getData: () => '回顯這條消息' },
   })
-  await waitFor(() => { expect(composer.textContent).toBe('回显这条消息') })
+  await waitFor(() => { expect(composer.textContent).toBe('回顯這條消息') })
   fireEvent.keyDown(composer, { key: 'Enter' })
 
   // Synchronously after the keystroke: the echo bubble is in the flow with
@@ -49,7 +49,7 @@ it('paints the submission echo on the send keystroke and swaps it for the durabl
   // already cleared, editable, and free of the rail.
   const echo = document.querySelector<HTMLElement>('[data-submission-echo]')
   if (echo === null) throw new Error('submission echo missing on the send keystroke')
-  expect(echo.textContent).toContain('回显这条消息')
+  expect(echo.textContent).toContain('回顯這條消息')
   expect(echo.querySelector('img')?.getAttribute('src')?.split(':')[0]).toBe('blob')
   expect(composer.textContent).toBe('')
   expect(composer.getAttribute('contenteditable')).toBe('true')
@@ -63,7 +63,7 @@ it('paints the submission echo on the send keystroke and swaps it for the durabl
       throw new Error('submission echo still present after the durable node arrived')
     }
   }, { timeout: 10_000 })
-  expect(screen.getAllByText('回显这条消息')).toHaveLength(1)
+  expect(screen.getAllByText('回顯這條消息')).toHaveLength(1)
   await waitFor(() => {
     if (document.querySelector('[data-align="end"] img') === null) {
       throw new Error('durable user gallery missing')

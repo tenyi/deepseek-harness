@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The registration boundary between a sandboxed host half and the real runtime: ParameterSchemaSpec
  * normalization + validation with teaching errors, the marker-guarded `harness.defineTool` /
  * `harness.registerTool` pair, the `harness.handle` invoke-handler normalizer, the SANDBOX CONTEXT

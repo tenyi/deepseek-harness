@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The globally named `list_agents` tool: a thin model-facing adapter over
  * the continuable projection of `ctx.subagents.listChildren()` and, for the
  * `descendants` scope, `ctx.subagents.listDescendants()`. It stays separately

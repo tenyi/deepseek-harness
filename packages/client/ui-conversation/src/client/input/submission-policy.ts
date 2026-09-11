@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Composer submission policy. It owns the live busy-Enter preference and
  * resolves submission gestures into queue/steer delivery modes; Host and
  * Agent keep the actual delivery-window authority.

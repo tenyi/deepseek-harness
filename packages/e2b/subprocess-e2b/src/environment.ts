@@ -1,4 +1,4 @@
-/** Shared remote-environment scrubbing for E2B process and terminal launchers. */
+﻿/** Shared remote-environment scrubbing for E2B process and terminal launchers. */
 
 import { Buffer } from 'node:buffer'
 import { posix } from 'node:path'

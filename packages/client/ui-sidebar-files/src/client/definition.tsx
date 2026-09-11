@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Stage one of this package's registration: what the `files` tab type IS.
  *
  * The type is a page, not a viewer: it claims no address. The guide page offers

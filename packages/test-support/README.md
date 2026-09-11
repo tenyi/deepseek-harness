@@ -1,4 +1,4 @@
----
+﻿---
 description: "The test-support group map: keyless test harnesses, LLM mock and replay servers, and Loader smoke helpers for developers writing and running repository tests."
 kind: "package-group"
 ---

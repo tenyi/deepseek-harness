@@ -1,4 +1,4 @@
-/** SSH launch behavior over a recorded conversation and the shipped Web plugin rows. */
+﻿/** SSH launch behavior over a recorded conversation and the shipped Web plugin rows. */
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'

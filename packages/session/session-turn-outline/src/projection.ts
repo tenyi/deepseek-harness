@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The `turnOutline` projection unit: a pure fold of `turn/start` boundaries,
  * first human prompts, and final assistant responses into the whole-log turn
  * outline the chat rail renders for turns outside a client's paged event

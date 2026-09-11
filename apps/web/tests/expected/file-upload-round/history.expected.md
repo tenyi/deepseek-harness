@@ -1,4 +1,4 @@
-# Mixed history attachment flow
+﻿# Mixed history attachment flow
 
 - source order: poem.txt > reference-1.png
 - one attachment group: true

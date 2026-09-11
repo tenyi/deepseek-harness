@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * Real tsdown artifact shape: lib/client.js hands off through
  * window.__ModuleLoader__.load, resolves externals through the injected

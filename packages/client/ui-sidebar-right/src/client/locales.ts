@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `sidebarRight` namespace dictionaries.
  *
  * Everything a user reads in this column is here, including the strings handed
@@ -8,27 +8,27 @@
 
 /** Simplified Chinese dictionary and key-set source of truth. */
 export const zh = {
-  'chrome.expand': '打开侧边栏',
-  'chrome.expandAria': '打开右侧边栏',
-  'chrome.collapse': '收起侧边栏',
-  'chrome.collapseAria': '收起右侧边栏',
+  'chrome.expand': '打開側邊欄',
+  'chrome.expandAria': '打開右側邊欄',
+  'chrome.collapse': '收起側邊欄',
+  'chrome.collapseAria': '收起右側邊欄',
   'chrome.toFullscreen': '全屏',
   'chrome.exitFullscreen': '退出全屏',
   'dock.emptyPane': '空面板',
-  'dock.splitPane': '分栏',
-  'dock.splitPaneDisabled': '已达两格上限',
-  'dock.splitPaneNarrow': '栏宽不足，拖宽侧边栏后再分栏',
-  'dock.closeTab': '关闭',
-  'dock.addTab': '新标签页',
-  'dock.dockFloat': '收回到侧边栏',
-  'dock.closeFloat': '关闭',
-  'dock.drop.center': '移到这里',
-  'dock.drop.left': '左分栏',
-  'dock.drop.right': '右分栏',
-  'dock.drop.top': '上分栏',
-  'dock.drop.bottom': '下分栏',
-  'tab.guide.title': '开始',
-  'tab.unavailable': '这类内容还没有可用的查看方式。',
+  'dock.splitPane': '分欄',
+  'dock.splitPaneDisabled': '已達兩格上限',
+  'dock.splitPaneNarrow': '欄寬不足，拖寬側邊欄后再分欄',
+  'dock.closeTab': '關閉',
+  'dock.addTab': '新標簽頁',
+  'dock.dockFloat': '收回到側邊欄',
+  'dock.closeFloat': '關閉',
+  'dock.drop.center': '移到這里',
+  'dock.drop.left': '左分欄',
+  'dock.drop.right': '右分欄',
+  'dock.drop.top': '上分欄',
+  'dock.drop.bottom': '下分欄',
+  'tab.guide.title': '開始',
+  'tab.unavailable': '這類內容還沒有可用的查看方式。',
 } satisfies Record<string, string>
 
 /** Right-Sidebar dictionary key union. */

@@ -1,4 +1,4 @@
-/** Fire-and-forget webhook rule registry and Workspace-backed Session runtime. */
+﻿/** Fire-and-forget webhook rule registry and Workspace-backed Session runtime. */
 
 import { Context, Service } from '@deepseek-ai/cordis'
 import { errorChain } from '@deepseek-ai/dsh-llm'

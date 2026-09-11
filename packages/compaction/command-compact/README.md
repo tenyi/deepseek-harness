@@ -1,4 +1,4 @@
----
+﻿---
 description: "The on-demand /compact command for interactive compositions: what it does, what you see, and how to mount it."
 kind: "package-reference"
 ---

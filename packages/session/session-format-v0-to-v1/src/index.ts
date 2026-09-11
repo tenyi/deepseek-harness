@@ -1,4 +1,4 @@
-/** Frozen released-v0 physical codec and identity migration into shared-layout v1. */
+﻿/** Frozen released-v0 physical codec and identity migration into shared-layout v1. */
 
 export * from './codec.ts'
 export * from './dispositions.ts'

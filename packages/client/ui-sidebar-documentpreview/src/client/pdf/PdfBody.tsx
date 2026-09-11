@@ -1,4 +1,4 @@
-/** PDF page presentation; binary content and tab information come from the document owner. */
+﻿/** PDF page presentation; binary content and tab information come from the document owner. */
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { Button } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { PropsLocale, PropsStore } from '@deepseek-ai/dsh-client-ui-slots'

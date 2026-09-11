@@ -1,4 +1,4 @@
-/** Test-owned workspaces face: the renderer standard-kit observable plus recorded actions. */
+﻿/** Test-owned workspaces face: the renderer standard-kit observable plus recorded actions. */
 import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
 import type {
   IWorkspaces, WorkspaceId, WorkspaceSnapshot, WorkspaceView,

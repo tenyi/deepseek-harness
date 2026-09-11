@@ -1,4 +1,4 @@
-/** Verify application qualification commands without invoking Apple tools. */
+﻿/** Verify application qualification commands without invoking Apple tools. */
 
 import { spawnSync } from 'node:child_process'
 import { afterEach, describe, expect, it, vi } from 'vitest'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Derives the workspace browser tree from Host Workspace order and membership.
  * Unassigned Sessions trail under Ungrouped; only the selected blank Session
  * remains visible.

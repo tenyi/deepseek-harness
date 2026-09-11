@@ -1,4 +1,4 @@
-import { Context } from '@deepseek-ai/cordis'
+﻿import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, vi } from 'vitest'
 import { SlotRegistry } from '@deepseek-ai/dsh-client-ui-renderer/client'
 import { RemoteError, TestRemote } from '@deepseek-ai/dsh-client-test-runtime'
@@ -104,7 +104,7 @@ describe('ui-workspace apply', () => {
     // Copy rides the standard locale seat: the entry declares the namespace
     // and apply registered both dictionaries.
     expect(before.slots.entries('sidebar.workspaces')[0]!.locale).toBe('workspace')
-    expect(before.locale.bind('workspace')('session.new')).toBe('新会话')
+    expect(before.locale.bind('workspace')('session.new')).toBe('新會話')
 
     const after = await bench()
     await after.ctx.plugin({ inject: [...inject], apply }).await()

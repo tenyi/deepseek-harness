@@ -1,4 +1,4 @@
-// flattenLineage: summaries -> flat list with lineage indentation (pure function).
+﻿// flattenLineage: summaries -> flat list with lineage indentation (pure function).
 // The input order is authoritative; lineage only makes each child adjacent to its parent.
 // Orphaned lineage degrades to root level; cycles fail soft and emit as roots.
 

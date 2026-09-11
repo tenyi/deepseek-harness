@@ -1,4 +1,4 @@
-import { CredentialProvider } from '@deepseek-ai/dsh-credentials'
+﻿import { CredentialProvider } from '@deepseek-ai/dsh-credentials'
 import type {
   CredentialInfo,
   CredentialKey,

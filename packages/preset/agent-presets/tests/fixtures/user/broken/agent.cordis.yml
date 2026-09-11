@@ -1,4 +1,4 @@
-- id: ok
+﻿- id: ok
   name: ../../plugins/contribute.js
   config:
     tool: ok

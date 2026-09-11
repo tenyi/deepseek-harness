@@ -1,4 +1,4 @@
-/** Language row store: snapshot-mirror action and the revision guard. */
+﻿/** Language row store: snapshot-mirror action and the revision guard. */
 import { describe, expect, it } from 'vitest'
 import { createLanguageRowStore } from '../src/client/settings-store.ts'
 

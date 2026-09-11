@@ -1,4 +1,4 @@
-import { createServer } from 'node:http'
+﻿import { createServer } from 'node:http'
 import type { IncomingMessage, Server, ServerResponse } from 'node:http'
 
 /** One scripted behavior for the next request the mock server receives. */

@@ -1,4 +1,4 @@
-/* Inline projection of sent user text: plain runs and reference chips flow in
+﻿/* Inline projection of sent user text: plain runs and reference chips flow in
    the consumer's own line box (bubble or queue row); nothing here is block.
    White-space policy stays with the consumer: the bubble wraps with pre-wrap,
    the queue preview keeps its single nowrap/ellipsis line. */

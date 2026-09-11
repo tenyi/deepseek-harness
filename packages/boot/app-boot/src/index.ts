@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared boot glue for `dsh` profiles, including the CLI packaged by the Python runtime wheel: load the gitignored
  * `.env`, install the fail-loud Loader guards, resolve the config path (snapshot-aware), load the
  * optional user patch layers from the Harness home (`~/.dsh`), expose its path resolver to

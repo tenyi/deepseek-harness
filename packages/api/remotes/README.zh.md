@@ -1,5 +1,5 @@
----
-description: "应用 Remote 装配：为 Client 消费方选择带类型的 Host 能力与转发事件。"
+﻿---
+description: "應用 Remote 裝配：為 Client 消費方選擇帶類型的 Host 能力與轉發事件。"
 kind: "package-reference"
 ---
 
@@ -9,78 +9,78 @@ kind: "package-reference"
 
 ## 概述
 
-为本应用选定的 Host Remote 能力提供双侧 BFF。Host 入口拥有转发事件名单并向 API Gateway 注册应用事件 source；Client 入口以运行时值形式导入生成的 `/remote` 产物，通过 `ctx.remote.$mount()` 挂载每项贡献，并重新导出对应的声明合并。Client 业务包依赖该外观，而不依赖 Gateway 实现或单独的 Remote 运行时入口。
+為本應用選定的 Host Remote 能力提供雙側 BFF。Host 入口擁有轉發事件名單并向 API Gateway 注冊應用事件 source；Client 入口以運行時值形式導入生成的 `/remote` 產物，通過 `ctx.remote.$mount()` 掛載每項貢獻，并重新導出對應的聲明合并。Client 業務包依賴該外觀，而不依賴 Gateway 實現或單獨的 Remote 運行時入口。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [转发的 Host 事件](#forwarded-host-events)
-- [构建边界](#build-boundary)
-- [模型体验](#model-experience)
-- [已知限制与暂缓事项](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [轉發的 Host 事件](#forwarded-host-events)
+- [構建邊界](#build-boundary)
+- [模型體驗](#model-experience)
+- [已知限制與暫緩事項](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-[`@deepseek-ai/dsh-api-session-controller`](../session-controller/README.zh.md) 拥有 agent（智能体）与会话身份策略，包括供其他 namespace 使用的 Typert lookup 解析器。本包只选择并挂载生成的会话 contribution，不复制激活策略。
+[`@deepseek-ai/dsh-api-session-controller`](../session-controller/README.zh.md) 擁有 agent（智能體）與會話身份策略，包括供其他 namespace 使用的 Typert lookup 解析器。本包只選擇并掛載生成的會話 contribution，不復制激活策略。
 
-Client 组合挂载 Commands、凭据、settings、Goal、动态 Cordis、文件与会话引用、只读 Host 插件清单、消息反馈、会话控制器和 Workspace 控制器 contribution。该组合卸载时，Cordis effect 的所有权机制会撤回所有贡献；`@deepseek-ai/dsh-api-gateway/client` 负责描述符校验、可追踪的 namespace 服务、直接与作用域方法、调用、流与取消。Client 入口通过 Cordis 消费共享的 `TypertClientRemote` 接口，不导入具体 Gateway；它只以 type-only 形式重新导出 Gateway Client face 的声明合并，因此消费端经由本外观取到转发事件词汇时，运行时不会多出一条通往 Gateway 实现的边。
+Client 組合掛載 Commands、憑據、settings、Goal、動態 Cordis、文件與會話引用、只讀 Host 插件清單、消息反饋、會話控制器和 Workspace 控制器 contribution。該組合卸載時，Cordis effect 的所有權機制會撤回所有貢獻；`@deepseek-ai/dsh-api-gateway/client` 負責描述符校驗、可追蹤的 namespace 服務、直接與作用域方法、調用、流與取消。Client 入口通過 Cordis 消費共享的 `TypertClientRemote` 接口，不導入具體 Gateway；它只以 type-only 形式重新導出 Gateway Client face 的聲明合并，因此消費端經由本外觀取到轉發事件詞匯時，運行時不會多出一條通往 Gateway 實現的邊。
 
-本 facade 同时是 Client 包指称 wire 类型词汇的正门。它以 type-only 方式转出 Remote 失败词汇（`RemoteResult`、`RemoteFailure`、`RemoteErrorCode`、`RemoteErrorDetailsMap`）、Host 事实（`RemoteHostFacts`），以及各已选领域对 Client 安全的载荷类型，因此 Client 功能包只 import 一个 specifier，不必伸手进 `dsh-typert-protocol`、Gateway 或某个拥有方的 Host 入口。有两类包刻意不走这道门：本装配自己选中的 API 层包——反向 import 会形成依赖环——以及它们的测试，后者直接从 `dsh-typert-protocol` 取失败词汇。UI 包的测试则从 [`dsh-client-test-runtime`](../../test-support/client-runtime/README.zh.md) 取 `RemoteError` 构造器。
+本 facade 同時是 Client 包指稱 wire 類型詞匯的正門。它以 type-only 方式轉出 Remote 失敗詞匯（`RemoteResult`、`RemoteFailure`、`RemoteErrorCode`、`RemoteErrorDetailsMap`）、Host 事實（`RemoteHostFacts`），以及各已選領域對 Client 安全的載荷類型，因此 Client 功能包只 import 一個 specifier，不必伸手進 `dsh-typert-protocol`、Gateway 或某個擁有方的 Host 入口。有兩類包刻意不走這道門：本裝配自己選中的 API 層包——反向 import 會形成依賴環——以及它們的測試，后者直接從 `dsh-typert-protocol` 取失敗詞匯。UI 包的測試則從 [`dsh-client-test-runtime`](../../test-support/client-runtime/README.zh.md) 取 `RemoteError` 構造器。
 
-本包不拥有物理传输或 Host 服务发现。它只把应用选择投影为生成的 Remote contribution，以及每个 Client 各自独立的 Host 事件源；API Gateway 负责 endpoint、carrier、取消与重连。Web 或未来的 TUI 只要提供同一份不依赖 React 的 `ctx.remote` 约定，均可复用其 Client face。
+本包不擁有物理傳輸或 Host 服務發現。它只把應用選擇投影為生成的 Remote contribution，以及每個 Client 各自獨立的 Host 事件源；API Gateway 負責 endpoint、carrier、取消與重連。Web 或未來的 TUI 只要提供同一份不依賴 React 的 `ctx.remote` 約定，均可復用其 Client face。
 
 -----
 
 <a id="forwarded-host-events"></a>
-## 转发的 Host 事件
+## 轉發的 Host 事件
 
-`src/remote-events.ts` 持有 `API_REMOTE_FORWARDED_EVENTS`，即本应用不改名转发给消费端的 Host Cordis 事件名单；每个条目还会选择普通发送或 agent-scoped waterfall（瀑布式事件）投递。该名单同时就是 `ctx.remote.$on` 的合法键集，只含类型的 `src/types.ts` 派生其选择面。多转发一个事件只需在该数组里加一项：类型投影、消费端键面与 Host 转发循环全部由它派生。
+`src/remote-events.ts` 持有 `API_REMOTE_FORWARDED_EVENTS`，即本應用不改名轉發給消費端的 Host Cordis 事件名單；每個條目還會選擇普通發送或 agent-scoped waterfall（瀑布式事件）投遞。該名單同時就是 `ctx.remote.$on` 的合法鍵集，只含類型的 `src/types.ts` 派生其選擇面。多轉發一個事件只需在該數組里加一項：類型投影、消費端鍵面與 Host 轉發循環全部由它派生。
 
-监听器签名不在此处重写。名单内每条事件的 Cordis `Events` 声明都住在其 owner 包 client-safe 的 `./types` 导出，本包两个 face 都把那些声明纳入编译面。Host face 还会把每个条目断言给 `TypertForwardableEventEntry`：`emit` 条目必须是已声明的单向事件，`waterfall` 条目则必须是已声明的 agent-scoped waterfall，且其最后一个参数是返回相同结果类型的 `next()` 回调。
+監聽器簽名不在此處重寫。名單內每條事件的 Cordis `Events` 聲明都住在其 owner 包 client-safe 的 `./types` 導出，本包兩個 face 都把那些聲明納入編譯面。Host face 還會把每個條目斷言給 `TypertForwardableEventEntry`：`emit` 條目必須是已聲明的單向事件，`waterfall` 條目則必須是已聲明的 agent-scoped waterfall，且其最后一個參數是返回相同結果類型的 `next()` 回調。
 
-Host entry 为每条 Client 流独立注册一组 allowlist listener 和一个队列，并在普通事件入队前拒绝非 JSON 参数。对于 waterfall，它只投影顶层 agent 身份与 JSON 请求字段；Client 结果也必须能无损表示为 JSON，而 `next()` 会委托给后续 Host listener。每个作用域 waterfall 请求都必须以 `request.agent` 直接携带路由所用的 agent；Host 会在转发前拒绝缺失或不匹配的身份。该 source 在 `ctx.typertGateway.registerRemoteEvents()` 暴露 Gateway 内部的 `$events` 逻辑流前同步挂好所有 listener，因此首个 `ready` 项既能证明增量投递已就绪，也会携带供 Client 显示路径的 Host home。撤回注册会中止活动流。
+Host entry 為每條 Client 流獨立注冊一組 allowlist listener 和一個隊列，并在普通事件入隊前拒絕非 JSON 參數。對于 waterfall，它只投影頂層 agent 身份與 JSON 請求字段；Client 結果也必須能無損表示為 JSON，而 `next()` 會委托給后續 Host listener。每個作用域 waterfall 請求都必須以 `request.agent` 直接攜帶路由所用的 agent；Host 會在轉發前拒絕缺失或不匹配的身份。該 source 在 `ctx.typertGateway.registerRemoteEvents()` 暴露 Gateway 內部的 `$events` 邏輯流前同步掛好所有 listener，因此首個 `ready` 項既能證明增量投遞已就緒，也會攜帶供 Client 顯示路徑的 Host home。撤回注冊會中止活動流。
 
 <a id="build-boundary"></a>
-## 构建边界
+## 構建邊界
 
-仓库中的多数包只属于一个 TypeScript face：Host 包登记在根 `tsconfig.host.json`，Client 包登记在根 `tsconfig.client.json`。本包需要拆分，因为 Host 入口要参与 Host Typert 图，而 `src/client/index.ts` 必须等 Host tsdown 生成业务包的 `/remote` 声明后才能编译。
+倉庫中的多數包只屬于一個 TypeScript face：Host 包登記在根 `tsconfig.host.json`，Client 包登記在根 `tsconfig.client.json`。本包需要拆分，因為 Host 入口要參與 Host Typert 圖，而 `src/client/index.ts` 必須等 Host tsdown 生成業務包的 `/remote` 聲明后才能編譯。
 
-本包根 `tsconfig.json` 只是引用 `tsconfig.host.json` 与 `tsconfig.client.json` 的 solution。Host aggregate 和 Host 直接消费方引用前者，Client aggregate 和 Client 直接消费方引用后者；禁止把包根 solution 放进任一 aggregate 的依赖图。两个 project 拥有互不重叠的源码和 `.tsbuildinfo`，但共享 `lib/types` 输出目录——只有一处刻意的例外：`src/remote-events.ts` 与 `src/types.ts` **同时**列进两个 face 的 `files`，因为转发事件名单是「消费端能收到什么」的唯一控制点，Host 转发循环与 Client 的 `ctx.remote.$on` 键面必须读同一份声明，而不是两份可能彼此漂移的声明。
+本包根 `tsconfig.json` 只是引用 `tsconfig.host.json` 與 `tsconfig.client.json` 的 solution。Host aggregate 和 Host 直接消費方引用前者，Client aggregate 和 Client 直接消費方引用后者；禁止把包根 solution 放進任一 aggregate 的依賴圖。兩個 project 擁有互不重疊的源碼和 `.tsbuildinfo`，但共享 `lib/types` 輸出目錄——只有一處刻意的例外：`src/remote-events.ts` 與 `src/types.ts` **同時**列進兩個 face 的 `files`，因為轉發事件名單是「消費端能收到什么」的唯一控制點，Host 轉發循環與 Client 的 `ctx.remote.$on` 鍵面必須讀同一份聲明，而不是兩份可能彼此漂移的聲明。
 
-这条例外不止是一行 `files`。根 `tsconfig.base.json` 把 `@deepseek-ai/dsh-api-remotes/types` 映射到 `src/types.ts`——**源平面**，与其余所有 workspace 子路径一致，也与生成的 `/remote` 产物相反（后者没有 `paths` 条目，靠 `exports` 命中构建产物）。于是两个 face 都把同一份名单与类型投影收进各自的 program，并向 `lib/types` 发射逐字相同的 `remote-events` 与 `types` 输出；`.tsbuildinfo` 仍各自独立。没有任何门禁强制两个 face 的源文件互不重叠——`scripts/project-reference-faces.ts` 只校验「引用一个 split project 必须指到对应 face」——因此本段记录这次双列为何是有意的。
+這條例外不止是一行 `files`。根 `tsconfig.base.json` 把 `@deepseek-ai/dsh-api-remotes/types` 映射到 `src/types.ts`——**源平面**，與其余所有 workspace 子路徑一致，也與生成的 `/remote` 產物相反（后者沒有 `paths` 條目，靠 `exports` 命中構建產物）。于是兩個 face 都把同一份名單與類型投影收進各自的 program，并向 `lib/types` 發射逐字相同的 `remote-events` 與 `types` 輸出；`.tsbuildinfo` 仍各自獨立。沒有任何門禁強制兩個 face 的源文件互不重疊——`scripts/project-reference-faces.ts` 只校驗「引用一個 split project 必須指到對應 face」——因此本段記錄這次雙列為何是有意的。
 
-包内 `clientBundle(..., { hostPhase: true })` 让 Host tsdown 打包 Host 入口，让后续 Client tsdown 只打包 browser 入口。普通 Client 插件仍使用单一 Client project，并在 Client tsdown 阶段一起生成 Node loader 入口和 browser bundle；只有两组源码需要不同 compiler face 时才拆分。
+包內 `clientBundle(..., { hostPhase: true })` 讓 Host tsdown 打包 Host 入口，讓后續 Client tsdown 只打包 browser 入口。普通 Client 插件仍使用單一 Client project，并在 Client tsdown 階段一起生成 Node loader 入口和 browser bundle；只有兩組源碼需要不同 compiler face 時才拆分。
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无，因为该 BFF 只选择 Remote 应用方法和转发事件，不注册任何模型接口。
+無，因為該 BFF 只選擇 Remote 應用方法和轉發事件，不注冊任何模型接口。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无直接影响；其触发的任何模型可见行为均由已挂载的 Host 能力负责。
+無直接影響；其觸發的任何模型可見行為均由已掛載的 Host 能力負責。
 
-## 已知限制与暂缓事项
+## 已知限制與暫緩事項
 
 <a id="known-limitations-and-deferred-work"></a>
 
-- 能力集合由构建时显式导入的值固定确定；Client 不会在运行时发现 Host 中已启用的服务或 Remote 定义。
-- 若要增加能力，必须显式导入相应的 `/remote` 值并在此组合中挂载。
-- 只有仍在等待的作用域 waterfall 会在重连后回放；单向通知仍是相互隔离的 best-effort 投递，不会回放。需要可靠恢复的状态必须由拥有方提供查询、游标或初始基线。
+- 能力集合由構建時顯式導入的值固定確定；Client 不會在運行時發現 Host 中已啟用的服務或 Remote 定義。
+- 若要增加能力，必須顯式導入相應的 `/remote` 值并在此組合中掛載。
+- 只有仍在等待的作用域 waterfall 會在重連后回放；單向通知仍是相互隔離的 best-effort 投遞，不會回放。需要可靠恢復的狀態必須由擁有方提供查詢、游標或初始基線。
 
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者工作上下文——点击展开</summary>
+<summary>維護者工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。被观察的关系由 Typert、agent 注册表和会话注册表负责。
+**運行時不變式：** 不發布伴生入口。被觀察的關系由 Typert、agent 注冊表和會話注冊表負責。

@@ -1,4 +1,4 @@
-/** Tag-safe JSON serialization for the model-visible reference envelope. */
+﻿/** Tag-safe JSON serialization for the model-visible reference envelope. */
 
 /**
  * Serialize JSON while preventing source data from spelling an XML-like opening tag.

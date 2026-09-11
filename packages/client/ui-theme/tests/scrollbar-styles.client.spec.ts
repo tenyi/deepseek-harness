@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Scrollbar stylesheet contract, asserted against the CSS text on disk: every
  * --dsw-alias-scrollbar-* token design-platform.css defines has a consumer,
  * scrollbar.css binds the base-surface pair through the rebindable

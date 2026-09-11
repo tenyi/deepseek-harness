@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+﻿import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { execa } from 'execa'
 import { describe, expect, it } from 'vitest'

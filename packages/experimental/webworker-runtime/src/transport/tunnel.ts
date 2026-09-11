@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Worker end of the postMessage tunnel. It owns the dispatch lanes and the queue
  * that holds requests until the host tree is serving:
  *

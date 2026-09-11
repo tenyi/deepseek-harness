@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Local PowerShell Service Provider for the bash capability seam. Each command runs
  * as `pwsh -NoLogo -NoProfile -NonInteractive -Command <command>` in a managed
  * process spawned through `ctx.subprocess`; the executor owns command

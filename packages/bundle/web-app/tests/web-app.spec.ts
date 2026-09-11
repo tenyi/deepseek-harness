@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Web runtime glue behavior: dist resolution through the bundle's own hook,
  * the frontend-static child claiming the fallback seat, the web-surface
  * prompt section and bash runtime variables, and readiness publication through

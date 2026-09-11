@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Worker-preview bootstrap: the one module preview.html adds ahead of the
  * stock entry tag. The runtime's optional source stage owns the pre-Cordis
  * chooser; the unchanged Host connector then owns the Worker handshake.

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The docked split tree: nested flex runs sized by each split's fractions, with a
  * draggable divider between neighbours. A live divider drag renders from the
  * preview fractions instead of the recorded ones — the gesture only settles one

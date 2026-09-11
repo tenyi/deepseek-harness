@@ -1,4 +1,4 @@
-/** Relocatable, integrity-recorded production packages carried by one Desktop release. */
+﻿/** Relocatable, integrity-recorded production packages carried by one Desktop release. */
 
 import { createHash } from 'node:crypto'
 import { lstatSync, readdirSync, readFile, readFileSync, writeFileSync } from 'node:fs'

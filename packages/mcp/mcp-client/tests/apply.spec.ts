@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Tests for the mcp-client plugin's `apply` lifecycle entry point.
  * Isolated file so vi.mock of the MCP SDK doesn't pollute other test suites.
  */

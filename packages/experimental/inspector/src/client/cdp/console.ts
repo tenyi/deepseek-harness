@@ -1,4 +1,4 @@
-/** Client Console observation shared by every active DevTools Runtime session. */
+﻿/** Client Console observation shared by every active DevTools Runtime session. */
 
 import type { ClientRemoteObjectHandle, ClientRuntimeSessionId } from '../../shared/bridge/ids.ts'
 import type { ClientConsoleCapability } from '../../shared/bridge/messages/runtime/index.ts'

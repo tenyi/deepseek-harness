@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Feedback stylesheet contract, asserted against the CSS text on disk for the
  * message controls and the dialog.
  *

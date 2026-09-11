@@ -1,4 +1,4 @@
-<div class="_markdown_404681">
+﻿<div class="_markdown_404681">
   <p>
     <a href="https://example.com" rel="noopener noreferrer" target="_blank">
       <svg aria-hidden="true" class="_linkIcon_404681" fill="none" height="14" viewBox="0 0 20 20" width="14" xmlns="http://www.w3.org/2000/svg">

@@ -1,4 +1,4 @@
-// The composer remains in ConversationRoot so switching out of the blank-draft
+﻿// The composer remains in ConversationRoot so switching out of the blank-draft
 // phase does not remount its textarea.
 
 import { useState } from 'react'

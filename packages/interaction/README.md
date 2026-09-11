@@ -1,4 +1,4 @@
----
+﻿---
 description: "Package map for the human-collaboration capability family: slash commands, one-shot approvals, permission presets, and the question/answer seam that lets a running agent pause for a human decision."
 kind: "package-group"
 ---

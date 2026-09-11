@@ -1,4 +1,4 @@
----
+﻿---
 description: "The subprocess service (ctx.subprocess) for composition authors and capability consumers starting, observing, and terminating managed child processes and terminal sessions."
 kind: "package-reference"
 ---

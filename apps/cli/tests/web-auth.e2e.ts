@@ -1,4 +1,4 @@
-/** Real `dsh web` authentication against a temporary Harness home. */
+﻿/** Real `dsh web` authentication against a temporary Harness home. */
 
 import type { ChildProcess } from 'node:child_process'
 import { spawn } from 'node:child_process'

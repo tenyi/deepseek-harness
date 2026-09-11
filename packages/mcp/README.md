@@ -1,4 +1,4 @@
----
+﻿---
 description: "The MCP package group: attach external Model Context Protocol servers so their tools are callable as native tools."
 kind: "package-group"
 ---

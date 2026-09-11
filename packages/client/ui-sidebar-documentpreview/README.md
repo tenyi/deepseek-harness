@@ -1,4 +1,4 @@
----
+﻿---
 description: "Document previews in the right Sidebar: shared file loading and controls, selectable Markdown, code, image, PDF and HTML renderers, and plain-text fallback."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-/** Request immutability through the real loop, including adopted restore graphs. */
+﻿/** Request immutability through the real loop, including adopted restore graphs. */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

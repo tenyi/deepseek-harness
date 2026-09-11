@@ -1,9 +1,9 @@
-/** Locale-owned HTML implementation name and iframe status text. */
+﻿/** Locale-owned HTML implementation name and iframe status text. */
 export const zh = {
   title: 'HTML',
-  frame: 'HTML 文档预览',
-  loading: '正在准备 HTML 预览…',
-  failed: '无法预览这份 HTML 文档。',
+  frame: 'HTML 文檔預覽',
+  loading: '正在準備 HTML 預覽…',
+  failed: '無法預覽這份 HTML 文檔。',
 } satisfies Record<string, string>
 
 /** HTML renderer dictionary keys. */

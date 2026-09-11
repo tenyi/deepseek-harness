@@ -1,4 +1,4 @@
-import { createPortal } from 'react-dom'
+﻿import { createPortal } from 'react-dom'
 import css from './DropOverlay.module.css'
 
 /** Drop-overlay strings the owner resolves from its own locale namespace. */

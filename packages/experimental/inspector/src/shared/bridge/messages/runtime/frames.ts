@@ -1,4 +1,4 @@
-/** Versioned envelopes for Worker-to-Client Runtime operations. */
+﻿/** Versioned envelopes for Worker-to-Client Runtime operations. */
 
 import type {
   ClientRuntimeRequestId,

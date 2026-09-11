@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Settlement of one ONE-SHOT subagent run into a background-Task outcome. Only
  * the one-shot background path uses Jobs; continuable children have no Task,
  * no per-message result, and no Task cancellation.

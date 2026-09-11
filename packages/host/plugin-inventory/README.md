@@ -1,4 +1,4 @@
----
+﻿---
 description: "Read-only projection of the current Cordis Loader plugin state with each agent preset's composition beside it: the pluginInventory service and its pluginInventory/list Remote for web GUI host clients."
 kind: "package-reference"
 ---

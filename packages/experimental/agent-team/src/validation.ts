@@ -1,4 +1,4 @@
-/** Input normalization shared by Team roster and task commands. */
+﻿/** Input normalization shared by Team roster and task commands. */
 
 import { TeamError } from './error.ts'
 

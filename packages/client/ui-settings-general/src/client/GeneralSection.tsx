@@ -1,4 +1,4 @@
-/** The General section: one column rendering feature-owned item contributions. */
+﻿/** The General section: one column rendering feature-owned item contributions. */
 import type { PropsRenderSlots, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 import css from './GeneralSection.module.css'
 

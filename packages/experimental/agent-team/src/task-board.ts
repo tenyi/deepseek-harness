@@ -1,4 +1,4 @@
-/** Shared Team task DAG commands and runtime-enriched views. */
+﻿/** Shared Team task DAG commands and runtime-enriched views. */
 
 import type { Agent } from '@deepseek-ai/dsh-agent'
 import type { TeamMembership } from './roster.ts'

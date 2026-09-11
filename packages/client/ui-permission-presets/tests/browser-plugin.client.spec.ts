@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ui-permission browser half on a real cordis Context with fake command/
  * sessions faces: the plugin hangs the /permission popup decoration on the
  * host command; options flatten the session's permissions projection with
@@ -136,13 +136,13 @@ describe('ui-permission browser plugin', () => {
     })
     b.locale.setLocale('zh')
     const localized = await b.popup().options(proj, new AbortController().signal)
-    expect(localized.map(option => option.label)).toEqual(['仅可查看', '工作区内修改', '完全权限'])
+    expect(localized.map(option => option.label)).toEqual(['僅可查看', '工作區內修改', '完全權限'])
     expect(localized.find(option => option.id === 'danger-full-access')?.confirmation).toEqual({
-      title: '确认启用完全权限？',
+      title: '確認啟用完全權限？',
       description: accessZh['confirm.description'],
-      acknowledgeLabel: '我已了解风险，并愿意继续',
+      acknowledgeLabel: '我已了解風險，并愿意繼續',
       cancelLabel: '取消',
-      confirmLabel: '启用完全权限',
+      confirmLabel: '啟用完全權限',
     })
     b.values.set(sid('s1'), { ...SELECT, options: [
       { value: 'workspace-write', name: 'Project Files' },

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `model` namespace dictionaries.
  *
  * `trigger.selectAria` intentionally matches `trigger.fallback` but remains a
@@ -11,26 +11,26 @@
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {
   'command.label': '模型',
-  'command.description': '选择本会话使用的模型',
-  'option.loadError': '目录加载失败：{message}',
-  'option.deepseekV4Flash.description': '快速、高效且经济；适合目标明确、常规或并行任务。',
-  'option.deepseekV4Pro.description': '更强的自主编码、知识与复杂推理能力；适合复杂或质量优先的任务，但成本更高。',
-  'trigger.fallback': '选择模型',
-  'trigger.loading': '正在加载模型…',
-  'trigger.selectAria': '选择模型',
-  'trigger.aria': '选择模型，当前 {model}',
-  'trigger.ariaEffort': '选择模型，当前 {model}，推理等级 {effort}',
-  'menu.aria': '模型与推理等级',
+  'command.description': '選擇本會話使用的模型',
+  'option.loadError': '目錄加載失敗：{message}',
+  'option.deepseekV4Flash.description': '快速、高效且經濟；適合目標明確、常規或并行任務。',
+  'option.deepseekV4Pro.description': '更強的自主編碼、知識與復雜推理能力；適合復雜或質量優先的任務，但成本更高。',
+  'trigger.fallback': '選擇模型',
+  'trigger.loading': '正在加載模型…',
+  'trigger.selectAria': '選擇模型',
+  'trigger.aria': '選擇模型，當前 {model}',
+  'trigger.ariaEffort': '選擇模型，當前 {model}，推理等級 {effort}',
+  'menu.aria': '模型與推理等級',
   'menu.model': '模型',
-  'menu.effort': '推理等级',
+  'menu.effort': '推理等級',
   'effort.providerDefault': 'Default',
   'status.loading': '正在刷新模型列表…',
-  'error.action': '模型操作失败：{message}',
-  'action.reload': '重新加载',
-  'warning.groupLoad': '{name} 加载失败：{message}',
-  'empty.models': '没有可用的模型。',
-  'blocked.composer': '当前模型不可用，请先选择模型',
-  'empty.efforts': '当前模型未提供推理等级。',
+  'error.action': '模型操作失敗：{message}',
+  'action.reload': '重新加載',
+  'warning.groupLoad': '{name} 加載失敗：{message}',
+  'empty.models': '沒有可用的模型。',
+  'blocked.composer': '當前模型不可用，請先選擇模型',
+  'empty.efforts': '當前模型未提供推理等級。',
 } satisfies Record<string, string>
 
 /** The model namespace key union. */

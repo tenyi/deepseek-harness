@@ -1,17 +1,17 @@
-/** Locale namespace owned by Session export browser feedback. */
+﻿/** Locale namespace owned by Session export browser feedback. */
 export const NS = 'session-log-download'
 
 /** Simplified-Chinese Session export strings. */
 export const zh = {
   'header.more': '更多操作',
-  'menu.download': '下载 Session 日志',
-  'dialog.preparingTitle': '正在导出 Session',
-  'dialog.preparingDescription': '正在准备包含当前 Session、子 Session 和附件的 ZIP 文件。',
-  'dialog.successTitle': 'Session 导出已开始下载',
-  'dialog.successDescription': '浏览器正在下载 Session ZIP 文件。',
-  'dialog.errorTitle': 'Session 导出失败',
-  'dialog.close': '关闭',
-  'dialog.commandFailed': '无法启动 Session 导出。',
+  'menu.download': '下載 Session 日志',
+  'dialog.preparingTitle': '正在導出 Session',
+  'dialog.preparingDescription': '正在準備包含當前 Session、子 Session 和附件的 ZIP 文件。',
+  'dialog.successTitle': 'Session 導出已開始下載',
+  'dialog.successDescription': '瀏覽器正在下載 Session ZIP 文件。',
+  'dialog.errorTitle': 'Session 導出失敗',
+  'dialog.close': '關閉',
+  'dialog.commandFailed': '無法啟動 Session 導出。',
 } as const
 
 /** English Session export strings. */

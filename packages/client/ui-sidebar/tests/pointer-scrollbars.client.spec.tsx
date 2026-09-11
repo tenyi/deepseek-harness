@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * Pointer-revealed scrollbars, the shell's half: which class state the column
  * carries as the pointer crosses it. The stylesheet rule that state drives is

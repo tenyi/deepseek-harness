@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Stage one of tab-type registration: what a type IS.
  *
  * A registration is purely static — which addresses the type recognizes, how it

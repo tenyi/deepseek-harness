@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-driven Typert artifact emitter. It consumes only FaceModel and
  * TypeGraph data; TypeScript compiler nodes are not part of this boundary.
  * @module @deepseek-ai/dsh-typert-generator/emitter

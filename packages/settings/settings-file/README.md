@@ -1,4 +1,4 @@
----
+﻿---
 description: "The file-backed settings provider for users and maintainers choosing, configuring, or debugging the YAML/JSON settings document and its hot reload."
 kind: "package-reference"
 ---

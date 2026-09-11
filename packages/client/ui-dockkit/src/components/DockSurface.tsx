@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The docked surface: the split tree plus the tab and divider gestures over it.
  * This is the whole kit as far as an embedder's layout column is concerned —
  * chrome around it (a rail, a header, a collapsed state) belongs to the embedder.

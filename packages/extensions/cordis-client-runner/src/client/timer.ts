@@ -1,4 +1,4 @@
-/** Browser implementation of the Cordis timer Service. */
+﻿/** Browser implementation of the Cordis timer Service. */
 
 import { Service } from '@deepseek-ai/cordis'
 import type { Context } from '@deepseek-ai/cordis'

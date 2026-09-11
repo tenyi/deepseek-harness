@@ -1,5 +1,5 @@
----
-description: "Web GUI 的权限预设界面：通用设置中的默认行与切换当前会话的 /permission 选择器；供权限策略的用户与维护者阅读。"
+﻿---
+description: "Web GUI 的權限預設界面：通用設置中的默認行與切換當前會話的 /permission 選擇器；供權限策略的用戶與維護者閱讀。"
 kind: "package-reference"
 ---
 
@@ -9,85 +9,85 @@ kind: "package-reference"
 
 ## 概述
 
-使用本包可在 Web GUI 中为未来会话选择权限预设，或切换当前会话的权限预设。通用设置行只更改之后创建会话所用的默认值；`/permission` 选择器只更改当前会话，并标记其当前预设。内置预设使用本地化标签；显式宿主标签保持原样，未知的 kebab-case 名称显示为 Title Case。完全权限始终需要显式确认风险。两个界面都只在宿主推送更改后的权限状态后确认变更。
+使用本包可在 Web GUI 中為未來會話選擇權限預設，或切換當前會話的權限預設。通用設置行只更改之后創建會話所用的默認值；`/permission` 選擇器只更改當前會話，并標記其當前預設。內置預設使用本地化標簽；顯式宿主標簽保持原樣，未知的 kebab-case 名稱顯示為 Title Case。完全權限始終需要顯式確認風險。兩個界面都只在宿主推送更改后的權限狀態后確認變更。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-与设置与命令包一起挂载本插件；权限行随即出现在通用设置中，`/permission` 选择器替换裸命令调用。当前会话选择器恰在投影 key 存在时可用；无权限组合既不显示选择器，也不显示设置行。
+與設置與命令包一起掛載本插件；權限行隨即出現在通用設置中，`/permission` 選擇器替換裸命令調用。當前會話選擇器恰在投影 key 存在時可用；無權限組合既不顯示選擇器，也不顯示設置行。
 
-### 选择器
+### 選擇器
 
-选中即提交 `/permission <preset>` 命令行。带参路径（直接键入 `/permission <preset>`）仍直接切换；装饰只替换裸调用。内置标签在英文界面中是 `Read Only`、`Workspace Write` 和 `Full access`，在中文界面中是 `仅可查看`、`工作区内修改` 和 `完全权限`；`custom` 只是显示状态，绝非目标。
+選中即提交 `/permission <preset>` 命令行。帶參路徑（直接鍵入 `/permission <preset>`）仍直接切換；裝飾只替換裸調用。內置標簽在英文界面中是 `Read Only`、`Workspace Write` 和 `Full access`，在中文界面中是 `僅可查看`、`工作區內修改` 和 `完全權限`；`custom` 只是顯示狀態，絕非目標。
 
-### 设置行
+### 設置行
 
-该行从宿主动态的 `defaultPreset` enum 推导选项，使用与当前会话选择器相同的本地化标签，并写入一条设置变更操作。该值只在之后创建会话时生效；改变它绝不会切换或改写当前会话。
+該行從宿主動態的 `defaultPreset` enum 推導選項，使用與當前會話選擇器相同的本地化標簽，并寫入一條設置變更操作。該值只在之后創建會話時生效；改變它絕不會切換或改寫當前會話。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-通用行经 `ctx.settingsScope` 读取显式暴露的 `permission` Settings 描述符，并携带描述符 revision 写入一条 `settings.mutate` 路径操作；其 observable 经 slot 系统的 `hooks` 格传递，因此 React 钩子绑定归渲染器，推送失效通知会重新获取描述符。该值只在之后创建会话时读取。当前会话界面是挂在宿主 `/permission` 命令上的 popupSelect 装饰（`ctx.commandUi.decorate`）：宿主命令保留斜杠菜单行、带参路径与持久生命周期记账，装饰只把裸调用替换为选择器。选项与 active 标记读取会话的 `permissions` 投影——与 composer chip 渲染的同一份宿主计算 select。完全权限选项携带 `confirmation` 载荷，由共享弹窗外壳渲染为页内风险门。
+通用行經 `ctx.settingsScope` 讀取顯式暴露的 `permission` Settings 描述符，并攜帶描述符 revision 寫入一條 `settings.mutate` 路徑操作；其 observable 經 slot 系統的 `hooks` 格傳遞，因此 React 鉤子綁定歸渲染器，推送失效通知會重新獲取描述符。該值只在之后創建會話時讀取。當前會話界面是掛在宿主 `/permission` 命令上的 popupSelect 裝飾（`ctx.commandUi.decorate`）：宿主命令保留斜杠菜單行、帶參路徑與持久生命周期記賬，裝飾只把裸調用替換為選擇器。選項與 active 標記讀取會話的 `permissions` 投影——與 composer chip 渲染的同一份宿主計算 select。完全權限選項攜帶 `confirmation` 載荷，由共享彈窗外殼渲染為頁內風險門。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-需要了解权限界面以外的内容时，请阅读以下页面。这些页面从浏览器界面进一步介绍宿主策略与命令外壳。
+需要了解權限界面以外的內容時，請閱讀以下頁面。這些頁面從瀏覽器界面進一步介紹宿主策略與命令外殼。
 
-- [dsh-permission-presets](../../interaction/permission-presets/README.zh.md)——这些界面写入的宿主侧权限预设策略。
-- [ui-commands](../ui-commands/README.zh.md)——`/permission` 装饰注册进的 popupSelect 外壳。
-- [ui-conversation](../ui-conversation/README.zh.md)——渲染同一份权限投影的 composer chip。
-- [客户端包映射](../README.zh.md)——相邻的浏览器 UI 包。
+- [dsh-permission-presets](../../interaction/permission-presets/README.zh.md)——這些界面寫入的宿主側權限預設策略。
+- [ui-commands](../ui-commands/README.zh.md)——`/permission` 裝飾注冊進的 popupSelect 外殼。
+- [ui-conversation](../ui-conversation/README.zh.md)——渲染同一份權限投影的 composer chip。
+- [客戶端包映射](../README.zh.md)——相鄰的瀏覽器 UI 包。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-间接影响。它的两个界面写入权限事实：设置行使未来会话带着全量值旋钮事件启动，而 `/permission` 选择器切换当前会话时追加相同的事实；这些事件决定后续工具调用解析到的沙箱模式与审批策略。
+間接影響。它的兩個界面寫入權限事實：設置行使未來會話帶著全量值旋鈕事件啟動，而 `/permission` 選擇器切換當前會話時追加相同的事實；這些事件決定后續工具調用解析到的沙箱模式與審批策略。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无直接失效；请求前缀的变化由旋钮消费方自行承担。
+無直接失效；請求前綴的變化由旋鈕消費方自行承擔。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制界定了当前权限界面。它们是当前包约束，不是通用策略对比或任务积压。
+這些限制界定了當前權限界面。它們是當前包約束，不是通用策略對比或任務積壓。
 
-- **设置行仅限 Web**——非 Web 客户端仍可经 `/permission` 切换当前会话，但不会获得这项浏览器贡献。
-- **预设描述来自宿主**——本地化的内置标签旁边可能显示另一种语言编写的描述。
+- **設置行僅限 Web**——非 Web 客戶端仍可經 `/permission` 切換當前會話，但不會獲得這項瀏覽器貢獻。
+- **預設描述來自宿主**——本地化的內置標簽旁邊可能顯示另一種語言編寫的描述。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。命令与 slot 贡献的生命周期由 HMR（热模块替换）安全性测试验证；浏览器侧设置控制器不持有宿主事件或跨插件可变状态。
+**運行時不變式：** 不發布伴生入口。命令與 slot 貢獻的生命周期由 HMR（熱模塊替換）安全性測試驗證；瀏覽器側設置控制器不持有宿主事件或跨插件可變狀態。

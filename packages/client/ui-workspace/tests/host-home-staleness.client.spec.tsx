@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * Host home reaches the browsing region through the assembled renderer, which
  * memoizes a root entry's inject result for the whole registration — so a home

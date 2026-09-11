@@ -1,4 +1,4 @@
-/** Ordinary file I/O from a process that never acquires a lock. */
+﻿/** Ordinary file I/O from a process that never acquires a lock. */
 import assert from 'node:assert/strict';
 import { once } from 'node:events';
 import { readFileSync, writeFileSync } from 'node:fs';

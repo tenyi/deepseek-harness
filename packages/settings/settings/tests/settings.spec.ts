@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest'
+﻿import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 import { SettingsProvider, SettingsConflictError, type SettingsNamespace, type SettingsScope, type SettingsUpdateSource } from '../src/index.ts'

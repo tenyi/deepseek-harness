@@ -1,4 +1,4 @@
-/** Source-side interfaces shared by MessagePort and WebSocket bridge implementations. */
+﻿/** Source-side interfaces shared by MessagePort and WebSocket bridge implementations. */
 
 import type { InspectorJsonValue } from '../json.ts'
 import type { InspectorQuery, InspectorQueryRequester, InspectorQueryResultFor } from './messages/query/commands.ts'

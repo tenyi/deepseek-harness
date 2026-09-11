@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Loader fixture that holds the parent's second step until settlement delivery.
  * @module subagent-settlement-fence
  */

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Pack every published package into release tarballs, in publish order
  * (platform packages first, then the entries that optionally depend on

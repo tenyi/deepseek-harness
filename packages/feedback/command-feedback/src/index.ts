@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Session feedback: the `feedback/record` event, its command-independent
  * producer, the `sessionFeedback` Host Remote a product surface records
  * through, and the human-facing `/feedback` command. Recording appends one

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `ws` stub. `WebSocketDownlinks` constructs a `WebSocketServer` in a field
  * initializer as soon as Connection is present, so the class must be constructible;
  * no method is ever reached because the fake HTTP server never emits `upgrade`

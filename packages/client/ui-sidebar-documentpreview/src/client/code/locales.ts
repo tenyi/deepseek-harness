@@ -1,4 +1,4 @@
-/** Locale-owned code renderer name and CodeBlock controls. */
+﻿/** Locale-owned code renderer name and CodeBlock controls. */
 import type {} from '@deepseek-ai/dsh-client-ui-slots'
 
 declare module '@deepseek-ai/dsh-client-ui-slots' {
@@ -10,9 +10,9 @@ declare module '@deepseek-ai/dsh-client-ui-slots' {
 
 /** Simplified Chinese dictionary and key source. */
 export const zh = {
-  title: '代码',
-  copy: '复制',
-  copied: '已复制',
+  title: '代碼',
+  copy: '復制',
+  copied: '已復制',
 }
 
 /** English dictionary with the same keys. */

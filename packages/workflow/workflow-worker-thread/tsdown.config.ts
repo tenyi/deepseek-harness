@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsdown'
+﻿import { defineConfig } from 'tsdown'
 
 /**
  * Build the engine and worker separately so each inlines shared modules; a

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One Host `changes` subscription per session, fanned out to the open files of
  * that session.
  *

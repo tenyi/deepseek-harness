@@ -1,4 +1,4 @@
-/** Host registration for browser conversation preferences. */
+﻿/** Host registration for browser conversation preferences. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-settings'

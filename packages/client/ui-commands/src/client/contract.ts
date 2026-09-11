@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Frozen contract of the client command surface. Types only. The
  * CommandUiRuntime (`ctx.commandUi`) implements this face; business packages
  * consume `register` alone.

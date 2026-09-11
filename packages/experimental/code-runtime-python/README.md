@@ -1,4 +1,4 @@
----
+﻿---
 description: "CPython-subprocess code runtime: the dsh-code-runtime seam implementation for Python model code, with the fd-3 wire protocol it speaks."
 kind: "package-reference"
 ---

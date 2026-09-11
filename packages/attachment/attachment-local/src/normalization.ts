@@ -1,4 +1,4 @@
-/** Deterministic provider-independent image normalization. */
+﻿/** Deterministic provider-independent image normalization. */
 
 import sharp, { type Sharp } from 'sharp'
 import { AttachmentError, requestImageDimensions } from '@deepseek-ai/dsh-attachment'

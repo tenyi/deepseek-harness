@@ -1,4 +1,4 @@
----
+﻿---
 description: "The build-time Typert generator: source type analysis, compiler-independent models, and artifact emission for maintainers wiring Typert publication or consuming generated artifacts."
 kind: "package-library"
 ---

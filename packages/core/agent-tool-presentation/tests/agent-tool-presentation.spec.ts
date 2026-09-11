@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The row an agent preset carries to pick its tool presentation. What it owes
  * its caller: the choice reaches THIS agent and no other, it unwinds with the
  * agent, and a code mode composed against a deployment with no code runtime

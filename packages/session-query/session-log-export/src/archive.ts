@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Host-side session-log download: streams one ZIP archive whose files are the
  * sessions' logical session logs plus every referenced attachment. Each log
  * is read through a persistence read handle and serialized here as canonical

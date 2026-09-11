@@ -1,4 +1,4 @@
-/** Agent Teams service façade over roster, mailbox, task, and runtime lifecycle owners. */
+﻿/** Agent Teams service façade over roster, mailbox, task, and runtime lifecycle owners. */
 
 import { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'

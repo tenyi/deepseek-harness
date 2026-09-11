@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Derive the GitHub Actions matrices from the checked-in package matrix
  * (`packages/<name>/prebuilds.json`). Single source: adding a platform

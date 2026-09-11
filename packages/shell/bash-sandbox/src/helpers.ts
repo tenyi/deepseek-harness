@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Internal sandbox-result classification helpers.
  *
  * @module @deepseek-ai/dsh-bash-sandbox/helpers

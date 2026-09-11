@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The model-facing filesystem discovery tool suite (`glob`, `grep`) over the
  * packaged ripgrep binary (`@vscode/ripgrep`). This single plugin registers
  * both tools; the binary ships inside the npm dependency, so no system `rg`

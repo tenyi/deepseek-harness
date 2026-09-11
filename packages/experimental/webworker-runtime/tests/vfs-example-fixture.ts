@@ -1,4 +1,4 @@
-/** Deterministic source for the filesystem tree bundled into the WebWorker preview. */
+﻿/** Deterministic source for the filesystem tree bundled into the WebWorker preview. */
 
 import { fileURLToPath } from 'node:url'
 import {

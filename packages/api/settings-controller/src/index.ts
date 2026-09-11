@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Host Remote owner for the configuration surfaces over the settings-domain
  * seams. Two namespaces: `settings`, the redacted reads and writes of
  * `ctx.settings`, owned by the class below; and `credentials`, mounted from

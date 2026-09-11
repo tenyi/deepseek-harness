@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The agent-preset roster store: it derives the display options from one
  * roster call and treats an empty roster as "this deployment composes no
  * presets" rather than as a failure. The management section writes each
@@ -118,7 +118,7 @@ describe('the agent-preset roster store', () => {
 
   it('carries the display metadata a preset published', async () => {
     const controller = derivedController(fakeApi([
-      { id: 'standard', trust: 'system', isDefault: true, name: '标准模式', description: '完整的编码 agent。' },
+      { id: 'standard', trust: 'system', isDefault: true, name: '標準模式', description: '完整的編碼 agent。' },
     ] as never))
 
     await controller.load()
@@ -126,7 +126,7 @@ describe('the agent-preset roster store', () => {
     // Surfaces beyond this row read the same options; the id alone never said
     // what a preset does.
     expect(controller.store.getSnapshot().options).toEqual([
-      { id: 'standard', trust: 'system', name: '标准模式', description: '完整的编码 agent。' },
+      { id: 'standard', trust: 'system', name: '標準模式', description: '完整的編碼 agent。' },
     ])
   })
 
@@ -306,13 +306,13 @@ describe('the new-session chip controller', () => {
 
   it('carries the display metadata into the menu rows', async () => {
     const controller = chip([
-      { id: 'standard', trust: 'system', isDefault: true, name: '标准模式', description: '完整的编码 agent。' },
+      { id: 'standard', trust: 'system', isDefault: true, name: '標準模式', description: '完整的編碼 agent。' },
     ] as never, undefined)
 
     await controller.load()
 
     expect(controller.store.getSnapshot().options).toEqual([
-      { id: 'standard', trust: 'system', name: '标准模式', description: '完整的编码 agent。' },
+      { id: 'standard', trust: 'system', name: '標準模式', description: '完整的編碼 agent。' },
     ])
   })
 

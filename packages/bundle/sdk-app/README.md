@@ -1,4 +1,4 @@
----
+﻿---
 description: "SDK stdio application profile for users and maintainers launching a JSON-RPC harness runtime."
 kind: "package-bundle"
 ---

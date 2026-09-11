@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Immutable launch-time environment snapshot that records which layer
  * supplied each value. Harness consumers resolve through it instead of a flattened
  * `process.env`; launchers may still materialize accepted values for config

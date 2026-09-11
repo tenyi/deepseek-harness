@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+﻿import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { boot } from '@deepseek-ai/dsh-app-boot'
 import { type Agent } from '@deepseek-ai/dsh-agent'

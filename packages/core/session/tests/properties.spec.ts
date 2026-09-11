@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Property-based tests for the Session event log (the property-testing Agent Note).
  *
  * Generates arbitrary event logs and asserts the derivation invariants the

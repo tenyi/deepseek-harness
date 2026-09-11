@@ -1,4 +1,4 @@
-import { ToolCallId, createUserMessage, expandAssistantStream } from '@deepseek-ai/dsh-llm'
+﻿import { ToolCallId, createUserMessage, expandAssistantStream } from '@deepseek-ai/dsh-llm'
 /**
  * Tests for the queue-aware `Agent.cancel()` primitive. The default clears
  * queued and steering work, while `keepInbox` preserves pending input for a

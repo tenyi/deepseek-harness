@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The floating layer: one overlay panel per floating pane, bottom-to-top in the
  * model's z order. A floating pane hosts exactly one tab; its header is the
  * strip's row holding that tab's chip, never selectable or closable from the

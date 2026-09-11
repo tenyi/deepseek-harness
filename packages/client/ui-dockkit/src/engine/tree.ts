@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure tree helpers over `LayoutState`. Every reader throws on a dangling id
  * (the operation vocabulary is closed, so a miss is a caller defect), and every
  * writer returns a new state that keeps untouched nodes at their old identity.

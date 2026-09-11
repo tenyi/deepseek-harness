@@ -1,4 +1,4 @@
-import { spawnSync as nodeSpawnSync } from 'node:child_process'
+﻿import { spawnSync as nodeSpawnSync } from 'node:child_process'
 import { describe, expect, it, vi } from 'vitest'
 import {
   createWindowsProcessInspector,

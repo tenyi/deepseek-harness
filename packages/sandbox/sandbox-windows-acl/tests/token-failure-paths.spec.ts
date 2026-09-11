@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Restricted-token failure-path tests with minimal stub binding tables: every
  * checked Win32 call in the token
  * pipeline — open, logon-SID scan, well-known SID creation, default-DACL

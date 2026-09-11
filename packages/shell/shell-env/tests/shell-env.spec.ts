@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Registry tests for `@deepseek-ai/dsh-shell-env`: built-in facts, contributor
  * ownership and validation, collection ordering, effect-scoped disposal, and
  * the explicit disposer contract.

@@ -1,4 +1,4 @@
-/** The default composer body: the 'conversation.composer.bar' slot entry.
+﻿/** The default composer body: the 'conversation.composer.bar' slot entry.
  * Machine state arrives through the standard provide channel
  * (useInput + inputActions); the keyboard/DOM command face and stop arrive
  * through this entry's own inject, whose hooks compartment binds

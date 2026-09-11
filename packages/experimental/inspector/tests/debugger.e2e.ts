@@ -1,4 +1,4 @@
-import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process'
+﻿import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import WebSocket, { type RawData } from 'ws'
 import { afterEach, describe, expect, it } from 'vitest'

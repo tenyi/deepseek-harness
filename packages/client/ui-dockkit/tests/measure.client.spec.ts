@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * The DOM side of the room rule, over a hand-built pane tree: which rectangles
  * and computed styles feed `halvesFit`, and what an unmeasured pane reads as.

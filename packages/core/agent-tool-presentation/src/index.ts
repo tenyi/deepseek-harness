@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Agent-plane presentation selector: the row an agent preset carries to say
  * which form of its tools the model sees.
  *

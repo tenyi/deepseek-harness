@@ -1,4 +1,4 @@
-/** Host entry for the shared Typert runtime registry. */
+﻿/** Host entry for the shared Typert runtime registry. */
 
 import type { z } from 'zod'
 import type { TypertDisposer } from '@deepseek-ai/dsh-typert-protocol'

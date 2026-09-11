@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Consumer-surface tests for the search tools over a FAKE subprocess service
  * and a FAKE spill backend, exercised through `ctx.tools.execute()` so nothing
  * bypasses the tool registry. The fake service makes every seam outcome

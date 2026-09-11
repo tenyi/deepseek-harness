@@ -1,4 +1,4 @@
-/** Upstream-Node child lifecycle and streaming custom-protocol carrier. */
+﻿/** Upstream-Node child lifecycle and streaming custom-protocol carrier. */
 
 import { spawn, type ChildProcess } from 'node:child_process'
 import { once } from 'node:events'

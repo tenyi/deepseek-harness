@@ -1,4 +1,4 @@
-/** Browser stack parsing for realm-neutral Runtime and Console events. */
+﻿/** Browser stack parsing for realm-neutral Runtime and Console events. */
 
 import type { RuntimeScriptKey } from '../../shared/cdp/ids.ts'
 import type { RuntimeCallFrame, RuntimeStackTrace } from '../../shared/cdp/index.ts'

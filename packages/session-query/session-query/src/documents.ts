@@ -1,4 +1,4 @@
-/** Shared event metadata and semantic-document projection. */
+﻿/** Shared event metadata and semantic-document projection. */
 
 import { foldSurface } from '@deepseek-ai/dsh-session'
 import type { SessionEvent, SessionId, SessionSeq } from '@deepseek-ai/dsh-session'

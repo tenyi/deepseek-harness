@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs'
+﻿import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execa } from 'execa'

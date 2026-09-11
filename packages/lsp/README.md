@@ -1,4 +1,4 @@
----
+﻿---
 description: "The lsp group map: language-server code navigation through the LSP seam, its stdio provider, and the model-facing lsp tool, for users and maintainers navigating the group."
 kind: "package-group"
 ---

@@ -1,5 +1,5 @@
----
-description: "面向用户与维护者的 DeepSeek chat-completions 适配器说明：配置 deepseek-official 路由、thinking 与图片输入。"
+﻿---
+description: "面向用戶與維護者的 DeepSeek chat-completions 適配器說明：配置 deepseek-official 路由、thinking 與圖片輸入。"
 kind: "package-reference"
 ---
 
@@ -9,27 +9,27 @@ kind: "package-reference"
 
 ## 概述
 
-使用本包可通过 `deepseek-official` 路由流式调用 DeepSeek 模型，包括配置 thinking 与推理强度、向视觉模型输入图片，以及查看建议性模型目录。端点、凭据、目录与 thinking 策略均按请求解析，因此有效的用户设置更改会在下一个请求生效，无需重启进程。它适合 DeepSeek 官方 API 或 OpenAI 兼容网关；由于路由名不同，可与 pi-ai 包并用。
+使用本包可通過 `deepseek-official` 路由流式調用 DeepSeek 模型，包括配置 thinking 與推理強度、向視覺模型輸入圖片，以及查看建議性模型目錄。端點、憑據、目錄與 thinking 策略均按請求解析，因此有效的用戶設置更改會在下一個請求生效，無需重啟進程。它適合 DeepSeek 官方 API 或 OpenAI 兼容網關；由于路由名不同，可與 pi-ai 包并用。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-当组合需要通过 harness LLM（大语言模型）服务流式调用 DeepSeek 模型时挂载本插件。它注册唯一的 `deepseek-official` 路由，并按请求解析连接事实，因此组合条目加可选用户设置分节即可驱动整个适配器。
+當組合需要通過 harness LLM（大語言模型）服務流式調用 DeepSeek 模型時掛載本插件。它注冊唯一的 `deepseek-official` 路由，并按請求解析連接事實，因此組合條目加可選用戶設置分節即可驅動整個適配器。
 
-### 何时选择
+### 何時選擇
 
-当部署面向 DeepSeek 官方 API（可选地通过 `baseURL` 指向的 OpenAI 兼容网关）时选择本适配器。当同一组合还要通过 pi-ai 目录路由其他提供方或手工声明的网关时，选择 `dsh-llm-pi-ai`；两个适配器可以同时挂载，因为它们的路由名不冲突。为 `deepseek-official` 注册任何其他适配器会以 `DUPLICATE_ADAPTER` 失败。
+當部署面向 DeepSeek 官方 API（可選地通過 `baseURL` 指向的 OpenAI 兼容網關）時選擇本適配器。當同一組合還要通過 pi-ai 目錄路由其他提供方或手工聲明的網關時，選擇 `dsh-llm-pi-ai`；兩個適配器可以同時掛載，因為它們的路由名不沖突。為 `deepseek-official` 注冊任何其他適配器會以 `DUPLICATE_ADAPTER` 失敗。
 
 ### 最小配置
 
@@ -46,163 +46,163 @@ kind: "package-reference"
     filesApiTimeoutMs: 60000
 ```
 
-请求用 `provider: deepseek-official` 选择路由；模型 id 原样传到协议，因此新增 DeepSeek 模型无需重新注册。省略 `models` 时公布支持文本和图像的 `deepseek-flash` 和 `deepseek-v4-flash-vision-exp`，以及仅支持文本的 `deepseek-v4-flash` 和 `deepseek-v4-pro`，各自的上下文窗口均为 1,000,000 token。显式列表会替换这些默认值，未列出的模型 id 仍作为纯文本路由原样通过。包括模型发现工具在内的客户端可通过 `ctx.llm.listModels('deepseek-official')` 读取这些建议性条目。支持图片的条目可把 `imagePixelBudget` 设置为正整数或 `low`，也可以设置 `imageMaxBytes`。当端点把 `messages` 中任意位置最新的 `system` 消息读作完整的有效系统提示词时，条目可以声明 `systemPromptUpdate: in-history`；适配器会在已解析模型与已准备调用上报告该模式，agent loop（智能体循环）随后把变化后的提示词追加到已缓存历史之后，而不是改写开头的 system 消息（[决策规则](../../core/agent-loop/README.zh.md#understand-the-implementation)）。默认的 `deepseek-flash` 条目声明该模式；其他模型需通过 `models` 显式声明，`in-history` 以外的任何值都会在加载时以 `llm-deepseek: catalog model "<id>" systemPromptUpdate must be "in-history" when present` 失败。
+請求用 `provider: deepseek-official` 選擇路由；模型 id 原樣傳到協議，因此新增 DeepSeek 模型無需重新注冊。省略 `models` 時公布支持文本和圖像的 `deepseek-flash` 和 `deepseek-v4-flash-vision-exp`，以及僅支持文本的 `deepseek-v4-flash` 和 `deepseek-v4-pro`，各自的上下文窗口均為 1,000,000 token。顯式列表會替換這些默認值，未列出的模型 id 仍作為純文本路由原樣通過。包括模型發現工具在內的客戶端可通過 `ctx.llm.listModels('deepseek-official')` 讀取這些建議性條目。支持圖片的條目可把 `imagePixelBudget` 設置為正整數或 `low`，也可以設置 `imageMaxBytes`。當端點把 `messages` 中任意位置最新的 `system` 消息讀作完整的有效系統提示詞時，條目可以聲明 `systemPromptUpdate: in-history`；適配器會在已解析模型與已準備調用上報告該模式，agent loop（智能體循環）隨后把變化后的提示詞追加到已緩存歷史之后，而不是改寫開頭的 system 消息（[決策規則](../../core/agent-loop/README.zh.md#understand-the-implementation)）。默認的 `deepseek-flash` 條目聲明該模式；其他模型需通過 `models` 顯式聲明，`in-history` 以外的任何值都會在加載時以 `llm-deepseek: catalog model "<id>" systemPromptUpdate must be "in-history" when present` 失敗。
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `apiKeyEnv` | `DEEPSEEK_API_KEY` | 按请求解析的凭据引用：先经凭据 seam，再到环境变量 |
-| `baseURL` | `https://api.deepseek.com` | 端点基址；设置了 `$DEEPSEEK_BASE_URL` 时优先 |
-| `thinking` | `enabled` | 部署策略；`disabled` 把所有请求锁定为 `off` |
-| `reasoningEffort` | `high` | 默认强度：`off`、`low`、`high` 或 `max` |
-| `maxTokens` | `256,000` | 单次请求输出上限；模型自身上限与显式请求值优先 |
-| `defaultContextWindow` | `1,000,000` | 无精确值模型的容量回退 |
-| `models` | V41 Flash + V4 Flash + V4 Pro + V4 Flash Vision Exp | 供发现消费方查看的建议性目录 |
-| `streamIdleTimeoutMs` | `300,000` | 单次流读取未完成的最大提供方空闲时间 |
-| `maxRequestFilesBytes` | `128 MiB` | 按最旧优先卸载前保留的请求图片字节高水位 |
-| `maxInlineRequestImageBytes` | `20 MiB` | 独立的 base64 回退高水位 |
-| `maxImagesPerRequest` | `600` | 保留请求图片数量的高水位 |
-| `imageOffloadByteQuantum` | `64 MiB` | Files 模式最旧前缀移除量子 |
-| `inlineImageOffloadByteQuantum` | `10 MiB` | 内联模式最旧前缀移除量子 |
-| `imageOffloadCountQuantum` | `20` | 数量超限移除量子 |
-| `filesApiTimeoutMs` | `60,000` | 每张图片 Files 解析截止时间 |
-| `fileExpiresAfterSeconds` | `604,800` | 请求的上传图片生存期 |
-| `fileRefreshMarginSeconds` | `3,600` | 低于此剩余生存期时替换 id |
-| `fileQuotaCleanupBatch` | `100` | 配额重试前删除的、归 harness 所有的最旧文件数 |
-| `retryPolicy` | normal，5 次重试 | 由 `dsh-llm-retry` 执行的提供方自有重试策略 |
+| `apiKeyEnv` | `DEEPSEEK_API_KEY` | 按請求解析的憑據引用：先經憑據 seam，再到環境變量 |
+| `baseURL` | `https://api.deepseek.com` | 端點基址；設置了 `$DEEPSEEK_BASE_URL` 時優先 |
+| `thinking` | `enabled` | 部署策略；`disabled` 把所有請求鎖定為 `off` |
+| `reasoningEffort` | `high` | 默認強度：`off`、`low`、`high` 或 `max` |
+| `maxTokens` | `256,000` | 單次請求輸出上限；模型自身上限與顯式請求值優先 |
+| `defaultContextWindow` | `1,000,000` | 無精確值模型的容量回退 |
+| `models` | V41 Flash + V4 Flash + V4 Pro + V4 Flash Vision Exp | 供發現消費方查看的建議性目錄 |
+| `streamIdleTimeoutMs` | `300,000` | 單次流讀取未完成的最大提供方空閑時間 |
+| `maxRequestFilesBytes` | `128 MiB` | 按最舊優先卸載前保留的請求圖片字節高水位 |
+| `maxInlineRequestImageBytes` | `20 MiB` | 獨立的 base64 回退高水位 |
+| `maxImagesPerRequest` | `600` | 保留請求圖片數量的高水位 |
+| `imageOffloadByteQuantum` | `64 MiB` | Files 模式最舊前綴移除量子 |
+| `inlineImageOffloadByteQuantum` | `10 MiB` | 內聯模式最舊前綴移除量子 |
+| `imageOffloadCountQuantum` | `20` | 數量超限移除量子 |
+| `filesApiTimeoutMs` | `60,000` | 每張圖片 Files 解析截止時間 |
+| `fileExpiresAfterSeconds` | `604,800` | 請求的上傳圖片生存期 |
+| `fileRefreshMarginSeconds` | `3,600` | 低于此剩余生存期時替換 id |
+| `fileQuotaCleanupBatch` | `100` | 配額重試前刪除的、歸 harness 所有的最舊文件數 |
+| `retryPolicy` | normal，5 次重試 | 由 `dsh-llm-retry` 執行的提供方自有重試策略 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-llm-deepseek)是每个受支持字段及其 JSDoc 的穷尽式真源。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-llm-deepseek)是每個受支持字段及其 JSDoc 的窮盡式真源。
 
-### 带 thinking 与图片的流式调用
+### 帶 thinking 與圖片的流式調用
 
-支持图片的路由会在自身像素与字节预算内把每个持久引用解析为确定性请求版本。`imagePixelBudget` 接受正整数或 `low`；省略时使用总计 640,000 像素，`low` 使用总计 512×512 像素，`imageMaxBytes` 默认为 1 MiB。带 alpha 的图片使用 effort 0 的 WebP，不透明图片使用 JPEG，并采用 85/75/60 质量阶梯；全部候选都超过目标时保留最小输出。每张保留图片前都有文本，注明完整附件 id 与实际请求尺寸。当前文件系统可以映射附件提供方的宿主对象时，该文本还携带只读执行世界路径与可写副本使用的扩展名。纯文本与未列出路由接收稳定附件占位符，而持久历史继续保留图片引用。
+支持圖片的路由會在自身像素與字節預算內把每個持久引用解析為確定性請求版本。`imagePixelBudget` 接受正整數或 `low`；省略時使用總計 640,000 像素，`low` 使用總計 512×512 像素，`imageMaxBytes` 默認為 1 MiB。帶 alpha 的圖片使用 effort 0 的 WebP，不透明圖片使用 JPEG，并采用 85/75/60 質量階梯；全部候選都超過目標時保留最小輸出。每張保留圖片前都有文本，注明完整附件 id 與實際請求尺寸。當前文件系統可以映射附件提供方的宿主對象時，該文本還攜帶只讀執行世界路徑與可寫副本使用的擴展名。純文本與未列出路由接收穩定附件占位符，而持久歷史繼續保留圖片引用。
 
-适配器通常通过 DeepSeek Files API 上传这些确切请求字节，并发送 file-id 块。文件解析失败或超时会用相同请求版本的 base64 data URL 重建整份 chat 请求；一次请求绝不混用 file id 与内联图片。缓存 id 按端点与 API key 限定作用域，在到期前刷新，根据提供方的陈旧文件错误失效，并通过带等待方局部取消的 singleflight 解析。配额失败会先删除一批配置数量的最旧 harness 文件，再重试一次上传。
+適配器通常通過 DeepSeek Files API 上傳這些確切請求字節，并發送 file-id 塊。文件解析失敗或超時會用相同請求版本的 base64 data URL 重建整份 chat 請求；一次請求絕不混用 file id 與內聯圖片。緩存 id 按端點與 API key 限定作用域，在到期前刷新，根據提供方的陳舊文件錯誤失效，并通過帶等待方局部取消的 singleflight 解析。配額失敗會先刪除一批配置數量的最舊 harness 文件，再重試一次上傳。
 
-Files 模式通过 `maxRequestFilesBytes` 与 `maxImagesPerRequest` 限制保留请求版本；内联回退有独立 base64 预算。两种模式都按配置的字节或数量量子移除最旧前缀。每张省略图片都有自己的模型可见占位符，包含显示名或附件 id，以及可用时的规范化尺寸、媒体类型与当前只读路径。分阶高水位策略避免每新增一张图片都改写旧请求前缀。
+Files 模式通過 `maxRequestFilesBytes` 與 `maxImagesPerRequest` 限制保留請求版本；內聯回退有獨立 base64 預算。兩種模式都按配置的字節或數量量子移除最舊前綴。每張省略圖片都有自己的模型可見占位符，包含顯示名或附件 id，以及可用時的規范化尺寸、媒體類型與當前只讀路徑。分階高水位策略避免每新增一張圖片都改寫舊請求前綴。
 
-`reasoningEffort` 选择公布的默认值。当部署策略允许 thinking 时，确切模型元数据会按顺序公开 `off`、`low`、`high` 与 `max` 强度及选择指引。`low`、`high` 与 `max` 启用 thinking 并以 `reasoning_effort` 序列化，适配器自有的 `off` 则发送 `thinking.type: disabled`。不支持的取值会在网络 I/O 前以 `UNSUPPORTED_REASONING_EFFORT` 失败；`thinking: disabled` 会在插件加载时拒绝任何非 `off` 强度。`purpose: 'session-title'` 的请求会强制关闭 thinking，把有界输出留给可见标题文本。
+`reasoningEffort` 選擇公布的默認值。當部署策略允許 thinking 時，確切模型元數據會按順序公開 `off`、`low`、`high` 與 `max` 強度及選擇指引。`low`、`high` 與 `max` 啟用 thinking 并以 `reasoning_effort` 序列化，適配器自有的 `off` 則發送 `thinking.type: disabled`。不支持的取值會在網絡 I/O 前以 `UNSUPPORTED_REASONING_EFFORT` 失敗；`thinking: disabled` 會在插件加載時拒絕任何非 `off` 強度。`purpose: 'session-title'` 的請求會強制關閉 thinking，把有界輸出留給可見標題文本。
 
-### 动态配置
+### 動態配置
 
-连接事实通过可选 settings 与凭据 seam 每次操作重新读取一次。用户设置文档中的 `llm-deepseek:` 分节无需重启即可覆盖任何字段；违反 schema 之外约束的快照会保留最后有效事实并记录失败。API 密钥从提供端点、图片与 Files 策略及空闲预算的同一快照按流调用解析，因此被拒绝的设置代际不会贡献其中任何事实。图片请求在请求时解析附件服务，因此加载顺序不会冻结图片可用性。
+連接事實通過可選 settings 與憑據 seam 每次操作重新讀取一次。用戶設置文檔中的 `llm-deepseek:` 分節無需重啟即可覆蓋任何字段；違反 schema 之外約束的快照會保留最后有效事實并記錄失敗。API 密鑰從提供端點、圖片與 Files 策略及空閑預算的同一快照按流調用解析，因此被拒絕的設置代際不會貢獻其中任何事實。圖片請求在請求時解析附件服務，因此加載順序不會凍結圖片可用性。
 
-### 提供方专用请求字段
+### 提供方專用請求字段
 
-存在 `ctx.deepseekLlmApiExtensions` 时，适配器会在 `fetch` 前根据确切序列化基础请求准备已注册顶层字段。准备或字段冲突在 HTTP 前失败；2xx 响应后，适配器会在消费 SSE（Server-Sent Events）前接受每项已捕获贡献。传输与非 2xx 失败不会接受它们。随产品交付的组合用它提供可选增量 `dsh_session_log` 字段和默认启用的活跃 `dsh_plugin_packages` 清单；两者都留在模型输入之外。
+存在 `ctx.deepseekLlmApiExtensions` 時，適配器會在 `fetch` 前根據確切序列化基礎請求準備已注冊頂層字段。準備或字段沖突在 HTTP 前失敗；2xx 響應后，適配器會在消費 SSE（Server-Sent Events）前接受每項已捕獲貢獻。傳輸與非 2xx 失敗不會接受它們。隨產品交付的組合用它提供可選增量 `dsh_session_log` 字段和默認啟用的活躍 `dsh_plugin_packages` 清單；兩者都留在模型輸入之外。
 
-### 失败与恢复
+### 失敗與恢復
 
-非 2xx 响应以稳定 code 失败：`AUTH`（401/403）、`QUOTA`、`RATE_LIMIT`、`CONTEXT_WINDOW_EXCEEDED`、`INVALID_REQUEST`、`SERVER` 以及其他情况的 `HTTP_<status>`；响应前传输失败抛出 `TRANSPORT`，调用方中止抛出 `ABORTED`，流空闲超时抛出 `TIMEOUT`。请求扩展准备、字段冲突或 2xx 后接受失败使用 `REQUEST_EXTENSION`。当提供方未指出 file id 时，规范化图片拒绝会列出所有可能附件及其持久位置。陈旧文件拒绝会使点名映射（或该次尝试使用的全部映射）失效，并允许一次替换 chat 尝试。协议违规抛出 `STREAM_CLOSED` 或 `MALFORMED_RESPONSE`；不带内容块的终止 `stop` 变成 `EMPTY_RESPONSE`，默认重试策略会重试它。任何位置都没有密钥的请求以 `MISSING_CREDENTIAL` 失败；格式错误的凭据以 `INVALID_CREDENTIAL` 失败，并点名需要修复的引用——绝不包含密钥的任何部分。
+非 2xx 響應以穩定 code 失敗：`AUTH`（401/403）、`QUOTA`、`RATE_LIMIT`、`CONTEXT_WINDOW_EXCEEDED`、`INVALID_REQUEST`、`SERVER` 以及其他情況的 `HTTP_<status>`；響應前傳輸失敗拋出 `TRANSPORT`，調用方中止拋出 `ABORTED`，流空閑超時拋出 `TIMEOUT`。請求擴展準備、字段沖突或 2xx 后接受失敗使用 `REQUEST_EXTENSION`。當提供方未指出 file id 時，規范化圖片拒絕會列出所有可能附件及其持久位置。陳舊文件拒絕會使點名映射（或該次嘗試使用的全部映射）失效，并允許一次替換 chat 嘗試。協議違規拋出 `STREAM_CLOSED` 或 `MALFORMED_RESPONSE`；不帶內容塊的終止 `stop` 變成 `EMPTY_RESPONSE`，默認重試策略會重試它。任何位置都沒有密鑰的請求以 `MISSING_CREDENTIAL` 失敗；格式錯誤的憑據以 `INVALID_CREDENTIAL` 失敗，并點名需要修復的引用——絕不包含密鑰的任何部分。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释适配器背后的设计；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋適配器背后的設計；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-插件建立在一个显式解析步骤与一条注册事实之上。`resolveAdapterOptions()` 是从原始配置到已校验连接事实的唯一路径，适配器通过 thunk 每次操作重新读取这些事实——基址、目录、请求默认值、图片与 Files 策略及空闲预算都会作用于下一个请求，而进行中的流保持其启动时的事实。注册时捕获的唯一事实是重试策略：解析值变化时，插件会在一个同步区段内原位重新注册路由，因此任何请求都观察不到空档。
+插件建立在一個顯式解析步驟與一條注冊事實之上。`resolveAdapterOptions()` 是從原始配置到已校驗連接事實的唯一路徑，適配器通過 thunk 每次操作重新讀取這些事實——基址、目錄、請求默認值、圖片與 Files 策略及空閑預算都會作用于下一個請求，而進行中的流保持其啟動時的事實。注冊時捕獲的唯一事實是重試策略：解析值變化時，插件會在一個同步區段內原位重新注冊路由，因此任何請求都觀察不到空檔。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：`Config` schema、按请求解析、settings 与凭据接线 |
-| [`src/adapter.ts`](src/adapter.ts) | `DeepSeekAdapter`：模型解析、图片投影、Files 回退、带空闲超时的流式调用 |
-| [`src/file-store.ts`](src/file-store.ts) + [`src/files-api.ts`](src/files-api.ts) | 限定作用域的上传缓存、到期、陈旧 id 恢复、配额清理与远程文件操作 |
-| [`src/serialize.ts`](src/serialize.ts) | 协议序列化：thinking 默认值、Files 或内联图片块、历史规则 |
-| [`src/sse.ts`](src/sse.ts) | 直接 `fetch` 流的 `eventsource-parser` SSE 分帧 |
-| [`src/translate.ts`](src/translate.ts) | 把 SSE 载荷翻译为 harness `StreamChunk` 值；工具调用的 `id` 与 `name` 是身份，后续分片重复发送空串或 null 时保留已建立的值 |
-| [`src/types.ts`](src/types.ts) | 上述模块共享的协议级类型 |
+| [`src/index.ts`](src/index.ts) | 插件入口：`Config` schema、按請求解析、settings 與憑據接線 |
+| [`src/adapter.ts`](src/adapter.ts) | `DeepSeekAdapter`：模型解析、圖片投影、Files 回退、帶空閑超時的流式調用 |
+| [`src/file-store.ts`](src/file-store.ts) + [`src/files-api.ts`](src/files-api.ts) | 限定作用域的上傳緩存、到期、陳舊 id 恢復、配額清理與遠程文件操作 |
+| [`src/serialize.ts`](src/serialize.ts) | 協議序列化：thinking 默認值、Files 或內聯圖片塊、歷史規則 |
+| [`src/sse.ts`](src/sse.ts) | 直接 `fetch` 流的 `eventsource-parser` SSE 分幀 |
+| [`src/translate.ts`](src/translate.ts) | 把 SSE 載荷翻譯為 harness `StreamChunk` 值；工具調用的 `id` 與 `name` 是身份，后續分片重復發送空串或 null 時保留已建立的值 |
+| [`src/types.ts`](src/types.ts) | 上述模塊共享的協議級類型 |
 
-### 协议流程
+### 協議流程
 
-一次 `stream()` 调用通常发一条 chat 请求：解析确定性请求图片、优先使用 Files id、准备所有已注册顶层请求扩展、向解析后的 `baseURL` 发起 fetch、在 HTTP 2xx 后接受扩展事务，并把 SSE 流翻译为 harness 协议。文件解析失败会让首条 chat 使用内联模式；提供方的陈旧文件响应允许一次替换尝试，且替换解析失败时也使用内联模式。每条 chat 与 Files 调用都在模型输入之外携带共享归因和稳定匿名用户 id，会话调用还携带 session id。推理历史会按需序列化回请求，缓存计量则把 DeepSeek 的缓存命中指标映射进 harness 用量桶。
+一次 `stream()` 調用通常發一條 chat 請求：解析確定性請求圖片、優先使用 Files id、準備所有已注冊頂層請求擴展、向解析后的 `baseURL` 發起 fetch、在 HTTP 2xx 后接受擴展事務，并把 SSE 流翻譯為 harness 協議。文件解析失敗會讓首條 chat 使用內聯模式；提供方的陳舊文件響應允許一次替換嘗試，且替換解析失敗時也使用內聯模式。每條 chat 與 Files 調用都在模型輸入之外攜帶共享歸因和穩定匿名用戶 id，會話調用還攜帶 session id。推理歷史會按需序列化回請求，緩存計量則把 DeepSeek 的緩存命中指標映射進 harness 用量桶。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下页面。它们从服务约定逐步进入孪生适配器、重试执行器与共享类型。
+當包級約定不夠用時閱讀以下頁面。它們從服務約定逐步進入孿生適配器、重試執行器與共享類型。
 
-- [dsh-llm 服务](../llm/README.zh.md)——本适配器注册其上的提供方无关服务。
-- [llm-pi-ai 适配器](../llm-pi-ai/README.zh.md)——服务其他提供方与网关的库实现孪生。
-- [LLM 流式子系统](../../../docs/subsystems/llm-streaming.zh.md)——`StreamChunk` 协议与适配器约定。
-- [llm-retry](../llm-retry/README.zh.md)——应用本适配器 `retryPolicy` 的重试执行器。
-- [DeepSeek 请求扩展](../deepseek-llm-api-extensions/README.zh.md)——提供方专用顶层字段的生命周期与接受语义。
-- [会话日志上传](../../session/session-log-deepseek/README.zh.md)——可选的增量 `dsh_session_log` 贡献。
-- [插件包清单](../plugin-package-inventory-deepseek/README.zh.md)——默认启用的 `dsh_plugin_packages` 贡献。
-- [孪生 LLM 适配器](../../../.agents/notes/implemented/architecture/2026-06-13-twin-llm-adapters.zh.md)——为什么 DeepSeek 交付两个结构不同的适配器。
-- [强制应用归因标头](../../../.agents/notes/implemented/architecture/2026-06-21-mandatory-app-attribution-headers.zh.md)——每个提供方请求携带的身份。
+- [dsh-llm 服務](../llm/README.zh.md)——本適配器注冊其上的提供方無關服務。
+- [llm-pi-ai 適配器](../llm-pi-ai/README.zh.md)——服務其他提供方與網關的庫實現孿生。
+- [LLM 流式子系統](../../../docs/subsystems/llm-streaming.zh.md)——`StreamChunk` 協議與適配器約定。
+- [llm-retry](../llm-retry/README.zh.md)——應用本適配器 `retryPolicy` 的重試執行器。
+- [DeepSeek 請求擴展](../deepseek-llm-api-extensions/README.zh.md)——提供方專用頂層字段的生命周期與接受語義。
+- [會話日志上傳](../../session/session-log-deepseek/README.zh.md)——可選的增量 `dsh_session_log` 貢獻。
+- [插件包清單](../plugin-package-inventory-deepseek/README.zh.md)——默認啟用的 `dsh_plugin_packages` 貢獻。
+- [孿生 LLM 適配器](../../../.agents/notes/implemented/architecture/2026-06-13-twin-llm-adapters.zh.md)——為什么 DeepSeek 交付兩個結構不同的適配器。
+- [強制應用歸因標頭](../../../.agents/notes/implemented/architecture/2026-06-21-mandatory-app-attribution-headers.zh.md)——每個提供方請求攜帶的身份。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### DeepSeek 请求
-
-#### 模型看到什么
-
-所选 DeepSeek 模型会收到 harness 系统提示词、消息历史、工具 schema、停止序列与调用配置（`maxTokens`、`reasoningEffort`、`temperature`），不包含适配器撰写的提示词散文。提供方专用请求扩展字段留在模型输入之外。视觉模型通常接收 Files API 引用形式的用户与工具结果图片，其旁带附件句柄和请求预览尺寸。当前执行文件系统可以映射附件提供方的宿主对象时，它还会收到规范化对象路径；描述符会把该副本标记为只读，并警告规范化可能缩放或重新编码上传内容。Files 解析失败时，全部保留图片改用内联 data URL；超出预算的较旧图片则在占位文本中保留当前请求已解析的访问方式。此前 assistant 轮次的推理内容会原样传回，无论该轮次是否调用了工具。
-
-#### Token 影响
-
-提供方分词决定精确的文本与图片 token 输入。适配器声明按路由的 `imageRequestPricing`：它根据持久记录中的字节长度复现最旧优先的图片 offload，并按投影后的尺寸使用公开的视觉计量规则（14 px patch 网格、3:1 降采样、544×544 放大下限、单图 1024 token 上限）为每张保留图片计价。这使 token 计量服务可以在请求发出前为图片压力定价；上报的 usage 仍是权威值。推理回传会把每个推理轮次的思维链带进后续请求，而丢弃超预算图片会避免再次为它们付费。可用时报告缓存读取用量。`totalTokens` 是精确的 `prompt_tokens + completion_tokens` 汇总值；提供方给出的 `total_tokens` 不一致时省略该值。
-
-#### KV Cache 影响
-
-未改变的已组装前缀有资格获得 DeepSeek 缓存复用，本适配器会在用量中报告。确定性的请求图片字节并不意味着完整前缀固定不变：执行世界路径变化会改写历史描述符文本，刷新上传会替换 `file_id`，Files 到 base64 的回退也会改变图片表示。这些变化以及模型路由、提示词、schema、历史或图片预算变化，都可能从首个受影响 token 起阻止复用；推理回传在每个推理轮次上追加内容。在声明了 `systemPromptUpdate: in-history` 的目录条目上，同一请求序列延续期间的系统提示词变化会追加到已缓存历史之后，因此直到该历史末尾的前缀仍可复用；工具 schema 变化仍会从第一个改变的 token 起阻止复用。
-
-### DeepSeek 响应
+### DeepSeek 請求
 
 #### 模型看到什么
 
-推理、文本与原始字符串工具参数会被翻译为 harness 分片，供 loop 记录并组装。
+所選 DeepSeek 模型會收到 harness 系統提示詞、消息歷史、工具 schema、停止序列與調用配置（`maxTokens`、`reasoningEffort`、`temperature`），不包含適配器撰寫的提示詞散文。提供方專用請求擴展字段留在模型輸入之外。視覺模型通常接收 Files API 引用形式的用戶與工具結果圖片，其旁帶附件句柄和請求預覽尺寸。當前執行文件系統可以映射附件提供方的宿主對象時，它還會收到規范化對象路徑；描述符會把該副本標記為只讀，并警告規范化可能縮放或重新編碼上傳內容。Files 解析失敗時，全部保留圖片改用內聯 data URL；超出預算的較舊圖片則在占位文本中保留當前請求已解析的訪問方式。此前 assistant 輪次的推理內容會原樣傳回，無論該輪次是否調用了工具。
 
-#### Token 影响
+#### Token 影響
 
-生成的 token 遵循请求中记录的推理强度与 `maxTokens`；只有 loop 保留的块会影响后续输入。
+提供方分詞決定精確的文本與圖片 token 輸入。適配器聲明按路由的 `imageRequestPricing`：它根據持久記錄中的字節長度復現最舊優先的圖片 offload，并按投影后的尺寸使用公開的視覺計量規則（14 px patch 網格、3:1 降采樣、544×544 放大下限、單圖 1024 token 上限）為每張保留圖片計價。這使 token 計量服務可以在請求發出前為圖片壓力定價；上報的 usage 仍是權威值。推理回傳會把每個推理輪次的思維鏈帶進后續請求，而丟棄超預算圖片會避免再次為它們付費。可用時報告緩存讀取用量。`totalTokens` 是精確的 `prompt_tokens + completion_tokens` 匯總值；提供方給出的 `total_tokens` 不一致時省略該值。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-loop 保留的响应块会追加到下一个请求，并保留其更早的可复用前缀；被丢弃的块不再有后续缓存影响。更换提供方或模型会选中不同的缓存域。
+未改變的已組裝前綴有資格獲得 DeepSeek 緩存復用，本適配器會在用量中報告。確定性的請求圖片字節并不意味著完整前綴固定不變：執行世界路徑變化會改寫歷史描述符文本，刷新上傳會替換 `file_id`，Files 到 base64 的回退也會改變圖片表示。這些變化以及模型路由、提示詞、schema、歷史或圖片預算變化，都可能從首個受影響 token 起阻止復用；推理回傳在每個推理輪次上追加內容。在聲明了 `systemPromptUpdate: in-history` 的目錄條目上，同一請求序列延續期間的系統提示詞變化會追加到已緩存歷史之后，因此直到該歷史末尾的前綴仍可復用；工具 schema 變化仍會從第一個改變的 token 起阻止復用。
 
-## 已知限制与延期工作
+### DeepSeek 響應
+
+#### 模型看到什么
+
+推理、文本與原始字符串工具參數會被翻譯為 harness 分片，供 loop 記錄并組裝。
+
+#### Token 影響
+
+生成的 token 遵循請求中記錄的推理強度與 `maxTokens`；只有 loop 保留的塊會影響后續輸入。
+
+#### KV Cache 影響
+
+loop 保留的響應塊會追加到下一個請求，并保留其更早的可復用前綴；被丟棄的塊不再有后續緩存影響。更換提供方或模型會選中不同的緩存域。
+
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明适配器在哪里停止、由未来工作接续。它们是当前包约束，不是通用 DeepSeek 对比或任务积压。
+這些限制說明適配器在哪里停止、由未來工作接續。它們是當前包約束，不是通用 DeepSeek 對比或任務積壓。
 
-- **设置中的 `models` 列表会整体替换组合列表**——设置层按字段合并，数组只算一个字段；按条目合并目录需要带键的形状。
-- **不映射 `tool_choice`**——不属于核心词汇（与 pi-ai 孪生共享）。
-- **请求使用原始 `fetch`，而非 `@cordisjs/plugin-http`**——没有共享代理或拦截配置。
-- **跳过插件新增的内容块类型**——核心文本与受支持图片块会被序列化，空工具输出以字面量 `(no output)` 过线。
-- **图片是仅用于输入的持久附件**——不支持直接外部 URL 与 assistant 图片输出；DeepSeek 输入通常使用 Files API，仅在单次请求恢复时使用内联 base64。
-- 默认目录预注册 `deepseek-flash` 及其文本、图片和历史内更新能力，不探测网关可用性。网关开放该 ID 前，请求可能以 `INVALID_REQUEST` 失败。配置 `DEEPSEEK_API_KEY` 和支持该 ID 的网关后，设置 `DEEPSEEK_FLASH_E2E=1` 可启用[本包 e2e 测试文件](tests/adapter.e2e.ts)中的 Chat Completions 协议验证。
+- **設置中的 `models` 列表會整體替換組合列表**——設置層按字段合并，數組只算一個字段；按條目合并目錄需要帶鍵的形狀。
+- **不映射 `tool_choice`**——不屬于核心詞匯（與 pi-ai 孿生共享）。
+- **請求使用原始 `fetch`，而非 `@cordisjs/plugin-http`**——沒有共享代理或攔截配置。
+- **跳過插件新增的內容塊類型**——核心文本與受支持圖片塊會被序列化，空工具輸出以字面量 `(no output)` 過線。
+- **圖片是僅用于輸入的持久附件**——不支持直接外部 URL 與 assistant 圖片輸出；DeepSeek 輸入通常使用 Files API，僅在單次請求恢復時使用內聯 base64。
+- 默認目錄預注冊 `deepseek-flash` 及其文本、圖片和歷史內更新能力，不探測網關可用性。網關開放該 ID 前，請求可能以 `INVALID_REQUEST` 失敗。配置 `DEEPSEEK_API_KEY` 和支持該 ID 的網關后，設置 `DEEPSEEK_FLASH_E2E=1` 可啟用[本包 e2e 測試文件](tests/adapter.e2e.ts)中的 Chat Completions 協議驗證。
 
-- 默认请求图片投影限制为 640,000 总像素，低于提供方约 1300×1300 的处理预算，可能丢弃可用细节。每个模型的 `imagePixelBudget` 可以覆盖默认值。更改默认值会改变请求内容，需要单独验证快照（[决策](../../../.agents/notes/implemented/bug-fix/2026-09-10-deepseek-image-token-calculator-v41.zh.md)）。
+- 默認請求圖片投影限制為 640,000 總像素，低于提供方約 1300×1300 的處理預算，可能丟棄可用細節。每個模型的 `imagePixelBudget` 可以覆蓋默認值。更改默認值會改變請求內容，需要單獨驗證快照（[決策](../../../.agents/notes/implemented/bug-fix/2026-09-10-deepseek-image-token-calculator-v41.zh.md)）。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-本开发备注是不具权威性的工作上下文：尚未决定的探索方向与维护者备注。已交付的行为与既定理由以上文、包代码和相关 Agent Note 为准。
+本開發備注是不具權威性的工作上下文：尚未決定的探索方向與維護者備注。已交付的行為與既定理由以上文、包代碼和相關 Agent Note 為準。
 
-- OpenRouter 专属应用归因标头延期到未来显式 OpenRouter 适配器或模式；OpenAI 兼容网关请求只携带共享归因基线。
-- `off` 推理强度绝不会以 `reasoning_effort: 'off'` 过线；它序列化为 `thinking: { type: 'disabled' }` 并省略该字段，从而对拒绝未知强度取值的网关保持协议拼写有效。
+- OpenRouter 專屬應用歸因標頭延期到未來顯式 OpenRouter 適配器或模式；OpenAI 兼容網關請求只攜帶共享歸因基線。
+- `off` 推理強度絕不會以 `reasoning_effort: 'off'` 過線；它序列化為 `thinking: { type: 'disabled' }` 并省略該字段，從而對拒絕未知強度取值的網關保持協議拼寫有效。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。本包没有独立事件序列或可变数据关系，相关约定在所属 seam 强制执行。
+**運行時不變式：** 不發布伴生入口。本包沒有獨立事件序列或可變數據關系，相關約定在所屬 seam 強制執行。

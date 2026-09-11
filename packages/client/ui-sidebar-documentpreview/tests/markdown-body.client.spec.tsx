@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** Markdown preview uses one accumulated document across page arrivals and EOF. */
 import { afterEach, describe, expect, it } from 'vitest'
 import { cleanup, render } from '@testing-library/react'
@@ -90,8 +90,8 @@ describe('MarkdownBody', () => {
     expect(view.getByRole('button', { name: 'Copy' })).toBeDefined()
     dictionary = zh
     view.rerender(<MarkdownBody {...props(value, t)} />)
-    expect(view.getByRole('button', { name: '复制' })).toBeDefined()
-    expect(view.getByRole('heading', { name: '脚注' })).toBeDefined()
+    expect(view.getByRole('button', { name: '復制' })).toBeDefined()
+    expect(view.getByRole('heading', { name: '腳注' })).toBeDefined()
   })
 
   it('renders empty text and leaves non-text deliveries to their selected implementation', () => {

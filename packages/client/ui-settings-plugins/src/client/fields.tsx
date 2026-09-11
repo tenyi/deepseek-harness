@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Hand-written controls for the plugin configuration forms. Each renders one
  * field's label, its staged text, whether saving would leave an override, and
  * — when one stands — the reset that stages a clear back to the composition

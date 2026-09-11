@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { normalizeLlmFailure } from '../src/adapter-failure.ts'
 
 describe('adapter failure normalization', () => {

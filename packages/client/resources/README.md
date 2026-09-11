@@ -1,4 +1,4 @@
----
+﻿---
 description: "Client resource model: protocol-registered providers turn URL addresses into live values that any slot component reads through the useResource standard hook."
 kind: "package-reference"
 ---

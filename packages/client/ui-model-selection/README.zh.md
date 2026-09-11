@@ -1,5 +1,5 @@
----
-description: "Web GUI 的模型选择：/model 弹窗与 composer 模型位共用一份按提供方分组的会话级目录；供模型路由的用户与维护者阅读。"
+﻿---
+description: "Web GUI 的模型選擇：/model 彈窗與 composer 模型位共用一份按提供方分組的會話級目錄；供模型路由的用戶與維護者閱讀。"
 kind: "package-reference"
 ---
 
@@ -9,86 +9,86 @@ kind: "package-reference"
 
 ## 概述
 
-Web GUI 允许用户通过 `/model` 弹窗或 composer 模型控件切换既有会话使用的模型与推理（reasoning）强度。两个界面呈现同一组按提供方分组的选择；所选模型决定可用的推理强度名称与默认值。完整选择从下一次请求开始生效；运行中的步骤保留其启动时的模型与推理强度。如果没有适配器可以服务会话路由，composer 会保持停用，直至路由恢复可用。
+Web GUI 允許用戶通過 `/model` 彈窗或 composer 模型控件切換既有會話使用的模型與推理（reasoning）強度。兩個界面呈現同一組按提供方分組的選擇；所選模型決定可用的推理強度名稱與默認值。完整選擇從下一次請求開始生效；運行中的步驟保留其啟動時的模型與推理強度。如果沒有適配器可以服務會話路由，composer 會保持停用，直至路由恢復可用。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-与 `ui-conversation` 及命令包一起挂载本插件；composer 随即在待处理指示器旁显示模型位，`/model` 则以弹窗打开同一份目录。当确切提供方／模型对仍在已公布分组中时，两个界面都显示 Host 报告的当前选择；目录行缺席时，可路由的选择保持不变，触发器提示 `Select model`。
+與 `ui-conversation` 及命令包一起掛載本插件；composer 隨即在待處理指示器旁顯示模型位，`/model` 則以彈窗打開同一份目錄。當確切提供方／模型對仍在已公布分組中時，兩個界面都顯示 Host 報告的當前選擇；目錄行缺席時，可路由的選擇保持不變，觸發器提示 `Select model`。
 
-### 模型与推理强度
+### 模型與推理強度
 
-模型按提供方分组。composer 菜单只显示模型与推理强度名称。`/model` 弹窗显示提供方名称与目录说明；其中两个内置 DeepSeek 模型的说明使用当前语言，外部提供方说明保持原文。弹窗应用所选模型的默认推理强度；composer 随后可以选择任一已公布的推理强度。适配器没有推理元数据时不显示 Effort 行；不存在任意推理强度输入。
+模型按提供方分組。composer 菜單只顯示模型與推理強度名稱。`/model` 彈窗顯示提供方名稱與目錄說明；其中兩個內置 DeepSeek 模型的說明使用當前語言，外部提供方說明保持原文。彈窗應用所選模型的默認推理強度；composer 隨后可以選擇任一已公布的推理強度。適配器沒有推理元數據時不顯示 Effort 行；不存在任意推理強度輸入。
 
-### 不可路由的会话
+### 不可路由的會話
 
-当 Host 报告没有适配器服务该会话的路由时，本插件注册一个 composer 阻塞块，输入框随之停用并显示本插件自己的文案；恢复后无需重新加载即清除。首次加载之前或加载失败之后的 `null` 绝不阻断；目录成员关系同样不阻断——一条仍在服务、只是不公布该模型的路由不在分组里，却可用。
+當 Host 報告沒有適配器服務該會話的路由時，本插件注冊一個 composer 阻塞塊，輸入框隨之停用并顯示本插件自己的文案；恢復后無需重新加載即清除。首次加載之前或加載失敗之后的 `null` 絕不阻斷；目錄成員關系同樣不阻斷——一條仍在服務、只是不公布該模型的路由不在分組里，卻可用。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-两个入口共用一份由 `ModelDirectoryResolver`（`ctx.modelDirectories`）持有的会话级目录：`/model` popupSelect 贡献项（经 `ctx.commandUi` 注册）与 composer 的具名 `conversation.input.model` 位都经 `session.models` 加载会话的建议目录、经 `session.selectModel` 通过同一个 `ModelDirectory` 实例提交，因此任一入口所做的切换正是另一个入口接下来显示的。目录加载与选择共享一个代次计数器，旧响应不会覆盖新结果；连接重置丢弃所有常驻投影，并在显示前重新拉取 Host 恢复的选择。目录按会话惰性解析，随会话作用域一并 dispose（资源释放）；已寻址 subagent 会话不公开任一入口。每份常驻目录都会直接在转发的 `llm/adapters-updated` 与 `settings/document-updated` owner 事件上重拉。
+兩個入口共用一份由 `ModelDirectoryResolver`（`ctx.modelDirectories`）持有的會話級目錄：`/model` popupSelect 貢獻項（經 `ctx.commandUi` 注冊）與 composer 的具名 `conversation.input.model` 位都經 `session.models` 加載會話的建議目錄、經 `session.selectModel` 通過同一個 `ModelDirectory` 實例提交，因此任一入口所做的切換正是另一個入口接下來顯示的。目錄加載與選擇共享一個代次計數器，舊響應不會覆蓋新結果；連接重置丟棄所有常駐投影，并在顯示前重新拉取 Host 恢復的選擇。目錄按會話惰性解析，隨會話作用域一并 dispose（資源釋放）；已尋址 subagent 會話不公開任一入口。每份常駐目錄都會直接在轉發的 `llm/adapters-updated` 與 `settings/document-updated` owner 事件上重拉。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当仅了解模型界面还不够时，请阅读以下页面。这些页面从浏览器界面逐步深入到命令弹窗外壳与选择约定。
+當僅了解模型界面還不夠時，請閱讀以下頁面。這些頁面從瀏覽器界面逐步深入到命令彈窗外殼與選擇約定。
 
-- [ui-commands](../ui-commands/README.zh.md)——`/model` 贡献项注册进的 popupSelect 外壳。
-- [ui-conversation](../ui-conversation/README.zh.md)——声明 composer 的 `conversation.input.model` 位与 composer 阻塞块。
-- [dsh-agent-default-model](../../core/agent-default-model/README.zh.md)——为从未选择的会话提供默认模型的默认模型服务。
-- [客户端包映射](../README.zh.md)——相邻的浏览器 UI 包。
+- [ui-commands](../ui-commands/README.zh.md)——`/model` 貢獻項注冊進的 popupSelect 外殼。
+- [ui-conversation](../ui-conversation/README.zh.md)——聲明 composer 的 `conversation.input.model` 位與 composer 阻塞塊。
+- [dsh-agent-default-model](../../core/agent-default-model/README.zh.md)——為從未選擇的會話提供默認模型的默認模型服務。
+- [客戶端包映射](../README.zh.md)——相鄰的瀏覽器 UI 包。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-两个入口提交的 `session.selectModel` 选择会间接影响模型：Host 会在下一次提示词组装边界为完整的 `ModelSelection` 创建快照，并负责使其对模型生效；运行中的步骤则保留已组装的选择。
+兩個入口提交的 `session.selectModel` 選擇會間接影響模型：Host 會在下一次提示詞組裝邊界為完整的 `ModelSelection` 創建快照，并負責使其對模型生效；運行中的步驟則保留已組裝的選擇。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-切换路由可能减少提供方侧后续请求的缓存复用，或使其失效；提示词前缀本身不受影响。
+切換路由可能減少提供方側后續請求的緩存復用，或使其失效；提示詞前綴本身不受影響。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制界定了当前模型选择界面。它们是当前包约束，不是通用模型路由器对比或任务积压。
+這些限制界定了當前模型選擇界面。它們是當前包約束，不是通用模型路由器對比或任務積壓。
 
-- **无创建期或已寻址 subagent 选择**——两个入口都要求既有普通会话的 agent（智能体）；没有可纳入会话创建的草稿阶段模型选择，subagent 继续执行也有意不公开独立的模型选择约定。
-- **目录名仅供呈现**——选择与持久化使用提供方／模型／推理强度 id；目录查询或确切模型元数据查询失败的提供方以不可选失败行列出，重新加载前保持原样。
-- **不能任意输入推理强度**——composer 仅提供确切模型由适配器公布的推理强度；适配器没有推理元数据时不显示 Effort 行。
+- **無創建期或已尋址 subagent 選擇**——兩個入口都要求既有普通會話的 agent（智能體）；沒有可納入會話創建的草稿階段模型選擇，subagent 繼續執行也有意不公開獨立的模型選擇約定。
+- **目錄名僅供呈現**——選擇與持久化使用提供方／模型／推理強度 id；目錄查詢或確切模型元數據查詢失敗的提供方以不可選失敗行列出，重新加載前保持原樣。
+- **不能任意輸入推理強度**——composer 僅提供確切模型由適配器公布的推理強度；適配器沒有推理元數據時不顯示 Effort 行。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。插件只注册一个 command contribution，HMR（热模块替换）安全性测试证明该注册的 dispose 能正确完成；它不发出 Cordis 事件，也不持有跨插件可变状态。
+**運行時不變式：** 不發布伴生入口。插件只注冊一個 command contribution，HMR（熱模塊替換）安全性測試證明該注冊的 dispose 能正確完成；它不發出 Cordis 事件，也不持有跨插件可變狀態。

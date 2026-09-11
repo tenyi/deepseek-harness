@@ -1,4 +1,4 @@
-// JsonBlock: collapsible JSON block (conversation side; independent from the RPC panel's PayloadJson to avoid cross-panel coupling).
+﻿// JsonBlock: collapsible JSON block (conversation side; independent from the RPC panel's PayloadJson to avoid cross-panel coupling).
 
 import { useMemo, useState } from 'react'
 import css from './JsonBlock.module.css'

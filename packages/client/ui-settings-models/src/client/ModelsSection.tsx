@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Models settings section: the provider rows joined from the configurable
  * directory, settings namespaces, and credential states, with one editor
  * card at a time. Rows expose only confirmed API-key state through accessible

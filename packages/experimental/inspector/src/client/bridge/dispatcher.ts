@@ -1,4 +1,4 @@
-/** Dispatch of validated Worker frames to browser-realm capability handlers. */
+﻿/** Dispatch of validated Worker frames to browser-realm capability handlers. */
 
 import type {
   ClientConsoleDisableFrame,

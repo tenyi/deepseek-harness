@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   SettingsSchemaService,
 } from '@deepseek-ai/dsh-client-ui-settings/client'
 

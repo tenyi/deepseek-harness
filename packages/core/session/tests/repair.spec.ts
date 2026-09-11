@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { ToolCallId , createMessage, createToolResultMessage } from '@deepseek-ai/dsh-llm'
 import { interruptedTurnClosers as repairInterruptedTurn, SessionSeq, TOOL_NOT_STARTED, TOOL_OUTCOME_UNKNOWN } from '../src/index.ts'
 import type { SessionEvent as LogicalSessionEvent, SurfaceEvent } from '../src/index.ts'

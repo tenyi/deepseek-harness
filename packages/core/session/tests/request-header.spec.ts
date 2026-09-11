@@ -1,4 +1,4 @@
-/** Request-header canonicalization, equality, and snapshot folding. */
+﻿/** Request-header canonicalization, equality, and snapshot folding. */
 
 import { describe, expect, it } from 'vitest'
 import { Session, SessionId, SessionSeq, canonicalHeader, foldRequestHeader, headerEquals } from '@deepseek-ai/dsh-session'

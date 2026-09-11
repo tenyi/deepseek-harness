@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Tool-pairing balance over a session surface. Compaction changes surface
  * positions, so safe cuts are derived from tool-call/result content in current
  * surface order rather than step markers.

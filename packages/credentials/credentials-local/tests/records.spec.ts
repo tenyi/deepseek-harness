@@ -1,4 +1,4 @@
-// The record half of the seam: the store keeps an owner's payload verbatim,
+﻿// The record half of the seam: the store keeps an owner's payload verbatim,
 // presence rather than content answers "configured", and every write goes
 // through one serialized read-modify-write so a rotating credential cannot be
 // lost between processes.

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The Sidebar's seat in the frame, and the panel it draws.
  *
  * The frame owns the right column's geometry; this package owns one content

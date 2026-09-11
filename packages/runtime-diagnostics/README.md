@@ -1,4 +1,4 @@
----
+﻿---
 description: "The runtime-diagnostics group map: package-owned runtime invariant checks for live compositions, for users and maintainers navigating the group."
 kind: "package-group"
 ---

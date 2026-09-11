@@ -1,4 +1,4 @@
-- banner:
+﻿- banner:
   - navigation "Session hierarchy":
     - button "workspace" [disabled]
   - img

@@ -1,4 +1,4 @@
-/** Cross-platform native path opener behavior. */
+﻿/** Cross-platform native path opener behavior. */
 type ExecFileCallback = (
   error: (Error & { code?: string | number }) | null,
   stdout: string,
@@ -342,12 +342,12 @@ describe('native file manager', () => {
   })
 
   it('selects a translated WSL path in Explorer and never starts a Linux file manager', async () => {
-    const run = vi.fn<PathOpenerRunner>(async () => ({ stdout: 'C:\\work\\报告.txt\r\n', stderr: '' }))
+    const run = vi.fn<PathOpenerRunner>(async () => ({ stdout: 'C:\\work\\報告.txt\r\n', stderr: '' }))
     const internals = { platform: 'linux' as const, env: { WSL_DISTRO_NAME: 'Ubuntu' }, run }
     expect(nativeFileManager(internals)).toBe('explorer')
-    await revealNativePath('/mnt/c/work/报告.txt', signal(), internals)
+    await revealNativePath('/mnt/c/work/報告.txt', signal(), internals)
     expect(run.mock.calls.map(([cmd, args]) => [cmd, args])).toEqual([
-      ['wslpath', ['-w', '/mnt/c/work/报告.txt']], ['explorer.exe', ['/select,', 'file:///C:/work/%E6%8A%A5%E5%91%8A.txt']],
+      ['wslpath', ['-w', '/mnt/c/work/報告.txt']], ['explorer.exe', ['/select,', 'file:///C:/work/%E6%8A%A5%E5%91%8A.txt']],
     ])
   })
 
@@ -406,7 +406,7 @@ it('preserves cancellation even when Explorer returns delegate exit 1', async ()
 })
 
 it.each([
-  ['C:\\my files\\报告,#%.txt', 'file:///C:/my%20files/%E6%8A%A5%E5%91%8A%2C%23%25.txt'],
+  ['C:\\my files\\報告,#%.txt', 'file:///C:/my%20files/%E6%8A%A5%E5%91%8A%2C%23%25.txt'],
   ['\\\\server\\share\\a,b.txt', 'file://server/share/a%2Cb.txt'],
 ])('preserves special characters in the Explorer target %s', async (path, target) => {
   const run = vi.fn<PathOpenerRunner>().mockResolvedValue({ stdout: '', stderr: '' })

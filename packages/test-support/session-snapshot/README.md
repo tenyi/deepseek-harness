@@ -1,4 +1,4 @@
----
+﻿---
 description: "Session-log snapshot support for keyless profile tests: manifests, identity redaction, normalization, workspace checks, and protocol adapters."
 kind: "package-library"
 ---

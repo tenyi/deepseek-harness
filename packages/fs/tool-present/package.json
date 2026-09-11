@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "@deepseek-ai/dsh-tool-present",
   "description": "Explicit workspace file delivery declarations for the DeepSeek Harness",
   "version": "0.1.5-rc.2",

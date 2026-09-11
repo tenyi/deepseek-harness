@@ -1,5 +1,5 @@
----
-description: "subagent 包组：委派 seam、其进程内与进程外后端，以及面向模型的委派工具。"
+﻿---
+description: "subagent 包組：委派 seam、其進程內與進程外后端，以及面向模型的委派工具。"
 kind: "package-group"
 ---
 
@@ -9,43 +9,43 @@ kind: "package-group"
 
 ## 概述
 
-subagent 包家族让 agent（智能体）将任务委派给子 agent、继续其工作，并发现自己创建的每个子级。隔离工作可选择全新的进程内子级；需要既有对话时可选择带父级历史的进程内子级；也可选择由 ACP（Agent Client Protocol）、Codex、Claude Code 或另一 Harness 运行时支持的进程外子级。面向模型的工具还让 agent 能够向相邻 agent 发送消息、中断工作并列出子级状态。无论子级正在运行还是已存储，父级都能看到它；各包 README 说明各提供方特定的设置与限制。
+subagent 包家族讓 agent（智能體）將任務委派給子 agent、繼續其工作，并發現自己創建的每個子級。隔離工作可選擇全新的進程內子級；需要既有對話時可選擇帶父級歷史的進程內子級；也可選擇由 ACP（Agent Client Protocol）、Codex、Claude Code 或另一 Harness 運行時支持的進程外子級。面向模型的工具還讓 agent 能夠向相鄰 agent 發送消息、中斷工作并列出子級狀態。無論子級正在運行還是已存儲，父級都能看到它；各包 README 說明各提供方特定的設置與限制。
 
-## 目录
+## 目錄
 
 - [包](#packages)
-- [相关文档](#related-documentation)
-- [开发备注](#dev-note)
+- [相關文檔](#related-documentation)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="packages"></a>
 ## 包
 
-| 包 | 职责 | ctx 键 |
+| 包 | 職責 | ctx 鍵 |
 |---|---|---|
-| [`subagent/`](subagent/README.zh.md) | 定义委派服务：提供方注册表、一次性运行、可继续子级与发现 | `ctx.subagents` |
-| [`subagent-in-process-driver/`](subagent-in-process-driver/README.zh.md) | 提供共享的进程内运行驱动器 | 无 |
-| [`subagent-spawn-in-process/`](subagent-spawn-in-process/README.zh.md) | 运行全新的进程内子 agent | 注册到 `ctx.subagents` |
-| [`subagent-fork-in-process/`](subagent-fork-in-process/README.zh.md) | 运行从父级已完成历史派生的进程内子 agent | 注册到 `ctx.subagents` |
-| [`subagent-acp/`](subagent-acp/README.zh.md) | 经 Agent Client Protocol 运行进程外子 agent | 注册到 `ctx.subagents` |
-| [`subagent-codex/`](subagent-codex/README.zh.md) | 经官方 app-server 协议运行真实 Codex 子 agent | 注册到 `ctx.subagents` |
-| [`subagent-claude-code/`](subagent-claude-code/README.zh.md) | 经官方 Agent SDK 运行真实 Claude Code 子 agent | 注册到 `ctx.subagents` |
-| [`subagent-dsh-sdk/`](subagent-dsh-sdk/README.zh.md) | 经 TypeScript SDK 运行进程外 Harness 子 agent | 注册到 `ctx.subagents` |
-| [`tool-subagent/`](tool-subagent/README.zh.md) | 向模型公开委派 | 注册到 `ctx.tools` |
-| [`tool-subagent-control/`](tool-subagent-control/README.zh.md) | 向模型提供向相邻 agent 发送消息、中断工作和列出子级状态的操作 | 注册到 `ctx.tools` |
+| [`subagent/`](subagent/README.zh.md) | 定義委派服務：提供方注冊表、一次性運行、可繼續子級與發現 | `ctx.subagents` |
+| [`subagent-in-process-driver/`](subagent-in-process-driver/README.zh.md) | 提供共享的進程內運行驅動器 | 無 |
+| [`subagent-spawn-in-process/`](subagent-spawn-in-process/README.zh.md) | 運行全新的進程內子 agent | 注冊到 `ctx.subagents` |
+| [`subagent-fork-in-process/`](subagent-fork-in-process/README.zh.md) | 運行從父級已完成歷史派生的進程內子 agent | 注冊到 `ctx.subagents` |
+| [`subagent-acp/`](subagent-acp/README.zh.md) | 經 Agent Client Protocol 運行進程外子 agent | 注冊到 `ctx.subagents` |
+| [`subagent-codex/`](subagent-codex/README.zh.md) | 經官方 app-server 協議運行真實 Codex 子 agent | 注冊到 `ctx.subagents` |
+| [`subagent-claude-code/`](subagent-claude-code/README.zh.md) | 經官方 Agent SDK 運行真實 Claude Code 子 agent | 注冊到 `ctx.subagents` |
+| [`subagent-dsh-sdk/`](subagent-dsh-sdk/README.zh.md) | 經 TypeScript SDK 運行進程外 Harness 子 agent | 注冊到 `ctx.subagents` |
+| [`tool-subagent/`](tool-subagent/README.zh.md) | 向模型公開委派 | 注冊到 `ctx.tools` |
+| [`tool-subagent-control/`](tool-subagent-control/README.zh.md) | 向模型提供向相鄰 agent 發送消息、中斷工作和列出子級狀態的操作 | 注冊到 `ctx.tools` |
 
 -----
 
 <a id="related-documentation"></a>
-## 相关文档
+## 相關文檔
 
-- [Subagent 子系统](../../docs/subsystems/subagent.zh.md)——服务约定、提供方约定与终态结果语义。
-- [Subagent 能力 seam](../../.agents/notes/implemented/feature/2026-06-21-subagent-capability-seam.zh.md)——委派能力家族的设计记录。
-- [可继续的 subagent](../../.agents/notes/implemented/feature/2026-07-28-continuable-subagent-conversations.zh.md)——接受后续轮次的持久子级。
-- [tool-subagent-control README](tool-subagent-control/README.zh.md)——后续消息、中断与列举接口。
+- [Subagent 子系統](../../docs/subsystems/subagent.zh.md)——服務約定、提供方約定與終態結果語義。
+- [Subagent 能力 seam](../../.agents/notes/implemented/feature/2026-06-21-subagent-capability-seam.zh.md)——委派能力家族的設計記錄。
+- [可繼續的 subagent](../../.agents/notes/implemented/feature/2026-07-28-continuable-subagent-conversations.zh.md)——接受后續輪次的持久子級。
+- [tool-subagent-control README](tool-subagent-control/README.zh.md)——后續消息、中斷與列舉接口。
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
-无。
+無。

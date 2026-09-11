@@ -1,4 +1,4 @@
-/** Host-driven integration over an isolated Client fixture. */
+﻿/** Host-driven integration over an isolated Client fixture. */
 
 import { createServer, type Server } from 'node:http'
 import { createContext, runInContext } from 'node:vm'

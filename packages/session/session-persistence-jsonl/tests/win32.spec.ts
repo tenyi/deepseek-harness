@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Unit tests for the Windows durable namespace helper with a mocked kernel32
  * binding. The real JSONL suite exercises the helper on native Windows; these
  * tests keep the Win32 error mapping and race handling covered on every host.

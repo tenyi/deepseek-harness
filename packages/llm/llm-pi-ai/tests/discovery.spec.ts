@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+﻿import { readFile } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import type { IncomingMessage, Server, ServerResponse } from 'node:http'
 import { afterEach, describe, expect, it, vi } from 'vitest'

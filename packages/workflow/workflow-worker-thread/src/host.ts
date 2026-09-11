@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Host side of one workflow run. The first worker result, unexpected death, or
  * cancellation-grace expiry owns settlement and closes message admission.
  * Pending starts share one abort signal; published children share idempotent

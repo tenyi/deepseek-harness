@@ -1,4 +1,4 @@
-/** Target-neutral Conversation slot declarations and composed component props. */
+﻿/** Target-neutral Conversation slot declarations and composed component props. */
 import type { ReactNode, RefObject } from 'react'
 import type { FileAttachmentRef, ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
 import type { SessionSnapshot } from '@deepseek-ai/dsh-api-session-controller/client'

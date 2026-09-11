@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared subprocess harness for ACP snapshot suites. A library module driven by
  * the suite factory in ./suite.ts (and directly by harness-level specs); each
  * profile adapter names its own agent-under-test paths.

@@ -1,4 +1,4 @@
-/** Deterministic two-page PDF with red and blue vector rectangles and an explicit xref table. */
+﻿/** Deterministic two-page PDF with red and blue vector rectangles and an explicit xref table. */
 
 /** @returns complete PDF bytes; no clocks, external fonts, images, or network references. */
 export function pdfFixture(): Uint8Array {

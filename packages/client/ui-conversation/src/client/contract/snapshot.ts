@@ -1,4 +1,4 @@
-/** Target-neutral Conversation state assembled from one Session event window. */
+﻿/** Target-neutral Conversation state assembled from one Session event window. */
 import type { SessionSnapshot } from '@deepseek-ai/dsh-api-session-controller/client'
 import type { ConversationViewSnapshotStore } from './conversation.ts'
 

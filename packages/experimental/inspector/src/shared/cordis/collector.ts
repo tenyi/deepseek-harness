@@ -1,4 +1,4 @@
-/** Shared Host/Client projection from live Cordis objects to a bounded semantic tree. */
+﻿/** Shared Host/Client projection from live Cordis objects to a bounded semantic tree. */
 
 import { Context, type Fiber } from '@deepseek-ai/cordis'
 import { jsonByteLength, type InspectorJsonValue } from '../json.ts'

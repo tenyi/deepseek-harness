@@ -1,4 +1,4 @@
-; Compile with OUTPUT_FILE, RESULT_FILE, PAYLOAD_FILE, TARGET_DIR and PLUGIN_DIR.
+﻿; Compile with OUTPUT_FILE, RESULT_FILE, PAYLOAD_FILE, TARGET_DIR and PLUGIN_DIR.
 ; All paths must belong to a private test directory, except the NSIS plugin directory.
 ; PAYLOAD_FILE contains locked.txt="new runtime" and asset.txt="new asset".
 ; Before running /S, create TARGET_DIR\locked.txt="old runtime" and hold it open

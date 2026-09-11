@@ -1,4 +1,4 @@
-/** Provider-specific JSON and contribution types for DeepSeek request extensions. */
+﻿/** Provider-specific JSON and contribution types for DeepSeek request extensions. */
 
 /** Lossless JSON value accepted by the DeepSeek request body. */
 export type DeepSeekLlmApiJson =

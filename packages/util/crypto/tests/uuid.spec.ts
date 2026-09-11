@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The minted UUID's contract: RFC 9562 v4 shape (version and variant bits
  * pinned), uniqueness across calls, and no dependence on the secure-context
  * `crypto.randomUUID` — the reason this package exists.

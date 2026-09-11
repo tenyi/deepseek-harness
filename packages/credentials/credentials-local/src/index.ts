@@ -1,4 +1,4 @@
-/**
+﻿/**
  * File-backed credentials provider over `$DSH_HOME/.credentials.yaml`, layered
  * against the environment by how much each layer is trusted:
  *

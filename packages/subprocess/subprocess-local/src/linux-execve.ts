@@ -1,4 +1,4 @@
-/** Lazy libc execve and descriptor bindings used by the one-shot Linux bootstrap. */
+﻿/** Lazy libc execve and descriptor bindings used by the one-shot Linux bootstrap. */
 
 import { getSystemErrorMessage, getSystemErrorName } from 'node:util'
 import koffi from 'koffi'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure plan derivation for the todo_write row's one-line summary. Several items
  * may be `in_progress` at once — parallel work runs concurrent tasks, so a
  * summary built from one active item would silently drop the rest. The plan

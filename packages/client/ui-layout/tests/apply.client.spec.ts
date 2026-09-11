@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 
 import { Context, type Fiber } from '@deepseek-ai/cordis'
 import { stubSettingsScope } from '@deepseek-ai/dsh-client-test-runtime'

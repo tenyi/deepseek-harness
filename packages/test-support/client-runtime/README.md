@@ -1,4 +1,4 @@
----
+﻿---
 description: "jsdom slot test runtime for browser feature specs, for test authors exercising slots, stores, and rendering against production machinery."
 kind: "package-library"
 ---

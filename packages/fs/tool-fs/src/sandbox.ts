@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The sandbox-escalation API shared by the `write` and `edit` tools: the
  * per-call policy resolution, the advertised escalation fields, and the denial-marker
  * mapping — all delegating the vocabulary and the fail-closed approval

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The composer's contenteditable host: binds one shell-owned Lexical editor
  * to a resident div. Session-maybe by design — a null editor renders the
  * same DOM inert (the no-session Workspace-trigger state), so switching

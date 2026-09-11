@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The docking kit's vocabulary, in the product's language.
  *
  * The kit renders no string of its own, so every word a user reads inside it is

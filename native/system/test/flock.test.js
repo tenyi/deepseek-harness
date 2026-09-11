@@ -1,4 +1,4 @@
-/** Kernel behavior through the built flock entry; each case owns its files and processes. */
+﻿/** Kernel behavior through the built flock entry; each case owns its files and processes. */
 import assert from 'node:assert/strict';
 import { fork, spawn } from 'node:child_process';
 import { once } from 'node:events';

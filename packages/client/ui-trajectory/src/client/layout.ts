@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Trajectory list fold: expand assistant blocks, attach usage to Message,
  * own-duration times, in-flight partial/runningCalls, and group descriptions.
  */

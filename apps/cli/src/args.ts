@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Commander adapter for the `dsh` command line.
  *
  * The launcher parses only what it owns — which profile to boot, which extra

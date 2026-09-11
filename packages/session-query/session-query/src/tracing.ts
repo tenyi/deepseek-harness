@@ -1,4 +1,4 @@
-/** One-shot session-lineage and event-relationship tracing helpers. */
+﻿/** One-shot session-lineage and event-relationship tracing helpers. */
 
 import { foldSurface, isSurfaceEvent, snapshotSessionEvent } from '@deepseek-ai/dsh-session'
 import type {

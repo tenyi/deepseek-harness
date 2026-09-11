@@ -1,4 +1,4 @@
----
+﻿---
 description: "The model-facing goal tools for users and maintainers choosing, composing, or debugging get_goal, create_goal, and update_goal."
 kind: "package-reference"
 ---

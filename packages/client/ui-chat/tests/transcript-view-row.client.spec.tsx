@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import type { SessionListState } from '@deepseek-ai/dsh-api-session-controller/client'
@@ -70,8 +70,8 @@ describe('TranscriptViewRow', () => {
 
   it('shows the conversation-display values in Chinese', () => {
     mount('compact', zh)
-    fireEvent.click(screen.getByRole('button', { name: '紧凑' }))
-    fireEvent.click(screen.getByRole('menuitem', { name: '标准' }))
-    expect(screen.getByRole('button', { name: '标准' })).toBeDefined()
+    fireEvent.click(screen.getByRole('button', { name: '緊湊' }))
+    fireEvent.click(screen.getByRole('menuitem', { name: '標準' }))
+    expect(screen.getByRole('button', { name: '標準' })).toBeDefined()
   })
 })

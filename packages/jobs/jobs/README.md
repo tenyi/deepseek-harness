@@ -1,4 +1,4 @@
----
+﻿---
 description: "The background-job registry contract for users and maintainers composing, implementing, or debugging background work: ids, ownership, lifecycle, and completion listeners."
 kind: "package-reference"
 ---

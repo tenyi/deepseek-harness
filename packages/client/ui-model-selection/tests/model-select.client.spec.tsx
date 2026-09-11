@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { ModelSelection } from '@deepseek-ai/dsh-api-remotes/client'
@@ -69,10 +69,10 @@ describe('ModelSelect reasoning effort', () => {
     />)
 
     const trigger = screen.getByRole('button', {
-      name: '选择模型，当前 DeepSeek-V4-Flash，推理等级 High',
+      name: '選擇模型，當前 DeepSeek-V4-Flash，推理等級 High',
     })
     fireEvent.click(trigger)
-    fireEvent.click(screen.getByRole('menuitem', { name: /推理等级/ }))
+    fireEvent.click(screen.getByRole('menuitem', { name: /推理等級/ }))
     expect(screen.getAllByRole('menuitemradio').map(item => item.textContent))
       .toEqual(['Off', 'High', 'Max'])
     expect(screen.queryByText('Largest budget')).toBeNull()
@@ -84,7 +84,7 @@ describe('ModelSelect reasoning effort', () => {
         model: 'deepseek-v4-flash',
         reasoningEffort: 'max',
       })
-      expect(trigger.getAttribute('aria-label')).toBe('选择模型，当前 DeepSeek-V4-Flash，推理等级 Max')
+      expect(trigger.getAttribute('aria-label')).toBe('選擇模型，當前 DeepSeek-V4-Flash，推理等級 Max')
     })
   })
 
@@ -111,9 +111,9 @@ describe('ModelSelect reasoning effort', () => {
     />)
 
     fireEvent.click(screen.getByRole('button', {
-      name: '选择模型，当前 Model，推理等级 Default',
+      name: '選擇模型，當前 Model，推理等級 Default',
     }))
-    fireEvent.click(screen.getByRole('menuitem', { name: /推理等级/ }))
+    fireEvent.click(screen.getByRole('menuitem', { name: /推理等級/ }))
     expect(screen.getAllByRole('menuitemradio').map(item => item.textContent))
       .toEqual(['Default', 'Standard'])
   })
@@ -132,10 +132,10 @@ describe('ModelSelect reasoning effort', () => {
       t={t}
     />)
 
-    const trigger = screen.getByRole('button', { name: '选择模型，当前 deepseek-official/removed-model' })
+    const trigger = screen.getByRole('button', { name: '選擇模型，當前 deepseek-official/removed-model' })
     expect(trigger.textContent).toContain('deepseek-official/removed-model')
     fireEvent.click(trigger)
-    expect(screen.queryByRole('menuitem', { name: /推理等级/ })).toBeNull()
+    expect(screen.queryByRole('menuitem', { name: /推理等級/ })).toBeNull()
     fireEvent.click(screen.getByRole('menuitem', { name: /模型/ }))
     expect(screen.queryByRole('menuitemradio', { name: 'removed-model' })).toBeNull()
     expect(screen.getByRole('menuitemradio', { name: 'DeepSeek-V4-Flash' })).toBeTruthy()
@@ -158,12 +158,12 @@ describe('ModelSelect reasoning effort', () => {
       t={t}
     />)
 
-    expect(screen.getByRole('button', { name: '正在加载模型…' }).textContent)
-      .toContain('正在加载模型…')
+    expect(screen.getByRole('button', { name: '正在加載模型…' }).textContent)
+      .toContain('正在加載模型…')
     directory.set(state())
     await waitFor(() => {
       expect(screen.getByRole('button', {
-        name: '选择模型，当前 DeepSeek-V4-Flash，推理等级 High',
+        name: '選擇模型，當前 DeepSeek-V4-Flash，推理等級 High',
       })).toBeTruthy()
     })
   })
@@ -191,13 +191,13 @@ describe('ModelSelect reasoning effort', () => {
       t={t}
     />)
 
-    fireEvent.click(screen.getByRole('button', { name: /选择模型|当前/ }))
+    fireEvent.click(screen.getByRole('button', { name: /選擇模型|當前/ }))
     fireEvent.click(screen.getByRole('menuitem', { name: /模型/ }))
     fireEvent.click(screen.getByRole('menuitemradio', { name: /DeepSeek-V4-Pro/ }))
     const toast = await screen.findByRole('alert')
-    expect(toast.textContent).toContain('模型操作失败：session/model-unavailable: session already contains images')
+    expect(toast.textContent).toContain('模型操作失敗：session/model-unavailable: session already contains images')
     // The selection failure does not render the in-menu load strip (no Retry).
-    expect(screen.queryByRole('button', { name: '重试' })).toBeNull()
+    expect(screen.queryByRole('button', { name: '重試' })).toBeNull()
   })
 
   it('portals the placed menu card to body and closes only on truly-outside mousedown', () => {
@@ -214,7 +214,7 @@ describe('ModelSelect reasoning effort', () => {
         select={vi.fn().mockResolvedValue(true)}
         t={t}
       />)
-      const trigger = screen.getByRole('button', { name: /选择模型/ })
+      const trigger = screen.getByRole('button', { name: /選擇模型/ })
       fireEvent.click(trigger)
       const menu = screen.getByRole('menu')
       // Outside the composer subtree — column overflow clips cannot crop it.

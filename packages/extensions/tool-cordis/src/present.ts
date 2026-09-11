@@ -1,4 +1,4 @@
-/** Pure replay-safe render intents for Cordis tools. */
+﻿/** Pure replay-safe render intents for Cordis tools. */
 
 import type { GenericCallView } from '@deepseek-ai/dsh-tools'
 

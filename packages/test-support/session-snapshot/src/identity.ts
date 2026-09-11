@@ -1,4 +1,4 @@
-/** Relationship-preserving identity redaction for committed session snapshots. */
+﻿/** Relationship-preserving identity redaction for committed session snapshots. */
 
 const UUID_FRAGMENT_RE = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i
 const LEGACY_TOKEN_RE = /^\{\{(?:sessionId|messageId)\}\}$/

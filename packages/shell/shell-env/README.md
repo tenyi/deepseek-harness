@@ -1,4 +1,4 @@
----
+﻿---
 description: "The managed DSH_* shell environment for users and maintainers choosing, configuring, or extending the environment every model shell call runs with."
 kind: "package-reference"
 ---

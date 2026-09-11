@@ -1,4 +1,4 @@
-/** Runtime validation for Connection RPC envelopes. */
+﻿/** Runtime validation for Connection RPC envelopes. */
 
 import { z } from 'zod'
 import type { ClientRequest, RpcId, RpcMessage, ServerResponse } from './rpc.ts'

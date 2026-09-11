@@ -1,4 +1,4 @@
-/** Generic Win32 process, stdio, and Job Object constants verified on x64. */
+﻿/** Generic Win32 process, stdio, and Job Object constants verified on x64. */
 
 /** STARTUPINFOW uses the standard input, output, and error handles. */
 export const STARTF_USESTDHANDLES = 0x00000100

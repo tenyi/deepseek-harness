@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Bridge for unmodified Claude Code command hooks on harness interception
  * extension points. It supports SessionStart, prompt/tool pre/post, Stop, and subagent
  * start/stop. It owns Claude payloads, environment, substitution, and decision

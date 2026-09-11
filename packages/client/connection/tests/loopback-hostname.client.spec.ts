@@ -1,4 +1,4 @@
-/** Shared loopback-hostname semantics for the Host fence and browser UI. */
+﻿/** Shared loopback-hostname semantics for the Host fence and browser UI. */
 
 import { describe, expect, it } from 'vitest'
 import { isLoopbackHostname } from '../src/loopback-hostname.ts'

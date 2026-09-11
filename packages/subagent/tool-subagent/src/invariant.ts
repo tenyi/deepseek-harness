@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Package-owned invariant companion for `@deepseek-ai/dsh-tool-subagent`.
  * @module @deepseek-ai/dsh-tool-subagent/invariant
  */

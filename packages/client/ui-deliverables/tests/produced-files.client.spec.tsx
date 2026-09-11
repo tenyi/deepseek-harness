@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * ui-deliverables browser half: the derivation contract of
  * `producedForClosing` over engine-published Turn data, the row's rendering
@@ -432,15 +432,15 @@ describe('ProducedFiles row', () => {
     const openFile = vi.fn<(path: string) => void>()
 
     const view = render(<ProducedFiles matched={paths} openFile={openFile} t={t} />)
-    expect(view.getByText('本轮文件改动')).toBeTruthy()
+    expect(view.getByText('本輪文件改動')).toBeTruthy()
     const row = view.container.querySelector('[data-produced-files-row]')
     if (!(row instanceof HTMLElement)) throw new Error('produced row missing')
     expect(within(row).getAllByRole('button')).toHaveLength(6)
-    expect(within(row).getByText('+ 2 个文件')).toBeTruthy()
-    const chip = view.getByRole('button', { name: '打开 deep/a.html' })
+    expect(within(row).getByText('+ 2 個文件')).toBeTruthy()
+    const chip = view.getByRole('button', { name: '打開 deep/a.html' })
     expect(chip.textContent).toBe('a.html')
     expect(chip.getAttribute('title')).toBe('deep/a.html')
-    expect(view.queryByRole('button', { name: '打开 g.ts' })).toBeNull()
+    expect(view.queryByRole('button', { name: '打開 g.ts' })).toBeNull()
     fireEvent.click(chip)
     // The row hands over the path it was given; where it opens is the
     // Sidebar's decision, not this row's.
@@ -460,7 +460,7 @@ describe('ProducedFiles row', () => {
     const openFile = vi.fn<(path: string) => void>()
     const overflowing = ['a.md', 'b.md', 'c.md', 'd.md', 'e.md', 'f.md', 'g.md']
     const view = render(<ProducedFiles matched={overflowing} openFile={openFile} t={t} />)
-    expect(view.queryByRole('button', { name: '在文件夹中显示' })).toBeNull()
+    expect(view.queryByRole('button', { name: '在文件夾中顯示' })).toBeNull()
     // Nothing in the row reaches the local machine any more.
     expect(openFile).not.toHaveBeenCalled()
   })
@@ -480,7 +480,7 @@ describe('ProducedFiles row', () => {
 })
 
 describe('producedFileMentions resolver', () => {
-  const label = (path: string) => `打开 ${path}`
+  const label = (path: string) => `打開 ${path}`
 
   it('resolves exact paths and unique basenames; ambiguity and unknowns stay unresolved', () => {
     const opened: string[] = []
@@ -491,7 +491,7 @@ describe('producedFileMentions resolver', () => {
     )
     // Unique basename resolves to its full path; the full path rides title.
     const byBasename = resolver.resolve('index.html')
-    expect(byBasename?.label).toBe('打开 out/index.html')
+    expect(byBasename?.label).toBe('打開 out/index.html')
     expect(byBasename?.title).toBe('out/index.html')
     byBasename?.open()
     expect(opened).toEqual(['out/index.html'])

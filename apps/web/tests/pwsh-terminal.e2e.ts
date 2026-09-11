@@ -1,4 +1,4 @@
-// Keyless browser regression for pwsh UI parity with bash: a seeded session
+﻿// Keyless browser regression for pwsh UI parity with bash: a seeded session
 // whose pwsh call/result is presented by the REAL tool-pwsh on replay (the
 // api-proxy recomputes presentation views from logged args/result content)
 // must render with the same terminal card layout as bash and show the parsed exit-status

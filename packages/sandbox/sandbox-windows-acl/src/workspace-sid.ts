@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The per-workspace write identity: a deterministic `S-1-4-x-y` SID derived
  * from the canonical workspace path, whose ACEs form that workspace's write
  * allowlist. Every confined execution of the same workspace — across

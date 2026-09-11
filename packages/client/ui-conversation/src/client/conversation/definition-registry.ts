@@ -1,4 +1,4 @@
-import { Service, type Context } from '@deepseek-ai/cordis'
+﻿import { Service, type Context } from '@deepseek-ai/cordis'
 import { notifySubscribers } from '@deepseek-ai/dsh-client-store'
 
 /** Shared lifecycle and stable-entry storage for one Conversation Definition registry. */

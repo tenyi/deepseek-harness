@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Notifier: microtask/frame batching, rebuild-before-notify ordering,
  * no-listener laziness, synchronous notifyNow, and unsubscribe.
  */

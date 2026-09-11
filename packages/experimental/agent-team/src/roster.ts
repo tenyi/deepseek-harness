@@ -1,4 +1,4 @@
-/** Team membership, continuable-child provisioning, and roster-owned teardown. */
+﻿/** Team membership, continuable-child provisioning, and roster-owned teardown. */
 
 import { randomUUID } from 'node:crypto'
 import type { Context } from '@deepseek-ai/cordis'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Outside-pointer dismissal for trigger-owned popovers (jobs list, Cordis
  * panel): while the surface is open, a pointerdown outside the root closes it.
  */

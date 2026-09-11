@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Three-column shell frame, registered into the built-in 'root' slot (the web
  * shell renders only 'root'). Owns the grid tracks (sidebar | center |
  * rightbar), the drag handles (pointer capture + rAF throttle), the column

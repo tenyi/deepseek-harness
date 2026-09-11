@@ -1,4 +1,4 @@
-/** JSON values admitted by every Inspector cross-realm message. */
+﻿/** JSON values admitted by every Inspector cross-realm message. */
 
 /** JSON scalar accepted by Inspector transports. */
 export type InspectorJsonPrimitive = null | boolean | number | string

@@ -1,4 +1,4 @@
-/** Child-process fixture whose Host main thread is paused and resumed through the Inspector Worker. */
+﻿/** Child-process fixture whose Host main thread is paused and resumed through the Inspector Worker. */
 
 import { createInterface } from 'node:readline'
 import { startInspector } from '../../src/host/bridge/controller.ts'

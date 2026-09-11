@@ -1,4 +1,4 @@
-// Switch: two-state toggle. `label` is required and has no default, so a render
+﻿// Switch: two-state toggle. `label` is required and has no default, so a render
 // site cannot ship the control without an accessible name.
 
 import clsx from 'clsx'

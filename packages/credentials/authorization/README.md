@@ -1,4 +1,4 @@
----
+﻿---
 description: "The authorization flow registry for users and maintainers who obtain credentials that configuration cannot supply, because getting one means a conversation with a human."
 kind: "package-reference"
 ---

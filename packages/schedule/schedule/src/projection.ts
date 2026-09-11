@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Strict Session projection of the Schedule domain's active reminder set.
  * @module @deepseek-ai/dsh-schedule/projection
  */

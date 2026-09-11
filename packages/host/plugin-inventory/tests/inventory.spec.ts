@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest'
+﻿import { afterEach, describe, expect, it } from 'vitest'
 import { Context, FiberState, type Plugin } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import { remoteMethods } from '@deepseek-ai/dsh-typert-protocol'
@@ -97,7 +97,7 @@ describe('PluginInventoryGateway', () => {
         {
           id: 'standard',
           trust: 'system',
-          name: '标准模式',
+          name: '標準模式',
           isDefault: true,
           rows: [
             { entryId: 'alpha', moduleName: 'pkg-alpha', enabled: true, fiberState: FiberState.ACTIVE },
@@ -113,7 +113,7 @@ describe('PluginInventoryGateway', () => {
       {
         id: 'standard',
         trust: 'system',
-        name: '标准模式',
+        name: '標準模式',
         isDefault: true,
         rows: [
           { entryId: 'alpha', moduleName: 'pkg-alpha', enabled: true, fiberPhase: 'active' },

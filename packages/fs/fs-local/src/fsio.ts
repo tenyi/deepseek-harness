@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Cordis-free local filesystem mechanics. This provider layer returns validated UTF-8 text,
  * streams large files, and rejects binary data; line windows belong to `dsh-tool-fs`. Writes
  * stage an exclusive owner-only file in a private sibling directory and atomically publish it.

@@ -1,22 +1,22 @@
-/** `question` namespace dictionaries. */
+﻿/** `question` namespace dictionaries. */
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {
-  'error.incomplete': '请先完成这道问题。',
-  'error.unanswered': '请选择一个选项或填写自定义答案。',
-  'nav.prev': '上一题',
-  'nav.next': '下一题',
-  'nav.minimize': '收起问题卡片',
-  'nav.maximize': '展开问题卡片',
-  'nav.cancel': '放弃整组问题',
-  'option.recommended': '推荐',
-  'custom.placeholder': '输入你的答案',
-  'action.skip': '跳过本题',
-  'action.next': '下一题',
-  'plan.header': '计划待审',
-  'plan.approve': '确认执行',
-  'plan.decline': '拒绝',
-  'plan.discuss': '去聊天里说',
+  'error.incomplete': '請先完成這道問題。',
+  'error.unanswered': '請選擇一個選項或填寫自定義答案。',
+  'nav.prev': '上一題',
+  'nav.next': '下一題',
+  'nav.minimize': '收起問題卡片',
+  'nav.maximize': '展開問題卡片',
+  'nav.cancel': '放棄整組問題',
+  'option.recommended': '推薦',
+  'custom.placeholder': '輸入你的答案',
+  'action.skip': '跳過本題',
+  'action.next': '下一題',
+  'plan.header': '計劃待審',
+  'plan.approve': '確認執行',
+  'plan.decline': '拒絕',
+  'plan.discuss': '去聊天里說',
 } satisfies Record<string, string>
 
 /** The question namespace key union. */

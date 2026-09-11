@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Models-page extension slots — the two seats through which a plugin
  * distributed outside this repository adds UI to the Models settings section
  * without editing it.

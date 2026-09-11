@@ -1,4 +1,4 @@
----
+﻿---
 description: "The Web feedback surface: the Like/Dislike pair in the finalized assistant message's action row, the feedback dialog behind both ratings and `/feedback`, and its acknowledgement and failure toasts; for users and maintainers of the feedback experience."
 kind: "package-reference"
 ---

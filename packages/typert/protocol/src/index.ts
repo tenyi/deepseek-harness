@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Remote decorators and explicit Gateway bindings backed by versioned
  * descriptors carried on decorated class prototypes. Strict reflection
  * remains a Typert compiler responsibility.

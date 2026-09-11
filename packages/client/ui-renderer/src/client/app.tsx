@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Real-UI assembly closure. The whole layout tree hangs from the built-in
  * `root` slot, which is the only ctx-level slot render in the application.
  */

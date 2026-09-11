@@ -1,4 +1,4 @@
-/** Context-isolated renderer bridge for desktop package and update operations. */
+﻿/** Context-isolated renderer bridge for desktop package and update operations. */
 
 import { contextBridge, ipcRenderer } from 'electron'
 import { DESKTOP_IPC, type DshDesktopApi, type DesktopUpdateState } from './ipc.ts'

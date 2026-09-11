@@ -1,4 +1,4 @@
----
+﻿---
 description: "Attachment presentation for the conversation UI: mixed draft-attachment rail, document drop target, history-image gallery, and original-image lightbox; for users and maintainers of the Web attachment experience."
 kind: "package-reference"
 ---

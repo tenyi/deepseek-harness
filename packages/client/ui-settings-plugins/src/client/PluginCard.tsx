@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One plugin's card: a header naming the plugin and what its settings govern,
  * disclosing that plugin's controls in place, with the save that writes them.
  *

@@ -1,4 +1,4 @@
----
+﻿---
 description: "The local host provider for the subprocess service: run OS-owned managed ranges and real terminal sessions on the host machine, with explicit weaker fallbacks."
 kind: "package-reference"
 ---

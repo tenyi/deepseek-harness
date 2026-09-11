@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AssistantBlock, AssistantMessageNode, CommandNode, CompactionSummaryNode,
   ConversationLocation, ConversationViewNode, ModelRetryNode, RunningToolCall,
   ToolCallBlock,

@@ -1,4 +1,4 @@
-// Cross-instance and writer-lock behavior: two providers on one document are
+﻿// Cross-instance and writer-lock behavior: two providers on one document are
 // the in-process equivalent of two dsh processes sharing a harness home —
 // neither knows the other's cache, so only the read-modify-write cycle under
 // the `<file>.lock` sibling keeps both namespaces alive on disk.

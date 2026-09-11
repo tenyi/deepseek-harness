@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Cross-process write-ownership lock for one session's artifact directory,
  * held for the whole life of a write handle. The arbiter is the kernel:
  * POSIX takes a non-blocking `flock(2)` via native system support on `session.lock`

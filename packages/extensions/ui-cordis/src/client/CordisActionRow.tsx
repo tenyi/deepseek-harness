@@ -1,4 +1,4 @@
-/** Localized cards for `cordis_stop` and `cordis_undefine`. */
+﻿/** Localized cards for `cordis_stop` and `cordis_undefine`. */
 
 import {
   IconInspectOutline12, IconStopFill16, IconTrashOutline16, StateDot,

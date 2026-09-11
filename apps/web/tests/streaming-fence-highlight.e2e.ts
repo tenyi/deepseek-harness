@@ -1,4 +1,4 @@
-/** Keyless assembled-Web evidence for syntax highlighting during a streamed code fence. */
+﻿/** Keyless assembled-Web evidence for syntax highlighting during a streamed code fence. */
 
 import { fileURLToPath } from 'node:url'
 import type { Browser, Page } from 'playwright'

@@ -1,4 +1,4 @@
-// Keyless assembled-browser coverage for the shipped right Sidebar: the official
+﻿// Keyless assembled-browser coverage for the shipped right Sidebar: the official
 // roster row, the real plugin graph, and one Chromium. No overlay is applied —
 // this scenario proves the surface is in the product's own composition.
 //
@@ -1059,9 +1059,9 @@ describe('web e2e: shipped right Sidebar', () => {
         // the column has the width, and a screenshot taken mid-transition reads
         // as a layout defect that is not there.
         expect(await width(column)).toBeGreaterThan(300)
-        await expect.poll(async () => await tabTitles(column)).toEqual(['文件', '开始'])
+        await expect.poll(async () => await tabTitles(column)).toEqual(['文件', '開始'])
         await expect.poll(async () => await guide.locator('[data-sidebar-right-guide-entry="files"]').innerText())
-          .toBe('工作区文件\n浏览会话工作区的文件')
+          .toBe('工作區文件\n瀏覽會話工作區的文件')
         await shot(zhPage, '05-guide-copy-zh')
 
         expect(zhTripwire.pageErrors).toEqual([])

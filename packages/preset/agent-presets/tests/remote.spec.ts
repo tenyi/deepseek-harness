@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The agent-preset Remote namespace: the path-free roster a client reads, the
  * composition view behind the read-only viewer, and the per-session switch —
  * which is the only one of the three that mutates an agent.
@@ -106,7 +106,7 @@ describe('the roster a client reads', () => {
     roots.push(userRoot)
     await mkdir(join(userRoot, 'documented'), { recursive: true })
     await writeFile(join(userRoot, 'documented', COMPOSITION_FILE), VALID)
-    await writeFile(join(userRoot, 'documented', METADATA_FILE), 'name: 我的模式\ndescription: 只做检索。\n')
+    await writeFile(join(userRoot, 'documented', METADATA_FILE), 'name: 我的模式\ndescription: 只做檢索。\n')
     const ctx = await harness({
       default: 'minimal',
       roots: [{ path: join(FIXTURES, 'system'), trust: 'system' }, { path: userRoot, trust: 'user' }],
@@ -121,7 +121,7 @@ describe('the roster a client reads', () => {
     expect(roster.presets).toEqual([
       { id: 'minimal', trust: 'system', isDefault: true },
       { id: 'standard', trust: 'system', isDefault: false },
-      { id: 'documented', trust: 'user', isDefault: false, name: '我的模式', description: '只做检索。' },
+      { id: 'documented', trust: 'user', isDefault: false, name: '我的模式', description: '只做檢索。' },
     ])
     // No row carries the composition's location: a preset is addressed by id
     // everywhere off the Host.
@@ -186,7 +186,7 @@ describe('reading one composition', () => {
     roots.push(userRoot)
     await mkdir(join(userRoot, 'documented'), { recursive: true })
     await writeFile(join(userRoot, 'documented', COMPOSITION_FILE), VALID)
-    await writeFile(join(userRoot, 'documented', METADATA_FILE), 'name: 我的模式\ndescription: 只做检索。\n')
+    await writeFile(join(userRoot, 'documented', METADATA_FILE), 'name: 我的模式\ndescription: 只做檢索。\n')
     const ctx = await harness({
       default: 'documented',
       roots: [{ path: userRoot, trust: 'user' }],
@@ -203,7 +203,7 @@ describe('reading one composition', () => {
       trust: 'user',
       content: VALID,
       name: '我的模式',
-      description: '只做检索。',
+      description: '只做檢索。',
     })
   })
 

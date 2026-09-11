@@ -1,4 +1,4 @@
-# Patch for resuming one read-only parent over the shipped headless profile. The profile's
+﻿# Patch for resuming one read-only parent over the shipped headless profile. The profile's
 # workspace-write deployment default must lose to the session override in its child.
 - id: headless-startup
   disabled: true

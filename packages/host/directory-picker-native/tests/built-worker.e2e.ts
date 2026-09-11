@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Keyless built-artifact guard (the `dsh-workflow-worker-thread` built-worker
  * shape): plain `node` runs `lib/worker.cjs` and the bundle reaches its
  * real koffi requires. POSIX hosts prove the load path end to end through

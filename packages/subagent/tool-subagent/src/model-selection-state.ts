@@ -1,4 +1,4 @@
-/** Durable per-session state for the user-controlled model-selection opt-in. */
+﻿/** Durable per-session state for the user-controlled model-selection opt-in. */
 
 import { z as zod } from 'zod'
 import type { Session } from '@deepseek-ai/dsh-session'

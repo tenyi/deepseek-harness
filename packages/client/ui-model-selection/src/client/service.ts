@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ModelDirectoryResolver (`ctx.modelDirectories`): the root owner of per-session
  * {@link ModelDirectory} instances. Both selection entries (the /model popup
  * and the composer model seat) resolve their session's directory through

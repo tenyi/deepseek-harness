@@ -1,4 +1,4 @@
-/** Virtual executable registry used by the Worker process launcher. */
+﻿/** Virtual executable registry used by the Worker process launcher. */
 import { basename } from '../../module-system/posix-path.ts'
 import type { ShellFileSystem } from '../types.ts'
 import { LANDLOCK_EXECUTABLE } from './landlock.ts'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Intent planning: each interaction, as a pure function from the current state to
  * the operations that carry it out.
  *

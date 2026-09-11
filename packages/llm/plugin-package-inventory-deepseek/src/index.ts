@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Active Loader-backed plugin package inventory for official DeepSeek requests.
  * Host entries and the requesting agent's standing preset are resolved at request time;
  * installed dependencies and plugin fibers without Loader package provenance are excluded.

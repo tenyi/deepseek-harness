@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Duplicate-install-safe nominal primitive helpers.
  *
  * A brand makes structurally identical strings or numbers non-interchangeable

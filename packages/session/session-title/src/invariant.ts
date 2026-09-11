@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Package-owned invariant companion for `@deepseek-ai/dsh-session-title`.
  * @module @deepseek-ai/dsh-session-title/invariant
  */

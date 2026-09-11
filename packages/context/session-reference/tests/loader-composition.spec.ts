@@ -1,4 +1,4 @@
-/** Real Loader composition preserves retrievable source text outside the bounded preview. */
+﻿/** Real Loader composition preserves retrievable source text outside the bounded preview. */
 
 import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Agent-scoped dispatch and prompt assembly helpers. The fused dispatcher
  * {@link agentEvents} couples the agent subject to its scope carrier, so the
  * scope key and the payload's `agent` cannot diverge; repeat dispatchers (the

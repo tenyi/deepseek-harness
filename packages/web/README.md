@@ -1,4 +1,4 @@
----
+﻿---
 description: "Package map for the web access capability family: the search/fetch service, its provider backends, and the model-facing tools that consume them."
 kind: "package-group"
 ---

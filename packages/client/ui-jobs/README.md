@@ -1,4 +1,4 @@
----
+﻿---
 description: "Web background-job surface: the session-header action listing the jobs this session can see; for users and maintainers of the background-job experience."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The one home of this application's forwarded-Host-event allowlist. Both
  * compiler faces list this file, so the Host forwarding loop and the consumer
  * `ctx.remote.$on` key face read one declaration instead of two copies that

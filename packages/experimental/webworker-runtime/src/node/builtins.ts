@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The Node-compatibility table, in one place. Two consumers share it, and they
  * must resolve to the same module instances:
  *   - the worker vite build aliases these specifiers for code bundled statically

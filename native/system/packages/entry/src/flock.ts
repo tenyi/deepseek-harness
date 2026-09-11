@@ -1,4 +1,4 @@
-/** Lazy POSIX flock entry; importing it does not load a native addon. */
+﻿/** Lazy POSIX flock entry; importing it does not load a native addon. */
 import { createRequire } from 'node:module'
 import { dirname, join } from 'node:path'
 import { getSystemErrorName } from 'node:util'

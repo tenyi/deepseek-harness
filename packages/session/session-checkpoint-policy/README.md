@@ -1,4 +1,4 @@
----
+﻿---
 description: "Semantic session durability checkpoints for users and maintainers deploying persisted agents that must not lose a model request or tool side effect on crash."
 kind: "package-reference"
 ---

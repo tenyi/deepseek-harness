@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Font-size preference row registered into the General section item slot:
  * title + body-text-only description + stepper pill (centered value; hover
  * reveals the up/down arrow column anchored to the pill's right edge) + a px

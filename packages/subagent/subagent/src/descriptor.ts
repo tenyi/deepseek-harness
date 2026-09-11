@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The durable subagent-child descriptor: the versioned, model-hidden
  * `subagent/descriptor` session event that identifies every session-backed
  * subagent and records whether it is one-shot or continuable. Continuable

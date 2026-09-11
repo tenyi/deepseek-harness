@@ -1,4 +1,4 @@
----
+﻿---
 description: "Durable workflow-run Conversation Node for the dsh web client: reconstructs top-level workflow runs as independent chat nodes with nested member disclosure."
 kind: "package-reference"
 ---

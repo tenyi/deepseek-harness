@@ -1,4 +1,4 @@
-/**
+﻿/**
  * End-to-end runner tests: spawn the REAL runner entry through tsx (exactly
  * the argv shape dsh-sandbox-local's confine() builds), with piped stdio
  * inherited through the runner into the confined child — the same chain a

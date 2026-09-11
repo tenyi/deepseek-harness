@@ -1,4 +1,4 @@
-/** Every historical entry generation migrates all preset selections before projection or fork. */
+﻿/** Every historical entry generation migrates all preset selections before projection or fork. */
 
 import { describe, expect, it } from 'vitest'
 import { sessionFormatCatalog } from '../src/index.ts'

@@ -1,4 +1,4 @@
-// Latency/throughput folds shared by the settled turn footer and StatsPills.
+﻿// Latency/throughput folds shared by the settled turn footer and StatsPills.
 
 import type {
   AssistantMessageNode, ConversationNode,

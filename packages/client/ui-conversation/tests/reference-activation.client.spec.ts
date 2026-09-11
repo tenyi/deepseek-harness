@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** Composer clicks use the owning Lexical node while selection gestures remain editable. */
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { $createParagraphNode, $createTextNode, $getRoot, createEditor } from 'lexical'

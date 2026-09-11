@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The `read_image` tool over the REAL local filesystem and attachment store:
  * extension routing, extension-less content sniffing (attachment object paths
  * included), the strict image-modality gate (every refusal arm), durable

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `koffi` stub: the FFI bridge the Windows ACL layer and the Landlock launcher
  * use. Type constructors return opaque tokens because the ACL module builds its
  * pointer and struct descriptors at module scope — the plugin must mount. Every

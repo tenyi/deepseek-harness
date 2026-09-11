@@ -1,4 +1,4 @@
----
+﻿---
 description: "Prebuilt system.node for macOS arm64 POSIX locks."
 kind: "package-library"
 ---

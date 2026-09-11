@@ -1,4 +1,4 @@
-/** Shared admission cutoff and bounded settlement for the Team runtime. */
+﻿/** Shared admission cutoff and bounded settlement for the Team runtime. */
 
 import { TeamError } from './error.ts'
 

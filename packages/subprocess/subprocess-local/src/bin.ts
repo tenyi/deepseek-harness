@@ -1,4 +1,4 @@
-/** Thin executable/importable entry for the provider-private runner core. */
+﻿/** Thin executable/importable entry for the provider-private runner core. */
 
 import { consumeRunnerSelection } from './runner-launch.ts'
 import { reportSpawnRunnerFailure, runSpawnRunner } from './spawn-runner.ts'

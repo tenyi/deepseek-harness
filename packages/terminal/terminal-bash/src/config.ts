@@ -1,4 +1,4 @@
-/** Validated configuration for the local PTY backend. */
+﻿/** Validated configuration for the local PTY backend. */
 
 import z from '@deepseek-ai/schemastery'
 import { resolvePwshPath } from '@deepseek-ai/dsh-pwsh-local'

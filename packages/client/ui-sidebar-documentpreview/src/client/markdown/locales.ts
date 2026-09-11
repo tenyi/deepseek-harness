@@ -1,9 +1,9 @@
-/** Markdown implementation labels and primitive chrome. */
+﻿/** Markdown implementation labels and primitive chrome. */
 export const zh = {
   'viewer.label': 'Markdown',
-  'code.copy': '复制',
-  'code.copied': '已复制',
-  'footnotes': '脚注',
+  'code.copy': '復制',
+  'code.copied': '已復制',
+  'footnotes': '腳注',
 } satisfies Record<string, string>
 
 /** Markdown namespace keys. */

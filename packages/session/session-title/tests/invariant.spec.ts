@@ -1,4 +1,4 @@
-// Title-source invariant: `messageSeqs` is empty iff `source.kind` is `user`.
+﻿// Title-source invariant: `messageSeqs` is empty iff `source.kind` is `user`.
 // — the durable relationship every appended session/title event must keep.
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

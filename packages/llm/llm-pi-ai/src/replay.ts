@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Durable pi-ai replay metadata and assistant-history reconstruction.
  *
  * Harness content remains the durable source for text and tool calls. This

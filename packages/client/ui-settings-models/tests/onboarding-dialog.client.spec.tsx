@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** First-run DeepSeek prompt behavior over the shared Models join. */
 import type { GlobalStandardProps } from '@deepseek-ai/dsh-client-ui-slots'
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'

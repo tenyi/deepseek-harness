@@ -1,4 +1,4 @@
-import type { MacOSSigningEnvironment } from './desktop-release-environment.mjs'
+﻿import type { MacOSSigningEnvironment } from './desktop-release-environment.mjs'
 
 /**
  * Reject signature metadata that does not name the company release authority and team.

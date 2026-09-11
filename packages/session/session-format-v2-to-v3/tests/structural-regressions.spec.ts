@@ -1,4 +1,4 @@
-/** Structural promotion preserves each historical request and distinguishes local from captured coordinates. */
+﻿/** Structural promotion preserves each historical request and distinguishes local from captured coordinates. */
 
 import { describe, expect, it } from 'vitest'
 import { SessionFormatEventCollector, SessionFormatUnsupportedMigrationError } from '@deepseek-ai/dsh-session-format'

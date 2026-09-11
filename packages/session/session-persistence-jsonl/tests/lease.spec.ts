@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Cross-process write-lock behavior, exercised through fresh backend
  * instances over one shared root: kernel `flock` locks conflict between two
  * descriptors even inside one process, so a second instance behaves exactly

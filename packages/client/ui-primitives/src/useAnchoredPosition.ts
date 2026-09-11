@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Keep a fixed-position floating element anchored to a trigger.
  *
  * A portaled panel is positioned from its anchor's viewport rect, which stops

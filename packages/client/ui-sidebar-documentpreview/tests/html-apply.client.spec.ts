@@ -1,4 +1,4 @@
-/** HTML metadata and keyed slot contributions share one identity and unwind with their fiber. */
+﻿/** HTML metadata and keyed slot contributions share one identity and unwind with their fiber. */
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import { sessionFileAddress } from '@deepseek-ai/dsh-util-workspace-path'

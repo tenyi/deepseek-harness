@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, render } from '@testing-library/react'
@@ -106,7 +106,7 @@ describe('Tool presentation tails', () => {
     const errorView = render(<BashRow {...bashProps(errorResult)} />)
     expect(errorView.container.querySelector('[data-sample="bash"]')).not.toBeNull()
     expect(errorView.container.querySelector('[data-state="error"]')).not.toBeNull()
-    expect(errorView.getByText('失败')).toBeTruthy()
+    expect(errorView.getByText('失敗')).toBeTruthy()
     errorView.unmount()
 
     const stoppedView = render(<BashRow {...bashProps(stoppedResult)} />)

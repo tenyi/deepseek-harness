@@ -1,5 +1,5 @@
----
-description: "面向注册可信外部事件策略并创建 Workspace 会话的维护者，说明 webhook 规则运行时。"
+﻿---
+description: "面向注冊可信外部事件策略并創建 Workspace 會話的維護者，說明 webhook 規則運行時。"
 kind: "package-reference"
 ---
 
@@ -9,78 +9,78 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-webhook` 提供 Host 侧的 `ctx.webhookRuntime`：它既是受信任程序化 webhook 规则的注册表，也拥有唯一内置动作——在 Web Workspace 中创建普通根会话。接口只包含 `register(rule)` 和 `dispatch(delivery)`；提供方身份验证属于适配器包。当受信任规则必须把外部事件变成新的 agent（智能体）会话时，请使用它。
+`dsh-webhook` 提供 Host 側的 `ctx.webhookRuntime`：它既是受信任程序化 webhook 規則的注冊表，也擁有唯一內置動作——在 Web Workspace 中創建普通根會話。接口只包含 `register(rule)` 和 `dispatch(delivery)`；提供方身份驗證屬于適配器包。當受信任規則必須把外部事件變成新的 agent（智能體）會話時，請使用它。
 
-## 目录
+## 目錄
 
-- [规则接口](#rule-interface)
-- [会话请求](#session-request)
-- [组合](#composition)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [規則接口](#rule-interface)
+- [會話請求](#session-request)
+- [組合](#composition)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="rule-interface"></a>
-## 规则接口
+## 規則接口
 
-`WebhookRule<K>` 具有带 brand 类型的唯一 `id`、提供方 `kind` 与 `run(delivery, signal)`。回调可以执行任意受信任代码，并返回 `null` 或一个 `WebhookSessionRequest`。同类规则彼此独立启动；某个回调抛出异常或其返回的 Promise 被拒绝时，只会记录日志，不会阻止同级规则。
+`WebhookRule<K>` 具有帶 brand 類型的唯一 `id`、提供方 `kind` 與 `run(delivery, signal)`。回調可以執行任意受信任代碼，并返回 `null` 或一個 `WebhookSessionRequest`。同類規則彼此獨立啟動；某個回調拋出異常或其返回的 Promise 被拒絕時，只會記錄日志，不會阻止同級規則。
 
-`VerifiedWebhookDelivery` 携带提供方种类、已配置来源 id、提供方交付 id、规范化的无损 JSON 与接收时间。运行时会在共享前快照并冻结完整值。`deliveryId` 仅是来源信息；重复交付会再次运行规则。
+`VerifiedWebhookDelivery` 攜帶提供方種類、已配置來源 id、提供方交付 id、規范化的無損 JSON 與接收時間。運行時會在共享前快照并凍結完整值。`deliveryId` 僅是來源信息；重復交付會再次運行規則。
 
-注册是一项 effect。它的可等待 disposer 会先隐藏规则，再中止并排空活动回调。回调必须观察所提供的 signal；忽略取消的同进程代码无法被安全强制停止。
+注冊是一項 effect。它的可等待 disposer 會先隱藏規則，再中止并排空活動回調。回調必須觀察所提供的 signal；忽略取消的同進程代碼無法被安全強制停止。
 
 <a id="session-request"></a>
-## 会话请求
+## 會話請求
 
-`WebhookSessionRequest` 要求 `workspacePath`、`title`、`prompt`、`agentPreset` 与 `permissionPreset`；可选 `model` 会指定明确的提供方／模型路由与输出 token 上限。明确路由使用其适配器的默认推理（reasoning）强度。省略时会快照包含推理强度的完整当前部署选择，直到首个请求记录持久 header；之后的 Web 模型变更保留普通会话行为。
+`WebhookSessionRequest` 要求 `workspacePath`、`title`、`prompt`、`agentPreset` 與 `permissionPreset`；可選 `model` 會指定明確的提供方／模型路由與輸出 token 上限。明確路由使用其適配器的默認推理（reasoning）強度。省略時會快照包含推理強度的完整當前部署選擇，直到首個請求記錄持久 header；之后的 Web 模型變更保留普通會話行為。
 
-运行时会在变更状态前验证 preset，解析或创建规范 Workspace，以该 Workspace 路径作为 `SessionHeader.cwd` 创建 Agent，在发布前挂载 agent preset，并在应用权限、标题与提示词前附加会话。附加失败会对尚未发布的动作执行 dispose（资源释放）。之后若在提示词前失败，则以尽力而为方式脱离 Workspace 并对 Agent 执行 dispose。
+運行時會在變更狀態前驗證 preset，解析或創建規范 Workspace，以該 Workspace 路徑作為 `SessionHeader.cwd` 創建 Agent，在發布前掛載 agent preset，并在應用權限、標題與提示詞前附加會話。附加失敗會對尚未發布的動作執行 dispose（資源釋放）。之后若在提示詞前失敗，則以盡力而為方式脫離 Workspace 并對 Agent 執行 dispose。
 
-成功的 `Agent.followup()` 是 webhook 操作的提交点。消息使用 `source.kind: "webhook"`，并携带提供方、来源、交付与规则来源信息。运行时不等待 idle、不执行特殊 flush、不检查回复，也不发布完成状态；之后完全由普通 Agent 与会话行为接管。
+成功的 `Agent.followup()` 是 webhook 操作的提交點。消息使用 `source.kind: "webhook"`，并攜帶提供方、來源、交付與規則來源信息。運行時不等待 idle、不執行特殊 flush、不檢查回復，也不發布完成狀態；之后完全由普通 Agent 與會話行為接管。
 
 <a id="composition"></a>
-## 组合
+## 組合
 
-在 Web Host plane 上，于 Agents、模型默认值、agent presets、permission presets、标题与 Workspace 注册表之后加载运行时。用户编写的规则插件注入 `webhookRuntime`，并通过自己的 effect 交出 `register()` 返回的 disposer。
+在 Web Host plane 上，于 Agents、模型默認值、agent presets、permission presets、標題與 Workspace 注冊表之后加載運行時。用戶編寫的規則插件注入 `webhookRuntime`，并通過自己的 effect 交出 `register()` 返回的 disposer。
 
-[GitHub 评审指南](../../../docs/user/guide/github-review.zh.md)展示了规则模块、专用入口端口、密钥设置与 Workspace 路由。
+[GitHub 評審指南](../../../docs/user/guide/github-review.zh.md)展示了規則模塊、專用入口端口、密鑰設置與 Workspace 路由。
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### 规则编写的初始提示词
+### 規則編寫的初始提示詞
 
-#### 模型看到的内容
+#### 模型看到的內容
 
-每个匹配规则都会让模型看到 `WebhookSessionRequest.prompt` 返回的非空文本原文。通用运行时不增加私有框架；若规则包含外部文本，则由规则负责标明其信任属性。随附 GitHub 示例会把选定 PR 字段标为不受信任的 JSON 元数据。
+每個匹配規則都會讓模型看到 `WebhookSessionRequest.prompt` 返回的非空文本原文。通用運行時不增加私有框架；若規則包含外部文本，則由規則負責標明其信任屬性。隨附 GitHub 示例會把選定 PR 字段標為不受信任的 JSON 元數據。
 
-#### Token 影响
+#### Token 影響
 
-一条依赖数据的 user-role 消息保留在新会话中，并持续贡献 token，直到普通压缩（compaction）替换或移除该历史。
+一條依賴數據的 user-role 消息保留在新會話中，并持續貢獻 token，直到普通壓縮（compaction）替換或移除該歷史。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-初始提示词开启一个新会话，因此它建立而不是使该会话的可复用请求前缀失效。
+初始提示詞開啟一個新會話，因此它建立而不是使該會話的可復用請求前綴失效。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
-- **仅限进程内 fire-and-forget** — 崩溃会丢失尚未接纳提示词的规则调用；不存在队列、回放或重试。
-- **无内置去重** — 提供方重复交付可能创建重复会话；需要幂等性的规则自行负责。
-- **无完成结果** — HTTP 接受与规则结算都不报告 Agent 成功、idle 或输出。
-- **受信任回调必须配合取消** — 运行时 teardown 会中止并等待回调，但无法终止任意同进程代码。
-- **Workspace 创建可能比失败的会话尝试更长寿** — 空 Workspace 会保留，因为另一个并发调用者可能已经使用它。
+- **僅限進程內 fire-and-forget** — 崩潰會丟失尚未接納提示詞的規則調用；不存在隊列、回放或重試。
+- **無內置去重** — 提供方重復交付可能創建重復會話；需要冪等性的規則自行負責。
+- **無完成結果** — HTTP 接受與規則結算都不報告 Agent 成功、idle 或輸出。
+- **受信任回調必須配合取消** — 運行時 teardown 會中止并等待回調，但無法終止任意同進程代碼。
+- **Workspace 創建可能比失敗的會話嘗試更長壽** — 空 Workspace 會保留，因為另一個并發調用者可能已經使用它。
 
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者工作上下文——点击展开</summary>
+<summary>維護者工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

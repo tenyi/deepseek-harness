@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Dedicated Web Worker entry. The Node-compatibility layer this app owns is
  * handed to the host assembly as the module table plus the captured request
  * listener; the assembly owns everything else (process global, VFS image,

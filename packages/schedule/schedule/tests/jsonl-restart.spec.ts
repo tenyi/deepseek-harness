@@ -1,4 +1,4 @@
-/** Production JSONL restart evidence through the real Agent resume lifecycle. */
+﻿/** Production JSONL restart evidence through the real Agent resume lifecycle. */
 
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'

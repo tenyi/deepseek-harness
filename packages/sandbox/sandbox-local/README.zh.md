@@ -1,5 +1,5 @@
----
-description: "面向 Linux、macOS 或 Windows 上选择、配置或排查进程隔离的用户与维护者的本地各平台沙箱后端。"
+﻿---
+description: "面向 Linux、macOS 或 Windows 上選擇、配置或排查進程隔離的用戶與維護者的本地各平臺沙箱后端。"
 kind: "package-reference"
 ---
 
@@ -9,138 +9,138 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-sandbox-local` 在共享宿主内核和文件系统的同时，限制 Linux、macOS 与 Windows 上的命令及其派生进程。它自动选择受支持的平台 runner；没有可用 runner 时以 `SANDBOX_UNAVAILABLE` 失败，因此命令绝不会静默无限制运行。每次执行都会报告 `full` 或 `partial` 强制执行，以及拒绝和 runner 失败签名，让调用方能区分不可用或损坏的沙箱与策略拒绝。宿主本地 bash 或 pwsh 执行适合选择它；进程需要隔离环境时应改用容器或远程执行器。
+`dsh-sandbox-local` 在共享宿主內核和文件系統的同時，限制 Linux、macOS 與 Windows 上的命令及其派生進程。它自動選擇受支持的平臺 runner；沒有可用 runner 時以 `SANDBOX_UNAVAILABLE` 失敗，因此命令絕不會靜默無限制運行。每次執行都會報告 `full` 或 `partial` 強制執行，以及拒絕和 runner 失敗簽名，讓調用方能區分不可用或損壞的沙箱與策略拒絕。宿主本地 bash 或 pwsh 執行適合選擇它；進程需要隔離環境時應改用容器或遠程執行器。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-在 `ctx.sandbox` 后挂载此提供方并配一个受限执行器，执行器 spawn 的每条命令都会在你解析的策略下受限运行。随附的[基础组合包](../../bundle/base/cordis.patch.yml)拥有默认策略与执行器接线。
+在 `ctx.sandbox` 后掛載此提供方并配一個受限執行器，執行器 spawn 的每條命令都會在你解析的策略下受限運行。隨附的[基礎組合包](../../bundle/base/cordis.patch.yml)擁有默認策略與執行器接線。
 
-### 何时选择
+### 何時選擇
 
-当命令必须在宿主机上受限运行时选择它：它是挂载 `ctx.sandbox` 的 Linux、macOS 与 Windows 组合的默认后端。当进程必须在隔离环境中运行时请另选机制——容器或远程执行器会替换整个能力，而此提供方与宿主共享内核和文件系统。
+當命令必須在宿主機上受限運行時選擇它：它是掛載 `ctx.sandbox` 的 Linux、macOS 與 Windows 組合的默認后端。當進程必須在隔離環境中運行時請另選機制——容器或遠程執行器會替換整個能力，而此提供方與宿主共享內核和文件系統。
 
 ### 最小配置
 
-加载沙箱服务并挂载提供方；以下默认值即选择策略。
+加載沙箱服務并掛載提供方；以下默認值即選擇策略。
 
 ```yaml
 - id: sandbox
   name: '@deepseek-ai/dsh-sandbox-local'
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `runnerCommand` | `[]` | 自定义 runner argv；会追加 bwrap 兼容的 profile 参数，断言完全强制执行，并跳过内置选择与探测 |
-| `runnerFailureSignatures` | `[]` | 识别自定义 runner 自身失败方言的不区分大小写 stderr 子串；与 `runnerCommand` 搭配必需 |
-| `probeTimeoutMs` | `5,000` | 每次竞争 runner 候选功能探测的超时时间 |
+| `runnerCommand` | `[]` | 自定義 runner argv；會追加 bwrap 兼容的 profile 參數，斷言完全強制執行，并跳過內置選擇與探測 |
+| `runnerFailureSignatures` | `[]` | 識別自定義 runner 自身失敗方言的不區分大小寫 stderr 子串；與 `runnerCommand` 搭配必需 |
+| `probeTimeoutMs` | `5,000` | 每次競爭 runner 候選功能探測的超時時間 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-sandbox-local)是每个受支持字段及其 JSDoc 的穷尽式真源。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-sandbox-local)是每個受支持字段及其 JSDoc 的窮盡式真源。
 
-### 受限执行与强制执行
+### 受限執行與強制執行
 
-挂载提供方后，命令在你逐调用解析的模式下运行。强制执行是报告的事实，而非承诺：`full` 表示后端管辖模式承诺的每个文件操作，`partial` 表示它只管辖子集——Windows ACL 档（Everyone 与硬链接边界）与较旧的 Landlock ABI 是当前的部分强制执行情形，因此需要绝对边界的消费方可以拒绝或向上暴露它们。被拒绝的文件操作通过后端的拒绝方言呈现，执行命令前失败的 runner 会报告结构化的 runner 失败签名。
+掛載提供方后，命令在你逐調用解析的模式下運行。強制執行是報告的事實，而非承諾：`full` 表示后端管轄模式承諾的每個文件操作，`partial` 表示它只管轄子集——Windows ACL 檔（Everyone 與硬鏈接邊界）與較舊的 Landlock ABI 是當前的部分強制執行情形，因此需要絕對邊界的消費方可以拒絕或向上暴露它們。被拒絕的文件操作通過后端的拒絕方言呈現，執行命令前失敗的 runner 會報告結構化的 runner 失敗簽名。
 
-### 失败与恢复
+### 失敗與恢復
 
-不受支持的平台或不可用的 runner 会拒绝执行：`confine()` 抛出 `SANDBOX_UNAVAILABLE` 并列出该平台的 runner 选项，消费方会呈现该错误，而不是让命令不受限制地运行。启动后拒绝自身 profile 的 runner 由其致命 stderr 签名与退出码识别，因此损坏的沙箱不会被误认为被拒绝的命令。`runnerCommand` 覆盖是操作方断言：它跳过功能探测，并假定配置的 runner 诚实实现与 bwrap 兼容的 profile。
+不受支持的平臺或不可用的 runner 會拒絕執行：`confine()` 拋出 `SANDBOX_UNAVAILABLE` 并列出該平臺的 runner 選項，消費方會呈現該錯誤，而不是讓命令不受限制地運行。啟動后拒絕自身 profile 的 runner 由其致命 stderr 簽名與退出碼識別，因此損壞的沙箱不會被誤認為被拒絕的命令。`runnerCommand` 覆蓋是操作方斷言：它跳過功能探測，并假定配置的 runner 誠實實現與 bwrap 兼容的 profile。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释 runner 选择、各平台 profile 与失败方言；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋 runner 選擇、各平臺 profile 與失敗方言；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### runner 选择
+### runner 選擇
 
-选择按平台优先、探测其次：每个平台都有 runner 链（`linux`：`bwrap` 再 Landlock；`darwin`：Seatbelt；`win32`：ACL 受限令牌 runner）。唯一候选直接选择、不探测；竞争候选按链序各执行一次功能探测，首个可用结论在提供方生命周期内缓存。没有链的平台、或链上所有探测都失败时，平台不可用，`confine()` 会拒绝执行。
+選擇按平臺優先、探測其次：每個平臺都有 runner 鏈（`linux`：`bwrap` 再 Landlock；`darwin`：Seatbelt；`win32`：ACL 受限令牌 runner）。唯一候選直接選擇、不探測；競爭候選按鏈序各執行一次功能探測，首個可用結論在提供方生命周期內緩存。沒有鏈的平臺、或鏈上所有探測都失敗時，平臺不可用，`confine()` 會拒絕執行。
 
-### 平台 profile
+### 平臺 profile
 
-bwrap profile 组合只读宿主根目录、全新 `/dev` 与私有 PID 命名空间中的 `/proc`——命令可管理其后代，但看不到宿主进程，因此 procfs 魔法链接无法绕过挂载；`workspace-write` 另加临时的 `/tmp` 与可写工作区绑定挂载。[私有 PID 笔记](../../../.agents/notes/implemented/bug-fix/2026-08-06-bwrap-private-pid-namespace.zh.md)记录该边界。
+bwrap profile 組合只讀宿主根目錄、全新 `/dev` 與私有 PID 命名空間中的 `/proc`——命令可管理其后代，但看不到宿主進程，因此 procfs 魔法鏈接無法繞過掛載；`workspace-write` 另加臨時的 `/tmp` 與可寫工作區綁定掛載。[私有 PID 筆記](../../../.agents/notes/implemented/bug-fix/2026-08-06-bwrap-private-pid-namespace.zh.md)記錄該邊界。
 
-`@deepseek-ai/node-addon-system/landlock-run` API 提供平台 launcher、功能探测与授权词汇；此提供方只做模式到授权的映射，把路径解析与探测解析保留在带版本的 binary 中。
+`@deepseek-ai/node-addon-system/landlock-run` API 提供平臺 launcher、功能探測與授權詞匯；此提供方只做模式到授權的映射，把路徑解析與探測解析保留在帶版本的 binary 中。
 
-Seatbelt profile 默认允许，带 `(deny file-write*)` 与来自共享 `writableRoots` 辅助函数的写入 allow-list，因此恰好管辖模式承诺的文件操作；每个根目录都经过规范化，因为 Seatbelt 匹配解析后的路径（`/tmp` 就是 `/private/tmp`）。
+Seatbelt profile 默認允許，帶 `(deny file-write*)` 與來自共享 `writableRoots` 輔助函數的寫入 allow-list，因此恰好管轄模式承諾的文件操作；每個根目錄都經過規范化，因為 Seatbelt 匹配解析后的路徑（`/tmp` 就是 `/private/tmp`）。
 
-Windows 档为每个工作区保留一个确定性写入 SID 和常驻 ACE，同时为每个活跃的会话/工作区对分配一个随机私有临时目录，以及不同的 SID 和可撤销 ACE——共享工作区的会话共享其预期写权限，却不会继承彼此的临时目录权限。新的提供方总会选择新的临时路径和 SID，因此崩溃残留既无法阻止恢复的会话，也无法向其授权。该档报告 `partial` 强制执行，因为受限令牌必须保留 Everyone，且 NTFS 硬链接会把同一文件对象别名为多个路径。
+Windows 檔為每個工作區保留一個確定性寫入 SID 和常駐 ACE，同時為每個活躍的會話/工作區對分配一個隨機私有臨時目錄，以及不同的 SID 和可撤銷 ACE——共享工作區的會話共享其預期寫權限，卻不會繼承彼此的臨時目錄權限。新的提供方總會選擇新的臨時路徑和 SID，因此崩潰殘留既無法阻止恢復的會話，也無法向其授權。該檔報告 `partial` 強制執行，因為受限令牌必須保留 Everyone，且 NTFS 硬鏈接會把同一文件對象別名為多個路徑。
 
-### 拒绝与 runner 失败方言
+### 拒絕與 runner 失敗方言
 
-每个 runner 的内核都有自己的拒绝方言，随每次包装以 `denialSignatures` 携带，`runnerFailureRules` 则给出每个 runner 的致命签名，因此消费方先分类 runner 拒绝，再检查拒绝签名。精确的字符串与退出码位于 [`src/index.ts`](src/index.ts)。
+每個 runner 的內核都有自己的拒絕方言，隨每次包裝以 `denialSignatures` 攜帶，`runnerFailureRules` 則給出每個 runner 的致命簽名，因此消費方先分類 runner 拒絕，再檢查拒絕簽名。精確的字符串與退出碼位于 [`src/index.ts`](src/index.ts)。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：runner 链选择、功能探测、逐调用包装、ACL 授权生命周期 |
-| [`src/profiles.ts`](src/profiles.ts) | 各平台 profile 构建器：bwrap 挂载、Landlock 授权、Seatbelt SBPL |
-| — | 不发布运行时不变式伴生入口；除所属 seam 强制执行的约定外，本包不公开独立的事件序列或可变数据关系。 |
+| [`src/index.ts`](src/index.ts) | 插件入口：runner 鏈選擇、功能探測、逐調用包裝、ACL 授權生命周期 |
+| [`src/profiles.ts`](src/profiles.ts) | 各平臺 profile 構建器：bwrap 掛載、Landlock 授權、Seatbelt SBPL |
+| — | 不發布運行時不變式伴生入口；除所屬 seam 強制執行的約定外，本包不公開獨立的事件序列或可變數據關系。 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-先从子系统参考文档了解共享词汇，再看 seam 约定、消费方与 win32 档。
+先從子系統參考文檔了解共享詞匯，再看 seam 約定、消費方與 win32 檔。
 
-- [进程沙箱子系统](../../../docs/subsystems/sandbox.zh.md)——模式、逐调用策略与分类方言。
-- [沙箱 seam 包](../sandbox/README.zh.md)——本提供方实现的服务约定。
-- [Bash 沙箱执行器](../../shell/bash-sandbox/README.zh.md)——受限的 bash 消费方。
-- [Windows ACL 受限令牌档](../sandbox-windows-acl/README.zh.md)——本提供方挂载的 win32 后端。
-- [子进程沙箱决策](../../../.agents/notes/implemented/feature/2026-07-06-sandbox.zh.md)——能力边界与 runner 选择语义。
+- [進程沙箱子系統](../../../docs/subsystems/sandbox.zh.md)——模式、逐調用策略與分類方言。
+- [沙箱 seam 包](../sandbox/README.zh.md)——本提供方實現的服務約定。
+- [Bash 沙箱執行器](../../shell/bash-sandbox/README.zh.md)——受限的 bash 消費方。
+- [Windows ACL 受限令牌檔](../sandbox-windows-acl/README.zh.md)——本提供方掛載的 win32 后端。
+- [子進程沙箱決策](../../../.agents/notes/implemented/feature/2026-07-06-sandbox.zh.md)——能力邊界與 runner 選擇語義。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-通过 [`dsh-bash-sandbox`](../../shell/bash-sandbox/README.zh.md) 和 [`dsh-tool-bash`](../../shell/tool-bash/README.zh.md) 间接影响；它们渲染此提供方的强制执行与拒绝事实，而 [`dsh-sandbox`](../sandbox/README.zh.md) seam 拥有 `SANDBOX_UNAVAILABLE` 文本、本提供方拥有 runner 选择，profile 不进入上下文。
+通過 [`dsh-bash-sandbox`](../../shell/bash-sandbox/README.zh.md) 和 [`dsh-tool-bash`](../../shell/tool-bash/README.zh.md) 間接影響；它們渲染此提供方的強制執行與拒絕事實，而 [`dsh-sandbox`](../sandbox/README.zh.md) seam 擁有 `SANDBOX_UNAVAILABLE` 文本、本提供方擁有 runner 選擇，profile 不進入上下文。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-不会直接使 KV Cache 失效；请求前缀变更由上述消费方负责。
+不會直接使 KV Cache 失效；請求前綴變更由上述消費方負責。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明提供方何时不合适，或何时需要特别运维。它们是当前包约束，不是通用平台对比或任务积压。
+這些限制說明提供方何時不合適，或何時需要特別運維。它們是當前包約束，不是通用平臺對比或任務積壓。
 
-- **Windows ACL 只能实现部分强制执行**——受限令牌必须保留 Everyone 以完成进程初始化，因此授予 Everyone 写访问的外部对象仍可写；NTFS 硬链接也会使工作区路径与外部路径指向同一个文件对象。提供方报告 `enforcement: 'partial'`，而不会把该边界夸大为完整强制执行。
-- **Landlock 可能只实现部分强制执行**——较旧且受支持的内核 ABI 只能限制自身公开的访问类别，因此报告 `enforcement: 'partial'`，不会夸大为完整强制执行。
-- **Seatbelt 依赖已弃用的 `sandbox-exec`**——macOS 仍会提供它，但若 Apple 移除该私有策略引擎，该提供方无法替换或探测。
-- **runner 选择在提供方生命周期内缓存**——安装、移除或修复 runner 后，必须重载插件才能改变选择。
-- **`runnerCommand` 是操作方断言**——配置的自定义 runner 会跳过功能探测，并假定它诚实实现与 bwrap 兼容的 profile；如果它本身是 Bash 脚本，其解释器启动发生在该脚本施加约束之前。
+- **Windows ACL 只能實現部分強制執行**——受限令牌必須保留 Everyone 以完成進程初始化，因此授予 Everyone 寫訪問的外部對象仍可寫；NTFS 硬鏈接也會使工作區路徑與外部路徑指向同一個文件對象。提供方報告 `enforcement: 'partial'`，而不會把該邊界夸大為完整強制執行。
+- **Landlock 可能只實現部分強制執行**——較舊且受支持的內核 ABI 只能限制自身公開的訪問類別，因此報告 `enforcement: 'partial'`，不會夸大為完整強制執行。
+- **Seatbelt 依賴已棄用的 `sandbox-exec`**——macOS 仍會提供它，但若 Apple 移除該私有策略引擎，該提供方無法替換或探測。
+- **runner 選擇在提供方生命周期內緩存**——安裝、移除或修復 runner 后，必須重載插件才能改變選擇。
+- **`runnerCommand` 是操作方斷言**——配置的自定義 runner 會跳過功能探測，并假定它誠實實現與 bwrap 兼容的 profile；如果它本身是 Bash 腳本，其解釋器啟動發生在該腳本施加約束之前。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-本开发备注是维护者的工作上下文：未决方向与开放问题。它明确不具权威性——已交付的行为、限制与既定理由以上文、包代码和相关 Agent Note 为准。
+本開發備注是維護者的工作上下文：未決方向與開放問題。它明確不具權威性——已交付的行為、限制與既定理由以上文、包代碼和相關 Agent Note 為準。
 
-#### 未来：环境一致的能力组
+#### 未來：環境一致的能力組
 
-[沙箱决策](../../../.agents/notes/implemented/feature/2026-07-06-sandbox.zh.md)把环境一致的能力组示例（例如 bash 加 fs 针对同一个容器）列为延期阶段；该方向尚未决定。
+[沙箱決策](../../../.agents/notes/implemented/feature/2026-07-06-sandbox.zh.md)把環境一致的能力組示例（例如 bash 加 fs 針對同一個容器）列為延期階段；該方向尚未決定。
 
 </details>

@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { supportsHighlighting } from '../../ui-primitives/src/markdown/highlight.ts'
 import { CODE_EXTENSIONS, languageForPath } from '../src/client/code/languages.ts'
 

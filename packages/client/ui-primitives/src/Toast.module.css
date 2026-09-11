@@ -1,4 +1,4 @@
-/* The fade delay comes from the component as `--dsh-toast-hold`, so one value
+﻿/* The fade delay comes from the component as `--dsh-toast-hold`, so one value
    drives both the unmount timer and this animation; the fallback matches the
    component's own default. The fade DURATION still has to agree with FADE_MS
    in Toast.tsx, which no owner varies. */

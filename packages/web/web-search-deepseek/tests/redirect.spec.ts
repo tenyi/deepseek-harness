@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Real HTTP coverage proves whether native `fetch` contacts a cross-origin `Location`; mocked
  * request-init assertions alone cannot observe that boundary.
  */

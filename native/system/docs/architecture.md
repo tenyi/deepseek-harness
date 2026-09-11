@@ -1,4 +1,4 @@
-# Architecture
+﻿# Architecture
 
 The system package family supplies native mechanisms to Node callers: a Linux confinement executable and a POSIX file-lock binding. Consumers own sandbox policy and Session lifecycle.
 

@@ -1,4 +1,4 @@
----
+﻿---
 description: "The process-sandbox package group: the confinement seam, per-platform backends, the shared policy resolver, and the Windows write-restriction rung."
 kind: "package-group"
 ---

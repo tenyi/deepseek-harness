@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'node:fs'
+﻿import { readFileSync, readdirSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { dirname, join } from 'node:path'
 import type { UserConfig } from 'tsdown'

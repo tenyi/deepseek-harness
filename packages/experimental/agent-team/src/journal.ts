@@ -1,4 +1,4 @@
-/** Serialized Team transactions over the exact live Lead Session log. */
+﻿/** Serialized Team transactions over the exact live Lead Session log. */
 
 import type { Agent } from '@deepseek-ai/dsh-agent'
 import type { Context } from '@deepseek-ai/cordis'

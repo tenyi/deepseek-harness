@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Assembled-app regression: a persisted `origin: 'subagent'` child whose log
  * carries no descriptor event is surfaced by `list_agents` as a
  * `[diagnostic: corrupt]` row instead of being silently dropped.

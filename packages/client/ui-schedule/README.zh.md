@@ -1,5 +1,5 @@
----
-description: "说明活动 Schedule 提醒的只读 Web 目录，供用户选择该界面，也供维护者了解其 projection、时间与无障碍行为。"
+﻿---
+description: "說明活動 Schedule 提醒的只讀 Web 目錄，供用戶選擇該界面，也供維護者了解其 projection、時間與無障礙行為。"
 kind: "package-reference"
 ---
 
@@ -9,101 +9,101 @@ kind: "package-reference"
 
 ## 概述
 
-本包在 Web 会话头部渲染当前会话活动 Schedule 提醒的只读目录。它读取完整的 `schedule` projection，不发 RPC，也不执行 mutation。浏览器派生状态、本地时间、相对时间与排序，不把这些呈现值加入持久状态。随附 Web bundle 默认禁用该插件，只有显式 Schedule overlay 才会同时启用 Host Schedule 服务与此客户端 row。
+本包在 Web 會話頭部渲染當前會話活動 Schedule 提醒的只讀目錄。它讀取完整的 `schedule` projection，不發 RPC，也不執行 mutation。瀏覽器派生狀態、本地時間、相對時間與排序，不把這些呈現值加入持久狀態。隨附 Web bundle 默認禁用該插件，只有顯式 Schedule overlay 才會同時啟用 Host Schedule 服務與此客戶端 row。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-在需要显示提醒的 Web 会话启动前启用 Schedule overlay：
+在需要顯示提醒的 Web 會話啟動前啟用 Schedule overlay：
 
 ```sh
 dsh web --patch apps/cli/config/examples/schedule/cordis.yml
 ```
 
-随附 Web graph 已通过 disabled 的 `ui-schedule` row 解析 `@deepseek-ai/dsh-client-ui-schedule`；overlay 会把该 row 与 `@deepseek-ai/dsh-schedule` 一起启用。只有会话已成功打开且 projection 至少包含一条活动记录时，触发器才会出现。打开目录后，逾期行在前，未来行再按目标时间排序；完全并列时保留 projection 的创建顺序。
+隨附 Web graph 已通過 disabled 的 `ui-schedule` row 解析 `@deepseek-ai/dsh-client-ui-schedule`；overlay 會把該 row 與 `@deepseek-ai/dsh-schedule` 一起啟用。只有會話已成功打開且 projection 至少包含一條活動記錄時，觸發器才會出現。打開目錄后，逾期行在前，未來行再按目標時間排序；完全并列時保留 projection 的創建順序。
 
-### 阅读和关闭目录
+### 閱讀和關閉目錄
 
-每一行显示可完整换行的提示词、独立的「等待中」或「已逾期」状态、本地化的「单次」或重复间隔可整除的最大完整单位、浏览器本地目标时间，以及按浏览器时钟派生的相对时间。间隔绝不舍入，三项元数据会按行换行，不会裁剪合法的大数值。通过 portal 挂到 body 的弹层目标宽度为 336px；空间足够时与触发按钮左边缘对齐，触发器靠近视口右侧时向左避让并保留 16px 视口边距，最大宽度为视口宽度减 32px。弹层会在需要时纵向滚动，且不显示 Schedule id、原始 UTC 值、详情或操作控件。
+每一行顯示可完整換行的提示詞、獨立的「等待中」或「已逾期」狀態、本地化的「單次」或重復間隔可整除的最大完整單位、瀏覽器本地目標時間，以及按瀏覽器時鐘派生的相對時間。間隔絕不舍入，三項元數據會按行換行，不會裁剪合法的大數值。通過 portal 掛到 body 的彈層目標寬度為 336px；空間足夠時與觸發按鈕左邊緣對齊，觸發器靠近視口右側時向左避讓并保留 16px 視口邊距，最大寬度為視口寬度減 32px。彈層會在需要時縱向滾動，且不顯示 Schedule id、原始 UTC 值、詳情或操作控件。
 
-只有原生触发按钮进入 Tab 顺序。Enter 与 Space 使用按钮的正常激活行为；焦点仍在触发器或目录内时，Escape 会关闭弹层并把焦点交还触发器；在外部按下指针也会关闭。若 live 更新移除最后一条记录，组件会关闭并卸载，但不会把焦点移到另一个会话头部动作。会话打开失败时，即使存在暂定的缓存 projection，也会隐藏触发器。
+只有原生觸發按鈕進入 Tab 順序。Enter 與 Space 使用按鈕的正常激活行為；焦點仍在觸發器或目錄內時，Escape 會關閉彈層并把焦點交還觸發器；在外部按下指針也會關閉。若 live 更新移除最后一條記錄，組件會關閉并卸載，但不會把焦點移到另一個會話頭部動作。會話打開失敗時，即使存在暫定的緩存 projection，也會隱藏觸發器。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-浏览器插件以顺序 10 向 `conversation.session.header.actions` 贡献 `schedule-catalog`，位于静态 agent（智能体）与 subagent 上下文之后、后台任务之前。它通过标准会话钩子读取 `openState`，通过 `useProjection('schedule')` 读取完整值；弹层开合是它唯一的本地交互状态。组件把目录 portal 到 `document.body`，并将触发器与面板 ref 交给 `useAnchoredPosition`；该 hook 在测量已渲染面板后发布 fixed 坐标，使面板位于触发器下方 5px、钳制在 16px 视口边距内，并在 resize、捕获阶段 scroll 与面板 resize 时重新测量。目录 ref 也让 portal 内的指针按下继续属于既有 dismissal 边界之内。浏览器格式化使用查看方的 locale、时区与时钟，持久 Schedule 记录保持不变。
+瀏覽器插件以順序 10 向 `conversation.session.header.actions` 貢獻 `schedule-catalog`，位于靜態 agent（智能體）與 subagent 上下文之后、后臺任務之前。它通過標準會話鉤子讀取 `openState`，通過 `useProjection('schedule')` 讀取完整值；彈層開合是它唯一的本地交互狀態。組件把目錄 portal 到 `document.body`，并將觸發器與面板 ref 交給 `useAnchoredPosition`；該 hook 在測量已渲染面板后發布 fixed 坐標，使面板位于觸發器下方 5px、鉗制在 16px 視口邊距內，并在 resize、捕獲階段 scroll 與面板 resize 時重新測量。目錄 ref 也讓 portal 內的指針按下繼續屬于既有 dismissal 邊界之內。瀏覽器格式化使用查看方的 locale、時區與時鐘，持久 Schedule 記錄保持不變。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/client/index.ts`](src/client/index.ts) | 浏览器入口：注册 locale 并贡献会话头部 slot |
-| [`src/client/ScheduleCatalogAction.tsx`](src/client/ScheduleCatalogAction.tsx) | 可见性、排序、格式化、弹层与键盘行为 |
-| [`src/client/locales.ts`](src/client/locales.ts) | 中英文目录文案 |
-| [`src/index.ts`](src/index.ts) | 空的 Host apply，使 Loader 可以寻址该可选浏览器功能 |
-| — | 不发布运行时不变量伴生入口；这个只读客户端目录不拥有可变的跨插件状态。 |
+| [`src/client/index.ts`](src/client/index.ts) | 瀏覽器入口：注冊 locale 并貢獻會話頭部 slot |
+| [`src/client/ScheduleCatalogAction.tsx`](src/client/ScheduleCatalogAction.tsx) | 可見性、排序、格式化、彈層與鍵盤行為 |
+| [`src/client/locales.ts`](src/client/locales.ts) | 中英文目錄文案 |
+| [`src/index.ts`](src/index.ts) | 空的 Host apply，使 Loader 可以尋址該可選瀏覽器功能 |
+| — | 不發布運行時不變量伴生入口；這個只讀客戶端目錄不擁有可變的跨插件狀態。 |
 
-[持久 Web Schedule Agent Note](../../../.agents/notes/implemented/feature/2026-08-05-durable-web-schedule.zh.md) 拥有活动 projection 与 opt-in 呈现边界；本包拥有目录的时间与无障碍行为。
+[持久 Web Schedule Agent Note](../../../.agents/notes/implemented/feature/2026-08-05-durable-web-schedule.zh.md) 擁有活動 projection 與 opt-in 呈現邊界；本包擁有目錄的時間與無障礙行為。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当目录本身不够用时阅读以下页面。它们从浏览器呈现逐步进入持久 Schedule 状态与共享 projection 传输。
+當目錄本身不夠用時閱讀以下頁面。它們從瀏覽器呈現逐步進入持久 Schedule 狀態與共享 projection 傳輸。
 
-- [Schedule 包](../../schedule/schedule/README.zh.md)——创建、列出、取消并交付这里显示的提醒。
-- [Schedule 子系统](../../../docs/subsystems/schedule.zh.md)——持久记录、转换与交付语义。
-- [会话投影子系统](../../../docs/subsystems/session-projection.zh.md)——本包读取的完整值传输。
-- [客户端包映射](../README.zh.md)——相邻的浏览器 UI 包。
+- [Schedule 包](../../schedule/schedule/README.zh.md)——創建、列出、取消并交付這里顯示的提醒。
+- [Schedule 子系統](../../../docs/subsystems/schedule.zh.md)——持久記錄、轉換與交付語義。
+- [會話投影子系統](../../../docs/subsystems/session-projection.zh.md)——本包讀取的完整值傳輸。
+- [客戶端包映射](../README.zh.md)——相鄰的瀏覽器 UI 包。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无，因为本包只为人类渲染已经完成的客户端 projection，从不改变提示词、消息、schema、流或工具结果。
+無，因為本包只為人類渲染已經完成的客戶端 projection，從不改變提示詞、消息、schema、流或工具結果。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；本包从不组装或发送提供方请求。
+無；本包從不組裝或發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制界定当前 Schedule 目录。它们是当前包约束，不是提醒服务对比或任务积压。
+這些限制界定當前 Schedule 目錄。它們是當前包約束，不是提醒服務對比或任務積壓。
 
-- **仅含活动记录**——终结性的 delete 与 dispatch 转换会移除对应行；普通 transcript（文本记录）仍是唯一的提醒交付历史。
-- **浏览器派生时间**——本地时间与相对时间标签使用查看方浏览器当前的 locale、时区与时钟。它们是呈现值，不是持久 Schedule 事实。
-- **只读界面**——创建与删除提醒仍由 Schedule 工具负责；目录没有 mutation、Retry、acknowledgement、Toast 或交付回执语义。
-- **要求会话打开成功**——打开失败时，即使存在暂定缓存值也会隐藏，因为严格会话回放仍是权威。
+- **僅含活動記錄**——終結性的 delete 與 dispatch 轉換會移除對應行；普通 transcript（文本記錄）仍是唯一的提醒交付歷史。
+- **瀏覽器派生時間**——本地時間與相對時間標簽使用查看方瀏覽器當前的 locale、時區與時鐘。它們是呈現值，不是持久 Schedule 事實。
+- **只讀界面**——創建與刪除提醒仍由 Schedule 工具負責；目錄沒有 mutation、Retry、acknowledgement、Toast 或交付回執語義。
+- **要求會話打開成功**——打開失敗時，即使存在暫定緩存值也會隱藏，因為嚴格會話回放仍是權威。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

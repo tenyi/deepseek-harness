@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Internal sandbox-result classification helpers — deliberate call-for-call
  * mirror of `@deepseek-ai/dsh-bash-sandbox/src/helpers.ts` (the pwsh twin of
  * the bash consumer shares the identical classification dialect).

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Fixture commands/skills domains: session-addressed catalogs, execute
  * parse/dispatch and its logged lifecycle pair, and skills/list Session resolution.
  */

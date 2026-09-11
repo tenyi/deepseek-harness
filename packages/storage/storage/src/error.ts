@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Error vocabulary for the storage hub and its backends.
  * @module @deepseek-ai/dsh-storage/src/error
  */

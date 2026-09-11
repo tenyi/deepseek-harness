@@ -1,4 +1,4 @@
-# Patch for resuming one seeded workspace-instruction session over the shipped headless profile.
+﻿# Patch for resuming one seeded workspace-instruction session over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

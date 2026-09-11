@@ -1,4 +1,4 @@
-# Equivalent to the two explicit Agent Teams profile layers over the scaffold's
+﻿# Equivalent to the two explicit Agent Teams profile layers over the scaffold's
 # stable base and Web bundles.
 - id: tool-subagent-control
   disabled: true

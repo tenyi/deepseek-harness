@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Cross-platform native path and text-document openers for Host UI
  * integrations.
  *

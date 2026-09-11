@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser-local object layer over one Session's durable message-feedback
  * sidecar. The Host owns per-item compare-and-set: every mutation carries the
  * version this controller last observed, and a `version-conflict` reply carries

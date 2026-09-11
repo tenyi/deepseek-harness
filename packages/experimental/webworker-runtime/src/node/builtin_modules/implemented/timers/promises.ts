@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node:timers/promises`: real implementations over the worker's timer globals.
  */
 import type { TimerOptions } from 'node:timers'

@@ -1,4 +1,4 @@
-/** Explicit local-coordinate remapping; captured generations and owner-local counters remain opaque. */
+﻿/** Explicit local-coordinate remapping; captured generations and owner-local counters remain opaque. */
 
 import { SessionFormatError, sessionFormatCount } from '@deepseek-ai/dsh-session-format'
 import type { SessionFormatEvent, SessionFormatJsonObject, SessionFormatJsonValue } from '@deepseek-ai/dsh-session-format'

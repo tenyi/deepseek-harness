@@ -1,4 +1,4 @@
-/** Browser-safe Connection protocol and shared application value exports. */
+﻿/** Browser-safe Connection protocol and shared application value exports. */
 
 export type {
   ClientRequest,

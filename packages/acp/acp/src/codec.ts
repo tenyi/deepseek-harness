@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure translation between the harness lifecycle and the automation-only ACP wire.
  * @module @deepseek-ai/dsh-acp/codec
  */

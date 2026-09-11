@@ -1,4 +1,4 @@
----
+﻿---
 description: "The provider-neutral model-call service for users and maintainers streaming requests, registering provider adapters, or resolving model metadata."
 kind: "package-reference"
 ---

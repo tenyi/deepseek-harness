@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node-pty` stub: pseudo-terminals belong to the excluded surface. Terminal
  * plugins mount so their tools stay visible; spawning reports the gap.
  */

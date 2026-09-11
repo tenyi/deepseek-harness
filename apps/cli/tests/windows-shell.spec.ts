@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The shipped shell composition: the base bundle gates both shell stacks by
  * platform on its own rows (`disabled: !!js process.platform`), so exactly
  * one shell stack mounts per host and no separate platform layer exists —

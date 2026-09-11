@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useMemo, useRef, useState, useSyncExternalStore } from 'react'
+﻿import { Fragment, useCallback, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import type { CSSProperties, ReactNode, Ref } from 'react'
 import clsx from 'clsx'
 import { writeClipboard } from '../clipboard.ts'

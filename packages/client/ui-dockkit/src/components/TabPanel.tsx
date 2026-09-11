@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One pane: its tab strip (drag source, drop target, split control) and the
  * active tab's body with the dock preview overlay. Presentational; every gesture
  * leaves through `PaneCallbacks`, and the body itself comes from `renderTab`.

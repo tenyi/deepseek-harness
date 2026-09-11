@@ -1,4 +1,4 @@
-import { readFile, readdir, writeFile } from 'node:fs/promises'
+﻿import { readFile, readdir, writeFile } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { join } from 'node:path'
@@ -599,7 +599,7 @@ describe('headless stream-json snapshots', () => {
       configPath: teamConfigPath,
       binArgs: [
         teamConfigPath,
-        '请明确使用 Agent Teams，把调研和实现拆给两个 teammate，等待完成后汇总。',
+        '請明確使用 Agent Teams，把調研和實現拆給兩個 teammate，等待完成后匯總。',
       ],
       tsconfigPath,
       processTimeoutMs: 60_000,

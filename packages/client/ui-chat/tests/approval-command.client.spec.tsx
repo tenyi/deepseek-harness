@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { Context } from '@deepseek-ai/cordis'
 import type { ChatSnapshot, UseChat } from '@deepseek-ai/dsh-client-ui-chat/client'
 import type { PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'

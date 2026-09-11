@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Human-facing `/goal` command over the persisted same-session goal domain.
  * @module @deepseek-ai/dsh-command-goal
  */

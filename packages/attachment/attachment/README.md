@@ -1,4 +1,4 @@
----
+﻿---
 description: "Durable image and file attachments for users and maintainers attaching, reusing, or debugging uploads in prompts and commands."
 kind: "package-reference"
 ---

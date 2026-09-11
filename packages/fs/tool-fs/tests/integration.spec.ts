@@ -1,4 +1,4 @@
-/**
+﻿/**
  * End-to-end tool-registry tests against the real local backend. The policy deployment verifies
  * observed-state and guarded mutation; the bare deployment proves unconditional tools have no
  * policy-service dependency. Assertions read files back byte-for-byte rather than trusting tool

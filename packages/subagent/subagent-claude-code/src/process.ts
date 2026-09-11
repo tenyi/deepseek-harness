@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Projection from the shared managed-process handle to the official Claude
  * Agent SDK's custom-spawn process interface.
  *

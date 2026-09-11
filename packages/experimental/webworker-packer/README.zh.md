@@ -1,5 +1,5 @@
----
-description: "面向构建或排查实验性预览部署的维护者，说明浏览器 worker 虚拟文件系统（VFS）镜像打包。"
+﻿---
+description: "面向構建或排查實驗性預覽部署的維護者，說明瀏覽器 worker 虛擬文件系統（VFS）鏡像打包。"
 kind: "package-library"
 ---
 
@@ -9,61 +9,61 @@ kind: "package-library"
 
 ## 概述
 
-VFS 镜像打包器：把一份合成 profile 变成浏览器 worker 挂载为文件系统的 gzip 压缩基础 tar，并把不透明数据目录变成按序应用的 overlay tar（[实验组](../README.zh.md)）。不做任何源码编译——基础镜像携带仓库真实构建产物，预览部署调试的正是 served 部署交付的字节。打包预览镜像或排查镜像内容时，请阅读本页。
+VFS 鏡像打包器：把一份合成 profile 變成瀏覽器 worker 掛載為文件系統的 gzip 壓縮基礎 tar，并把不透明數據目錄變成按序應用的 overlay tar（[實驗組](../README.zh.md)）。不做任何源碼編譯——基礎鏡像攜帶倉庫真實構建產物，預覽部署調試的正是 served 部署交付的字節。打包預覽鏡像或排查鏡像內容時，請閱讀本頁。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-打包器在 [`src/repository.ts`](src/repository.ts) 中拥有内部 `dsh.configTrees` 声明、校验和源目录解析。该字段不属于公共插件 manifest API。
+打包器在 [`src/repository.ts`](src/repository.ts) 中擁有內部 `dsh.configTrees` 聲明、校驗和源目錄解析。該字段不屬于公共插件 manifest API。
 
-打包是三层标准栈：
+打包是三層標準棧：
 
-1. **Roster**——合成 profile 的插件行（标准 YAML 解析、Include 方言、`!!js` 原样保留），加上 CLI（命令行界面）在 `package.json` `dsh.configTrees` 里声明的每棵配置树（agent（智能体） presets）的行，按 Node 式依赖闭包物化。外部 peer 边绝不会绑定到 worker，workspace peer 保留在链上。
-2. **发布视图**——每个 workspace 或 vendored 包贡献其构建后的 npm 切片（`files` 走 picomatch），不带源码和 workspace `dist/`。外部包的 `main` 或 `exports` 可能指向 `src/` 或 `dist/`，因此两处发布 JavaScript 都会保留，只应用通用的测试、map、声明与归档排除规则。
-3. **可达性 sweep**——用运行时加载器自己的解析，从全部 workspace 导出面加 worker 装配种子（`IMAGE_ENTRY_SEEDS`）出发，打包时把每个可达模块转换为符合包装层约定的形式。该转换会报告名称可静态确定的 import、re-export 与动态 import、经 `require` 发起的调用，以及通过 `node:module` 或 `module` 具名导入（含导入别名）在模块作用域直接发起的 `createRequire(import.meta.url)('pkg')` 调用。页面资产（`./client` 导出背后的 `lib/client.js`）原样直发；自家代码的不可解析请求会让打包失败，第三方不可解析请求则允许延后到 require 时明确失败。
+1. **Roster**——合成 profile 的插件行（標準 YAML 解析、Include 方言、`!!js` 原樣保留），加上 CLI（命令行界面）在 `package.json` `dsh.configTrees` 里聲明的每棵配置樹（agent（智能體） presets）的行，按 Node 式依賴閉包物化。外部 peer 邊絕不會綁定到 worker，workspace peer 保留在鏈上。
+2. **發布視圖**——每個 workspace 或 vendored 包貢獻其構建后的 npm 切片（`files` 走 picomatch），不帶源碼和 workspace `dist/`。外部包的 `main` 或 `exports` 可能指向 `src/` 或 `dist/`，因此兩處發布 JavaScript 都會保留，只應用通用的測試、map、聲明與歸檔排除規則。
+3. **可達性 sweep**——用運行時加載器自己的解析，從全部 workspace 導出面加 worker 裝配種子（`IMAGE_ENTRY_SEEDS`）出發，打包時把每個可達模塊轉換為符合包裝層約定的形式。該轉換會報告名稱可靜態確定的 import、re-export 與動態 import、經 `require` 發起的調用，以及通過 `node:module` 或 `module` 具名導入（含導入別名）在模塊作用域直接發起的 `createRequire(import.meta.url)('pkg')` 調用。頁面資產（`./client` 導出背后的 `lib/client.js`）原樣直發；自家代碼的不可解析請求會讓打包失敗，第三方不可解析請求則允許延后到 require 時明確失敗。
 
-`repository.ts` 拥有仓库形态输入（`vendor/`、`packages/`、`native/system/packages/` 与 `apps/` 的 workspace 扫描；经真 CLI dump 路径合成 profile）；`pack.ts` 一概不拥有，同一库换参即可打另一棵树。Native 扫描使 Landlock 入口包成为普通发布视图依赖，其可执行文件仍由 Worker 平台实现。CLI 为 `dsh-pack-vfs-image --out <file> [--profile web]`；`apps/web` 的 `build:preview` 在预览壳构建后运行它。
+`repository.ts` 擁有倉庫形態輸入（`vendor/`、`packages/`、`native/system/packages/` 與 `apps/` 的 workspace 掃描；經真 CLI dump 路徑合成 profile）；`pack.ts` 一概不擁有，同一庫換參即可打另一棵樹。Native 掃描使 Landlock 入口包成為普通發布視圖依賴，其可執行文件仍由 Worker 平臺實現。CLI 為 `dsh-pack-vfs-image --out <file> [--profile web]`；`apps/web` 的 `build:preview` 在預覽殼構建后運行它。
 
-仓库适配器还声明 `webworker-runtime/tests/fixtures/` 下仅用于 preview 的 fixture（测试前置数据） tree。CLI 会把每套具名 fixture 打成一份独立的确定性 overlay 归档，并写出浏览器可读的 manifest（元数据清单）。Overlay 文件绕过 npm 发布视图和模块可达性排除规则，因此点目录与示例源码会完整保留；其挂载位置仅限 `home/` 与 `workspace/`。`pack.ts` 把它们视为不透明字节；会话与 Workspace 的解释仍归拥有这些格式的运行时包。
+倉庫適配器還聲明 `webworker-runtime/tests/fixtures/` 下僅用于 preview 的 fixture（測試前置數據） tree。CLI 會把每套具名 fixture 打成一份獨立的確定性 overlay 歸檔，并寫出瀏覽器可讀的 manifest（元數據清單）。Overlay 文件繞過 npm 發布視圖和模塊可達性排除規則，因此點目錄與示例源碼會完整保留；其掛載位置僅限 `home/` 與 `workspace/`。`pack.ts` 把它們視為不透明字節；會話與 Workspace 的解釋仍歸擁有這些格式的運行時包。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无：本包在构建期运行并写出镜像文件，其产物本身不进入任何模型请求。
+無：本包在構建期運行并寫出鏡像文件，其產物本身不進入任何模型請求。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无：本包既不组装也不发送提供方请求。
+無：本包既不組裝也不發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
-- **规则表依赖人工判断**（`rules.ts`：exclude glob、页面资产模式、入口种子），由 `tests/` 钉住；worker 需要触达的新资产类别应加表行，而不是改扫描器。
-- **可达性只推断精确请求形式**——计算得到的 `import` 与 `require` 参数、保存下来的 `createRequire` 结果、经 CommonJS 获取的 `createRequire`，以及基准不是 `import.meta.url` 的调用只在运行时解析；若目标已被裁掉就会显式失败。只能通过这些形式触达的目标需要显式镜像入口种子。
-- **vendored 包源码（`src/*.ts`）被排除**——运行时无人解析它们；未来若有 worker 内源码巡检功能需要专门的 include 规则。
-- **打包器假定构建产物 `lib/` 是新鲜的**：它从不编译，工作区构建陈旧就会打包陈旧字节。先跑仓库构建。
+- **規則表依賴人工判斷**（`rules.ts`：exclude glob、頁面資產模式、入口種子），由 `tests/` 釘住；worker 需要觸達的新資產類別應加表行，而不是改掃描器。
+- **可達性只推斷精確請求形式**——計算得到的 `import` 與 `require` 參數、保存下來的 `createRequire` 結果、經 CommonJS 獲取的 `createRequire`，以及基準不是 `import.meta.url` 的調用只在運行時解析；若目標已被裁掉就會顯式失敗。只能通過這些形式觸達的目標需要顯式鏡像入口種子。
+- **vendored 包源碼（`src/*.ts`）被排除**——運行時無人解析它們；未來若有 worker 內源碼巡檢功能需要專門的 include 規則。
+- **打包器假定構建產物 `lib/` 是新鮮的**：它從不編譯，工作區構建陳舊就會打包陳舊字節。先跑倉庫構建。
 
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者工作上下文——点击展开</summary>
+<summary>維護者工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。这是没有生产事件流或可变数据的构建时 pass；无法解析的自有代码请求与全有或全无的包装层约定会直接让 pack 失败。
+**運行時不變式：** 不發布伴生入口。這是沒有生產事件流或可變數據的構建時 pass；無法解析的自有代碼請求與全有或全無的包裝層約定會直接讓 pack 失敗。

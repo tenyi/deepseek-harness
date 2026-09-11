@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsdown'
+﻿import { defineConfig } from 'tsdown'
 
 /**
  * Build the index and worker as separate single-entry bundles. The sibling `worker.cjs` is loaded

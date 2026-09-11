@@ -1,4 +1,4 @@
----
+﻿---
 description: "Abstract code-execution seam (`ctx.codeRuntime`) for users and maintainers composing, consuming, or building a backend that runs one model-written program against host-provided bindings."
 kind: "package-reference"
 ---

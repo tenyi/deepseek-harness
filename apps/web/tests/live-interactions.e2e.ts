@@ -1,4 +1,4 @@
-// Web e2e scenarios: live-turn interactions — running-draft submission,
+﻿// Web e2e scenarios: live-turn interactions — running-draft submission,
 // cancellation, error surfacing, transient-retry recovery, and retry
 // exhaustion, all through the real composition and wire. The model adapter is
 // dsh-llm-replay with override

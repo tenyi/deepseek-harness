@@ -1,4 +1,4 @@
-import { createSessionFormatChain } from './chain.ts'
+﻿import { createSessionFormatChain } from './chain.ts'
 import { SessionFormatEventCollector } from './context.ts'
 import { SessionFormatError, SessionFormatUnsupportedMigrationError } from './error.ts'
 import {

@@ -1,4 +1,4 @@
-/** Background browser upload implementation for Blob and byte-stream bodies. */
+﻿/** Background browser upload implementation for Blob and byte-stream bodies. */
 
 import { Service, type Context } from '@deepseek-ai/cordis'
 import { bytesToBase64 } from '@deepseek-ai/dsh-util-crypto'

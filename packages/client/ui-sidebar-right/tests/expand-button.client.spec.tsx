@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * The way back into a hidden panel: the header's corner button exists exactly
  * while the panel is collapsed, asks for it to expand, and renders nothing

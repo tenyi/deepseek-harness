@@ -1,5 +1,5 @@
----
-description: "按 preset cordis.yml 文件进行按会话的 agent（智能体）组装，供选择、配置或排查 agent preset 的用户与维护者阅读。"
+﻿---
+description: "按 preset cordis.yml 文件進行按會話的 agent（智能體）組裝，供選擇、配置或排查 agent preset 的用戶與維護者閱讀。"
 kind: "package-reference"
 ---
 
@@ -9,35 +9,35 @@ kind: "package-reference"
 
 ## 概述
 
-使用 `dsh-agent-presets` 为每个会话提供某个 preset 的 `agent.cordis.yml` 所指定的工具、提示词段落与 skill（技能）。一个进程可以运行使用不同 preset 的会话，同时保持它们的状态相互隔离。preset 名单合并随附定义、已配置根目录与用户根目录，会报告 preset 无法启动的原因，也能通过复制现有 preset 创建本地 preset。部署与用户都可选择默认值；只有空会话可以切换 preset。请将每个自行编写的 preset 视为受信任配置，因为它会授予其所选插件的能力。
+使用 `dsh-agent-presets` 為每個會話提供某個 preset 的 `agent.cordis.yml` 所指定的工具、提示詞段落與 skill（技能）。一個進程可以運行使用不同 preset 的會話，同時保持它們的狀態相互隔離。preset 名單合并隨附定義、已配置根目錄與用戶根目錄，會報告 preset 無法啟動的原因，也能通過復制現有 preset 創建本地 preset。部署與用戶都可選擇默認值；只有空會話可以切換 preset。請將每個自行編寫的 preset 視為受信任配置，因為它會授予其所選插件的能力。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-在需要让每个 agent 会话从 preset 文件获得自己的工具、提示词段落与 skill 的组装中挂载本包。每个会话都会命名一个 preset——显式指定或通过配置的默认值——并据此组装；没有本包时，会话只能回退到宿主组装挂载的内容。
+在需要讓每個 agent 會話從 preset 文件獲得自己的工具、提示詞段落與 skill 的組裝中掛載本包。每個會話都會命名一個 preset——顯式指定或通過配置的默認值——并據此組裝；沒有本包時，會話只能回退到宿主組裝掛載的內容。
 
-随附 Web 的 `standard`、`ptc` 与 `cordis` preset 包含[显式文件交付](../../client/ui-deliverables/README.zh.md#explicit-deliveries)。`minimal` preset 保留固定的双工具训练配置。
+隨附 Web 的 `standard`、`ptc` 與 `cordis` preset 包含[顯式文件交付](../../client/ui-deliverables/README.zh.md#explicit-deliveries)。`minimal` preset 保留固定的雙工具訓練配置。
 
-### preset 给会话带来什么
+### preset 給會話帶來什么
 
-从 preset 组装的会话会运行该 preset `agent.cordis.yml` 所列插件：它的工具、提示词段落与 skill。加入同一 preset 的会话共享一份已安装的组装，且各会话的状态彼此隔离。subagent 会加入其父方的组装，因此它看到的工具与提示词段落和创建它的 agent 相同。
+從 preset 組裝的會話會運行該 preset `agent.cordis.yml` 所列插件：它的工具、提示詞段落與 skill。加入同一 preset 的會話共享一份已安裝的組裝，且各會話的狀態彼此隔離。subagent 會加入其父方的組裝，因此它看到的工具與提示詞段落和創建它的 agent 相同。
 
-可选的 preset 来自三类来源：本包 `presets/` 下随包交付的 preset、已配置的根目录，以及你自己放在 `<dshHome>/.agent-presets` 下的 preset。选择器会展示每个 preset 的显示名与描述；组装无法加载的 preset 会连同原因一起列出而不是被隐藏，因此你能看到该修什么或删什么。
+可選的 preset 來自三類來源：本包 `presets/` 下隨包交付的 preset、已配置的根目錄，以及你自己放在 `<dshHome>/.agent-presets` 下的 preset。選擇器會展示每個 preset 的顯示名與描述；組裝無法加載的 preset 會連同原因一起列出而不是被隱藏，因此你能看到該修什么或刪什么。
 
 ### 最小配置
 
-插件需要一个 `default` preset id，并在 `roots` 中扫描 preset：
+插件需要一個 `default` preset id，并在 `roots` 中掃描 preset：
 
 ```yaml
 - name: '@deepseek-ai/dsh-agent-presets'
@@ -48,20 +48,20 @@ kind: "package-reference"
         trust: system
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `default` | 必填 | 部署 fallback preset id；模式选择关闭或没有用户默认值覆盖时使用 |
-| `roots` | `[]` | 按优先级排列的扫描目录；每项提供 `path`（开头的 `~` 会展开）与 `trust`（默认为 `user`） |
-| `includeShippedRoot` | `true` | 在全部已配置根目录之前，前置本包随附的 preset 作为 `system` 根目录 |
-| `includeUserRoot` | `true` | 在全部已配置根目录之后追加 `<dshHome>/.agent-presets` 作为 `user` 根目录 |
+| `default` | 必填 | 部署 fallback preset id；模式選擇關閉或沒有用戶默認值覆蓋時使用 |
+| `roots` | `[]` | 按優先級排列的掃描目錄；每項提供 `path`（開頭的 `~` 會展開）與 `trust`（默認為 `user`） |
+| `includeShippedRoot` | `true` | 在全部已配置根目錄之前，前置本包隨附的 preset 作為 `system` 根目錄 |
+| `includeUserRoot` | `true` | 在全部已配置根目錄之后追加 `<dshHome>/.agent-presets` 作為 `user` 根目錄 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-agent-presets)是每个受支持字段及其 JSDoc 的穷尽式真源。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-agent-presets)是每個受支持字段及其 JSDoc 的窮盡式真源。
 
-随附根目录前置在全部已配置根目录之前，因此即使补丁替换 roster 配置，内置集合仍然可用并赢得重复 id。`includeShippedRoot: false` 会为完全自行提供 preset 的部署移除内置集合。`includeUserRoot: false` 会移除推导出的可写根目录；钉住确切 roster 的测试会同时关闭两个推导根目录。
+隨附根目錄前置在全部已配置根目錄之前，因此即使補丁替換 roster 配置，內置集合仍然可用并贏得重復 id。`includeShippedRoot: false` 會為完全自行提供 preset 的部署移除內置集合。`includeUserRoot: false` 會移除推導出的可寫根目錄；釘住確切 roster 的測試會同時關閉兩個推導根目錄。
 
-### 显示选择器并选择默认 preset
+### 顯示選擇器并選擇默認 preset
 
-必填的 `default` 配置设定部署默认值。当组装中存在 settings 提供方时，本插件会注册 `agent-presets` 命名空间，并以 `{ default: config.default, modeSelectionEnabled: true }` 作为 base，因此既有的新建会话选择器会保持显示，除非用户主动关闭。Host 每次解析默认值都会读取这两个字段：`modeSelectionEnabled` 为 `false` 时，未显式指定 preset 的会话解析为 `config.default`，即使用户文档还保留其他 `default` 也会忽略它；该字段为 `true` 时，用户默认值才可覆盖部署值：
+必填的 `default` 配置設定部署默認值。當組裝中存在 settings 提供方時，本插件會注冊 `agent-presets` 命名空間，并以 `{ default: config.default, modeSelectionEnabled: true }` 作為 base，因此既有的新建會話選擇器會保持顯示，除非用戶主動關閉。Host 每次解析默認值都會讀取這兩個字段：`modeSelectionEnabled` 為 `false` 時，未顯式指定 preset 的會話解析為 `config.default`，即使用戶文檔還保留其他 `default` 也會忽略它；該字段為 `true` 時，用戶默認值才可覆蓋部署值：
 
 ```yaml
 agent-presets:
@@ -69,127 +69,127 @@ agent-presets:
   default: minimal
 ```
 
-客户端只需写入 `modeSelectionEnabled` 即可显示或隐藏选择，[Web GUI 设置开关](../../client/ui-agent-preset/README.zh.md)正是这样做的。选择器隐藏期间由部署默认值生效；再次开启时恢复已保存的用户 `default`，尚未保存时则继续使用部署默认值。模式选择保持开启时，选择默认模式会写入用户覆盖值，仅供此后创建的会话使用。由于该策略归 Host 所有，它适用于 Web、CLI、SDK 与 headless 调用方此后创建的全部未显式指定 preset 的会话；显式指定的 preset 与任何既有会话均不受影响。
+客戶端只需寫入 `modeSelectionEnabled` 即可顯示或隱藏選擇，[Web GUI 設置開關](../../client/ui-agent-preset/README.zh.md)正是這樣做的。選擇器隱藏期間由部署默認值生效；再次開啟時恢復已保存的用戶 `default`，尚未保存時則繼續使用部署默認值。模式選擇保持開啟時，選擇默認模式會寫入用戶覆蓋值，僅供此后創建的會話使用。由于該策略歸 Host 所有，它適用于 Web、CLI、SDK 與 headless 調用方此后創建的全部未顯式指定 preset 的會話；顯式指定的 preset 與任何既有會話均不受影響。
 
-### 创作 preset
+### 創作 preset
 
-创作即复制：创建 preset 会复制某个既有 preset 的整个目录——组装、展示元数据、skill 目录与资产——放进第一个 `user` 根目录。副本保留来源的描述，但拥有自己的 id 与可选显示名，因此调用方从不提供组装文本，一次复制也不会授予名单尚未携带的任何能力。创建之后的一切都发生在 preset 自己的文件里。
+創作即復制：創建 preset 會復制某個既有 preset 的整個目錄——組裝、展示元數據、skill 目錄與資產——放進第一個 `user` 根目錄。副本保留來源的描述，但擁有自己的 id 與可選顯示名，因此調用方從不提供組裝文本，一次復制也不會授予名單尚未攜帶的任何能力。創建之后的一切都發生在 preset 自己的文件里。
 
-以下情况会拒绝复制：id 不符合 `[a-z0-9][a-z0-9-]*`（id 会成为目录名）、id 已被占用（复制从不覆写）、或来源未知。删除只移除本地创作的 preset；随部署提供的 preset 不可删除。已在被删除 preset 上运行的会话会继续运行。
+以下情況會拒絕復制：id 不符合 `[a-z0-9][a-z0-9-]*`（id 會成為目錄名）、id 已被占用（復制從不覆寫）、或來源未知。刪除只移除本地創作的 preset；隨部署提供的 preset 不可刪除。已在被刪除 preset 上運行的會話會繼續運行。
 
-### 切换会话的 preset
+### 切換會話的 preset
 
-会话只有在尚未产出任何内容——没有消息或工具调用——时才能切换到不同的 preset。此后组装在会话的生命周期内固定，因为在对话中途调换工具会留下新组装无法执行的已记录工具调用。已提交的切换会发出 `tools/change`，因为解析后的工具集在没有注册表编辑的情况下发生了变化。切换也会记入会话日志，因此恢复或 fork 的会话会按它运行的组装重建。
+會話只有在尚未產出任何內容——沒有消息或工具調用——時才能切換到不同的 preset。此后組裝在會話的生命周期內固定，因為在對話中途調換工具會留下新組裝無法執行的已記錄工具調用。已提交的切換會發出 `tools/change`，因為解析后的工具集在沒有注冊表編輯的情況下發生了變化。切換也會記入會話日志，因此恢復或 fork 的會話會按它運行的組裝重建。
 
-### 失败与恢复
+### 失敗與恢復
 
-组装缺失、无法解析、不是具名插件行列表，或者引用了无法解析的模块的 preset 会被列为 broken，原因会指名出问题的行；组装此类 preset 会被提前拒绝，因此会话绝不会以半组装状态启动。能活到会话创建的，是模块能加载但随后拒绝的行——抛错的插件，或等待组装从未提供的服务的插件——它会让创建失败并回滚，且会指名每一个失败的行，包括组内的行。修复 preset 的文件或删除它，然后重试。
+組裝缺失、無法解析、不是具名插件行列表，或者引用了無法解析的模塊的 preset 會被列為 broken，原因會指名出問題的行；組裝此類 preset 會被提前拒絕，因此會話絕不會以半組裝狀態啟動。能活到會話創建的，是模塊能加載但隨后拒絕的行——拋錯的插件，或等待組裝從未提供的服務的插件——它會讓創建失敗并回滾，且會指名每一個失敗的行，包括組內的行。修復 preset 的文件或刪除它，然后重試。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释名单与常驻挂载背后的设计；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋名單與常駐掛載背后的設計；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-- **每个 preset 一份常驻组装。** preset 在进程内只挂载一次，挂到常驻 scope 之下；agent 通过把自己的 scope key 认父到该挂载来加入，因此挂载的注册与监听器覆盖每个已加入的 agent，而不覆盖兄弟 preset 的。
-- **代际以组装文件为键。** 挂载记录组装文件的 stamp（mtime 与大小）；发现 stamp 过期的会话会开启下一个代际，而已加入的会话保持各自运行的那个代际——运行中的会话在文件被修改或删除后继续存活。
-- **preset 文件是输入，绝不是持久化目标。** 被挂载的子树把 `write()` 覆写为空操作，因此 loader 发起的写回绝不会重写共享的 preset 文件。
-- **发现过程拥有健康。** 组装缺失或不可加载的目录是携带原因的 broken 名单行，而不是被跳过——被跳过的目录仍占着它的 id，而任何界面都没有可删的东西。
+- **每個 preset 一份常駐組裝。** preset 在進程內只掛載一次，掛到常駐 scope 之下；agent 通過把自己的 scope key 認父到該掛載來加入，因此掛載的注冊與監聽器覆蓋每個已加入的 agent，而不覆蓋兄弟 preset 的。
+- **代際以組裝文件為鍵。** 掛載記錄組裝文件的 stamp（mtime 與大小）；發現 stamp 過期的會話會開啟下一個代際，而已加入的會話保持各自運行的那個代際——運行中的會話在文件被修改或刪除后繼續存活。
+- **preset 文件是輸入，絕不是持久化目標。** 被掛載的子樹把 `write()` 覆寫為空操作，因此 loader 發起的寫回絕不會重寫共享的 preset 文件。
+- **發現過程擁有健康。** 組裝缺失或不可加載的目錄是攜帶原因的 broken 名單行，而不是被跳過——被跳過的目錄仍占著它的 id，而任何界面都沒有可刪的東西。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 服务入口：`Config` schema、settings 命名空间、名单 API、常驻挂载协调 |
-| [`src/discovery.ts`](src/discovery.ts) | 文件系统发现：根目录扫描、健康检查、id 校验、排序 |
-| [`src/composition-inventory.ts`](src/composition-inventory.ts) | 面向插件清单表面的压平组合行：文件读取（求值 disabled 门）与挂载读取（携带 fiber 状态） |
-| [`src/preset.ts`](src/preset.ts) | 词汇体系：preset id 规则、`AgentPreset` 与 `PresetRoot`、错误类型 |
-| [`src/mount.ts`](src/mount.ts) | 子树挂载、宿主 base-URL 处理、挂载审计、`write()` 抑制 |
-| [`src/authoring.ts`](src/authoring.ts) | 本地创作 preset 的复制/删除/读取、权限收紧 |
-| [`src/metadata.ts`](src/metadata.ts) | `preset.yml` 展示元数据 |
-| [`src/session.ts`](src/session.ts) | `agent-preset/selected` 事件与 `agentPreset` Session 投影 |
-| [`src/types.ts`](src/types.ts) | client-safe 的协议载荷与 cordis 事件声明 |
-| [`src/invariant.ts`](src/invariant.ts) | 不变式伴生插件：挂载后的服务泄漏复查、未加入 agent 的失败 |
+| [`src/index.ts`](src/index.ts) | 服務入口：`Config` schema、settings 命名空間、名單 API、常駐掛載協調 |
+| [`src/discovery.ts`](src/discovery.ts) | 文件系統發現：根目錄掃描、健康檢查、id 校驗、排序 |
+| [`src/composition-inventory.ts`](src/composition-inventory.ts) | 面向插件清單表面的壓平組合行：文件讀取（求值 disabled 門）與掛載讀取（攜帶 fiber 狀態） |
+| [`src/preset.ts`](src/preset.ts) | 詞匯體系：preset id 規則、`AgentPreset` 與 `PresetRoot`、錯誤類型 |
+| [`src/mount.ts`](src/mount.ts) | 子樹掛載、宿主 base-URL 處理、掛載審計、`write()` 抑制 |
+| [`src/authoring.ts`](src/authoring.ts) | 本地創作 preset 的復制/刪除/讀取、權限收緊 |
+| [`src/metadata.ts`](src/metadata.ts) | `preset.yml` 展示元數據 |
+| [`src/session.ts`](src/session.ts) | `agent-preset/selected` 事件與 `agentPreset` Session 投影 |
+| [`src/types.ts`](src/types.ts) | client-safe 的協議載荷與 cordis 事件聲明 |
+| [`src/invariant.ts`](src/invariant.ts) | 不變式伴生插件：掛載后的服務泄漏復查、未加入 agent 的失敗 |
 
-### 常驻挂载
+### 常駐掛載
 
-`ensureStanding` 为每个 preset id 保留一个进行中的 promise（single-flight），因此两个竞争首次使用同一 preset 的 agent 共享一份组装。已结算的失败会被移除，以便后续会话重试文件已被修复的 preset。挂载运行在 roster 服务自己的未追踪上下文中——从被追踪上下文派生的子树会经调用方的 shadow fiber 解析服务——因此它比任何 agent 都活得久，只随整棵树卸载。`serviceForAgent` 读取某 agent 对其 preset 挂在 `isolate` realm 之后（组外不可见）的某个服务实例。
+`ensureStanding` 為每個 preset id 保留一個進行中的 promise（single-flight），因此兩個競爭首次使用同一 preset 的 agent 共享一份組裝。已結算的失敗會被移除，以便后續會話重試文件已被修復的 preset。掛載運行在 roster 服務自己的未追蹤上下文中——從被追蹤上下文派生的子樹會經調用方的 shadow fiber 解析服務——因此它比任何 agent 都活得久，只隨整棵樹卸載。`serviceForAgent` 讀取某 agent 對其 preset 掛在 `isolate` realm 之后（組外不可見）的某個服務實例。
 
-### 组合清单
+### 組合清單
 
-`compositionInventory()` 向插件清单表面提供每个预设的压平行及其名单身份（id、trust、显示名、默认标记）：已有存活 standing mount 的预设由其最新世代的 Loader 条目作答——匹配限定在本运行时自己的 root 内，同进程里的第二个 Cordis 运行时不会替它作答；即使文件事后损坏也照常作答，因为挂载才是会话实际运行的组合，broken 裁决只适用于无人组合的预设——开机以来从未被组合的预设由其组合文件作答，`!!js` disabled 门用 Loader 上下文求值，使两种答案反映同一台宿主。读取从不挂载预设——列出所有组合的设置页不会激活其中任何一个。求值器拒绝的门保持 `'conditional'`；在发现的健康裁决与行读取之间变得不可读的文件，会携带竞态原因报告为 broken，而不是被静默丢弃。`./display` 子路径导出 `presetDisplayText` 映射，把随附 preset id 映射到各自的字典文案键；它没有任何 import，浏览器包直接内联，也是「哪个内置 id 对应哪份文案」的唯一归属地。
+`compositionInventory()` 向插件清單表面提供每個預設的壓平行及其名單身份（id、trust、顯示名、默認標記）：已有存活 standing mount 的預設由其最新世代的 Loader 條目作答——匹配限定在本運行時自己的 root 內，同進程里的第二個 Cordis 運行時不會替它作答；即使文件事后損壞也照常作答，因為掛載才是會話實際運行的組合，broken 裁決只適用于無人組合的預設——開機以來從未被組合的預設由其組合文件作答，`!!js` disabled 門用 Loader 上下文求值，使兩種答案反映同一臺宿主。讀取從不掛載預設——列出所有組合的設置頁不會激活其中任何一個。求值器拒絕的門保持 `'conditional'`；在發現的健康裁決與行讀取之間變得不可讀的文件，會攜帶競態原因報告為 broken，而不是被靜默丟棄。`./display` 子路徑導出 `presetDisplayText` 映射，把隨附 preset id 映射到各自的字典文案鍵；它沒有任何 import，瀏覽器包直接內聯，也是「哪個內置 id 對應哪份文案」的唯一歸屬地。
 
-### 挂载审计
+### 掛載審計
 
-直接挂载的子树不会出现在 `ctx.loader.entries()` 中，因此没有启动审计能覆盖它；`mountPreset` 自行证明结果可用，并拒绝三种形态：无 scope 的目标（preset 的工具会注册成全局的）、仍在等待组装从未提供的服务的行、以及把服务发布进根 realm 的行（进程级全局，第二个发布同名服务的 preset 会相撞）。不变式伴生插件在每次服务通知时复查最后一条规则，因为从定时器或异步续体发布的行会绕过一次性审计。
+直接掛載的子樹不會出現在 `ctx.loader.entries()` 中，因此沒有啟動審計能覆蓋它；`mountPreset` 自行證明結果可用，并拒絕三種形態：無 scope 的目標（preset 的工具會注冊成全局的）、仍在等待組裝從未提供的服務的行、以及把服務發布進根 realm 的行（進程級全局，第二個發布同名服務的 preset 會相撞）。不變式伴生插件在每次服務通知時復查最后一條規則，因為從定時器或異步續體發布的行會繞過一次性審計。
 
-### 创作机制
+### 創作機制
 
-复制会解引用符号链接以保证自包含，把目录树收紧为仅属主可用（文件 `0o600` 并保留属主执行位，目录 `0o700`），并在首次复制时创建根目录。复制出的 `preset.yml` 会被重写：保留来源的描述供作者编辑，丢弃其名称与 roster `order`，从而让名单始终能区分副本与来源。删除拒绝随部署提供的 preset，并清除指向刚删除 preset 的用户默认值。
+復制會解引用符號鏈接以保證自包含，把目錄樹收緊為僅屬主可用（文件 `0o600` 并保留屬主執行位，目錄 `0o700`），并在首次復制時創建根目錄。復制出的 `preset.yml` 會被重寫：保留來源的描述供作者編輯，丟棄其名稱與 roster `order`，從而讓名單始終能區分副本與來源。刪除拒絕隨部署提供的 preset，并清除指向剛刪除 preset 的用戶默認值。
 
-### 会话记录
+### 會話記錄
 
-创建 header 记录会话启动时使用的 preset；`agentPreset` Session 投影记录会话运行时使用的 preset。切换在替换提交后追加 `agent-preset/selected` 事件，因为 preset 决定模型看到的工具 schema 与提示词段落。服务把这项已提交事实重新发为不带 scope 的 cordis 事件 `agent-preset/selected(sessionId, agentPreset)`。重建消费该投影；投影从创建 header 开始并应用最新选择，绝不单独折叠日志。
+創建 header 記錄會話啟動時使用的 preset；`agentPreset` Session 投影記錄會話運行時使用的 preset。切換在替換提交后追加 `agent-preset/selected` 事件，因為 preset 決定模型看到的工具 schema 與提示詞段落。服務把這項已提交事實重新發為不帶 scope 的 cordis 事件 `agent-preset/selected(sessionId, agentPreset)`。重建消費該投影；投影從創建 header 開始并應用最新選擇，絕不單獨折疊日志。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下页面；它们从组装模型逐步进入挂载所依赖的 scope 与提示词机制，以及决策证据。
+當包級約定不夠用時閱讀以下頁面；它們從組裝模型逐步進入掛載所依賴的 scope 與提示詞機制，以及決策證據。
 
-- [persona 包](../persona/README.zh.md)——preset 挂载的可组装行，让会话拥有自己的人设。
-- [Scope 子系统](../../../docs/subsystems/scope.zh.md)——scope key 与 agent 加入所经由的父链。
-- [系统提示词子系统](../../../docs/subsystems/system-prompt.zh.md)——preset 提示词段落如何注册与组装。
-- [会话包映射](../../session/README.zh.md)——preset 切换所追加的持久会话记录。
-- [生成的配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-agent-presets)——每个受支持配置字段及其源声明。
-- [按会话组装 agent preset 的 Agent Note](../../../.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.zh.md)——设计理由与备选方案。
+- [persona 包](../persona/README.zh.md)——preset 掛載的可組裝行，讓會話擁有自己的人設。
+- [Scope 子系統](../../../docs/subsystems/scope.zh.md)——scope key 與 agent 加入所經由的父鏈。
+- [系統提示詞子系統](../../../docs/subsystems/system-prompt.zh.md)——preset 提示詞段落如何注冊與組裝。
+- [會話包映射](../../session/README.zh.md)——preset 切換所追加的持久會話記錄。
+- [生成的配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-agent-presets)——每個受支持配置字段及其源聲明。
+- [按會話組裝 agent preset 的 Agent Note](../../../.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.zh.md)——設計理由與備選方案。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-间接地，经由 preset 常驻组装安装的插件：这些插件拥有该 preset 向加入它的 agent 呈现的每个工具 schema、提示词段落与 skill。
+間接地，經由 preset 常駐組裝安裝的插件：這些插件擁有該 preset 向加入它的 agent 呈現的每個工具 schema、提示詞段落與 skill。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-在一个 agent 的整个生命周期内保持前缀稳定：组装只装入一次，发生在 agent 发布之前、因而也在它的首个请求之前，且在 agent 运行期间不再重新读取。为新会话选择不同的 preset，只会为该会话建立不同的前缀，无法让任何已在运行的会话失去缓存复用。
+在一個 agent 的整個生命周期內保持前綴穩定：組裝只裝入一次，發生在 agent 發布之前、因而也在它的首個請求之前，且在 agent 運行期間不再重新讀取。為新會話選擇不同的 preset，只會為該會話建立不同的前綴，無法讓任何已在運行的會話失去緩存復用。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明名单何时不合适，或何时需要特别的运维注意。它们是当前包约束，不是通用组装对比或任务积压。
+這些限制說明名單何時不合適，或何時需要特別的運維注意。它們是當前包約束，不是通用組裝對比或任務積壓。
 
-- **位于可写根目录之外的 preset 可被发现却无法删除**——`remove()` 拒绝任何不在第一个 `user` 根目录下的 preset，因此一个既配置了自有可写根、又保留 `includeUserRoot` 的部署，会列出并挂载 harness home 下的 preset，却对每次删除回答「它不在可写 preset 根目录之下」。只想要自有 preset 的部署应设置 `includeUserRoot: false`。
-- **会话一旦产出任何内容便无法更换 preset**——切换会把空白会话的父作用域重链到另一个常驻挂载，且仅限空白会话：在对话中途调换工具会抽走模型已调用的工具。
-- **代际只以组装文件为键**——stamp 检查只察觉 `agent.cordis.yml` 的变化，察觉不到旁边 skill 文件或资产的编辑；那些编辑要等组装文件本身变动或进程重启才达到新会话。
-- **被替代的代际永不回收**——已加入的会话保持其运行所在的代际，而名单没有加入计数可以判断最后一个何时离开，因此整棵子树一直挂到进程结束。代价按代际计而非按会话计，但并非为零：`dsh-skill-filesystem` 默认监听自己的根目录，因此每一轮「编辑后建会话」都会新增一套活的 watcher。
-- **副本从不被实际挂载以校验**——它与来源逐字节相同，因此磁盘上已坏的来源会产出与来源同样损坏的副本；发现过程的健康检查会在下一次读取名单时把两行都标出来，而不是把失败推迟到会话启动。
-- **健康问的是「装没装」，不是「能不能 import」**——发现过程证明组装能以加载器方言解析、由具名行组成，且对于每个能证明会启动的行，其引用的包存在于 harness 基址以上，或引用的文件确实存在；它从不 import 任何一个，因此入口文件缺失的包、在 apply 时抛错的插件、以及永远等待某个服务的插件，都仍在第一个会话处失败。`disabled` 是加载器唯一会插值的条目字段，因此该字段带表达式的行不予检查，而不是仅凭文件作出判断。
-- **副本是会漂移的快照**——升级部署不会更新随附 preset 的副本，本层也没有表达「standard 加一处改动」的 patch 语义；随附集合自己也接受同样的代价——`cordis` 与 `code` 都复制了 `standard` 的完整组装并在此基础上编辑——换来整份组装在一个文件里可读。
-- **根目录扫描不做监听**——每次读取都实际访问文件系统，这让名单保持新鲜，但每次 `list()` 会对每个根目录产生一次 `readdir`。
+- **位于可寫根目錄之外的 preset 可被發現卻無法刪除**——`remove()` 拒絕任何不在第一個 `user` 根目錄下的 preset，因此一個既配置了自有可寫根、又保留 `includeUserRoot` 的部署，會列出并掛載 harness home 下的 preset，卻對每次刪除回答「它不在可寫 preset 根目錄之下」。只想要自有 preset 的部署應設置 `includeUserRoot: false`。
+- **會話一旦產出任何內容便無法更換 preset**——切換會把空白會話的父作用域重鏈到另一個常駐掛載，且僅限空白會話：在對話中途調換工具會抽走模型已調用的工具。
+- **代際只以組裝文件為鍵**——stamp 檢查只察覺 `agent.cordis.yml` 的變化，察覺不到旁邊 skill 文件或資產的編輯；那些編輯要等組裝文件本身變動或進程重啟才達到新會話。
+- **被替代的代際永不回收**——已加入的會話保持其運行所在的代際，而名單沒有加入計數可以判斷最后一個何時離開，因此整棵子樹一直掛到進程結束。代價按代際計而非按會話計，但并非為零：`dsh-skill-filesystem` 默認監聽自己的根目錄，因此每一輪「編輯后建會話」都會新增一套活的 watcher。
+- **副本從不被實際掛載以校驗**——它與來源逐字節相同，因此磁盤上已壞的來源會產出與來源同樣損壞的副本；發現過程的健康檢查會在下一次讀取名單時把兩行都標出來，而不是把失敗推遲到會話啟動。
+- **健康問的是「裝沒裝」，不是「能不能 import」**——發現過程證明組裝能以加載器方言解析、由具名行組成，且對于每個能證明會啟動的行，其引用的包存在于 harness 基址以上，或引用的文件確實存在；它從不 import 任何一個，因此入口文件缺失的包、在 apply 時拋錯的插件、以及永遠等待某個服務的插件，都仍在第一個會話處失敗。`disabled` 是加載器唯一會插值的條目字段，因此該字段帶表達式的行不予檢查，而不是僅憑文件作出判斷。
+- **副本是會漂移的快照**——升級部署不會更新隨附 preset 的副本，本層也沒有表達「standard 加一處改動」的 patch 語義；隨附集合自己也接受同樣的代價——`cordis` 與 `code` 都復制了 `standard` 的完整組裝并在此基礎上編輯——換來整份組裝在一個文件里可讀。
+- **根目錄掃描不做監聽**——每次讀取都實際訪問文件系統，這讓名單保持新鮮，但每次 `list()` 會對每個根目錄產生一次 `readdir`。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-本开发备注是维护者的工作上下文：开放设计问题与尚未决定的探索方向。它明确不具权威性——已交付的行为、限制与既定理由以上文、包代码和相关 Agent Note 为准。
+本開發備注是維護者的工作上下文：開放設計問題與尚未決定的探索方向。它明確不具權威性——已交付的行為、限制與既定理由以上文、包代碼和相關 Agent Note 為準。
 
-#### 未来：回收被替代的代际
+#### 未來：回收被替代的代際
 
-回收被替代的常驻挂载，需要给 `StandingMount` 加上已加入 agent 的计数，在 `mount`/`composeFrom`/`recompose` 中递增、在 agent 的 scope key 消亡时递减——即 `ensureStanding` 处的 `TODO`。子树并非惰性：`dsh-skill-filesystem` 监听自己的根目录，因此未回收的代际会让一套活的 watcher 一直存活到进程结束。
+回收被替代的常駐掛載，需要給 `StandingMount` 加上已加入 agent 的計數，在 `mount`/`composeFrom`/`recompose` 中遞增、在 agent 的 scope key 消亡時遞減——即 `ensureStanding` 處的 `TODO`。子樹并非惰性：`dsh-skill-filesystem` 監聽自己的根目錄，因此未回收的代際會讓一套活的 watcher 一直存活到進程結束。
 
 </details>

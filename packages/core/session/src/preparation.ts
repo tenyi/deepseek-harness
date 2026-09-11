@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Ownership of one unpublished Session before registry publication.
  * @module @deepseek-ai/dsh-session/preparation
  */

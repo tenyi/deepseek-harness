@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Tests for the sandbox-enforcing filesystem backend: the per-call policy fence
  * on write/edit (read-only denies, workspace-write contains, danger-full-access
  * passes through), reads always passing through, the capability fact, and the

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Permission default-settings controller. The permission descriptor comes
  * from the shared describe mirror (the dynamic preset enum lives in the
  * namespace schema, which per-namespace scopes do not carry); writes target

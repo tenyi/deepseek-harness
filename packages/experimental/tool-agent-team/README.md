@@ -1,4 +1,4 @@
----
+﻿---
 description: "Nine tools that let the model create, message, and coordinate teammates, for compositions mounting the experimental Team plugins."
 kind: "package-reference"
 ---

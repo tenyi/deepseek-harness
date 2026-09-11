@@ -1,4 +1,4 @@
----
+﻿---
 description: "The persisted session-projection cache for deployments and maintainers choosing, configuring, or debugging durable checkpoints, zero-I/O list reads, and accelerated cold projection folds."
 kind: "package-reference"
 ---

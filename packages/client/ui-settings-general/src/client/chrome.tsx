@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shell chrome content registered into the shell's trigger/header seats: the
  * trigger row icon + label (figma sidebar foot) and the panel title text.
  * The shell renders the surrounding chrome (button, nav heading row) and

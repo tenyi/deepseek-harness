@@ -1,4 +1,4 @@
-/** Reconnection lifecycle for the browser Client bridge. */
+﻿/** Reconnection lifecycle for the browser Client bridge. */
 
 /** Owns one bounded-backoff timer and prevents reconnection after disposal. */
 export class ClientBridgeLifecycle {

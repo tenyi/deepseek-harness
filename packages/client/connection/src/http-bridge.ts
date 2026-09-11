@@ -1,4 +1,4 @@
-/**
+﻿/**
  * node:http ↔ WHATWG fetch bridge for the /api transport (host side of the
  * web carrier; the fetch-shaped handler itself is transport-agnostic).
  */

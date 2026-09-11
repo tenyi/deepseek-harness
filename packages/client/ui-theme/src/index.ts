@@ -1,4 +1,4 @@
-/** Host registration for the browser theme preference and pre-plugin palette. */
+﻿/** Host registration for the browser theme preference and pre-plugin palette. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-host-webserver'

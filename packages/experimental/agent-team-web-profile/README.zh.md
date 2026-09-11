@@ -1,5 +1,5 @@
----
-description: "在 Host Team 层之后，为 Web profile 添加公开发布的实验性 Agent Teams 面板。"
+﻿---
+description: "在 Host Team 層之后，為 Web profile 添加公開發布的實驗性 Agent Teams 面板。"
 kind: "package-bundle"
 ---
 
@@ -9,90 +9,90 @@ kind: "package-bundle"
 
 ## 概述
 
-`dsh-experimental-agent-team-web-profile` 是 [Agent Teams](../agent-team/README.zh.md) 公开发布的实验性 Web 层。把它放在 `@deepseek-ai/dsh-web-app` 与 [`@deepseek-ai/dsh-experimental-agent-team-profile`](../agent-team-profile/README.zh.md) 之后，即可在浏览器中显示 Team roster、任务板与 teammate 导航。移除任一实验层都会让稳定的 base 与 Web composition 保持不变。随附 Web profile 默认不会启用它。
+`dsh-experimental-agent-team-web-profile` 是 [Agent Teams](../agent-team/README.zh.md) 公開發布的實驗性 Web 層。把它放在 `@deepseek-ai/dsh-web-app` 與 [`@deepseek-ai/dsh-experimental-agent-team-profile`](../agent-team-profile/README.zh.md) 之后，即可在瀏覽器中顯示 Team roster、任務板與 teammate 導航。移除任一實驗層都會讓穩定的 base 與 Web composition 保持不變。隨附 Web profile 默認不會啟用它。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-### 安装到 profile
+### 安裝到 profile
 
-按以下顺序把 Host 与 Web Agent Teams 层添加到已初始化的 `web` profile：
+按以下順序把 Host 與 Web Agent Teams 層添加到已初始化的 `web` profile：
 
 ```sh
 dsh plugin --profile web add @deepseek-ai/dsh-experimental-agent-team-profile
 dsh plugin --profile web add @deepseek-ai/dsh-experimental-agent-team-web-profile
 ```
 
-第一条命令提供 Team domain、生成的 Remote 方法与模型工具。第二条命令激活本包声明的 patch 及其浏览器 presentation。执行 `dsh plugin --profile web remove @deepseek-ai/dsh-experimental-agent-team-web-profile` 移除本包时，Web 层也会从 profile 的有序 bundle 列表中移除。
+第一條命令提供 Team domain、生成的 Remote 方法與模型工具。第二條命令激活本包聲明的 patch 及其瀏覽器 presentation。執行 `dsh plugin --profile web remove @deepseek-ai/dsh-experimental-agent-team-web-profile` 移除本包時，Web 層也會從 profile 的有序 bundle 列表中移除。
 
-### 获得的功能
+### 獲得的功能
 
-对话标题栏会获得 Team roster、共享任务板与 teammate 导航。[`@deepseek-ai/dsh-experimental-client-ui-agent-team`](../client-ui-agent-team/README.zh.md) 负责这些浏览器交互，并挂载用于访问 Host Team service 的生成 Client Remote namespace。
+對話標題欄會獲得 Team roster、共享任務板與 teammate 導航。[`@deepseek-ai/dsh-experimental-client-ui-agent-team`](../client-ui-agent-team/README.zh.md) 負責這些瀏覽器交互，并掛載用于訪問 Host Team service 的生成 Client Remote namespace。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本包的运行时内容是 [`cordis.patch.yml`](cordis.patch.yml)。在 `dsh-web-app` 与 Host Agent Teams 层之后应用时，它唯一的 `insert` 条目会为 `@deepseek-ai/dsh-experimental-client-ui-agent-team` 添加 `ui-agent-team` 行。插入的 Client 插件负责生成的 Remote assembly 与 Team UI；这个静态 bundle 不持有可变状态，也不安装运行时不变式。
+本包的運行時內容是 [`cordis.patch.yml`](cordis.patch.yml)。在 `dsh-web-app` 與 Host Agent Teams 層之后應用時，它唯一的 `insert` 條目會為 `@deepseek-ai/dsh-experimental-client-ui-agent-team` 添加 `ui-agent-team` 行。插入的 Client 插件負責生成的 Remote assembly 與 Team UI；這個靜態 bundle 不持有可變狀態，也不安裝運行時不變式。
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
 | [`cordis.patch.yml`](cordis.patch.yml) | 包含 `ui-agent-team` 行的有序 Web patch |
-| [`src/index.ts`](src/index.ts) | 空模块入口；patch 是运行时内容 |
-| — | 不发布运行时不变式伴生入口；本包只携带静态 profile patch，Remote assembly 与 Team UI 负责各自的激活要求。 |
+| [`src/index.ts`](src/index.ts) | 空模塊入口；patch 是運行時內容 |
+| — | 不發布運行時不變式伴生入口；本包只攜帶靜態 profile patch，Remote assembly 與 Team UI 負責各自的激活要求。 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-- [实验性包](../README.zh.md)——孵化状态与发布规则。
-- [Agent Teams Host profile](../agent-team-profile/README.zh.md)——所需的 domain、Remote 与模型工具层。
-- [Agent Teams 浏览器 UI](../client-ui-agent-team/README.zh.md)——roster、任务板与 teammate 导航行为。
-- [Web bundle](../../bundle/web-app/README.zh.md)——本 patch 扩展的稳定浏览器层。
+- [實驗性包](../README.zh.md)——孵化狀態與發布規則。
+- [Agent Teams Host profile](../agent-team-profile/README.zh.md)——所需的 domain、Remote 與模型工具層。
+- [Agent Teams 瀏覽器 UI](../client-ui-agent-team/README.zh.md)——roster、任務板與 teammate 導航行為。
+- [Web bundle](../../bundle/web-app/README.zh.md)——本 patch 擴展的穩定瀏覽器層。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-通过与本 Web 层同时选择的 Host-side Agent Teams profile 间接产生影响。
+通過與本 Web 層同時選擇的 Host-side Agent Teams profile 間接產生影響。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-本 Web bundle 不添加任何模型请求内容；Host-side Team 工具负责提示词、schema 与缓存影响。
+本 Web bundle 不添加任何模型請求內容；Host-side Team 工具負責提示詞、schema 與緩存影響。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
-- **有序组合**——`dsh-base`、`dsh-web-app`、`dsh-experimental-agent-team-profile` 与本包必须保持这个顺序。
-- **Preset-scoped 旧控制项**——稳定 Web preset 仍会在 preset scope 内挂载 continuable Subagent 控制项。顶层 Host profile override 不会替换这些 scoped registration，因此在 Web 获得 Team-aware preset 前，Team roster 与旧 child 控制项可能同时出现。[Web Agent Teams 决策](../../../.agents/notes/archived/feature/2026-08-06-agent-teams-web.md)记录了这项暂缓的 composition 工作。
-- **仅显式启用**——本包公开发布，但随附 Web profile 默认不会启用任何 Agent Teams 层。
+- **有序組合**——`dsh-base`、`dsh-web-app`、`dsh-experimental-agent-team-profile` 與本包必須保持這個順序。
+- **Preset-scoped 舊控制項**——穩定 Web preset 仍會在 preset scope 內掛載 continuable Subagent 控制項。頂層 Host profile override 不會替換這些 scoped registration，因此在 Web 獲得 Team-aware preset 前，Team roster 與舊 child 控制項可能同時出現。[Web Agent Teams 決策](../../../.agents/notes/archived/feature/2026-08-06-agent-teams-web.md)記錄了這項暫緩的 composition 工作。
+- **僅顯式啟用**——本包公開發布，但隨附 Web profile 默認不會啟用任何 Agent Teams 層。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

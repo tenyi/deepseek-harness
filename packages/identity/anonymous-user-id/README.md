@@ -1,4 +1,4 @@
----
+﻿---
 description: "Anonymous per-harness-home identity for users and maintainers tracing how telemetry, feedback acknowledgement, and DeepSeek provider requests correlate records."
 kind: "package-library"
 ---

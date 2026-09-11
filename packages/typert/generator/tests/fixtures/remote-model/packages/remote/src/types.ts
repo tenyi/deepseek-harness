@@ -1,4 +1,4 @@
-/** Input accepted by Goal creation. */
+﻿/** Input accepted by Goal creation. */
 export interface CreateGoalRequest {
   readonly title: string
 }

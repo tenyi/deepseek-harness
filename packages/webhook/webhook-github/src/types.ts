@@ -1,4 +1,4 @@
-/** GitHub event values projected after signature verification. */
+﻿/** GitHub event values projected after signature verification. */
 
 import type { JsonValue } from '@deepseek-ai/dsh-util-values'
 

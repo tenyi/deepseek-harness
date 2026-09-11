@@ -1,4 +1,4 @@
-/** Build the Node-style cancellation error shared by abortable builtin APIs. */
+﻿/** Build the Node-style cancellation error shared by abortable builtin APIs. */
 
 /**
  * Create an `AbortError` carrying Node's stable error code.

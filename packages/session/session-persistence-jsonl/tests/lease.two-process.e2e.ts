@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Real two-process lock contention over one shared root: a child Node
  * process (running the built package under plain Node) creates a session and
  * holds its kernel write lock; this process is excluded while the child

@@ -1,5 +1,5 @@
----
-description: "供需要不含共享 base bundle 的极简跨平台 coding agent（编程智能体）的用户使用的独立单工具 SDK profile。"
+﻿---
+description: "供需要不含共享 base bundle 的極簡跨平臺 coding agent（編程智能體）的用戶使用的獨立單工具 SDK profile。"
 kind: "package-bundle"
 ---
 
@@ -9,97 +9,97 @@ kind: "package-bundle"
 
 ## 概述
 
-当 SDK 客户端需要小型、显式的 coding agent 运行时时，请使用 `dsh --profile sdk-minimal`。该 profile 只公布按平台选择的持久 shell，把会话持久化为未压缩 JSONL，并从 SDK 初始化请求选择模型。它提供完整 Cordis 配置树，并刻意排除 `dsh-base`、Web、settings、托管凭据、遥测、压缩（compaction）、文件系统工具、workspace 指令、skill（技能）、jobs 与 subagent。其 danger-full-access 策略允许 shell 修改进程可访问的任何路径，因此只能配合隔离 workspace 使用。
+當 SDK 客戶端需要小型、顯式的 coding agent 運行時時，請使用 `dsh --profile sdk-minimal`。該 profile 只公布按平臺選擇的持久 shell，把會話持久化為未壓縮 JSONL，并從 SDK 初始化請求選擇模型。它提供完整 Cordis 配置樹，并刻意排除 `dsh-base`、Web、settings、托管憑據、遙測、壓縮（compaction）、文件系統工具、workspace 指令、skill（技能）、jobs 與 subagent。其 danger-full-access 策略允許 shell 修改進程可訪問的任何路徑，因此只能配合隔離 workspace 使用。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-直接启动该 profile，或从 Python SDK 选择它。提供显式 `DSH_HOME`、使用一次性 workspace，并通过 `DEEPSEEK_API_KEY` 提供模型凭据。
+直接啟動該 profile，或從 Python SDK 選擇它。提供顯式 `DSH_HOME`、使用一次性 workspace，并通過 `DEEPSEEK_API_KEY` 提供模型憑據。
 
 ```sh
 export DSH_HOME=/absolute/path/to/example-dsh-home
 dsh --profile sdk-minimal
 ```
 
-`DSH_CONTEXT_WINDOW` 为不在适配器建议目录中的模型设置后备容量。`DSH_SYSTEM_PROMPT` 替换默认 persona。SDK 初始化请求是唯一的模型选择依据，并覆盖环境默认值。
+`DSH_CONTEXT_WINDOW` 為不在適配器建議目錄中的模型設置后備容量。`DSH_SYSTEM_PROMPT` 替換默認 persona。SDK 初始化請求是唯一的模型選擇依據，并覆蓋環境默認值。
 
-使用 `dsh plugin --profile sdk-minimal` 管理持久外部依赖。Profile、home 与有序 `--patch` 文件可以替换完整默认配置树中的配置项，或在该配置树上方插入 bundle。随附模板只在启动时应用 patch。
+使用 `dsh plugin --profile sdk-minimal` 管理持久外部依賴。Profile、home 與有序 `--patch` 文件可以替換完整默認配置樹中的配置項，或在該配置樹上方插入 bundle。隨附模板只在啟動時應用 patch。
 
-该 profile 只挂载一套持久 shell：Linux 和 macOS 使用 Bash，Windows 使用 PowerShell。两套配置都使用 300 秒超时与一个 agent 自有终端；另一平台的配置项保持禁用。
+該 profile 只掛載一套持久 shell：Linux 和 macOS 使用 Bash，Windows 使用 PowerShell。兩套配置都使用 300 秒超時與一個 agent 自有終端；另一平臺的配置項保持禁用。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-该 bundle 的单个 insert 就是完整应用配置树：SDK stdio 启动与 JSON-RPC 服务、一个由环境配置的 DeepSeek 适配器、显式 agent 核心、本地子进程执行、按平台选择的持久 shell PTY，以及位于 `$DSH_HOME/sessions` 的未压缩 JSONL 持久化。它不继承其他 bundle，因此每个额外配置项都是显式 profile 变更。
+該 bundle 的單個 insert 就是完整應用配置樹：SDK stdio 啟動與 JSON-RPC 服務、一個由環境配置的 DeepSeek 適配器、顯式 agent 核心、本地子進程執行、按平臺選擇的持久 shell PTY，以及位于 `$DSH_HOME/sessions` 的未壓縮 JSONL 持久化。它不繼承其他 bundle，因此每個額外配置項都是顯式 profile 變更。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`cordis.patch.yml`](cordis.patch.yml) | 完整独立 profile 配置树及其环境默认值 |
+| [`cordis.patch.yml`](cordis.patch.yml) | 完整獨立 profile 配置樹及其環境默認值 |
 | [`src/index.ts`](src/index.ts) | Bundle 包入口 |
-| — | 不发布运行时不变式伴生项；本包只是静态 patch 列表载体，插入的各行分别拥有自己的运行时关系和不变式伴生项。 |
-| [`tests/sdk-minimal.spec.ts`](tests/sdk-minimal.spec.ts) | 精确组合、profile 名称与平台选择检查 |
+| — | 不發布運行時不變式伴生項；本包只是靜態 patch 列表載體，插入的各行分別擁有自己的運行時關系和不變式伴生項。 |
+| [`tests/sdk-minimal.spec.ts`](tests/sdk-minimal.spec.ts) | 精確組合、profile 名稱與平臺選擇檢查 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-- [Python SDK 示例](../../../python/sdk/examples/README.zh.md)——从 Python 启动本 profile，并使用明确指定的 Harness home。
-- [SDK 应用 bundle](../sdk-app/README.zh.md)——完整与极简 SDK profile 复用的 JSON-RPC 应用层。
-- [Base bundle](../base/README.zh.md)——本 profile 刻意省略的完整产品基础。
+- [Python SDK 示例](../../../python/sdk/examples/README.zh.md)——從 Python 啟動本 profile，并使用明確指定的 Harness home。
+- [SDK 應用 bundle](../sdk-app/README.zh.md)——完整與極簡 SDK profile 復用的 JSON-RPC 應用層。
+- [Base bundle](../base/README.zh.md)——本 profile 刻意省略的完整產品基礎。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### 极简 coding agent 组合
+### 極簡 coding agent 組合
 
-#### 模型看到的内容
+#### 模型看到的內容
 
-系统提示词取 `DSH_SYSTEM_PROMPT`，未设置时使用 `You are a helpful software engineer assistant.`。对外公布的唯一工具是 Linux/macOS 上 agent 所有的持久 `bash` 或 Windows 上的 `pwsh`；运行时上下文、文件系统工具、workspace 指令、skill、jobs 控制、压缩与 Harness 身份均不存在。
+系統提示詞取 `DSH_SYSTEM_PROMPT`，未設置時使用 `You are a helpful software engineer assistant.`。對外公布的唯一工具是 Linux/macOS 上 agent 所有的持久 `bash` 或 Windows 上的 `pwsh`；運行時上下文、文件系統工具、workspace 指令、skill、jobs 控制、壓縮與 Harness 身份均不存在。
 
-#### Token 影响
+#### Token 影響
 
-一个稳定 persona 加一个工具 schema。工具结果与普通对话历史随会话增长。
+一個穩定 persona 加一個工具 schema。工具結果與普通對話歷史隨會話增長。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-当 persona、平台、提供方、模型与 bundle patch 栈固定时保持稳定。Profile 变更在下一个进程生效。
+當 persona、平臺、提供方、模型與 bundle patch 棧固定時保持穩定。Profile 變更在下一個進程生效。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
-- **该组合刻意省略共享产品服务** — 需要 settings、托管凭据、策略预设、遥测、Web 工具或完整默认工具清单时，请选择 `dsh --profile sdk`。
-- **用户 patch 可以扩展配置树并破坏 stdout** — profile 自定义属于受信任的应用组合；向 stdout 写入普通文本的插件会破坏 JSON-RPC 分帧。
+- **該組合刻意省略共享產品服務** — 需要 settings、托管憑據、策略預設、遙測、Web 工具或完整默認工具清單時，請選擇 `dsh --profile sdk`。
+- **用戶 patch 可以擴展配置樹并破壞 stdout** — profile 自定義屬于受信任的應用組合；向 stdout 寫入普通文本的插件會破壞 JSON-RPC 分幀。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者工作上下文——点击展开</summary>
+<summary>維護者工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

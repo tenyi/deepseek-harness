@@ -1,4 +1,4 @@
-/** Configuration and stable diagnostics for session references. */
+﻿/** Configuration and stable diagnostics for session references. */
 
 /** Hard maximum references accepted by one message. */
 export const MAX_REFERENCES = 3

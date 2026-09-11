@@ -1,4 +1,4 @@
-/** One-shot cold session read through the handle-based persistence seam. */
+﻿/** One-shot cold session read through the handle-based persistence seam. */
 
 import { interruptedTurnClosers } from '@deepseek-ai/dsh-session'
 import type { SessionEvent, SessionHeader, SessionId, SessionLogOffset, SessionSeedEventState } from '@deepseek-ai/dsh-session'

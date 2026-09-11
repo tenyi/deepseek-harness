@@ -1,4 +1,4 @@
-// Recorded-session Sidebar geometry and per-Session view state through the shipped browser composition.
+﻿// Recorded-session Sidebar geometry and per-Session view state through the shipped browser composition.
 import { mkdir, readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { join } from 'node:path'
@@ -184,7 +184,7 @@ describe.skipIf(MODE === 'record')('web e2e: details panel follows the current S
     await expect.poll(() => detailsTrack(page), { timeout: 5_000 }).toBe(0)
     expect(await page.getByText('Details', { exact: true }).isVisible()).toBe(false)
 
-    await page.getByRole('button', { name: /^(?:New session|新.*会话)$/ }).last().click()
+    await page.getByRole('button', { name: /^(?:New session|新.*會話)$/ }).last().click()
     await page.getByText('Into the Unknown', { exact: false }).waitFor({ timeout: 15_000 })
     await expect.poll(() => detailsTrack(page), { timeout: 5_000 }).toBe(0)
     expect(await page.getByText('Details', { exact: true }).isVisible()).toBe(false)

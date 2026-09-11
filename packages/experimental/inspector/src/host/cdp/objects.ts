@@ -1,4 +1,4 @@
-/** Host RemoteObject handles never cross the Host source bridge. */
+﻿/** Host RemoteObject handles never cross the Host source bridge. */
 
 import { HostCdpBridgeUnavailableError } from './errors.ts'
 

@@ -1,4 +1,4 @@
-import { once } from 'node:events'
+﻿import { once } from 'node:events'
 import { createServer, type Server } from 'node:http'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import WebSocket from 'ws'

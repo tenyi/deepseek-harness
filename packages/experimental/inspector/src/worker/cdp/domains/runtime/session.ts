@@ -1,4 +1,4 @@
-/** Per-DevTools-session Runtime routing across uniform Host and Client realms. */
+﻿/** Per-DevTools-session Runtime routing across uniform Host and Client realms. */
 
 import type { InspectorSourceDescriptor } from '../../../../shared/bridge/messages/observation.ts'
 import type { InspectorRealmId, RuntimeBackendObjectHandle } from '../../../../shared/cdp/ids.ts'

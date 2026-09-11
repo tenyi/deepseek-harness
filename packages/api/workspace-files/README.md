@@ -1,4 +1,4 @@
----
+﻿---
 description: "Workspace file service for the web GUI: bounded file reads through the composed filesystem, plus directory listing and instrumented filesystem observation inside the Session workspace root."
 kind: "package-reference"
 ---

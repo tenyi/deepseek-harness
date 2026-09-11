@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `sharp` stub: native image transcoding has no browser counterpart in this
  * layer. Attachment plugins mount; a resize attempt reports the gap.
  */

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Transactional config replacement through the booted Include and Loader tree.
  * HMR contains rejected refreshes; direct callers receive the error after the
  * previous generation has been retained or restored.

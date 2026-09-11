@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsdown'
+﻿import { defineConfig } from 'tsdown'
 
 /** Build the static catalog library. */
 export default defineConfig({

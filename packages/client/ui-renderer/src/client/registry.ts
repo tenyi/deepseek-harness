@@ -1,4 +1,4 @@
-/**
+﻿/**
  * SlotRegistry: the renderer-owned Cordis service over the pure
  * SlotCore (ui-slots owns registration semantics, the declaration ledger,
  * the load-time validations, and the unload cascade). This layer owns what

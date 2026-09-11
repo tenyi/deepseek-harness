@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Cordis-free tests for the raw local-filesystem I/O: path resolution, probe,
  * whole-file/streamed text reads, binary/UTF-8 rejection, atomic-write temp
  * safety, literal edit matching, and line-ending handling. Line WINDOWING is

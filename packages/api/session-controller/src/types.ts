@@ -1,4 +1,4 @@
-/** Browser-safe request, result, and lifecycle vocabulary for the Session Remote service. */
+﻿/** Browser-safe request, result, and lifecycle vocabulary for the Session Remote service. */
 
 import type {
   AttachmentIdType, ImageAttachmentLimits, ImageAttachmentRef, ImageMediaType,

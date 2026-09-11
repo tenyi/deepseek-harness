@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Loader export-shape guard for @deepseek-ai/dsh-tool-lsp. It is a NAMESPACE plugin with `inject`, so a
  * stray `export default apply` would make the Loader's `unwrapExports` collapse the module to the
  * bare `apply`, dropping `inject` (postmortem 0001). This verifies the namespace survives

@@ -1,4 +1,4 @@
-/** Host BFF entry and Loader shell for the Remote contribution assembly. */
+﻿/** Host BFF entry and Loader shell for the Remote contribution assembly. */
 
 import { homedir } from 'node:os'
 import type { Context } from '@deepseek-ai/cordis'

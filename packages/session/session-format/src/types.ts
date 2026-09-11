@@ -1,4 +1,4 @@
-/** Scalar value admitted at the durable Session JSON boundary. */
+﻿/** Scalar value admitted at the durable Session JSON boundary. */
 export type SessionFormatJsonPrimitive = null | boolean | number | string
 
 /** Lossless JSON value admitted at the durable Session boundary. */

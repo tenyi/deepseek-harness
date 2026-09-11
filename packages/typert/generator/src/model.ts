@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Compiler-independent Typert analysis model. TypeScript nodes and checker
  * objects are extraction inputs only; emitters consume this graph.
  * @module @deepseek-ai/dsh-typert-generator/model

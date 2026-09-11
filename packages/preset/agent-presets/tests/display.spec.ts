@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Display resolution: shipped presets resolve through dictionary keys, and
  * user-authored metadata is never translated.
  */
@@ -10,7 +10,7 @@ const t = (key: BuiltInPresetCopyKey): string => `t:${key}`
 
 describe('presetDisplayText', () => {
   it('resolves a shipped preset through its dictionary keys', () => {
-    expect(presetDisplayText({ id: 'standard', trust: 'system', name: '标准模式' }, t)).toEqual({
+    expect(presetDisplayText({ id: 'standard', trust: 'system', name: '標準模式' }, t)).toEqual({
       name: 't:presetStandardName',
       description: 't:presetStandardDescription',
     })

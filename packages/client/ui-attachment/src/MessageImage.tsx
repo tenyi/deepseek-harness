@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+﻿import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
 import { ImageLightbox } from './ImageLightbox.tsx'
 import type { ImageLightboxLabels } from './ImageLightbox.tsx'

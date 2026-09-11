@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { packedWorkspaceClosure, type WorkspacePackage } from './packed-workspace-closure.ts'
 
 function pkg(name: string, manifest: Record<string, unknown> = {}): WorkspacePackage {

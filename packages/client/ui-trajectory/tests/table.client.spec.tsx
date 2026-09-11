@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** Trajectory ledger selection, details, status, and fold behavior. */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
@@ -174,7 +174,7 @@ describe('TrajectoryTable', () => {
       />,
     )
 
-    expect(screen.getByText('2 个工具调用 · bash')).toBeTruthy()
+    expect(screen.getByText('2 個工具調用 · bash')).toBeTruthy()
   })
 
   it('shows assistant timing facts after keyboard selection', () => {
@@ -425,7 +425,7 @@ describe('TrajectoryTable', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Request #1' }))
 
     view.rerender(
-      <TrajectoryTable turns={[turn('步骤 1')]} requestNumbers={request('步骤 1')} {...FOLD_PROPS} />,
+      <TrajectoryTable turns={[turn('步驟 1')]} requestNumbers={request('步驟 1')} {...FOLD_PROPS} />,
     )
 
     expect(screen.getByRole('button', { name: 'Request #1' })

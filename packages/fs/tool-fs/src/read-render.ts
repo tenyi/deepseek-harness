@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure read presentation: turn provider-decoded text into a bounded, line-numbered window and
  * model-facing envelope. Chunk scanning caps the current line, so even one newline-free giant
  * line cannot grow memory without bound.

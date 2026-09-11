@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ACL edit tests: the read-merge-write grant keeps pre-existing explicit
  * ACEs, interleaved sandbox instances do not clobber each other, the
  * per-path lock primitive is deterministic, and the grant mask carries

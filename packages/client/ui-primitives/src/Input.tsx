@@ -1,4 +1,4 @@
-// Input: single-line text input atom (search boxes, inline forms). Composer
+﻿// Input: single-line text input atom (search boxes, inline forms). Composer
 // textareas are NOT this atom — they live with the conversation package.
 
 import type { InputHTMLAttributes, ReactNode } from 'react'

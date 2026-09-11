@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node:timers/promises` over the worker's timer globals.
  *
  * The abort paths are the substance. Harness code hands these waits a

@@ -1,4 +1,4 @@
-/** Host Cordis plugin for the cross-realm Inspector Worker and full fetch capture. */
+﻿/** Host Cordis plugin for the cross-realm Inspector Worker and full fetch capture. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { IndexInjection } from '@deepseek-ai/dsh-host-webserver'

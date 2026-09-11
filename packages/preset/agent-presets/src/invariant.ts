@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Package-owned invariant companion for `@deepseek-ai/dsh-agent-presets`.
  * @module @deepseek-ai/dsh-agent-presets/invariant
  */

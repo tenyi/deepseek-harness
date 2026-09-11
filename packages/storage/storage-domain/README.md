@@ -1,4 +1,4 @@
----
+﻿---
 description: "Domain data form (ctx.storageDomain) for hosts and maintainers choosing, mounting, or debugging schema-validated, change-emitting KV domains over storage backends."
 kind: "package-reference"
 ---

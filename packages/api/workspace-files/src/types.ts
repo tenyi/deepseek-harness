@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Wire types of the `workspaceFiles` Remote namespace. Types only: generated
  * Remote clients consume this module without Host runtime code.
  *

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-facing Consumer of the `ctx.userQuestions` capability seam.
  * The tool pauses until a UI provider returns a human answer, then feeds that
  * answer back into the agent loop as an ordinary tool result.

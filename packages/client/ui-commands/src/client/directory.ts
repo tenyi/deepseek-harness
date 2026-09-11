@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Command-directory cache keyed by session: one entry per served catalog —
  * every session is agent-backed, so `command.list({sessionId})` is the only
  * request fields. Each entry keeps the single-flight / soft-hard invalidation

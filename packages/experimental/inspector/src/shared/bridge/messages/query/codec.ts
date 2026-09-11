@@ -1,4 +1,4 @@
-/** Exact decoders for non-CDP Inspector query frames. */
+﻿/** Exact decoders for non-CDP Inspector query frames. */
 
 import { parseCordisRuntimeTree } from '../../../cordis/model.ts'
 import { isPlainObject } from '../../../json.ts'

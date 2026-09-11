@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { describe, expect, it, vi } from 'vitest'
 import { act, render } from '@testing-library/react'
 import {
@@ -82,7 +82,7 @@ describe('Chat apply wiring', () => {
     const b = await bench()
     const views = b.runtime.slots.entries('conversation.view')
     expect(views.map(row => row.options.id)).toEqual(['chat'])
-    expect(resolveSlotLabel(views[0]?.options.label)).toBe('对话')
+    expect(resolveSlotLabel(views[0]?.options.label)).toBe('對話')
     expect(b.runtime.slots.spec('conversation.chat.node'))
       .toMatchObject({ kind: 'keyed', scope: 'session' })
     expect(b.runtime.slots.entries('conversation.composer.dock').map(row => row.options.id))

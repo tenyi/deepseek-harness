@@ -1,4 +1,4 @@
-// Keyless browser coverage for pending queue actions through the shipped Web
+﻿// Keyless browser coverage for pending queue actions through the shipped Web
 // composition and real HTTP/SSE wire. Replay overrides park consecutive turns
 // so the page can edit and remove exact occurrences, then stop the active turn
 // while proving the preserved Queue advances in FIFO order.

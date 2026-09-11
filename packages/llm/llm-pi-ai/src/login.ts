@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Authorization flows for the pi-ai providers that ship a login. This is the
  * whole of the translation between the harness's neutral notice/prompt
  * vocabulary and pi-ai's `AuthInteraction`; nothing above it knows which

@@ -1,4 +1,4 @@
-/** Environment-independent Inspector models and bridge protocol exports. */
+﻿/** Environment-independent Inspector models and bridge protocol exports. */
 
 export * from './bridge/messages/control.ts'
 export * from './bridge/control-codec.ts'

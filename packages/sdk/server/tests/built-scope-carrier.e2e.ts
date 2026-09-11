@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Built-artifact guard for the scope carrier shared by `dsh-subagent` and
  * `dsh-sdk-jsonrpc-server`. The carrier registry is module-local, so both bundles must
  * externalize `dsh-scope`; source-mode tests cannot expose an accidentally

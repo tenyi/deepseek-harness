@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Opt-in request clock context. Eligible steps add durable,
  * source-attributed time readings to the request history.
  *

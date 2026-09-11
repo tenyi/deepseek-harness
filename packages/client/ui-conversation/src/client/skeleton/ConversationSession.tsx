@@ -1,4 +1,4 @@
-/** Strict per-session header/body content inserted into the resident conversation layout. */
+﻿/** Strict per-session header/body content inserted into the resident conversation layout. */
 
 import { useEffect } from 'react'
 import clsx from 'clsx'

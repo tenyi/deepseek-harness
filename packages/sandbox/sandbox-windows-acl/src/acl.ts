@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ACL editing helpers: grant/revoke a capability SID on a directory via
  * SetEntriesInAclW + SetNamedSecurityInfoW (the same calls the POC uses, with
  * the failure handling the POC lacks). Every API call is checked and every

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Node half of the client module system (`dsh.client` dual-face package): scans
  * the host Loader's entries for packages declaring `dsh.client`, composes the
  * `window.__DSH_BOOT__` entry graph (wire single source: {@link WebBootEntry}

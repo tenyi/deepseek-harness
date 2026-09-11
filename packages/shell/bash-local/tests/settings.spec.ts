@@ -1,4 +1,4 @@
-/** The `bash` settings section layered over the executor's composition entry. */
+﻿/** The `bash` settings section layered over the executor's composition entry. */
 
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

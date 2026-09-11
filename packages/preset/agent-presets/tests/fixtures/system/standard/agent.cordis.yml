@@ -1,4 +1,4 @@
-# Shipped preset: one tool plus its guidance section.
+﻿# Shipped preset: one tool plus its guidance section.
 - id: alpha
   name: ../../plugins/contribute.js
   config:

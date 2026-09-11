@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Agent-scope primitive spec: the actx minted by createScope carries the
  * tag and the dispatch filter itself, so plain cordis dispatch with the actx
  * as subject routes by agent — same-agent tagged listeners receive,

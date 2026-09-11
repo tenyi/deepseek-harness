@@ -1,4 +1,4 @@
-/** Finite HTML-declared classic scripts and stylesheets; no module, CSS dependency or runtime fetch traversal. */
+﻿/** Finite HTML-declared classic scripts and stylesheets; no module, CSS dependency or runtime fetch traversal. */
 import type { HtmlAsset, HtmlBundle } from './bootstrap.ts'
 import type { DocumentFileBytes } from '../rpc.ts'
 import { decodeText } from './bytes.ts'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * REAL-composition proof: the shipped YAML shape (session + projection
  * registry + session-stats) boots through the vendored Loader, the function
  * plugin's namespace survives (no default export), and a full logged turn

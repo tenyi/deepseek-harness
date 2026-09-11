@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Bridge for unmodified Codex command hooks on harness interception points. It
  * supports five points (SessionStart, prompt/tool pre/post, Stop), regex-only
  * matchers, snake_case payloads without a trailing newline, no hook environment

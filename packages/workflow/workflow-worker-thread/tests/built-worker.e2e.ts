@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs'
+﻿import { existsSync } from 'node:fs'
 import { rm, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { execFile } from 'node:child_process'

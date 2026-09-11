@@ -1,4 +1,4 @@
-// Real-host smoke: spawn `dsh web` with a real key, walk the full flow
+﻿// Real-host smoke: spawn `dsh web` with a real key, walk the full flow
 // list in a real chromium, screenshot every screen into .artifacts/ for the
 // figma comparison pass. Self-skips without DEEPSEEK_API_KEY (repo e2e
 // convention); vitest.web.config.ts loads the repo-root .env before this file
@@ -804,7 +804,7 @@ describe.skipIf(!process.env.DEEPSEEK_API_KEY || notReady.length > 0)('web smoke
   it('bash differential rendering: tool row click leaves the default details column closed', async () => {
     onTestFailed(() => saveFailureShot(page, 'w5-tool-details'))
     const input = page.locator('[data-composer-input]').first()
-    await input.fill('请用 bash 工具运行命令 echo w5marker 然后告诉我结果')
+    await input.fill('請用 bash 工具運行命令 echo w5marker 然后告訴我結果')
     await input.press('Enter')
     // Wait for the tool ROW, not response text (the reply echoes any marker).
     // Bash renders through the third-party sample registration. Match that

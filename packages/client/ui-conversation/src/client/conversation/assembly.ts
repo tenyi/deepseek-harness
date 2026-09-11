@@ -1,4 +1,4 @@
-/** Per-Session target-neutral Conversation assembly. */
+﻿/** Per-Session target-neutral Conversation assembly. */
 import { Service, type Context } from '@deepseek-ai/cordis'
 import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
 import type {

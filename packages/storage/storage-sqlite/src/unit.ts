@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One opened SQLite KV unit: prepared per-table statements over the
  * `u_<unit>_<table>` record tables plus this unit's row in the shared
  * `unit_globals` table. Each primitive is a single statement, so atomicity

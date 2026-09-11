@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { Context } from '@deepseek-ai/cordis'
 import {
   createClientModuleSystem, parseBootManifest,

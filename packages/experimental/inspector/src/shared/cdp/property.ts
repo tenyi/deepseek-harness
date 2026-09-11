@@ -1,4 +1,4 @@
-/** Realm-neutral property descriptors returned by Runtime backends. */
+﻿/** Realm-neutral property descriptors returned by Runtime backends. */
 
 import type { RuntimeRemoteObject } from './remote-object.ts'
 

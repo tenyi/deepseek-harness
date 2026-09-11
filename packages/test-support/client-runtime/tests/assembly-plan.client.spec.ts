@@ -1,4 +1,4 @@
-/** assertPlan: provide keys must name roster rows. */
+﻿/** assertPlan: provide keys must name roster rows. */
 import { describe, expect, it } from 'vitest'
 import { assertPlan } from '../src/assembly/roster.ts'
 import { ClientRoster } from '../src/assembly/roster.ts'

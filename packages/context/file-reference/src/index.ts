@@ -1,4 +1,4 @@
-/**
+﻿/**
  * File-reference discovery seam shared by host-backed user interfaces.
  *
  * @module @deepseek-ai/dsh-file-reference

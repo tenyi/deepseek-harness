@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node:events`: a minimal EventEmitter with the members harness code uses.
  * Emission order and listener identity follow Node; anything beyond the basic
  * on/once/off/emit set throws.

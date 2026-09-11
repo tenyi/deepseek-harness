@@ -1,4 +1,4 @@
-<div class="_markdown_404681">
+﻿<div class="_markdown_404681">
   <p>
     #text "A "
     <a href="https://example.com/ref" rel="noopener noreferrer" target="_blank">

@@ -1,4 +1,4 @@
----
+﻿---
 description: "The durable session-storage seam for users and maintainers choosing a persistence backend, resuming sessions, or building a backend against the shared service contract."
 kind: "package-reference"
 ---

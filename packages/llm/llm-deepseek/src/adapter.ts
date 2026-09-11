@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `DeepSeekAdapter`: fetch + SSE against a DeepSeek (OpenAI-compatible)
  * chat-completions endpoint, emitting harness StreamChunks. The adapter is
  * transport-only: connection facts arrive through a thunk resolved once per

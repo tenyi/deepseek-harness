@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Types of the in-worker shell: the state one command line mutates, the byte
  * face a program reads and writes, and the program signature the command table
  * stores. A browser worker has no processes, so a "program" is a JavaScript

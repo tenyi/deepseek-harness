@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Real-composition proof: a cordis.yml loaded by the vendored Loader applies
  * spill-local configuration and completes its fiber-owned startup cleanup.
  */

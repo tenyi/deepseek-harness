@@ -1,5 +1,5 @@
----
-description: "面向无密钥示例冒烟测试的共享子进程与直接 agent（智能体） harness，供测试作者启动真实 Loader 组合。"
+﻿---
+description: "面向無密鑰示例冒煙測試的共享子進程與直接 agent（智能體） harness，供測試作者啟動真實 Loader 組合。"
 kind: "package-library"
 ---
 
@@ -9,27 +9,27 @@ kind: "package-library"
 
 ## 概述
 
-使用 `dsh-loader-smoke` 可从应用 fixture（测试前置数据）的真实可执行文件及其 `cordis.yml` 启动应用，并在隔离的临时目录中捕获输出和完成清理。`runFixtureTurn` 通过已配置的根 agent 驱动一项任务，并返回最终 assistant 文本与 token 用量。测试可以选择零构建的源码执行或已构建包执行，使本地和 CI 冒烟测试分别采用对应环境预期的消费路径。这个支持层库面向测试作者，不用于产品集成。
+使用 `dsh-loader-smoke` 可從應用 fixture（測試前置數據）的真實可執行文件及其 `cordis.yml` 啟動應用，并在隔離的臨時目錄中捕獲輸出和完成清理。`runFixtureTurn` 通過已配置的根 agent 驅動一項任務，并返回最終 assistant 文本與 token 用量。測試可以選擇零構建的源碼執行或已構建包執行，使本地和 CI 冒煙測試分別采用對應環境預期的消費路徑。這個支持層庫面向測試作者，不用于產品集成。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-本包以已安装消费方的方式启动应用 fixture，并让测试观察结果：选择源模式或构建模式，从隔离 cwd 用其配置启动可执行文件，然后要么等待干净退出，要么让一项任务通过根 agent。
+本包以已安裝消費方的方式啟動應用 fixture，并讓測試觀察結果：選擇源模式或構建模式，從隔離 cwd 用其配置啟動可執行文件，然后要么等待干凈退出，要么讓一項任務通過根 agent。
 
-### 启动应用 fixture
+### 啟動應用 fixture
 
-`runLoaderSmoke` 接受可执行文件与配置路径、可选的完整可执行文件参数、环境覆盖、标准输入、运行前准备与清理前检查。它负责隔离工作目录、DSH 主目录、诊断、截止时间、终止、EOF 与清理；进程以零状态退出后返回两个流，失败时则拒绝并附带两个流：
+`runLoaderSmoke` 接受可執行文件與配置路徑、可選的完整可執行文件參數、環境覆蓋、標準輸入、運行前準備與清理前檢查。它負責隔離工作目錄、DSH 主目錄、診斷、截止時間、終止、EOF 與清理；進程以零狀態退出后返回兩個流，失敗時則拒絕并附帶兩個流：
 
 ```text
 const result = await runLoaderSmoke({
@@ -41,91 +41,91 @@ const result = await runLoaderSmoke({
 })
 ```
 
-当场景固定一个设计好的失败面——即一次性轮次以错误结果结束——时设置 `expectedExitCode`；以任何其他方式退出（包括成功退出）都会使冒烟测试失败。
+當場景固定一個設計好的失敗面——即一次性輪次以錯誤結果結束——時設置 `expectedExitCode`；以任何其他方式退出（包括成功退出）都會使冒煙測試失敗。
 
-### 测试交付 profile
+### 測試交付 profile
 
-Profile 集成 driver 使用仅限仓库内部的 `tests/fixtures/production-profile.ts` helper。它通过 `loadProfile` 加载指定的已交付 profile 及其组合包 patch，协调处理 profile 的模块回退，然后把组合包 patch 与测试 `*.patch.yml` 文件依次交给 `boot` 挂载的根 `cordis:include`。这些 patch 应只包含测试提供方或模型、隔离持久化路径及被测对象专用变更。只需要 agent loop（智能体循环）而不测试 profile 集成的包级单元测试改为在本地挂载 `dsh-agent-loop-testkit`。
+Profile 集成 driver 使用僅限倉庫內部的 `tests/fixtures/production-profile.ts` helper。它通過 `loadProfile` 加載指定的已交付 profile 及其組合包 patch，協調處理 profile 的模塊回退，然后把組合包 patch 與測試 `*.patch.yml` 文件依次交給 `boot` 掛載的根 `cordis:include`。這些 patch 應只包含測試提供方或模型、隔離持久化路徑及被測對象專用變更。只需要 agent loop（智能體循環）而不測試 profile 集成的包級單元測試改為在本地掛載 `dsh-agent-loop-testkit`。
 
-### 驱动 fixture 轮次
+### 驅動 fixture 輪次
 
-`runFixtureTurn(ctx, options)` 让一项任务通过恰好一个已配置的根 agent：它等待任务进入持久收件箱，把规范事件转发给你的观察器，刷写会话，并返回最终 assistant 文本与累计用量。示例本地的 driver 继续负责配置、渲染与断言。
+`runFixtureTurn(ctx, options)` 讓一項任務通過恰好一個已配置的根 agent：它等待任務進入持久收件箱，把規范事件轉發給你的觀察器，刷寫會話，并返回最終 assistant 文本與累計用量。示例本地的 driver 繼續負責配置、渲染與斷言。
 
-### 源模式或构建模式
+### 源模式或構建模式
 
-`resolveExampleLaunch` 选择示例可执行文件从哪个产物启动。`src` 模式在 tsx 下运行可执行文件并设置 `TSX_TSCONFIG_PATH`，使工作区导入通过 tsconfig `paths` 映射解析——这是零构建开发路径。`lib` 模式在普通 Node 下运行构建后的 `lib/` 可执行文件，使裸包插件通过真实包 `exports` 解析，与已安装消费方的解析方式完全一致。模式来自显式值或 `DSH_EXAMPLE_MODE`（CI 设置 `lib`，开发时保持未设置）；其他任何值都会明确报错。
+`resolveExampleLaunch` 選擇示例可執行文件從哪個產物啟動。`src` 模式在 tsx 下運行可執行文件并設置 `TSX_TSCONFIG_PATH`，使工作區導入通過 tsconfig `paths` 映射解析——這是零構建開發路徑。`lib` 模式在普通 Node 下運行構建后的 `lib/` 可執行文件，使裸包插件通過真實包 `exports` 解析，與已安裝消費方的解析方式完全一致。模式來自顯式值或 `DSH_EXAMPLE_MODE`（CI 設置 `lib`，開發時保持未設置）；其他任何值都會明確報錯。
 
-### 可能出什么问题
+### 可能出什么問題
 
-- **进程永不退出**——冒烟测试强制执行截止时间，并在失败信息中报告捕获的流；会 spawn 自身进程树的故障 fixture 可能比冒烟测试存活更久，需要外部清理。
-- **构建模式需要事先构建**——选择 `DSH_EXAMPLE_MODE=lib` 前先运行 `pnpm run build`；拥有该配置的包 manifest（元数据清单）还必须声明配置中点名的每个包。
-- **捕获输出受 execa 默认 100 MB `maxBuffer` 约束**——失控子进程在该上限处被终止，而不是在冒烟测试自选的预算处。
+- **進程永不退出**——冒煙測試強制執行截止時間，并在失敗信息中報告捕獲的流；會 spawn 自身進程樹的故障 fixture 可能比冒煙測試存活更久，需要外部清理。
+- **構建模式需要事先構建**——選擇 `DSH_EXAMPLE_MODE=lib` 前先運行 `pnpm run build`；擁有該配置的包 manifest（元數據清單）還必須聲明配置中點名的每個包。
+- **捕獲輸出受 execa 默認 100 MB `maxBuffer` 約束**——失控子進程在該上限處被終止，而不是在冒煙測試自選的預算處。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释 harness 的设计；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋 harness 的設計；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计
+### 設計
 
-harness 建立在一个分离之上：冒烟测试在隔离世界中的子进程里运行，测试进程只观察与断言。`runLoaderSmoke` 创建临时 cwd、在那里准备世界状态、以隔离的 DSH 主目录（临时 cwd 下的 `DSH_HOME`、`DSH_AGENTS_HOME`）spawn 解析出的可执行文件、立即关闭 stdin，并在截止时间内等待干净退出，然后在每种结果下都执行检查与清理。`runFixtureTurn` 留在进程内运行：它查找组合中的唯一根 agent，从持久收件箱收到任务起持续跟踪，直至整个 agent 完全停稳；随后汇总每步用量，并在返回前刷写会话。
+harness 建立在一個分離之上：冒煙測試在隔離世界中的子進程里運行，測試進程只觀察與斷言。`runLoaderSmoke` 創建臨時 cwd、在那里準備世界狀態、以隔離的 DSH 主目錄（臨時 cwd 下的 `DSH_HOME`、`DSH_AGENTS_HOME`）spawn 解析出的可執行文件、立即關閉 stdin，并在截止時間內等待干凈退出，然后在每種結果下都執行檢查與清理。`runFixtureTurn` 留在進程內運行：它查找組合中的唯一根 agent，從持久收件箱收到任務起持續跟蹤，直至整個 agent 完全停穩；隨后匯總每步用量，并在返回前刷寫會話。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 模式解析器、`runLoaderSmoke` 子进程 harness、选项与结果类型 |
-| [`src/agent-turn.ts`](src/agent-turn.ts) | `runFixtureTurn` 直接 agent driver 与结果信封 |
-| — | 不发布运行时不变量伴生入口；该测试支持包不负责维护生产事件流或可变数据；消费它的测试套件会检验该 harness。 |
-| [`tests/fixtures/production-profile.ts`](tests/fixtures/production-profile.ts) | 仅限仓库内部、供集成 fixture 使用的交付 profile 组装 helper |
+| [`src/index.ts`](src/index.ts) | 模式解析器、`runLoaderSmoke` 子進程 harness、選項與結果類型 |
+| [`src/agent-turn.ts`](src/agent-turn.ts) | `runFixtureTurn` 直接 agent driver 與結果信封 |
+| — | 不發布運行時不變量伴生入口；該測試支持包不負責維護生產事件流或可變數據；消費它的測試套件會檢驗該 harness。 |
+| [`tests/fixtures/production-profile.ts`](tests/fixtures/production-profile.ts) | 僅限倉庫內部、供集成 fixture 使用的交付 profile 組裝 helper |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下页面。它们从 harness 逐步进入它启动的组合以及它所服务的 fixture。
+當包級約定不夠用時閱讀以下頁面。它們從 harness 逐步進入它啟動的組合以及它所服務的 fixture。
 
-- [llm-replay](../llm-replay/README.zh.md)——冒烟测试组合为在没有提供方密钥的情况下运行而挂载的无密钥模型 fixture。
-- [Agent 包](../../core/agent/README.zh.md)——`runFixtureTurn` 驱动的根 agent。
-- [测试策略](../../../docs/testing.zh.md)——无密钥快照与冒烟层级。
-- [test-support 组地图](../README.zh.md)——兄弟 harness 与支持包。
+- [llm-replay](../llm-replay/README.zh.md)——冒煙測試組合為在沒有提供方密鑰的情況下運行而掛載的無密鑰模型 fixture。
+- [Agent 包](../../core/agent/README.zh.md)——`runFixtureTurn` 驅動的根 agent。
+- [測試策略](../../../docs/testing.zh.md)——無密鑰快照與冒煙層級。
+- [test-support 組地圖](../README.zh.md)——兄弟 harness 與支持包。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无，因为测试 harness 仅提交调用方测试的普通用户任务，并将提示词与工具组装交由已加载的树负责。
+無，因為測試 harness 僅提交調用方測試的普通用戶任務，并將提示詞與工具組裝交由已加載的樹負責。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-除已加载树本身的影响外，无其他影响；该 helper 既不更改请求前缀，也不跨运行保留状态。
+除已加載樹本身的影響外，無其他影響；該 helper 既不更改請求前綴，也不跨運行保留狀態。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明何时需要对该 harness 特别小心。它们是当前包约束，不是任务积压。
+這些限制說明何時需要對該 harness 特別小心。它們是當前包約束，不是任務積壓。
 
-- **构建模式需要事先构建**——拥有该配置的包 manifest 还必须声明配置中点名的每个包。
-- **捕获的 stdout 与 stderr 仅受 execa 默认 100 MB `maxBuffer` 约束**——失控子进程在该上限处被终止，而不是在冒烟测试自选的预算处。
-- **超时只终止直接子进程**——有故障的 fixture spawn 的进程树可能比冒烟测试存活更久，需要外部清理。
+- **構建模式需要事先構建**——擁有該配置的包 manifest 還必須聲明配置中點名的每個包。
+- **捕獲的 stdout 與 stderr 僅受 execa 默認 100 MB `maxBuffer` 約束**——失控子進程在該上限處被終止，而不是在冒煙測試自選的預算處。
+- **超時只終止直接子進程**——有故障的 fixture spawn 的進程樹可能比冒煙測試存活更久，需要外部清理。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

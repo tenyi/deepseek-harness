@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Reusable handle contract test for any {@link SessionPersistence} backend. A
  * backend package imports {@link runPersistenceContract} and calls it with a
  * factory that yields a fresh, empty backend (plus teardown, an optional

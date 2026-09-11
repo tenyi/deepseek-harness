@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One opened JSON unit in `per-record` layout: the unit is a directory at
  * `dir`, holding one document per record under `<dir>/<table>/<key>.json`
  * plus `global.json` for the global slot. The directory is the state — this

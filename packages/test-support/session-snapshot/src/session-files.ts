@@ -1,4 +1,4 @@
-/** Immutable Session-generation filenames used by recorded-session fixtures. */
+﻿/** Immutable Session-generation filenames used by recorded-session fixtures. */
 
 import { basename, dirname } from 'node:path'
 import { parseSessionFormatLogFilename, sessionFormatLogFilename } from '@deepseek-ai/dsh-session-format'

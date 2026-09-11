@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Global hook layer for the ALS shim: capture the async context where a callback
  * is REGISTERED and restore it where the callback RUNS. Together with the folding
  * stack in `./async-hooks.ts` this gives the worker two kinds of coverage —

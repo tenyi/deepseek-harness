@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /** Snapshot-only Loader driver: stream one fixture turn as canonical JSONL. */
 
 import type { Context } from '@deepseek-ai/cordis'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * JSONL durable session-persistence backend. It stores a header and contiguous
  * events in immutable generation files under one directory per session and serves the handle-based
  * `SessionPersistence` API: `create`/`open` return per-session handles, and

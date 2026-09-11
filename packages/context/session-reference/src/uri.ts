@@ -1,4 +1,4 @@
-/** Canonical session URI and inline mention encoding. */
+﻿/** Canonical session URI and inline mention encoding. */
 
 import { brandString } from '@deepseek-ai/dsh-brand'
 import type { SessionId as SessionIdType } from '@deepseek-ai/dsh-session'

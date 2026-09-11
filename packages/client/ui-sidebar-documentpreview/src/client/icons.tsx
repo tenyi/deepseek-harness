@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Glyphs this package draws that the shared icon set does not carry yet.
  * Same props contract as `@deepseek-ai/dsh-client-ui-primitives` icons, so a
  * shared replacement is a one-line import change.

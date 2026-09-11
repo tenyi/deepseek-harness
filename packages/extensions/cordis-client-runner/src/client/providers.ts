@@ -1,4 +1,4 @@
-/** Built-in Client inspect providers over live Client-owned services. */
+﻿/** Built-in Client inspect providers over live Client-owned services. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { JsonValue } from '@deepseek-ai/dsh-util-values'

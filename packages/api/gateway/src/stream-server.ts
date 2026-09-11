@@ -1,4 +1,4 @@
-/** Host WebSocket owner for multiplexed Typert Remote streams. */
+﻿/** Host WebSocket owner for multiplexed Typert Remote streams. */
 
 import type { IncomingMessage } from 'node:http'
 import type { Duplex } from 'node:stream'

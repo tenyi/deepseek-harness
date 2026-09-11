@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from 'react'
+﻿import { memo, useCallback, useMemo } from 'react'
 import type { ChatNodeViewProps, TurnTailOwnerProps } from '../contract/slots.ts'
 import { AssistantMarkdown } from './AssistantMarkdown.tsx'
 

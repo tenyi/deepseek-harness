@@ -1,4 +1,4 @@
----
+﻿---
 description: "The right Sidebar of the dsh web client: one docking surface per session, two presentations, the navigation controller ctx.sidebarRight, the tab-type registry ctx.sidebarRightTabs, and the Tab domain."
 kind: "package-reference"
 ---

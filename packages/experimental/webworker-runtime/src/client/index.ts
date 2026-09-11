@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Page half: everything a deployment needs to reach a worker-hosted harness.
  *
  * This is **pre-Cordis glue, not a client plugin**: it installs the transport

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Appearance and font-size row slot stores: mirrors of the theme service
  * snapshot. The plugin's apply-world change listener is the only writer; the
  * row components read via props.useStore.

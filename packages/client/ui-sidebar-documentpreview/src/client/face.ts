@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The preview's asynchronous half: reading pages into the store.
  *
  * The component never awaits anything. It asks for a page and this face performs

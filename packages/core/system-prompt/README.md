@@ -1,4 +1,4 @@
----
+﻿---
 description: "System-prompt assembly for users and maintainers adding prompt sections, variables, tool-schema sources, or configuring the model-facing prompt."
 kind: "package-reference"
 ---

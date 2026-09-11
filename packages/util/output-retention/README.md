@@ -1,4 +1,4 @@
----
+﻿---
 description: "Bounded model-facing output for tools that must cap how much context they return: item and text retainers plus a standardized omission footer."
 kind: "package-library"
 ---

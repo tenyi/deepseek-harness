@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Session-visible workspace instruction state and dynamic reconciliation.
  *
  * @module @deepseek-ai/dsh-agent-instructions/state

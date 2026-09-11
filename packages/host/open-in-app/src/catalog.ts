@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The open-in-app application catalog: a compile-time table of launchable
  * applications, each declaring per-platform launcher sources tried in order.
  * The table is data only — platform resolution lives in `resolver.ts`, icon

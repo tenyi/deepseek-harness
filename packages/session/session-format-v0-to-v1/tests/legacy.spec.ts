@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { SessionFormatUnsupportedMigrationError } from '@deepseek-ai/dsh-session-format'
 import {
   sessionFormatV0ToV1,

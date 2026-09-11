@@ -1,4 +1,4 @@
-.root {
+﻿.root {
   position: relative; /* positioning context for slot-owned absolute chrome */
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * StateDot's palette as CSS text. jsdom has no layout and CSS Modules resolve
  * to class-name maps in the component suites, so the only place the per-state
  * colors can be read is the stylesheet itself: a state whose rule is missing

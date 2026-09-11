@@ -1,4 +1,4 @@
-/**
+﻿/**
  * GoalBar: the goal indicator docked above the message composer (input dock
  * strip). A present goal shows a goal glyph, a phase label, the truncated
  * objective, and icon actions — resume when active-disarmed or paused, edit

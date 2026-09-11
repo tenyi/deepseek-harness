@@ -1,4 +1,4 @@
-/**
+﻿/**
  * SessionManager orchestration: lazy resident instances, list lifecycle, host
  * frame routing, and control baselines for uninstantiated sessions.
  */
@@ -716,7 +716,7 @@ describe('remaining branches', () => {
     const api = new FakeApiClient()
     const manager = new SessionManager(fakeRemote(api))
     manager.handleSessionStatus(S2, true)
-    manager.handleSessionError(S2, '无实例')
+    manager.handleSessionError(S2, '無實例')
   })
 
   it('keeps list-entry identity for unchanged rows across an unrelated list change', async () => {

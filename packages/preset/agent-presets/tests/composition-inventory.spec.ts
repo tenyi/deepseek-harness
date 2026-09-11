@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Structured composition reads: the flattened plugin rows a preset names,
  * answered from the composition file while no session has mounted the preset
  * and from the standing mount once one has, with a composition that cannot be

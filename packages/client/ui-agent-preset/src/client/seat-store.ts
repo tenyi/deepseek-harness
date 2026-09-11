@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Hero-chip controller: which preset the NEXT session gets.
  *
  * The new-session screen has no session, so a pick is staged rather than

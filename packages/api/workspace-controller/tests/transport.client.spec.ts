@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Workspace Controller client plugin, state stream, and command facade driven
  * through the assembled Gateway client: every `workspace/*` call crosses the
  * roster's own Connection and is answered by endpoint name.

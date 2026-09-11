@@ -1,4 +1,4 @@
-/** Registers the target-neutral Conversation assembly, shell, input, and docks. */
+﻿/** Registers the target-neutral Conversation assembly, shell, input, and docks. */
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 import type { ISessions } from '@deepseek-ai/dsh-api-session-controller/client'

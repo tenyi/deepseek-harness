@@ -1,4 +1,4 @@
----
+﻿---
 description: "Client Tool presentation plugin for the dsh web client: whole-call tree composition, the keyed per-tool view slot, and the built-in atomic tool cards."
 kind: "package-reference"
 ---

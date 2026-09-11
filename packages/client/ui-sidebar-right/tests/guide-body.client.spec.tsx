@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * The guide tab's body: the chain seam, and the shipped guide behind it.
  *

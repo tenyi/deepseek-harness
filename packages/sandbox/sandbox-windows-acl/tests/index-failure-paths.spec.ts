@@ -1,4 +1,4 @@
-/**
+﻿/**
  * AclSandbox orchestration failure-path tests: the win32 resolver is mocked
  * to hand each test a stub binding table, so every checked Win32 call in
  * init/spawn/dispose has a failing counterpart without opening real token or

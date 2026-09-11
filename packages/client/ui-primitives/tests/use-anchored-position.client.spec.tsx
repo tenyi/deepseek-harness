@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * `useAnchoredPosition` wiring: a floating panel is placed from its anchor and
  * keeps tracking it while open.

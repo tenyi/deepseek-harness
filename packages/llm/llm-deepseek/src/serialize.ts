@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Serialize harness messages into DeepSeek chat completions. Text-only
  * requests retain string user content; the image path resolves durable
  * attachments into ordered file-id or inline parts. Tool-result images follow their

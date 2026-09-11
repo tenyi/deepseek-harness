@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render } from '@testing-library/react'
@@ -226,7 +226,7 @@ describe('FileMutationRow diff card', () => {
     toggleRow(view)
     expect(view.container.querySelector('[data-diff]')).not.toBeNull()
     expect(view.getByText('hello fixture')).toBeTruthy()
-    expect(view.getByText('复制')).toBeTruthy()
+    expect(view.getByText('復制')).toBeTruthy()
   })
 
   it('the summary is a path link that opens the tool path through the host', () => {
@@ -249,7 +249,7 @@ describe('FileMutationRow diff card', () => {
     expect(view.getByText('+1 -0')).toBeTruthy()
     // The footer counts live inside the collapsed diff card.
     toggleRow(view)
-    expect(view.getByText('└ +1 -0 · 1 个文件')).toBeTruthy()
+    expect(view.getByText('└ +1 -0 · 1 個文件')).toBeTruthy()
   })
 
   it('reflects the run state on its leading slot', () => {

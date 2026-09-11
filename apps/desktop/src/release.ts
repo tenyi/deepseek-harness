@@ -1,4 +1,4 @@
-/** Immutable version identity shared by one Electron shell and its bundled dsh runtime. */
+﻿/** Immutable version identity shared by one Electron shell and its bundled dsh runtime. */
 
 import { valid } from 'semver'
 import { DESKTOP_HOST_PROTOCOL_VERSION } from './host-protocol.ts'

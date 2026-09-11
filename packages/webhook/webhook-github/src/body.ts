@@ -1,4 +1,4 @@
-/** Bounded raw HTTP body intake for GitHub signature verification. */
+﻿/** Bounded raw HTTP body intake for GitHub signature verification. */
 
 import type { IncomingMessage } from 'node:http'
 

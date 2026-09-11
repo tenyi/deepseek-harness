@@ -1,4 +1,4 @@
----
+﻿---
 description: "Package map for the conversation-condensing feature family: automatic compaction, the on-demand /compact command, and tool-output trimming."
 kind: "package-group"
 ---

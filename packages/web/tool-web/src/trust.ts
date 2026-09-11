@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-visible labeling shared by web tools.
  * @module @deepseek-ai/dsh-tool-web/trust
  */

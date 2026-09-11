@@ -1,4 +1,4 @@
-/** Cursor, page, and live-tail coordination over a reconnecting Remote stream. */
+﻿/** Cursor, page, and live-tail coordination over a reconnecting Remote stream. */
 
 import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
 import { RemoteStreamCarrierError } from './stream-client.ts'

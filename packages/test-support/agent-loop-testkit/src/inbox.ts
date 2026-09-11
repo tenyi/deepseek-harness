@@ -1,4 +1,4 @@
-import type { Inbox, InboxTarget } from '@deepseek-ai/dsh-agent'
+﻿import type { Inbox, InboxTarget } from '@deepseek-ai/dsh-agent'
 import type { MessageId } from '@deepseek-ai/dsh-llm'
 import type { UserMessage } from '@deepseek-ai/dsh-session'
 

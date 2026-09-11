@@ -1,4 +1,4 @@
-/* First-run stage: keep the product top bar visible, then let onboarding own
+﻿/* First-run stage: keep the product top bar visible, then let onboarding own
    the complete workspace instead of presenting another settings modal. */
 .onboardingOverlay {
   position: fixed;

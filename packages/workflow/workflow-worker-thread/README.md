@@ -1,4 +1,4 @@
----
+﻿---
 description: "The worker-thread workflow engine: executes model-written orchestration scripts off the host event loop, for users and maintainers choosing or configuring execution isolation."
 kind: "package-reference"
 ---

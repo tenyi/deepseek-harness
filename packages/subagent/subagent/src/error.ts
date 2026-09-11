@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Typed failures shared by subagent service and provider operations.
  *
  * @module @deepseek-ai/dsh-subagent

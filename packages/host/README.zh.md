@@ -1,57 +1,57 @@
----
-description: "Web GUI Host 侧的包映射：HTTP 与 SPA 服务器、工作区目录选择实现、open-in-app 启动路由和插件清单投影。"
+﻿---
+description: "Web GUI Host 側的包映射：HTTP 與 SPA 服務器、工作區目錄選擇實現、open-in-app 啟動路由和插件清單投影。"
 kind: "package-group"
 ---
 
-# host/ — Web GUI 宿主侧
+# host/ — Web GUI 宿主側
 
 [English](README.md) | 中文
 
 ## 概述
 
-`host/` 组提供 Web GUI 的普通 HTTP 服务器、服务已构建 Web 壳的 SPA dist 服务器、带原生／浏览／自适应组合包的工作区目录选择 seam、open-in-app 的应用探测与启动路由，以及只读的插件清单投影。这八个包都是产品包；浏览器传输位于 [`client/`](../client/README.zh.md)，组合应用是 [`apps/cli`](../../apps/cli/README.zh.md)，它启动 [`dsh-base` 组合包](../bundle/base/cordis.patch.yml) 来提供 `apps/web/` 下的 Web 应用。选择器后端可在共享 seam 后互相替换。
+`host/` 組提供 Web GUI 的普通 HTTP 服務器、服務已構建 Web 殼的 SPA dist 服務器、帶原生／瀏覽／自適應組合包的工作區目錄選擇 seam、open-in-app 的應用探測與啟動路由，以及只讀的插件清單投影。這八個包都是產品包；瀏覽器傳輸位于 [`client/`](../client/README.zh.md)，組合應用是 [`apps/cli`](../../apps/cli/README.zh.md)，它啟動 [`dsh-base` 組合包](../bundle/base/cordis.patch.yml) 來提供 `apps/web/` 下的 Web 應用。選擇器后端可在共享 seam 后互相替換。
 
-## 目录
+## 目錄
 
 - [包](#packages)
-- [相关文档](#related-documentation)
-- [开发备注](#dev-note)
+- [相關文檔](#related-documentation)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="packages"></a>
 ## 包
 
-八个包分别承担 Host 角色；各包的 README 拥有自己的约定与配置。
+八個包分別承擔 Host 角色；各包的 README 擁有自己的約定與配置。
 
-| 包 | 职责 | ctx 键 |
+| 包 | 職責 | ctx 鍵 |
 |---|---|---|
-| [`webserver/`](webserver/README.zh.md) | 浏览器 HTTP 服务器：具名路由、upgrade、index 转换与回退席位 | `ctx.webServer` |
-| [`frontend-static/`](frontend-static/README.zh.md) | 占据 webserver 回退席位的 SPA dist 服务器 | 消费 `ctx.webServer` |
-| [`directory-picker/`](directory-picker/README.zh.md) | 工作区目录选择 seam：能力约定与错误词汇 | `ctx.directoryPicker` |
-| [`directory-picker-native/`](directory-picker-native/README.zh.md) | 面向宿主屏幕前操作者的原生 OS 选择器后端 | 注册 `ctx.directoryPicker` |
-| [`directory-picker-browse/`](directory-picker-browse/README.zh.md) | 应用内目录浏览器后端，也服务于远程客户端 | 注册 `ctx.directoryPicker` |
-| [`directory-picker-auto/`](directory-picker-auto/README.zh.md) | 在启动时挂载匹配后端的宿主自适应选择器 | 挂载一个后端 |
-| [`open-in-app/`](open-in-app/README.zh.md) | 在已安装应用中打开 workspace 目录的应用探测、图标与启动路由 | 消费 `ctx.webServer` |
-| [`plugin-inventory/`](plugin-inventory/README.zh.md) | 当前 Loader 条目的只读投影 | Remote `pluginInventory/list` |
+| [`webserver/`](webserver/README.zh.md) | 瀏覽器 HTTP 服務器：具名路由、upgrade、index 轉換與回退席位 | `ctx.webServer` |
+| [`frontend-static/`](frontend-static/README.zh.md) | 占據 webserver 回退席位的 SPA dist 服務器 | 消費 `ctx.webServer` |
+| [`directory-picker/`](directory-picker/README.zh.md) | 工作區目錄選擇 seam：能力約定與錯誤詞匯 | `ctx.directoryPicker` |
+| [`directory-picker-native/`](directory-picker-native/README.zh.md) | 面向宿主屏幕前操作者的原生 OS 選擇器后端 | 注冊 `ctx.directoryPicker` |
+| [`directory-picker-browse/`](directory-picker-browse/README.zh.md) | 應用內目錄瀏覽器后端，也服務于遠程客戶端 | 注冊 `ctx.directoryPicker` |
+| [`directory-picker-auto/`](directory-picker-auto/README.zh.md) | 在啟動時掛載匹配后端的宿主自適應選擇器 | 掛載一個后端 |
+| [`open-in-app/`](open-in-app/README.zh.md) | 在已安裝應用中打開 workspace 目錄的應用探測、圖標與啟動路由 | 消費 `ctx.webServer` |
+| [`plugin-inventory/`](plugin-inventory/README.zh.md) | 當前 Loader 條目的只讀投影 | Remote `pluginInventory/list` |
 
 -----
 
 <a id="related-documentation"></a>
-## 相关文档
+## 相關文檔
 
-先从传输与工作区记录的子系统参考读起，再看 Web Client 背后的分层决策。
+先從傳輸與工作區記錄的子系統參考讀起，再看 Web Client 背后的分層決策。
 
-- [HTTP 服务器子系统](../../docs/subsystems/web-server.zh.md)——webserver 的路由、匹配顺序与配置。
-- [工作区子系统](../../docs/subsystems/workspace.zh.md)——目录选择器所喂给的工作区记录。
-- [Web 配置树启动与传输分层](../../.agents/notes/implemented/architecture/2026-07-24-web-config-tree-boot-and-transport-layering.zh.md)——Web 传输各层的所有权。
+- [HTTP 服務器子系統](../../docs/subsystems/web-server.zh.md)——webserver 的路由、匹配順序與配置。
+- [工作區子系統](../../docs/subsystems/workspace.zh.md)——目錄選擇器所喂給的工作區記錄。
+- [Web 配置樹啟動與傳輸分層](../../.agents/notes/implemented/architecture/2026-07-24-web-config-tree-boot-and-transport-layering.zh.md)——Web 傳輸各層的所有權。
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

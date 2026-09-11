@@ -1,4 +1,4 @@
-/**
+﻿/**
  * On-disk JSON unit format: the file is always the current net state, kept
  * human-readable (pretty-printed, stable key order from insertion) — that
  * legibility is this backend's reason to exist. `single`-layout units are

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The writable root is this package's own, not an assembly fact each app must
  * remember: a roster configured with only a `system` root still discovers and
  * authors into `<dshHome>/.agent-presets`, the way `dsh-skill-filesystem` owns

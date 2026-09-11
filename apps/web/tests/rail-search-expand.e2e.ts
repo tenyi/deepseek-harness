@@ -1,4 +1,4 @@
-// Web e2e scenario: the collapsed rail's search control in the real event
+﻿// Web e2e scenario: the collapsed rail's search control in the real event
 // order. The rail click flips the sidebar wide and mounts WorkspaceBrowser's
 // outside-click dismissal listener during its own React dispatch; the same
 // click then keeps bubbling to document with the unmounted rail button as its

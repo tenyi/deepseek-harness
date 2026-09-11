@@ -1,4 +1,4 @@
-/**
+﻿/**
  * End-to-end probe of the ACL write-restriction sandbox, using the same
  * probes as the POC verification harness: the confined child must be able to
  * write into the granted target and temp directories, must be DENIED writing

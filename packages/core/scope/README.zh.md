@@ -1,5 +1,5 @@
----
-description: "面向插件作者与维护者的作用域注册库，用于构建按 agent（智能体）或按分组隔离贡献的注册表或事件接口。"
+﻿---
+description: "面向插件作者與維護者的作用域注冊庫，用于構建按 agent（智能體）或按分組隔離貢獻的注冊表或事件接口。"
 kind: "package-library"
 ---
 
@@ -9,26 +9,26 @@ kind: "package-library"
 
 ## 概述
 
-`dsh-scope` 让插件作者能够为每个 agent 或分组提供隔离的贡献集合与统一生命周期。子作用域继承祖先贡献，且较近的定义优先；祖先作用域可以观察后代活动，这两种关系均不反向成立。释放作用域会移除它拥有的一切。按 agent 或分组隔离必须脱离 agent loop（智能体循环）与 preset 工作时，请使用这个零依赖库。
+`dsh-scope` 讓插件作者能夠為每個 agent 或分組提供隔離的貢獻集合與統一生命周期。子作用域繼承祖先貢獻，且較近的定義優先；祖先作用域可以觀察后代活動，這兩種關系均不反向成立。釋放作用域會移除它擁有的一切。按 agent 或分組隔離必須脫離 agent loop（智能體循環）與 preset 工作時，請使用這個零依賴庫。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-插件作者使用 `dsh-scope` 为单个 agent（或单个分组）提供独立的注册世界。core 分组中的注册表都构建在它之上——通过 `agent.ctx` 注册的工具只对该 agent 可见——同样的原语也服务于任何自定义注册表或带作用域的事件。
+插件作者使用 `dsh-scope` 為單個 agent（或單個分組）提供獨立的注冊世界。core 分組中的注冊表都構建在它之上——通過 `agent.ctx` 注冊的工具只對該 agent 可見——同樣的原語也服務于任何自定義注冊表或帶作用域的事件。
 
-### 创建作用域
+### 創建作用域
 
-`createScope(ctx, key)` 在 `ctx` 的 fiber 下创建作用域：其 `ctx` 携带作用域标签，通过它进行的每项注册既具备作用域可见性，也服从作用域生命周期。`dispose()` 撤销通过该作用域进行的每项注册；`rawDispose` 是确切 Cordis disposer，用于把 teardown 嵌套进有序组合 effect。
+`createScope(ctx, key)` 在 `ctx` 的 fiber 下創建作用域：其 `ctx` 攜帶作用域標簽，通過它進行的每項注冊既具備作用域可見性，也服從作用域生命周期。`dispose()` 撤銷通過該作用域進行的每項注冊；`rawDispose` 是確切 Cordis disposer，用于把 teardown 嵌套進有序組合 effect。
 
 ```text
 const scope = createScope(ctx, agent)
@@ -37,77 +37,77 @@ scope.ctx.on('agent/status', ({ agent, status }) => track(agent, status))
 await scope.dispose()   // unwinds every registration made through scope.ctx
 ```
 
-### 路由带作用域的事件
+### 路由帶作用域的事件
 
-`scopeTarget(base, key)` 构造带作用域事件分发所用的不透明载体。无标签监听器保持全局；标签为 `key` 的监听器接收该键及其后代的事件。载体只携带路由状态——真实主体由事件参数携带。
+`scopeTarget(base, key)` 構造帶作用域事件分發所用的不透明載體。無標簽監聽器保持全局；標簽為 `key` 的監聽器接收該鍵及其后代的事件。載體只攜帶路由狀態——真實主體由事件參數攜帶。
 
-### 构建带作用域的注册表层
+### 構建帶作用域的注冊表層
 
-注册表作者使用 `ScopedLayers`、`NamedEntries` 与 `AnonymousEntries` 持有一个立即构造的全局层加惰性创建的精确作用域层：读取从不创建层，`merge()` 沿作用域链物化按插入序的具名遮蔽，`effect()` 从同一上下文推导可见性与所有权。只有当整个聚合为空时才回收作用域层。
+注冊表作者使用 `ScopedLayers`、`NamedEntries` 與 `AnonymousEntries` 持有一個立即構造的全局層加惰性創建的精確作用域層：讀取從不創建層，`merge()` 沿作用域鏈物化按插入序的具名遮蔽，`effect()` 從同一上下文推導可見性與所有權。只有當整個聚合為空時才回收作用域層。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释该包如何实现上述行为；可观察约定已在[使用本包](#use-this-package)中完整说明。
+本節解釋該包如何實現上述行為；可觀察約定已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-注册上下文同时决定可见性与所有权：通过带作用域上下文进行的注册在该作用域内可见、并随其 dispose（资源释放），从而防止贡献在一个作用域中可见、却随另一个作用域拆除。该原语用于路由受信任的同进程插件；它不是沙箱或权限边界。交出带作用域的上下文，也会交出创建该上下文的插件的服务解析范围（解析沿创建者 fiber 的依赖链行进），因此作用域应由具备这些带作用域注册所需依赖的插件来创建。
+注冊上下文同時決定可見性與所有權：通過帶作用域上下文進行的注冊在該作用域內可見、并隨其 dispose（資源釋放），從而防止貢獻在一個作用域中可見、卻隨另一個作用域拆除。該原語用于路由受信任的同進程插件；它不是沙箱或權限邊界。交出帶作用域的上下文，也會交出創建該上下文的插件的服務解析范圍（解析沿創建者 fiber 的依賴鏈行進），因此作用域應由具備這些帶作用域注冊所需依賴的插件來創建。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | `createScope`、`scopeOf`、`scopeTarget`、`bindScopeParent`/`scopeParentOf`/`scopeChainOf`、载体标记 |
+| [`src/index.ts`](src/index.ts) | `createScope`、`scopeOf`、`scopeTarget`、`bindScopeParent`/`scopeParentOf`/`scopeChainOf`、載體標記 |
 | [`src/store.ts`](src/store.ts) | `ScopedLayers`、`NamedEntries`、`AnonymousEntries`、`ScopeLayer` |
-| [`src/invariant.ts`](src/invariant.ts) | 基于生成的作用域事件映射的不变式配套 |
-| [`src/scoped-events.generated.ts`](src/scoped-events.generated.ts) | 已声明带作用域事件的生成解析器映射 |
+| [`src/invariant.ts`](src/invariant.ts) | 基于生成的作用域事件映射的不變式配套 |
+| [`src/scoped-events.generated.ts`](src/scoped-events.generated.ts) | 已聲明帶作用域事件的生成解析器映射 |
 
-### 父链
+### 父鏈
 
-一个关系支撑两个方向：注册视图沿链**向下**继承（子作用域看得见祖先的各层），事件放行沿链**向上**扩展（标签为祖先的监听器收到分发到后代键的事件）。绑定仅此一次——已有父级的键直接抛错，只有返回的绑定句柄才能重新绑定——且每次链接都拒绝闭环。`scopeChainOf` 返回 `[key, parent, …]`，最近者在前。
+一個關系支撐兩個方向：注冊視圖沿鏈**向下**繼承（子作用域看得見祖先的各層），事件放行沿鏈**向上**擴展（標簽為祖先的監聽器收到分發到后代鍵的事件）。綁定僅此一次——已有父級的鍵直接拋錯，只有返回的綁定句柄才能重新綁定——且每次鏈接都拒絕閉環。`scopeChainOf` 返回 `[key, parent, …]`，最近者在前。
 
-### 事件筛选
+### 事件篩選
 
-`scopeTarget` 把基对象的现有 `Context.filter` 与作用域谓词组合起来：无标签监听器放行；有标签监听器仅当标签为分发键或其祖先时放行；`key === undefined` 只放行无标签监听器。带 `{ global: true }` 的监听器绕过筛选。`Scoped<T>` brand 要求带作用域事件以载体作为 `this` 类型，因此用裸主体分发会产生编译错误。
+`scopeTarget` 把基對象的現有 `Context.filter` 與作用域謂詞組合起來：無標簽監聽器放行；有標簽監聽器僅當標簽為分發鍵或其祖先時放行；`key === undefined` 只放行無標簽監聽器。帶 `{ global: true }` 的監聽器繞過篩選。`Scoped<T>` brand 要求帶作用域事件以載體作為 `this` 類型，因此用裸主體分發會產生編譯錯誤。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-包级约定对大多数消费方已经足够；需要周边领域与设计原理时再阅读以下页面。
+包級約定對大多數消費方已經足夠；需要周邊領域與設計原理時再閱讀以下頁面。
 
-- [作用域注册子系统](../../../docs/subsystems/scope.zh.md)——身份、载体与层类型。
-- [agent 作用域上下文 Agent Note](../../../.agents/notes/implemented/architecture/2026-07-08-agent-scope-contexts.zh.md)——安全非目标与上下文设计。
-- [agent 作用域运行时设计 Agent Note](../../../.agents/notes/implemented/architecture/2026-07-12-agent-scope-runtime-design.zh.md)——循环如何构建按 agent 的作用域。
-- [core 分组地图](../README.zh.md)——core 各包如何组合。
+- [作用域注冊子系統](../../../docs/subsystems/scope.zh.md)——身份、載體與層類型。
+- [agent 作用域上下文 Agent Note](../../../.agents/notes/implemented/architecture/2026-07-08-agent-scope-contexts.zh.md)——安全非目標與上下文設計。
+- [agent 作用域運行時設計 Agent Note](../../../.agents/notes/implemented/architecture/2026-07-12-agent-scope-runtime-design.zh.md)——循環如何構建按 agent 的作用域。
+- [core 分組地圖](../README.zh.md)——core 各包如何組合。
 
 -----
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
-这些限制说明该原语何时需要特别留意。它们是当前包约束，不是任务积压。
+這些限制說明該原語何時需要特別留意。它們是當前包約束，不是任務積壓。
 
-- **只有感知作用域的 API 才会隔离状态**：注册表必须按 `scopeOf()` 归档，事件必须通过 `scopeTarget()` 分发；仅仅通过带作用域的上下文调用任意 Cordis 服务，并不会改变该服务仍为上下文全局这一事实。
-- **一个上下文只携带一个最近的作用域键**：层级关系存在于键级父关系中而非上下文标签里；嵌套作用域上下文仍遮蔽为单一标签，多成员策略集仍不受支持。
-- **服务可达性来自作用域创建者**：交出 `Scope.ctx` 也会交出创建插件注入的服务范围，因此，若作用域创建者提供的服务范围较宽，持有者之后也无法将其收窄。
+- **只有感知作用域的 API 才會隔離狀態**：注冊表必須按 `scopeOf()` 歸檔，事件必須通過 `scopeTarget()` 分發；僅僅通過帶作用域的上下文調用任意 Cordis 服務，并不會改變該服務仍為上下文全局這一事實。
+- **一個上下文只攜帶一個最近的作用域鍵**：層級關系存在于鍵級父關系中而非上下文標簽里；嵌套作用域上下文仍遮蔽為單一標簽，多成員策略集仍不受支持。
+- **服務可達性來自作用域創建者**：交出 `Scope.ctx` 也會交出創建插件注入的服務范圍，因此，若作用域創建者提供的服務范圍較寬，持有者之后也無法將其收窄。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

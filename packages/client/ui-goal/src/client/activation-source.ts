@@ -1,4 +1,4 @@
-/** Goal activation observable that orders Remote reads and live activation events. */
+﻿/** Goal activation observable that orders Remote reads and live activation events. */
 
 import type { RemoteResult } from '@deepseek-ai/dsh-api-remotes/client'
 import type { HostObservable } from '@deepseek-ai/dsh-client-ui-slots'

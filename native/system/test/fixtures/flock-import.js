@@ -1,4 +1,4 @@
-/** A separate process keeps unsupported-platform simulation away from other tests. */
+﻿/** A separate process keeps unsupported-platform simulation away from other tests. */
 import assert from 'node:assert/strict';
 
 const platform = process.argv[2];

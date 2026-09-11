@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared ranking for `/` menu candidates: the query must be a
  * case-insensitive ordered subsequence of the candidate name or, when the
  * candidate carries one, of its display label (a localized title). Prefix

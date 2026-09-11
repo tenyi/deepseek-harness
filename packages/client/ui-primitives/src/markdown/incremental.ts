@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Incremental block-level markdown parsing for an append-only text stream.
  *
  * Re-parsing the whole accumulated document on every streaming chunk is

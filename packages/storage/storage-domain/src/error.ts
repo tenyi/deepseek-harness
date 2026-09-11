@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Error vocabulary of the domain data form.
  * @module @deepseek-ai/dsh-storage-domain/src/error
  */

@@ -1,4 +1,4 @@
-/** Opt-in synthetic benchmark for v2 embedded Assistant stream history. */
+﻿/** Opt-in synthetic benchmark for v2 embedded Assistant stream history. */
 
 import { createHash } from 'node:crypto'
 import { createServer, type Server } from 'node:http'

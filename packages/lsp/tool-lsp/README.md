@@ -1,4 +1,4 @@
----
+﻿---
 description: "The model-facing lsp tool: four read-only code-navigation operations with one-based UTF-16 cursor coordinates, bounded results, and hover text, for users and maintainers composing model code navigation."
 kind: "package-reference"
 ---

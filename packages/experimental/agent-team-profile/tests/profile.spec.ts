@@ -1,4 +1,4 @@
-/** The experimental bundle must carry one parseable, explicit Team layer. */
+﻿/** The experimental bundle must carry one parseable, explicit Team layer. */
 
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'

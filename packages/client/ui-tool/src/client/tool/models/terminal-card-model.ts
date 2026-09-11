@@ -1,4 +1,4 @@
-/** Pure terminal-card derivation from raw Tool call and result fields. @module */
+﻿/** Pure terminal-card derivation from raw Tool call and result fields. @module */
 import type { TerminalBlockLabels, TerminalBlockProps } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { TranslateNS } from '@deepseek-ai/dsh-client-ui-slots'
 import { resolveWorkspacePath } from '@deepseek-ai/dsh-util-workspace-path'

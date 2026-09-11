@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One language-server instance: a connection plus the initialize handshake, the serialized abortable
  * query queue, the transient `didOpen`→request→`didClose` lifecycle, and bounded teardown. One
  * instance owns one `(provider id, canonical workspace)` process. Queries serialize through a single

@@ -1,4 +1,4 @@
----
+﻿---
 description: "Shared timeout arithmetic, deadline fusion, and timeout-versus-cancel classification for capabilities that clamp a caller's hint, arm a deadline, and must tell the two apart later."
 kind: "package-library"
 ---

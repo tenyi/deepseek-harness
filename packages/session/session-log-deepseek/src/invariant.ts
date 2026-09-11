@@ -1,4 +1,4 @@
-/** Package-owned invariants for DeepSeek session-log acceptance watermarks. */
+﻿/** Package-owned invariants for DeepSeek session-log acceptance watermarks. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { SessionSeq } from '@deepseek-ai/dsh-session'

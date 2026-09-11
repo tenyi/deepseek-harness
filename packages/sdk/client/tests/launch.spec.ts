@@ -1,4 +1,4 @@
-/** Public dsh launch resolution for the TypeScript SDK. */
+﻿/** Public dsh launch resolution for the TypeScript SDK. */
 
 import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'

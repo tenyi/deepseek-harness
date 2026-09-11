@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Process-wide slot holding the mounted filesystem. Kept apart from any
  * backend implementation: the `node:fs` proxy depends on the slot, not on
  * which backend the worker entry mounted.

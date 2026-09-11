@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Elevation stylesheet contract, asserted against the CSS text on disk:
  * gradient-shadow-text.css composes the elevation tokens from a rebindable
  * 0.5px hairline stroke plus soft layers, and no package rule pairs an

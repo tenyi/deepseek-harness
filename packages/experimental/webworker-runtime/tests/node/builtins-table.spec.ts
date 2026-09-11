@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The Node-compatibility table and the module identity it owes its consumers.
  *
  * Two consumers read these specifiers — the worker vite build aliases them for

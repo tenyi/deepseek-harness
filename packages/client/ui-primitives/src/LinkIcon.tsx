@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Leading category glyph for clickable artifact links (anchors, file
  * mentions, produced-file chips). One component keyed by link category;
  * every glyph renders fill="currentColor" and so rides the link's own

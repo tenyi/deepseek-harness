@@ -1,14 +1,14 @@
-- dialog "复制预设 · 复制自 极简模式":
-  - heading "复制预设 · 复制自 极简模式" [level=2]
-  - button "关闭":
+﻿- dialog "復制預設 · 復制自 極簡模式":
+  - heading "復制預設 · 復制自 極簡模式" [level=2]
+  - button "關閉":
     - img
-  - paragraph: 整个预设会在本机复制一份。标识符将成为目录名，事后无法更改；其余内容之后直接在预设自己的文件里编辑。
-  - text: 标识符
-  - textbox "标识符":
+  - paragraph: 整個預設會在本機復制一份。標識符將成為目錄名，事后無法更改；其余內容之后直接在預設自己的文件里編輯。
+  - text: 標識符
+  - textbox "標識符":
     - /placeholder: my-agent
-  - text: 名称
-  - textbox "名称":
-    - /placeholder: 选择器中显示的名字，缺省用标识符
-  - alert: 请填写标识符。
+  - text: 名稱
+  - textbox "名稱":
+    - /placeholder: 選擇器中顯示的名字，缺省用標識符
+  - alert: 請填寫標識符。
   - button "取消"
-  - button "创建" [disabled]
+  - button "創建" [disabled]

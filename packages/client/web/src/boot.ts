@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Web boot kernel. It owns only the module system, Cordis loader, and a
  * framework-free boot page; plugin composition and the renderer handoff are
  * `bootClient` and `mountClient`. The dynamic UI renderer receives the mount

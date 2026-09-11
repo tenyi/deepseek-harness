@@ -1,4 +1,4 @@
----
+﻿---
 description: "Workspace-instruction context for users and maintainers enabling, sizing, or debugging AGENTS.md/CLAUDE.md loading and refresh."
 kind: "package-reference"
 ---

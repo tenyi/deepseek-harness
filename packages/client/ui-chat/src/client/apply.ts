@@ -1,4 +1,4 @@
-/** Register the Chat Conversation target, renderers, stats, and details surface. */
+﻿/** Register the Chat Conversation target, renderers, stats, and details surface. */
 import type { Context } from '@deepseek-ai/cordis'
 import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
 import type {} from '@deepseek-ai/dsh-api-remotes/client'

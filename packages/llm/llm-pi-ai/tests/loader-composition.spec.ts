@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Real-composition guard for the dormant pi-ai posture: LlmRuntime,
  * settings-file, credentials-local, and a bare `llm-pi-ai` row boot from a
  * test-only cordis.yml through the actual Loader + Include path, an external

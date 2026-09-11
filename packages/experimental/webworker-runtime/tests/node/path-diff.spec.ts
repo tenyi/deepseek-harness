@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Differential check of this package's POSIX path shim against Node's
  * `path.posix`.
  *

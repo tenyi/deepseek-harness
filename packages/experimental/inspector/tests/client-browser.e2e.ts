@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs'
+﻿import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { createServer, type Server } from 'node:http'
 import { join } from 'node:path'

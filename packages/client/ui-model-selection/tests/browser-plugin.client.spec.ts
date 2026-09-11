@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ui-model-selection browser half on a real cordis Context with fake command/slots/
  * connection faces and real session scopes: the plugin mounts ModelDirectoryResolver
  * as `models`, the /model contribution and the conversation.input.model
@@ -202,10 +202,10 @@ describe('ui-model-selection dual entry', () => {
     ])
     expect(options[0]).toMatchObject({
       active: true,
-      detail: 'DeepSeek · 快速、高效且经济；适合目标明确、常规或并行任务。',
+      detail: 'DeepSeek · 快速、高效且經濟；適合目標明確、常規或并行任務。',
     })
     expect(options[1]?.detail)
-      .toBe('DeepSeek · 更强的自主编码、知识与复杂推理能力；适合复杂或质量优先的任务，但成本更高。')
+      .toBe('DeepSeek · 更強的自主編碼、知識與復雜推理能力；適合復雜或質量優先的任務，但成本更高。')
     expect(options[2]?.detail).toBe('External Provider · Provider-authored description.')
     expect(options[1]?.active).toBeUndefined()
   })

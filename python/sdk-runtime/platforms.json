@@ -1,4 +1,4 @@
-{
+﻿{
   "linux-x64": {
     "tag": "manylinux_2_28_x86_64",
     "executable": "deepseek-harness-sdk-runtime-linux-x64"

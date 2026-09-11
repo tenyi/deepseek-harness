@@ -1,5 +1,5 @@
----
-description: "文本 spill 能力家族的包映射：存储服务、本地后端与结果策略各自提供什么。"
+﻿---
+description: "文本 spill 能力家族的包映射：存儲服務、本地后端與結果策略各自提供什么。"
 kind: "package-group"
 ---
 
@@ -9,43 +9,43 @@ kind: "package-group"
 
 ## 概述
 
-`spill/` 组在模型上下文之外保存全文，并返回定位信息与取回指引。该家族拆分为 `spill/` 中的存储服务、`spill-local/` 中的本地文件系统后端，以及 `spill-policy/` 中的工具结果策略。工具结果 spill 通过 `maxInlineBytes` 按需启用，存储失败时保留原始结果。[会话引用](../context/session-reference/README.zh.md)也直接使用存储来保存已捕获但被截断的 transcript（文本记录），并自行提供预览和失败通知；它不需要工具结果策略。
+`spill/` 組在模型上下文之外保存全文，并返回定位信息與取回指引。該家族拆分為 `spill/` 中的存儲服務、`spill-local/` 中的本地文件系統后端，以及 `spill-policy/` 中的工具結果策略。工具結果 spill 通過 `maxInlineBytes` 按需啟用，存儲失敗時保留原始結果。[會話引用](../context/session-reference/README.zh.md)也直接使用存儲來保存已捕獲但被截斷的 transcript（文本記錄），并自行提供預覽和失敗通知；它不需要工具結果策略。
 
-## 目录
+## 目錄
 
 - [包](#packages)
-- [相关文档](#related-documentation)
-- [开发备注](#dev-note)
+- [相關文檔](#related-documentation)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="packages"></a>
 ## 包
 
-三个包分别承担 spill 相关角色；完整的词汇定义和约定以子系统参考文档为准。
+三個包分別承擔 spill 相關角色；完整的詞匯定義和約定以子系統參考文檔為準。
 
-| 包 | 职责 | ctx 键 |
+| 包 | 職責 | ctx 鍵 |
 |---|---|---|
-| [`spill/`](spill/README.zh.md) | 存储服务：保存超大文本并返回定位信息与取回指引 | `ctx.spillStore` |
-| [`spill-local/`](spill-local/README.zh.md) | 将 spill 文本保存到本机的私有会话级文件 | 注册到 `ctx.spillStore` |
-| [`spill-policy/`](spill-policy/README.zh.md) | 用预览和定位信息替换过大的纯文本工具结果 | 监听 `ctx.tools` |
+| [`spill/`](spill/README.zh.md) | 存儲服務：保存超大文本并返回定位信息與取回指引 | `ctx.spillStore` |
+| [`spill-local/`](spill-local/README.zh.md) | 將 spill 文本保存到本機的私有會話級文件 | 注冊到 `ctx.spillStore` |
+| [`spill-policy/`](spill-policy/README.zh.md) | 用預覽和定位信息替換過大的純文本工具結果 | 監聽 `ctx.tools` |
 
 -----
 
 <a id="related-documentation"></a>
-## 相关文档
+## 相關文檔
 
-先从子系统参考文档了解共享词汇，再看设计决策。
+先從子系統參考文檔了解共享詞匯，再看設計決策。
 
-- [spill 子系统](../../docs/subsystems/spill.zh.md)——`SaveTextSpill`/`SpillRef` 词汇、归属与后端关系。
-- [工具输出 spill 决策](../../.agents/notes/implemented/architecture/2026-07-08-tool-output-spill-files.zh.md)——存储、保留与工具自有输出处理之间的能力边界。
+- [spill 子系統](../../docs/subsystems/spill.zh.md)——`SaveTextSpill`/`SpillRef` 詞匯、歸屬與后端關系。
+- [工具輸出 spill 決策](../../.agents/notes/implemented/architecture/2026-07-08-tool-output-spill-files.zh.md)——存儲、保留與工具自有輸出處理之間的能力邊界。
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

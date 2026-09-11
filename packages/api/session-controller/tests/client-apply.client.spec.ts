@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Session Controller Client apply inside the assembled client: Remote events
  * arriving as emit frames on the `$events` stream, the control stream over
  * the real Connection, and Agent Context identity through the Typert registry.

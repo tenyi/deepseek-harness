@@ -1,4 +1,4 @@
-/**
+﻿/**
  * What the `text` type claims, and how it yields.
  *
  * The type is the fallback viewer for every Session-scoped `file` resource address, so the contract

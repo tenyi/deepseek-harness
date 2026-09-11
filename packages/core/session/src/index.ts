@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Event-sourced session service: append-only session log, in-memory store, and
  * the derived LLM message history. Persistence is a plugin concern (subscribe
  * to `session/event`, drain on `session/flush`).

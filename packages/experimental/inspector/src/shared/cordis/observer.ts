@@ -1,4 +1,4 @@
-/** Lifecycle-driven Cordis tree publication shared by Host and Client plugin faces. */
+﻿/** Lifecycle-driven Cordis tree publication shared by Host and Client plugin faces. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { CordisTreeSnapshot } from './snapshot.ts'

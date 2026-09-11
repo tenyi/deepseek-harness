@@ -1,4 +1,4 @@
-/** Page-store join: directory × namespaces × credentials, with last-good rows on failure. */
+﻿/** Page-store join: directory × namespaces × credentials, with last-good rows on failure. */
 import { describe, expect, it } from 'vitest'
 import type { RpcResponse } from '@deepseek-ai/dsh-api-remotes/client'
 import { RemoteError } from '@deepseek-ai/dsh-client-test-runtime'

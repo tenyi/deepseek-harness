@@ -1,4 +1,4 @@
-/** Session-scoped durable image URL cache shared by Conversation targets. */
+﻿/** Session-scoped durable image URL cache shared by Conversation targets. */
 import type { Context } from '@deepseek-ai/cordis'
 import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
 import type { ISessions } from '@deepseek-ai/dsh-api-session-controller/client'

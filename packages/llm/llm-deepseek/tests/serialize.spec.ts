@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest'
+﻿import { describe, expect, it, vi } from 'vitest'
 import { AttachmentId, ImageVariantId } from '@deepseek-ai/dsh-attachment'
 import type { ImageAttachmentRef, ImageMediaType, RequestImageAttachment } from '@deepseek-ai/dsh-attachment'
 import { createUserMessage, ToolCallId, ReasoningEffortId, createMessage } from '@deepseek-ai/dsh-llm'
@@ -740,11 +740,11 @@ describe('review fixes: assistant content shapes', () => {
     // greeting did, live). Content must still be SET — a null here poisoned
     // the session log and bricked every later turn of that session.
     const wire = serializeMessages([createMessage({
-      role: 'assistant', content: [{ type: 'reasoning', text: '你好！有什么我可以帮你的吗？' }],
+      role: 'assistant', content: [{ type: 'reasoning', text: '你好！有什么我可以幫你的嗎？' }],
       source: { kind: 'plugin', plugin: 'test' },
     })])
     expect(wire).toEqual([{
-      role: 'assistant', content: '', reasoning_content: '你好！有什么我可以帮你的吗？',
+      role: 'assistant', content: '', reasoning_content: '你好！有什么我可以幫你的嗎？',
     }])
   })
 

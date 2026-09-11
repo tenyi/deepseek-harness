@@ -1,4 +1,4 @@
-/** Host-independent binding tests for the Win32 DACL and replacement helpers. */
+﻿/** Host-independent binding tests for the Win32 DACL and replacement helpers. */
 
 import { toNamespacedPath } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'

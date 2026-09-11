@@ -1,4 +1,4 @@
-/** Pure replay fold and strict decoder for durable goal changes. */
+﻿/** Pure replay fold and strict decoder for durable goal changes. */
 
 import type { MessageSource } from '@deepseek-ai/dsh-llm'
 import type { SessionEvent } from '@deepseek-ai/dsh-session'

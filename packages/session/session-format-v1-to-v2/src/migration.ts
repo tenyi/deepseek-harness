@@ -1,4 +1,4 @@
-import { AssistantStreamAccumulator } from '@deepseek-ai/dsh-llm'
+﻿import { AssistantStreamAccumulator } from '@deepseek-ai/dsh-llm'
 import type { AssistantStreamRecord } from '@deepseek-ai/dsh-llm'
 import {
   SessionFormatUnsupportedMigrationError,

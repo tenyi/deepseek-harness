@@ -1,5 +1,5 @@
----
-description: "叠加在 dsh-base 上公开发布的实验性 Agent Teams profile 层，提供 Team-scoped 协作工具并保留一次性 delegation。"
+﻿---
+description: "疊加在 dsh-base 上公開發布的實驗性 Agent Teams profile 層，提供 Team-scoped 協作工具并保留一次性 delegation。"
 kind: "package-bundle"
 ---
 
@@ -9,98 +9,98 @@ kind: "package-bundle"
 
 ## 概述
 
-`dsh-experimental-agent-team-profile` 是在 `@deepseek-ai/dsh-base` 之上启用 [Agent Teams](../agent-team/README.zh.md) 的公开实验性 profile 层。它的 patch 会插入 Team domain 与 Team-scoped 工具、禁用名称重叠的全局 continuable-child control，并保留普通的一次性 fresh 与 fork delegation 工具。必须将本包显式添加到已初始化的 profile；随附 profile 默认都不会启用它。
+`dsh-experimental-agent-team-profile` 是在 `@deepseek-ai/dsh-base` 之上啟用 [Agent Teams](../agent-team/README.zh.md) 的公開實驗性 profile 層。它的 patch 會插入 Team domain 與 Team-scoped 工具、禁用名稱重疊的全局 continuable-child control，并保留普通的一次性 fresh 與 fork delegation 工具。必須將本包顯式添加到已初始化的 profile；隨附 profile 默認都不會啟用它。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-### 安装到 profile
+### 安裝到 profile
 
-将本包添加到已初始化的 profile，然后运行一个要求 Lead 委派工作的任务：
+將本包添加到已初始化的 profile，然后運行一個要求 Lead 委派工作的任務：
 
 ```sh
 dsh plugin --profile headless add @deepseek-ai/dsh-experimental-agent-team-profile
 dsh --profile headless "Use Agent Teams to split this task between two teammates, wait, and summarize."
 ```
 
-profile 必须已经包含 `@deepseek-ai/dsh-base`，本层会使用其中的 Subagent 服务与提供方配置行。执行 `dsh plugin --profile <name> remove @deepseek-ai/dsh-experimental-agent-team-profile` 移除本包时，bundle 也会从 profile 的有序层列表中移除。
+profile 必須已經包含 `@deepseek-ai/dsh-base`，本層會使用其中的 Subagent 服務與提供方配置行。執行 `dsh plugin --profile <name> remove @deepseek-ai/dsh-experimental-agent-team-profile` 移除本包時，bundle 也會從 profile 的有序層列表中移除。
 
-### 获得的功能
+### 獲得的功能
 
-本层会添加 Agent Teams domain，以及 Team-scoped 创建、roster、消息、interrupt、等待与任务板工具。它会禁用工具名与 Team control 重叠的全局 continuable-child control 行，同时保留 `subagent` 与 `subagent_fork` 作为一次性 delegation 工具。
+本層會添加 Agent Teams domain，以及 Team-scoped 創建、roster、消息、interrupt、等待與任務板工具。它會禁用工具名與 Team control 重疊的全局 continuable-child control 行，同時保留 `subagent` 與 `subagent_fork` 作為一次性 delegation 工具。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本包的运行时内容是 [`cordis.patch.yml`](cordis.patch.yml)。在 `dsh-base` 之后应用时，patch 会禁用 `tool-subagent-control` 与 `tool-subagent-list-agents`，把 fresh 与 fork Subagent 行设置为 `one-shot`，并以显式 provider 和限制插入 Team 服务与工具行。
+本包的運行時內容是 [`cordis.patch.yml`](cordis.patch.yml)。在 `dsh-base` 之后應用時，patch 會禁用 `tool-subagent-control` 與 `tool-subagent-list-agents`，把 fresh 與 fork Subagent 行設置為 `one-shot`，并以顯式 provider 和限制插入 Team 服務與工具行。
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`cordis.patch.yml`](cordis.patch.yml) | 叠加在 `dsh-base` 之上的有序 patch |
-| [`src/index.ts`](src/index.ts) | 空模块入口；patch 是运行时内容 |
-| — | 不发布运行时不变式伴生入口；本包是静态 bundle，不持有可独立观察的运行时关系。 |
+| [`cordis.patch.yml`](cordis.patch.yml) | 疊加在 `dsh-base` 之上的有序 patch |
+| [`src/index.ts`](src/index.ts) | 空模塊入口；patch 是運行時內容 |
+| — | 不發布運行時不變式伴生入口；本包是靜態 bundle，不持有可獨立觀察的運行時關系。 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-- [实验性包](../README.zh.md)——孵化状态与发布规则。
-- [Agent Teams service](../agent-team/README.zh.md)——持久 roster、消息与任务板行为。
-- [Agent Teams 工具](../tool-agent-team/README.zh.md)——Team-scoped 模型工具表层。
-- [Base bundle](../../bundle/base/README.zh.md)——本 patch 扩展的 profile 层。
+- [實驗性包](../README.zh.md)——孵化狀態與發布規則。
+- [Agent Teams service](../agent-team/README.zh.md)——持久 roster、消息與任務板行為。
+- [Agent Teams 工具](../tool-agent-team/README.zh.md)——Team-scoped 模型工具表層。
+- [Base bundle](../../bundle/base/README.zh.md)——本 patch 擴展的 profile 層。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### Team 策略与工具
+### Team 策略與工具
 
-#### 模型会看到什么
+#### 模型會看到什么
 
-Team 策略与 schema 由 [`@deepseek-ai/dsh-experimental-tool-agent-team`](../tool-agent-team/README.zh.md) 所有。本 bundle 只改变 composition：Team-scoped `list_agents`、`send_message` 与 `interrupt_agent` 会替代已禁用的全局 continuable-child control。`subagent` 与 `subagent_fork` 仍作为一次性 delegation 工具可用，其子 agent 不会获得 continuable-child `report` 工具。
+Team 策略與 schema 由 [`@deepseek-ai/dsh-experimental-tool-agent-team`](../tool-agent-team/README.zh.md) 所有。本 bundle 只改變 composition：Team-scoped `list_agents`、`send_message` 與 `interrupt_agent` 會替代已禁用的全局 continuable-child control。`subagent` 與 `subagent_fork` 仍作為一次性 delegation 工具可用，其子 agent 不會獲得 continuable-child `report` 工具。
 
-#### Token 影响
+#### Token 影響
 
-本 bundle 会加入 `@deepseek-ai/dsh-experimental-tool-agent-team` 描述的 Team 策略与工具 schema；它自身不增加提示词文本。
+本 bundle 會加入 `@deepseek-ai/dsh-experimental-tool-agent-team` 描述的 Team 策略與工具 schema；它自身不增加提示詞文本。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-只要 bundle patch、Team identity 与配置的工具 schema 不变，本 bundle 的 composition 就保持前缀稳定。
+只要 bundle patch、Team identity 與配置的工具 schema 不變，本 bundle 的 composition 就保持前綴穩定。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
-- **仅显式启用**——本包公开发布，但随附 CLI、Web、SDK、ACP 与 Python profile 都不会启用它。
-- **共享 checkout**——所有 teammate 都观察同一个工作目录；本 bundle 不提供 worktree 隔离或文件系统锁。
-- **需要 base profile**——本 patch 依赖 `dsh-base` 提供的配置行 id 与 Subagent 提供方；它不是独立 profile。
+- **僅顯式啟用**——本包公開發布，但隨附 CLI、Web、SDK、ACP 與 Python profile 都不會啟用它。
+- **共享 checkout**——所有 teammate 都觀察同一個工作目錄；本 bundle 不提供 worktree 隔離或文件系統鎖。
+- **需要 base profile**——本 patch 依賴 `dsh-base` 提供的配置行 id 與 Subagent 提供方；它不是獨立 profile。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

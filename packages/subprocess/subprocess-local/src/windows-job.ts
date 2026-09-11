@@ -1,4 +1,4 @@
-/** Windows parent-side launch and ownership for the private Job runner. */
+﻿/** Windows parent-side launch and ownership for the private Job runner. */
 
 import { spawn } from 'node:child_process'
 import { closeSync, openSync } from 'node:fs'

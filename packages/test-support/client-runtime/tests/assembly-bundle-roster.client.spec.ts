@@ -1,4 +1,4 @@
-/** bundleRoster: the real web profile read from its bundles, and every reader decision on a scratch installation. */
+﻿/** bundleRoster: the real web profile read from its bundles, and every reader decision on a scratch installation. */
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'

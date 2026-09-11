@@ -1,5 +1,5 @@
----
-description: "Typert Remote 流量的端点具名 mock：一元应答与流脚本的表、活流控制、日志与 Connection 载体面，供测试作者在没有 Host 的情况下启动真实浏览器客户端。"
+﻿---
+description: "Typert Remote 流量的端點具名 mock：一元應答與流腳本的表、活流控制、日志與 Connection 載體面，供測試作者在沒有 Host 的情況下啟動真實瀏覽器客戶端。"
 kind: "package-library"
 ---
 
@@ -9,29 +9,29 @@ kind: "package-library"
 
 ## 概述
 
-`dsh-remote-mock` 让测试通过 `mock.remote.<namespace>.<method>`，使用原生 Vitest mock 方法配置 Host 响应。同一组函数应答直接调用与真实 Connection 流量；可复用的表提供默认响应，显式声明的流支持测试驱动的推帧与取消。缺少响应时调用失败，`assertNoUnmatched()` 会在收尾时再次报告。本包无需业务 Host 即可在 Node 或浏览器页面中运行，不导入 DOM、React 或 Node 模块，只从 `devDependencies` 消费。
+`dsh-remote-mock` 讓測試通過 `mock.remote.<namespace>.<method>`，使用原生 Vitest mock 方法配置 Host 響應。同一組函數應答直接調用與真實 Connection 流量；可復用的表提供默認響應，顯式聲明的流支持測試驅動的推幀與取消。缺少響應時調用失敗，`assertNoUnmatched()` 會在收尾時再次報告。本包無需業務 Host 即可在 Node 或瀏覽器頁面中運行，不導入 DOM、React 或 Node 模塊，只從 `devDependencies` 消費。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-### 何时使用
+### 何時使用
 
-当测试要启动与 `ctx.remote` 对话的真实客户端插件、并想按端点名脚本化 Host 侧时使用它：经 `__DSH_TRANSPORT__` 的整体 jsdom 测试，以及直接调用 `dispatch` / `open` 的单元测试。端点是 Gateway 的 wire 名（`session/page`、`settings/describe`）；`args` 是调用方的位置参数列表，末尾的 `AbortSignal` 已剥掉；值就是测试登记的东西，原样应答。唯一的声明是端点是一元（`unary`）还是流（`stream`）。
+當測試要啟動與 `ctx.remote` 對話的真實客戶端插件、并想按端點名腳本化 Host 側時使用它：經 `__DSH_TRANSPORT__` 的整體 jsdom 測試，以及直接調用 `dispatch` / `open` 的單元測試。端點是 Gateway 的 wire 名（`session/page`、`settings/describe`）；`args` 是調用方的位置參數列表，末尾的 `AbortSignal` 已剝掉；值就是測試登記的東西，原樣應答。唯一的聲明是端點是一元（`unary`）還是流（`stream`）。
 
 <a id="remote-proxy"></a>
 ### 使用 Remote Proxy
 
-`mock.remote` 无需方法清单或领域专属 Helper 即可提供每个命名空间和方法。每个访问过的端点使用缓存的原生 Vitest mock；`@vitest/spy.fn` 就是 `vi.fn` 背后的实现，也能在没有 Vitest runner 的浏览器页面中运行。同一个 mock 应答直接调用与 Connection 流量，因此返回值覆盖和调用断言观察的是客户端实际调用的函数：
+`mock.remote` 無需方法清單或領域專屬 Helper 即可提供每個命名空間和方法。每個訪問過的端點使用緩存的原生 Vitest mock；`@vitest/spy.fn` 就是 `vi.fn` 背后的實現，也能在沒有 Vitest runner 的瀏覽器頁面中運行。同一個 mock 應答直接調用與 Connection 流量，因此返回值覆蓋和調用斷言觀察的是客戶端實際調用的函數：
 
 ```text
 const mock = RemoteMock.create().load(remoteDefaultResponses)
@@ -43,15 +43,15 @@ mock.remote.settings.mutate.mockResolvedValueOnce(ok(updatedNamespace))
 expect(mock.remote.settings.mutate).toHaveBeenCalledWith('locale', operations, revision)
 ```
 
-使用 `mockResolvedValue` 设置持续响应，使用 `mockResolvedValueOnce` 或 `mockReturnValueOnce` 排队设置响应，使用 `mockImplementation` 按参数决定行为。原生队列按登记顺序消费响应，耗尽后由 mock 的当前实现应答；初始实现读取已登记的默认响应。`mockClear()` 保留响应与队列；`mockReset()` 清除覆盖并恢复初始实现，由它读取最新默认响应。若未配置默认响应，排队响应耗尽后仍会失败，包括可能同步抛错的直接调用。
+使用 `mockResolvedValue` 設置持續響應，使用 `mockResolvedValueOnce` 或 `mockReturnValueOnce` 排隊設置響應，使用 `mockImplementation` 按參數決定行為。原生隊列按登記順序消費響應，耗盡后由 mock 的當前實現應答；初始實現讀取已登記的默認響應。`mockClear()` 保留響應與隊列；`mockReset()` 清除覆蓋并恢復初始實現，由它讀取最新默認響應。若未配置默認響應，排隊響應耗盡后仍會失敗，包括可能同步拋錯的直接調用。
 
-只有显式 `stream()` 或响应表中的流声明才选择流方法；其余均使用一元 mock。访问方法不会凭空构造成功的业务结果。保存方法引用前先声明流模式：每个端点/模式拥有各自的 mock。命名空间和方法的 `then` 探测及 symbol 读取均无副作用。
+只有顯式 `stream()` 或響應表中的流聲明才選擇流方法；其余均使用一元 mock。訪問方法不會憑空構造成功的業務結果。保存方法引用前先聲明流模式：每個端點/模式擁有各自的 mock。命名空間和方法的 `then` 探測及 symbol 讀取均無副作用。
 
-`MockedRemote` 使用 Vitest 的深层 mock 类型转换，覆盖完整生成的 `TypertRemoteNamespaceMap`。非空映射保留命名空间与方法名、参数、返回值和原生 spy 类型。映射为空时只有这个测试 Proxy 变成 `any`，允许任意命名空间和方法；它不增补或弱化生产 Remote 声明。不需要复制方法签名、抑制可选生成模块错误或开启编译器级全局 Flag。交付 Remote/mock 改动前运行 `pnpm run typecheck`，生成并检查真实 Client 类型；声明缺失、陈旧或不完整时先重新构建。无构建测试通过或推断为 `any` 都不是严格类型证据。
+`MockedRemote` 使用 Vitest 的深層 mock 類型轉換，覆蓋完整生成的 `TypertRemoteNamespaceMap`。非空映射保留命名空間與方法名、參數、返回值和原生 spy 類型。映射為空時只有這個測試 Proxy 變成 `any`，允許任意命名空間和方法；它不增補或弱化生產 Remote 聲明。不需要復制方法簽名、抑制可選生成模塊錯誤或開啟編譯器級全局 Flag。交付 Remote/mock 改動前運行 `pnpm run typecheck`，生成并檢查真實 Client 類型；聲明缺失、陳舊或不完整時先重新構建。無構建測試通過或推斷為 `any` 都不是嚴格類型證據。
 
-### 登记默认响应
+### 登記默認響應
 
-`load(table)` 安装可复用的 `unary` 值或 handler、`stream` 脚本以及无脚本的 `streams` 声明。`unary(endpoint, value)` 与 `unary(endpoint, fn)` 登记单个默认响应；handler 接收调用方的位置参数，并使用现有请求类型。每个端点仅保存最新默认响应，包括显式 `undefined`；更新默认响应不会清除原生覆盖。`ok(value)` 构造 `{ ok: true, value }`；失败使用 `{ ok: false, error: { code, message, details } }`。有状态 handler、promise 与原生队列均由各测试独立持有：
+`load(table)` 安裝可復用的 `unary` 值或 handler、`stream` 腳本以及無腳本的 `streams` 聲明。`unary(endpoint, value)` 與 `unary(endpoint, fn)` 登記單個默認響應；handler 接收調用方的位置參數，并使用現有請求類型。每個端點僅保存最新默認響應，包括顯式 `undefined`；更新默認響應不會清除原生覆蓋。`ok(value)` 構造 `{ ok: true, value }`；失敗使用 `{ ok: false, error: { code, message, details } }`。有狀態 handler、promise 與原生隊列均由各測試獨立持有：
 
 ```text
 const initial = { writable: true, hasDocument: false, namespaces: [] }
@@ -61,9 +61,9 @@ const mock = RemoteMock.create().load({
 mock.remote.settings.describe.mockResolvedValueOnce(ok({ ...initial, hasDocument: true }))
 ```
 
-### 驾驭流
+### 駕馭流
 
-流脚本是一个接收打开时的 `args` 与 `StreamHandle`（`push`、`end`、`fail(error)`、`signal`）的函数；脚本返回后流保持打开，直到句柄结束或失败。`frames(items)` 构造吐完即结束的脚本，`openStream(initial)` 构造吐完后保持打开的脚本。`mock.streams` 控制客户端当前打开着的流，可按打开时的参数过滤；`opened(endpoint, count)` 在该端点被打开达到该次数时 resolve，`drained(endpoint)` 在每条匹配流的消费方都拉完了迄今推入的全部内容时 resolve——打开的流要其消费方再次等待，已定局的流要队列已空（拉完指从队列取走；只有在读循环内处理项的消费方才等于处理完）：
+流腳本是一個接收打開時的 `args` 與 `StreamHandle`（`push`、`end`、`fail(error)`、`signal`）的函數；腳本返回后流保持打開，直到句柄結束或失敗。`frames(items)` 構造吐完即結束的腳本，`openStream(initial)` 構造吐完后保持打開的腳本。`mock.streams` 控制客戶端當前打開著的流，可按打開時的參數過濾；`opened(endpoint, count)` 在該端點被打開達到該次數時 resolve，`drained(endpoint)` 在每條匹配流的消費方都拉完了迄今推入的全部內容時 resolve——打開的流要其消費方再次等待，已定局的流要隊列已空（拉完指從隊列取走；只有在讀循環內處理項的消費方才等于處理完）：
 
 ```text
 mock.stream('session/follow', openStream([snapshotFrame]))
@@ -73,74 +73,74 @@ mock.streams.fail('session/follow', new Error('gone'))
 await mock.streams.drained('session/follow')
 ```
 
-失败的流让消费方的下一次读取以给定的 `Error` reject。消费方取消（打开时的 signal 或 iterator 提前 `return()`）会中止 `StreamHandle.signal`、结束迭代而不抛错，并把该流记为 `cancelled`。
+失敗的流讓消費方的下一次讀取以給定的 `Error` reject。消費方取消（打開時的 signal 或 iterator 提前 `return()`）會中止 `StreamHandle.signal`、結束迭代而不拋錯，并把該流記為 `cancelled`。
 
-### 接上客户端
+### 接上客戶端
 
-`mock.rpc` 是 `ClientConnectionRpc` 面：装成 `globalThis.__DSH_TRANSPORT__ = { rpc: mock.rpc }`，生产的 `connection` 插件就用它替代 HTTP 调用方，每次 Remote 调用直达 `dispatch`、每条流直达 `open`，中间没有信封。payload 携带 `{ args }`——整机代理发数组、Gateway 自身端点发一个对象（到达时是一个位置参数）；signal 中止的调用以中止原因 reject。`RemoteMock.create()` 登记一条流 `$events`，用 `{ type: 'ready', clientId, host: { home } }`（host 来自 `RemoteMockOptions.host`，默认 `/home/mock`）应答 Gateway 客户端的打开并保持打开——这正是整机能达到 `connected` 的原因；测试可以像任何流一样覆盖或让它失败。
+`mock.rpc` 是 `ClientConnectionRpc` 面：裝成 `globalThis.__DSH_TRANSPORT__ = { rpc: mock.rpc }`，生產的 `connection` 插件就用它替代 HTTP 調用方，每次 Remote 調用直達 `dispatch`、每條流直達 `open`，中間沒有信封。payload 攜帶 `{ args }`——整機代理發數組、Gateway 自身端點發一個對象（到達時是一個位置參數）；signal 中止的調用以中止原因 reject。`RemoteMock.create()` 登記一條流 `$events`，用 `{ type: 'ready', clientId, host: { home } }`（host 來自 `RemoteMockOptions.host`，默認 `/home/mock`）應答 Gateway 客戶端的打開并保持打開——這正是整機能達到 `connected` 的原因；測試可以像任何流一樣覆蓋或讓它失敗。
 
-### 观察与断言
+### 觀察與斷言
 
-`mock.log.calls(endpoint?)` 列出经 `dispatch` 或 `rpc.call` 的一元调用（`args`、`seq`、实时 `state` 为 `pending` / `answered` / `failed`，以及作为 `result` 的应答值或抛出的错误），`streams(endpoint?)` 列出脚本流的打开记录及其实时 `state` 与 `pushed` 计数，`requests(endpoint?)` 按顺序列出调用与打开的首个位置参数（不带端点时去掉 Gateway 自己带 `$` 前缀的端点），`unmatched()` 列出没找到规则的请求。原生 `.mock.calls` 还包含直接 Proxy 调用；载体的流 mock 会收到末尾的取消信号。`assertNoUnmatched()` 在收尾时报告漏配。`modeOf(endpoint)` 报告显式登记；`endpoints()` 还包含访问过的 Proxy 方法，使装配能够提供它们的命名空间。
+`mock.log.calls(endpoint?)` 列出經 `dispatch` 或 `rpc.call` 的一元調用（`args`、`seq`、實時 `state` 為 `pending` / `answered` / `failed`，以及作為 `result` 的應答值或拋出的錯誤），`streams(endpoint?)` 列出腳本流的打開記錄及其實時 `state` 與 `pushed` 計數，`requests(endpoint?)` 按順序列出調用與打開的首個位置參數（不帶端點時去掉 Gateway 自己帶 `$` 前綴的端點），`unmatched()` 列出沒找到規則的請求。原生 `.mock.calls` 還包含直接 Proxy 調用；載體的流 mock 會收到末尾的取消信號。`assertNoUnmatched()` 在收尾時報告漏配。`modeOf(endpoint)` 報告顯式登記；`endpoints()` 還包含訪問過的 Proxy 方法，使裝配能夠提供它們的命名空間。
 
-### 可能出什么问题
+### 可能出什么問題
 
-- **请求没有规则**——`dispatch` reject、`open` 抛出 `remote-mock: no rule for <endpoint>; registered: …`，日志记下这次漏配；请登记该端点。
-- **payload 不是 `{ args: unknown[] | object }`**——`rpc.call` reject、`rpc.open` 抛 `TypeError`；整机代理发数组形式、Gateway 自身端点发对象形式，所以问题出在手写调用。
-- **同一条流上有第二个并发读取**——该读取 reject；Gateway 顺序读取流，因此这指向测试侧误用。
+- **請求沒有規則**——`dispatch` reject、`open` 拋出 `remote-mock: no rule for <endpoint>; registered: …`，日志記下這次漏配；請登記該端點。
+- **payload 不是 `{ args: unknown[] | object }`**——`rpc.call` reject、`rpc.open` 拋 `TypeError`；整機代理發數組形式、Gateway 自身端點發對象形式，所以問題出在手寫調用。
+- **同一條流上有第二個并發讀取**——該讀取 reject；Gateway 順序讀取流，因此這指向測試側誤用。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-### 设计
+### 設計
 
-`dispatch` 与 `open` 接收端点与位置参数；`rpc` 通过 Connection 的已解码载体接口暴露同一个核心。每个 mock 独立持有原生函数及排队覆盖；共享表提供默认响应，不复制 handler 或应答对象。每条脚本流拥有自己的队列、唯一挂起读取和日志条目；`end`、`fail`、消费方取消三者中最先发生者定局。
+`dispatch` 與 `open` 接收端點與位置參數；`rpc` 通過 Connection 的已解碼載體接口暴露同一個核心。每個 mock 獨立持有原生函數及排隊覆蓋；共享表提供默認響應，不復制 handler 或應答對象。每條腳本流擁有自己的隊列、唯一掛起讀取和日志條目；`end`、`fail`、消費方取消三者中最先發生者定局。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 公开面转出 |
-| [`src/remote-mock.ts`](src/remote-mock.ts) | `RemoteMock`：默认响应、原生 mock、Connection 分发、受控流与缺失响应检查；`ok` |
-| [`src/remote-proxy.ts`](src/remote-proxy.ts) | 命名空间／方法查找与生成映射的 mock 类型 |
-| [`src/streams.ts`](src/streams.ts) | `frames` / `openStream` 脚本与 `MockStream`（句柄 + `AsyncIterable`） |
-| [`src/log.ts`](src/log.ts) | 带共享 `seq` 计数器的日志 |
-| — | 不发布运行时不变量伴生件；本测试支持库不拥有任何生产事件流或可变进程状态，其行为由本包测试覆盖。 |
+| [`src/index.ts`](src/index.ts) | 公開面轉出 |
+| [`src/remote-mock.ts`](src/remote-mock.ts) | `RemoteMock`：默認響應、原生 mock、Connection 分發、受控流與缺失響應檢查；`ok` |
+| [`src/remote-proxy.ts`](src/remote-proxy.ts) | 命名空間／方法查找與生成映射的 mock 類型 |
+| [`src/streams.ts`](src/streams.ts) | `frames` / `openStream` 腳本與 `MockStream`（句柄 + `AsyncIterable`） |
+| [`src/log.ts`](src/log.ts) | 帶共享 `seq` 計數器的日志 |
+| — | 不發布運行時不變量伴生件；本測試支持庫不擁有任何生產事件流或可變進程狀態，其行為由本包測試覆蓋。 |
 
 </details>
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无；本包是浏览器侧测试基础设施，无一物到达模型请求。
+無；本包是瀏覽器側測試基礎設施，無一物到達模型請求。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；本包既不组装也不发送提供方请求。
+無；本包既不組裝也不發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
-- **仅进程内载体**——`rpc` 经 `__DSH_TRANSPORT__.rpc` 服务同一 realm 的客户端；不提供给浏览器车道测试用的 HTTP 或 WebSocket 载体。
-- **值按引用传递**——应答与流项都未经序列化就到达客户端，真实线路会拒绝的非 JSON 值在这里原样通过。
-- **不校验值**——一元应答必须是调用方读取的结果（`{ ok, value }` 或 `{ ok: false, error }`）；mock 原样传递它，不检查这些字段。
-- **不做 payload 匹配**——规则只按端点匹配；在 handler 内按业务参数判别。
-- **原生流覆盖自行管理 iterable**——覆盖返回自有 iterable 时，不参与脚本流日志、`requests`、`opened`、`drained` 以及 `push` / `end` / `fail`；调用方也负责取消。原生调用断言仍然有效。需要这些控制能力的场景应使用已登记的流脚本。
+- **僅進程內載體**——`rpc` 經 `__DSH_TRANSPORT__.rpc` 服務同一 realm 的客戶端；不提供給瀏覽器車道測試用的 HTTP 或 WebSocket 載體。
+- **值按引用傳遞**——應答與流項都未經序列化就到達客戶端，真實線路會拒絕的非 JSON 值在這里原樣通過。
+- **不校驗值**——一元應答必須是調用方讀取的結果（`{ ok, value }` 或 `{ ok: false, error }`）；mock 原樣傳遞它，不檢查這些字段。
+- **不做 payload 匹配**——規則只按端點匹配；在 handler 內按業務參數判別。
+- **原生流覆蓋自行管理 iterable**——覆蓋返回自有 iterable 時，不參與腳本流日志、`requests`、`opened`、`drained` 以及 `push` / `end` / `fail`；調用方也負責取消。原生調用斷言仍然有效。需要這些控制能力的場景應使用已登記的流腳本。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

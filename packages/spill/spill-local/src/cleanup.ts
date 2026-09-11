@@ -1,4 +1,4 @@
-/** Startup cleanup mechanics for local spill roots. */
+﻿/** Startup cleanup mechanics for local spill roots. */
 import { lstat, readdir, realpath, rmdir, unlink } from 'node:fs/promises'
 import type { Stats } from 'node:fs'
 import { dirname, join } from 'node:path'

@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * The two conversation-adjacent surfaces: the new-session chip naming the
  * next session's preset, and the session header's read-only label. The split
@@ -23,14 +23,14 @@ afterEach(cleanup)
 const ROSTER_READY: AgentPresetSettingsState = {
   status: 'ready',
   error: null,
-  options: [{ id: 'standard', trust: 'system', name: '标准模式' }, { id: 'mine', trust: 'user' }],
+  options: [{ id: 'standard', trust: 'system', name: '標準模式' }, { id: 'mine', trust: 'user' }],
 }
 
 const SEAT_READY: AgentPresetSeatState = {
   showPicker: true,
   current: 'standard',
   options: [
-    { id: 'standard', trust: 'system', name: '标准模式', description: '完整的编码 agent。' },
+    { id: 'standard', trust: 'system', name: '標準模式', description: '完整的編碼 agent。' },
     { id: 'mine', trust: 'user' },
   ],
   busy: false,
@@ -244,7 +244,7 @@ describe('the chip introduce cue', () => {
     vi.useFakeTimers()
     renderSeat({
       current: 'creator',
-      options: [{ id: 'creator', trust: 'user', name: '创造模式' }],
+      options: [{ id: 'creator', trust: 'user', name: '創造模式' }],
       introduce: true,
     })
 

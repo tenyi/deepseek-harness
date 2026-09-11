@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Integration: the real fetch backend (`dsh-web-fetch-http`) + a real search provider
  * (`dsh-web-search-exa`) + the real seam (`dsh-web`) + the model tool (`dsh-tool-web`) + the
  * tool-call timeout policy (`dsh-tool-call-timeout-policy`), exercised through `ctx.tools.execute()` —

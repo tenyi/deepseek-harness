@@ -1,5 +1,5 @@
----
-description: "仅用于开发环境的浏览器客户端插件热重载：重建插件 bundle 后原地替换运行中的插件，供开发者迭代 web GUI。"
+﻿---
+description: "僅用于開發環境的瀏覽器客戶端插件熱重載：重建插件 bundle 后原地替換運行中的插件，供開發者迭代 web GUI。"
 kind: "package-reference"
 ---
 
@@ -9,120 +9,120 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-client-hmr` 会在浏览器客户端插件的 bundle 重建后原地重载该插件，让编辑插件源码的开发者无需整页刷新即可看到变更。如果没有重建 watcher，整条链路保持空闲：只有 `pnpm run dev:web` 之类的进程重写客户端 bundle 时才会产生它所响应的重建。每次重载只替换一个插件并携带全新组件状态，而数据层（连接、运行时与 Session 对象）保持不变。这里的一切都是浏览器侧的开发机制；模型永远看不到它。
+`dsh-client-hmr` 會在瀏覽器客戶端插件的 bundle 重建后原地重載該插件，讓編輯插件源碼的開發者無需整頁刷新即可看到變更。如果沒有重建 watcher，整條鏈路保持空閑：只有 `pnpm run dev:web` 之類的進程重寫客戶端 bundle 時才會產生它所響應的重建。每次重載只替換一個插件并攜帶全新組件狀態，而數據層（連接、運行時與 Session 對象）保持不變。這里的一切都是瀏覽器側的開發機制；模型永遠看不到它。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-为正在编辑的插件启用重建 watcher，然后保存：浏览器会从 dev server 拾取重建后的 bundle，并在不重载页面的情况下替换该插件。在客户端开发期间使用它；在生产构建中没有任何可观察行为，因为没有 watcher 会重写 bundle。
+為正在編輯的插件啟用重建 watcher，然后保存：瀏覽器會從 dev server 拾取重建后的 bundle，并在不重載頁面的情況下替換該插件。在客戶端開發期間使用它；在生產構建中沒有任何可觀察行為，因為沒有 watcher 會重寫 bundle。
 
-### 启动重载链路
+### 啟動重載鏈路
 
-对同一个宿主运行 `pnpm run dev:web`（或任何写入插件 `lib/client.js` 的 tsdown watch 进程）；重建后的插件随后会被自动逐个替换进运行中的浏览器。
+對同一個宿主運行 `pnpm run dev:web`（或任何寫入插件 `lib/client.js` 的 tsdown watch 進程）；重建后的插件隨后會被自動逐個替換進運行中的瀏覽器。
 
-### 一次重载做什么
+### 一次重載做什么
 
-每次重载都会重新执行插件 bundle，并用全新状态重新挂载插件。依赖被重载插件的插件会随之自动重载。失败的重载会以可见方式报告，并在下一次重建时从头重试。
+每次重載都會重新執行插件 bundle，并用全新狀態重新掛載插件。依賴被重載插件的插件會隨之自動重載。失敗的重載會以可見方式報告，并在下一次重建時從頭重試。
 
 ### 配置
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `pollIntervalMs` | `500` | bundle stat 轮询间隔，单位为毫秒 |
+| `pollIntervalMs` | `500` | bundle stat 輪詢間隔，單位為毫秒 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-client-hmr)是所有受支持字段及其 JSDoc 的完整真源。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-client-hmr)是所有受支持字段及其 JSDoc 的完整真源。
 
-### 观察成功
+### 觀察成功
 
-成功的替换会立即显示编辑后的 UI，无需页面重载，且插件在替换后继续工作。请记住权衡：被重载插件内的 React 状态会丢失，而会话、工作区与连接状态会保留。
+成功的替換會立即顯示編輯后的 UI，無需頁面重載，且插件在替換后繼續工作。請記住權衡：被重載插件內的 React 狀態會丟失，而會話、工作區與連接狀態會保留。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释重载链路的构建方式；可观察行为已在[使用本包](#use-this-package)中说明。
+本節解釋重載鏈路的構建方式；可觀察行為已在[使用本包](#use-this-package)中說明。
 
-### 设计理念
+### 設計理念
 
-链路分为两半，共用一份约定：node 半侧负责 bundle 检测与通知，浏览器半侧负责替换。node 半侧运行一个 interval，从 module host 读取文件前的基线开始 stat 轮询每个图 bundle。未变化的启动 row 无需读取内容或求 hash 即可开始监视；发生变化的 row，或产物恢复后的 dirty row，会进入 `rebuilt()`，且只广播真实 revision 变更。`rebuilt()` 会把当前 source map 与已变化的 bundle 一起读取；仅写入 map 不会重载可执行代码。node 半侧还提供 `/plugins/events`，一个广播 `graph` 与 `rebuilt` 帧的 SSE（Server-Sent Events）通道。
+鏈路分為兩半，共用一份約定：node 半側負責 bundle 檢測與通知，瀏覽器半側負責替換。node 半側運行一個 interval，從 module host 讀取文件前的基線開始 stat 輪詢每個圖 bundle。未變化的啟動 row 無需讀取內容或求 hash 即可開始監視；發生變化的 row，或產物恢復后的 dirty row，會進入 `rebuilt()`，且只廣播真實 revision 變更。`rebuilt()` 會把當前 source map 與已變化的 bundle 一起讀取；僅寫入 map 不會重載可執行代碼。node 半側還提供 `/plugins/events`，一個廣播 `graph` 與 `rebuilt` 幀的 SSE（Server-Sent Events）通道。
 
-### 浏览器侧替换
+### 瀏覽器側替換
 
-收到 `rebuilt` 帧后，帧内 revision 会让 `invalidate` 选择该插件不可变的单资源 combo URL，而不是初始多资源 URL。`prefetch` 在旧 fiber 仍在服务时加载并注册新 factory。其余顺序是：先从注册表删除，再拆卸（在 fiber 的 disposer 发出 `internal/plugin` 之前执行 `registry.delete`，否则 vendored Loader 会把该 entry 标为禁用）、等待旧 fiber 卸载完成、删除 `entry.fiber`、移除自身拥有的 `<style data-plugin>` 标签，然后 `entry.refresh()` 重新导入并挂载，`fiber.await()` 直接把启动失败重新抛出。替换之所以安全，是因为在惰性 CJS 模型下执行只是注册：每个模块副作用都位于 factory 闭包中，在物化时运行。
+收到 `rebuilt` 幀后，幀內 revision 會讓 `invalidate` 選擇該插件不可變的單資源 combo URL，而不是初始多資源 URL。`prefetch` 在舊 fiber 仍在服務時加載并注冊新 factory。其余順序是：先從注冊表刪除，再拆卸（在 fiber 的 disposer 發出 `internal/plugin` 之前執行 `registry.delete`，否則 vendored Loader 會把該 entry 標為禁用）、等待舊 fiber 卸載完成、刪除 `entry.fiber`、移除自身擁有的 `<style data-plugin>` 標簽，然后 `entry.refresh()` 重新導入并掛載，`fiber.await()` 直接把啟動失敗重新拋出。替換之所以安全，是因為在惰性 CJS 模型下執行只是注冊：每個模塊副作用都位于 factory 閉包中，在物化時運行。
 
-### 级联与自重载
+### 級聯與自重載
 
-fiber 的激活 epoch 会串联其服务提供方的 uid，因此替换提供方 fiber 会通过 Cordis 自身级联重载所有依赖方，无需 HMR（热模块替换）侧维护任何簿记信息。本插件本身也是一个图 entry，因此 `rebuilt` 帧可能点名它；进行中的重载在旧 bundle 的闭包中继续运行，新 bundle 的 apply 会打开全新通道。
+fiber 的激活 epoch 會串聯其服務提供方的 uid，因此替換提供方 fiber 會通過 Cordis 自身級聯重載所有依賴方，無需 HMR（熱模塊替換）側維護任何簿記信息。本插件本身也是一個圖 entry，因此 `rebuilt` 幀可能點名它；進行中的重載在舊 bundle 的閉包中繼續運行，新 bundle 的 apply 會打開全新通道。
 
-### 失败策略
+### 失敗策略
 
-不回滚：导入失败会让 entry 失去 fiber（下一个 `rebuilt` 帧从头重试），apply 失败则会在外壳的状态投影中留下 FAILED fiber。两者都会输出醒目的错误日志。
+不回滾：導入失敗會讓 entry 失去 fiber（下一個 `rebuilt` 幀從頭重試），apply 失敗則會在外殼的狀態投影中留下 FAILED fiber。兩者都會輸出醒目的錯誤日志。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | node 半侧：bundle stat 轮询、`rebuilt` 上报、`/plugins/events` SSE 通道 |
-| [`src/client/index.ts`](src/client/index.ts) | 浏览器半侧：SSE 订阅、串行重载队列、fiber 替换 |
-| [`src/events.ts`](src/events.ts) | 共享帧类型（`graph` / `rebuilt`）与端点常量 |
+| [`src/index.ts`](src/index.ts) | node 半側：bundle stat 輪詢、`rebuilt` 上報、`/plugins/events` SSE 通道 |
+| [`src/client/index.ts`](src/client/index.ts) | 瀏覽器半側：SSE 訂閱、串行重載隊列、fiber 替換 |
+| [`src/events.ts`](src/events.ts) | 共享幀類型（`graph` / `rebuilt`）與端點常量 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当重载约定不够用时阅读以下页面：提供 bundle 的模块系统、启动它们的外壳，以及 external 背后的模块图规则。
+當重載約定不夠用時閱讀以下頁面：提供 bundle 的模塊系統、啟動它們的外殼，以及 external 背后的模塊圖規則。
 
-- [客户端模块系统](../modules/README.zh.md)——本驱动器驱动的惰性 CJS 模块表与 `invalidate`/`prefetch` 钩子。
-- [Web 启动内核](../web/README.zh.md)——启动插件树并展示 entry 状态的外壳。
-- [客户端组地图](../README.zh.md)——本包重载的浏览器半侧。
-- [生成配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-client-hmr)——每个受支持配置字段及其源声明。
+- [客戶端模塊系統](../modules/README.zh.md)——本驅動器驅動的惰性 CJS 模塊表與 `invalidate`/`prefetch` 鉤子。
+- [Web 啟動內核](../web/README.zh.md)——啟動插件樹并展示 entry 狀態的外殼。
+- [客戶端組地圖](../README.zh.md)——本包重載的瀏覽器半側。
+- [生成配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-client-hmr)——每個受支持配置字段及其源聲明。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无。重载驱动器属于浏览器侧 UI 插件层，不注册任何面向模型的内容。
+無。重載驅動器屬于瀏覽器側 UI 插件層，不注冊任何面向模型的內容。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；该包既不组装也不发送提供方请求。
+無；該包既不組裝也不發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明重载驱动器不会保留或恢复什么。它们是当前包约束，不是任务积压。
+這些限制說明重載驅動器不會保留或恢復什么。它們是當前包約束，不是任務積壓。
 
-- **重载有意保持粗粒度**——全新 fiber 与全新组件；被重载插件内的 React 状态会丢失，而数据层（连接 fiber、运行时 fiber、Session 对象）不受影响。react-refresh 级状态保留与重新执行 bundle 冲突，因此有意排除。
-- **失败时不回滚**——失败的重载会让该 entry 保持 FAILED 并在 loader 状态投影中可见；系统不会自动恢复先前 bundle。
-- **重建帧不会替换启动图**——每个帧都携带单资源 combo 重载所需的插件产物 revision；页面重载时才接收重新组合的启动图。
+- **重載有意保持粗粒度**——全新 fiber 與全新組件；被重載插件內的 React 狀態會丟失，而數據層（連接 fiber、運行時 fiber、Session 對象）不受影響。react-refresh 級狀態保留與重新執行 bundle 沖突，因此有意排除。
+- **失敗時不回滾**——失敗的重載會讓該 entry 保持 FAILED 并在 loader 狀態投影中可見；系統不會自動恢復先前 bundle。
+- **重建幀不會替換啟動圖**——每個幀都攜帶單資源 combo 重載所需的插件產物 revision；頁面重載時才接收重新組合的啟動圖。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

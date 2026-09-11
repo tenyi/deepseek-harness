@@ -1,4 +1,4 @@
----
+﻿---
 description: "Local-workspace @file completion provider for users and maintainers enabling, sizing, or debugging ctx.fileReferences discovery."
 kind: "package-reference"
 ---

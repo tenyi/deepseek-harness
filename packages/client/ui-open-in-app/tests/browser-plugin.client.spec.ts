@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser-half lifecycle over the real SlotRegistry: the dictionary and
  * header-slot registrations with fiber teardown proving removal (HMR safety)
  * and the injected controller face.

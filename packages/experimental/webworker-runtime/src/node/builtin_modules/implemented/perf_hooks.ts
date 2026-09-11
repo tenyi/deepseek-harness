@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node:perf_hooks`: the worker's own high-resolution clock.
  */
 import { notImplementedFail } from '../../notImplementedFail.ts'

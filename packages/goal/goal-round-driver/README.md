@@ -1,4 +1,4 @@
----
+﻿---
 description: "The same-session continuation driver for users and maintainers choosing, composing, or debugging automatic goal rounds."
 kind: "package-reference"
 ---

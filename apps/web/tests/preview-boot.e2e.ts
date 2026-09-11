@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Preview acceptance: the browser-only worker deployment boots the real Cordis
  * tree out of the packed VFS image and reaches an interactive page.
  *
@@ -461,7 +461,7 @@ async function bootEmptyPreview(origin: string, browser: Browser): Promise<void>
   })
   try {
     await page.goto(`${origin}/preview.html?preview-fixture=none`, { waitUntil: 'domcontentloaded' })
-    expect(await page.getByRole('heading', { name: '选择 Preview 数据源' }).count()).toBe(0)
+    expect(await page.getByRole('heading', { name: '選擇 Preview 數據源' }).count()).toBe(0)
     const bootLine = await within(
       treeActive,
       BOOT_TIMEOUT_MS,

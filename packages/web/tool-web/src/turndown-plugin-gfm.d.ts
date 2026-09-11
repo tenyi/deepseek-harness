@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Ambient module declaration for `@joplin/turndown-plugin-gfm`, which ships no
  * types and has no DefinitelyTyped package. Only the composite `gfm` plugin is
  * declared; the package's individual plugins (`tables`, `strikethrough`, …)

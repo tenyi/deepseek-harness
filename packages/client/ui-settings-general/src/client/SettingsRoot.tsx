@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Settings shell root: the sidebar-foot trigger row plus the centered modal
  * panel (figma 501:29947, 1080x700) with the section nav rail. The shell is
  * a pure composition face — slot-owned text (trigger label, panel title,

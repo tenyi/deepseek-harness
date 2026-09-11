@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { parsePluginsEventFrame } from '../src/events.ts'
 
 describe('plugin event wire parser', () => {

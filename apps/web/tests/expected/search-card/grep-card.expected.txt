@@ -1,4 +1,4 @@
-kind=matches
+﻿kind=matches
 summary=Showing 9 of 42 matches · 3 files
 file=packages/client/ui-primitives/src/SearchBlock.tsx3
 file=packages/client/ui-tool/src/client/tool/toolviews/search-row.tsx4

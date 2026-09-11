@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `@earendil-works/pi-ai` stub, including its `/providers/all` and `/api/*.lazy`
  * subpaths. The package is Node-only (no `require`/`browser` conditions, Node
  * builtins plus five cloud SDKs in its transport layer) and `llm-pi-ai` imports it

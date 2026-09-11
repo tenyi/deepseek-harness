@@ -1,4 +1,4 @@
-/**
+﻿/**
  * On-disk format helpers for the JSONL session-persistence backend: path
  * sanitization (a {@link SessionId} is an unvalidated branded string, so it
  * MUST be encoded before use in a path — no traversal, no collision), the

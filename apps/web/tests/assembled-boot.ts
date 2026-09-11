@@ -1,4 +1,4 @@
-// Shared scaffolding for the assembled-jsdom snapshots: the real built
+﻿// Shared scaffolding for the assembled-jsdom snapshots: the real built
 // workspace `lib/client.js` artifacts booted through AppWebEntry's
 // ModuleLoader path (loadBundle) against the keyless fixture Connection RPC
 // transport. Every file that mounts this graph needs the same boot entry list,

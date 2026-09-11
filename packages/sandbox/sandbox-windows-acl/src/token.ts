@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Restricted-token construction: open the current process token, extract its
  * logon SID, build the well-known SIDs, and call CreateRestrictedToken with
  * the POC's restricting-SID allowlist. Every API call is checked; any failure

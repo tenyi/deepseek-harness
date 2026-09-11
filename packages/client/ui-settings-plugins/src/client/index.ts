@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Plugins settings surface, browser half — one section whose feature-owned
  * tabs include configurable Host plugin cards and read-only inventory.
  *

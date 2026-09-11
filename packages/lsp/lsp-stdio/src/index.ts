@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Generic stdio language-server backend for `ctx.lsp`. One plugin instance configures a named table
  * of server commands and registers one isolated provider for each entry. Every provider lazily
  * single-flights one server process per canonical workspace target, serves transient-open queries

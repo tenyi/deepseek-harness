@@ -1,4 +1,4 @@
-/**
+﻿/**
  * PTC mode `run_code` transport. Programs call the registry's agent-visible
  * tools through nested executions scheduled under the native concurrency
  * contract; each sub-dispatch is logged for reconstruction, while only the

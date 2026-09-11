@@ -1,4 +1,4 @@
-/** Isolated verification for a staged or competing current JSONL generation. */
+﻿/** Isolated verification for a staged or competing current JSONL generation. */
 
 import { Worker } from 'node:worker_threads'
 import type { WorkerOptions } from 'node:worker_threads'

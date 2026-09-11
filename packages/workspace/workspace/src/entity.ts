@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Package-private workspace entity: the single {@link Workspace}
  * implementation. Holds a record snapshot that is swapped in place after each
  * durable mutation; every write funnels through the private `mutate` so

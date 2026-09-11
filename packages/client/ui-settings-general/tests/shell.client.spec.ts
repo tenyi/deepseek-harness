@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * Settings shell registration inside the assembled web client: the shell
  * occupies the `sidebar.settings` hole ui-sidebar declares, its ledger

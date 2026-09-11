@@ -1,4 +1,4 @@
----
+﻿---
 description: "The model-facing ralph tool: a fixed foreground fresh-agent loop toward one immutable objective, for users and maintainers choosing or configuring fresh-agent iteration."
 kind: "package-reference"
 ---

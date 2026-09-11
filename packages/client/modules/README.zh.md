@@ -1,5 +1,5 @@
----
-description: "面向用户与维护者的 web GUI 客户端模块系统说明：宿主侧组合启动图并提供插件 bundle，浏览器侧按需加载，用于组合或排查客户端插件。"
+﻿---
+description: "面向用戶與維護者的 web GUI 客戶端模塊系統說明：宿主側組合啟動圖并提供插件 bundle，瀏覽器側按需加載，用于組合或排查客戶端插件。"
 kind: "package-reference"
 ---
 
@@ -9,122 +9,122 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-client-modules` 把插件包的 `dsh.client` 声明变成可加载的浏览器 bundle：宿主半侧扫描已启用的 Loader 条目并组合启动图，可用的 Web 载体通过 `/plugins` 提供每个 bundle，由 shell 持有的载体则通过 `fetchBundle()` 分派完全相同的 bundle 响应。浏览器半侧按需惰性加载这些 bundle。插件 bundle 惰性执行——运行 bundle 只注册 factory，模块副作用在物化时运行——因此插件首次被使用之前什么都不会运行。这里的一切都是浏览器内核机制；模型永远看不到它。
+`dsh-client-modules` 把插件包的 `dsh.client` 聲明變成可加載的瀏覽器 bundle：宿主半側掃描已啟用的 Loader 條目并組合啟動圖，可用的 Web 載體通過 `/plugins` 提供每個 bundle，由 shell 持有的載體則通過 `fetchBundle()` 分派完全相同的 bundle 響應。瀏覽器半側按需惰性加載這些 bundle。插件 bundle 惰性執行——運行 bundle 只注冊 factory，模塊副作用在物化時運行——因此插件首次被使用之前什么都不會運行。這里的一切都是瀏覽器內核機制；模型永遠看不到它。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-声明类型使用 [`DshClientManifest`](../../util/package-manifest/README.zh.md)。Client-modules 校验 JSON，并持有归一化后的启动图。
+聲明類型使用 [`DshClientManifest`](../../util/package-manifest/README.zh.md)。Client-modules 校驗 JSON，并持有歸一化后的啟動圖。
 
-组合或构建浏览器客户端插件时使用它：本包把包的 `dsh.client` 声明变成可加载的浏览器 bundle，无需任何逐插件接线。它随 web 组合激活；外壳在任何插件运行前启动它。
+組合或構建瀏覽器客戶端插件時使用它：本包把包的 `dsh.client` 聲明變成可加載的瀏覽器 bundle，無需任何逐插件接線。它隨 web 組合激活；外殼在任何插件運行前啟動它。
 
-### 声明客户端插件
+### 聲明客戶端插件
 
-浏览器插件包在其 `package.json` 中以 `platform: 'web'` 声明 `dsh.client`，导出 `./client` bundle，并在 `dsh.client.external` 下列出任何基座之外的模块请求。宿主半侧把每份声明变成 `/plugins` 下提供的 bundle，并让动态提供方先于其消费方加载。
+瀏覽器插件包在其 `package.json` 中以 `platform: 'web'` 聲明 `dsh.client`，導出 `./client` bundle，并在 `dsh.client.external` 下列出任何基座之外的模塊請求。宿主半側把每份聲明變成 `/plugins` 下提供的 bundle，并讓動態提供方先于其消費方加載。
 
-### 浏览器加载什么
+### 瀏覽器加載什么
 
-application combo 脚本在启动时仅注册一次插件 factory；模块主体仍保持惰性，只在首次 import 或物化时运行。共享 combo URL 的 row 共用一个进行中的脚本任务。HMR（热模块替换）会让一条发生变化的 row 改用带 revision 的单资源 combo URL。`<id>/client` 与裸 id 解析到同一组导出，因为插件 bundle 就是其包的客户端半侧。
+application combo 腳本在啟動時僅注冊一次插件 factory；模塊主體仍保持惰性，只在首次 import 或物化時運行。共享 combo URL 的 row 共用一個進行中的腳本任務。HMR（熱模塊替換）會讓一條發生變化的 row 改用帶 revision 的單資源 combo URL。`<id>/client` 與裸 id 解析到同一組導出，因為插件 bundle 就是其包的客戶端半側。
 
-### 共享模块
+### 共享模塊
 
-外壳初始化一张冻结的模块表（`PLATFORM_MODULES`：React、Cordis 与静态 UI 库）；每个动态 bundle 都精确针对该基座解析其 external。`dsh.client.external` 只添加基座之外的精确请求；系统会将每个请求解析到其指定的动态包 row 或完全匹配的静态表键。纯类型 import 会被擦除，不产生请求。组合阶段会拒绝畸形请求、缺失提供方、自请求与同步请求环。
+外殼初始化一張凍結的模塊表（`PLATFORM_MODULES`：React、Cordis 與靜態 UI 庫）；每個動態 bundle 都精確針對該基座解析其 external。`dsh.client.external` 只添加基座之外的精確請求；系統會將每個請求解析到其指定的動態包 row 或完全匹配的靜態表鍵。純類型 import 會被擦除，不產生請求。組合階段會拒絕畸形請求、缺失提供方、自請求與同步請求環。
 
-### 构建要求
+### 構建要求
 
-宿主提供的是已构建的客户端 bundle，因此启动前 `pnpm run build` 必须已产出每个 `lib/client.js`；缺失 bundle 会明确导致激活失败，并给出一条构建说明及包／路径列表。源码启动会把宿主侧导入映射到 TypeScript 源码，但仍消费这一构建后的客户端导出。本包自身不接受任何插件配置。
+宿主提供的是已構建的客戶端 bundle，因此啟動前 `pnpm run build` 必須已產出每個 `lib/client.js`；缺失 bundle 會明確導致激活失敗，并給出一條構建說明及包／路徑列表。源碼啟動會把宿主側導入映射到 TypeScript 源碼，但仍消費這一構建后的客戶端導出。本包自身不接受任何插件配置。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释模块系统的构建方式；可观察行为已在[使用本包](#use-this-package)中说明。
+本節解釋模塊系統的構建方式；可觀察行為已在[使用本包](#use-this-package)中說明。
 
-### 设计理念
+### 設計理念
 
-本包分为两侧：Node 半侧负责组合与提供（`ctx.clientModules`，`ClientModuleRegistry`），浏览器半侧负责加载（`ctx.modules`，`ClientModuleSystem`）。两者之间的协议是启动图——以 `window.__DSH_BOOT__` 注入的 `WebBootEntry` 行，`<` 已转义，插件控制的字符串无法逃出 script 元素。vendored Loader 唯一的消费点是 `EntryTree.import`，因此模块系统就是「插件代码如何到达」的唯一可替换实现。
+本包分為兩側：Node 半側負責組合與提供（`ctx.clientModules`，`ClientModuleRegistry`），瀏覽器半側負責加載（`ctx.modules`，`ClientModuleSystem`）。兩者之間的協議是啟動圖——以 `window.__DSH_BOOT__` 注入的 `WebBootEntry` 行，`<` 已轉義，插件控制的字符串無法逃出 script 元素。vendored Loader 唯一的消費點是 `EntryTree.import`，因此模塊系統就是「插件代碼如何到達」的唯一可替換實現。
 
 ### 惰性 CJS 模型
 
-执行插件 bundle 只注册其 factory；每个模块主体副作用（包括 CSS 注入）都位于 factory 闭包中，在物化时运行（`factory(require)` → 导出，在 `loadCache` 中记忆化）。factory 依赖另一个已注册但未物化的模块时会递归物化它；require 循环会抛出异常，因为 factory 形式的 CJS 无法提供部分导出。解析会依次检查平台 seed 表、已记忆记录、启动图 row 与已注册 factory；其他情况一律抛错。交给 factory 的同步 `require` 使用相同顺序，但不含异步图 row 加载，并把观察到的边记录到模块记录中。
+執行插件 bundle 只注冊其 factory；每個模塊主體副作用（包括 CSS 注入）都位于 factory 閉包中，在物化時運行（`factory(require)` → 導出，在 `loadCache` 中記憶化）。factory 依賴另一個已注冊但未物化的模塊時會遞歸物化它；require 循環會拋出異常，因為 factory 形式的 CJS 無法提供部分導出。解析會依次檢查平臺 seed 表、已記憶記錄、啟動圖 row 與已注冊 factory；其他情況一律拋錯。交給 factory 的同步 `require` 使用相同順序，但不含異步圖 row 加載，并把觀察到的邊記錄到模塊記錄中。
 
-### 增量组合
+### 增量組合
 
-Node 半侧逐包增量扫描——没有全量重扫路径。每次发出 `internal/plugin` 事件时，系统都会把该 fiber 的 entry 名标脏；微任务 flush 会把每个脏名与当前 loader 条目对账，激活 pass 会初始化同一个脏集合并同步 flush，因此首次扫描与稳态共用同一实现。包元数据按 Loader specifier 与所属 tree base URL 缓存至重启，解析出的 manifest（元数据清单）包名作为浏览器模块身份。若不同的 active Loader source 解析到同一包名，组合会失败；移除冲突来源后，剩余来源无需重启 fiber 即可接替。bundle 内容变更只能通过 `rebuilt()`（HMR 钩子）进入图。
+Node 半側逐包增量掃描——沒有全量重掃路徑。每次發出 `internal/plugin` 事件時，系統都會把該 fiber 的 entry 名標臟；微任務 flush 會把每個臟名與當前 loader 條目對賬，激活 pass 會初始化同一個臟集合并同步 flush，因此首次掃描與穩態共用同一實現。包元數據按 Loader specifier 與所屬 tree base URL 緩存至重啟，解析出的 manifest（元數據清單）包名作為瀏覽器模塊身份。若不同的 active Loader source 解析到同一包名，組合會失敗；移除沖突來源后，剩余來源無需重啟 fiber 即可接替。bundle 內容變更只能通過 `rebuilt()`（HMR 鉤子）進入圖。
 
-Node 半侧会在发布前快照每个客户端 bundle 及其现有 source map。它把资源分组到 `/plugins/??...&rev=...` combo URL：modules row 使用一个 bootstrap combo，其余 row 使用一个或多个 application combo；每个阶段都会在 URL 超过 3 KiB 之前分区。每个 combo map 都是 Indexed Source Map v3，并在可用时使用作者提供的 section，否则为已打包 bundle 生成 identity section。初始逐插件 revision 使用进程 nonce，所以启动时不哈希每个插件；HMR 只哈希被报告为已变化的产物。已公告响应不可变；未知组合或 revision 返回 404。
+Node 半側會在發布前快照每個客戶端 bundle 及其現有 source map。它把資源分組到 `/plugins/??...&rev=...` combo URL：modules row 使用一個 bootstrap combo，其余 row 使用一個或多個 application combo；每個階段都會在 URL 超過 3 KiB 之前分區。每個 combo map 都是 Indexed Source Map v3，并在可用時使用作者提供的 section，否則為已打包 bundle 生成 identity section。初始逐插件 revision 使用進程 nonce，所以啟動時不哈希每個插件；HMR 只哈希被報告為已變化的產物。已公告響應不可變；未知組合或 revision 返回 404。
 
-### 启动 manifest 注入
+### 啟動 manifest 注入
 
-宿主贡献结构化 index 行，并向 `<head>` 注入：`window.__ModuleLoader__` queue facade、每个 application combo 的提示性 preload、阻塞 parser 的 bootstrap combo 脚本，然后才是外壳读取前的启动图。Web 载体把这些行渲染进 index 响应；由 shell 持有的载体则可以在没有 Web server 时渲染同一批行。facade 的 `create()` 物化 modules bundle、把构造委托给其 `createClientModuleSystem` 导出，并让同一 facade 进入 live registration 模式。
+宿主貢獻結構化 index 行，并向 `<head>` 注入：`window.__ModuleLoader__` queue facade、每個 application combo 的提示性 preload、阻塞 parser 的 bootstrap combo 腳本，然后才是外殼讀取前的啟動圖。Web 載體把這些行渲染進 index 響應；由 shell 持有的載體則可以在沒有 Web server 時渲染同一批行。facade 的 `create()` 物化 modules bundle、把構造委托給其 `createClientModuleSystem` 導出，并讓同一 facade 進入 live registration 模式。
 
-### 源码索引
+### 源碼索引
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | Node 半侧：`ClientModuleRegistry`、扫描、产物快照、可选 combo 路由、结构化 index 行 |
-| [`src/client/index.ts`](src/client/index.ts) | 浏览器半侧：bootstrap 导出、`ctx.modules` 登记 |
-| [`src/client/system.ts`](src/client/system.ts) | `ClientModuleSystem`：加载／物化／失效机制 |
-| [`src/client/manifest.ts`](src/client/manifest.ts) | 协议类型、启动清单解析与 `dsh.client` 声明解析器 |
+| [`src/index.ts`](src/index.ts) | Node 半側：`ClientModuleRegistry`、掃描、產物快照、可選 combo 路由、結構化 index 行 |
+| [`src/client/index.ts`](src/client/index.ts) | 瀏覽器半側：bootstrap 導出、`ctx.modules` 登記 |
+| [`src/client/system.ts`](src/client/system.ts) | `ClientModuleSystem`：加載／物化／失效機制 |
+| [`src/client/manifest.ts`](src/client/manifest.ts) | 協議類型、啟動清單解析與 `dsh.client` 聲明解析器 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当模块约定不够用时阅读以下页面：子系统参考、启动插件树的外壳，以及图背后的客户端编写规则。
+當模塊約定不夠用時閱讀以下頁面：子系統參考、啟動插件樹的外殼，以及圖背后的客戶端編寫規則。
 
-- [客户端模块子系统](../../../docs/subsystems/client-modules.zh.md)——web 插件表、`WebBootGraph` 协议与 bundle 路由。
-- [Web 启动内核](../web/README.zh.md)——创建模块系统并启动插件树的外壳。
-- [客户端 HMR 驱动器](../hmr/README.zh.md)——在重建 bundle 上驱动 `invalidate`/`prefetch` 的重载链路。
-- [客户端编写规则](../AGENTS.md#shared-modules-and-the-module-graph)——共享模块基座与 `dsh.client.external` 语义。
-- [客户端组地图](../README.zh.md)——本包所属的浏览器半侧。
+- [客戶端模塊子系統](../../../docs/subsystems/client-modules.zh.md)——web 插件表、`WebBootGraph` 協議與 bundle 路由。
+- [Web 啟動內核](../web/README.zh.md)——創建模塊系統并啟動插件樹的外殼。
+- [客戶端 HMR 驅動器](../hmr/README.zh.md)——在重建 bundle 上驅動 `invalidate`/`prefetch` 的重載鏈路。
+- [客戶端編寫規則](../AGENTS.md#shared-modules-and-the-module-graph)——共享模塊基座與 `dsh.client.external` 語義。
+- [客戶端組地圖](../README.zh.md)——本包所屬的瀏覽器半側。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无。模块 loader 属于浏览器侧内核机制，不注册任何面向模型的内容。
+無。模塊 loader 屬于瀏覽器側內核機制，不注冊任何面向模型的內容。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；该包既不组装也不发送提供方请求。
+無；該包既不組裝也不發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明模块系统不做什么。它们是当前包约束，不是任务积压。
+這些限制說明模塊系統不做什么。它們是當前包約束，不是任務積壓。
 
-- **有意采用扁平模块图**——每个 bundle 是一个模块节点，其边只指向表中的叶节点；接口（`loadCache`/`edges`/`invalidate`）已经支持通用模块图，因此可以改变 externalization 粒度而不更改接口。
-- **自身不维护卸载记录**——样式移除与 fiber 拆卸顺序属于 HMR 驱动器（`@deepseek-ai/dsh-client-hmr`）；loader 只在每条记录中登记其拥有的样式标签 id。
-- **快照式提供会保留产物字节**——Host 在内存中保留每个 bundle、可选 source map、生成的单资源响应和当前启动 combo 响应；HMR 还会保留上一代启动响应。内存会随已组合客户端产物增长为数份副本，以换取不可变响应和一代竞态容忍。
+- **有意采用扁平模塊圖**——每個 bundle 是一個模塊節點，其邊只指向表中的葉節點；接口（`loadCache`/`edges`/`invalidate`）已經支持通用模塊圖，因此可以改變 externalization 粒度而不更改接口。
+- **自身不維護卸載記錄**——樣式移除與 fiber 拆卸順序屬于 HMR 驅動器（`@deepseek-ai/dsh-client-hmr`）；loader 只在每條記錄中登記其擁有的樣式標簽 id。
+- **快照式提供會保留產物字節**——Host 在內存中保留每個 bundle、可選 source map、生成的單資源響應和當前啟動 combo 響應；HMR 還會保留上一代啟動響應。內存會隨已組合客戶端產物增長為數份副本，以換取不可變響應和一代競態容忍。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

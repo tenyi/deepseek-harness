@@ -1,4 +1,4 @@
-/** Generic source form retained before conditional evaluation. */
+﻿/** Generic source form retained before conditional evaluation. */
 export interface Box<T> {
   /** The boxed value. */
   readonly value: T

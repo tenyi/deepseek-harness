@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Corner-shape stylesheet contract, asserted against the CSS text on disk:
  * corner-shape.css smooths every rounded corner to the superellipse token
  * strictly inside a `@supports` guard, and every effectively full-round radius

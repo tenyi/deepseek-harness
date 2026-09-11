@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest'
+﻿import { describe, expect, it, vi } from 'vitest'
 import type { SlotComponent, StoreHandle } from '@deepseek-ai/dsh-client-ui-slots'
 import { SlotCore } from '@deepseek-ai/dsh-client-ui-slots'
 

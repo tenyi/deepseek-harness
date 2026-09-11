@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure ACP transcript and session-log normalizers. They scrub session ids, run cwd, RPC ids,
  * timestamps, goal lifecycle clocks, and hook duration while preserving semantic payload values.
  * The prompt-text and tool-schema scrubbers stay composable so one scenario per header class can

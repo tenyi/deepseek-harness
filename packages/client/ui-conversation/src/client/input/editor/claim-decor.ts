@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Claim-token highlight: while a command claim holds, the draft's leading
  * token renders in the warn color. A TextNode transform keeps the token in
  * its own styled node (splitting when typing merges text into it), and the

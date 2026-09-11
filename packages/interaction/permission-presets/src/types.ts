@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure types of the permission domain: the ONE home of the `permissions`
  * projection-key declaration plus its payload types, free of this package's
  * host-side value imports (cordis, schemastery). Two namespace projections

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The markdown renderer's two mdast grammars, one per rendering arm. Each
  * arm is internally consistent — the incremental tail parses, the one-shot
  * parses, and the plain-text projection of a given grammar always agree on

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Durable projection state for the two loop-owned surface messages the system
  * prompt plugin forms: the system prompt (surface node 0 and any in-history
  * replacement) and the dynamic runtime-context snapshot.

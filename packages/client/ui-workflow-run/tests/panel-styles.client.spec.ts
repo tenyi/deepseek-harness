@@ -1,4 +1,4 @@
-/**
+﻿/**
  * WorkflowRunPanel's font-size-axis adoption as CSS text. jsdom has no
  * layout, so these read the declarations that make the run/phase headers and
  * the expanded member rows follow the Settings font-size preference: member

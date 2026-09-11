@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Perplexity search over its OpenAI-compatible chat-completions endpoint. The generated answer
  * becomes `content`; sources prefer structured `search_results[]` and fall back to URL-only
  * `citations[]`. The wire format and native `fetch` client are provider-private and do not use

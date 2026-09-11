@@ -1,4 +1,4 @@
-/** Native V3 system-head validation with a private view for frozen non-system relationships. */
+﻿/** Native V3 system-head validation with a private view for frozen non-system relationships. */
 
 import { SessionFormatError, SessionFormatUnsupportedMigrationError } from '@deepseek-ai/dsh-session-format'
 import type { SessionFormatArtifact, SessionFormatEvent, SessionFormatHeader } from '@deepseek-ai/dsh-session-format'

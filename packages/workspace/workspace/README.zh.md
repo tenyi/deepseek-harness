@@ -1,5 +1,5 @@
----
-description: "面向选择、挂载或排查持久 workspace 记录与会话头校验成员资格的宿主的 Workspace 实体注册表（ctx.workspaceRegistry）说明。"
+﻿---
+description: "面向選擇、掛載或排查持久 workspace 記錄與會話頭校驗成員資格的宿主的 Workspace 實體注冊表（ctx.workspaceRegistry）說明。"
 kind: "package-reference"
 ---
 
@@ -9,31 +9,31 @@ kind: "package-reference"
 
 ## 概述
 
-使用此包可以维护一个有序、持久的项目目录列表，以及在每个目录中运行的会话。宿主可以构建项目侧边栏、在不删除历史的情况下把会话从分组中隐藏，并在不删除文件夹、文件或会话的情况下移除项目。重新添加已移除的目录会创建一个全新项目，而目录无法校验的会话会保持 Ungrouped。需要持久项目分组的 GUI 或宿主工作流适合使用它；它对模型不可见，不增加提示词或请求上下文成本，但需要会话持久化与存储后端。
+使用此包可以維護一個有序、持久的項目目錄列表，以及在每個目錄中運行的會話。宿主可以構建項目側邊欄、在不刪除歷史的情況下把會話從分組中隱藏，并在不刪除文件夾、文件或會話的情況下移除項目。重新添加已移除的目錄會創建一個全新項目，而目錄無法校驗的會話會保持 Ungrouped。需要持久項目分組的 GUI 或宿主工作流適合使用它；它對模型不可見，不增加提示詞或請求上下文成本，但需要會話持久化與存儲后端。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-使用此包为产品提供项目列表：用户工作的命名目录、每个目录中运行的会话、稳定顺序，以及在不丢失会话的前提下将其隐藏的能力。每项操作背后的 API 约定放在实现章节中。
+使用此包為產品提供項目列表：用戶工作的命名目錄、每個目錄中運行的會話、穩定順序，以及在不丟失會話的前提下將其隱藏的能力。每項操作背后的 API 約定放在實現章節中。
 
-### 何时使用
+### 何時使用
 
-当产品展示持久 workspace 界面——侧边栏、会话分组或需要命名并排序目录的自动化——时使用它。它对模型不可见，因此不增加任何 token 或请求成本。没有分组界面时跳过它；harness 中没有其他包需要它。
+當產品展示持久 workspace 界面——側邊欄、會話分組或需要命名并排序目錄的自動化——時使用它。它對模型不可見，因此不增加任何 token 或請求成本。沒有分組界面時跳過它；harness 中沒有其他包需要它。
 
-### 设置
+### 設置
 
-此包本身不声明任何配置；它需要会话存储、会话持久化后端，以及保存其记录的存储行。最小组合如下：
+此包本身不聲明任何配置；它需要會話存儲、會話持久化后端，以及保存其記錄的存儲行。最小組合如下：
 
 ```yaml
 - name: '@deepseek-ai/dsh-session'
@@ -46,11 +46,11 @@ kind: "package-reference"
 - name: '@deepseek-ai/dsh-workspace'
 ```
 
-挂载这些行之后，创建项目会立即出现在列表中并在重启后保留；首次启动还会按会话运行的目录对既有会话分组。如果缺少某个必需依赖，workspace 功能会一直不可用，直到它被挂载。
+掛載這些行之后，創建項目會立即出現在列表中并在重啟后保留；首次啟動還會按會話運行的目錄對既有會話分組。如果缺少某個必需依賴，workspace 功能會一直不可用，直到它被掛載。
 
-### 创建与排序项目
+### 創建與排序項目
 
-从任何已存在的绝对目录路径创建项目：`C:\` 等文件系统根目录和普通目录都有效。相对路径、`C:work` 等 Windows 盘符相对路径、不存在的路径和文件都会被拒绝，且不会创建项目；为已有项目的目录再次创建会原样返回现有项目。你可以随时重命名项目，并把它移动到列表中的任意位置：
+從任何已存在的絕對目錄路徑創建項目：`C:\` 等文件系統根目錄和普通目錄都有效。相對路徑、`C:work` 等 Windows 盤符相對路徑、不存在的路徑和文件都會被拒絕，且不會創建項目；為已有項目的目錄再次創建會原樣返回現有項目。你可以隨時重命名項目，并把它移動到列表中的任意位置：
 
 ```text
 // Host consumer code, after the composition above is loaded:
@@ -59,120 +59,120 @@ await project.setTitle('Renamed')
 ctx.workspaceRegistry.list() // shows the project, newest first
 ```
 
-### 将会话归入项目
+### 將會話歸入項目
 
-会话加入它运行目录所在的项目：在项目目录中创建会话，它就会出现在该项目下，新到旧排列。一个会话只能属于一个项目。目录无法校验的会话——没有记录目录，或目录被移动、删除——无法加入，保持 Ungrouped。
+會話加入它運行目錄所在的項目：在項目目錄中創建會話，它就會出現在該項目下，新到舊排列。一個會話只能屬于一個項目。目錄無法校驗的會話——沒有記錄目錄，或目錄被移動、刪除——無法加入，保持 Ungrouped。
 
-### 隐藏会话与移除项目
+### 隱藏會話與移除項目
 
-当会话不应再出现在分组中时隐藏它：它会从可见列表中消失，但其会话、历史与在项目中的位置都保持不变。项目不再需要时移除它：它离开列表，而其文件夹、文件与会话历史绝不受影响——这些会话变成 Ungrouped。之后再次添加同一目录会从空项目开始，不会带回旧会话。
+當會話不應再出現在分組中時隱藏它：它會從可見列表中消失，但其會話、歷史與在項目中的位置都保持不變。項目不再需要時移除它：它離開列表，而其文件夾、文件與會話歷史絕不受影響——這些會話變成 Ungrouped。之后再次添加同一目錄會從空項目開始，不會帶回舊會話。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释此功能背后的设计决策，并指出实现它们的代码位置；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋此功能背后的設計決策，并指出實現它們的代碼位置；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-- **每个规范路径一条记录。** `fs.realpath` 是唯一的一套唯一性规范：路径以规范化形式存储，因此指向已有记录目录的符号链接会与之冲突，唯一性即规范路径的字符串相等。
-- **成员资格是所有权加实时 cwd 事实。** 记录的 `sessionIds` 顺序是所有权真源；启动时的头部索引校验它，`sessionIds` 在读取时过滤，下一次变更会持久化剪除无效项。
-- **仅读取头部。** 引导与 attach 校验只读取 `SessionHeader` 字段；事件正文绝不加载。
-- **两次写入的变更带显式标记。** 创建与删除在记录/顺序对可能分叉之前先持久化 `pendingMutation` 标记，因此启动只补全被中断的操作，未标记的分叉作为损坏明确报错。
-- **串行化写入。** 注册表操作跑在同一条操作链上；实体变更通过领域写链上的 `table.update` 执行，写入 `updatedAt`，并在其所在的链位置决定成员资格。
+- **每個規范路徑一條記錄。** `fs.realpath` 是唯一的一套唯一性規范：路徑以規范化形式存儲，因此指向已有記錄目錄的符號鏈接會與之沖突，唯一性即規范路徑的字符串相等。
+- **成員資格是所有權加實時 cwd 事實。** 記錄的 `sessionIds` 順序是所有權真源；啟動時的頭部索引校驗它，`sessionIds` 在讀取時過濾，下一次變更會持久化剪除無效項。
+- **僅讀取頭部。** 引導與 attach 校驗只讀取 `SessionHeader` 字段；事件正文絕不加載。
+- **兩次寫入的變更帶顯式標記。** 創建與刪除在記錄/順序對可能分叉之前先持久化 `pendingMutation` 標記，因此啟動只補全被中斷的操作，未標記的分叉作為損壞明確報錯。
+- **串行化寫入。** 注冊表操作跑在同一條操作鏈上；實體變更通過領域寫鏈上的 `table.update` 執行，寫入 `updatedAt`，并在其所在的鏈位置決定成員資格。
 
-### API 行为
+### API 行為
 
-该 API 是一个由两个所有者构成的小家族：`WorkspaceRegistry` 负责创建、排序与删除项目并管理其会话记账；`Workspace` 实体暴露显示标题、目录状态与会话投影。各方法的精确约定在代码中，而非本 README——参见 [src/index.ts](src/index.ts) 与 [src/entity.ts](src/entity.ts)。
+該 API 是一個由兩個所有者構成的小家族：`WorkspaceRegistry` 負責創建、排序與刪除項目并管理其會話記賬；`Workspace` 實體暴露顯示標題、目錄狀態與會話投影。各方法的精確約定在代碼中，而非本 README——參見 [src/index.ts](src/index.ts) 與 [src/entity.ts](src/entity.ts)。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：`WorkspaceRegistry` 服务、头部索引、引导、操作串行化 |
-| [`src/entity.ts`](src/entity.ts) | 包私有 `Workspace` 实现及其唯一的 `mutate` 写入路径 |
-| [`src/spec.ts`](src/spec.ts) | 领域声明：记录 schema、注册表状态、`defineDomain` 规范 |
-| [`src/types.ts`](src/types.ts) | 公开 `Workspace` 接口与 `WorkspaceId` 品牌 |
-| [`src/paths.ts`](src/paths.ts) | `realpath` 唯一性规范 |
-| [`src/invariant.ts`](src/invariant.ts) | 不变式伴生插件：实体缓存镜像持久表 |
+| [`src/index.ts`](src/index.ts) | 插件入口：`WorkspaceRegistry` 服務、頭部索引、引導、操作串行化 |
+| [`src/entity.ts`](src/entity.ts) | 包私有 `Workspace` 實現及其唯一的 `mutate` 寫入路徑 |
+| [`src/spec.ts`](src/spec.ts) | 領域聲明：記錄 schema、注冊表狀態、`defineDomain` 規范 |
+| [`src/types.ts`](src/types.ts) | 公開 `Workspace` 接口與 `WorkspaceId` 品牌 |
+| [`src/paths.ts`](src/paths.ts) | `realpath` 唯一性規范 |
+| [`src/invariant.ts`](src/invariant.ts) | 不變式伴生插件：實體緩存鏡像持久表 |
 
-### 持久形态
+### 持久形態
 
-注册表打开 `workspace` 领域（版本 2）：一张以 `WorkspaceId` 为键的 `workspaces` 表，加上一个持有 `workspaceIds`（权威显示顺序）、`archivedSessionIds` 与可选 `pendingMutation` 标记的全局状态。在 `archivedSessionIds` 存在之前写入的记录会通过 schema 默认值解析为空集合。
+注冊表打開 `workspace` 領域（版本 2）：一張以 `WorkspaceId` 為鍵的 `workspaces` 表，加上一個持有 `workspaceIds`（權威顯示順序）、`archivedSessionIds` 與可選 `pendingMutation` 標記的全局狀態。在 `archivedSessionIds` 存在之前寫入的記錄會通過 schema 默認值解析為空集合。
 
 ### 生命周期
 
-启动时，注册表打开领域、若存在标记则补全被标记的变更、校验已存状态——重复路径、重复会话记账与顺序漂移都会明确报错——并在尚未初始化时先凭持久化头部引导历史、最后写入已初始化标记，因此被中断的引导可以安全恢复。全新空注册表一旦初始化即成为正式状态，绝不会再次引导。
+啟動時，注冊表打開領域、若存在標記則補全被標記的變更、校驗已存狀態——重復路徑、重復會話記賬與順序漂移都會明確報錯——并在尚未初始化時先憑持久化頭部引導歷史、最后寫入已初始化標記，因此被中斷的引導可以安全恢復。全新空注冊表一旦初始化即成為正式狀態，絕不會再次引導。
 
-### 失败与恢复
+### 失敗與恢復
 
-创建或删除的第二次写入失败时，缓存与先前顺序会回滚；当操作与回滚都失败时，持久标记仍指明被中断的操作，下一次启动会补全或回滚它。已提交的删除即使标记清理失败仍报告成功，下一次启动会幂等地清除该标记。
+創建或刪除的第二次寫入失敗時，緩存與先前順序會回滾；當操作與回滾都失敗時，持久標記仍指明被中斷的操作，下一次啟動會補全或回滾它。已提交的刪除即使標記清理失敗仍報告成功，下一次啟動會冪等地清除該標記。
 
-### 不变式
+### 不變式
 
-`workspace-invariant` 伴生插件注册归属关系：`workspaces` 表的每个持久 `domain/changed` 都必须指向实体缓存已持有的记录——只有在注册表从缓存移除实体之后删除才有效，因此绕过注册表的写入路径会触发不变式失败。
+`workspace-invariant` 伴生插件注冊歸屬關系：`workspaces` 表的每個持久 `domain/changed` 都必須指向實體緩存已持有的記錄——只有在注冊表從緩存移除實體之后刪除才有效，因此繞過注冊表的寫入路徑會觸發不變式失敗。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当本包的视角不够用时阅读以下页面：子系统参考是权威的功能约定，Agent Note 记录了项目为何从会话历史起步、以及移除为何是非破坏性的。
+當本包的視角不夠用時閱讀以下頁面：子系統參考是權威的功能約定，Agent Note 記錄了項目為何從會話歷史起步、以及移除為何是非破壞性的。
 
-- [Workspace 子系统](../../../docs/subsystems/workspace.zh.md)——项目及其会话的功能约定，以及 workspace 服务的生成 API。
-- [Workspace 包映射](../README.zh.md)——本组唯一的包及其仓库位置。
-- [领域 KV 存储 Agent Note](../../../.agents/notes/proposed/architecture/2026-07-24-domain-kv-storage-and-workspace.zh.md)——为什么项目记录使用领域数据形式。
-- [Workspace UI 产品流 Agent Note](../../../.agents/notes/archived/feature/2026-07-25-workspace-ui-product-flow.md)——首次启动如何从会话历史构建项目，以及 GUI 如何排序。
-- [删除 Workspace 注册记录决策](../../../.agents/notes/implemented/feature/2026-07-27-workspace-registration-deletion.zh.md)——为什么移除项目绝不会删除其文件夹或会话。
+- [Workspace 子系統](../../../docs/subsystems/workspace.zh.md)——項目及其會話的功能約定，以及 workspace 服務的生成 API。
+- [Workspace 包映射](../README.zh.md)——本組唯一的包及其倉庫位置。
+- [領域 KV 存儲 Agent Note](../../../.agents/notes/proposed/architecture/2026-07-24-domain-kv-storage-and-workspace.zh.md)——為什么項目記錄使用領域數據形式。
+- [Workspace UI 產品流 Agent Note](../../../.agents/notes/archived/feature/2026-07-25-workspace-ui-product-flow.md)——首次啟動如何從會話歷史構建項目，以及 GUI 如何排序。
+- [刪除 Workspace 注冊記錄決策](../../../.agents/notes/implemented/feature/2026-07-27-workspace-registration-deletion.zh.md)——為什么移除項目絕不會刪除其文件夾或會話。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### Workspace 记录与会话记账
+### Workspace 記錄與會話記賬
 
 #### 模型看到什么
 
-没有。`ctx.workspaceRegistry` 只向宿主侧消费方提供 workspace 记录：此包不注册工具、不注入提示词、不写入会话事件，因此没有请求字段会携带此包数据。
+沒有。`ctx.workspaceRegistry` 只向宿主側消費方提供 workspace 記錄：此包不注冊工具、不注入提示詞、不寫入會話事件，因此沒有請求字段會攜帶此包數據。
 
-#### Token 影响
+#### Token 影響
 
-每个请求的直接 token 为零。
+每個請求的直接 token 為零。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-与实时请求无关：此包绝不触及请求前缀，因此不会使提供方缓存复用失效。
+與實時請求無關：此包絕不觸及請求前綴，因此不會使提供方緩存復用失效。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明项目列表何时不合适，或何时需要特别的运维注意。它们是当前包约束，不是任务积压。
+這些限制說明項目列表何時不合適，或何時需要特別的運維注意。它們是當前包約束，不是任務積壓。
 
-- **移除绝不删除数据**——移除项目会保留其文件夹、文件与会话历史；这些会话变成 Ungrouped，而会话删除与文件夹移除是彼此独立且尚未提供的功能（参见[决策记录](../../../.agents/notes/implemented/feature/2026-07-27-workspace-registration-deletion.zh.md)）。
-- **只有带记录目录的会话才能加入**——只有记录中带有可解析为项目路径的目录的会话才属于项目；没有目录的会话保持 Ungrouped，来自其他目录的会话无法移入。
-- **外部变更延迟可见**——如果另一进程删除或损坏目录，项目只能在下次刷新或重启后反映出来。
-- **归档是单向的**——被隐藏的会话保留其历史与位置，但目前没有取消归档操作；归档集合是持久的显示过滤器。
-- **重新添加目录从空开始**——移除后再次添加同一目录会创建空会话列表的新项目；旧会话不会自动回来。
+- **移除絕不刪除數據**——移除項目會保留其文件夾、文件與會話歷史；這些會話變成 Ungrouped，而會話刪除與文件夾移除是彼此獨立且尚未提供的功能（參見[決策記錄](../../../.agents/notes/implemented/feature/2026-07-27-workspace-registration-deletion.zh.md)）。
+- **只有帶記錄目錄的會話才能加入**——只有記錄中帶有可解析為項目路徑的目錄的會話才屬于項目；沒有目錄的會話保持 Ungrouped，來自其他目錄的會話無法移入。
+- **外部變更延遲可見**——如果另一進程刪除或損壞目錄，項目只能在下次刷新或重啟后反映出來。
+- **歸檔是單向的**——被隱藏的會話保留其歷史與位置，但目前沒有取消歸檔操作；歸檔集合是持久的顯示過濾器。
+- **重新添加目錄從空開始**——移除后再次添加同一目錄會創建空會話列表的新項目；舊會話不會自動回來。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-本开发备注是维护者的工作上下文：开放问题与尚未决定的探索方向。它明确不具权威性——已交付的行为、限制与既定理由以上文、包代码和相关 Agent Note 为准。
+本開發備注是維護者的工作上下文：開放問題與尚未決定的探索方向。它明確不具權威性——已交付的行為、限制與既定理由以上文、包代碼和相關 Agent Note 為準。
 
-#### 开放：`create(path, title?)` 的 title 参数
+#### 開放：`create(path, title?)` 的 title 參數
 
-网关的按名称创建分支移除后，`title` 参数已无生产调用方；代码中的 TODO 提议把该参数与其 `@param` 子句一并移除（参见[笔记](../../../.agents/notes/archived/simplification/2026-07-31-one-route-to-add-a-workspace.md)）。
+網關的按名稱創建分支移除后，`title` 參數已無生產調用方；代碼中的 TODO 提議把該參數與其 `@param` 子句一并移除（參見[筆記](../../../.agents/notes/archived/simplification/2026-07-31-one-route-to-add-a-workspace.md)）。
 
 </details>

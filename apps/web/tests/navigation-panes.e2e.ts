@@ -1,4 +1,4 @@
-// Web e2e scenarios: navigation & panes — the Trajectory view and timing
+﻿// Web e2e scenarios: navigation & panes — the Trajectory view and timing
 // overview, its local details inspector, and sidebar search, all over ONE rich
 // two-turn seeded fixture rendered purely from the log (the seeded-history
 // pattern: zero model calls in replay, so every surface here is the client

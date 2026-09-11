@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'node:fs'
+﻿import { readFileSync, readdirSync } from 'node:fs'
 import { join, relative } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { SESSION_FORMAT_VERSION, Session, SessionId, type SessionEvent } from '@deepseek-ai/dsh-session'

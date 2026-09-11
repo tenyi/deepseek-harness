@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Harness request-history conversion into pi-ai's Context vocabulary.
  *
  * @module dsh-llm-pi-ai/context

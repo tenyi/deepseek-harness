@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ClientSessions: list store projection (manager → {ids, byId, current}
  * with derived titles), the current-selection account (open validation and
  * persisted mask semantics), scope-tree
@@ -939,8 +939,8 @@ describe('fork', () => {
   it.each([
     ['Roadmap', 'Roadmap (1)'],
     ['Roadmap (1)', 'Roadmap (2)'],
-    ['计划（1）', '计划（2）'],
-    ['计划 （9）', '计划 （10）'],
+    ['計劃（1）', '計劃（2）'],
+    ['計劃 （9）', '計劃 （10）'],
   ])('increments the durable title %j after the child is published', async (sourceTitle, childTitle) => {
     const b = bench()
     b.svc.handleControlFrame({

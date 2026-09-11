@@ -1,4 +1,4 @@
-/**
+﻿/**
  * session.export host path: the GET download endpoint streams a ZIP whose
  * files are the sessions' logical logs serialized as canonical JSONL (root +
  * optional descendants) read through persistence read handles, and the

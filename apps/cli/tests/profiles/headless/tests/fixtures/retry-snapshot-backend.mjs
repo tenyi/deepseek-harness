@@ -1,4 +1,4 @@
-/** Deterministic provider adapter for the headless retry-policy snapshot. */
+﻿/** Deterministic provider adapter for the headless retry-policy snapshot. */
 
 import {
   LlmAdapter,

@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * What the body draws from its pages and the file's metadata, and what it does
  * with a navigation: load until the asked line is held, jump to it once, then

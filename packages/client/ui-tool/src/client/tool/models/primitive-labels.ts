@@ -1,4 +1,4 @@
-/** Localized copy adapters for Cordis-free UI primitives used by Tool cards. */
+﻿/** Localized copy adapters for Cordis-free UI primitives used by Tool cards. */
 
 import type {
   DiffBlockLabels,

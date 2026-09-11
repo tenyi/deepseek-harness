@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Consumer-side `SandboxPwshExecutor` tests. A fake Cordis sandbox service
  * makes wrapping, policy hand-off, fail-closed propagation, and fact stamping
  * deterministic; real-provider integration lives in `tests/acl.e2e.ts`.

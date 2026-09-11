@@ -1,4 +1,4 @@
-/** Package-owned goal-round prompt invariants. @module @deepseek-ai/dsh-goal-round-driver/invariant */
+﻿/** Package-owned goal-round prompt invariants. @module @deepseek-ai/dsh-goal-round-driver/invariant */
 
 import { isDeepStrictEqual } from 'node:util'
 import type { Context } from '@deepseek-ai/cordis'

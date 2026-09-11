@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Headless state of one Session's feedback dialog and its acknowledgement and
  * failure toasts. One form serves two targets: the Session itself (a bare `/feedback`)
  * and one assistant message (Like or Dislike). The overlay view renders from

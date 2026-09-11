@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Package-owned request-reconstruction invariant for loop-built LLM calls.
  * @module @deepseek-ai/dsh-agent-loop/invariant
  */

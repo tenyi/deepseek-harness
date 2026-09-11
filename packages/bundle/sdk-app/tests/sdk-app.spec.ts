@@ -1,4 +1,4 @@
-/** The SDK app bundle's declared profile patch. */
+﻿/** The SDK app bundle's declared profile patch. */
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'

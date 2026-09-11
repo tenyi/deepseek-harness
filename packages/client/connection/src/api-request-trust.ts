@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser-trust fence for every /api request. Defends the two confused-deputy
  * paths a browser opens against a local HTTP API — DNS rebinding (Host names
  * the attacker's domain while the socket reaches this server) and cross-site

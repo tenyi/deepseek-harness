@@ -1,4 +1,4 @@
-/** Cordis dynamic-plugin cards, inventory panel, business-view host, and `@pluginId` source. */
+﻿/** Cordis dynamic-plugin cards, inventory panel, business-view host, and `@pluginId` source. */
 
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'

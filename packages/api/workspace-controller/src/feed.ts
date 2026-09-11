@@ -1,4 +1,4 @@
-/** Reconnect-safe Workspace baseline and increment producer. */
+﻿/** Reconnect-safe Workspace baseline and increment producer. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { Deque } from '@deepseek-ai/dsh-deque'

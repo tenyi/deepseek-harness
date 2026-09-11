@@ -1,4 +1,4 @@
-/** One DevTools connection: explicit local-domain routing plus a private Host V8 session. */
+﻿/** One DevTools connection: explicit local-domain routing plus a private Host V8 session. */
 
 import { cdpError, parseCdpRequest, type CdpTransport } from './protocol.ts'
 import { NetworkDomain, type NetworkSink } from './domains/network/session.ts'

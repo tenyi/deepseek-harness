@@ -1,4 +1,4 @@
-/* Syntax-highlight token palette: the values behind shiki's css-variables
+﻿/* Syntax-highlight token palette: the values behind shiki's css-variables
    theme (--shiki-* custom properties emitted by the ui-primitives CodeBlock).
    Light values on :root, dark overrides on the body attribute — the same
    cascade as every other token sheet. Background/foreground deliberately

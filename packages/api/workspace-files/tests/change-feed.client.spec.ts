@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The change feed's promises: one Host stream per session, delivery by absolute
  * path, and a follower's life bounded by its signal or by
  * the stream's end.

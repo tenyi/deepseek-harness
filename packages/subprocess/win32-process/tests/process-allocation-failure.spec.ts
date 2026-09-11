@@ -1,4 +1,4 @@
-import koffi from 'koffi'
+﻿import koffi from 'koffi'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
   drainPipe,

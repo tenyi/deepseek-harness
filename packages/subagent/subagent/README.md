@@ -1,4 +1,4 @@
----
+﻿---
 description: "The subagent delegation seam for users and maintainers choosing a provider backend, composing delegation tools, or debugging child-agent runs."
 kind: "package-reference"
 ---

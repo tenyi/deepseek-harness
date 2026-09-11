@@ -1,4 +1,4 @@
----
+﻿---
 description: "The deployment default model selection for users and maintainers choosing, configuring, or debugging which model freshly created agents start on."
 kind: "package-reference"
 ---

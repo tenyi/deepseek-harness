@@ -1,4 +1,4 @@
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
+﻿import { createUserMessage } from '@deepseek-ai/dsh-llm'
 /**
  * Loop-level tool-order determinism: the request/header event — and therefore the frozen
  * request the adapter receives — carries the assembly's canonical tool order (system-prompt's

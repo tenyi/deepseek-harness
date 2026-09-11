@@ -1,4 +1,4 @@
-/** Pre-boot filesystem-source chooser for static WebWorker previews. */
+﻿/** Pre-boot filesystem-source chooser for static WebWorker previews. */
 
 import {
   parsePreviewFixtureManifest, type PreviewFixtureManifestEntry,

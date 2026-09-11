@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Unified Web `@` reference source. File and session discovery run through
  * the cancellable generated Remote namespaces in parallel with deterministic
  * ordering and labels.

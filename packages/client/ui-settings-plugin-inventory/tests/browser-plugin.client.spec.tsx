@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { Context, Service } from '@deepseek-ai/cordis'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup } from '@testing-library/react'
@@ -72,8 +72,8 @@ describe('ui-settings-plugin-inventory browser plugin', () => {
 
     // Shipped preset names resolve over the agent-preset dictionaries the
     // real plugin registers; user-authored metadata stays untranslated.
-    b.locale.register('settings.agentPreset', 'zh', { presetStandardName: '标准模式' } as never)
-    expect(injected.presetName({ id: 'standard', trust: 'system', isDefault: true, rows: [] })).toBe('标准模式')
+    b.locale.register('settings.agentPreset', 'zh', { presetStandardName: '標準模式' } as never)
+    expect(injected.presetName({ id: 'standard', trust: 'system', isDefault: true, rows: [] })).toBe('標準模式')
     expect(injected.presetName({ id: 'mine', trust: 'user', name: '我自己的', isDefault: false, rows: [] })).toBe('我自己的')
     await b.ctx.fiber.dispose()
   })

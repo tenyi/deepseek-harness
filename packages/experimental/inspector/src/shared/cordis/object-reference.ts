@@ -1,4 +1,4 @@
-/** Opaque references to live objects retained inside an observation source realm. */
+﻿/** Opaque references to live objects retained inside an observation source realm. */
 
 import type { InspectorObjectHandle, InspectorObjectRegistryId } from './ids.ts'
 import { exactObject, wireId } from '../validation.ts'

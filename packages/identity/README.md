@@ -1,4 +1,4 @@
----
+﻿---
 description: "The identity package group: anonymous, per-harness-home correlation ids shared by telemetry, feedback, and DeepSeek provider requests."
 kind: "package-group"
 ---

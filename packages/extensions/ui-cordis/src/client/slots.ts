@@ -1,4 +1,4 @@
-/** Injected faces and the Package-owned `tool.view.cordis` slot declaration. */
+﻿/** Injected faces and the Package-owned `tool.view.cordis` slot declaration. */
 
 import type { SessionId } from '@deepseek-ai/dsh-api-remotes/client'
 import type { HostObservable } from '@deepseek-ai/dsh-client-ui-slots'

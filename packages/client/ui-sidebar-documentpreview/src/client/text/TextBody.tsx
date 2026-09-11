@@ -1,4 +1,4 @@
-/** Plain source display for files without a more specific document renderer. */
+﻿/** Plain source display for files without a more specific document renderer. */
 import type { ReactNode } from 'react'
 import clsx from 'clsx'
 import type { DocumentPreviewProps } from '../document/contract.ts'

@@ -1,4 +1,4 @@
-/** Shared teardown for ACP example tests. */
+﻿/** Shared teardown for ACP example tests. */
 
 import { rm } from 'node:fs/promises'
 import type { LaunchedAcpTestAgent } from '@deepseek-ai/dsh-session-snapshot'

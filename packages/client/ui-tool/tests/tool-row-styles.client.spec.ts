@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The one-line contract of the ToolRow summary line as CSS text. jsdom has no
  * layout, so the rendering specs (chat-tool-row.spec.tsx) can pin which spans
  * exist but not whether a narrow row still fits on one line; these read the

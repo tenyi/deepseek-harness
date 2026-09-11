@@ -1,4 +1,4 @@
----
+﻿---
 description: "Client module system for the web GUI: the host composes the boot graph and serves plugin bundles, and the browser loads them lazily, for users and maintainers composing or debugging client plugins."
 kind: "package-reference"
 ---

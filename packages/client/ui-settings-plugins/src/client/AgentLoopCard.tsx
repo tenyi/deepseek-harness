@@ -1,4 +1,4 @@
-/** The agent loop's card: how many tool calls one step may run at once. */
+﻿/** The agent loop's card: how many tool calls one step may run at once. */
 
 import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 import { ValueField } from './fields.tsx'

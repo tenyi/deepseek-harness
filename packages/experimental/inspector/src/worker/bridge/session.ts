@@ -1,4 +1,4 @@
-/** Shared cleanup delivery for Worker-owned Client sessions. */
+﻿/** Shared cleanup delivery for Worker-owned Client sessions. */
 
 import type { ClientRuntimeSessionClosedFrame } from '../../shared/bridge/messages/runtime/index.ts'
 import type { ClientSourceSessionClosedFrame } from '../../shared/bridge/messages/sources/index.ts'

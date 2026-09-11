@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import type { GlobalStandardProps } from '@deepseek-ai/dsh-client-ui-slots'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { useEffect, useState } from 'react'
@@ -132,8 +132,8 @@ describe('SettingsRoot trigger', () => {
   it.each([
     { column: 'expanded English', wide: true, dictionary: en, name: 'Settings' },
     { column: 'collapsed English', wide: false, dictionary: en, name: 'Settings' },
-    { column: 'expanded Chinese', wide: true, dictionary: zh, name: '设置' },
-    { column: 'collapsed Chinese', wide: false, dictionary: zh, name: '设置' },
+    { column: 'expanded Chinese', wide: true, dictionary: zh, name: '設置' },
+    { column: 'collapsed Chinese', wide: false, dictionary: zh, name: '設置' },
   ])('uses the locale name and accepts keyboard-style activation for the $column trigger', ({
     wide, dictionary, name,
   }) => {

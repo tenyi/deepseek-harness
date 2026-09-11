@@ -1,4 +1,4 @@
-"""CPython bootstrap for dsh-code-runtime-python.
+﻿"""CPython bootstrap for dsh-code-runtime-python.
 
 Reads a :class:`BootMessage` on fd 3, applies resource limits and log capture,
 reads a :class:`RunMessage`, runs the model program as the body of an async

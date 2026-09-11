@@ -1,4 +1,4 @@
-/** Session-owned rendering semantics for the standard SessionProvider seat. */
+﻿/** Session-owned rendering semantics for the standard SessionProvider seat. */
 import { Fragment, type ReactNode } from 'react'
 import type {
   SessionAreaProps, StandardSourceBinding,

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Session Controller rename delegation through the composed SessionTitleService. The
  * agent factory is a structural stub whose createAgent forwards seed/meta into
  * the real SessionStore, and whose resume never runs (every source here is

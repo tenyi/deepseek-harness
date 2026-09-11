@@ -1,4 +1,4 @@
-# pi-ai route and isolated-path patch over the shipped headless profile.
+﻿# pi-ai route and isolated-path patch over the shipped headless profile.
 - id: headless-startup
   disabled: true
 

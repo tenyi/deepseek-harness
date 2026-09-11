@@ -1,4 +1,4 @@
----
+﻿---
 description: "The event-sourced session log and in-memory store for users and maintainers building, inspecting, or extending the durable record behind every agent interaction."
 kind: "package-reference"
 ---

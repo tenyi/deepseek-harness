@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser theme registry over the `--dsw-*` token stylesheets. The service
  * owns the live theme preference (light/dark/system), resolves `system` through
  * `prefers-color-scheme`, and publishes immutable snapshots; it never touches

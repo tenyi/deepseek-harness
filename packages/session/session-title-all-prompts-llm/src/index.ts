@@ -1,4 +1,4 @@
-/** All-human-messages model provider for `ctx.sessionTitle`. */
+﻿/** All-human-messages model provider for `ctx.sessionTitle`. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'

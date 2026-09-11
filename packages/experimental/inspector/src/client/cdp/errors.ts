@@ -1,4 +1,4 @@
-/** Client Runtime failures that belong to the transport rather than evaluated JavaScript. */
+﻿/** Client Runtime failures that belong to the transport rather than evaluated JavaScript. */
 
 import type { ClientRuntimeError } from '../../shared/bridge/messages/runtime/index.ts'
 

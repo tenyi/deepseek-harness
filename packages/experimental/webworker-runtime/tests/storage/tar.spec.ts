@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The bare-tar image codec: byte-faithful roundtrip through packTar/parseTar
  * and the VFS mount the worker performs on that archive.
  */

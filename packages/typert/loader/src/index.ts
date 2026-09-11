@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Typert Loader integration: automatic registration for mounted plugin packages.
  *
  * When a loader entry mounts, this plugin resolves the entry's package.json; a

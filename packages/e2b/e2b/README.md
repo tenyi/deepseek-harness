@@ -1,4 +1,4 @@
----
+﻿---
 description: "One shared remote Linux sandbox for E2B-backed file and command work: configuration, lifetime, and what happens at startup and shutdown."
 kind: "package-reference"
 ---

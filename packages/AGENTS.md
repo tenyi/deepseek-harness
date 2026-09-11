@@ -1,4 +1,4 @@
-# AGENTS.md — Harness Packages
+﻿# AGENTS.md — Harness Packages
 
 These package-specific rules supplement the repo-wide [conventions](../AGENTS.md#conventions).
 

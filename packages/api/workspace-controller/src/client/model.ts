@@ -1,4 +1,4 @@
-/** Client-side Workspace state model shared by Remote transport and UI projection. */
+﻿/** Client-side Workspace state model shared by Remote transport and UI projection. */
 
 import { notifySubscribers } from '@deepseek-ai/dsh-client-store'
 import type {} from '@deepseek-ai/dsh-api-workspace-controller/remote'

@@ -1,4 +1,4 @@
-/** Client-face process fixture used by Host-side protocol integration tests. */
+﻿/** Client-face process fixture used by Host-side protocol integration tests. */
 
 import { parentPort, workerData } from 'node:worker_threads'
 import { Context, type Fiber } from '@deepseek-ai/cordis'

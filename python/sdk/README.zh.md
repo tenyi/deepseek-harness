@@ -1,18 +1,18 @@
-# DeepSeek Harness Python SDK
+﻿# DeepSeek Harness Python SDK
 
 [English](README.md) | 中文
 
-用于通过 stdio 上按行分隔的 JSON-RPC 驱动 DeepSeek Harness 的 Python 子进程 SDK。安装 `deepseek-harness-sdk` 时，会同时安装当前平台上版本完全相同的 `deepseek-harness-runtime-bin` wheel 包。
+用于通過 stdio 上按行分隔的 JSON-RPC 驅動 DeepSeek Harness 的 Python 子進程 SDK。安裝 `deepseek-harness-sdk` 時，會同時安裝當前平臺上版本完全相同的 `deepseek-harness-runtime-bin` wheel 包。
 
 ```sh
 python -m pip install deepseek-harness-sdk
 ```
 
-## 启动运行时
+## 啟動運行時
 
-Python SDK 没有独立的应用入口。它以 `--profile sdk` 启动内置的 `dsh` CLI（命令行界面）；所选 profile 负责 JSON-RPC 服务器、agent（智能体）组合、凭据、持久化、工具和关闭流程。
+Python SDK 沒有獨立的應用入口。它以 `--profile sdk` 啟動內置的 `dsh` CLI（命令行界面）；所選 profile 負責 JSON-RPC 服務器、agent（智能體）組合、憑據、持久化、工具和關閉流程。
 
-每次启动都必须显式指定 Harness home。请传入 `dsh_home`，或在子进程环境中提供非空的 `DSH_HOME`。SDK 刻意不会发现 `~/.dsh`。
+每次啟動都必須顯式指定 Harness home。請傳入 `dsh_home`，或在子進程環境中提供非空的 `DSH_HOME`。SDK 刻意不會發現 `~/.dsh`。
 
 ```py
 from deepseek_harness import DeepSeekHarness
@@ -30,11 +30,11 @@ with DeepSeekHarness(
 print(result.final_response)
 ```
 
-`DeepSeekHarness` 延迟启动运行时，并在调用 `close()` 或退出上下文管理器前复用该进程。首次 profile 握手通过 `initialize_timeout_seconds` 使用独立的 30 秒默认上限；普通轮次在未设置 `request_timeout_seconds` 时仍不设上限。超时诊断会指明所选 profile，并包含保留的运行时诊断。`cwd` 是 agent workspace；`runtime_cwd` 独立选择子进程工作目录。两者都会在启动前转成绝对路径。`provider`、`model`、可选的 `reasoning_effort` 和可选的正整数 `max_tokens` 通过 JSON-RPC 初始化发送。`base_url` 与 `api_key` 会显式覆盖子进程环境中的 `DEEPSEEK_BASE_URL` 与 `DEEPSEEK_API_KEY`。
+`DeepSeekHarness` 延遲啟動運行時，并在調用 `close()` 或退出上下文管理器前復用該進程。首次 profile 握手通過 `initialize_timeout_seconds` 使用獨立的 30 秒默認上限；普通輪次在未設置 `request_timeout_seconds` 時仍不設上限。超時診斷會指明所選 profile，并包含保留的運行時診斷。`cwd` 是 agent workspace；`runtime_cwd` 獨立選擇子進程工作目錄。兩者都會在啟動前轉成絕對路徑。`provider`、`model`、可選的 `reasoning_effort` 和可選的正整數 `max_tokens` 通過 JSON-RPC 初始化發送。`base_url` 與 `api_key` 會顯式覆蓋子進程環境中的 `DEEPSEEK_BASE_URL` 與 `DEEPSEEK_API_KEY`。
 
-## 自定义插件
+## 自定義插件
 
-持久自定义属于 `dsh` profile。使用运行时 wheel 包提供的 `dsh` 命令初始化随附的 SDK profile，并安装外部 bundle：
+持久自定義屬于 `dsh` profile。使用運行時 wheel 包提供的 `dsh` 命令初始化隨附的 SDK profile，并安裝外部 bundle：
 
 ```sh
 export DSH_HOME=/absolute/path/to/isolated-dsh-home
@@ -42,9 +42,9 @@ dsh --profile sdk --dump-default-config >/dev/null
 dsh plugin --profile sdk add file:/absolute/path/to/my-plugin-bundle
 ```
 
-`file:` 形式会把本地 bundle 安装到 profile 包树中，使其 peer import 可以到达内置安装后备。profile manifest（元数据清单）会记录已安装依赖与有序 bundle 层；`$DSH_HOME/profiles/sdk/cordis.patch.yml` 是持久用户 patch。只有管理外部包时，`dsh plugin` 才需要 `pnpm`。运行 SDK 不需要系统 Node.js。
+`file:` 形式會把本地 bundle 安裝到 profile 包樹中，使其 peer import 可以到達內置安裝后備。profile manifest（元數據清單）會記錄已安裝依賴與有序 bundle 層；`$DSH_HOME/profiles/sdk/cordis.patch.yml` 是持久用戶 patch。只有管理外部包時，`dsh plugin` 才需要 `pnpm`。運行 SDK 不需要系統 Node.js。
 
-对于单次调用的变更，可传入一个或多个 patch 文件。它们会转成绝对路径，并在 profile 层与 home patch 层之后按顺序传给 CLI：
+對于單次調用的變更，可傳入一個或多個 patch 文件。它們會轉成絕對路徑，并在 profile 層與 home patch 層之后按順序傳給 CLI：
 
 ```py
 with DeepSeekHarness(
@@ -55,18 +55,18 @@ with DeepSeekHarness(
     result = harness.run("Make the requested code change.")
 ```
 
-`profile` 可以选择另一个已存在的 profile，但该组合必须保留 `@deepseek-ai/dsh-sdk-app` 或另一个 `@deepseek-ai/dsh-sdk-jsonrpc-server` 配置项。配置错误会在 CLI 启动或 SDK 初始化时失败；不存在完整配置回退。`dsh_bin` 可以选择另一个 `dsh` 可执行程序，同时保持相同的 profile 语法。任意 argv 替换仅是内部 fake-runtime 测试适配器，不属于公开 API。
+`profile` 可以選擇另一個已存在的 profile，但該組合必須保留 `@deepseek-ai/dsh-sdk-app` 或另一個 `@deepseek-ai/dsh-sdk-jsonrpc-server` 配置項。配置錯誤會在 CLI 啟動或 SDK 初始化時失敗；不存在完整配置回退。`dsh_bin` 可以選擇另一個 `dsh` 可執行程序，同時保持相同的 profile 語法。任意 argv 替換僅是內部 fake-runtime 測試適配器，不屬于公開 API。
 
-`provider` 选择指定 Cordis 组合所注册的提供方路由；`model` 是该适配器解析出的模型 ID。`reasoning_effort` 是该确切路由可选的非空适配器自有标识符；省略时保留模型自身的默认值。`max_tokens` 是一个可选的正整数，用于限制根 agent 及其进程内后代在每次请求中输出的 token 数量；省略该参数时，由提供方的默认行为决定输出上限。缺少适配器、模型不可用或推理强度不受支持时，初始化会在提示词运行前拒绝。压缩（compaction）摘要继续使用压缩插件单独配置的上限。内置默认组合注册 `deepseek-official`。自定义组合可以挂载 `llm-pi-ai`，在其中配置各提供方专属的凭据和端点，并选择 pi-ai 已安装 catalog 中存在的任意提供方／模型组合。
+`provider` 選擇指定 Cordis 組合所注冊的提供方路由；`model` 是該適配器解析出的模型 ID。`reasoning_effort` 是該確切路由可選的非空適配器自有標識符；省略時保留模型自身的默認值。`max_tokens` 是一個可選的正整數，用于限制根 agent 及其進程內后代在每次請求中輸出的 token 數量；省略該參數時，由提供方的默認行為決定輸出上限。缺少適配器、模型不可用或推理強度不受支持時，初始化會在提示詞運行前拒絕。壓縮（compaction）摘要繼續使用壓縮插件單獨配置的上限。內置默認組合注冊 `deepseek-official`。自定義組合可以掛載 `llm-pi-ai`，在其中配置各提供方專屬的憑據和端點，并選擇 pi-ai 已安裝 catalog 中存在的任意提供方／模型組合。
 
-随附的 `sdk-minimal` profile 是独立显式配置树，而不是 `dsh-base` 上的 overlay。使用 `profile="sdk-minimal"` 选择它；普通 `model` 参数是唯一运行时模型选择，也适用于不在适配器建议目录中的模型 ID。它只提供按平台选择的持久 shell、本地执行与 JSONL 会话；文件系统工具、设置、托管凭据、遥测、Web 工具与完整默认工具清单仍由独立的完整 `sdk` 与 `web` profile 提供。
+隨附的 `sdk-minimal` profile 是獨立顯式配置樹，而不是 `dsh-base` 上的 overlay。使用 `profile="sdk-minimal"` 選擇它；普通 `model` 參數是唯一運行時模型選擇，也適用于不在適配器建議目錄中的模型 ID。它只提供按平臺選擇的持久 shell、本地執行與 JSONL 會話；文件系統工具、設置、托管憑據、遙測、Web 工具與完整默認工具清單仍由獨立的完整 `sdk` 與 `web` profile 提供。
 
-## 结果与通知
+## 結果與通知
 
-`Session.run()` 的活动区间从提示词被持久 inbox 接收时开始，到整个 agent 下一次进入空闲状态时结束，并返回 `RunResult(session_id, final_response, finish_reason, events, notifications)`。`final_response` 是该区间内根会话最后提交的助手文本。`finish_reason` 是最后一个根会话 `turn/end` 的 `kind`，例如 `completed`、`max-tokens` 或 `error`；没有轮次结束时为 `None`。缺少字符串 `data.reason.kind` 的 `turn/end` 违反协议，并会抛出 `SdkProtocolError`。
+`Session.run()` 的活動區間從提示詞被持久 inbox 接收時開始，到整個 agent 下一次進入空閑狀態時結束，并返回 `RunResult(session_id, final_response, finish_reason, events, notifications)`。`final_response` 是該區間內根會話最后提交的助手文本。`finish_reason` 是最后一個根會話 `turn/end` 的 `kind`，例如 `completed`、`max-tokens` 或 `error`；沒有輪次結束時為 `None`。缺少字符串 `data.reason.kind` 的 `turn/end` 違反協議，并會拋出 `SdkProtocolError`。
 
-`HarnessClient` 会在运行时进程的整个生命周期内保留已发现的 subagent 谱系。在 `Session.run()` 期间，`RunResult.notifications` 与 `on_notification` 按协议顺序接收根会话和已知后代的通知。`RunResult.events` 只包含根会话事件，因此后代输出不会替换根响应。底层 `session_prompt()` 会立即返回已排队消息的 id；绕过 `Session.run()` 的调用方自行负责后续活动边界。
+`HarnessClient` 會在運行時進程的整個生命周期內保留已發現的 subagent 譜系。在 `Session.run()` 期間，`RunResult.notifications` 與 `on_notification` 按協議順序接收根會話和已知后代的通知。`RunResult.events` 只包含根會話事件，因此后代輸出不會替換根響應。底層 `session_prompt()` 會立即返回已排隊消息的 id；繞過 `Session.run()` 的調用方自行負責后續活動邊界。
 
-所选 home 保存 profile、插件与每个 profile 自有的持久资源。完整 `sdk` profile 使用其中的凭据、设置与会话存储；`sdk-minimal` 只使用自己的 JSONL 会话存储。需要隔离这些资源时应使用新的 home；独立工作应使用新的会话 ID。同时复用 harness 与会话 ID 会延续持久对话和会话资源。
+所選 home 保存 profile、插件與每個 profile 自有的持久資源。完整 `sdk` profile 使用其中的憑據、設置與會話存儲；`sdk-minimal` 只使用自己的 JSONL 會話存儲。需要隔離這些資源時應使用新的 home；獨立工作應使用新的會話 ID。同時復用 harness 與會話 ID 會延續持久對話和會話資源。
 
-另见 [Python 教程](../../docs/user/guide/python-sdk.zh.md)、[可运行示例](examples/README.zh.md) 和 [运行时 wheel 包参考](../sdk-runtime/README.zh.md)。
+另見 [Python 教程](../../docs/user/guide/python-sdk.zh.md)、[可運行示例](examples/README.zh.md) 和 [運行時 wheel 包參考](../sdk-runtime/README.zh.md)。

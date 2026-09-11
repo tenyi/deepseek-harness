@@ -1,4 +1,4 @@
-import { randomUUID } from 'node:crypto'
+﻿import { randomUUID } from 'node:crypto'
 import { once } from 'node:events'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import WebSocket, { type RawData } from 'ws'

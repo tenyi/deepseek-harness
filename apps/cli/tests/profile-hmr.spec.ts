@@ -1,4 +1,4 @@
-/** Module-HMR ownership across the real shipped profile bundle layers. */
+﻿/** Module-HMR ownership across the real shipped profile bundle layers. */
 
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'

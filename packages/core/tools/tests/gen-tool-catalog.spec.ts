@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Guarantee tests for the tool-schema catalog generator (`scripts/gen-tool-catalog.ts`).
  */
 

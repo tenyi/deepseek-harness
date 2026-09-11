@@ -1,4 +1,4 @@
-/**
+﻿/**
  * SDK-facing JSON-RPC plugin over stdio. The selected dsh profile decides
  * whether to load it; see the single-launch Agent Note and package README.
  * Stdout is reserved for protocol frames, so the tree must not load a stdout logger.

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Root-owned frame measurement, panel preferences, and presentation reports.
  * The registration supplies a fresh store and binds its actions to ctx.layout.
  */

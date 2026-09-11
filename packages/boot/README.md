@@ -1,4 +1,4 @@
----
+﻿---
 description: "The boot package group: how dsh app bins start — environment loading, profile and patch layers, clear startup failures, and app-owned command lines."
 kind: "package-group"
 ---

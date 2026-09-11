@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Sandbox-consuming PowerShell executor — the pwsh twin of
  * `@deepseek-ai/dsh-bash-sandbox`. It wraps the exact local pwsh argv through
  * `ctx.sandbox` (which on Windows resolves to the ACL restricted-token runner

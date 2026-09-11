@@ -1,4 +1,4 @@
----
+﻿---
 description: "Loader integration for generated Typert artifacts: how mounted packages automatically contribute their host-face reflection and schemas to the runtime registry."
 kind: "package-reference"
 ---

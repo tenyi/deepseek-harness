@@ -1,4 +1,4 @@
-/** Reconnecting lifecycle for one single-consumer Remote stream. */
+﻿/** Reconnecting lifecycle for one single-consumer Remote stream. */
 
 import { RemoteError, remoteErrorOf } from '@deepseek-ai/dsh-typert-protocol'
 import type { ConnectionHandle } from '@deepseek-ai/dsh-client-connection/client'

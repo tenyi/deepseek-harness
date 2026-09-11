@@ -1,4 +1,4 @@
-/** Runtime constructors and protocol constants for the goal domain. */
+﻿/** Runtime constructors and protocol constants for the goal domain. */
 
 import { HarnessError } from '@deepseek-ai/dsh-llm'
 import type { GoalId as GoalIdType } from './types.ts'

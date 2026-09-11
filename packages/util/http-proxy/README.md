@@ -1,4 +1,4 @@
----
+﻿---
 description: "Outbound HTTP proxy support for the harness: how one policy resolved from the launch environment reaches every request Node's fetch would otherwise send direct."
 kind: "package-reference"
 ---

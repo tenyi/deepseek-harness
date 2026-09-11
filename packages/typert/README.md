@@ -1,4 +1,4 @@
----
+﻿---
 description: "The Typert group map: the build-time type-graph generator, runtime registry, Loader integration, and shared Remote protocol that enable typed Host-to-Client calls."
 kind: "package-group"
 ---

@@ -1,4 +1,4 @@
-/** Opaque revision identity for lightweight persistence observations. */
+﻿/** Opaque revision identity for lightweight persistence observations. */
 
 import type { Branded } from '@deepseek-ai/dsh-brand'
 

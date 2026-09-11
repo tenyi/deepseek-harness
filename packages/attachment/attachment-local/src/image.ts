@@ -1,4 +1,4 @@
-/** Raster inspection: full decode at admission, header-only probe on verified reads. */
+﻿/** Raster inspection: full decode at admission, header-only probe on verified reads. */
 
 import sharp, { type Sharp } from 'sharp'
 import { AttachmentError } from '@deepseek-ai/dsh-attachment'

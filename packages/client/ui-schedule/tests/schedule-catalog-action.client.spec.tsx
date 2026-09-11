@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
@@ -188,9 +188,9 @@ describe('ScheduleCatalogAction rows', () => {
     const samples = [
       [86_400, 'Every 1 day', '1天一次'],
       [172_800, 'Every 2 days', '2天一次'],
-      [3_600, 'Every 1 hour', '1小时一次'],
-      [7_200, 'Every 2 hours', '2小时一次'],
-      [300, 'Every 5 minutes', '5分钟一次'],
+      [3_600, 'Every 1 hour', '1小時一次'],
+      [7_200, 'Every 2 hours', '2小時一次'],
+      [300, 'Every 5 minutes', '5分鐘一次'],
       [301, 'Every 301 seconds', '301秒一次'],
     ] as const
     for (const [seconds, english, chinese] of samples) {
@@ -198,7 +198,7 @@ describe('ScheduleCatalogAction rows', () => {
       expect(formatScheduleFrequency(item, tEn)).toBe(english)
       expect(formatScheduleFrequency(item, tZh)).toBe(chinese)
     }
-    expect(formatScheduleFrequency(record('once', 'at', START + 1_000), tZh)).toBe('单次')
+    expect(formatScheduleFrequency(record('once', 'at', START + 1_000), tZh)).toBe('單次')
     expect(tZh('status.scheduled')).toBe('等待中')
     expect(tZh('status.overdue')).toBe('已逾期')
   })

@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'
 import { indexSubagentDescendants } from '../src/client/subagent-lineage.ts'
 

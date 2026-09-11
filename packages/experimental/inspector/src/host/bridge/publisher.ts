@@ -1,4 +1,4 @@
-/** Buffered Host observation publication over a dedicated Worker MessagePort. */
+﻿/** Buffered Host observation publication over a dedicated Worker MessagePort. */
 
 import type { MessagePort } from 'node:worker_threads'
 import { InspectorSourceBuffer, type InspectorSourceBufferOptions } from '../../shared/bridge/buffer.ts'

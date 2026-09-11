@@ -1,4 +1,4 @@
----
+﻿---
 description: "The subagent package group: the delegation seam, its in-process and out-of-process backends, and the model-facing delegation tools."
 kind: "package-group"
 ---

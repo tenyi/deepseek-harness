@@ -1,29 +1,29 @@
-- dialog "设置":
+﻿- dialog "設置":
   - navigation:
-    - text: 设置
-    - button "通用设置":
+    - text: 設置
+    - button "通用設置":
       - img
-      - text: 通用设置
+      - text: 通用設置
     - button "模型":
       - img
       - text: 模型
     - button "插件":
       - img
       - text: 插件
-    - button "Agent 预设":
+    - button "Agent 預設":
       - img
-      - text: Agent 预设
-  - button "打开配置文件"
-  - button "关闭":
+      - text: Agent 預設
+  - button "打開配置文件"
+  - button "關閉":
     - img
-    - text: 关闭
+    - text: 關閉
   - heading "模型" [level=2]
-  - paragraph: 填入各提供方的 API 密钥即可使用其模型。
+  - paragraph: 填入各提供方的 API 密鑰即可使用其模型。
   - list:
     - listitem:
       - text: DeepSeek
-      - img "API 密钥缺失"
-      - button "编辑 DeepSeek (deepseek-official)": 编辑
+      - img "API 密鑰缺失"
+      - button "編輯 DeepSeek (deepseek-official)": 編輯
   - text: 提供方
   - combobox "提供方":
     - option "amazon-bedrock"
@@ -65,9 +65,9 @@
     - option "xiaomi-token-plan-sgp"
     - option "zai"
     - option "zai-coding-cn"
-  - text: API 密钥
-  - textbox "API 密钥":
-    - /placeholder: 输入 API 密钥，或留空使用环境认证
-  - group: 自定义设置
+  - text: API 密鑰
+  - textbox "API 密鑰":
+    - /placeholder: 輸入 API 密鑰，或留空使用環境認證
+  - group: 自定義設置
   - button "取消"
   - button "保存"

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Projection value store (push model; session-projection subsystem page:
  * docs/subsystems/session-projection.md): the single
  * higher-seq-wins rule on both paths (a stale baseline cannot overwrite a
@@ -106,7 +106,7 @@ describe('Session tail-page seeding', () => {
     const api = new FakeApiClient()
     const session = new Session(SID, fakeRemote(api))
     api.onHistory = () => Promise.resolve(ok({
-      records: entries(plainTurn(SessionSeq(0), 0, '问', '答')) as never[], hasMore: false,
+      records: entries(plainTurn(SessionSeq(0), 0, '問', '答')) as never[], hasMore: false,
       projections: { asOfSeq: 5, values: { 'test/marks': { marks: ['from-baseline'] } } },
     } as never))
     await session.open()

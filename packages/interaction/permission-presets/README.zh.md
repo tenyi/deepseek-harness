@@ -1,5 +1,5 @@
----
-description: "面向用户的权限预设：供选择、配置或排查把沙箱模式与审批策略捆绑在一起的 Permissions 选择器的用户与维护者阅读。"
+﻿---
+description: "面向用戶的權限預設：供選擇、配置或排查把沙箱模式與審批策略捆綁在一起的 Permissions 選擇器的用戶與維護者閱讀。"
 kind: "package-reference"
 ---
 
@@ -9,27 +9,27 @@ kind: "package-reference"
 
 ## 概述
 
-权限预设让用户通过一个选择器同时应用沙箱模式和审批策略。部署可以配置具名预设以及新建会话的默认预设；更改该默认值不会影响现有会话，内置预设表包含 `workspace-write` 和 `danger-full-access`。如果当前组合不匹配任何预设，客户端会显示推导出的 `custom` 状态，但用户不能选择或持久化它；切换预设只会更改实际值不同的设置。`/permission` 命令用于报告或更改当前预设，而沙箱执行和审批处理仍由不同的执行机制负责。
+權限預設讓用戶通過一個選擇器同時應用沙箱模式和審批策略。部署可以配置具名預設以及新建會話的默認預設；更改該默認值不會影響現有會話，內置預設表包含 `workspace-write` 和 `danger-full-access`。如果當前組合不匹配任何預設，客戶端會顯示推導出的 `custom` 狀態，但用戶不能選擇或持久化它；切換預設只會更改實際值不同的設置。`/permission` 命令用于報告或更改當前預設，而沙箱執行和審批處理仍由不同的執行機制負責。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-当部署希望向用户提供一个 Permissions 选择器、而非分离的沙箱与审批控件时，选择此服务。它捆绑旋钮；执行与审批各自保留自己的取值，因此以后移除本包，最后一次取值依然生效。
+當部署希望向用戶提供一個 Permissions 選擇器、而非分離的沙箱與審批控件時，選擇此服務。它捆綁旋鈕；執行與審批各自保留自己的取值，因此以后移除本包，最后一次取值依然生效。
 
-### 配置预设
+### 配置預設
 
-插件配置定义预设表与新会话的默认值。每个预设名称把一个沙箱模式与一个审批策略捆绑为一组；`name` 与 `description` 是可选的客户端呈现。
+插件配置定義預設表與新會話的默認值。每個預設名稱把一個沙箱模式與一個審批策略捆綁為一組；`name` 與 `description` 是可選的客戶端呈現。
 
 ```yaml
 - name: '@deepseek-ai/dsh-permission-presets'
@@ -44,102 +44,102 @@ kind: "package-reference"
     defaultPreset: workspace-write
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `presets` | `workspace-write`、`danger-full-access` | 预设名称 → 沙箱／审批捆绑的表 |
-| `defaultPreset` | 推断 | 固定到新会话的预设；组合默认值不匹配任何预设时必填 |
+| `presets` | `workspace-write`、`danger-full-access` | 預設名稱 → 沙箱／審批捆綁的表 |
+| `defaultPreset` | 推斷 | 固定到新會話的預設；組合默認值不匹配任何預設時必填 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-permission-presets)是每个受支持字段及其 JSDoc 的穷尽式真源。`custom` 这个名称保留给推导出的非预设状态，不能作为表条目。挂载需要具有约束能力的 bash 执行器（会报告 `sandboxMode` 的执行器）与审批服务。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-permission-presets)是每個受支持字段及其 JSDoc 的窮盡式真源。`custom` 這個名稱保留給推導出的非預設狀態，不能作為表條目。掛載需要具有約束能力的 bash 執行器（會報告 `sandboxMode` 的執行器）與審批服務。
 
-### 切换预设
+### 切換預設
 
-切换到某个预设只改变实际值不同的旋钮；再次选择当前已生效的预设不会产生任何变化。当前值解析顺序为：仍匹配的最近一次记录选择，其次表中第一个匹配项，否则为 `custom`。用户通过 `/permission` 命令切换：不带参数调用时报告当前预设与可用表，带预设参数时切换过去。
+切換到某個預設只改變實際值不同的旋鈕；再次選擇當前已生效的預設不會產生任何變化。當前值解析順序為：仍匹配的最近一次記錄選擇，其次表中第一個匹配項，否則為 `custom`。用戶通過 `/permission` 命令切換：不帶參數調用時報告當前預設與可用表，帶預設參數時切換過去。
 
-### 用户看到什么
+### 用戶看到什么
 
-客户端渲染选择器：按表顺序列出每个可切换预设，并仅在当前值为 `custom` 时显示它。`custom` 仅供显示——调用方可以从不匹配的旋钮组合切换出去，但不能通过此服务选中或持久化一个名为 `custom` 的预设。
+客戶端渲染選擇器：按表順序列出每個可切換預設，并僅在當前值為 `custom` 時顯示它。`custom` 僅供顯示——調用方可以從不匹配的旋鈕組合切換出去，但不能通過此服務選中或持久化一個名為 `custom` 的預設。
 
-### 会话默认值
+### 會話默認值
 
-`permission` 设置命名空间为未来会话持有 `defaultPreset`：创建会话时读取它，将其应用于沙箱模式与审批策略，并把应用的预设记录为一次 `permission/preset` 选择。之后的设置变更绝不会改变现有会话。恢复的 seed（包括由 `session/end-seed` 明确标记的空 seed）会保留其有效权限，并只接收缺失的持久事实，而不会接收最新用户默认值。
+`permission` 設置命名空間為未來會話持有 `defaultPreset`：創建會話時讀取它，將其應用于沙箱模式與審批策略，并把應用的預設記錄為一次 `permission/preset` 選擇。之后的設置變更絕不會改變現有會話。恢復的 seed（包括由 `session/end-seed` 明確標記的空 seed）會保留其有效權限，并只接收缺失的持久事實，而不會接收最新用戶默認值。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-可观察行为已在[使用本包](#use-this-package)中说明；本节解释写入路径、读取侧与可选子功能。
+可觀察行為已在[使用本包](#use-this-package)中說明；本節解釋寫入路徑、讀取側與可選子功能。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | `PermissionPresetService`：预设表、写入路径、设置命名空间、会话固定、子功能 |
-| [`src/types.ts`](src/types.ts) | `permissions` 投影键声明与选择器载荷类型 |
-| [`src/invariant.ts`](src/invariant.ts) | 不变式伴生插件：校验 `permission/preset` 指向可解析的预设 |
+| [`src/index.ts`](src/index.ts) | `PermissionPresetService`：預設表、寫入路徑、設置命名空間、會話固定、子功能 |
+| [`src/types.ts`](src/types.ts) | `permissions` 投影鍵聲明與選擇器載荷類型 |
+| [`src/invariant.ts`](src/invariant.ts) | 不變式伴生插件：校驗 `permission/preset` 指向可解析的預設 |
 
-### 写入路径
+### 寫入路徑
 
-`apply()` 解析预设，仅当有效预设变化时追加 `permission/preset`，然后通过各自的权威 setter——`dsh-sandbox-policy` 的 `setSandboxMode` 与 `dsh-user-approval` 的 `setApprovalPolicy`——写入每个变化的旋钮。选择事件先于旋钮事件，因此在两个预设共享同一组取值时保留用户意图；净变化为零的选择不追加任何内容。
+`apply()` 解析預設，僅當有效預設變化時追加 `permission/preset`，然后通過各自的權威 setter——`dsh-sandbox-policy` 的 `setSandboxMode` 與 `dsh-user-approval` 的 `setApprovalPolicy`——寫入每個變化的旋鈕。選擇事件先于旋鈕事件，因此在兩個預設共享同一組取值時保留用戶意圖；凈變化為零的選擇不追加任何內容。
 
-### 读取侧与 `custom`
+### 讀取側與 `custom`
 
-`current(session)` 读取 `permissions` 投影；该单元在组合默认值（`ctx.shell.sandboxMode` 与审批配置）之上折叠三个全量值旋钮事件。host 状态还会保留 `session/end-seed` 是否已经出现，使会话固定无需重扫日志即可区分显式为空的恢复 seed 与真正的新会话。仍匹配的最近选择在共享捆绑时胜出；否则表中第一个匹配项胜出；否则返回推导出的 `CUSTOM_PRESET`。注册表或投影 key 缺失时会显式失败。
+`current(session)` 讀取 `permissions` 投影；該單元在組合默認值（`ctx.shell.sandboxMode` 與審批配置）之上折疊三個全量值旋鈕事件。host 狀態還會保留 `session/end-seed` 是否已經出現，使會話固定無需重掃日志即可區分顯式為空的恢復 seed 與真正的新會話。仍匹配的最近選擇在共享捆綁時勝出；否則表中第一個匹配項勝出；否則返回推導出的 `CUSTOM_PRESET`。注冊表或投影 key 缺失時會顯式失敗。
 
-### 会话固定与空白复用
+### 會話固定與空白復用
 
-挂载时会固定所有存活与未来的会话：真正全新的会话获得默认预设与两个旋钮事实，而 seed 会话或部分初始化的会话保留其有效旋钮值，只补充缺失的持久事实。投影自有的 seed 标记让该判断与旋钮值共用同一份增量状态。
+掛載時會固定所有存活與未來的會話：真正全新的會話獲得默認預設與兩個旋鈕事實，而 seed 會話或部分初始化的會話保留其有效旋鈕值，只補充缺失的持久事實。投影自有的 seed 標記讓該判斷與旋鈕值共用同一份增量狀態。
 
-### 可选子功能
+### 可選子功能
 
-`permissions` 投影单元仅在组合了 `ctx.sessionProjections` 注册表时注册；`/permission` 命令仅在组合了 `ctx.commands` 注册表时注册。派生当前预设或固定初始选择的调用要求该投影存在，缺少注册表或 key 时会显式失败。
+`permissions` 投影單元僅在組合了 `ctx.sessionProjections` 注冊表時注冊；`/permission` 命令僅在組合了 `ctx.commands` 注冊表時注冊。派生當前預設或固定初始選擇的調用要求該投影存在，缺少注冊表或 key 時會顯式失敗。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下页面。它们从预设词汇逐步进入执行旋钮与设计依据。
+當包級約定不夠用時閱讀以下頁面。它們從預設詞匯逐步進入執行旋鈕與設計依據。
 
-- [权限预设子系统参考](../../../docs/subsystems/permission-presets.zh.md)——预设表、选择器载荷与 `ctx.permissionPresets` 的 Cordis 接口面。
-- [沙箱切换设计 Agent Note](../../../.agents/notes/implemented/feature/2026-07-06-sandbox.zh.md)——沙箱模式与审批策略如何组合与切换。
-- [审批子系统参考](../../../docs/subsystems/approval.zh.md)——此服务捆绑的审批策略旋钮。
-- [交互组映射](../README.zh.md)——相邻的命令、审批与问答包。
+- [權限預設子系統參考](../../../docs/subsystems/permission-presets.zh.md)——預設表、選擇器載荷與 `ctx.permissionPresets` 的 Cordis 接口面。
+- [沙箱切換設計 Agent Note](../../../.agents/notes/implemented/feature/2026-07-06-sandbox.zh.md)——沙箱模式與審批策略如何組合與切換。
+- [審批子系統參考](../../../docs/subsystems/approval.zh.md)——此服務捆綁的審批策略旋鈕。
+- [交互組映射](../README.zh.md)——相鄰的命令、審批與問答包。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-间接地，通过 `dsh-user-approval` 和 `dsh-tool-bash`：二者渲染由此服务的旋钮事件所选择的审批策略提示词、切换通知与经沙箱执行的工具结果；`permission/preset` 本身只写入日志。
+間接地，通過 `dsh-user-approval` 和 `dsh-tool-bash`：二者渲染由此服務的旋鈕事件所選擇的審批策略提示詞、切換通知與經沙箱執行的工具結果；`permission/preset` 本身只寫入日志。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-不会直接使缓存失效；具名消费方拥有所有请求前缀变更。
+不會直接使緩存失效；具名消費方擁有所有請求前綴變更。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明预设服务不提供什么。它们是当前包约束，不是权限系统对比。
+這些限制說明預設服務不提供什么。它們是當前包約束，不是權限系統對比。
 
-- **只组合两个机制级旋钮**：预设选择沙箱模式和审批策略；agent（智能体）／profile 选择尚未纳入 `PresetSpec`。
-- **`custom` 只能推导得出**：调用方可以从不匹配的旋钮组合切换出去，但无法通过此服务选中或持久化一个名为 `custom` 的预设。
-- **预设表是进程级配置**：配置在插件生命周期内固定；更改可用预设必须重新加载插件。
-- **已存储的默认值必须保留在预设表中**：移除被引用的预设会导致权限设置注册失败，直到更新或重置 `settings.yaml` 中的 `permission` 分节。
+- **只組合兩個機制級旋鈕**：預設選擇沙箱模式和審批策略；agent（智能體）／profile 選擇尚未納入 `PresetSpec`。
+- **`custom` 只能推導得出**：調用方可以從不匹配的旋鈕組合切換出去，但無法通過此服務選中或持久化一個名為 `custom` 的預設。
+- **預設表是進程級配置**：配置在插件生命周期內固定；更改可用預設必須重新加載插件。
+- **已存儲的默認值必須保留在預設表中**：移除被引用的預設會導致權限設置注冊失敗，直到更新或重置 `settings.yaml` 中的 `permission` 分節。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

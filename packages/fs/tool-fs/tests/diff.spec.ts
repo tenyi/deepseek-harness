@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Unit tests for the result-time contextual-diff computation (`src/diff.ts`):
  * the pure before/after → {@link FileDiff}[] hunk builder and the defensive
  * `meta` narrowing. These pin the exact hunk reconstruction (context lines,

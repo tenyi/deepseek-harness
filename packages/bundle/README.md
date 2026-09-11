@@ -1,4 +1,4 @@
----
+﻿---
 description: "Ready-made dsh profile bundles for the shared core, browser GUI, one-shot task, ACP, and SDK application surfaces."
 kind: "package-group"
 ---

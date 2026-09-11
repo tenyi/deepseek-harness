@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** Browser Worker ownership, handshake, and PDF.js teardown under controlled completions. */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import type { PdfDocument, PdfSession } from '../src/client/pdf/document.ts'

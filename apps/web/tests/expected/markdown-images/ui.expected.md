@@ -1,4 +1,4 @@
-- banner:
+﻿- banner:
   - navigation "Session hierarchy":
     - button "Markdown image policy" [disabled]
   - button "More actions":

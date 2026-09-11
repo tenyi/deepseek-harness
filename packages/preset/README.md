@@ -1,4 +1,4 @@
----
+﻿---
 description: "The preset group map: per-session agent composition from preset files, for users and maintainers navigating the group."
 kind: "package-group"
 ---

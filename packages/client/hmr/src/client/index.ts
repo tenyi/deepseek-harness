@@ -1,4 +1,4 @@
-/**
+﻿/**
  * client-hmr, browser half: hot-reload driver for client plugin entries.
  *
  * Listens on the host's system SSE channel (`GET /plugins/events`); on a

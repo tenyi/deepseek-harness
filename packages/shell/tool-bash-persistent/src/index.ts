@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-facing persistent `bash` tool over the owner-scoped PTY seam.
  * @module @deepseek-ai/dsh-tool-bash-persistent
  */

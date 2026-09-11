@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model selection plugin, browser half — TWO entries over ONE per-session
  * directory owned by ModelDirectoryResolver (`ctx.modelDirectories`). The /model popupSelect
  * contribution and the composer's named `conversation.input.model` seat share

@@ -1,4 +1,4 @@
----
+﻿---
 description: "Official DeepSeek request-extension registry for provider plugins contributing lifecycle-owned top-level API fields."
 kind: "package-reference"
 ---

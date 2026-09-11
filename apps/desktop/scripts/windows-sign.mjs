@@ -1,4 +1,4 @@
-import { execFile } from 'node:child_process'
+﻿import { execFile } from 'node:child_process'
 import { X509Certificate } from 'node:crypto'
 import { readFileSync, realpathSync, statSync } from 'node:fs'
 import { open } from 'node:fs/promises'

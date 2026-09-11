@@ -1,4 +1,4 @@
-/** ACL/token bindings layered on the shared Win32 process owner. */
+﻿/** ACL/token bindings layered on the shared Win32 process owner. */
 
 import koffi from 'koffi'
 import {

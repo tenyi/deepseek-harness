@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Queue snapshot semantics: authoritative replacement after every host-side
  * change, reconnect re-baselining, pre-instantiation buffering, editable-text
  * projection, and snapshot reference stability.
@@ -52,15 +52,15 @@ describe('Session queue snapshot intake', () => {
   it('projects stable ids, flat previews, and complete text', async ({ mock, start }) => {
     const session = await sessionBench(mock, start, SID)
     session.handleControlFrame(queueFrame([
-      { id: 'q-1', body: '第一条  排队\n消息' },
+      { id: 'q-1', body: '第一條  排隊\n消息' },
     ]))
     const queue = session.getSnapshot().queue
     expect(typeof queue[0]?.messageId).toBe('string')
     expect(queue).toMatchObject([
       {
         id: 'q-1', placement: 'queued',
-        content: [{ type: 'text', text: '第一条  排队\n消息' }],
-        preview: '第一条 排队 消息', text: '第一条  排队\n消息',
+        content: [{ type: 'text', text: '第一條  排隊\n消息' }],
+        preview: '第一條 排隊 消息', text: '第一條  排隊\n消息',
       },
     ])
   }, COLD_BOOT_TIMEOUT_MS)
@@ -95,7 +95,7 @@ describe('Session queue snapshot intake', () => {
 
   it('caps previews at 200 code points and preserves the full editable text', async ({ mock, start }) => {
     const session = await sessionBench(mock, start, SID)
-    const body = '长'.repeat(201)
+    const body = '長'.repeat(201)
     session.handleControlFrame(queueFrame([{ id: 'q-cap', body }]))
     const row = session.getSnapshot().queue[0]
     expect(Array.from(row?.preview ?? '')).toHaveLength(201)
@@ -127,7 +127,7 @@ describe('Session queue snapshot intake', () => {
 
   it('keeps the queue array reference stable across unrelated snapshot swaps', async ({ mock, start }) => {
     const session = await sessionBench(mock, start, SID)
-    session.handleControlFrame(queueFrame([{ id: 'q-stable', body: '稳定' }]))
+    session.handleControlFrame(queueFrame([{ id: 'q-stable', body: '穩定' }]))
     const before = session.getSnapshot().queue
     session.handleAgentError('unrelated')
     expect(session.getSnapshot().queue).toBe(before)
@@ -235,17 +235,17 @@ describe('queue operation transport', () => {
 describe('queue reconnect semantics', () => {
   it('a control baseline clears stale state before a fresh update lands', async ({ mock, start }) => {
     const session = await sessionBench(mock, start, SID)
-    session.handleControlFrame(queueFrame([{ id: 'q-old', body: '旧连接' }]))
+    session.handleControlFrame(queueFrame([{ id: 'q-old', body: '舊連接' }]))
     session.replaceControl([])
     expect(session.getSnapshot().queue).toEqual([])
-    session.handleControlFrame(queueFrame([{ id: 'q-new', body: '新基线' }]))
+    session.handleControlFrame(queueFrame([{ id: 'q-new', body: '新基線' }]))
     expect(session.getSnapshot().queue.map(row => row.id)).toEqual(['q-new'])
   })
 
   it('resync does not clear a baseline that raced ahead of the host connection signal', async ({ mock, start }) => {
     const session = await sessionBench(mock, start, SID)
     await session.open()
-    session.handleControlFrame(queueFrame([{ id: 'q-fresh', body: '新基线' }]))
+    session.handleControlFrame(queueFrame([{ id: 'q-fresh', body: '新基線' }]))
     await session.resync()
     expect(session.getSnapshot().queue.map(row => row.id)).toEqual(['q-fresh'])
   })
@@ -264,7 +264,7 @@ describe('manager buffering of queue snapshots', () => {
     mock.load(sessionWorld)
     const { ctx: { remote } } = await start()
     const manager = new SessionManager(remote)
-    manager.handleControlFrame(queueFrame([{ id: 'q-old', body: '旧' }]))
+    manager.handleControlFrame(queueFrame([{ id: 'q-old', body: '舊' }]))
     manager.handleControlFrame(queueFrame([{ id: 'q-new', body: '新' }]))
     expect(manager.get(SID).getSnapshot().queue.map(row => row.id)).toEqual(['q-new'])
   })

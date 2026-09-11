@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser stand-in for `node:module`. `createRequire` is unreachable in the
  * configured loader path and fails loud if that assumption changes.
  */

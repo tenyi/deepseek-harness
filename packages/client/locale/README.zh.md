@@ -1,5 +1,5 @@
----
-description: "面向用户与插件作者的 web GUI 本地化说明：zh/en 偏好、浏览器派生回退、类型化命名空间字典与框架翻译席位。"
+﻿---
+description: "面向用戶與插件作者的 web GUI 本地化說明：zh/en 偏好、瀏覽器派生回退、類型化命名空間字典與框架翻譯席位。"
 kind: "package-reference"
 ---
 
@@ -9,35 +9,35 @@ kind: "package-reference"
 
 ## 概述
 
-使用 `dsh-client-locale` 可在 web GUI 中切换内置的英文和中文 locale，或 client 插件添加的语言。用户选择会立即生效；loopback 页面把选择持久化到 `$DSH_HOME/settings.yaml`，非 loopback 页面则只为当前进程保留选择。全新浏览器会使用浏览器请求的第一个受支持语言，直到允许读取的已存储偏好到达。插件作者可添加类型化命名空间字典，并通过公开 locale API 翻译；经 slot 渲染的文案无需重新加载即可随语言切换更新。
+使用 `dsh-client-locale` 可在 web GUI 中切換內置的英文和中文 locale，或 client 插件添加的語言。用戶選擇會立即生效；loopback 頁面把選擇持久化到 `$DSH_HOME/settings.yaml`，非 loopback 頁面則只為當前進程保留選擇。全新瀏覽器會使用瀏覽器請求的第一個受支持語言，直到允許讀取的已存儲偏好到達。插件作者可添加類型化命名空間字典，并通過公開 locale API 翻譯；經 slot 渲染的文案無需重新加載即可隨語言切換更新。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与暂缓事项](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與暫緩事項](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-只要 web GUI 需要语言切换或翻译文案就使用它：已发布的设置行覆盖用户侧，插件作者则注册自己的字典。挂载无需任何配置——本包随客户端树一起激活。
+只要 web GUI 需要語言切換或翻譯文案就使用它：已發布的設置行覆蓋用戶側，插件作者則注冊自己的字典。掛載無需任何配置——本包隨客戶端樹一起激活。
 
-### 选择语言
+### 選擇語言
 
-打开“设置 → 常规”并选择一种已注册语言。生效中的 locale 会立即应用：UI 文案切换、`<html lang>` 指向外部 id 或内置语言的文档标签，选择写入持久设置分区。没有显式 Host 偏好的浏览器会按完整标签、再按主语言子标签选择 `navigator` 请求的第一个已注册语言，无法匹配时回退到英文。已存储的外部 locale 会等待其定义注册，不会在不可用时生效。
+打開“設置 → 常規”并選擇一種已注冊語言。生效中的 locale 會立即應用：UI 文案切換、`<html lang>` 指向外部 id 或內置語言的文檔標簽，選擇寫入持久設置分區。沒有顯式 Host 偏好的瀏覽器會按完整標簽、再按主語言子標簽選擇 `navigator` 請求的第一個已注冊語言，無法匹配時回退到英文。已存儲的外部 locale 會等待其定義注冊，不會在不可用時生效。
 
-### 注册字典
+### 注冊字典
 
-用已合并进 `LocaleNamespaceMap` 的命名空间调用 `ctx.locale.register(ns, { zh, en })`；编译器会对照该命名空间的类型化键并集检查每个键，并要求两个内置 locale 齐全。消费方通过 `ctx.locale.bind(ns)` 或框架注入的 `t` 席位翻译。UI 已挂载后再注册的字典无需重新挂载即可生效。
+用已合并進 `LocaleNamespaceMap` 的命名空間調用 `ctx.locale.register(ns, { zh, en })`；編譯器會對照該命名空間的類型化鍵并集檢查每個鍵，并要求兩個內置 locale 齊全。消費方通過 `ctx.locale.bind(ns)` 或框架注入的 `t` 席位翻譯。UI 已掛載后再注冊的字典無需重新掛載即可生效。
 
-### 注册语言包
+### 注冊語言包
 
-外部 client 插件把语言定义和每个已翻译命名空间注册为自身拥有的 effect；定义与字典可以按任意顺序注册：
+外部 client 插件把語言定義和每個已翻譯命名空間注冊為自身擁有的 effect；定義與字典可以按任意順序注冊：
 
 ```js
 export const inject = ['locale']
@@ -57,86 +57,86 @@ export function apply(ctx) {
 }
 ```
 
-外部 id 必须是非空的 ASCII BCP 47 风格标签。它的 fallback 必须已经注册，且整条链必须终止于 `en`；未知目标、重复 id 与循环会在注册时失败。查找时先在请求命名空间内遍历生效语言的 fallback 链，再在 `common` 中遍历该链，最后显示键本身。卸载语言定义会将其从选择器移除，并让生效中的选择回落到可用的浏览器语言或默认语言。
+外部 id 必須是非空的 ASCII BCP 47 風格標簽。它的 fallback 必須已經注冊，且整條鏈必須終止于 `en`；未知目標、重復 id 與循環會在注冊時失敗。查找時先在請求命名空間內遍歷生效語言的 fallback 鏈，再在 `common` 中遍歷該鏈，最后顯示鍵本身。卸載語言定義會將其從選擇器移除，并讓生效中的選擇回落到可用的瀏覽器語言或默認語言。
 
-### Host 半侧做什么
+### Host 半側做什么
 
-Host 通过 settings 服务为 loopback 页面持久化偏好。Client 会刻意拒绝非 loopback 页面使用该 settings scope，因此即使 Connection 认证所有 API 方法，它们的 locale 选择仍只存在于进程内。
+Host 通過 settings 服務為 loopback 頁面持久化偏好。Client 會刻意拒絕非 loopback 頁面使用該 settings scope，因此即使 Connection 認證所有 API 方法，它們的 locale 選擇仍只存在于進程內。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释 locale 服务的构建方式；可观察行为已在[使用本包](#use-this-package)中说明。
+本節解釋 locale 服務的構建方式；可觀察行為已在[使用本包](#use-this-package)中說明。
 
-### 设计理念
+### 設計理念
 
-一个 `LocaleRuntime` 同时拥有偏好与字典注册表，并且自身就是 slot 系统的 `LocaleFace`：`getSnapshot`／`subscribe` 通过 `ctx.slots.installLocale` 支撑框架注入的 `t` 席位。不可变快照携带生效中的 locale、可选择的 locale 列表与单调 revision；字典注册与 locale 切换都会推进 revision，但只有切换会发出 `locale/change` 事件。产品编写的 Client UI 文本必须来自这些带类型的字典，或来自已经本地化的 primitive prop；`verify-client-ui-i18n` 强制执行该源码归属（见[决策](../../../.agents/notes/implemented/architecture/2026-08-23-locale-owned-client-ui-copy.zh.md)）。
+一個 `LocaleRuntime` 同時擁有偏好與字典注冊表，并且自身就是 slot 系統的 `LocaleFace`：`getSnapshot`／`subscribe` 通過 `ctx.slots.installLocale` 支撐框架注入的 `t` 席位。不可變快照攜帶生效中的 locale、可選擇的 locale 列表與單調 revision；字典注冊與 locale 切換都會推進 revision，但只有切換會發出 `locale/change` 事件。產品編寫的 Client UI 文本必須來自這些帶類型的字典，或來自已經本地化的 primitive prop；`verify-client-ui-i18n` 強制執行該源碼歸屬（見[決策](../../../.agents/notes/implemented/architecture/2026-08-23-locale-owned-client-ui-copy.zh.md)）。
 
 ### 偏好解析
 
-临时 locale 来自浏览器（`navigator.languages` 先按完整标签、再按主语言子标签匹配，以英文作为回退），在允许使用的 Host-backed settings scope 送达其存储偏好之前生效。Host 读取在插件激活后运行，因此 settings scope 不可用或被拒绝都不会阻塞页面，结果会实时替换临时值。已存储的外部 locale 会等待其定义注册。`setLocale` 是唯一写入入口；即使 id 已与生效中的 locale 匹配也会持久化，因为生效中的值可能是临时的，必须能供共享同一 home 的其他浏览器继续使用。
+臨時 locale 來自瀏覽器（`navigator.languages` 先按完整標簽、再按主語言子標簽匹配，以英文作為回退），在允許使用的 Host-backed settings scope 送達其存儲偏好之前生效。Host 讀取在插件激活后運行，因此 settings scope 不可用或被拒絕都不會阻塞頁面，結果會實時替換臨時值。已存儲的外部 locale 會等待其定義注冊。`setLocale` 是唯一寫入入口；即使 id 已與生效中的 locale 匹配也會持久化，因為生效中的值可能是臨時的，必須能供共享同一 home 的其他瀏覽器繼續使用。
 
 ### 字典查找
 
-带类型的对象形式要求两个内置 locale 都有完整字典；逐 locale 形式允许语言包独立注册每个命名空间。逐键查找会先在请求命名空间中沿生效语言声明的 fallback 链查找，再在 `common` 中重复该链，最后显示键本身。绑定的翻译函数按命名空间保持稳定身份，因此可通过 inject 机制传递，且不会破坏 memoization。
+帶類型的對象形式要求兩個內置 locale 都有完整字典；逐 locale 形式允許語言包獨立注冊每個命名空間。逐鍵查找會先在請求命名空間中沿生效語言聲明的 fallback 鏈查找，再在 `common` 中重復該鏈，最后顯示鍵本身。綁定的翻譯函數按命名空間保持穩定身份，因此可通過 inject 機制傳遞，且不會破壞 memoization。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/client/index.ts`](src/client/index.ts) | `LocaleRuntime`、字典注册表、Language 行注册、`locale/change` 事件 |
-| [`src/index.ts`](src/index.ts) | node 半侧：注册 `locale` 设置命名空间 |
+| [`src/client/index.ts`](src/client/index.ts) | `LocaleRuntime`、字典注冊表、Language 行注冊、`locale/change` 事件 |
+| [`src/index.ts`](src/index.ts) | node 半側：注冊 `locale` 設置命名空間 |
 | [`src/locale-settings.ts`](src/locale-settings.ts) | `locale.preference` 的持久 schema |
-| [`src/locales/`](src/locales/) | 内置的 `zh`／`en` 字典 |
+| [`src/locales/`](src/locales/) | 內置的 `zh`／`en` 字典 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当仅阅读 locale 约定不足以解答问题时，请继续阅读以下页面，了解它实现的 slot 接口、依托的设置机制，以及偏好背后的持久化决策。
+當僅閱讀 locale 約定不足以解答問題時，請繼續閱讀以下頁面，了解它實現的 slot 接口、依托的設置機制，以及偏好背后的持久化決策。
 
-- [客户端 slot 系统](../ui-slots/README.zh.md)——本包实现的 slot 模型与 `LocaleFace` 席位。
-- [Host 支撑偏好决策](../../../.agents/notes/implemented/bug-fix/2026-08-06-host-backed-web-preferences.zh.md)——偏好为何持久化在 Host 设置中而非浏览器里。
-- [设置组地图](../../settings/README.zh.md)——存储该偏好的设置服务。
-- [客户端组地图](../README.zh.md)——本包所属的浏览器半侧。
+- [客戶端 slot 系統](../ui-slots/README.zh.md)——本包實現的 slot 模型與 `LocaleFace` 席位。
+- [Host 支撐偏好決策](../../../.agents/notes/implemented/bug-fix/2026-08-06-host-backed-web-preferences.zh.md)——偏好為何持久化在 Host 設置中而非瀏覽器里。
+- [設置組地圖](../../settings/README.zh.md)——存儲該偏好的設置服務。
+- [客戶端組地圖](../README.zh.md)——本包所屬的瀏覽器半側。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无。locale 服务属于浏览器侧 UI 插件层，不注册任何面向模型的内容。
+無。locale 服務屬于瀏覽器側 UI 插件層，不注冊任何面向模型的內容。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；该包既不组装也不发送提供方请求。
+無；該包既不組裝也不發送提供方請求。
 
-## 已知限制与暂缓事项
+## 已知限制與暫緩事項
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明本地化在哪些地方不完整，或在注册时被冻结。它们是当前包约束，不是待办事项清单。
+這些限制說明本地化在哪些地方不完整，或在注冊時被凍結。它們是當前包約束，不是待辦事項清單。
 
-- **注册表持有的文本只读取一次翻译**——在 slot 渲染路径之外于注册时捕获的文案（例如 command 注册表中的 `/model` 命令描述）在重新注册前保持注册时的语言；slot 渲染的文案随切换实时更新。
-- **语言包负责语言特有行为**——注册表提供选择、持久化、浏览器匹配、逐键回退和 `<html lang>`；它不增加复数规则或双向布局。
+- **注冊表持有的文本只讀取一次翻譯**——在 slot 渲染路徑之外于注冊時捕獲的文案（例如 command 注冊表中的 `/model` 命令描述）在重新注冊前保持注冊時的語言；slot 渲染的文案隨切換實時更新。
+- **語言包負責語言特有行為**——注冊表提供選擇、持久化、瀏覽器匹配、逐鍵回退和 `<html lang>`；它不增加復數規則或雙向布局。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。locale catalog 与字典没有可供交叉核对的独立运行时来源；注册释放、偏好解析和 fallback 查找由行为测试覆盖。
+**運行時不變式：** 不發布伴生入口。locale catalog 與字典沒有可供交叉核對的獨立運行時來源；注冊釋放、偏好解析和 fallback 查找由行為測試覆蓋。

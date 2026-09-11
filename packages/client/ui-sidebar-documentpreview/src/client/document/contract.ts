@@ -1,4 +1,4 @@
-/** Document renderer slot: the owner supplies shared file state, renderers own their presentation. */
+﻿/** Document renderer slot: the owner supplies shared file state, renderers own their presentation. */
 import type { PropsRuntime, SlotHookFactory } from '@deepseek-ai/dsh-client-ui-slots'
 import type { UseSidebarRightTabInfo } from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
 import type { RefCallback } from 'react'

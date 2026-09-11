@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The identity, timestamp, link, mutation, and durability-sink guarantees
  * MemoryVfs owes its consumers, asserted directly rather than through the
  * `node:fs` bridge.

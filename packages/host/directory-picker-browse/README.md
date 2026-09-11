@@ -1,4 +1,4 @@
----
+﻿---
 description: "In-app browsing backend of the directory-picker seam: one-level directory listing and child-directory creation for the web GUI host, serving remote clients too."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Publish the packed launcher family from the tarballs `pack-release.mjs`
  * produced, in `publish-order.txt` order.

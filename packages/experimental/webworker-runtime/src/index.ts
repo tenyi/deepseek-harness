@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser-only host runtime: the harness Cordis tree inside a dedicated Web Worker.
  * @module @deepseek-ai/dsh-experimental-webworker-runtime
  */

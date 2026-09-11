@@ -1,5 +1,5 @@
----
-description: "抽象代码执行 seam（`ctx.codeRuntime`），供用户与维护者组合、消费或构建后端，以针对宿主提供的绑定运行一段模型编写的程序。"
+﻿---
+description: "抽象代碼執行 seam（`ctx.codeRuntime`），供用戶與維護者組合、消費或構建后端，以針對宿主提供的綁定運行一段模型編寫的程序。"
 kind: "package-reference"
 ---
 
@@ -9,27 +9,27 @@ kind: "package-reference"
 
 ## 概述
 
-使用 `dsh-code-runtime`，可通过已配置的后端，针对宿主提供的异步函数运行一段模型编写的程序。请求返回无损 JSON 值、通道内有序的日志或结构化错误；程序失败在结果中 resolve，而 Promise reject 表示调用方误用。每次运行都与先前运行隔离，且运行时不了解工具或会话。执行后端需另行选择；其语言与隔离描述符标明所需的源语言和执行基底，但这些描述符本身不承诺安全边界。
+使用 `dsh-code-runtime`，可通過已配置的后端，針對宿主提供的異步函數運行一段模型編寫的程序。請求返回無損 JSON 值、通道內有序的日志或結構化錯誤；程序失敗在結果中 resolve，而 Promise reject 表示調用方誤用。每次運行都與先前運行隔離，且運行時不了解工具或會話。執行后端需另行選擇；其語言與隔離描述符標明所需的源語言和執行基底，但這些描述符本身不承諾安全邊界。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-当你要组合一个执行模型程序的部署、直接消费 `ctx.codeRuntime`，或构建运行程序的后端时，选择本包。在已发布的组合中，`dsh-tools` 里的 PTC mode 是消费方：只有程序打印和返回的内容重新进入对话。
+當你要組合一個執行模型程序的部署、直接消費 `ctx.codeRuntime`，或構建運行程序的后端時，選擇本包。在已發布的組合中，`dsh-tools` 里的 PTC mode 是消費方：只有程序打印和返回的內容重新進入對話。
 
-### 运行一个程序
+### 運行一個程序
 
-向运行时提供程序源码与一个或多个绑定命名空间。每个命名空间会成为程序内的一个全局异步函数对象——PTC mode 在 `tools` 下传入一个。程序作为异步函数的函数体运行，因此顶层 `await`／`return` 可用；无损 JSON 完成值成为 `result.value`，每个输出通道在 `result.logs` 中保留自身顺序而跨通道交错由后端决定，任何失败都以 `result.error` 报告并带有可分支的 kind。运行时绝不会因程序失败而 reject——reject 意味着你误用了 seam，例如在 dispose（资源释放）后提交运行。
+向運行時提供程序源碼與一個或多個綁定命名空間。每個命名空間會成為程序內的一個全局異步函數對象——PTC mode 在 `tools` 下傳入一個。程序作為異步函數的函數體運行，因此頂層 `await`／`return` 可用；無損 JSON 完成值成為 `result.value`，每個輸出通道在 `result.logs` 中保留自身順序而跨通道交錯由后端決定，任何失敗都以 `result.error` 報告并帶有可分支的 kind。運行時絕不會因程序失敗而 reject——reject 意味著你誤用了 seam，例如在 dispose（資源釋放）后提交運行。
 
 ```text
 const result = await ctx.codeRuntime.run({
@@ -39,106 +39,106 @@ const result = await ctx.codeRuntime.run({
 // result.value === 3
 ```
 
-### 选择后端
+### 選擇后端
 
-后端声明两个你可以依赖的描述符：`language`——程序必须使用的源语言，已知值为 `'typescript'` 与 `'python'`——以及 `isolation`——执行基底（`'worker-thread'`、`'process'`、`'container'`），仅供部署与诊断使用，不构成安全声明。[`dsh-code-runtime-worker-thread`](../code-runtime-worker-thread/README.zh.md) 在全新的 Node Worker 线程中执行 TypeScript；私有的 [`dsh-experimental-code-runtime-python`](../../experimental/code-runtime-python/README.zh.md) 包在全新的 CPython 子进程中执行 Python，供选择性组合使用。
+后端聲明兩個你可以依賴的描述符：`language`——程序必須使用的源語言，已知值為 `'typescript'` 與 `'python'`——以及 `isolation`——執行基底（`'worker-thread'`、`'process'`、`'container'`），僅供部署與診斷使用，不構成安全聲明。[`dsh-code-runtime-worker-thread`](../code-runtime-worker-thread/README.zh.md) 在全新的 Node Worker 線程中執行 TypeScript；私有的 [`dsh-experimental-code-runtime-python`](../../experimental/code-runtime-python/README.zh.md) 包在全新的 CPython 子進程中執行 Python，供選擇性組合使用。
 
-### 可移植地命名绑定
+### 可移植地命名綁定
 
-binding-global 与 error-class 名称是语言可移植的：必须匹配 `[A-Za-z_][A-Za-z0-9_]*`，避开每个可移植目标语言的保留字，并避开后端拥有的槽位，因此同一份命名空间列表对每个后端都有效。`$tools`、`lambda` 或 `console` 之类的名称会在运行开始前失败；确切的排除集是 seam 约定的一部分。
+binding-global 與 error-class 名稱是語言可移植的：必須匹配 `[A-Za-z_][A-Za-z0-9_]*`，避開每個可移植目標語言的保留字，并避開后端擁有的槽位，因此同一份命名空間列表對每個后端都有效。`$tools`、`lambda` 或 `console` 之類的名稱會在運行開始前失敗；確切的排除集是 seam 約定的一部分。
 
-### 可能出什么问题
+### 可能出什么問題
 
-失败以 `result.error` 返回，并带正交的 `kind`：程序抛出或解析失败（`exception`）、预算到期（`timeout`）、运行被中止（`abort`）、执行基底终止（`worker-exit`）、完成值不是无损 JSON（`invalid-output`），或序列化输出超过上限（`output-limit`）。每种 kind 都带一条可反馈给模型的消息。`run()` 只在 seam 误用时 reject，例如在 dispose 后提交运行，或绑定名称不符合可移植标识符规则。
+失敗以 `result.error` 返回，并帶正交的 `kind`：程序拋出或解析失敗（`exception`）、預算到期（`timeout`）、運行被中止（`abort`）、執行基底終止（`worker-exit`）、完成值不是無損 JSON（`invalid-output`），或序列化輸出超過上限（`output-limit`）。每種 kind 都帶一條可反饋給模型的消息。`run()` 只在 seam 誤用時 reject，例如在 dispose 后提交運行，或綁定名稱不符合可移植標識符規則。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释 seam 背后的设计；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋 seam 背后的設計；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-本包是代码执行能力 seam 的 Service Definition 角色（[能力 seam](../../../.agents/notes/implemented/architecture/2026-06-13-capability-seams.zh.md)）：一个注册为 `ctx.codeRuntime` 的抽象 `CodeRuntime extends Service`，加上两个后端与消费方共享的词汇。提供方继承 `CodeRuntime`、实现 `run` 并注册服务；消费方（`dsh-tools` 中的 PTC mode）生成面向模型的 SDK 并桥接工具分发。按约定，运行时不了解工具与会话：它接收程序与具名异步绑定，返回 `{ value, logs, error? }`。
+本包是代碼執行能力 seam 的 Service Definition 角色（[能力 seam](../../../.agents/notes/implemented/architecture/2026-06-13-capability-seams.zh.md)）：一個注冊為 `ctx.codeRuntime` 的抽象 `CodeRuntime extends Service`，加上兩個后端與消費方共享的詞匯。提供方繼承 `CodeRuntime`、實現 `run` 并注冊服務；消費方（`dsh-tools` 中的 PTC mode）生成面向模型的 SDK 并橋接工具分發。按約定，運行時不了解工具與會話：它接收程序與具名異步綁定，返回 `{ value, logs, error? }`。
 
-### 服务 API
+### 服務 API
 
-约定是后端实现的三个成员：`run(request)` 针对请求的绑定执行一段程序，并把每个程序结果——解析／转换失败、抛出异常、无效完成值、输出溢出、预算到期、中止或基底终止——都作为结果 `error` 字段 resolve，reject 只留给调用方误用，例如在 dispose 后提交运行；`language` 与 `isolation` 是只读描述符，为部署与诊断标注源语言与执行基底。
+約定是后端實現的三個成員：`run(request)` 針對請求的綁定執行一段程序，并把每個程序結果——解析／轉換失敗、拋出異常、無效完成值、輸出溢出、預算到期、中止或基底終止——都作為結果 `error` 字段 resolve，reject 只留給調用方誤用，例如在 dispose 后提交運行；`language` 與 `isolation` 是只讀描述符，為部署與診斷標注源語言與執行基底。
 
-穷尽式语义见[代码运行时子系统参考](../../../docs/subsystems/code-runtime.zh.md)；确切签名见 [`src/index.ts`](src/index.ts)。
+窮盡式語義見[代碼運行時子系統參考](../../../docs/subsystems/code-runtime.zh.md)；確切簽名見 [`src/index.ts`](src/index.ts)。
 
-### 词汇
+### 詞匯
 
-`CodeRunRequest`（`program`、`bindings`、`signal?`）携带运行时操作所需的全部内容；默认值（时间预算、输出上限）来自各提供方的已验证配置，绝不是 `run()` 内部隐藏的 `??`。`bindings` 是 `CodeBindingNamespace` 列表（`global` + `functions` + 可选 `errorClass`），每个命名空间作为程序内的一个全局异步可调用函数对象公开，返回 `CodeJsonValue`——seam 的结构性无损 JSON 类型。`errorClass` 描述符点名真实的程序全局构造器，以及用于接收被拒绝成员名称的自有属性，因此后端永远不会得知 `ToolCallError` 之类的 Consumer 术语。`CodeRunResult` 报告无损 JSON 完成值 `value?`、通道内有序且跨通道交错由后端决定的 `logs: string[]`，以及 `error?`（`CodeRunFailure`：正交 `kind` + 可反馈给模型的 `message`）。完整约定见 `src/types.ts`。
+`CodeRunRequest`（`program`、`bindings`、`signal?`）攜帶運行時操作所需的全部內容；默認值（時間預算、輸出上限）來自各提供方的已驗證配置，絕不是 `run()` 內部隱藏的 `??`。`bindings` 是 `CodeBindingNamespace` 列表（`global` + `functions` + 可選 `errorClass`），每個命名空間作為程序內的一個全局異步可調用函數對象公開，返回 `CodeJsonValue`——seam 的結構性無損 JSON 類型。`errorClass` 描述符點名真實的程序全局構造器，以及用于接收被拒絕成員名稱的自有屬性，因此后端永遠不會得知 `ToolCallError` 之類的 Consumer 術語。`CodeRunResult` 報告無損 JSON 完成值 `value?`、通道內有序且跨通道交錯由后端決定的 `logs: string[]`，以及 `error?`（`CodeRunFailure`：正交 `kind` + 可反饋給模型的 `message`）。完整約定見 `src/types.ts`。
 
-### 可移植标识符
+### 可移植標識符
 
-binding-global 与 error-class 名称是语言可移植的：必须匹配标识符子集 `[A-Za-z_][A-Za-z0-9_]*`（不含 JS 专有的 `$`）并通过 seam 导出的排除集，因此同一份 `bindings` 列表对每个后端都有效。本包导出每个后端都执行的约定——`PORTABLE_RESERVED_WORDS`（ECMAScript ∪ Python 保留字）、`RESERVED_BINDING_GLOBALS`（如 `console`、`__dsh_main__` 等后端拥有的 global）、`RESERVED_ERROR_MEMBERS` 与 `DUNDER_MEMBER`（error-member 排除）——因此 `$tools`、`lambda` 或 `__dsh_main__` 之类的名称会让 `run()` 在任何后端上作为 seam 误用而 reject。确切集合见 `src/index.ts`。
+binding-global 與 error-class 名稱是語言可移植的：必須匹配標識符子集 `[A-Za-z_][A-Za-z0-9_]*`（不含 JS 專有的 `$`）并通過 seam 導出的排除集，因此同一份 `bindings` 列表對每個后端都有效。本包導出每個后端都執行的約定——`PORTABLE_RESERVED_WORDS`（ECMAScript ∪ Python 保留字）、`RESERVED_BINDING_GLOBALS`（如 `console`、`__dsh_main__` 等后端擁有的 global）、`RESERVED_ERROR_MEMBERS` 與 `DUNDER_MEMBER`（error-member 排除）——因此 `$tools`、`lambda` 或 `__dsh_main__` 之類的名稱會讓 `run()` 在任何后端上作為 seam 誤用而 reject。確切集合見 `src/index.ts`。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：抽象 `CodeRuntime` 服务与可移植标识符排除集 |
-| [`src/types.ts`](src/types.ts) | 词汇：`CodeRunRequest`、`CodeBindingNamespace`、`CodeJsonValue`、`CodeRunResult`、`CodeRunFailure` |
-| — | 不发布运行时不变式伴生入口；本包不公开任何独立的事件序列或可变数据关系，相关约束仅由其所属 seam 的约定实施。 |
+| [`src/index.ts`](src/index.ts) | 插件入口：抽象 `CodeRuntime` 服務與可移植標識符排除集 |
+| [`src/types.ts`](src/types.ts) | 詞匯：`CodeRunRequest`、`CodeBindingNamespace`、`CodeJsonValue`、`CodeRunResult`、`CodeRunFailure` |
+| — | 不發布運行時不變式伴生入口；本包不公開任何獨立的事件序列或可變數據關系，相關約束僅由其所屬 seam 的約定實施。 |
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下内容。它们从 PTC mode 消费方进入后端与能力 seam 模型。
+當包級約定不夠用時閱讀以下內容。它們從 PTC mode 消費方進入后端與能力 seam 模型。
 
-- [PTC mode Agent Note](../../../.agents/notes/implemented/feature/2026-06-15-ptc.zh.md)——工具注册表如何消费 `ctx.codeRuntime` 并把 `run_code` 呈现给模型。
-- [Worker 线程后端](../code-runtime-worker-thread/README.zh.md)——已发布的 TypeScript 执行后端。
-- [实验性 Python 后端](../../experimental/code-runtime-python/README.zh.md)——私有的 CPython 子进程提供方及其 fd-3 协议。
-- [代码运行时子系统参考](../../../docs/subsystems/code-runtime.zh.md)——请求／结果词汇、绑定与 `ctx.codeRuntime` 的 cordis 接口面。
+- [PTC mode Agent Note](../../../.agents/notes/implemented/feature/2026-06-15-ptc.zh.md)——工具注冊表如何消費 `ctx.codeRuntime` 并把 `run_code` 呈現給模型。
+- [Worker 線程后端](../code-runtime-worker-thread/README.zh.md)——已發布的 TypeScript 執行后端。
+- [實驗性 Python 后端](../../experimental/code-runtime-python/README.zh.md)——私有的 CPython 子進程提供方及其 fd-3 協議。
+- [代碼運行時子系統參考](../../../docs/subsystems/code-runtime.zh.md)——請求／結果詞匯、綁定與 `ctx.codeRuntime` 的 cordis 接口面。
 - [能力 seam](../../../.agents/notes/implemented/architecture/2026-06-13-capability-seams.zh.md)——Service Definition / Service Provider / Consumer 拆分。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-通过 `dsh-tools` 中的 PTC mode 间接提供；后者公开 `run_code`，并将程序日志、值或失败作为保留的工具结果 token 返回。
+通過 `dsh-tools` 中的 PTC mode 間接提供；后者公開 `run_code`，并將程序日志、值或失敗作為保留的工具結果 token 返回。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-不会直接失效；由上述消费方负责请求前缀变更。
+不會直接失效；由上述消費方負責請求前綴變更。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明 seam 不能做什么；它们是当前包约束，不是任务积压。
+這些限制說明 seam 不能做什么；它們是當前包約束，不是任務積壓。
 
-- **`run()` 是一次性的**——`logs` 只有在 `CodeRunResult` resolve 后才能获得；seam 不提供正在运行的程序所产生输出的流式日志或进度接口。
-- **运行之间不保留状态**——每次请求都在全新环境中运行；持久 REPL 风格内核在某个后端带来自己的日志方案之前保持延期。
-- **worker 线程后端已发布；Python process 后端是私有实验包；`'container'` 没有实现**——强安全边界需要等待容器后端。
-- **中间 binding 值没有字节上限**——实现仍受 structured-clone 成本与进程内存约束，而提供方或执行器可能已经应用自己的获取上限。
+- **`run()` 是一次性的**——`logs` 只有在 `CodeRunResult` resolve 后才能獲得；seam 不提供正在運行的程序所產生輸出的流式日志或進度接口。
+- **運行之間不保留狀態**——每次請求都在全新環境中運行；持久 REPL 風格內核在某個后端帶來自己的日志方案之前保持延期。
+- **worker 線程后端已發布；Python process 后端是私有實驗包；`'container'` 沒有實現**——強安全邊界需要等待容器后端。
+- **中間 binding 值沒有字節上限**——實現仍受 structured-clone 成本與進程內存約束，而提供方或執行器可能已經應用自己的獲取上限。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-本开发备注是维护者的工作上下文：尚未决定的方向与开放问题。它明确不具权威性——已交付的行为与限制以上文和包代码为准。
+本開發備注是維護者的工作上下文：尚未決定的方向與開放問題。它明確不具權威性——已交付的行為與限制以上文和包代碼為準。
 
-#### 未来：持久内核后端
+#### 未來：持久內核后端
 
-跨 `run_code` 调用保留状态的 REPL 风格内核仍未决定；它需要自己的日志方案，因为「运行之间不保留状态」的约定正是让每次请求仅凭会话日志即可重建的原因。
+跨 `run_code` 調用保留狀態的 REPL 風格內核仍未決定；它需要自己的日志方案，因為「運行之間不保留狀態」的約定正是讓每次請求僅憑會話日志即可重建的原因。
 
-#### 未来：容器后端
+#### 未來：容器后端
 
-容器级后端将为代码与 shell 执行都提供硬性的多租户边界；除已知的 `isolation` 值外，暂无任何决定。
+容器級后端將為代碼與 shell 執行都提供硬性的多租戶邊界；除已知的 `isolation` 值外，暫無任何決定。
 
 </details>

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Image layout contract shared by the packer and the worker host: the virtual
  * root, where the composed config and the manifest sit inside the image, and
  * the working directories every image carries empty. One definition, two

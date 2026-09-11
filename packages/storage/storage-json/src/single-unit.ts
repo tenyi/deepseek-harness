@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One opened JSON unit in `single` layout: the whole unit is one document at
  * `<root>/<name>.json`. The in-memory state is authoritative; every write
  * primitive mutates it and republishes the whole file atomically. Writes are

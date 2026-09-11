@@ -1,4 +1,4 @@
----
+﻿---
 description: "Package map for the web GUI host half: the HTTP and SPA servers, workspace-directory picking implementations, the open-in-app launch routes, and the plugin inventory projection."
 kind: "package-group"
 ---

@@ -1,5 +1,5 @@
----
-description: "面向快照测试的无密钥 LLM（大语言模型）回放插件，供测试作者针对已记录模型 transcript（文本记录）启动真实 agent（智能体）。"
+﻿---
+description: "面向快照測試的無密鑰 LLM（大語言模型）回放插件，供測試作者針對已記錄模型 transcript（文本記錄）啟動真實 agent（智能體）。"
 kind: "package-reference"
 ---
 
@@ -9,27 +9,27 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-llm-replay` 从已记录的 Session JSONL fixture（测试前置数据）回放模型流，让快照测试无需 API 密钥即可运行真实 agent。每个 parent 与 subagent 会话按首次调用顺序取得各自的已记录脚本，而同一会话内的调用会独立推进。`replay.override.json` 伴随文件表示持久 settlement 无法重建的分片前失败、取消、挂起与注入重试。需要以固定模型输出确定性测试真实 loop 行为时，可在 ACP（Agent Client Protocol）、headless 与 Web 浏览器场景中使用本包。
+`dsh-llm-replay` 從已記錄的 Session JSONL fixture（測試前置數據）回放模型流，讓快照測試無需 API 密鑰即可運行真實 agent。每個 parent 與 subagent 會話按首次調用順序取得各自的已記錄腳本，而同一會話內的調用會獨立推進。`replay.override.json` 伴隨文件表示持久 settlement 無法重建的分片前失敗、取消、掛起與注入重試。需要以固定模型輸出確定性測試真實 loop 行為時，可在 ACP（Agent Client Protocol）、headless 與 Web 瀏覽器場景中使用本包。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-本包让无密钥测试拥有带固定模型 transcript 的真实 agent：把它挂载到真实 LLM 适配器的位置，指向已记录的 fixture，然后就像模型真的产生了已记录输出那样运行场景。
+本包讓無密鑰測試擁有帶固定模型 transcript 的真實 agent：把它掛載到真實 LLM 適配器的位置，指向已記錄的 fixture，然后就像模型真的產生了已記錄輸出那樣運行場景。
 
-### 挂载它
+### 掛載它
 
-配置 `providers` 后，插件会注册仅用于回放的适配器，其模型目录可供测试模型发现功能的场景使用；未配置 `providers` 时，它安装无需模型发现功能的测试所用的 catch-all `llm/stream` waterfall（瀑布式事件）：
+配置 `providers` 后，插件會注冊僅用于回放的適配器，其模型目錄可供測試模型發現功能的場景使用；未配置 `providers` 時，它安裝無需模型發現功能的測試所用的 catch-all `llm/stream` waterfall（瀑布式事件）：
 
 ```yaml
 - id: llm-replay
@@ -53,105 +53,105 @@ kind: "package-reference"
   # harness per scenario.
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `file` | `$DSH_SNAPSHOT_FILE` | 选定 primary fixture 路径：v0 为 `session.jsonl`，正 generation 为 `session.vN.jsonl`；必需（config 或 env） |
-| `overrideFile` | `$DSH_SNAPSHOT_OVERRIDE` | 主会话的可选 `ReplayOverrideDoc` 伴随文件 |
-| `childFiles` | `$DSH_SNAPSHOT_CHILD_FILES` | 嵌套场景中已记录的 subagent 子会话日志 |
-| `providers` | 无 | 可选的仅回放提供方与模型目录；模型可声明 `contextWindow`、文本／图片模态、图片模型使用的正整数 `imageRequestTokens`，以及让无密钥场景演练历史内系统提示词替换的 `systemPromptUpdate: in-history`；非法值会在加载时失败（`llm-replay: provider "…" model "…" systemPromptUpdate must be "in-history" when present`），路由绝不执行提供方 I/O |
-| `paceMs` | 无（突发） | 可选的每分片延迟（毫秒），用于真正的增量投递 |
+| `file` | `$DSH_SNAPSHOT_FILE` | 選定 primary fixture 路徑：v0 為 `session.jsonl`，正 generation 為 `session.vN.jsonl`；必需（config 或 env） |
+| `overrideFile` | `$DSH_SNAPSHOT_OVERRIDE` | 主會話的可選 `ReplayOverrideDoc` 伴隨文件 |
+| `childFiles` | `$DSH_SNAPSHOT_CHILD_FILES` | 嵌套場景中已記錄的 subagent 子會話日志 |
+| `providers` | 無 | 可選的僅回放提供方與模型目錄；模型可聲明 `contextWindow`、文本／圖片模態、圖片模型使用的正整數 `imageRequestTokens`，以及讓無密鑰場景演練歷史內系統提示詞替換的 `systemPromptUpdate: in-history`；非法值會在加載時失敗（`llm-replay: provider "…" model "…" systemPromptUpdate must be "in-history" when present`），路由絕不執行提供方 I/O |
+| `paceMs` | 無（突發） | 可選的每分片延遲（毫秒），用于真正的增量投遞 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-llm-replay)是每个受支持字段及其 JSDoc 的穷尽式真源。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-llm-replay)是每個受支持字段及其 JSDoc 的窮盡式真源。
 
 ### fixture 的工作方式
 
-fixture 是运行一次真实 agent 所产生的一份选定持久化 Session generation 投影，本插件不录制。快照 harness 会提供数值最高的规范 parent 路径（v0 为 `<scenario>/session.jsonl`，正 generation 为 `<scenario>/session.vN.jsonl`），并在回放前校验文件名与 header 一致。fixture 保留 header 与每个事件 payload，但省略正文的 `seq`/`time` envelope（历史 packed row 使用 `seq0`/`time0`）。回放会补充连续序号与确定性时间戳，恢复被快照 token 替换的类型化值，拒绝不完整或混合 envelope，通过构建期静态 Session 格式 catalog 解码完整物理产物，并在公开事件或继承 cut 前于内存中迁移历史输入；当前输入直接 restore。仅对投影 v0 header，缺失的 `delegationDepth` 表示 `0`。parser 从不重写或重命名 fixture。运行时持久化继续写入完整日志。回放会展开当前视图中每个 `assistant/message` 或 `assistant/attempt` 的紧凑流，因此已记录 fixture 会回放出与在线模型产生的相同逻辑流。fixture 的 `request/header` 内容可能 token 化为 `{{system}}`/`{{tools}}`；回放会物化仅用于校验的值，而派生只读取 Assistant settlement、带标记的 summary 事件与 Session metadata。每个回放 fixture 与比较 fixture 都必须通过同一个只基于内容的 catalog 校验；回放绝不修复被拒绝的产物。比较编码保留已接受的 catalog 输出，包括扩展 request-header 字段；当前版本的 `header.system` 会被拒绝。协议通知的预期输出直接与当前写入器输出比较，保留事件顺序、插入的系统消息、包装层字段，以及不透明的交付和捕获代际值；只有完整 Session 产物使用格式迁移 catalog。
+fixture 是運行一次真實 agent 所產生的一份選定持久化 Session generation 投影，本插件不錄制。快照 harness 會提供數值最高的規范 parent 路徑（v0 為 `<scenario>/session.jsonl`，正 generation 為 `<scenario>/session.vN.jsonl`），并在回放前校驗文件名與 header 一致。fixture 保留 header 與每個事件 payload，但省略正文的 `seq`/`time` envelope（歷史 packed row 使用 `seq0`/`time0`）。回放會補充連續序號與確定性時間戳，恢復被快照 token 替換的類型化值，拒絕不完整或混合 envelope，通過構建期靜態 Session 格式 catalog 解碼完整物理產物，并在公開事件或繼承 cut 前于內存中遷移歷史輸入；當前輸入直接 restore。僅對投影 v0 header，缺失的 `delegationDepth` 表示 `0`。parser 從不重寫或重命名 fixture。運行時持久化繼續寫入完整日志。回放會展開當前視圖中每個 `assistant/message` 或 `assistant/attempt` 的緊湊流，因此已記錄 fixture 會回放出與在線模型產生的相同邏輯流。fixture 的 `request/header` 內容可能 token 化為 `{{system}}`/`{{tools}}`；回放會物化僅用于校驗的值，而派生只讀取 Assistant settlement、帶標記的 summary 事件與 Session metadata。每個回放 fixture 與比較 fixture 都必須通過同一個只基于內容的 catalog 校驗；回放絕不修復被拒絕的產物。比較編碼保留已接受的 catalog 輸出，包括擴展 request-header 字段；當前版本的 `header.system` 會被拒絕。協議通知的預期輸出直接與當前寫入器輸出比較，保留事件順序、插入的系統消息、包裝層字段，以及不透明的交付和捕獲代際值；只有完整 Session 產物使用格式遷移 catalog。
 
 ### 嵌套 agent
 
-parent agent 委托给进程内 subagent 的场景会为每个 Session 记录一个角色：parent 为 `session[.vN].jsonl`，随后是连续 child `session.<ordinal>[.vN].jsonl`。snapshot harness 只提供每个角色的最高 generation。live Session id 每次运行都会重新随机生成，因此 replay 按首次调用顺序把每个 live Session 绑定到已记录脚本：第一个发起模型调用的 live Session 取得 parent 脚本，下一个新 Session 取得下一条 child 脚本，依此类推，每个 Session 分别推进自己的 cursor。不同 live Session 数量超过已记录脚本数时会明确报错。
+parent agent 委托給進程內 subagent 的場景會為每個 Session 記錄一個角色：parent 為 `session[.vN].jsonl`，隨后是連續 child `session.<ordinal>[.vN].jsonl`。snapshot harness 只提供每個角色的最高 generation。live Session id 每次運行都會重新隨機生成，因此 replay 按首次調用順序把每個 live Session 綁定到已記錄腳本：第一個發起模型調用的 live Session 取得 parent 腳本，下一個新 Session 取得下一條 child 腳本，依此類推，每個 Session 分別推進自己的 cursor。不同 live Session 數量超過已記錄腳本數時會明確報錯。
 
-### 失败模式与覆盖
+### 失敗模式與覆蓋
 
-当回放在带有 `ctx.deepseekLlmApiExtensions` 的组合中服务 `deepseek-official` 时，它会在选择有效脚本条目后、产生首个分片前准备并接受这些字段。这与实时适配器的 2xx 后提交点一致，因此持久接受水位与 SDK 事件通知在录制和回放中行为相同。回放提供合成 `{ messages: [] }` 基础 body：它证明接受副作用，而非准备后的字段字节。
+當回放在帶有 `ctx.deepseekLlmApiExtensions` 的組合中服務 `deepseek-official` 時，它會在選擇有效腳本條目后、產生首個分片前準備并接受這些字段。這與實時適配器的 2xx 后提交點一致，因此持久接受水位與 SDK 事件通知在錄制和回放中行為相同。回放提供合成 `{ messages: [] }` 基礎 body：它證明接受副作用，而非準備后的字段字節。
 
-有两种失败模式无法仅根据持久 Assistant settlement 重建：任何 chunk 之前的纯 throw 没有携带异常的 stream member，而 cancel/hang 需要的是不终止语义，不能用有限前缀回放。需要这些行为的场景可提供可选伴随文件（`<scenario>/replay.override.json`）：它用裸 `ReplayEntry[]` 替换派生脚本，或用 `{ patches: [{ at, entry }] }` 增补——保留所有派生调用，只替换指定的从 0 开始计数的调用索引；当 `at` 等于派生长度时，则在注入瞬态异常后的重试位置追加。有前缀分片的 `throw` 条目会接受 DeepSeek 请求扩展；零分片 throw 默认表示 2xx 前未接受，也可设 `accepted: true` 表示 2xx 后无分片失败。`hang` 条目可以指定 `readyFile`，回放在等待取消前写入它，使外部 driver 可以确定性取消。
+有兩種失敗模式無法僅根據持久 Assistant settlement 重建：任何 chunk 之前的純 throw 沒有攜帶異常的 stream member，而 cancel/hang 需要的是不終止語義，不能用有限前綴回放。需要這些行為的場景可提供可選伴隨文件（`<scenario>/replay.override.json`）：它用裸 `ReplayEntry[]` 替換派生腳本，或用 `{ patches: [{ at, entry }] }` 增補——保留所有派生調用，只替換指定的從 0 開始計數的調用索引；當 `at` 等于派生長度時，則在注入瞬態異常后的重試位置追加。有前綴分片的 `throw` 條目會接受 DeepSeek 請求擴展；零分片 throw 默認表示 2xx 前未接受，也可設 `accepted: true` 表示 2xx 后無分片失敗。`hang` 條目可以指定 `readyFile`，回放在等待取消前寫入它，使外部 driver 可以確定性取消。
 
-### 可能出什么问题
+### 可能出什么問題
 
-- **fixture 未被完全消费**——在测试中直接安装回放时调用 `assertConsumed()`，它会把场景静默驱动的模型调用少于记录数转换为明确诊断。
-- **未记录的会话发起调用**——回放会明确报错，并提示你重新录制场景。
-- **脚本占位符匹配不到内容**——`{{fromRequest:<regex>}}` 解析会校验模式与请求语料，匹配不到、模式非法或占位符未闭合都会明确报错。
+- **fixture 未被完全消費**——在測試中直接安裝回放時調用 `assertConsumed()`，它會把場景靜默驅動的模型調用少于記錄數轉換為明確診斷。
+- **未記錄的會話發起調用**——回放會明確報錯，并提示你重新錄制場景。
+- **腳本占位符匹配不到內容**——`{{fromRequest:<regex>}}` 解析會校驗模式與請求語料，匹配不到、模式非法或占位符未閉合都會明確報錯。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释回放插件的设计；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋回放插件的設計；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计
+### 設計
 
-回放把选定的投影 Session generation 视为 fixture。一个 parser 补全投影 envelope，通过 `sessionFormatCatalog` 校验并迁移完整产物，再以一个结果返回当前 header、继承 cut 与事件列表。`deriveReplayScript` 按日志顺序展开每个 `assistant/message` 或 `assistant/attempt` 流，因此每个持久 settlement 都成为一条 `chunks` 条目；非空流缺少 `finish` 分片是 `stream()` 抛出异常的指纹，必须通过 override 伴随文件表达。携带 `llmStreamCall: true` 与完整 `rawOutput` 的 `compaction/summary` 会在该事件位置回放为一条规范成功流。脚本字符串可以内嵌 `{{fromRequest:<regex>}}`；流输出时每个 placeholder 针对 live request 的 string leaf 解析，取该 pattern 的最后一次 match，用其第一个 capture group（无 capture group 时用整个 match）原位替换。
+回放把選定的投影 Session generation 視為 fixture。一個 parser 補全投影 envelope，通過 `sessionFormatCatalog` 校驗并遷移完整產物，再以一個結果返回當前 header、繼承 cut 與事件列表。`deriveReplayScript` 按日志順序展開每個 `assistant/message` 或 `assistant/attempt` 流，因此每個持久 settlement 都成為一條 `chunks` 條目；非空流缺少 `finish` 分片是 `stream()` 拋出異常的指紋，必須通過 override 伴隨文件表達。攜帶 `llmStreamCall: true` 與完整 `rawOutput` 的 `compaction/summary` 會在該事件位置回放為一條規范成功流。腳本字符串可以內嵌 `{{fromRequest:<regex>}}`；流輸出時每個 placeholder 針對 live request 的 string leaf 解析，取該 pattern 的最后一次 match，用其第一個 capture group（無 capture group 時用整個 match）原位替換。
 
-[已提交语料测试](tests/session-format-corpus.spec.ts) 通过真实 catalog 还原 `snapshots/`、`packages/` 与 `scripts/snapshots/python-sdk-single-exe/` 下每个带版本的 `session*.jsonl`，且不改变源字节。其[清单](tests/session-format-corpus-inventory.ts) 按路径、源代际、错误类型与精确原因固定有意拒绝的历史转换；拒绝消失或变化都会使测试失败。当前代际产物不能获得例外。不含 header 的快照 harness 协议示例具有独立的显式豁免。其他所有还原错误都携带产物路径并使测试失败；历史文件保持不变，原生当前 fixture 则由 owner 修正。
+[已提交語料測試](tests/session-format-corpus.spec.ts) 通過真實 catalog 還原 `snapshots/`、`packages/` 與 `scripts/snapshots/python-sdk-single-exe/` 下每個帶版本的 `session*.jsonl`，且不改變源字節。其[清單](tests/session-format-corpus-inventory.ts) 按路徑、源代際、錯誤類型與精確原因固定有意拒絕的歷史轉換；拒絕消失或變化都會使測試失敗。當前代際產物不能獲得例外。不含 header 的快照 harness 協議示例具有獨立的顯式豁免。其他所有還原錯誤都攜帶產物路徑并使測試失敗；歷史文件保持不變，原生當前 fixture 則由 owner 修正。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 类型、fixture 派生、override 校验、占位符解析、会话绑定、`installLlmReplay` 与插件导出 |
-| [`tests/session-format-corpus.spec.ts`](tests/session-format-corpus.spec.ts) | 已提交代际还原与精确历史拒绝检查 |
-| — | 不发布运行时不变式伴生入口；该仅测试适配器消费固定的回放脚本；其流语法由 LLM 伴生插件与 fixture 派生测试检验。 |
+| [`src/index.ts`](src/index.ts) | 類型、fixture 派生、override 校驗、占位符解析、會話綁定、`installLlmReplay` 與插件導出 |
+| [`tests/session-format-corpus.spec.ts`](tests/session-format-corpus.spec.ts) | 已提交代際還原與精確歷史拒絕檢查 |
+| — | 不發布運行時不變式伴生入口；該僅測試適配器消費固定的回放腳本；其流語法由 LLM 伴生插件與 fixture 派生測試檢驗。 |
 
-### 绑定与流式流程
+### 綁定與流式流程
 
-`installLlmReplay` 加载有序脚本，然后安装路由回放适配器（`providers` 非空时）或 catch-all `llm/stream` waterfall 监听器。每次实时 `stream()` 调用以其调用会话 id 为键：新会话认领下一个未认领脚本（父会话在前，因为它必须先开始流式输出才能委托），没有 `sessionId` 的调用共享一个绑定主脚本的匿名会话。返回的 `ReplayHandle` 携带用于 HMR（热模块替换）安全的 disposer，以及 `assertConsumed()`——除非每个已记录脚本都绑定到实时会话且每个已绑定游标都已耗尽，否则它会抛出异常。
+`installLlmReplay` 加載有序腳本，然后安裝路由回放適配器（`providers` 非空時）或 catch-all `llm/stream` waterfall 監聽器。每次實時 `stream()` 調用以其調用會話 id 為鍵：新會話認領下一個未認領腳本（父會話在前，因為它必須先開始流式輸出才能委托），沒有 `sessionId` 的調用共享一個綁定主腳本的匿名會話。返回的 `ReplayHandle` 攜帶用于 HMR（熱模塊替換）安全的 disposer，以及 `assertConsumed()`——除非每個已記錄腳本都綁定到實時會話且每個已綁定游標都已耗盡，否則它會拋出異常。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下页面。它们从回放适配器逐步进入录制 fixture 的 harness 与消费流的 loop。
+當包級約定不夠用時閱讀以下頁面。它們從回放適配器逐步進入錄制 fixture 的 harness 與消費流的 loop。
 
-- [session-snapshot](../session-snapshot/README.zh.md)——录制 fixture 并驱动回放、录制与刷新模式的快照支持。
-- [LLM 包](../../llm/llm/README.zh.md)——回放实现的提供方流约定与适配器注册表。
-- [测试策略](../../../docs/testing.zh.md)——无密钥快照层及其适用时机。
-- [test-support 组地图](../README.zh.md)——兄弟 harness 与支持包。
+- [session-snapshot](../session-snapshot/README.zh.md)——錄制 fixture 并驅動回放、錄制與刷新模式的快照支持。
+- [LLM 包](../../llm/llm/README.zh.md)——回放實現的提供方流約定與適配器注冊表。
+- [測試策略](../../../docs/testing.zh.md)——無密鑰快照層及其適用時機。
+- [test-support 組地圖](../README.zh.md)——兄弟 harness 與支持包。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无。该无密钥测试适配器不向提供方模型发送请求，只将已记录 assistant 分片回放到测试 loop 中。
+無。該無密鑰測試適配器不向提供方模型發送請求，只將已記錄 assistant 分片回放到測試 loop 中。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；本包既不组装也不发送提供方请求。
+無；本包既不組裝也不發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明何时回放无法代替在线模型。它们是当前包约束，不是任务积压。
+這些限制說明何時回放無法代替在線模型。它們是當前包約束，不是任務積壓。
 
-- **首次调用顺序脚本绑定假设串行委托**——并发运行同级 subagent 的实现会非确定性地将实时会话绑定到已记录脚本；在这种场景出现前暂不实现更强的键控。
-- **只有普通 loop 分片与带标记的本地压缩输出才能派生**——在产生分片前直接抛出、取消/挂起，或未标记的外部摘要器调用场景需要 `replay.override.json` 伴随文件；替换与补丁两种形式都只影响主会话，子会话脚本仍从各自日志派生。
+- **首次調用順序腳本綁定假設串行委托**——并發運行同級 subagent 的實現會非確定性地將實時會話綁定到已記錄腳本；在這種場景出現前暫不實現更強的鍵控。
+- **只有普通 loop 分片與帶標記的本地壓縮輸出才能派生**——在產生分片前直接拋出、取消/掛起，或未標記的外部摘要器調用場景需要 `replay.override.json` 伴隨文件；替換與補丁兩種形式都只影響主會話，子會話腳本仍從各自日志派生。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

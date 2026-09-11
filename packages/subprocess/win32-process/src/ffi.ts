@@ -1,4 +1,4 @@
-/** Lazy Koffi bindings for generic Win32 process, stdio, and Job operations. */
+﻿/** Lazy Koffi bindings for generic Win32 process, stdio, and Job operations. */
 
 import koffi from 'koffi'
 import * as abi from './abi.ts'

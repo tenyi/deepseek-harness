@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The two properties the intent layer must not lose in refactoring.
  *
  * Determinism: a planner reads only the state and the minter it is handed, so the

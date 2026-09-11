@@ -1,4 +1,4 @@
-/** Worker entry for current-generation physical and logical verification. */
+﻿/** Worker entry for current-generation physical and logical verification. */
 
 import { parentPort, workerData } from 'node:worker_threads'
 import { verifyJsonlCurrentGeneration } from './generation.ts'

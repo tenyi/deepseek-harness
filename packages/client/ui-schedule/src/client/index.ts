@@ -1,4 +1,4 @@
-/** Browser half of the read-only Schedule catalog. */
+﻿/** Browser half of the read-only Schedule catalog. */
 
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-client-locale/client'

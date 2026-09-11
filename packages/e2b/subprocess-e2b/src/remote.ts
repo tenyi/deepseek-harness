@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared remote-control helpers for the E2B subprocess adapter: SDK option
  * shaping, poll ticks, and the one tolerant process-group signal used by both
  * the ordinary-process and terminal teardown ladders.

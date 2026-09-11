@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import * as CommandInvariant from '@deepseek-ai/dsh-commands/invariant'
 import InvariantRegistry, { InvariantError } from '@deepseek-ai/dsh-invariants'

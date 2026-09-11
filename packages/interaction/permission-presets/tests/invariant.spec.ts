@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { Context, Service } from '@deepseek-ai/cordis'
 import SessionStore, { SessionSeq, type Session, type SessionEvent } from '@deepseek-ai/dsh-session'
 import * as PermissionInvariant from '@deepseek-ai/dsh-permission-presets/invariant'

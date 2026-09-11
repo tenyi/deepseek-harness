@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Public API of the Typert analyzer, compiler-independent model, and
  * model-driven artifact emitters. Build wiring lives in the `./tsdown`
  * subpath.

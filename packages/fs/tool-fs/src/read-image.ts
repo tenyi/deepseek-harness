@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The model-facing `read_image` tool commits a PNG/JPEG/WebP/GIF file. A path
  * without a file extension is identified from its file signature, while the
  * attachment service's full decode stays authoritative. The mounted `ctx.fs`

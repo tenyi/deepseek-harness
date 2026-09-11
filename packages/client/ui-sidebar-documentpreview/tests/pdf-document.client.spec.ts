@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** Page rendering cancellation is driven by controlled pdfjs promises, not scheduler delays. */
 import { describe, expect, it, vi } from 'vitest'
 import type { PDFPageProxy } from 'pdfjs-dist'

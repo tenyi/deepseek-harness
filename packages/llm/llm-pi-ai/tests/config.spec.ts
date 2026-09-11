@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { assertServiceable, Config, resolveProfiles } from '../src/config.ts'
 
 /** Validate one hand-declared route, with the caller's fields layered onto it. */

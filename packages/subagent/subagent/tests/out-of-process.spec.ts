@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Unit coverage for the seam's out-of-process provider vocabulary: cwd
  * resolution against the real filesystem, and the settlement/handle helpers
  * under their never-reject and idempotence contracts.

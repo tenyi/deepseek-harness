@@ -1,4 +1,4 @@
-/** Workspace command implementation and stable Remote failure mapping. */
+﻿/** Workspace command implementation and stable Remote failure mapping. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type { Workspace } from '@deepseek-ai/dsh-workspace'

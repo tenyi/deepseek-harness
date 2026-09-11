@@ -1,4 +1,4 @@
----
+﻿---
 description: "The tool-result spill policy: how deployments keep oversized plain-text tool results out of the model's context with a preview and a retrievable spill file."
 kind: "package-reference"
 ---

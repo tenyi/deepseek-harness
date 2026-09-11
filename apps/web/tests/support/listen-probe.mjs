@@ -1,4 +1,4 @@
-import { appendFileSync } from 'node:fs'
+﻿import { appendFileSync } from 'node:fs'
 import { Server } from 'node:net'
 
 const marker = process.env.DSH_LISTEN_PROBE_MARKER

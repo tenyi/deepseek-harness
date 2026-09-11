@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Same-session goal-round driver over public agent, session, and goal services.
  * @module @deepseek-ai/dsh-goal-round-driver
  */

@@ -1,4 +1,4 @@
-# AGENTS.md — Experimental packages
+﻿# AGENTS.md — Experimental packages
 
 These rules supplement the [package rules](../AGENTS.md). The [experimental Agent Teams package decision](../../.agents/notes/implemented/architecture/2026-08-18-experimental-agent-teams-packages.md) owns the rationale.
 

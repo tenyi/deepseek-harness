@@ -1,4 +1,4 @@
-/** Select and copy the local npm tarball closures that supply Desktop dsh and its private Host. */
+﻿/** Select and copy the local npm tarball closures that supply Desktop dsh and its private Host. */
 
 import { createHash } from 'node:crypto'
 import {

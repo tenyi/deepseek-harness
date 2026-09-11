@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Capture coordinator for the telemetry capability. Live capture subscribes to
  * the session firehose plus the one live-bus relay (`agent/error`). Both
  * capture paths build one logical record per canonical Session event and run

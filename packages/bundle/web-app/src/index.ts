@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @deepseek-ai/dsh-web-app — the browser-surface bundle's runtime glue plugin
  * plus the bundle patch (`cordis.patch.yml`, declared by the `dsh.bundle.patch`
  * manifest field). The plugin owns the browser-surface glue: it resolves

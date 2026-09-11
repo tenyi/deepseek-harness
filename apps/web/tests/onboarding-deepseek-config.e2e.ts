@@ -1,4 +1,4 @@
-// Keyless browser e2e: the shipped DeepSeek adapter stays mounted while its
+﻿// Keyless browser e2e: the shipped DeepSeek adapter stays mounted while its
 // credential is absent, both ordered steps share the shipped modal chrome,
 // and the inline key write lands in an isolated harness home without a reload
 // or model call.
@@ -71,16 +71,16 @@ describe.skipIf(MODE === 'record')('web e2e: first-run DeepSeek credential setup
     await welcome.getByRole('button', { name: WELCOME_NOTICE_COPY.zh.continueLabel }).click()
     await welcome.waitFor({ state: 'detached', timeout: 15_000 })
 
-    const credentialStep = page.getByRole('dialog', { name: '添加一个 API Key 开始使用' })
+    const credentialStep = page.getByRole('dialog', { name: '添加一個 API Key 開始使用' })
     await credentialStep.waitFor({ timeout: 15_000 })
-    const keyInput = credentialStep.getByLabel('API 密钥', { exact: true })
+    const keyInput = credentialStep.getByLabel('API 密鑰', { exact: true })
     await keyInput.waitFor({ timeout: 10_000 })
     const initial = await captureStableAria(page, '[role="dialog"]', scaffold.workspaceCwd)
     await compareOrRefreshGolden(MISSING_EXPECTED, initial, MODE)
 
     const secret = `dsh_onboarding_${randomBytes(12).toString('hex')}`
     await keyInput.fill(secret)
-    await credentialStep.getByRole('button', { name: '保存并继续' }).click()
+    await credentialStep.getByRole('button', { name: '保存并繼續' }).click()
     await credentialStep.waitFor({ state: 'detached', timeout: 15_000 })
     expect(await page.locator('#root').evaluate(root => (root as HTMLElement).inert)).toBe(false)
 
@@ -95,26 +95,26 @@ describe.skipIf(MODE === 'record')('web e2e: first-run DeepSeek credential setup
 
     // The ordinary Models surface reuses the refreshed join and exposes the
     // configured write-only placeholder without a reload.
-    await page.getByRole('button', { name: '设置', exact: true }).click()
-    const settings = page.getByRole('dialog', { name: '设置' })
+    await page.getByRole('button', { name: '設置', exact: true }).click()
+    const settings = page.getByRole('dialog', { name: '設置' })
     await settings.waitFor({ timeout: 10_000 })
     await settings.getByRole('button', { name: '模型' }).click()
     const deepSeekRow = settings.getByText('DeepSeek', { exact: true }).first()
     await deepSeekRow.waitFor({ timeout: 10_000 })
-    await deepSeekRow.locator('xpath=ancestor::li').getByRole('button', { name: '编辑' }).click()
-    const configuredInput = settings.getByLabel('API 密钥', { exact: true })
+    await deepSeekRow.locator('xpath=ancestor::li').getByRole('button', { name: '編輯' }).click()
+    const configuredInput = settings.getByLabel('API 密鑰', { exact: true })
     await configuredInput.waitFor({ timeout: 10_000 })
     await expect.poll(
       () => configuredInput.getAttribute('placeholder'),
       { timeout: 10_000 },
-    ).toBe('已配置——输入新值可替换')
+    ).toBe('已配置——輸入新值可替換')
 
     const secondReloadWarnings = tripwire.warnings.length
     await page.reload({ waitUntil: 'load' })
     acknowledgeReloadConnectionLoss(tripwire, secondReloadWarnings)
     await page.waitForSelector('[class*="frame"]', { timeout: 15_000 })
     expect(await page.getByRole('dialog', { name: WELCOME_NOTICE_COPY.zh.title }).count()).toBe(0)
-    expect(await page.getByRole('dialog', { name: '添加一个 API Key 开始使用' }).count()).toBe(0)
+    expect(await page.getByRole('dialog', { name: '添加一個 API Key 開始使用' }).count()).toBe(0)
 
     // An old acknowledgement means materially revised copy: welcome returns,
     // while the already-configured provider step remains complete.
@@ -127,7 +127,7 @@ describe.skipIf(MODE === 'record')('web e2e: first-run DeepSeek credential setup
     await welcome.waitFor({ timeout: 15_000 })
     await welcome.getByRole('button', { name: WELCOME_NOTICE_COPY.zh.continueLabel }).click()
     await welcome.waitFor({ state: 'detached', timeout: 15_000 })
-    expect(await page.getByRole('dialog', { name: '添加一个 API Key 开始使用' }).count()).toBe(0)
+    expect(await page.getByRole('dialog', { name: '添加一個 API Key 開始使用' }).count()).toBe(0)
 
     expect((await page.content()).includes(secret)).toBe(false)
     expect((await page.locator('body').ariaSnapshot()).includes(secret)).toBe(false)
@@ -154,8 +154,8 @@ describe.skipIf(MODE === 'record')('web e2e: first-run DeepSeek credential setup
       ;(window as unknown as { __takeoverSightings: string[] }).__takeoverSightings = sightings
       setInterval(() => {
         if (document.querySelector(
-          '[role="dialog"][aria-label="内测声明"], '
-          + '[role="dialog"][aria-label="添加一个 API Key 开始使用"]',
+          '[role="dialog"][aria-label="內測聲明"], '
+          + '[role="dialog"][aria-label="添加一個 API Key 開始使用"]',
         ) !== null) {
           sightings.push('chrome')
         }
@@ -187,7 +187,7 @@ describe.skipIf(MODE === 'record')('web e2e: first-run DeepSeek credential setup
     expect(await page.evaluate(() =>
       (window as unknown as { __takeoverSightings: string[] }).__takeoverSightings)).toEqual([])
     expect(await page.getByRole('dialog', { name: WELCOME_NOTICE_COPY.zh.title }).count()).toBe(0)
-    expect(await page.getByRole('dialog', { name: '添加一个 API Key 开始使用' }).count()).toBe(0)
+    expect(await page.getByRole('dialog', { name: '添加一個 API Key 開始使用' }).count()).toBe(0)
     expect(tripwire.pageErrors).toEqual([])
   }, 60_000)
 
@@ -195,23 +195,23 @@ describe.skipIf(MODE === 'record')('web e2e: first-run DeepSeek credential setup
     onTestFailed(() => saveFailureShot(page, 'web-e2e-onboarding-deepseek-models'))
     // Opened here rather than inherited: the credential test reloads the page
     // after configuring the key, so nothing carries an open dialog across.
-    await page.getByRole('button', { name: '设置', exact: true }).click()
-    const settings = page.getByRole('dialog', { name: '设置' })
+    await page.getByRole('button', { name: '設置', exact: true }).click()
+    const settings = page.getByRole('dialog', { name: '設置' })
     await settings.waitFor({ timeout: 10_000 })
     await settings.getByRole('button', { name: '模型' }).click()
     const deepSeek = settings.getByText('DeepSeek', { exact: true }).first()
     await deepSeek.waitFor({ timeout: 10_000 })
-    await deepSeek.locator('xpath=ancestor::li').getByRole('button', { name: '编辑' }).click()
-    await settings.getByText('自定义设置').click()
+    await deepSeek.locator('xpath=ancestor::li').getByRole('button', { name: '編輯' }).click()
+    await settings.getByText('自定義設置').click()
     expect(await settings.getByLabel('模型 ID 1').inputValue()).toBe('deepseek-flash')
-    expect(await settings.getByLabel('显示名称 1').inputValue()).toBe('DeepSeek-V41-Flash')
+    expect(await settings.getByLabel('顯示名稱 1').inputValue()).toBe('DeepSeek-V41-Flash')
     expect(await settings.getByLabel('模型 ID 2').inputValue()).toBe('deepseek-v4-flash')
     expect(await settings.getByLabel('模型 ID 3').inputValue()).toBe('deepseek-v4-pro')
     expect(await settings.getByLabel('模型 ID 4').inputValue()).toBe('deepseek-v4-flash-vision-exp')
-    expect(await settings.getByRole('button', { name: /删除模型/ }).count()).toBe(4)
+    expect(await settings.getByRole('button', { name: /刪除模型/ }).count()).toBe(4)
     const defaultModels = await captureStableAria(page, '[role="dialog"]', scaffold.workspaceCwd)
     await compareOrRefreshGolden(DEFAULT_MODELS_EXPECTED, defaultModels, MODE)
-    await settings.getByLabel('显示名称 1').fill('Configured Flash')
+    await settings.getByLabel('顯示名稱 1').fill('Configured Flash')
     await settings.getByRole('button', { name: '保存', exact: true }).click()
     await settings.getByLabel('模型 ID 1').waitFor({ state: 'detached', timeout: 15_000 })
     const savedDefaults = await readFile(join(scaffold.harnessHome, 'settings.yaml'), 'utf8')
@@ -223,24 +223,24 @@ describe.skipIf(MODE === 'record')('web e2e: first-run DeepSeek credential setup
     await expect(scaffold.ctx.llm.resolveModelInfo('deepseek-official', 'deepseek-flash')).resolves.toMatchObject({
       name: 'Configured Flash', inputModalities: ['text', 'image'], systemPromptUpdate: 'in-history',
     })
-    await deepSeek.locator('xpath=ancestor::li').getByRole('button', { name: '编辑' }).click()
-    await settings.getByText('自定义设置').click()
+    await deepSeek.locator('xpath=ancestor::li').getByRole('button', { name: '編輯' }).click()
+    await settings.getByText('自定義設置').click()
     for (let index = 0; index < 4; index++) {
-      await settings.getByRole('button', { name: /删除模型/ }).first().click()
+      await settings.getByRole('button', { name: /刪除模型/ }).first().click()
     }
     await settings.getByRole('button', { name: '添加模型' }).click()
     const customModelId = settings.getByLabel('模型 ID 1')
     await customModelId.fill('private-preview')
-    await settings.getByLabel('显示名称 1').fill('Private Preview')
+    await settings.getByLabel('顯示名稱 1').fill('Private Preview')
     // Capacities live behind the row's own disclosure, as in the pi-ai form.
     await settings.getByRole('button', { name: '容量 1' }).click()
     await settings.getByLabel('上下文窗口 1').fill('131072')
-    await settings.getByLabel('最大输出 token 数 1').fill('64K')
+    await settings.getByLabel('最大輸出 token 數 1').fill('64K')
 
     await expect.poll(
-      () => settings.getByLabel('API 密钥', { exact: true }).getAttribute('placeholder'),
+      () => settings.getByLabel('API 密鑰', { exact: true }).getAttribute('placeholder'),
       { timeout: 10_000 },
-    ).toBe('已配置——输入新值可替换')
+    ).toBe('已配置——輸入新值可替換')
     const modelEditor = await captureStableAria(page, '[role="dialog"]', scaffold.workspaceCwd)
     await compareOrRefreshGolden(MODELS_EXPECTED, modelEditor, MODE)
     await settings.getByRole('button', { name: '保存', exact: true }).click()
@@ -258,7 +258,7 @@ describe.skipIf(MODE === 'record')('web e2e: first-run DeepSeek credential setup
     // trigger — on the page; the scaffold boots without one.
     await connectFreshWorkspaceZh(page, scaffold.workspaceCwd, 'model-fallback-e2e')
 
-    const modelTrigger = page.getByRole('button', { name: /^选择模型/ })
+    const modelTrigger = page.getByRole('button', { name: /^選擇模型/ })
     await modelTrigger.waitFor({ timeout: 10_000 })
     await modelTrigger.click()
     await page.getByRole('menuitem', { name: /模型/ }).click()

@@ -1,4 +1,4 @@
-/** One-shot Team change waiters independent of durable state projection. */
+﻿/** One-shot Team change waiters independent of durable state projection. */
 
 import type { TeamId, TeamWaitResult } from './types.ts'
 import { errorMessage, TeamError } from './error.ts'

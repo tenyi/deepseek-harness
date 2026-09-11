@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Append helpers for durable, log-only hook events. They carry no surface
  * intent and must remain turn-enclosed and invoked/result paired. Mid-turn hook
  * points satisfy that boundary; SessionStart records injected context instead

@@ -1,4 +1,4 @@
----
+﻿---
 description: "The bash capability family for deployments and maintainers choosing and composing a shell executor, sandboxing, and the model-facing bash and pwsh tools."
 kind: "package-group"
 ---

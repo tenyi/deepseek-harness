@@ -1,4 +1,4 @@
-# Standalone minimal SDK application. Unlike the ordinary SDK profile, this
+﻿# Standalone minimal SDK application. Unlike the ordinary SDK profile, this
 # bundle does not layer over dsh-base: this insert is the complete Cordis tree.
 # User profile, home, and invocation patches still apply above it.
 

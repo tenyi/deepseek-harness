@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Package-owned strict Schedule stream invariant.
  * @module @deepseek-ai/dsh-schedule/invariant
  */

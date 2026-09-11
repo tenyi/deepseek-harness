@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The `node:child_process` face over the in-worker shell, and the ladder above
  * it: the REAL local subprocess service, running unmodified against this
  * module instead of a host kernel. The bash tool walks this same ladder in the

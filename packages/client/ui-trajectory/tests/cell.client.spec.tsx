@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * TrajectoryCell presentation: kind tags, ellipsis-hosting text, Message
  * metric columns, own-duration formatting, and selected ring.

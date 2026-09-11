@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The shipped presets are this package's own, not an assembly fact each app
  * must patch in: a roster configured with nothing still supplies the built-in
  * compositions, prepended so they always mount and win a duplicate id.

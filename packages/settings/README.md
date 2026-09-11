@@ -1,4 +1,4 @@
----
+﻿---
 description: "Package map for the user-settings capability family: the ctx.settings service that resolves per-namespace configuration, and the YAML/JSON file provider that stores it."
 kind: "package-group"
 ---

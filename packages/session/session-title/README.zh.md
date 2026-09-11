@@ -1,5 +1,5 @@
----
-description: "面向用户与维护者的日志支持型会话标题说明，用于选择标题来源、配置服务或排查标题状态。"
+﻿---
+description: "面向用戶與維護者的日志支持型會話標題說明，用于選擇標題來源、配置服務或排查標題狀態。"
 kind: "package-reference"
 ---
 
@@ -9,31 +9,31 @@ kind: "package-reference"
 
 ## 概述
 
-使用 `dsh-session-title` 为每个会话提供客户端可见标题，标题可以来自第一条符合条件的用户消息、可选异步生成器或显式用户重命名。已接受的标题在回放、恢复与分页后仍然存在，但绝不会进入模型输入。自动生成绝不会延迟主 agent（智能体）响应，较新的标题请求会取代旧工作。当客户端需要带可配置长度上限的持久标题，以及通过 `refresh()` 主动重新生成标题的路径时，请选择本包。
+使用 `dsh-session-title` 為每個會話提供客戶端可見標題，標題可以來自第一條符合條件的用戶消息、可選異步生成器或顯式用戶重命名。已接受的標題在回放、恢復與分頁后仍然存在，但絕不會進入模型輸入。自動生成絕不會延遲主 agent（智能體）響應，較新的標題請求會取代舊工作。當客戶端需要帶可配置長度上限的持久標題，以及通過 `refresh()` 主動重新生成標題的路徑時，請選擇本包。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-挂载服务，让会话获得客户端可以显示、且绝不触及模型的标题。常用路径是显式的：加载会话存储、以必填上限挂载服务，并可选挂载一个提供方插件。
+掛載服務，讓會話獲得客戶端可以顯示、且絕不觸及模型的標題。常用路徑是顯式的：加載會話存儲、以必填上限掛載服務，并可選掛載一個提供方插件。
 
-### 选择标题来源
+### 選擇標題來源
 
-标题来自三个来源，最新者胜出。内置回退在配置上限内从第一条符合条件用户消息的开头若干词派生；已注册提供方对符合条件的消息生成标题；显式 `rename()` 接受用户提供的标题。只有人类 `user/message` 事件中的文本块符合条件，空提示词或非文本提示词会等待后续符合条件的输入。用户来源的最新标题会钉住会话——后续用户消息不再安排自动修订，显式 `refresh()` 仍是有意的解钉手段。
+標題來自三個來源，最新者勝出。內置回退在配置上限內從第一條符合條件用戶消息的開頭若干詞派生；已注冊提供方對符合條件的消息生成標題；顯式 `rename()` 接受用戶提供的標題。只有人類 `user/message` 事件中的文本塊符合條件，空提示詞或非文本提示詞會等待后續符合條件的輸入。用戶來源的最新標題會釘住會話——后續用戶消息不再安排自動修訂，顯式 `refresh()` 仍是有意的解釘手段。
 
 ### 最小配置
 
-所有上限都是必填项；该库不提供默认值。以三个上限挂载服务：
+所有上限都是必填項；該庫不提供默認值。以三個上限掛載服務：
 
 ```yaml
 - name: '@deepseek-ai/dsh-session'
@@ -44,106 +44,106 @@ kind: "package-reference"
     maxTitleBytes: 120
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `fallbackMaxWords` | 必填 | 确定性回退中以空白分隔的最大词数 |
-| `fallbackMaxBytes` | 必填 | 回退允许的最大 UTF-8 字节数；不得超过 `maxTitleBytes` |
-| `maxTitleBytes` | 必填 | 接受任何来源标题的最大 UTF-8 字节数 |
+| `fallbackMaxWords` | 必填 | 確定性回退中以空白分隔的最大詞數 |
+| `fallbackMaxBytes` | 必填 | 回退允許的最大 UTF-8 字節數；不得超過 `maxTitleBytes` |
+| `maxTitleBytes` | 必填 | 接受任何來源標題的最大 UTF-8 字節數 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-session-title)是每个受支持字段及其 JSDoc 的穷尽式真源。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-session-title)是每個受支持字段及其 JSDoc 的窮盡式真源。
 
 ### 添加提供方
 
-可选异步提供方可通过 `ctx.sessionTitle.register(provider)` 注册一个；第二次注册会立即抛出。随附的模型支持提供方是[首消息](../session-title-first-prompt-llm/README.zh.md)与[全消息](../session-title-all-prompts-llm/README.zh.md)，两者都使用共享的 [LLM（大语言模型）生成策略](../session-title-llm/README.zh.md)。提供方只有在带标记、由循环构建的请求的确切路由与已记录 `request/header` 匹配时才启动，较新的修订会取代并中止旧工作。
+可選異步提供方可通過 `ctx.sessionTitle.register(provider)` 注冊一個；第二次注冊會立即拋出。隨附的模型支持提供方是[首消息](../session-title-first-prompt-llm/README.zh.md)與[全消息](../session-title-all-prompts-llm/README.zh.md)，兩者都使用共享的 [LLM（大語言模型）生成策略](../session-title-llm/README.zh.md)。提供方只有在帶標記、由循環構建的請求的確切路由與已記錄 `request/header` 匹配時才啟動，較新的修訂會取代并中止舊工作。
 
-### 读取标题
+### 讀取標題
 
-`get(session)` 从活跃或回放会话读取折叠出的最新标题，`foldSessionTitle(events)` 是对日志的纯折叠。服务要求 `ctx.sessionProjections` 并注册两个单元：客户端可见的 `title` 单元（供客户端列表行使用的已接受标题字符串）和仅供 host 使用的 `titleInput` 单元——后者折叠第一条与最新一条合格消息及其计数，使调度与回退读取通过 `stateOf()` 达到 O(1)；某次提供方生成所需的完整合格前缀，则会在执行时从会话日志中扫描取得。显式 `refresh(session)` 在需要时物化回退，然后对当前符合条件的消息显式运行已注册提供方。
+`get(session)` 從活躍或回放會話讀取折疊出的最新標題，`foldSessionTitle(events)` 是對日志的純折疊。服務要求 `ctx.sessionProjections` 并注冊兩個單元：客戶端可見的 `title` 單元（供客戶端列表行使用的已接受標題字符串）和僅供 host 使用的 `titleInput` 單元——后者折疊第一條與最新一條合格消息及其計數，使調度與回退讀取通過 `stateOf()` 達到 O(1)；某次提供方生成所需的完整合格前綴，則會在執行時從會話日志中掃描取得。顯式 `refresh(session)` 在需要時物化回退，然后對當前符合條件的消息顯式運行已注冊提供方。
 
-### 失败与恢复
+### 失敗與恢復
 
-自动失败会发出警告并保留最新标题；显式 `refresh()` 在提供方错误或调用方取消时拒绝，取消不会回滚已接受的回退事件。自动工作绝不会延迟主 agent 响应，其延迟完成会追加一个独立纯日志事件而不打开轮次，陈旧的完成结果无法追加。fork 出的会话会原样继承种子中的标题事件。
+自動失敗會發出警告并保留最新標題；顯式 `refresh()` 在提供方錯誤或調用方取消時拒絕，取消不會回滾已接受的回退事件。自動工作絕不會延遲主 agent 響應，其延遲完成會追加一個獨立純日志事件而不打開輪次，陳舊的完成結果無法追加。fork 出的會話會原樣繼承種子中的標題事件。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释标题设计；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋標題設計；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-标题是持久的、仅写入日志的状态：每个已接受的修订都是 `session/title` 事件，`foldSessionTitle()` 选择最新事件，因此标题像任何其他会话事件一样在回放、恢复与分页中存活。服务拥有调度、取代与接受；提供方负责生成。
+標題是持久的、僅寫入日志的狀態：每個已接受的修訂都是 `session/title` 事件，`foldSessionTitle()` 選擇最新事件，因此標題像任何其他會話事件一樣在回放、恢復與分頁中存活。服務擁有調度、取代與接受；提供方負責生成。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 服务：配置、折叠、回退调度、提供方注册表、并发、`title` 投影单元 |
-| [`src/normalize.ts`](src/normalize.ts) | 标题文本清洗、UTF-8 安全截断与确定性回退 |
-| [`src/types.ts`](src/types.ts) | `title` 投影键声明的归属位置 |
+| [`src/index.ts`](src/index.ts) | 服務：配置、折疊、回退調度、提供方注冊表、并發、`title` 投影單元 |
+| [`src/normalize.ts`](src/normalize.ts) | 標題文本清洗、UTF-8 安全截斷與確定性回退 |
+| [`src/types.ts`](src/types.ts) | `title` 投影鍵聲明的歸屬位置 |
 
-### 生命周期与并发
+### 生命周期與并發
 
-每个会话的工作状态维护一个修订计数器、一个进行中的回退，以及待处理与活跃的提供方工作。较新的用户消息、提供方 dispose（资源释放）、会话 dispose 或显式刷新都会通过 `AbortController` 中止旧工作；提供方、修订、会话或信号已陈旧的完成结果无法追加。显式刷新会在提供方工作之前预留修订号；重叠的自动／显式回退请求共享一个会话本地正在进行的追加操作。服务拆卸会取消排队工作，并在卸载完成前等待不响应取消的调用结算。
+每個會話的工作狀態維護一個修訂計數器、一個進行中的回退，以及待處理與活躍的提供方工作。較新的用戶消息、提供方 dispose（資源釋放）、會話 dispose 或顯式刷新都會通過 `AbortController` 中止舊工作；提供方、修訂、會話或信號已陳舊的完成結果無法追加。顯式刷新會在提供方工作之前預留修訂號；重疊的自動／顯式回退請求共享一個會話本地正在進行的追加操作。服務拆卸會取消排隊工作，并在卸載完成前等待不響應取消的調用結算。
 
-### 规范化
+### 規范化
 
-已接受标题会清除终端控制序列、方向性与不可见控制符以及非空白的 C0/C1 控制符；空白被规范化，按字节上限截断时绝不切断 Unicode 码点。确定性回退在 `fallbackMaxWords` 与 `fallbackMaxBytes` 内取第一条符合条件消息的开头若干词。
+已接受標題會清除終端控制序列、方向性與不可見控制符以及非空白的 C0/C1 控制符；空白被規范化，按字節上限截斷時絕不切斷 Unicode 碼點。確定性回退在 `fallbackMaxWords` 與 `fallbackMaxBytes` 內取第一條符合條件消息的開頭若干詞。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当服务约定不够用时阅读以下页面。它们从子系统参考逐步进入在此插拔的模型支持提供方。
+當服務約定不夠用時閱讀以下頁面。它們從子系統參考逐步進入在此插拔的模型支持提供方。
 
-- [会话标题子系统](../../../docs/subsystems/session-title.zh.md)——持久标题状态与提供方词汇类型。
-- [共享 LLM 标题策略](../session-title-llm/README.zh.md)——两个随附提供方共用的模型生成辅助模块。
-- [首消息标题提供方](../session-title-first-prompt-llm/README.zh.md)——根据第一条符合条件的用户消息生成标题。
-- [全消息标题提供方](../session-title-all-prompts-llm/README.zh.md)——根据所有符合条件的用户消息生成标题。
-- [会话包映射](../README.zh.md)——相邻的持久化、投影、标题与遥测包。
+- [會話標題子系統](../../../docs/subsystems/session-title.zh.md)——持久標題狀態與提供方詞匯類型。
+- [共享 LLM 標題策略](../session-title-llm/README.zh.md)——兩個隨附提供方共用的模型生成輔助模塊。
+- [首消息標題提供方](../session-title-first-prompt-llm/README.zh.md)——根據第一條符合條件的用戶消息生成標題。
+- [全消息標題提供方](../session-title-all-prompts-llm/README.zh.md)——根據所有符合條件的用戶消息生成標題。
+- [會話包映射](../README.zh.md)——相鄰的持久化、投影、標題與遙測包。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### 会话标题状态
+### 會話標題狀態
 
 #### 模型看到什么
 
-无。`session/title` 只写入日志，绝不会进入会话接口、`deriveMessages()`、系统提示词、工具 schema 或请求前缀。
+無。`session/title` 只寫入日志，絕不會進入會話接口、`deriveMessages()`、系統提示詞、工具 schema 或請求前綴。
 
-#### Token 影响
+#### Token 影響
 
-回退与已接受的提供方修订不会向主 agent 请求增加 token。可选提供方的独立辅助请求由对应提供方包的文档说明。
+回退與已接受的提供方修訂不會向主 agent 請求增加 token。可選提供方的獨立輔助請求由對應提供方包的文檔說明。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-不影响主请求；标题事件不会改变其重建内容或缓存键。
+不影響主請求；標題事件不會改變其重建內容或緩存鍵。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明标题服务不提供什么。它们是当前包约束。
+這些限制說明標題服務不提供什么。它們是當前包約束。
 
-- **没有标题删除、搜索或列表索引**——不经显式 `refresh` 就解钉回自动标题、搜索与列表索引不属于此服务。
-- **至多一个提供方**——注册表有意只接受一个实现，因此部署若要组合相互竞争的标题策略，必须编写一个自行负责优先级的提供方。
+- **沒有標題刪除、搜索或列表索引**——不經顯式 `refresh` 就解釘回自動標題、搜索與列表索引不屬于此服務。
+- **至多一個提供方**——注冊表有意只接受一個實現，因此部署若要組合相互競爭的標題策略，必須編寫一個自行負責優先級的提供方。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

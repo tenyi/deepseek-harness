@@ -1,4 +1,4 @@
-/** Pure projection from routed Cordis snapshots to the consumer-neutral tree. */
+﻿/** Pure projection from routed Cordis snapshots to the consumer-neutral tree. */
 
 import type { CordisTreeNode, CordisTreeSnapshot } from './snapshot.ts'
 import {

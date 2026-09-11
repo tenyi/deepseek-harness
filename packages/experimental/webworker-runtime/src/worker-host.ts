@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Worker assembly entry: the whole harness Cordis tree inside one dedicated
  * Web Worker.
  *

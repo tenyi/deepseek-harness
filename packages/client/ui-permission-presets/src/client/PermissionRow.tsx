@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Permission preference row: the default preset for subsequently created
  * sessions. Current-session switches remain on the composer `/permission`
  * control.

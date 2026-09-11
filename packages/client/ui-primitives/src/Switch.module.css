@@ -1,4 +1,4 @@
-/* The on/off appearance keys off aria-checked rather than a parallel class, so
+﻿/* The on/off appearance keys off aria-checked rather than a parallel class, so
  * the visual state cannot disagree with the state assistive technology reads.
  *
  * The track is a capsule: its radius is half its height, so the corners consume

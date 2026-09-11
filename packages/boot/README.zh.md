@@ -1,39 +1,39 @@
----
-description: "boot 包组：dsh app bin 如何启动——环境加载、profile 与 patch 层、清晰的启动失败信息，以及由应用持有的命令行。"
+﻿---
+description: "boot 包組：dsh app bin 如何啟動——環境加載、profile 與 patch 層、清晰的啟動失敗信息，以及由應用持有的命令行。"
 kind: "package-group"
 ---
 
-# boot/：共享的 app bin 启动粘合层
+# boot/：共享的 app bin 啟動粘合層
 
 [English](README.md) | 中文
 
 ## 概述
 
-boot 组提供每个 dsh app bin 启动所需的全部能力：`app-boot` 把 `cordis.yml` 连同你的环境与 patch 层变成运行中的应用，并给出清晰的失败信息；`cmdline` 让应用持有自己的命令行 flag 与 `--help`。借助这些包，你可以运行 `dsh`，也可以编写以同样方式启动的新应用或测试用 fixture（测试前置数据）。两者都是 `apps/cli` 与测试专用 Loader fixture 导入的库，绝不是组合加载的插件。本页列出该包组的构成；各包 README 负责各自的包级约定。
+boot 組提供每個 dsh app bin 啟動所需的全部能力：`app-boot` 把 `cordis.yml` 連同你的環境與 patch 層變成運行中的應用，并給出清晰的失敗信息；`cmdline` 讓應用持有自己的命令行 flag 與 `--help`。借助這些包，你可以運行 `dsh`，也可以編寫以同樣方式啟動的新應用或測試用 fixture（測試前置數據）。兩者都是 `apps/cli` 與測試專用 Loader fixture 導入的庫，絕不是組合加載的插件。本頁列出該包組的構成；各包 README 負責各自的包級約定。
 
-## 目录
+## 目錄
 
 - [包](#packages)
-- [相关文档](#related-documentation)
-- [开发备注](#dev-note)
+- [相關文檔](#related-documentation)
+- [開發備注](#dev-note)
 
 <a id="packages"></a>
 ## 包
 
-| 包 | 职责 | ctx 键 |
+| 包 | 職責 | ctx 鍵 |
 |---|---|---|
-| [`app-boot`](app-boot/README.zh.md) | 从 `cordis.yml` 启动 dsh 应用：加载 `.env`、应用 profile 与 patch 层，并清晰报告启动失败 | （供各 bin 使用的库） |
-| [`cmdline`](cmdline/README.zh.md) | 让应用持有自己的 flag、`--help` 与退出码；启动器自身 flag 之后的一切原样传入 | `cmdlineArgs`、`appExit` |
+| [`app-boot`](app-boot/README.zh.md) | 從 `cordis.yml` 啟動 dsh 應用：加載 `.env`、應用 profile 與 patch 層，并清晰報告啟動失敗 | （供各 bin 使用的庫） |
+| [`cmdline`](cmdline/README.zh.md) | 讓應用持有自己的 flag、`--help` 與退出碼；啟動器自身 flag 之后的一切原樣傳入 | `cmdlineArgs`、`appExit` |
 
 <a id="related-documentation"></a>
-## 相关文档
+## 相關文檔
 
-- [dsh 应用](../../apps/cli/README.zh.md)——在其启动序列中使用这些 helper 的 `dsh` bin。
-- [Profile 组合包](../bundle/README.zh.md)——可由 `dsh --profile` 组合挂载的可安装 patch 层。
-- [dsh-home-paths](../util/home-paths/README.zh.md)——两个包都依赖的 harness home 解析器。
-- [dsh-cmdline](cmdline/README.zh.md)——flag 家族如何由应用持有而非启动器。
+- [dsh 應用](../../apps/cli/README.zh.md)——在其啟動序列中使用這些 helper 的 `dsh` bin。
+- [Profile 組合包](../bundle/README.zh.md)——可由 `dsh --profile` 組合掛載的可安裝 patch 層。
+- [dsh-home-paths](../util/home-paths/README.zh.md)——兩個包都依賴的 harness home 解析器。
+- [dsh-cmdline](cmdline/README.zh.md)——flag 家族如何由應用持有而非啟動器。
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
-无。
+無。

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Package-owned invariant companion for `@deepseek-ai/dsh-commands`:
  * command lifecycle events pair by commandId within one session log.
  * @module @deepseek-ai/dsh-commands/invariant

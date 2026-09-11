@@ -1,4 +1,4 @@
-/** Agent-scoped serialization for Schedule reads and durable mutations. */
+﻿/** Agent-scoped serialization for Schedule reads and durable mutations. */
 
 import type { Agent } from '@deepseek-ai/dsh-agent'
 

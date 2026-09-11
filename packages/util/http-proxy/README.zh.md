@@ -1,5 +1,5 @@
----
-description: "Harness 的出站 HTTP 代理支持：从启动环境解析出的一份策略，如何覆盖到 Node fetch 本来会直连的每一个请求。"
+﻿---
+description: "Harness 的出站 HTTP 代理支持：從啟動環境解析出的一份策略，如何覆蓋到 Node fetch 本來會直連的每一個請求。"
 kind: "package-reference"
 ---
 
@@ -9,118 +9,118 @@ kind: "package-reference"
 
 ## 概述
 
-使用本包可为采用 Node 内置 `fetch` 的 Harness 请求应用一份出站 HTTP 代理策略，包括 LLM（大语言模型）、web 搜索与 HTTP MCP 流量。启动器只读取一次标准代理环境变量，普通 `fetch` 调用方无需额外引入或改动。loopback 流量保持直连；不受支持的代理 URL 会被报告，并针对受影响的协议跳过。公共辅助函数可让调用方路由采用自有代理设置的传输、准备子进程环境，或为隔离回放清除代理变量。
+使用本包可為采用 Node 內置 `fetch` 的 Harness 請求應用一份出站 HTTP 代理策略，包括 LLM（大語言模型）、web 搜索與 HTTP MCP 流量。啟動器只讀取一次標準代理環境變量，普通 `fetch` 調用方無需額外引入或改動。loopback 流量保持直連；不受支持的代理 URL 會被報告，并針對受影響的協議跳過。公共輔助函數可讓調用方路由采用自有代理設置的傳輸、準備子進程環境，或為隔離回放清除代理變量。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-无需挂载，也无需配置。`dsh` 启动器会在第一个插件加载之前，为每个 profile 解析并安装策略，因此导出了 `HTTPS_PROXY` 的用户在所有位置都会走代理。本包是库而非插件，因为传输策略每个进程只有一个答案：没有第二个实现可替换，也没有比进程更窄的作用域可赋予。
+無需掛載，也無需配置。`dsh` 啟動器會在第一個插件加載之前，為每個 profile 解析并安裝策略，因此導出了 `HTTPS_PROXY` 的用戶在所有位置都會走代理。本包是庫而非插件，因為傳輸策略每個進程只有一個答案：沒有第二個實現可替換，也沒有比進程更窄的作用域可賦予。
 
-### 编写新的出站调用
+### 編寫新的出站調用
 
-普通 `fetch()` 已经走代理，任何最终落到 `globalThis.fetch` 的 SDK 也一样——MCP HTTP 传输与 pi-ai 提供方栈都是如此。自建传输的 SDK 则不会走代理，而本仓库随附的 SDK 中已有两个如此。不要对任何 SDK 想当然，去查。
+普通 `fetch()` 已經走代理，任何最終落到 `globalThis.fetch` 的 SDK 也一樣——MCP HTTP 傳輸與 pi-ai 提供方棧都是如此。自建傳輸的 SDK 則不會走代理，而本倉庫隨附的 SDK 中已有兩個如此。不要對任何 SDK 想當然，去查。
 
-| 你要写的东西 | 使用 |
+| 你要寫的東西 | 使用 |
 |---|---|
-| 普通请求，或最终落到 `globalThis.fetch` 的 SDK | 什么都不用——全局 dispatcher 已经在路由它 |
-| 需要按“这次请求是否走代理”分支的调用 | `proxyRouteFor(url)` |
-| 接受自有代理 URL 的 SDK | `proxyRouteFor(url)`，把 `route.proxy` 传进去 |
-| 由你自己构造环境的 spawn | 把 `proxyEnvironmentForChild()` 应用到该 spawn（`undefined` 表示删除） |
-| 必须连到自带 fixture（测试前置数据）服务器的 harness | 把 `clearedProxyEnv()` 应用到该 spawn |
+| 普通請求，或最終落到 `globalThis.fetch` 的 SDK | 什么都不用——全局 dispatcher 已經在路由它 |
+| 需要按“這次請求是否走代理”分支的調用 | `proxyRouteFor(url)` |
+| 接受自有代理 URL 的 SDK | `proxyRouteFor(url)`，把 `route.proxy` 傳進去 |
+| 由你自己構造環境的 spawn | 把 `proxyEnvironmentForChild()` 應用到該 spawn（`undefined` 表示刪除） |
+| 必須連到自帶 fixture（測試前置數據）服務器的 harness | 把 `clearedProxyEnv()` 應用到該 spawn |
 
-`proxyRouteFor` 给出的不只是答案，还有该答案所假定的传输：走代理的那一支携带着此刻正按该策略路由的 dispatcher。若调用方先读策略、再自建传输，卸载就可能落在两次读取之间，把请求发往其分支从未放行的去处。
+`proxyRouteFor` 給出的不只是答案，還有該答案所假定的傳輸：走代理的那一支攜帶著此刻正按該策略路由的 dispatcher。若調用方先讀策略、再自建傳輸，卸載就可能落在兩次讀取之間，把請求發往其分支從未放行的去處。
 
-自建传输的 SDK 接触不到上述任何一条，而本仓库随附的 SDK 里有两个如此。E2B 接受自有代理 URL，现在接收 `route.proxy`。OTLP 遥测导出器通过 `node:http` 投递，被有意保留为直连——见下方限制一节。
+自建傳輸的 SDK 接觸不到上述任何一條，而本倉庫隨附的 SDK 里有兩個如此。E2B 接受自有代理 URL，現在接收 `route.proxy`。OTLP 遙測導出器通過 `node:http` 投遞，被有意保留為直連——見下方限制一節。
 
-构造 `new Agent(...)` 再作为 `dispatcher` 传入会覆盖全局 dispatcher，从而静默绕开代理。`verify-no-bare-dispatcher` 会在本包之外拒绝该写法。有一处调用点确实自有传输——`web-fetch-http` 会把请求钉在它已校验过的地址上，而这是进程级 dispatcher 无法承载的单次请求状态——它在该行用 `proxy-exempt:` 注释说明。
+構造 `new Agent(...)` 再作為 `dispatcher` 傳入會覆蓋全局 dispatcher，從而靜默繞開代理。`verify-no-bare-dispatcher` 會在本包之外拒絕該寫法。有一處調用點確實自有傳輸——`web-fetch-http` 會把請求釘在它已校驗過的地址上，而這是進程級 dispatcher 無法承載的單次請求狀態——它在該行用 `proxy-exempt:` 注釋說明。
 
-该门禁看不进 SDK 内部，因此仓库中每一个出网点都另有一份 `egress.spec.ts`：它驱动该点的真实代码路径穿过一个假代理，并断言代理确实收到了请求——遥测那份则断言代理什么也没收到。新增出网点就补一份。它是唯一能双向发现 SDK 在我们脚下更换传输的手段：OTLP 与 E2B 这两个漏洞正是这样被发现的，而某次升级若开始静默地把遥测送去代理，也由它拦下。
+該門禁看不進 SDK 內部，因此倉庫中每一個出網點都另有一份 `egress.spec.ts`：它驅動該點的真實代碼路徑穿過一個假代理，并斷言代理確實收到了請求——遙測那份則斷言代理什么也沒收到。新增出網點就補一份。它是唯一能雙向發現 SDK 在我們腳下更換傳輸的手段：OTLP 與 E2B 這兩個漏洞正是這樣被發現的，而某次升級若開始靜默地把遙測送去代理，也由它攔下。
 
-### 策略读取哪些值
+### 策略讀取哪些值
 
-`http_proxy`、`https_proxy`、`no_proxy` 与 `all_proxy`，小写优先、大写兜底，空值视为未设置。`ALL_PROXY` 为两种协议兜底，HTTPS 最后回退到 HTTP 代理——其中第一条 Node 与 undici 都不会自行推导。取值来自启动器的快照：先看导出的环境变量，再看 `$DSH_HOME/.env`。项目自己的 `.env` 不能携带这些名字——那个文件随 clone 一起到来，启动器宁可拒绝启动，也不让一个仓库决定 Harness 把流量发往何处。
+`http_proxy`、`https_proxy`、`no_proxy` 與 `all_proxy`，小寫優先、大寫兜底，空值視為未設置。`ALL_PROXY` 為兩種協議兜底，HTTPS 最后回退到 HTTP 代理——其中第一條 Node 與 undici 都不會自行推導。取值來自啟動器的快照：先看導出的環境變量，再看 `$DSH_HOME/.env`。項目自己的 `.env` 不能攜帶這些名字——那個文件隨 clone 一起到來，啟動器寧可拒絕啟動，也不讓一個倉庫決定 Harness 把流量發往何處。
 
-loopback 始终被绕过——`localhost`、整个 `127.0.0.0/8` 段、`::1`、`0.0.0.0`，以及它们的 IPv4 映射写法。否则 Harness 自己的 Web UI、Connection 传输以及每一个本地测试服务器都会经由代理并形成回环。发布出去的绕过列表只包含读取环境的消费者能匹配的四个字面量条目；`proxyForUrl` 自行识别整个网段，因为列表条目无法表达一个范围。
+loopback 始終被繞過——`localhost`、整個 `127.0.0.0/8` 段、`::1`、`0.0.0.0`，以及它們的 IPv4 映射寫法。否則 Harness 自己的 Web UI、Connection 傳輸以及每一個本地測試服務器都會經由代理并形成回環。發布出去的繞過列表只包含讀取環境的消費者能匹配的四個字面量條目；`proxyForUrl` 自行識別整個網段，因為列表條目無法表達一個范圍。
 
-### 失败处理
+### 失敗處理
 
-本包无法使用的代理值——SOCKS 或 PAC URL、无法解析的字符串、不受支持的协议——会被报告并跳过，该 scheme 转为直连。该变量可能是用户为其他工具导出的，不应因此阻止 agent（智能体）启动。
+本包無法使用的代理值——SOCKS 或 PAC URL、無法解析的字符串、不受支持的協議——會被報告并跳過，該 scheme 轉為直連。該變量可能是用戶為其他工具導出的，不應因此阻止 agent（智能體）啟動。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
-### 设计理念
+### 設計理念
 
-**一次解析，一个匹配器。** `proxyForUrl()` 与已安装的 dispatcher 绝不能对同一个 URL 给出不同答案，否则 `dsh-web-fetch-http` 会把 dispatcher 本打算隧道转发的连接固定到某个地址上。因此该 dispatcher 是一个 `Agent`，其按 origin 调用的 `factory` 自身调用 `proxyForUrl()`，不存在可能与第一个解析器产生漂移的第二个解析器。undici 的 `EnvHttpProxyAgent` 在此无法胜任：没有 `HTTPS_PROXY` 时它让 `https:` 复用 HTTP 代理，于是本包在拒绝用户为该 scheme 指定的 URL 后本应保持直连的 scheme 仍会被隧道转发。
+**一次解析，一個匹配器。** `proxyForUrl()` 與已安裝的 dispatcher 絕不能對同一個 URL 給出不同答案，否則 `dsh-web-fetch-http` 會把 dispatcher 本打算隧道轉發的連接固定到某個地址上。因此該 dispatcher 是一個 `Agent`，其按 origin 調用的 `factory` 自身調用 `proxyForUrl()`，不存在可能與第一個解析器產生漂移的第二個解析器。undici 的 `EnvHttpProxyAgent` 在此無法勝任：沒有 `HTTPS_PROXY` 時它讓 `https:` 復用 HTTP 代理，于是本包在拒絕用戶為該 scheme 指定的 URL 后本應保持直連的 scheme 仍會被隧道轉發。
 
-**子进程继承用户自己的值，以及用户未设置部分的解析结果。** 用户以任一大小写指定过的 scheme，会以他们书写的形式原样传给子进程，因此用户为 `curl` 设置的 SOCKS 代理绝不会被替换成为其他 scheme 指定的 HTTP 代理。两种大小写都未指定的 scheme 则携带解析值，否则子进程的路由会与父进程分歧：Node 的 `NODE_USE_ENV_PROXY` 不读 `ALL_PROXY`。绕过列表始终采用解析结果——它只会追加 loopback 条目，用户写下的内容不会丢失。让父子进程只有一个路由答案的代价是：`curl` 也会看到本包由 HTTP 代理推导出的 `https:` 代理。有一处例外是为了保护子进程自身：当子进程收到的某个值是本包拒绝过的——比如为 `curl` 保留的 SOCKS URL——就不再设置 `NODE_USE_ENV_PROXY`，因为 Node 在该标志下会在运行程序之前先解析 `HTTP_PROXY` 与 `HTTPS_PROXY`，遇到这类值直接退出。此时子 Node 直连（本进程已为该协议如此报告），而不是根本起不来。
+**子進程繼承用戶自己的值，以及用戶未設置部分的解析結果。** 用戶以任一大小寫指定過的 scheme，會以他們書寫的形式原樣傳給子進程，因此用戶為 `curl` 設置的 SOCKS 代理絕不會被替換成為其他 scheme 指定的 HTTP 代理。兩種大小寫都未指定的 scheme 則攜帶解析值，否則子進程的路由會與父進程分歧：Node 的 `NODE_USE_ENV_PROXY` 不讀 `ALL_PROXY`。繞過列表始終采用解析結果——它只會追加 loopback 條目，用戶寫下的內容不會丟失。讓父子進程只有一個路由答案的代價是：`curl` 也會看到本包由 HTTP 代理推導出的 `https:` 代理。有一處例外是為了保護子進程自身：當子進程收到的某個值是本包拒絕過的——比如為 `curl` 保留的 SOCKS URL——就不再設置 `NODE_USE_ENV_PROXY`，因為 Node 在該標志下會在運行程序之前先解析 `HTTP_PROXY` 與 `HTTPS_PROXY`，遇到這類值直接退出。此時子 Node 直連（本進程已為該協議如此報告），而不是根本起不來。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 承载 |
+| 文件 | 承載 |
 |---|---|
-| `src/policy.ts` | 解析与绕过匹配；诊断只点名变量，从不带出它的值。不引入任何传输实现，因此在没有 undici 的环境中仍可加载。 |
-| `src/install.ts` | 全局 dispatcher、生效策略记录、路由与子进程环境。动态引入 undici。 |
-| `src/index.ts` | 本包的对外接口：四个函数与一个类型。 |
+| `src/policy.ts` | 解析與繞過匹配；診斷只點名變量，從不帶出它的值。不引入任何傳輸實現，因此在沒有 undici 的環境中仍可加載。 |
+| `src/install.ts` | 全局 dispatcher、生效策略記錄、路由與子進程環境。動態引入 undici。 |
+| `src/index.ts` | 本包的對外接口：四個函數與一個類型。 |
 
-### 绕过匹配
+### 繞過匹配
 
-一个条目写的是主机名，它连同其下所有子域名一起匹配：`NO_PROXY=example.com` 也会放行 `api.example.com`。前缀 `.` 或 `*.` 可以写，含义相同。条目可带 `:port`，`*` 则放行全部。带方括号与裸写的 IPv6 字面量都能匹配——裸写的 `::1` **不会**被读成主机 `:` 端口 `1`，而 undici 自带的匹配器正是这样出错的，这也是解析结果中同时携带 `::1` 与 `[::1]` 的原因。CIDR 不参与匹配：操作系统的绕过列表常含 `10.0.0.0/8`，必须改写成后缀形式。
+一個條目寫的是主機名，它連同其下所有子域名一起匹配：`NO_PROXY=example.com` 也會放行 `api.example.com`。前綴 `.` 或 `*.` 可以寫，含義相同。條目可帶 `:port`，`*` 則放行全部。帶方括號與裸寫的 IPv6 字面量都能匹配——裸寫的 `::1` **不會**被讀成主機 `:` 端口 `1`，而 undici 自帶的匹配器正是這樣出錯的，這也是解析結果中同時攜帶 `::1` 與 `[::1]` 的原因。CIDR 不參與匹配：操作系統的繞過列表常含 `10.0.0.0/8`，必須改寫成后綴形式。
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-- [网络代理指南](../../../docs/user/guide/network-proxy.zh.md)——需要导出什么，以及为什么浏览器走代理而终端不走。
-- [`dsh-web-fetch-http`](../../web/web-fetch-http/README.zh.md)——唯一一个安全规则会因代理而改变的消费方。
+- [網絡代理指南](../../../docs/user/guide/network-proxy.zh.md)——需要導出什么，以及為什么瀏覽器走代理而終端不走。
+- [`dsh-web-fetch-http`](../../web/web-fetch-http/README.zh.md)——唯一一個安全規則會因代理而改變的消費方。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无。本包只承担传输策略：它改变字节如何抵达网络，不注册任何提示词、schema 或结果文本。
+無。本包只承擔傳輸策略：它改變字節如何抵達網絡，不注冊任何提示詞、schema 或結果文本。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-不会直接失效：本包不贡献任何请求 token，也从不改变请求前缀，因此提供方缓存复用不受影响。
+不會直接失效：本包不貢獻任何請求 token，也從不改變請求前綴，因此提供方緩存復用不受影響。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制界定了本包不适用的场景，属于当前的包级约束。
+這些限制界定了本包不適用的場景，屬于當前的包級約束。
 
-- **不支持 SOCKS、PAC 或操作系统代理探测**——只接受来自环境的 `http(s)://` 代理 URL。不会读取 macOS 或 Windows 的系统代理设置，因此仅在代理软件里拨了开关的用户仍须导出环境变量；SOCKS URL 会被报告，且该协议保持直连，不会借用另一协议的代理。
-- **不支持自定义证书颁发机构**——做 TLS 拦截的企业代理需要在启动前为进程设置 `NODE_EXTRA_CA_CERTS`，本包既不设置也不校验它。
-- **spawn 出的子进程只在足够新的运行时上遵循策略，且仅当它继承的每个值都是 Node 接受的**——它通过 Node 的 `NODE_USE_ENV_PROXY` 读取已发布的环境（22.21+、24+），而 engines 范围允许 22.19 与 22.20，在这两个版本上这样的子进程保持直连。若用户环境里还有 SOCKS 或其他被拒的代理，所有子 Node 都保持直连：不设置该标志，子进程才起得来。子进程还会按 Node 自己的 `NO_PROXY` 规则匹配绕过条目，其分隔符与 IPv4 区间处理与本包不同。本进程内不依赖任何 Node 版本：每一次进程内请求都会落到全局 dispatcher。
-- **遥测按设计直连**——OTLP 导出器通过 `node:http` 投递，全局 dispatcher 触及不到。要让它走代理，要么依赖 `http.Agent` 的 `proxyEnv`，而该选项晚于本项目支持的最低 Node 版本；要么改用 SDK 的 `fetch` 传输，但它没有压缩能力，而随附配置启用了 gzip。遥测是唯一一条丢失后不会让用户付出任何代价的通道，因此维持原状；`DSH_TELEMETRY_MODE=DISABLED` 可关闭它。
-- **执行由模型编写的代码的 worker 完全不获得代理**——`code-runtime` worker 与 `workflow` worker 都不接收代理配置，它们自身的请求直连。代理 URL 可能携带 `user:password`，而两者运行的都是模型写的脚本。
-- **防回归门禁只看源码，看不到依赖内部**——`verify-no-bare-dispatcher` 解析 `packages/*/*/src` 与 `apps/*/src`；测试、脚本以及第三方 SDK 的内部都在其之外。这正是每个出网点还各配一份 `egress.spec.ts` 的原因。
+- **不支持 SOCKS、PAC 或操作系統代理探測**——只接受來自環境的 `http(s)://` 代理 URL。不會讀取 macOS 或 Windows 的系統代理設置，因此僅在代理軟件里撥了開關的用戶仍須導出環境變量；SOCKS URL 會被報告，且該協議保持直連，不會借用另一協議的代理。
+- **不支持自定義證書頒發機構**——做 TLS 攔截的企業代理需要在啟動前為進程設置 `NODE_EXTRA_CA_CERTS`，本包既不設置也不校驗它。
+- **spawn 出的子進程只在足夠新的運行時上遵循策略，且僅當它繼承的每個值都是 Node 接受的**——它通過 Node 的 `NODE_USE_ENV_PROXY` 讀取已發布的環境（22.21+、24+），而 engines 范圍允許 22.19 與 22.20，在這兩個版本上這樣的子進程保持直連。若用戶環境里還有 SOCKS 或其他被拒的代理，所有子 Node 都保持直連：不設置該標志，子進程才起得來。子進程還會按 Node 自己的 `NO_PROXY` 規則匹配繞過條目，其分隔符與 IPv4 區間處理與本包不同。本進程內不依賴任何 Node 版本：每一次進程內請求都會落到全局 dispatcher。
+- **遙測按設計直連**——OTLP 導出器通過 `node:http` 投遞，全局 dispatcher 觸及不到。要讓它走代理，要么依賴 `http.Agent` 的 `proxyEnv`，而該選項晚于本項目支持的最低 Node 版本；要么改用 SDK 的 `fetch` 傳輸，但它沒有壓縮能力，而隨附配置啟用了 gzip。遙測是唯一一條丟失后不會讓用戶付出任何代價的通道，因此維持原狀；`DSH_TELEMETRY_MODE=DISABLED` 可關閉它。
+- **執行由模型編寫的代碼的 worker 完全不獲得代理**——`code-runtime` worker 與 `workflow` worker 都不接收代理配置，它們自身的請求直連。代理 URL 可能攜帶 `user:password`，而兩者運行的都是模型寫的腳本。
+- **防回歸門禁只看源碼，看不到依賴內部**——`verify-no-bare-dispatcher` 解析 `packages/*/*/src` 與 `apps/*/src`；測試、腳本以及第三方 SDK 的內部都在其之外。這正是每個出網點還各配一份 `egress.spec.ts` 的原因。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>面向维护者的工作上下文——点击展开</summary>
+<summary>面向維護者的工作上下文——點擊展開</summary>
 
-userland undici 能触及 Node 内置的 `fetch`，依赖的是两者都会写入 legacy 的 `Symbol.for('undici.globalDispatcher.1')` 槽位。那是跨版本的隐式耦合，不是约定——参见 [corepack#834](https://github.com/nodejs/corepack/issues/834) 中它失效的实例。`tests/install.spec.ts` 断言真实请求会抵达一个 loopback 代理，因此破坏该耦合的版本升级会在那里失败，而不是流到线上。
+userland undici 能觸及 Node 內置的 `fetch`，依賴的是兩者都會寫入 legacy 的 `Symbol.for('undici.globalDispatcher.1')` 槽位。那是跨版本的隱式耦合，不是約定——參見 [corepack#834](https://github.com/nodejs/corepack/issues/834) 中它失效的實例。`tests/install.spec.ts` 斷言真實請求會抵達一個 loopback 代理，因此破壞該耦合的版本升級會在那里失敗，而不是流到線上。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。本包唯一的可变状态——生效中的策略——由单元测试对照它所安装的 dispatcher 断言：测试会对该注册执行 dispose（资源释放）并观察一个真实的 loopback 代理。
+**運行時不變式：** 不發布伴生入口。本包唯一的可變狀態——生效中的策略——由單元測試對照它所安裝的 dispatcher 斷言：測試會對該注冊執行 dispose（資源釋放）并觀察一個真實的 loopback 代理。

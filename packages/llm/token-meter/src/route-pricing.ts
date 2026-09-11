@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Request-projected surface pricing: replaces attachment-block heuristics with
  * the image and file representations sent to the routed model.
  *

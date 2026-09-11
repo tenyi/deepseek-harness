@@ -1,4 +1,4 @@
----
+﻿---
 description: "The user-settings service for plugin authors and maintainers registering configurable namespaces, reading resolved values, or wiring configuration surfaces."
 kind: "package-reference"
 ---

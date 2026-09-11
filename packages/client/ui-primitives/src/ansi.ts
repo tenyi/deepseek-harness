@@ -1,4 +1,4 @@
-// Strip control sequences that anser does not consume before resolving SGR
+﻿// Strip control sequences that anser does not consume before resolving SGR
 // runs, so they cannot reach the DOM as literal characters.
 
 import Anser from 'anser'

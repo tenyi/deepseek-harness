@@ -1,4 +1,4 @@
-import sharp from 'sharp'
+﻿import sharp from 'sharp'
 import { describe, expect, it } from 'vitest'
 import { detectImage, probeImage } from '../src/image.ts'
 

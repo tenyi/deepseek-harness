@@ -1,4 +1,4 @@
-/** ui-subagent browser half: catalog actions and read-only composer routing. */
+﻿/** ui-subagent browser half: catalog actions and read-only composer routing. */
 import { Context } from '@deepseek-ai/cordis'
 import { stubSettingsScope } from '@deepseek-ai/dsh-client-test-runtime'
 import { describe, expect, it } from 'vitest'

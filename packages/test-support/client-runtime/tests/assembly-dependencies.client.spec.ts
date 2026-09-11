@@ -1,4 +1,4 @@
-/** Real bundle dependency closures activate their requested client plugins without extra roster rows. */
+﻿/** Real bundle dependency closures activate their requested client plugins without extra roster rows. */
 import { FiberState } from '@deepseek-ai/cordis'
 import { describe, expect, vi } from 'vitest'
 import { createClientTest, webApp } from '../src/assembly/index.ts'

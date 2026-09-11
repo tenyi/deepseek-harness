@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Process-local provider for the background-job capability seam
  * (`ctx.jobs`). It keeps every record in memory and hands out fresh
  * snapshots, never live state.

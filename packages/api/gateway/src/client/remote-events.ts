@@ -1,4 +1,4 @@
-/** Client owner for forwarded Remote Event subscriptions and deliveries. */
+﻿/** Client owner for forwarded Remote Event subscriptions and deliveries. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import type {

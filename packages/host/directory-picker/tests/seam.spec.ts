@@ -1,4 +1,4 @@
-/** Contract behavior the seam itself owns: registration identity and typed failures. */
+﻿/** Contract behavior the seam itself owns: registration identity and typed failures. */
 
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'

@@ -1,4 +1,4 @@
-/** Trajectory view: compact summary over a turn-aware event ledger. */
+﻿/** Trajectory view: compact summary over a turn-aware event ledger. */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type {

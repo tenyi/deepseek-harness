@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One Session's feedback surface: the message-feedback object layer and the
  * dialog controller, plus the routing between them. A message target puts a
  * selected judgment through the message controller; the Session target records

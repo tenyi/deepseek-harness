@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Web question plugin, browser half: QuestionComposer registered as a
  * selector-routed entry of the conversation-declared composer chain, plus the
  * `question` dictionaries. The selector narrows the owner's currency to the

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Low-level JSON-RPC client for a DeepSeek Harness SDK runtime subprocess.
  * {@link HarnessClient} owns the child process: it spawns the runtime, speaks
  * the `@deepseek-ai/dsh-sdk-protocol` wire over the child's stdio, fans

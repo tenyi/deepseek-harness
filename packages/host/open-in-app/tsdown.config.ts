@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsdown'
+﻿import { defineConfig } from 'tsdown'
 
 /**
  * Node-only host half. The `./shared` subpath (route paths and wire payload

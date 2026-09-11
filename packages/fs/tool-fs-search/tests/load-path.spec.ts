@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Real-load-path guard for @deepseek-ai/dsh-tool-fs-search. `tool-fs-search` is
  * a NAMESPACE plugin with `inject` — so a stray `export default apply` would
  * make the cordis Loader's `unwrapExports` (`exports.default ?? exports`)

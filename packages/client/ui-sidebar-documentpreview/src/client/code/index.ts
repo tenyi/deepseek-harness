@@ -1,4 +1,4 @@
-/** Code preview metadata and body registered through the public document extension points. */
+﻿/** Code preview metadata and body registered through the public document extension points. */
 import type { Context } from '@deepseek-ai/cordis'
 import type {} from '../index.ts'
 import { CodeBody } from './CodeBody.tsx'

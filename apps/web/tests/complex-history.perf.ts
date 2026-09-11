@@ -1,4 +1,4 @@
-// Opt-in browser benchmark for high-cardinality workspace and history
+﻿// Opt-in browser benchmark for high-cardinality workspace and history
 // rendering. It reports measurements without timing assertions because host
 // speed is not a correctness contract; structural assertions keep the number
 // of workspaces and history entries from silently shrinking.
@@ -71,7 +71,7 @@ const LIVE_PROMPT = [
   ...Array.from(
     { length: 48 },
     (_, index) =>
-      `Context ${String(index + 1).padStart(2, '0')}: 用户正在检查长会话中的增量渲染性能。`
+      `Context ${String(index + 1).padStart(2, '0')}: 用戶正在檢查長會話中的增量渲染性能。`
       + ` Preserve item ${String(index)} and compare ${'payload'.repeat(8)}.`,
   ),
   '```ts',
@@ -428,7 +428,7 @@ function textStream(deltas: readonly string[], inputTokens: number): StreamChunk
 function comparisonPrompt(index: number): string {
   if (index === COMPARISON_TURNS) return LIVE_PROMPT
   return (`${LONG_CONTINUATION_USER_PREFIX}_${String(index)} `
-    + `继续分析这个长会话的第 ${String(index)} 个增量问题，并保留当前滚动和输入响应。 `
+    + `繼續分析這個長會話的第 ${String(index)} 個增量問題，并保留當前滾動和輸入響應。 `
     + 'context '.repeat(80)).trimEnd()
 }
 
@@ -470,7 +470,7 @@ function soakTurn(index: number): ConversationTurnSpec {
     : undefined
   return {
     prompt: (`${SOAK_USER_PREFIX}_${suffix} `
-      + `持续对话第 ${String(index)} 轮，检查增量渲染与保留状态。 `
+      + `持續對話第 ${String(index)} 輪，檢查增量渲染與保留狀態。 `
       + 'context '.repeat(20)).trimEnd(),
     deltas: Array.from({ length: SOAK_DELTA_COUNT }, (_, chunkIndex) => {
       if (chunkIndex === 0) return `${SOAK_FIRST_PREFIX}_${suffix} `

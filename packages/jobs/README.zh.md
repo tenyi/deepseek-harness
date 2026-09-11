@@ -1,50 +1,50 @@
----
-description: "jobs 组地图：后台任务控制——注册表约定、进程本地存储与面向模型的任务工具，供浏览本组的用户与维护者阅读。"
+﻿---
+description: "jobs 組地圖：后臺任務控制——注冊表約定、進程本地存儲與面向模型的任務工具，供瀏覽本組的用戶與維護者閱讀。"
 kind: "package-group"
 ---
 
-# jobs/：后台任务能力家族
+# jobs/：后臺任務能力家族
 
 [English](README.md) | 中文
 
 ## 概述
 
-jobs 组是后台工作能力家族：运行长时间工作的工具把工作注册为任务，拥有它的 agent（智能体）可以在不阻塞自身轮次的情况下读取、等待、列出或取消任务。任务属于启动它的 agent 会话，因此一个 agent 永远不会看到另一个 agent 的工作；任务完成时以会话内通知送达给拥有它的 agent，无需轮询。本组拆分为注册表约定（`jobs`）、其进程本地存储（`jobs-local`）以及带完成通知的模型侧控制工具（`tool-jobs`）。
+jobs 組是后臺工作能力家族：運行長時間工作的工具把工作注冊為任務，擁有它的 agent（智能體）可以在不阻塞自身輪次的情況下讀取、等待、列出或取消任務。任務屬于啟動它的 agent 會話，因此一個 agent 永遠不會看到另一個 agent 的工作；任務完成時以會話內通知送達給擁有它的 agent，無需輪詢。本組拆分為注冊表約定（`jobs`）、其進程本地存儲（`jobs-local`）以及帶完成通知的模型側控制工具（`tool-jobs`）。
 
-## 目录
+## 目錄
 
 - [包](#packages)
-- [相关文档](#related-documentation)
-- [开发备注](#dev-note)
+- [相關文檔](#related-documentation)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="packages"></a>
 ## 包
 
-| 包 | 职责 | ctx 键 |
+| 包 | 職責 | ctx 鍵 |
 |---|---|---|
-| [`jobs`](jobs/README.zh.md) | 定义后台任务约定：id、归属、生命周期与完成监听器 | `ctx.jobs` |
-| [`jobs-local`](jobs-local/README.zh.md) | 在本进程中运行并存储任务，按所有者隔离 | 注册到 `ctx.jobs` |
-| [`tool-jobs`](tool-jobs/README.zh.md) | 让模型读取、列出和终止任务，并投递完成通知 | 注册到 `ctx.tools` |
+| [`jobs`](jobs/README.zh.md) | 定義后臺任務約定：id、歸屬、生命周期與完成監聽器 | `ctx.jobs` |
+| [`jobs-local`](jobs-local/README.zh.md) | 在本進程中運行并存儲任務，按所有者隔離 | 注冊到 `ctx.jobs` |
+| [`tool-jobs`](tool-jobs/README.zh.md) | 讓模型讀取、列出和終止任務，并投遞完成通知 | 注冊到 `ctx.tools` |
 
 -----
 
 <a id="related-documentation"></a>
-## 相关文档
+## 相關文檔
 
-- [后台任务运行时子系统](../../docs/subsystems/jobs.zh.md)——任务类型、快照字段与 `ctx.jobs` API。
-- [通用长时间运行工具运行时 Agent Note](../../.agents/notes/implemented/architecture/2026-06-20-generic-long-running-tool-runtime.zh.md)——后台任务运行时背后的设计。
-- [任务注册表 seam Agent Note](../../.agents/notes/archived/architecture/2026-07-26-job-registry-seam.md)——按所有者隔离的注册表约定及其理由。
+- [后臺任務運行時子系統](../../docs/subsystems/jobs.zh.md)——任務類型、快照字段與 `ctx.jobs` API。
+- [通用長時間運行工具運行時 Agent Note](../../.agents/notes/implemented/architecture/2026-06-20-generic-long-running-tool-runtime.zh.md)——后臺任務運行時背后的設計。
+- [任務注冊表 seam Agent Note](../../.agents/notes/archived/architecture/2026-07-26-job-registry-seam.md)——按所有者隔離的注冊表約定及其理由。
 
 -----
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

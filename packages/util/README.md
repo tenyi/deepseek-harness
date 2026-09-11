@@ -1,4 +1,4 @@
----
+﻿---
 description: "Package map for shared utilities: atomic file writes, branded ids, deques, JSON values, harness home paths, launch environment, native commands, output retention, time zones, and timeouts."
 kind: "package-group"
 ---

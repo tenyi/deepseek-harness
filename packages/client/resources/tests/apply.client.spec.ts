@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * The plugin's wiring: `ctx.resources` is provided, the `resource` root keyed
  * hook reaches every slot component as `useResource`, and both leave with the

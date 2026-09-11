@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Main-thread driver for the Win32 folder dialog: spawns the dialog child
  * process (which blocks inside the modal `Show`), maps its message protocol
  * onto a promise, and services aborts by posting `WM_CLOSE` to the dialog

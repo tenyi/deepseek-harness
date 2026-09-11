@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsdown'
+﻿import { defineConfig } from 'tsdown'
 
 /**
  * Single ESM bundle. The Python-side code is not TypeScript and ships verbatim

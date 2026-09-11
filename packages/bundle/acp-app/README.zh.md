@@ -1,5 +1,5 @@
----
-description: "面向启动持久 harness agent（智能体）的用户与维护者，说明纯自动化 ACP（Agent Client Protocol）stdio 应用 profile。"
+﻿---
+description: "面向啟動持久 harness agent（智能體）的用戶與維護者，說明純自動化 ACP（Agent Client Protocol）stdio 應用 profile。"
 kind: "package-bundle"
 ---
 
@@ -9,68 +9,68 @@ kind: "package-bundle"
 
 ## 概述
 
-以 [`dsh-base`](../base/README.zh.md) 为基础的纯自动化 ACP stdio 应用 `dsh` profile 组合包。它继承 base 禁用模块 HMR（热模块替换）的策略；其 patch 设置 coding agent（编程智能体）persona 与默认模型路由、挂载应用自有的零选项命令提供方，并且只在该提供方接受调用后启动 [`dsh-acp`](../../acp/acp/README.zh.md)。因此，`dsh --profile acp --help` 会写出 help 并退出，不会占用 stdin 或 stdout。
+以 [`dsh-base`](../base/README.zh.md) 為基礎的純自動化 ACP stdio 應用 `dsh` profile 組合包。它繼承 base 禁用模塊 HMR（熱模塊替換）的策略；其 patch 設置 coding agent（編程智能體）persona 與默認模型路由、掛載應用自有的零選項命令提供方，并且只在該提供方接受調用后啟動 [`dsh-acp`](../../acp/acp/README.zh.md)。因此，`dsh --profile acp --help` 會寫出 help 并退出，不會占用 stdin 或 stdout。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [标准自动化工作流](#standard-automation-workflow)
-- [模型体验](#model-experience)
-- [已知限制与待办事项](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [標準自動化工作流](#standard-automation-workflow)
+- [模型體驗](#model-experience)
+- [已知限制與待辦事項](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-启动提供方把 stdin EOF 绑定到启动器的有界成功关闭。ACP 连接关闭、SIGINT 与 SIGTERM 会在退出前排空 bridge 自有 agent 以及根 profile 树。Stdout 仅保留给换行分隔的 ACP JSON-RPC 帧。ACP 不提供标题呈现能力，因此本组合包禁用模型生成的会话 title；确定性的 fallback title 仍会持久化，但不发起辅助模型请求。继承的投影缓存会为 ACP 创建的会话写入检查点，供后续消费方使用；其持久性屏障会在发布缓存行前 flush 所覆盖的日志前缀，因此可能拆分原本会合并的 JSONL 连续段。部署方通过 profile 组合包与 patch 文件选择另一套完整组合，而不是使用另一个 app bin。
+啟動提供方把 stdin EOF 綁定到啟動器的有界成功關閉。ACP 連接關閉、SIGINT 與 SIGTERM 會在退出前排空 bridge 自有 agent 以及根 profile 樹。Stdout 僅保留給換行分隔的 ACP JSON-RPC 幀。ACP 不提供標題呈現能力，因此本組合包禁用模型生成的會話 title；確定性的 fallback title 仍會持久化，但不發起輔助模型請求。繼承的投影緩存會為 ACP 創建的會話寫入檢查點，供后續消費方使用；其持久性屏障會在發布緩存行前 flush 所覆蓋的日志前綴，因此可能拆分原本會合并的 JSONL 連續段。部署方通過 profile 組合包與 patch 文件選擇另一套完整組合，而不是使用另一個 app bin。
 
-随附配置项使用 `deepseek-official` 与 `deepseek-v4-flash` 创建会话；后续 patch 可以替换该配置项的完整配置。base profile 负责适配器、工具、持久化、策略、设置、凭据，以及 ACP client 为每个会话提供的工作区。
+隨附配置項使用 `deepseek-official` 與 `deepseek-v4-flash` 創建會話；后續 patch 可以替換該配置項的完整配置。base profile 負責適配器、工具、持久化、策略、設置、憑據，以及 ACP client 為每個會話提供的工作區。
 
 -----
 
 <a id="standard-automation-workflow"></a>
-## 标准自动化工作流
+## 標準自動化工作流
 
-ACP v1 SDK 客户端先初始化 `dsh --profile acp`，再用绝对 `cwd` 与可选的标准 stdio／HTTP MCP 声明创建会话，选择公开的 `model` 或 `reasoning_effort`，在观察标准语义更新的同时提交提示词，最后调用 `session/close`。另一个进程可以针对同一个 profile 持久化根目录使用 `session/list` 与 `session/resume`；恢复会重新连接该请求提供的 MCP 声明，但不会回放历史。
+ACP v1 SDK 客戶端先初始化 `dsh --profile acp`，再用絕對 `cwd` 與可選的標準 stdio／HTTP MCP 聲明創建會話，選擇公開的 `model` 或 `reasoning_effort`，在觀察標準語義更新的同時提交提示詞，最后調用 `session/close`。另一個進程可以針對同一個 profile 持久化根目錄使用 `session/list` 與 `session/resume`；恢復會重新連接該請求提供的 MCP 聲明，但不會回放歷史。
 
-完整的受支持方法矩阵、MCP 信任模型、更新映射与停止原因见 [`dsh-acp` 协议约定](../../acp/acp/README.zh.md#standard-acp-v1-surface)。该 profile 不增加私有方法、能力、`_meta`、环境变量或传输字段。免密钥控制面一致性测试通过公开 ACP SDK 驱动真实 profile。
+完整的受支持方法矩陣、MCP 信任模型、更新映射與停止原因見 [`dsh-acp` 協議約定](../../acp/acp/README.zh.md#standard-acp-v1-surface)。該 profile 不增加私有方法、能力、`_meta`、環境變量或傳輸字段。免密鑰控制面一致性測試通過公開 ACP SDK 驅動真實 profile。
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
 ### ACP coding-agent persona
 
 #### 模型看到什么
 
-profile 在第一方指导之前提供 `You are a coding agent powered by the {{model}} model.`，并在独立的 persona 后缀中提供 `Your working directory is {{cwd}}.`。ACP 配置项的路由与每个 `session/new` 的 cwd 会解析其中的占位符。
+profile 在第一方指導之前提供 `You are a coding agent powered by the {{model}} model.`，并在獨立的 persona 后綴中提供 `Your working directory is {{cwd}}.`。ACP 配置項的路由與每個 `session/new` 的 cwd 會解析其中的占位符。
 
-#### Token 影响
+#### Token 影響
 
-一段简短稳定的 persona，加上 base 提示词中随数据变化的部分与已选工具 schema。
+一段簡短穩定的 persona，加上 base 提示詞中隨數據變化的部分與已選工具 schema。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-固定 profile、提供方、模型与工具集合下保持稳定。随附 ACP profile 只在启动时加载 patch，因此 profile 更改会在下一个进程生效。
+固定 profile、提供方、模型與工具集合下保持穩定。隨附 ACP profile 只在啟動時加載 patch，因此 profile 更改會在下一個進程生效。
 
-## 已知限制与待办事项
+## 已知限制與待辦事項
 
 <a id="known-limitations-and-deferred-work"></a>
 
-- **profile 可以省略 ACP bridge**：自定义 ACP 启动 profile 必须保留本组合包或另一个 `dsh-acp` 配置项；否则没有 peer 响应 client。
-- **用户插件可能破坏 stdout 纯净性**：profile 与单次启动 patch 属于受信任的应用组合。随附组合包不会向 stdout 写入非协议内容，但无法约束任意插入的插件。
-- **配置更改需要重启**：随附 `acp` profile 使用 `patchReload: startup`，确保一条 stdio 连接不会观察到 bridge 或 Agent 依赖被替换。
+- **profile 可以省略 ACP bridge**：自定義 ACP 啟動 profile 必須保留本組合包或另一個 `dsh-acp` 配置項；否則沒有 peer 響應 client。
+- **用戶插件可能破壞 stdout 純凈性**：profile 與單次啟動 patch 屬于受信任的應用組合。隨附組合包不會向 stdout 寫入非協議內容，但無法約束任意插入的插件。
+- **配置更改需要重啟**：隨附 `acp` profile 使用 `patchReload: startup`，確保一條 stdio 連接不會觀察到 bridge 或 Agent 依賴被替換。
 
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者工作上下文——点击展开</summary>
+<summary>維護者工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。该 bundle 只增加进程传输与启动 latch；帧纯度、help 排除和关闭行为由源码及构建产物的 stdio 测试负责。
+**運行時不變式：** 不發布伴生入口。該 bundle 只增加進程傳輸與啟動 latch；幀純度、help 排除和關閉行為由源碼及構建產物的 stdio 測試負責。

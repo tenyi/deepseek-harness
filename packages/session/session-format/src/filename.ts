@@ -1,4 +1,4 @@
-/** Canonical raw log basename shared by every generation-addressed Session artifact. */
+﻿/** Canonical raw log basename shared by every generation-addressed Session artifact. */
 
 import { sessionFormatVersion } from './json.ts'
 

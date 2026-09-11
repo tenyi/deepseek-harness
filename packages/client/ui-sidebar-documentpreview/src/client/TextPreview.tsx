@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The text preview's body: a file's content, or the reason it is not showing.
  *
  * Two sources meet here. The standard `useResource` hook gives the file's

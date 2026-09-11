@@ -1,4 +1,4 @@
----
+﻿---
 description: "Cordis dynamic-plugin browser surfaces for users and maintainers choosing, composing, or debugging the panel, tool cards, and @pluginId input."
 kind: "package-reference"
 ---

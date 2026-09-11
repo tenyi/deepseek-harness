@@ -1,4 +1,4 @@
-/** CSS checks for the completed-turn footer's 20px content spacing. */
+﻿/** CSS checks for the completed-turn footer's 20px content spacing. */
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'

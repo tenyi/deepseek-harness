@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Server-side write-grant materialization. The sandbox seam holds one
  * standing workspace grant per workspace and one revocable temp grant per
  * live session/workspace pair. Workspace identities survive by deterministic

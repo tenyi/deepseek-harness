@@ -1,4 +1,4 @@
----
+﻿---
 description: "Package map for the durable image attachment capability family: what you can do with image attachments, and where your images are stored."
 kind: "package-group"
 ---

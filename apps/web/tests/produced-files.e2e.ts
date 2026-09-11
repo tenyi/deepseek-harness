@@ -1,4 +1,4 @@
-// Web e2e scenario: the single-line produced-files summary a finished turn
+﻿// Web e2e scenario: the single-line produced-files summary a finished turn
 // ends with. Cold-seeds ten writes (zero model calls), then verifies the real
 // assembled lane adapts from a coarse width budget and offers no folder
 // handoff: chips open in the right Sidebar's text preview, which has no
@@ -22,7 +22,7 @@ const DONE = 'PRODUCED_FILES_DONE'
 
 /** Ten varied names exercise estimated prefix selection and CSS shrinking. */
 const PRODUCED = [
-  '关于我.md',
+  '關于我.md',
   'index.html',
   'long-generated-experience-specification-for-produced-files-overflow.md',
   'styles.css',
@@ -162,7 +162,7 @@ describe('web e2e: a finished turn ends with the files it produced', () => {
     // Keep font-metric differences away from the 479px and 583px container-query edges.
     expect(laneWidth).toBeGreaterThan(503)
     expect(laneWidth).toBeLessThan(559)
-    expect(await chips.nth(0).innerText()).toBe('关于我.md')
+    expect(await chips.nth(0).innerText()).toBe('關于我.md')
     expect(await chips.nth(1).innerText()).toBe('index.html')
     expect(await chips.nth(3).innerText()).toBe('styles.css')
     await expect.poll(() => row.getByText('+ 6 files', { exact: true }).isVisible()).toBe(true)

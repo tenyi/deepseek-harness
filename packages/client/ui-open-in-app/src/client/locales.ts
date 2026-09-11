@@ -1,4 +1,4 @@
-/** `open-in-app` namespace dictionaries. */
+﻿/** `open-in-app` namespace dictionaries. */
 
 /** Dictionary namespace owned by this plugin. */
 export const NS = 'open-in-app'
@@ -39,16 +39,16 @@ const PRODUCT_NAMES = {
 
 /** Simplified Chinese dictionary (the key-set source of truth). */
 export const zh = {
-  'open.title': '在 {app} 中打开工作目录',
-  'open.tooltip': '在本地打开',
-  'open.error': '打开失败',
-  'menu.toggle': '选择打开方式',
-  'menu.aria': '打开方式',
+  'open.title': '在 {app} 中打開工作目錄',
+  'open.tooltip': '在本地打開',
+  'open.error': '打開失敗',
+  'menu.toggle': '選擇打開方式',
+  'menu.aria': '打開方式',
   ...PRODUCT_NAMES,
-  'app.finder': '访达',
-  'app.explorer': '文件资源管理器',
+  'app.finder': '訪達',
+  'app.explorer': '文件資源管理器',
   'app.filemanager': '文件管理器',
-  'app.terminal': '终端',
+  'app.terminal': '終端',
 } as const
 
 /** English dictionary, key-identical to the Chinese source of truth. */

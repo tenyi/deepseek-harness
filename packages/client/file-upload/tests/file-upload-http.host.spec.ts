@@ -1,4 +1,4 @@
-import { runInNewContext } from 'node:vm'
+﻿import { runInNewContext } from 'node:vm'
 import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
 import { describe, expect, it, vi } from 'vitest'
 import type { Mock } from 'vitest'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Cordis-free storage mechanics for the local spill backend: private
  * session-scoped directory selection, safe-name derivation, path-traversal
  * protection, and the exclusive owner-only write.

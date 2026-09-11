@@ -1,4 +1,4 @@
-/**
+﻿/**
  * How one agent log accounts for the work it consumed.
  *
  * The turn and step vocabulary alone cannot answer this. A turn that stops

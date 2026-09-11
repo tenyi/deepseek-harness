@@ -1,4 +1,4 @@
-/** Realm-local retention and identity for live objects referenced by Inspector snapshots. */
+﻿/** Realm-local retention and identity for live objects referenced by Inspector snapshots. */
 
 import { randomUUID } from '@deepseek-ai/dsh-util-crypto'
 import { inspectorId } from '../identity.ts'

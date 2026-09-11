@@ -1,4 +1,4 @@
-/** ConsoleBackend implementation over native Node Runtime notifications. */
+﻿/** ConsoleBackend implementation over native Node Runtime notifications. */
 
 import type { RuntimeBackendObjectHandle } from '../../../shared/cdp/ids.ts'
 import type {

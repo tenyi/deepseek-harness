@@ -1,4 +1,4 @@
-/**
+﻿/**
  * File-backed settings provider. One YAML or JSON document under the user's
  * harness home carries every namespace section; external edits hot-publish
  * through the seam, and every write re-reads the document under a

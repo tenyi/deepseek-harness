@@ -1,4 +1,4 @@
----
+﻿---
 description: "Input trigger pipeline for the Web GUI: / and @ detection under the caret, the grouped candidate menu, and pick routing to registered sources; for users and maintainers of slash commands and references."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-/** Slash-menu props for the Conversation-owned input overlay. */
+﻿/** Slash-menu props for the Conversation-owned input overlay. */
 import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
 import type { InputTriggerCrumb, PickAction } from '../types.ts'
 import type { SnapshotStore } from '@deepseek-ai/dsh-client-store'

@@ -1,4 +1,4 @@
-/* The preview takes the pane's definite height outright, so the header stays
+﻿/* The preview takes the pane's definite height outright, so the header stays
    put while the body below owns the remaining height. A renderer may replace
    the body's scrolling role with an inner scrollport. */
 .preview {

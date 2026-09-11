@@ -1,4 +1,4 @@
-/** locale apply wiring: service + dictionaries provision, declaration-aware
+﻿/** locale apply wiring: service + dictionaries provision, declaration-aware
  * Language row registration, snapshot projection into the row store, and
  * recovery after an HMR collapse of the declaring entry. */
 import { Context } from '@deepseek-ai/cordis'
@@ -85,7 +85,7 @@ describe('locale apply', () => {
     // The lane has no jsdom `window`, so detection never runs and a fresh
     // service opens on FALLBACK_LOCALE (en); read the zh side explicitly.
     locale.setLocale('zh')
-    expect(locale.bind(SETTINGS_NS)('language.title')).toBe('语言')
+    expect(locale.bind(SETTINGS_NS)('language.title')).toBe('語言')
     const entry = before.slots.entries(SLOT).find(e => e.component === LanguageRow)!
     expect(entry.options).toMatchObject({ id: 'language', order: 0 })
 
@@ -117,7 +117,7 @@ describe('locale apply', () => {
     face.setLocale('zh')
     expect(locale.getLocale().active).toBe('zh')
     expect(instance.getSnapshot().active).toBe('zh')
-    expect(locale.bind(SETTINGS_NS)('language.title')).toBe('语言')
+    expect(locale.bind(SETTINGS_NS)('language.title')).toBe('語言')
     await vi.waitFor(() => { expect(b.mutate).toHaveBeenCalledTimes(2) })
   })
 

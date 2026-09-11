@@ -1,4 +1,4 @@
-/** Minimal managed-range ownership bound to one ordinary subprocess handle. */
+﻿/** Minimal managed-range ownership bound to one ordinary subprocess handle. */
 
 import type { Readable, Writable } from 'node:stream'
 import type { SubprocessOutcome } from '@deepseek-ai/dsh-subprocess'

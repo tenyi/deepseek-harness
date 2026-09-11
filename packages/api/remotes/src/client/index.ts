@@ -1,4 +1,4 @@
-/** Platform-neutral assembly of generated Host Remote contributions. */
+﻿/** Platform-neutral assembly of generated Host Remote contributions. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import agentPresetsRemote from '@deepseek-ai/dsh-agent-presets/remote'

@@ -1,4 +1,4 @@
-import type { ChatViewSlotProps } from '../contract/slots.ts'
+﻿import type { ChatViewSlotProps } from '../contract/slots.ts'
 
 /**
  * Compact token count: 517 / 12.2K / 517K / 1.2M.

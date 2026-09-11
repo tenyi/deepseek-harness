@@ -1,4 +1,4 @@
-/** Registers the sidebar shell and global panel navigation. */
+﻿/** Registers the sidebar shell and global panel navigation. */
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
 import { resolveSlotLabel } from '@deepseek-ai/dsh-client-ui-slots'

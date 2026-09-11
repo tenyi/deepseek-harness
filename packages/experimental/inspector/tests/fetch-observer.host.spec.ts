@@ -1,4 +1,4 @@
-/** Host fetch observation behavior. */
+﻿/** Host fetch observation behavior. */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { installFetchObserver, type FetchObserver } from '../src/host/inspection/network.ts'

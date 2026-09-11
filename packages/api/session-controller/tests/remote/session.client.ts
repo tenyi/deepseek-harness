@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The Remote side of one Session under test: default answers for every
  * `session/*` and `subagents/*` endpoint a `Session` calls, builders for
  * the two history-shaped answers, the `session/follow` opening snapshot and

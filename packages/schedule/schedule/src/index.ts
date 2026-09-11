@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Agent-scoped durable one-shot and fixed-rate reminders over the session event log.
  * @module @deepseek-ai/dsh-schedule
  */

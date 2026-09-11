@@ -1,4 +1,4 @@
-/**
+﻿/**
  * DOM side of the room rule: read each docked pane's rectangles after a commit
  * and ask `halvesFit` whether a split would leave two working halves. Pixels
  * live here and in `geometry.ts`; the engine's planners never see them.

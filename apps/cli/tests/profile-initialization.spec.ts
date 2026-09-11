@@ -1,4 +1,4 @@
-/** One-time custom-profile initialization from shipped templates. */
+﻿/** One-time custom-profile initialization from shipped templates. */
 
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Activation-local admission around one continuable subagent's Agent inbox.
  *
  * @module @deepseek-ai/dsh-subagent/inbox

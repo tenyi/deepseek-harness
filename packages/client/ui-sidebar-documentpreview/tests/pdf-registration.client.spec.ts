@@ -1,4 +1,4 @@
-/** PDF metadata, keyed slot, dictionary, and tab-view lifetime registration. */
+﻿/** PDF metadata, keyed slot, dictionary, and tab-view lifetime registration. */
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, vi } from 'vitest'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'

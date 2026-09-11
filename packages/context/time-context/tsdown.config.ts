@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsdown'
+﻿import { defineConfig } from 'tsdown'
 
 /** Build both public entries separately so each inlines shared internal helpers. */
 export default defineConfig([

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Decode an SSE byte stream into event `data` payloads. Framing — chunk
  * reassembly, UTF-8/CRLF/BOM handling, comment and non-data field skipping,
  * multi-`data:` joining — is `eventsource-parser`'s. Comments are reported

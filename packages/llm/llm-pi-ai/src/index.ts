@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Generic pi-ai-backed LLM adapter plugin. One plugin instance owns a dict of
  * provider routes; a route naming an installed pi-ai provider inherits that
  * provider's endpoint, protocol, and model catalog as defaults, and a route

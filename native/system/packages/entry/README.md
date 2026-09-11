@@ -1,4 +1,4 @@
----
+﻿---
 description: "JavaScript entry for the prebuilt Landlock launcher and asynchronous POSIX flock."
 kind: "package-library"
 ---

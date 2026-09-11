@@ -1,4 +1,4 @@
-/** Local node-pty terminal-process implementation for the subprocess seam. */
+﻿/** Local node-pty terminal-process implementation for the subprocess seam. */
 
 import { Buffer } from 'node:buffer'
 import { constants } from 'node:os'

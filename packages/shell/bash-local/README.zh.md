@@ -1,5 +1,5 @@
----
-description: "面向部署方与维护者的默认 POSIX Bash 执行器说明，用于选择、配置或排查基于 shell seam 的非隔离命令执行。"
+﻿---
+description: "面向部署方與維護者的默認 POSIX Bash 執行器說明，用于選擇、配置或排查基于 shell seam 的非隔離命令執行。"
 kind: "package-reference"
 ---
 
@@ -9,27 +9,27 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-bash-local` 是 POSIX 上的默认 Bash 执行器：每条命令都以全新的非登录 `bash -c` 进程运行，不读取 rc 文件，因此调用之间不会残留任何 shell 状态。它会为每条命令应用已配置的预算——工作目录、超时、输出上限——对超时与取消进行分类，并在流溢出时返回有界输出与 spill 文件恢复。命令以 harness 进程自身的权限运行：本执行器不做任何隔离，需要沙箱能力时请组合 `dsh-bash-sandbox`。挂载后，面向模型的 `bash` 工具会与它对接。
+`dsh-bash-local` 是 POSIX 上的默認 Bash 執行器：每條命令都以全新的非登錄 `bash -c` 進程運行，不讀取 rc 文件，因此調用之間不會殘留任何 shell 狀態。它會為每條命令應用已配置的預算——工作目錄、超時、輸出上限——對超時與取消進行分類，并在流溢出時返回有界輸出與 spill 文件恢復。命令以 harness 進程自身的權限運行：本執行器不做任何隔離，需要沙箱能力時請組合 `dsh-bash-sandbox`。掛載后，面向模型的 `bash` 工具會與它對接。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-当组合需要在 POSIX 上执行 Bash 命令且不需要隔离时，挂载此执行器。它注册为 `ctx.shell`，面向模型的 `bash` 工具会立即基于它工作：agent（智能体）调用工具，命令即以全新 `bash -c` 进程按下面的预算运行。
+當組合需要在 POSIX 上執行 Bash 命令且不需要隔離時，掛載此執行器。它注冊為 `ctx.shell`，面向模型的 `bash` 工具會立即基于它工作：agent（智能體）調用工具，命令即以全新 `bash -c` 進程按下面的預算運行。
 
 ### 最小配置
 
-按你需要的预算加载执行器；每个字段都有默认值，因此最小的组合就是单独一个插件条目。当组合了设置提供方时，用户段会叠加在该条目之上，预算无需重载即可在运行时变更（见[运行时调整预算](#adjusting-budgets-at-runtime)）。
+按你需要的預算加載執行器；每個字段都有默認值，因此最小的組合就是單獨一個插件條目。當組合了設置提供方時，用戶段會疊加在該條目之上，預算無需重載即可在運行時變更（見[運行時調整預算](#adjusting-budgets-at-runtime)）。
 
 ```yaml
 - id: bash
@@ -39,112 +39,112 @@ kind: "package-reference"
     timeoutMs: 120000
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `cwd` | `process.cwd()` | 命令的默认工作目录 |
-| `timeoutMs` | `120,000` | 默认前台超时，单位为毫秒 |
-| `maxTimeoutMs` | `600,000` | 每次调用超时覆盖值的上限 |
-| `maxOutputBytes` | `64,000` | 每流内存输出上限；溢出后 spill 到临时文件 |
-| `maxSpillBytes` | `67,108,864` | 每流完整输出的 spill 上限 |
-| `graceMs` | `3,000` | 终止升级与退出后管道排空的宽限时间 |
+| `cwd` | `process.cwd()` | 命令的默認工作目錄 |
+| `timeoutMs` | `120,000` | 默認前臺超時，單位為毫秒 |
+| `maxTimeoutMs` | `600,000` | 每次調用超時覆蓋值的上限 |
+| `maxOutputBytes` | `64,000` | 每流內存輸出上限；溢出后 spill 到臨時文件 |
+| `maxSpillBytes` | `67,108,864` | 每流完整輸出的 spill 上限 |
+| `graceMs` | `3,000` | 終止升級與退出后管道排空的寬限時間 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-bash-local)是每个受支持字段及其 JSDoc 的穷尽式真源。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-bash-local)是每個受支持字段及其 JSDoc 的窮盡式真源。
 
-### 运行命令
+### 運行命令
 
-用 `run` 运行命令并从结果读取输出。非零退出、超时或取消都会 resolve 为描述性结果——只有基础设施失败才 reject。每次调用的 `timeoutMs` 覆盖值受配置上限约束，`workdir` 未设置时则回退到配置的默认值；受信任的前台调用方还可以为单次调用提高 stdout 捕获预算，而 stderr 与后台运行仍使用 `maxOutputBytes`。环境默认面向模型：`NO_COLOR=1 TERM=dumb PAGER=cat GIT_PAGER=cat` 可防止分页器与 ANSI 颜色破坏输出，调用方显式提供的条目仍然优先。
+用 `run` 運行命令并從結果讀取輸出。非零退出、超時或取消都會 resolve 為描述性結果——只有基礎設施失敗才 reject。每次調用的 `timeoutMs` 覆蓋值受配置上限約束，`workdir` 未設置時則回退到配置的默認值；受信任的前臺調用方還可以為單次調用提高 stdout 捕獲預算，而 stderr 與后臺運行仍使用 `maxOutputBytes`。環境默認面向模型：`NO_COLOR=1 TERM=dumb PAGER=cat GIT_PAGER=cat` 可防止分頁器與 ANSI 顏色破壞輸出，調用方顯式提供的條目仍然優先。
 
 ```text
 const result = await ctx.shell.run(ctx.shell.resolve({ command: 'ls -la' }))
 if (result.timedOut) console.log('timed out after', result.timeoutMs)
 ```
 
-### 后台进程
+### 后臺進程
 
-调用 `start` 即可在后台运行命令；它立即返回句柄，且不应用任何超时。`readOutput()` 把流增量合并为一次消费式读取，并在 `[stderr]` 分段下标记 stderr；`kill()` 终止提供方管理的 range；`done` 在直接命令关闭时结算且绝不 reject。job id、所有权、轮询与通知属于通用 `ctx.jobs` 运行时，工具层会把句柄注册进去。
+調用 `start` 即可在后臺運行命令；它立即返回句柄，且不應用任何超時。`readOutput()` 把流增量合并為一次消費式讀取，并在 `[stderr]` 分段下標記 stderr；`kill()` 終止提供方管理的 range；`done` 在直接命令關閉時結算且絕不 reject。job id、所有權、輪詢與通知屬于通用 `ctx.jobs` 運行時，工具層會把句柄注冊進去。
 
 <a id="adjusting-budgets-at-runtime"></a>
-### 运行时调整预算
+### 運行時調整預算
 
-当组合了设置提供方时，本执行器以组合条目为 base 注册该能力共享的 `shell` 设置命名空间，因此 `settings.yaml` 中的用户段会叠加其上，下一条命令即按新预算运行。schema 无法判定的值——正有限数字与 `graceMs` 的定时器上界——会在写入时被拒绝，运行中的执行器保持它最后一份可用的段；没有提供方时，运行的就是组合条目。
+當組合了設置提供方時，本執行器以組合條目為 base 注冊該能力共享的 `shell` 設置命名空間，因此 `settings.yaml` 中的用戶段會疊加其上，下一條命令即按新預算運行。schema 無法判定的值——正有限數字與 `graceMs` 的定時器上界——會在寫入時被拒絕，運行中的執行器保持它最后一份可用的段；沒有提供方時，運行的就是組合條目。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释执行器的设计并指出实现它们的代码位置；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋執行器的設計并指出實現它們的代碼位置；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计概念
+### 設計概念
 
-本执行器是基于 subprocess 能力的 `ctx.shell` seam 的 Service Provider：它负责所有 bash 层职责——命令默认化与上限、deadline 融合与原因分类、面向模型的终端环境，以及后台读取合并——而 managed-range 机制（有界 spill 输出、凭据清除、终止升级、完全停稳与 dispose（资源释放））属于 subprocess 服务。每次调用都 spawn 全新的非登录 `bash -c`，不读取 rc 文件，因此命令是确定性的，shell 状态绝不会在调用之间泄漏。
+本執行器是基于 subprocess 能力的 `ctx.shell` seam 的 Service Provider：它負責所有 bash 層職責——命令默認化與上限、deadline 融合與原因分類、面向模型的終端環境，以及后臺讀取合并——而 managed-range 機制（有界 spill 輸出、憑據清除、終止升級、完全停穩與 dispose（資源釋放））屬于 subprocess 服務。每次調用都 spawn 全新的非登錄 `bash -c`，不讀取 rc 文件，因此命令是確定性的，shell 狀態絕不會在調用之間泄漏。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：`LocalBashExecutor`、`Config`、设置段接线 |
-| — | 不发布运行时不变式伴生入口；除由所属 seam 强制执行的约定外，本包不公开独立的事件序列或可变数据关系。 |
-| `tests/executor.spec.ts` | 已演练的行为：预算、分类、后台句柄、归属 |
-| `tests/settings.spec.ts` | 设置段叠加在组合条目之上 |
+| [`src/index.ts`](src/index.ts) | 插件入口：`LocalBashExecutor`、`Config`、設置段接線 |
+| — | 不發布運行時不變式伴生入口；除由所屬 seam 強制執行的約定外，本包不公開獨立的事件序列或可變數據關系。 |
+| `tests/executor.spec.ts` | 已演練的行為：預算、分類、后臺句柄、歸屬 |
+| `tests/settings.spec.ts` | 設置段疊加在組合條目之上 |
 
 ### 主要流程
 
-一次调用分三步：`resolve()` 从配置填充 `workdir`/`timeoutMs`/`stdoutMaxBytes`（并限制每次调用的覆盖值）；`run` 把按配置钳位的超时与调用方的中止信号融合为一个 deadline，再以显式字节上限与 `graceMs` 通过 `ctx.subprocess` spawn `['bash', '-c', command]`；结算的 subprocess 结果被分类——只有执行器自身的超时报告 `timedOut`，上游取消报告 `aborted`，自身因信号终止的命令两者皆不报告——并投影为带收集输出的 `ShellRunResult`。
+一次調用分三步：`resolve()` 從配置填充 `workdir`/`timeoutMs`/`stdoutMaxBytes`（并限制每次調用的覆蓋值）；`run` 把按配置鉗位的超時與調用方的中止信號融合為一個 deadline，再以顯式字節上限與 `graceMs` 通過 `ctx.subprocess` spawn `['bash', '-c', command]`；結算的 subprocess 結果被分類——只有執行器自身的超時報告 `timedOut`，上游取消報告 `aborted`，自身因信號終止的命令兩者皆不報告——并投影為帶收集輸出的 `ShellRunResult`。
 
-### 不变式与归属
+### 不變式與歸屬
 
-- `graceMs` 预算必须为正有限值且不大于 `MAX_TIMER_DELAY_MS`，这样 Node 就能用一个定时器表示它；无效值在写入处被拒绝。
-- 环境分层固定：先是终端覆盖值，然后是调用方的 `env`，最后才是受信任的 `dshEnv` 快照；subprocess 服务独立清除环境中的凭据与继承的 `DSH_*` 名称。
-- 后台进程属于 subprocess 服务：它能在仅重载执行器后存活，并在服务 dispose 时被终止且等待退出。
+- `graceMs` 預算必須為正有限值且不大于 `MAX_TIMER_DELAY_MS`，這樣 Node 就能用一個定時器表示它；無效值在寫入處被拒絕。
+- 環境分層固定：先是終端覆蓋值，然后是調用方的 `env`，最后才是受信任的 `dshEnv` 快照；subprocess 服務獨立清除環境中的憑據與繼承的 `DSH_*` 名稱。
+- 后臺進程屬于 subprocess 服務：它能在僅重載執行器后存活，并在服務 dispose 時被終止且等待退出。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当执行器约定不够用时阅读以下页面。这些页面从 seam 讲到提供隔离的同级包及其底层机制。
+當執行器約定不夠用時閱讀以下頁面。這些頁面從 seam 講到提供隔離的同級包及其底層機制。
 
-- [shell seam](../shell/README.zh.md) —— 本提供方实现的执行器约定，包括请求/spec 拆分。
-- [bash-sandbox](../bash-sandbox/README.zh.md) —— 需要沙箱能力时，应改为组合此隔离执行器。
-- [tool-bash](../tool-bash/README.zh.md) —— 基于本执行器的面向模型 `bash` 工具。
-- [Bash 执行器子系统](../../../docs/subsystems/shell.zh.md) —— 请求/spec 词汇、结果与完整的服务约定。
-- [subprocess-local](../../subprocess/subprocess-local/README.zh.md) —— 本执行器背后的 managed-range 机制。
+- [shell seam](../shell/README.zh.md) —— 本提供方實現的執行器約定，包括請求/spec 拆分。
+- [bash-sandbox](../bash-sandbox/README.zh.md) —— 需要沙箱能力時，應改為組合此隔離執行器。
+- [tool-bash](../tool-bash/README.zh.md) —— 基于本執行器的面向模型 `bash` 工具。
+- [Bash 執行器子系統](../../../docs/subsystems/shell.zh.md) —— 請求/spec 詞匯、結果與完整的服務約定。
+- [subprocess-local](../../subprocess/subprocess-local/README.zh.md) —— 本執行器背后的 managed-range 機制。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-通过 `dsh-tool-bash` 间接影响；该工具会渲染本执行器有界的 stdout/stderr 尾部、后台进程增量、spill 文件路径与基础设施失败。
+通過 `dsh-tool-bash` 間接影響；該工具會渲染本執行器有界的 stdout/stderr 尾部、后臺進程增量、spill 文件路徑與基礎設施失敗。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-不会直接导致 KV Cache 失效；请求前缀的任何变更由具名消费方负责。
+不會直接導致 KV Cache 失效；請求前綴的任何變更由具名消費方負責。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明本执行器何时不合适。它们是当前包约束，不是路线图。
+這些限制說明本執行器何時不合適。它們是當前包約束，不是路線圖。
 
-- **自身不提供隔离**——命令以 harness 进程的权限运行；需要隔离的部署组合 `dsh-bash-sandbox`，每次调用的 allow/deny/ask 策略则属于工具的 `pre-execute` waterfall（瀑布式事件）。
-- **没有持久 shell 或 PTY**——每次调用都启动全新的非登录 `bash -c`；仅持久化 cwd 与交互式终端会话均继续延期，直到真实工作流需要它们。
-- **仅支持 POSIX**——`bash` 二进制已硬编码，底层服务的进程组语义也是 POSIX 的；不支持 Windows。
-- **后台提供方失败提示只交付一次**——`SubprocessHandle.done` 可能在目标命令开始执行前或后被拒绝，因此执行器把不声明失败阶段的 `subprocess failed before reporting an outcome: …` 注入恰好一个 `readOutput()` 增量；丢弃了该增量的读取方无法再恢复它。
+- **自身不提供隔離**——命令以 harness 進程的權限運行；需要隔離的部署組合 `dsh-bash-sandbox`，每次調用的 allow/deny/ask 策略則屬于工具的 `pre-execute` waterfall（瀑布式事件）。
+- **沒有持久 shell 或 PTY**——每次調用都啟動全新的非登錄 `bash -c`；僅持久化 cwd 與交互式終端會話均繼續延期，直到真實工作流需要它們。
+- **僅支持 POSIX**——`bash` 二進制已硬編碼，底層服務的進程組語義也是 POSIX 的；不支持 Windows。
+- **后臺提供方失敗提示只交付一次**——`SubprocessHandle.done` 可能在目標命令開始執行前或后被拒絕，因此執行器把不聲明失敗階段的 `subprocess failed before reporting an outcome: …` 注入恰好一個 `readOutput()` 增量；丟棄了該增量的讀取方無法再恢復它。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

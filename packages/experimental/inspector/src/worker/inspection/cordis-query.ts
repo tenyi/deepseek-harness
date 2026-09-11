@@ -1,4 +1,4 @@
-/** Cordis tree query execution independent of its source carrier. */
+﻿/** Cordis tree query execution independent of its source carrier. */
 
 import type { CordisRuntimeTreeReader } from '../../shared/cordis/reader.ts'
 import type { InspectorQuery, InspectorQueryResult } from '../../shared/bridge/messages/query/commands.ts'

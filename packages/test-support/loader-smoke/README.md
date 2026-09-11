@@ -1,4 +1,4 @@
----
+﻿---
 description: "Shared subprocess and direct-agent harness for keyless example smoke tests, for test authors booting real Loader compositions."
 kind: "package-library"
 ---

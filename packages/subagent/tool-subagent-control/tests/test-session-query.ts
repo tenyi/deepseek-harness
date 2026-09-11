@@ -1,4 +1,4 @@
-/** Minimal concrete Session query for continuation and catalog integration tests. */
+﻿/** Minimal concrete Session query for continuation and catalog integration tests. */
 
 import SessionQueryEngine from '@deepseek-ai/dsh-session-query'
 

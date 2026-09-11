@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Profile-named Claude Code one-shot subagent provider. Every accepted run
  * invokes the official Agent SDK in the delegating Session's workspace and
  * places the SDK-spawned real CLI under the shared subprocess owner.

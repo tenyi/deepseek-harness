@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure folds for durable provider-reported token usage and context occupancy.
  */
 

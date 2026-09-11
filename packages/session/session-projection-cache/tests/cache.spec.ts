@@ -1,4 +1,4 @@
-/**
+﻿/**
  * SessionProjectionCache behavior: mandatory-point writes (turn/end, detach),
  * count/interval throttling between them, fail-soft durability (a failed
  * write logs and stays stale, never throws into the event path), and the

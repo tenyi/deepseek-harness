@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * Integration against the real ui-slots SlotCore through a passthrough host:
  * registrations go through the real register() (options form, children

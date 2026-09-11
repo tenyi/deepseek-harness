@@ -1,4 +1,4 @@
-/** Browser-safe request and receipt types for staged file uploads. */
+﻿/** Browser-safe request and receipt types for staged file uploads. */
 
 import type { FileAttachmentRef } from '@deepseek-ai/dsh-attachment/types'
 import type { Branded } from '@deepseek-ai/dsh-brand'

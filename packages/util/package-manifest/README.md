@@ -1,4 +1,4 @@
----
+﻿---
 description: "Shared TypeScript declarations for package identity, runtime requirements, and DSH plugin metadata."
 kind: "package-library"
 ---

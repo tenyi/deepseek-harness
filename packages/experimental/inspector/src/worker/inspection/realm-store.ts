@@ -1,4 +1,4 @@
-/** Worker-owned registry of Host and Client realm definitions. */
+﻿/** Worker-owned registry of Host and Client realm definitions. */
 
 import type { ClientRuntimeRouter, ClientRuntimeTargetEvent } from '../bridge/runtime-rpc.ts'
 import type { ClientSourceRouter } from '../bridge/source-rpc.ts'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Tunnel frame protocol between the page and the worker host. Frames cross
  * `postMessage`, so inbound frames are validated before use.
  * @module @deepseek-ai/dsh-experimental-webworker-runtime/src/transport/frames

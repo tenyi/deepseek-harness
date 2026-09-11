@@ -1,4 +1,4 @@
-/** Registered unary defaults and the carrier's request and outcome log. */
+﻿/** Registered unary defaults and the carrier's request and outcome log. */
 import { describe, expect, expectTypeOf, it, vi } from 'vitest'
 import { RemoteMock, ok, openStream, type RemoteTable, type UnaryRuleFn } from '../src/index.ts'
 

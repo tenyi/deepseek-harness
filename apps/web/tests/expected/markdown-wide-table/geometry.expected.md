@@ -1,4 +1,4 @@
-# Markdown wide-table relations
+﻿# Markdown wide-table relations
 
 | viewport | table | fills the column | scrolls | breaks out past the column |
 | --- | --- | --- | --- | --- |

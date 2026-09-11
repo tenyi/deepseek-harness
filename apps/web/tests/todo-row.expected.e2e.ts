@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 // Assembled todo snapshot: boots the real built `packages/client/*/lib/
 // client.js` bundles through AppWebEntry's ModuleLoader path against the
 // keyless fixture Connection RPC, opens the fixture session, and pins the
@@ -45,7 +45,7 @@ describe('assembled todo surfaces', () => {
     mountAssembledApp()
 
     const tree = await screen.findByRole('tree', { name: 'Sessions' }, { timeout: 10_000 })
-    fireEvent.click(await within(tree).findByText('Fixture 历史会话'))
+    fireEvent.click(await within(tree).findByText('Fixture 歷史會話'))
     // The todo turn is the fixture's last, so wait for its keyed row rather
     // than for chat content in general.
     const row = await waitFor(() => {

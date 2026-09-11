@@ -1,4 +1,4 @@
----
+﻿---
 description: "The agent-plane presentation selector for users and maintainers choosing, configuring, or debugging which form of its tools an agent preset's models see."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { PluginInventorySettingsTab } from '../src/client/PluginInventorySettingsTab.tsx'
@@ -43,7 +43,7 @@ const SNAPSHOT = {
     {
       id: 'standard',
       trust: 'system',
-      name: '标准模式',
+      name: '標準模式',
       isDefault: true,
       rows: [
         { entryId: 'bash', moduleName: '@deepseek-ai/dsh-tool-bash', enabled: true, fiberPhase: 'active' },
@@ -70,7 +70,7 @@ const SNAPSHOT = {
         { entryId: 'fs', moduleName: '@deepseek-ai/dsh-tool-fs', enabled: 'conditional', fiberPhase: null },
       ],
     },
-    { id: 'shattered', trust: 'user', name: '坏预设', isDefault: false, broken: 'the composition file is missing', rows: [] },
+    { id: 'shattered', trust: 'user', name: '壞預設', isDefault: false, broken: 'the composition file is missing', rows: [] },
   ],
 } as unknown as Snapshot
 
@@ -88,12 +88,12 @@ describe('PluginInventorySettingsTab', () => {
     const view = await renderReady()
 
     const switcher = screen.getByRole('button', { name: en.switcherLabel })
-    expect(switcher.textContent).toBe('标准模式 (default)')
+    expect(switcher.textContent).toBe('標準模式 (default)')
     fireEvent.click(switcher)
     expect(screen.getAllByRole('menuitem').map(item => item.textContent)).toEqual([
-      '标准模式 (default)',
+      '標準模式 (default)',
       'ptc',
-      '坏预设 (failed to load)',
+      '壞預設 (failed to load)',
     ])
     fireEvent.keyDown(document, { key: 'Escape' })
     expect(screen.queryAllByRole('menuitem')).toHaveLength(0)
@@ -117,7 +117,7 @@ describe('PluginInventorySettingsTab', () => {
     // A preset row expands into its provenance facts.
     fireEvent.click(screen.getByRole('button', { name: 'pwsh, pwsh, Conditional' }))
     expect(screen.getByText(en.fromPreset)).toBeTruthy()
-    expect(screen.getByText('标准模式')).toBeTruthy()
+    expect(screen.getByText('標準模式')).toBeTruthy()
     expect(screen.getByText(en.condition)).toBeTruthy()
     expect(screen.getByText('process.platform === \'win32\'')).toBeTruthy()
     fireEvent.click(screen.getByRole('button', { name: 'pwsh, pwsh, Conditional' }))
@@ -184,7 +184,7 @@ describe('PluginInventorySettingsTab', () => {
     fireEvent.click(screen.getByRole('button', { name: 'tool-bash, bash-host, Enabled via presets' }))
     expect(screen.getByText(en.presetProvidedDetail)).toBeTruthy()
     expect(screen.getByText(en.enabledIn)).toBeTruthy()
-    expect(screen.getByText('标准模式 · ptc')).toBeTruthy()
+    expect(screen.getByText('標準模式 · ptc')).toBeTruthy()
 
     // The failed global card reports its runtime state.
     fireEvent.click(screen.getByRole('button', { name: 'telemetry, telemetry, Failed' }))
@@ -216,7 +216,7 @@ describe('PluginInventorySettingsTab', () => {
     // An unnamed preset labels provenance by its id.
     expect(screen.getByText(en.fromPreset).nextElementSibling?.textContent).toBe('ptc')
 
-    pickPreset('坏预设 (failed to load)')
+    pickPreset('壞預設 (failed to load)')
     expect(screen.getByRole('alert').textContent).toBe('the composition file is missing')
     expect(view.container.querySelector('[data-preset-plugin-count]')?.getAttribute('data-preset-plugin-count')).toBe('0')
   })
@@ -256,7 +256,7 @@ describe('PluginInventorySettingsTab', () => {
     expect(screen.getAllByRole('menuitem').map(item => item.textContent)).toEqual([
       'Localized standard (default)',
       'Localized ptc',
-      '坏预设 (failed to load)',
+      '壞預設 (failed to load)',
     ])
     fireEvent.keyDown(document, { key: 'Escape' })
 
@@ -277,7 +277,7 @@ describe('PluginInventorySettingsTab', () => {
     fireEvent.click(screen.getByRole('button', { name: 'tool-bash, bash-host, Enabled via presets' }))
     fireEvent.click(screen.getByRole('button', { name: en.viewInPreset }))
     expect(screen.getByRole('button', { name: en.switcherLabel }).textContent)
-      .toBe('标准模式 (default)')
+      .toBe('標準模式 (default)')
   })
 
   it('searches across scopes and points at matches in other presets', async () => {

@@ -1,4 +1,4 @@
----
+﻿---
 description: "Host half of dynamic Cordis packages for agents and maintainers choosing, composing, or debugging the registry, sandbox, and run round trip."
 kind: "package-reference"
 ---

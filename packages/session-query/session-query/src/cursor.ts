@@ -1,4 +1,4 @@
-/** Opaque cursor identity for session-search pagination. */
+﻿/** Opaque cursor identity for session-search pagination. */
 
 import type { Branded } from '@deepseek-ai/dsh-brand'
 

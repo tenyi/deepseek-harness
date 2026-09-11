@@ -1,4 +1,4 @@
-/** Opaque identifiers owned by normalized realm backends. */
+﻿/** Opaque identifiers owned by normalized realm backends. */
 
 import type { InspectorId } from '../identity.ts'
 

@@ -1,4 +1,4 @@
-/** Canvas rendering with cancellation and page cleanup, shared by the PDF body and real-library smoke. */
+﻿/** Canvas rendering with cancellation and page cleanup, shared by the PDF body and real-library smoke. */
 import type { PDFDocumentProxy, PDFPageProxy } from 'pdfjs-dist'
 
 /** The document operations used by one mounted PDF body. */

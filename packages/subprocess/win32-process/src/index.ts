@@ -1,4 +1,4 @@
-/** Shared low-level Win32 process, stdio, and Job Object primitives. */
+﻿/** Shared low-level Win32 process, stdio, and Job Object primitives. */
 
 export { ERROR_INSUFFICIENT_BUFFER } from './abi.ts'
 export * from './errors.ts'

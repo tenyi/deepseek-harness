@@ -1,4 +1,4 @@
-/** Upload one validated Desktop release to its Tencent COS update directory. */
+﻿/** Upload one validated Desktop release to its Tencent COS update directory. */
 
 import { createReadStream } from 'node:fs'
 import { stat } from 'node:fs/promises'

@@ -1,4 +1,4 @@
----
+﻿---
 description: "The DeepSeek-backed search provider for ctx.web: how deployments mount native DeepSeek web search through the Anthropic-compatible Messages API, with per-search credential resolution."
 kind: "package-reference"
 ---

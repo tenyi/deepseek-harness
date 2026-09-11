@@ -1,4 +1,4 @@
-// Legacy standalone trajectory cell retained for direct consumers and specs.
+﻿// Legacy standalone trajectory cell retained for direct consumers and specs.
 
 import {
   formatElapsedSeconds,

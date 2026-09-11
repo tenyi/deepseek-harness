@@ -1,4 +1,4 @@
-/** Worker-owned repository of normalized fetch observations and captured bodies. */
+﻿/** Worker-owned repository of normalized fetch observations and captured bodies. */
 
 import { Buffer } from 'node:buffer'
 import { FETCH_TOPICS } from '../../shared/bridge/messages/network.ts'

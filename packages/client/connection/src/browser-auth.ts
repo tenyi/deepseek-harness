@@ -1,4 +1,4 @@
-/** Browser-session authentication for the Host Connection carrier. */
+﻿/** Browser-session authentication for the Host Connection carrier. */
 
 import { createHash, createHmac, randomBytes, timingSafeEqual } from 'node:crypto'
 import { credentialKey } from '@deepseek-ai/dsh-credentials'

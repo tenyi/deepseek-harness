@@ -1,4 +1,4 @@
-# Named Codex instance patch over the shipped headless profile and the package's
+﻿# Named Codex instance patch over the shipped headless profile and the package's
 # public bundle patch. No model or product process starts in this test.
 - id: headless-startup
   disabled: true

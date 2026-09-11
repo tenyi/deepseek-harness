@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The outward session face. Feature packages never see the concrete Session
  * class: components read lifecycle state through `useSession` (the
  * ObservableSnapshot half), and orchestration code calls the behavior verbs

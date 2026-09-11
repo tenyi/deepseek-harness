@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AssistantChatData, AssistantMessageNode, ChatConversationViewNode, ChatNode, ChatSnapshot, ConversationNode,
   ChatLocationNodeIndex, ChatNodeProcessSource, ChatNodeSource, ChatNodeStore,
   ChatTurnProcessPresentation, CompactionSummaryNode, FinalAssistantChatData, LegacyConversationSlice,

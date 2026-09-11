@@ -1,50 +1,50 @@
----
-description: "MCP 包组：挂载外部 Model Context Protocol 服务器，让它们的工具可以作为原生工具调用。"
+﻿---
+description: "MCP 包組：掛載外部 Model Context Protocol 服務器，讓它們的工具可以作為原生工具調用。"
 kind: "package-group"
 ---
 
-# MCP — 模型上下文协议
+# MCP — 模型上下文協議
 
 [English](README.md) | 中文
 
 ## 概述
 
-`mcp/` 组把 harness 连接到 Model Context Protocol（MCP）工具服务器生态。本组的唯一一个包挂载外部服务器——文件系统、GitHub、数据库或记忆服务器——使该服务器的工具以稳定的服务器限定名称提供给模型，并可作为原生工具调用。每个服务器对应一个配置项；默认不启用任何服务器，因此按需逐个启用。只桥接 Tools 能力：MCP resources 与 prompts 不受支持。本页提供该组的索引；具体包的约定由其 README 说明。
+`mcp/` 組把 harness 連接到 Model Context Protocol（MCP）工具服務器生態。本組的唯一一個包掛載外部服務器——文件系統、GitHub、數據庫或記憶服務器——使該服務器的工具以穩定的服務器限定名稱提供給模型，并可作為原生工具調用。每個服務器對應一個配置項；默認不啟用任何服務器，因此按需逐個啟用。只橋接 Tools 能力：MCP resources 與 prompts 不受支持。本頁提供該組的索引；具體包的約定由其 README 說明。
 
-## 目录
+## 目錄
 
 - [包](#packages)
-- [相关文档](#related-documentation)
-- [开发备注](#dev-note)
+- [相關文檔](#related-documentation)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="packages"></a>
 ## 包
 
-本组只包含一个包；详细信息以该包的 README 和下方链接为准。
+本組只包含一個包；詳細信息以該包的 README 和下方鏈接為準。
 
 | 包 | 提供的能力 |
 |---|---|
-| [`mcp-client/`](mcp-client/README.zh.md) | 挂载一台外部 MCP 服务器，让模型可以把它的工具当作原生工具调用 |
+| [`mcp-client/`](mcp-client/README.zh.md) | 掛載一臺外部 MCP 服務器，讓模型可以把它的工具當作原生工具調用 |
 
 -----
 
 <a id="related-documentation"></a>
-## 相关文档
+## 相關文檔
 
-先用可运行的示例配置体验插件，再阅读 Agent Note 了解其背后的行为决策。
+先用可運行的示例配置體驗插件，再閱讀 Agent Note 了解其背后的行為決策。
 
-- [MCP 客户端插件 Agent Note](../../.agents/notes/implemented/feature/2026-07-07-mcp-client-plugin.zh.md)——桥接的设计：服务器限定命名、发现、执行与环境清洗。
-- [第三方记忆 MCP 指南](../../docs/user/guide/mcp-memory.zh.md)——可运行的 overlay 配置行与设置说明。
-- [工具子系统参考](../../docs/subsystems/tools.zh.md)——接收已注册工具的 `ToolRuntime`。
+- [MCP 客戶端插件 Agent Note](../../.agents/notes/implemented/feature/2026-07-07-mcp-client-plugin.zh.md)——橋接的設計：服務器限定命名、發現、執行與環境清洗。
+- [第三方記憶 MCP 指南](../../docs/user/guide/mcp-memory.zh.md)——可運行的 overlay 配置行與設置說明。
+- [工具子系統參考](../../docs/subsystems/tools.zh.md)——接收已注冊工具的 `ToolRuntime`。
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

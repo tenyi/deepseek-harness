@@ -1,4 +1,4 @@
-# dsh Badge
+﻿# dsh Badge
 
 Add the official “powered by dsh” badge without recreating or restyling it.
 

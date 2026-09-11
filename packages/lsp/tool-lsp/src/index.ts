@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-facing `lsp` tool over `ctx.lsp`. One read-only tool with four operations
  * (`goToDefinition`/`findReferences`/`goToImplementation`/`hover`); it converts one-based UTF-16
  * cursor coordinates to the seam's zero-based positions, requires the session workspace with no

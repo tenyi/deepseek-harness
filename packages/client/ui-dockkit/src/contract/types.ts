@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Layout model and operation vocabulary. Types only: no runtime code, no React,
  * no DOM, and no host concepts — a tab's `kind` is an opaque string this kit
  * never interprets, so the embedder owns what content families exist.

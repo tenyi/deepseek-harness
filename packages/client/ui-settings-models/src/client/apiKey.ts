@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser-side judgement of a typed API key.
  * @module @deepseek-ai/dsh-client-ui-settings-models/apiKey
  */

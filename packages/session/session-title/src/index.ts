@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Log-backed session title service, deterministic fallback, and provider contract.
  * @module @deepseek-ai/dsh-session-title
  */

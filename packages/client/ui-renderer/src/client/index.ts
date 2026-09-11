@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Browser UI renderer. It installs the slot renderer after its Cordis
  * dependencies activate and exposes the mount operation used by the web boot
  * kernel after the complete client roster settles.

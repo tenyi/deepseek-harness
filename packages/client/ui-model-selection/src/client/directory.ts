@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Per-session model directory: the ONE state both selection entries share.
  * The /model popup and composer seat combine one shared Host catalog with the
  * Session's durable selection projection, then submit through the same

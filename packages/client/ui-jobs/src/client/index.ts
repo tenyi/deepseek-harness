@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Background-job plugin, browser half: contributes one session-header action
  * that renders this session's `ctx.jobs` records. The data arrives entirely
  * through the `jobsBySession` list mirror, so the plugin issues no RPC and

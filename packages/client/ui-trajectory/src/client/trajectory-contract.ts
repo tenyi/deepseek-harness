@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AssistantMessageNode, ConversationLocation, ConversationNode, ConversationPromptSnapshot,
   ConversationViewNode, MessageImagesOwnerProps, PartialAssistant, RequestPromptChange,
   RequestView, RunningToolCall, SystemPromptNode, ToolCallBlock,

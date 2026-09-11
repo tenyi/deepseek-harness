@@ -1,4 +1,4 @@
-// Web e2e scenario: the real skill-load recording, seeded cold through the
+﻿// Web e2e scenario: the real skill-load recording, seeded cold through the
 // persistence seam, renders through ui-skill's keyed toolview without a model
 // call. The disclosure proves replay-stable naming and exact durable output.
 import { readFile } from 'node:fs/promises'

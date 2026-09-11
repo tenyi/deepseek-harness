@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Client-safe type surface of the credential seam: the two key brands, the
  * stored-record union, the reference view crossing the Remote wire, and the
  * seam's Cordis event declarations. Types only — no runtime code, and nothing

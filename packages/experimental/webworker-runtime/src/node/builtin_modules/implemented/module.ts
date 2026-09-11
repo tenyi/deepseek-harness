@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node:module` for the worker: `createRequire` hands out the worker module
  * loader's synchronous require. Typert can resolve package exports, and package
  * inventory can discover manifests through `require.resolve.paths()` without

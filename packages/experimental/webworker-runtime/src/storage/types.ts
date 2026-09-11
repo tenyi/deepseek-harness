@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Filesystem interfaces shared by every VFS backend. The shipped implementation
  * is in memory; browser persistence hydrates it and consumes its committed
  * mutation stream. Errors carry Node's `code` values because roster plugins

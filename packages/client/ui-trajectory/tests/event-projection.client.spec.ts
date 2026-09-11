@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import type { ContentBlock } from '@deepseek-ai/dsh-llm/types'
 import {
   contextForm, contextProvenance, displayFailure, emptyAssistantBlock, isTokenDelta,

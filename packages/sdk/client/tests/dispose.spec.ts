@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Deterministic ladder coverage against a scriptable fake child: each
  * escalation tier's timing is driven exactly (the client suite exercises the
  * same ladder against real subprocesses end to end).

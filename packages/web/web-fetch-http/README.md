@@ -1,4 +1,4 @@
----
+﻿---
 description: "The anonymous public HTTP(S) fetch backend for ctx.web: how deployments mount bounded, safe URL retrieval with same-origin redirects and text-only decoding."
 kind: "package-reference"
 ---

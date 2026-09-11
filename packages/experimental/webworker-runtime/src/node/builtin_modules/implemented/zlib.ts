@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node:zlib` for the worker. The worker composition carries no compression
  * codec: the boot patch forces the JSONL session backend onto its plaintext
  * path (`compression: 'none'`), because the VFS is in-memory and compressing

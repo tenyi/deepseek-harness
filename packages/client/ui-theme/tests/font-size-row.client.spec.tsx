@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /** FontSizeRow behavior: value display, arrow clicks drive setFontSize,
  * bound-value arrows disable, display follows the store mirror. */
 import type { GlobalStandardProps } from '@deepseek-ai/dsh-client-ui-slots'

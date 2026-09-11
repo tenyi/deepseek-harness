@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
+﻿import { afterEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
 import type {
   RpcRequest,
   RpcResponse,
@@ -630,7 +630,7 @@ describe('createFixtureApi', () => {
   it('searches current message text with literal unicode61-style token phrases', async () => {
     const api = createFixtureApi()
     const signal = new AbortController().signal
-    const phrase = await api.sessions.search(req({ query: 'FIXTURE 历史消息' }), signal)
+    const phrase = await api.sessions.search(req({ query: 'FIXTURE 歷史消息' }), signal)
     expect(phrase.result).toMatchObject({
       ok: true,
       value: {
@@ -639,7 +639,7 @@ describe('createFixtureApi', () => {
       },
     })
     if (!phrase.result.ok) throw new Error('search failed')
-    expect(phrase.result.value.items[0]?.snippet).toContain('fixture 历史消息')
+    expect(phrase.result.value.items[0]?.snippet).toContain('fixture 歷史消息')
 
     timing().appendUser(
       'fx-alpha',
@@ -668,7 +668,7 @@ describe('createFixtureApi', () => {
       ok: true,
       value: { items: [], hasMore: false },
     })
-    const reasoningOnly = await api.sessions.search(req({ query: '思考过程' }), signal)
+    const reasoningOnly = await api.sessions.search(req({ query: '思考過程' }), signal)
     expect(reasoningOnly.result).toEqual({
       ok: true,
       value: { items: [], hasMore: false },
@@ -862,7 +862,7 @@ describe('createFixtureApi', () => {
     expect(list.result.value.items.some(s => s.sessionId === createdId)).toBe(true)
   })
 
-  it('prompt replays a full streamed turn and cancel mid-replay freezes with (已中断)', async () => {
+  it('prompt replays a full streamed turn and cancel mid-replay freezes with (已中斷)', async () => {
     const api = createFixtureApi()
     const created = await api.sessions.create(req({}))
     if (!created.result.ok) throw new Error('create failed')
@@ -942,10 +942,10 @@ describe('createFixtureApi', () => {
       frames => frames.some(frame => frame.type === 'event' && frame.event.type === 'turn/end'))
     await new Promise(resolve => setTimeout(resolve, 10))
     await api.sessions.prompt(req({ sessionId: id, mode: 'queue' as const, content: [{ type: 'text' as const, text: '短' }] }))
-    await api.sessions.prompt(req({ sessionId: id, mode: 'steer' as const, content: [{ type: 'text' as const, text: '插话' }] }))
+    await api.sessions.prompt(req({ sessionId: id, mode: 'steer' as const, content: [{ type: 'text' as const, text: '插話' }] }))
     const frames = await framesPromise
     const types = frames.flatMap(frame => frame.type === 'event' ? [frame.event.type] : [])
-    expect(JSON.stringify(frames)).toContain('插话')
+    expect(JSON.stringify(frames)).toContain('插話')
     expect(types.at(-1)).toBe('turn/end') // steer did not restart the turn
   })
 
@@ -958,7 +958,7 @@ describe('createFixtureApi', () => {
     const alpha = first.value.projections['fx-alpha']
     expect(alpha?.asOfSeq).toBeGreaterThan(0)
     expect(alpha?.values).toMatchObject({
-      title: 'Fixture 历史会话',
+      title: 'Fixture 歷史會話',
       plan: { active: false, pending: false },
       goal: null,
       imageLimits: { maxImagesPerMessage: 20, maxImageBytes: 5 * 1024 * 1024 },
@@ -1530,7 +1530,7 @@ describe('createFixtureApi', () => {
     const gapIterator = api.sessionRemote.follow(sid('fx-alpha'), gapAbort.signal)[Symbol.asyncIterator]()
     const opening = await gapIterator.next()
     if (opening.done || opening.value.type !== 'snapshot') throw new Error('follow opening snapshot missing')
-    hooks.appendSilent('fx-alpha', '静默丢帧')
+    hooks.appendSilent('fx-alpha', '靜默丟幀')
     hooks.appendUser('fx-alpha', '正常直播')
     await expect(gapIterator.next()).rejects.toThrow(/stream skipped seq/)
 
@@ -1551,10 +1551,10 @@ describe('createFixtureApi', () => {
     await vi.waitFor(() => {
       const snapshot = followed.find(frame => frame.type === 'snapshot')
       const events = snapshot === undefined ? [] : historyEvents(snapshot.records)
-      expect(events.some(event => JSON.stringify(event.data).includes('静默丢帧'))).toBe(true)
+      expect(events.some(event => JSON.stringify(event.data).includes('靜默丟幀'))).toBe(true)
       expect(events.some(event => JSON.stringify(event.data).includes('正常直播'))).toBe(true)
     })
-    hooks.appendTitle('fx-alpha', 'Fixture 修订标题')
+    hooks.appendTitle('fx-alpha', 'Fixture 修訂標題')
     hooks.beginModelRetry('fx-alpha')
     hooks.scheduleModelRetry('fx-alpha')
     hooks.completeModelRetry('fx-alpha')
@@ -1562,19 +1562,19 @@ describe('createFixtureApi', () => {
     hooks.cancelModelRetryDuringBackoff('fx-alpha')
     await vi.waitFor(() => {
       expect(followed.some(frame => frame.type === 'event' && (frame.event as { type: string }).type === 'llm/retry')).toBe(true)
-      expect(followed.some(frame => frame.type === 'event' && JSON.stringify(frame.event.data).includes('重试后的完整回复'))).toBe(true)
+      expect(followed.some(frame => frame.type === 'event' && JSON.stringify(frame.event.data).includes('重試后的完整回復'))).toBe(true)
       expect(followed.some(frame => frame.type === 'event'
         && frame.event.type === 'turn/end'
         && frame.event.data.reason.kind === 'aborted')).toBe(true)
       expect(controlled.some(frame => frame.type === 'projection'
         && frame.key === 'title'
-        && frame.value === 'Fixture 修订标题')).toBe(true)
+        && frame.value === 'Fixture 修訂標題')).toBe(true)
     })
     expect(followed.some(frame => frame.type === 'event' && (frame.event as { type: string }).type === 'session/title')).toBe(true)
     // Paging and resumed follow agree on the recovered durable event.
     const repull = await api.sessions.history(req({ sessionId: sid('fx-alpha'), maxMessages: 5 }))
     if (!repull.result.ok) throw new Error('repull failed')
-    expect(JSON.stringify(repull.result.value.records)).toContain('静默丢帧')
+    expect(JSON.stringify(repull.result.value.records)).toContain('靜默丟幀')
     // breakStreams force-ends follow and control without client aborts.
     await new Promise(resolve => setTimeout(resolve, 10))
     hooks.breakStreams()

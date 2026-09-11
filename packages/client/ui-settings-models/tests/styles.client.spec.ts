@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Models section stylesheet contract, asserted against the CSS text on disk.
  *
  * The section paints in both themes, and a `--dsw-*` name the theme does not

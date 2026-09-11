@@ -1,55 +1,55 @@
-- dialog "设置":
+﻿- dialog "設置":
   - navigation:
-    - text: 设置
-    - button "通用设置":
+    - text: 設置
+    - button "通用設置":
       - img
-      - text: 通用设置
+      - text: 通用設置
     - button "模型":
       - img
       - text: 模型
     - button "插件":
       - img
       - text: 插件
-    - button "Agent 预设":
+    - button "Agent 預設":
       - img
-      - text: Agent 预设
-  - button "打开配置文件"
-  - button "关闭":
+      - text: Agent 預設
+  - button "打開配置文件"
+  - button "關閉":
     - img
-    - text: 关闭
+    - text: 關閉
   - heading "模型" [level=2]
-  - paragraph: 填入各提供方的 API 密钥即可使用其模型。
+  - paragraph: 填入各提供方的 API 密鑰即可使用其模型。
   - list:
     - listitem:
       - text: DeepSeek
-      - img "API 密钥已配置"
-      - button "编辑 DeepSeek (deepseek-official)": 编辑
-      - text: DeepSeek deepseek-official API 密钥
-      - textbox "API 密钥":
-        - /placeholder: 已配置——输入新值可替换
+      - img "API 密鑰已配置"
+      - button "編輯 DeepSeek (deepseek-official)": 編輯
+      - text: DeepSeek deepseek-official API 密鑰
+      - textbox "API 密鑰":
+        - /placeholder: 已配置——輸入新值可替換
       - group:
-        - text: 自定义设置 API 地址
+        - text: 自定義設置 API 地址
         - textbox "API 地址":
           - /placeholder: https://api.deepseek.com
-        - region "模型目录":
-          - text: 模型目录 已自定义模型目录
-          - button "恢复默认模型"
+        - region "模型目錄":
+          - text: 模型目錄 已自定義模型目錄
+          - button "恢復默認模型"
           - textbox "模型 ID 1":
             - /placeholder: 模型 ID
             - text: private-preview
-          - textbox "显示名称 1":
-            - /placeholder: 显示名称
+          - textbox "顯示名稱 1":
+            - /placeholder: 顯示名稱
             - text: Private Preview
           - button "容量 1" [expanded]:
             - img
-          - button "删除模型 1":
+          - button "刪除模型 1":
             - img
           - text: 上下文窗口
           - textbox "上下文窗口 1":
             - /placeholder: 1M
             - text: "131072"
-          - text: 最大输出 token 数
-          - textbox "最大输出 token 数 1":
+          - text: 最大輸出 token 數
+          - textbox "最大輸出 token 數 1":
             - /placeholder: 256K
             - text: 64K
           - button "添加模型":
@@ -60,6 +60,6 @@
   - button "添加提供方":
     - img
     - text: 添加提供方
-  - button "添加自定义提供方":
+  - button "添加自定義提供方":
     - img
-    - text: 添加自定义提供方
+    - text: 添加自定義提供方

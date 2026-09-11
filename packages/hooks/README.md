@@ -1,4 +1,4 @@
----
+﻿---
 description: "The hooks group map: run existing Claude Code and Codex shell-hook configs during agent runs, for users and maintainers navigating the group."
 kind: "package-group"
 ---

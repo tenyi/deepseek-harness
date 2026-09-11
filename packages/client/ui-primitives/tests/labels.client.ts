@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   DiffBlockLabels,
   JsonTreeLabels,
   MarkdownLabels,
@@ -9,44 +9,44 @@ import type {
 } from '../src/index.ts'
 
 export const markdownLabels: MarkdownLabels = {
-  code: { copyLabel: '复制', copiedLabel: '复制成功' },
+  code: { copyLabel: '復制', copiedLabel: '復制成功' },
   footnotes: 'Footnotes',
 }
 
 export const diffBlockLabels: DiffBlockLabels = {
-  copy: '复制', copied: '复制成功', collapseAria: '收起差异',
-  expandAria: hidden => `展开其余 ${hidden} 行差异`,
+  copy: '復制', copied: '復制成功', collapseAria: '收起差異',
+  expandAria: hidden => `展開其余 ${hidden} 行差異`,
   collapse: '收起', expand: hidden => `… 其余 ${hidden} 行`,
   files: count => `${count} ${count === 1 ? 'file' : 'files'}`,
 }
 
 export const readBlockLabels: ReadBlockLabels = {
-  window: (shown, total) => `显示 ${shown} / ${total} 行`,
-  copy: '复制', copied: '复制成功', collapseAria: '收起内容',
-  expandAria: hidden => `展开其余 ${hidden} 行`,
+  window: (shown, total) => `顯示 ${shown} / ${total} 行`,
+  copy: '復制', copied: '復制成功', collapseAria: '收起內容',
+  expandAria: hidden => `展開其余 ${hidden} 行`,
   collapse: '收起', expand: hidden => `… 其余 ${hidden} 行`,
 }
 
 export const searchBlockLabels: SearchBlockLabels = {
   pathsSummary: (shown, total, truncated) => truncated
-    ? `显示 ${shown} / 共 ${total} 个路径`
-    : `${shown} 个路径`,
+    ? `顯示 ${shown} / 共 ${total} 個路徑`
+    : `${shown} 個路徑`,
   matchesSummary: (shown, total, files, truncated) => truncated
-    ? `显示 ${shown} / 共 ${total} 处匹配 · ${files} 个文件`
-    : `${shown} 处匹配 · ${files} 个文件`,
-  copy: '复制', copied: '复制成功', noResults: '无结果',
-  collapseAria: '收起结果',
-  expandAria: hidden => `展开其余 ${hidden} 行结果`,
+    ? `顯示 ${shown} / 共 ${total} 處匹配 · ${files} 個文件`
+    : `${shown} 處匹配 · ${files} 個文件`,
+  copy: '復制', copied: '復制成功', noResults: '無結果',
+  collapseAria: '收起結果',
+  expandAria: hidden => `展開其余 ${hidden} 行結果`,
   collapse: '收起', expand: hidden => `… 其余 ${hidden} 行`,
 }
 
 export const terminalBlockLabels: TerminalBlockLabels = {
-  signal: signal => `信号 ${signal}`,
-  exitCode: code => `退出码 ${code}`,
-  running: '运行中', failed: '失败', done: '已完成',
-  copy: '复制', copied: '复制成功', noOutput: '无输出',
-  collapseAria: '收起输出', collapse: '收起',
-  expandAria: hidden => `展开其余 ${hidden} 行输出`,
+  signal: signal => `信號 ${signal}`,
+  exitCode: code => `退出碼 ${code}`,
+  running: '運行中', failed: '失敗', done: '已完成',
+  copy: '復制', copied: '復制成功', noOutput: '無輸出',
+  collapseAria: '收起輸出', collapse: '收起',
+  expandAria: hidden => `展開其余 ${hidden} 行輸出`,
   expand: hidden => `… 其余 ${hidden} 行`,
 }
 
@@ -59,6 +59,6 @@ export const jsonTreeLabels: JsonTreeLabels = {
 }
 
 export const webBlockLabels: WebBlockLabels = {
-  noResults: '未找到结果', sourcesTruncated: '来源列表已截断',
-  http: 'HTTP', contentTruncated: '内容已截断', markdown: markdownLabels,
+  noResults: '未找到結果', sourcesTruncated: '來源列表已截斷',
+  http: 'HTTP', contentTruncated: '內容已截斷', markdown: markdownLabels,
 }

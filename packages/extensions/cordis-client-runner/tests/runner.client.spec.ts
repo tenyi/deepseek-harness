@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @vitest-environment jsdom
  *
  * Load-engine account: what `load` answers its caller (that answer is what the

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-facing literal edit, unique-match by default. It obtains an optional guard from the
  * single intent slot, calls `ctx.fs.editText` without a separate stat, then records the observed
  * version; no policy means an unconditional atomic edit.

@@ -1,5 +1,5 @@
----
-description: "九个让模型创建、发消息与协调 teammate 的工具，供挂载实验性 Team 插件的组合使用。"
+﻿---
+description: "九個讓模型創建、發消息與協調 teammate 的工具，供掛載實驗性 Team 插件的組合使用。"
 kind: "package-reference"
 ---
 
@@ -9,31 +9,31 @@ kind: "package-reference"
 
 ## 概述
 
-本包让模型创建具名 teammate、向它们发送消息、查看可用状态、等待进展、中断卡住的工作，并通过共享任务板协调。每个团队成员都会获得相同的九个工具，以及在共享工作区协调的指引。当模型只应在你明确要求后运行团队时，选择本包。它会取代同名的旧版 subagent 控件，因此同时需要两者的组合必须禁用旧定义。本包以实验性名称公开发布，但不提供稳定性保证。
+本包讓模型創建具名 teammate、向它們發送消息、查看可用狀態、等待進展、中斷卡住的工作，并通過共享任務板協調。每個團隊成員都會獲得相同的九個工具，以及在共享工作區協調的指引。當模型只應在你明確要求后運行團隊時，選擇本包。它會取代同名的舊版 subagent 控件，因此同時需要兩者的組合必須禁用舊定義。本包以實驗性名稱公開發布，但不提供穩定性保證。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-当模型应该通过工具运行一支团队时，在 `@deepseek-ai/dsh-experimental-agent-team` 之上挂载本包。挂载后，每个团队成员——Lead 与每个 teammate——都会获得相同的九个工具，外加一段说明自身角色与名字的策略段落。
+當模型應該通過工具運行一支團隊時，在 `@deepseek-ai/dsh-experimental-agent-team` 之上掛載本包。掛載后，每個團隊成員——Lead 與每個 teammate——都會獲得相同的九個工具，外加一段說明自身角色與名字的策略段落。
 
-### 何时选择
+### 何時選擇
 
-当模型应该自行创建与协调 teammate、而不是由人来操作 subagent 控件时，选择它。当同名的旧全局 subagent 工具必须继续可用时，请不要选择：团队工具会为团队成员取代它们，因此想同时使用两者的组合必须禁用旧定义。固定策略只在明确要求团队或 teammate 时创建成员，因此普通任务永远不会自行触发委派。
+當模型應該自行創建與協調 teammate、而不是由人來操作 subagent 控件時，選擇它。當同名的舊全局 subagent 工具必須繼續可用時，請不要選擇：團隊工具會為團隊成員取代它們，因此想同時使用兩者的組合必須禁用舊定義。固定策略只在明確要求團隊或 teammate 時創建成員，因此普通任務永遠不會自行觸發委派。
 
 ### 最小工作示例
 
-对现有组合的最小增量是 [agent-team README](../agent-team/README.zh.md#smallest-working-setup) 中的两包片段：持久会话存储、团队领域包与本包。插件本身只有两个可选设置：
+對現有組合的最小增量是 [agent-team README](../agent-team/README.zh.md#smallest-working-setup) 中的兩包片段：持久會話存儲、團隊領域包與本包。插件本身只有兩個可選設置：
 
 ```yaml
 - id: tool-agent-team
@@ -43,116 +43,116 @@ kind: "package-reference"
     forkProvider: fork
 ```
 
-| 字段 | 默认值 | 含义 |
+| 字段 | 默認值 | 含義 |
 |---|---|---|
-| `freshProvider` | `spawn` | 启动 fresh teammate 的提供方 |
-| `forkProvider` | `fork` | 启动 fork teammate 的提供方 |
+| `freshProvider` | `spawn` | 啟動 fresh teammate 的提供方 |
+| `forkProvider` | `fork` | 啟動 fork teammate 的提供方 |
 
-生成的[配置目录](../../../docs/config-catalog.zh.md#deepseek-aidsh-experimental-tool-agent-team)是每个受支持字段及其 JSDoc 的穷尽式真源。
+生成的[配置目錄](../../../docs/config-catalog.zh.md#deepseek-aidsh-experimental-tool-agent-team)是每個受支持字段及其 JSDoc 的窮盡式真源。
 
-试试这样要求 Lead 模型：「创建一个名为 reviewer 的 teammate 检查 diff，再把变更摘要发给 reviewer」。模型会调用创建工具，然后调用消息工具。
+試試這樣要求 Lead 模型：「創建一個名為 reviewer 的 teammate 檢查 diff，再把變更摘要發給 reviewer」。模型會調用創建工具，然后調用消息工具。
 
 ### 模型能做什么
 
-九个工具分为四类能力：
+九個工具分為四類能力：
 
-- **创建 teammate**——`spawn_teammate` 接收名字、描述与初始任务；只有 Lead 可以调用它。
-- **发送消息**——`send_message` 在最近的步骤边界对运行中的成员进行 steering（中途引导）、启动空闲成员，并冷恢复非活动 teammate。
-- **查看与等待**——`list_agents` 显示带实时状态的 roster；`wait_agent` 等待下一次团队变化；`interrupt_agent` 停止 teammate 的当前轮次（仅限 Lead）。
-- **管理任务板**——`team_task_create`、`team_task_list`、`team_task_get` 与 `team_task_update` 添加、浏览、读取与更新共享任务。
+- **創建 teammate**——`spawn_teammate` 接收名字、描述與初始任務；只有 Lead 可以調用它。
+- **發送消息**——`send_message` 在最近的步驟邊界對運行中的成員進行 steering（中途引導）、啟動空閑成員，并冷恢復非活動 teammate。
+- **查看與等待**——`list_agents` 顯示帶實時狀態的 roster；`wait_agent` 等待下一次團隊變化；`interrupt_agent` 停止 teammate 的當前輪次（僅限 Lead）。
+- **管理任務板**——`team_task_create`、`team_task_list`、`team_task_get` 與 `team_task_update` 添加、瀏覽、讀取與更新共享任務。
 
-任何成员都可以给任何其他成员发消息并使用任务板；只有 Lead 可以创建与中断 teammate。任务更新保留领域的 owner 与 revision 校验，因此过期的编辑会被拒绝，而不是覆盖更新的成果。
+任何成員都可以給任何其他成員發消息并使用任務板；只有 Lead 可以創建與中斷 teammate。任務更新保留領域的 owner 與 revision 校驗，因此過期的編輯會被拒絕，而不是覆蓋更新的成果。
 
-### 成功与失败的表现
+### 成功與失敗的表現
 
-发送消息在安全存储后即成功：结果为 `accepted`（已立即送达）或 `queued`（等待中），排队的消息绝不能重发。当没有其他成员 running 或 provisioning 时，`wait_agent` 会立即返回 `noProgress`，提示调用方先唤醒 teammate；否则它会等待下一次变化，调用方随后重新读取状态。基于过期 revision 的任务编辑会被拒绝，而不是覆盖更新的成果。
+發送消息在安全存儲后即成功：結果為 `accepted`（已立即送達）或 `queued`（等待中），排隊的消息絕不能重發。當沒有其他成員 running 或 provisioning 時，`wait_agent` 會立即返回 `noProgress`，提示調用方先喚醒 teammate；否則它會等待下一次變化，調用方隨后重新讀取狀態。基于過期 revision 的任務編輯會被拒絕，而不是覆蓋更新的成果。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释适配器背后的设计决策并指出实现它们的代码位置；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋適配器背后的設計決策并指出實現它們的代碼位置；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-适配器建立在三项承诺之上：
+適配器建立在三項承諾之上：
 
-- **按作用域，而非全局。** 每个注册都位于成员 Agent（智能体）自己的 `ctx` 上；非 Team subagent 或宿主不会安装任何内容。
-- **声明式结果，紧凑 JSON。** 每个工具都声明完整结果 schema，并把该值渲染为紧凑 JSON，因此编译器会对照向模型承诺的结果检查 `execute`，任何结果都不会在缩进上消耗 token。
-- **领域掌握裁决权。** 工具委托给 `ctx.agentTeams`，后者强制执行 Lead 权限与 revision 校验；适配器不添加更弱的路径。
+- **按作用域，而非全局。** 每個注冊都位于成員 Agent（智能體）自己的 `ctx` 上；非 Team subagent 或宿主不會安裝任何內容。
+- **聲明式結果，緊湊 JSON。** 每個工具都聲明完整結果 schema，并把該值渲染為緊湊 JSON，因此編譯器會對照向模型承諾的結果檢查 `execute`，任何結果都不會在縮進上消耗 token。
+- **領域掌握裁決權。** 工具委托給 `ctx.agentTeams`，后者強制執行 Lead 權限與 revision 校驗；適配器不添加更弱的路徑。
 
-[Agent Teams Agent Note](../../../.agents/notes/implemented/feature/2026-08-05-agent-teams.zh.md)负责模型侧与 scoping 决策。
+[Agent Teams Agent Note](../../../.agents/notes/implemented/feature/2026-08-05-agent-teams.zh.md)負責模型側與 scoping 決策。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：配置、固定策略文本与九个 scoped 工具注册 |
-| — | 不发布运行时不变式伴生入口；Team 服务拥有持久化与授权关系。 |
+| [`src/index.ts`](src/index.ts) | 插件入口：配置、固定策略文本與九個 scoped 工具注冊 |
+| — | 不發布運行時不變式伴生入口；Team 服務擁有持久化與授權關系。 |
 
-### 策略与工具
+### 策略與工具
 
-member scope 上的一个 `team:policy` 段落教每个成员自己的角色与协作规则；固定文本与九个工具注册都声明在 [`src/index.ts`](src/index.ts)。九个工具 schema 只出现在 Team member scope 中，因此非 Team subagent 保持默认目录。与旧全局 continuable-subagent 控件同名的 scoped 注册只会为团队成员覆盖这些全局控件。
+member scope 上的一個 `team:policy` 段落教每個成員自己的角色與協作規則；固定文本與九個工具注冊都聲明在 [`src/index.ts`](src/index.ts)。九個工具 schema 只出現在 Team member scope 中，因此非 Team subagent 保持默認目錄。與舊全局 continuable-subagent 控件同名的 scoped 注冊只會為團隊成員覆蓋這些全局控件。
 
-### 按作用域注册与拆除
+### 按作用域注冊與拆除
 
-`maybeInstall` 对每个 live Agent 运行，并订阅 `agent/created`；它跳过没有 Team 成员关系的 Agent。Agent 的 dispose（资源释放）会运行已安装的 disposer，插件 HMR（热模块替换）会在重新安装前对每个已安装的 scope 执行 dispose。每个 disposer 按逆序撤销注册，因此失败的安装不会留下残缺 scope。
+`maybeInstall` 對每個 live Agent 運行，并訂閱 `agent/created`；它跳過沒有 Team 成員關系的 Agent。Agent 的 dispose（資源釋放）會運行已安裝的 disposer，插件 HMR（熱模塊替換）會在重新安裝前對每個已安裝的 scope 執行 dispose。每個 disposer 按逆序撤銷注冊，因此失敗的安裝不會留下殘缺 scope。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下页面。它们从领域服务逐步进入精确 schema 与设计背后的决策。
+當包級約定不夠用時閱讀以下頁面。它們從領域服務逐步進入精確 schema 與設計背后的決策。
 
-- [agent-team 包](../agent-team/README.zh.md)——这些工具背后的 `ctx.agentTeams` 领域服务。
-- [Agent Teams 子系统](../../../docs/subsystems/agent-team.zh.md)——持久 Team 类型与服务 API。
-- [生成的工具目录](../../../docs/tool-catalog.zh.md#deepseek-aidsh-experimental-tool-agent-team)——模型接收的每个工具 schema。
-- [Agent Teams Agent Note](../../../.agents/notes/implemented/feature/2026-08-05-agent-teams.zh.md)——模型侧、scoping 与隔离决策。
+- [agent-team 包](../agent-team/README.zh.md)——這些工具背后的 `ctx.agentTeams` 領域服務。
+- [Agent Teams 子系統](../../../docs/subsystems/agent-team.zh.md)——持久 Team 類型與服務 API。
+- [生成的工具目錄](../../../docs/tool-catalog.zh.md#deepseek-aidsh-experimental-tool-agent-team)——模型接收的每個工具 schema。
+- [Agent Teams Agent Note](../../../.agents/notes/implemented/feature/2026-08-05-agent-teams.zh.md)——模型側、scoping 與隔離決策。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### Team 策略与工具
+### Team 策略與工具
 
 #### 模型看到什么
 
-一段稳定策略会说明确切 Team role／name／id、显式 delegation 要求、共享 cwd 行为、文件陈旧版本恢复、Bash／formatter／codegen 风险、task／write-scope 协调、Steer 投递、mailbox 不重试规则，以及 Lead 必须在回答前等待。`spawn_teammate` 到 `team_task_update` 的九个 Team schema 只出现在 Team member scope。
+一段穩定策略會說明確切 Team role／name／id、顯式 delegation 要求、共享 cwd 行為、文件陳舊版本恢復、Bash／formatter／codegen 風險、task／write-scope 協調、Steer 投遞、mailbox 不重試規則，以及 Lead 必須在回答前等待。`spawn_teammate` 到 `team_task_update` 的九個 Team schema 只出現在 Team member scope。
 
-#### Token 影响
+#### Token 影響
 
-每次 Team member 请求都有固定策略与 schema 成本。工具调用会增加紧凑 JSON roster、task、wait 或 receipt 结果。Peer 内容由 Team 领域保留在 target 历史中。
+每次 Team member 請求都有固定策略與 schema 成本。工具調用會增加緊湊 JSON roster、task、wait 或 receipt 結果。Peer 內容由 Team 領域保留在 target 歷史中。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-Team 插件 generation、配置、member role／name 与 schema 不变时，前缀保持稳定。每个成员的身份行不同。工具结果与 peer 消息追加在可复用请求前缀之后。
+Team 插件 generation、配置、member role／name 與 schema 不變時，前綴保持穩定。每個成員的身份行不同。工具結果與 peer 消息追加在可復用請求前綴之后。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明策略与工具无法为一支团队保证什么。它们是当前包约束，不是与其他协作方式的对比。
+這些限制說明策略與工具無法為一支團隊保證什么。它們是當前包約束，不是與其他協作方式的對比。
 
-- **提示词策略只负责协调，不负责 confinement**——它无法阻止 Bash 或外部进程写入重叠文件。
-- **不会自主创建 Team**——除非用户明确要求，普通任务不会触发 delegation。
-- **没有 Web 控制功能**——浏览器 roster 与任务板呈现不属于该运行时包。
-- **实验原型，无稳定性承诺**——本包公开发布，但孵化期间 schema 仍可自由变更。
+- **提示詞策略只負責協調，不負責 confinement**——它無法阻止 Bash 或外部進程寫入重疊文件。
+- **不會自主創建 Team**——除非用戶明確要求，普通任務不會觸發 delegation。
+- **沒有 Web 控制功能**——瀏覽器 roster 與任務板呈現不屬于該運行時包。
+- **實驗原型，無穩定性承諾**——本包公開發布，但孵化期間 schema 仍可自由變更。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

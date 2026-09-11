@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Language row slot store: a mirror of the locale service snapshot. The
  * plugin's apply-world change listener is the only writer; the row component
  * reads via props.useStore.

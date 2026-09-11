@@ -1,4 +1,4 @@
-/** Chat-owned conversion from durable Session events to Chat view data. */
+﻿/** Chat-owned conversion from durable Session events to Chat view data. */
 
 import type { ContentBlock, StreamChunk } from '@deepseek-ai/dsh-llm/types'
 import type {

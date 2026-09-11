@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The image byte envelope: the worker inflates one gzip member off the response
  * stream and refuses anything else by name.
  *

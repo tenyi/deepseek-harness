@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Registration: the General row, the settings section, the new-session chip,
  * and the header label all come from one apply, and each defers until the slot
  * it fills has been declared. A pushed settings change refreshes the surfaces
@@ -228,7 +228,7 @@ describe('ui-agent-preset apply', () => {
     expect(section.component).toBe(AgentPresetSection)
     expect(section.options).toMatchObject({ id: 'agent-presets', order: 20 })
     // The nav label is a locale-following thunk; owners resolve it at read time.
-    expect(resolveSlotLabel(section.options.label)).toBe('Agent 预设')
+    expect(resolveSlotLabel(section.options.label)).toBe('Agent 預設')
   })
 
   it('registers into a declaration that arrives after apply', async () => {

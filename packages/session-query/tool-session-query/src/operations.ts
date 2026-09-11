@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Tool operation orchestration over session-query service capabilities.
  *
  * @module @deepseek-ai/dsh-tool-session-query/operations

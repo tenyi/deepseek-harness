@@ -1,4 +1,4 @@
-/** Full `globalThis.fetch` capture that publishes without delaying response delivery. */
+﻿/** Full `globalThis.fetch` capture that publishes without delaying response delivery. */
 
 import type { InspectorJsonValue } from '../../shared/json.ts'
 import type { InspectorPublisher } from '../../shared/bridge/publisher.ts'

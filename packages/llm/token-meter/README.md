@@ -1,4 +1,4 @@
----
+﻿---
 description: "Replay-aware token and context-pressure measurement for users and maintainers sizing prompts or building compaction and occupancy displays."
 kind: "package-reference"
 ---

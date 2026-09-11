@@ -1,4 +1,4 @@
-/**
+﻿/**
  * LLM service: adapter registry with a waterfall-interceptable streaming call
  * API. Exports the `LlmRuntime` default, the abstract `LlmAdapter` for
  * provider backends, and `BlockAssembler` for chunk assembly.

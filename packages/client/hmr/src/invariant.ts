@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Package-owned invariant companion for `@deepseek-ai/dsh-client-hmr`.
  * @module @deepseek-ai/dsh-client-hmr/invariant
  */

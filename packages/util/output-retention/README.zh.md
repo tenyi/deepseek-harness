@@ -1,5 +1,5 @@
----
-description: "为必须限制返回上下文量的工具提供有界的面向模型输出：项与文本 retainer，以及标准化的省略页脚。"
+﻿---
+description: "為必須限制返回上下文量的工具提供有界的面向模型輸出：項與文本 retainer，以及標準化的省略頁腳。"
 kind: "package-library"
 ---
 
@@ -9,25 +9,25 @@ kind: "package-library"
 
 ## 概述
 
-使用 `dsh-output-retention` 限制工具返回给模型的项或文本量，并报告省略了什么。`ItemRetainer` 保留有序的头部窗口，并可报告精确的省略项数；`TextRetainer` 保留 head、tail 或 head-and-tail 字节窗口，且不会返回因切割而无效的 UTF-8。`formatRetentionNotice` 添加一致的省略子句，各工具则提供自己的恢复指引。分组、行号、spill 文件与提供方错误仍归工具负责；消费方直接导入本库，而不通过 `cordis.yml` 加载。
+使用 `dsh-output-retention` 限制工具返回給模型的項或文本量，并報告省略了什么。`ItemRetainer` 保留有序的頭部窗口，并可報告精確的省略項數；`TextRetainer` 保留 head、tail 或 head-and-tail 字節窗口，且不會返回因切割而無效的 UTF-8。`formatRetentionNotice` 添加一致的省略子句，各工具則提供自己的恢復指引。分組、行號、spill 文件與提供方錯誤仍歸工具負責；消費方直接導入本庫，而不通過 `cordis.yml` 加載。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-凡是工具必须限制其结果到达模型的数量、并如实报告丢弃内容的地方，都使用 retainer。有序逻辑单元选 `ItemRetainer`，面向字节的流选 `TextRetainer`。
+凡是工具必須限制其結果到達模型的數量、并如實報告丟棄內容的地方，都使用 retainer。有序邏輯單元選 `ItemRetainer`，面向字節的流選 `TextRetainer`。
 
-### 限制项列表
+### 限制項列表
 
 ```ts
 import { ItemRetainer } from '@deepseek-ai/dsh-output-retention'
@@ -41,7 +41,7 @@ for await (const entry of candidates) {
 const { items, truncated, omitted } = retainer.finish()
 ```
 
-`push()` 逐项报告该项是否被保留，`finish()` 返回保留的项与 `omitted`——当调用方持续送入每个已观察单元时，这是一个精确计数。搜索工具可以收集完整结果集用于 spill 文件，同时只为模型保留第一页。
+`push()` 逐項報告該項是否被保留，`finish()` 返回保留的項與 `omitted`——當調用方持續送入每個已觀察單元時，這是一個精確計數。搜索工具可以收集完整結果集用于 spill 文件，同時只為模型保留第一頁。
 
 ### 限制文本流
 
@@ -53,9 +53,9 @@ child.stdout.on('data', (chunk: Buffer) => { out.push(chunk) })
 const { text, omittedBytes } = out.finish()
 ```
 
-`head`、`tail` 与 `headTail` 按字节而非字符或行计数：子进程管道与 HTTP 正文都是字节流。`finish()` 会在每个切割处修剪不完整的码点，因此返回的文本绝不会携带由切割引入的替换字符，码点也绝不会跨被省略的中间部分重建。
+`head`、`tail` 與 `headTail` 按字節而非字符或行計數：子進程管道與 HTTP 正文都是字節流。`finish()` 會在每個切割處修剪不完整的碼點，因此返回的文本絕不會攜帶由切割引入的替換字符，碼點也絕不會跨被省略的中間部分重建。
 
-### 构建省略页脚
+### 構建省略頁腳
 
 ```ts
 import { formatRetentionNotice } from '@deepseek-ai/dsh-output-retention'
@@ -72,93 +72,93 @@ const footer = formatRetentionNotice(
 )
 ```
 
-库负责标准化省略子句（`Omitted 3 items.`）并把它与工具自有的恢复指引拼接；只有工具知道恢复动作，因此这些措辞由工具提供。
+庫負責標準化省略子句（`Omitted 3 items.`）并把它與工具自有的恢復指引拼接；只有工具知道恢復動作，因此這些措辭由工具提供。
 
-### `truncated` 意味着什么
+### `truncated` 意味著什么
 
-`truncated` 是预算事实：retainer 因上限而省略了本可获得的内容。它绝不表示上游不完整——权限失败、跳过二进制文件、提供方部分失败与不可读候选项都留在工具领域字段中，绝不并入 `truncated`。
+`truncated` 是預算事實：retainer 因上限而省略了本可獲得的內容。它絕不表示上游不完整——權限失敗、跳過二進制文件、提供方部分失敗與不可讀候選項都留在工具領域字段中，絕不并入 `truncated`。
 
-### 当前工具如何使用它
+### 當前工具如何使用它
 
-| 工具 | Retainer | 工具仍负责什么 |
+| 工具 | Retainer | 工具仍負責什么 |
 |---|---|---|
-| `glob` | `ItemRetainer`，`head` | spill 文件收集、路径映射、已跳过候选项、`incomplete` |
-| `grep` | `ItemRetainer`，`head` | spill 文件收集、逐匹配预览截断、分组、排序 |
-| `bash` | `TextRetainer`，`tail` 或 `headTail` | spill 文件、退出状态、信号、超时、后台任务 |
-| `web_fetch` | `TextRetainer`，`head` 或 `headTail` | 提供方与资源上限、错误状态 |
-| `web_search` | `ItemRetainer`，`head` | 「来源已达上限」通知措辞与提供方事实 |
+| `glob` | `ItemRetainer`，`head` | spill 文件收集、路徑映射、已跳過候選項、`incomplete` |
+| `grep` | `ItemRetainer`，`head` | spill 文件收集、逐匹配預覽截斷、分組、排序 |
+| `bash` | `TextRetainer`，`tail` 或 `headTail` | spill 文件、退出狀態、信號、超時、后臺任務 |
+| `web_fetch` | `TextRetainer`，`head` 或 `headTail` | 提供方與資源上限、錯誤狀態 |
+| `web_search` | `ItemRetainer`，`head` | 「來源已達上限」通知措辭與提供方事實 |
 
-`read` 不属于本库：它的行窗口分页（`offset`/`limit`、行号、`totalLines`）是文件专属渲染器，单个省略计数无法表示该窗口的两侧。
+`read` 不屬于本庫：它的行窗口分頁（`offset`/`limit`、行號、`totalLines`）是文件專屬渲染器，單個省略計數無法表示該窗口的兩側。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本库建立在一个分离之上：它负责「保留了什么、省略了什么」这个机制问题；业务含义全部归工具包所有。
+本庫建立在一個分離之上：它負責「保留了什么、省略了什么」這個機制問題；業務含義全部歸工具包所有。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | `ItemRetainer`、`TextRetainer`、`describeOmitted` 与 `formatRetentionNotice` |
-| — | 不发布运行时不变式伴生入口；这个纯工具不拥有事件流或可变运行时数据；其值代数由单元测试保证。 |
+| [`src/index.ts`](src/index.ts) | `ItemRetainer`、`TextRetainer`、`describeOmitted` 與 `formatRetentionNotice` |
+| — | 不發布運行時不變式伴生入口；這個純工具不擁有事件流或可變運行時數據；其值代數由單元測試保證。 |
 
-### 两个 retainer，两种资源模型
+### 兩個 retainer，兩種資源模型
 
-`ItemRetainer` 限制有序逻辑单元，只保留前 `maxItems` 个；调用方持续送入每个已观察单元，因此省略计数是精确的。`TextRetainer` 用同一个前缀/后缀累加器限制字节：`head` 只留前缀，`tail` 只留后缀，`headTail` 两者都留；累加器在内存中至多持有 `headBytes + tailBytes + 一个分片`，因此大流不会无界累积。
+`ItemRetainer` 限制有序邏輯單元，只保留前 `maxItems` 個；調用方持續送入每個已觀察單元，因此省略計數是精確的。`TextRetainer` 用同一個前綴/后綴累加器限制字節：`head` 只留前綴，`tail` 只留后綴，`headTail` 兩者都留；累加器在內存中至多持有 `headBytes + tailBytes + 一個分片`，因此大流不會無界累積。
 
-### 预算事实如何保持诚实
+### 預算事實如何保持誠實
 
-`push()` 返回 `kept`（该单元或分片是否完整保留）与 `truncated`（是否已丢弃任何内容）。`finish()` 按实际返回的字节报告省略，因此丢弃部分码点字节的 UTF-8 边界修剪也会被计入——仅按预算推导的通知会高估保留文本。`describeOmitted` 只为 `exact` 打印计数；`unknown` 不打印计数，因为调用方没有提供。
+`push()` 返回 `kept`（該單元或分片是否完整保留）與 `truncated`（是否已丟棄任何內容）。`finish()` 按實際返回的字節報告省略，因此丟棄部分碼點字節的 UTF-8 邊界修剪也會被計入——僅按預算推導的通知會高估保留文本。`describeOmitted` 只為 `exact` 打印計數；`unknown` 不打印計數，因為調用方沒有提供。
 
 ### read 渲染的排除
 
-`read` 的 `offset`/`limit` 分页是行窗口渲染器，对所选窗口有自己的字节上限；单个 `Omitted` 值无法表示该窗口两侧，因此它不属于本库。
+`read` 的 `offset`/`limit` 分頁是行窗口渲染器，對所選窗口有自己的字節上限；單個 `Omitted` 值無法表示該窗口兩側，因此它不屬于本庫。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当你需要消费方或库背后的边界决策时，阅读以下页面。
+當你需要消費方或庫背后的邊界決策時，閱讀以下頁面。
 
-- [spill 策略](../../spill/spill-policy/README.zh.md)——组合 `TextRetainer`，围绕 spill 文件通知构建有界预览。
-- [spill 子系统](../../../docs/subsystems/spill.zh.md)——本库预览机制所服务的 spill 词汇。
-- [文件搜索工具](../../fs/tool-fs-search/README.zh.md)——为 spill 收集完整结果的 `ItemRetainer` 消费方。
+- [spill 策略](../../spill/spill-policy/README.zh.md)——組合 `TextRetainer`，圍繞 spill 文件通知構建有界預覽。
+- [spill 子系統](../../../docs/subsystems/spill.zh.md)——本庫預覽機制所服務的 spill 詞匯。
+- [文件搜索工具](../../fs/tool-fs-search/README.zh.md)——為 spill 收集完整結果的 `ItemRetainer` 消費方。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-通过渲染保留内容与省略元数据的保留消费方间接影响模型。
+通過渲染保留內容與省略元數據的保留消費方間接影響模型。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-不会直接导致失效；请求前缀的任何变更由保留消费方负责。
+不會直接導致失效；請求前綴的任何變更由保留消費方負責。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明 retainer 刻意不覆盖什么。它们是当前包约束，不是任务积压。
+這些限制說明 retainer 刻意不覆蓋什么。它們是當前包約束，不是任務積壓。
 
-- **项保留只支持 `head`**——tail、head/tail、分页、分组与提供方完整性语义仍归工具所有。
-- **文本保留面向字节**——`read` 分页等行窗口与字符窗口需要单独的渲染器；切割可能丢弃部分 UTF-8 边界字节，以保持返回文本有效。
+- **項保留只支持 `head`**——tail、head/tail、分頁、分組與提供方完整性語義仍歸工具所有。
+- **文本保留面向字節**——`read` 分頁等行窗口與字符窗口需要單獨的渲染器；切割可能丟棄部分 UTF-8 邊界字節，以保持返回文本有效。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

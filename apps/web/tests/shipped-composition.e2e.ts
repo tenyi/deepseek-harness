@@ -1,4 +1,4 @@
-// Boots the shipped Web composition over the built dist this lane already uses
+﻿// Boots the shipped Web composition over the built dist this lane already uses
 // and asserts what that composition produces: the model-visible tool catalog
 // and file-reference guidance plus its HTTP, retry, sandbox, and approval defaults.
 // No browser and no model call — these are composition facts, and the browser

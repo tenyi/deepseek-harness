@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto'
+﻿import { createHash } from 'node:crypto'
 import { chmod, mkdir, readdir, readFile, stat, unlink, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'

@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 // Branch coverage for the mdast renderer that real parses cannot reach: the
 // grammar only emits references whose definitions exist, always stamps
 // positions and align arrays, and never emits bare list items — but the

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Trigger candidate menu: renders the InputTriggerService menu store into the
  * conversation.input.overlay anchor. Closed state renders null (the overlay
  * slot stays mounted); groups render in roster order under localized title

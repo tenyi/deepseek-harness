@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Navigation parameters, typed by what is being opened.
  *
  * Two declaration-merged maps. `SidebarRightResourceParamsMap` is keyed by

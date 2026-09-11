@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Menu reduction pure core. One group per source;
  * generation-gated settlement; empty ready groups auto-close. Zero React /
  * DOM / cordis. Stale or no-op events return the same state reference so

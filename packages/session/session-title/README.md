@@ -1,4 +1,4 @@
----
+﻿---
 description: "Log-backed session titles for users and maintainers choosing a title source, configuring the service, or debugging title state."
 kind: "package-reference"
 ---

@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { deepSeekImageTokens } from '../src/image-tokens.ts'
 
 describe('DeepSeek image tokens', () => {

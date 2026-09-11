@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Caller identity, workspace authorization, and visible lineage projection.
  *
  * @module @deepseek-ai/dsh-tool-session-query/workspace-access

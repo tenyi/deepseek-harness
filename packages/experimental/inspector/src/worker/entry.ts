@@ -1,4 +1,4 @@
-/** Node Worker bootstrap for the experimental Inspector. */
+﻿/** Node Worker bootstrap for the experimental Inspector. */
 
 import { MessagePort, parentPort, workerData } from 'node:worker_threads'
 import type { InspectorWorkerBoot, InspectorWorkerControl } from '../shared/bridge/messages/control.ts'

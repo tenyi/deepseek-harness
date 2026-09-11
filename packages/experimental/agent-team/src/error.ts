@@ -1,4 +1,4 @@
-/** Typed Agent Teams failures. */
+﻿/** Typed Agent Teams failures. */
 
 import { inspect } from 'node:util'
 import { HarnessError } from '@deepseek-ai/dsh-llm'

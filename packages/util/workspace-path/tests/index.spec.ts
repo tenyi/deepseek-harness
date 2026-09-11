@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import {
   abbreviateHomePath, fileAddressFor, isAbsoluteWorkspacePath, parseFileAddress, pathPartsOf, relativizeToCwd,
   resolveWorkspacePath, workspaceTitleOf,

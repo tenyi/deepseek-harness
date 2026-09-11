@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Models settings page store: one snapshot joining the configurable-provider
  * directory (`llm/listProviders` joined with `llm/listConfigurableProviders`),
  * the settings namespaces (shared settings mirror),

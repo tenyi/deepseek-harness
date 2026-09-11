@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @vitest-environment jsdom
  *
  * Plugin composition account: the dispatch family reaches the runner with its

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Configurable Host plugins contributed to the shared Plugins section.
  *
  * The tab enumerates settings namespaces but never interprets one — a card

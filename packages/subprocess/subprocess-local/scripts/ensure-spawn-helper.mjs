@@ -1,4 +1,4 @@
-/** Restore the executable bit stripped from node-pty's prebuilt helper. */
+﻿/** Restore the executable bit stripped from node-pty's prebuilt helper. */
 
 import { chmodSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'

@@ -1,4 +1,4 @@
-/* jscpd:ignore-start -- deliberate mirror of tool-bash-persistent (persistent-pty note 2026-08-11-pwsh-persistent-pty):
+﻿/* jscpd:ignore-start -- deliberate mirror of tool-bash-persistent (persistent-pty note 2026-08-11-pwsh-persistent-pty):
    the PowerShell counterpart shares the session registry, polling loop, and reset contract by design. */
 /**
  * Model-facing persistent `pwsh` tool over the owner-scoped PTY seam.

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The tree's asynchronous half: listing directories into the store.
  *
  * The component never awaits anything. It calls `start` / `load` / `toggle`, and

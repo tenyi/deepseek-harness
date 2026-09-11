@@ -1,4 +1,4 @@
-/** Startup controls for shell documents; application documents receive only the carrier marker. */
+﻿/** Startup controls for shell documents; application documents receive only the carrier marker. */
 
 import { contextBridge, ipcRenderer } from 'electron'
 import { DESKTOP_IPC, type DshDesktopStartupApi } from './ipc.ts'

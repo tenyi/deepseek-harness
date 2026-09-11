@@ -1,4 +1,4 @@
-/** Hold work before or inside its callback while the parent terminates this environment. */
+﻿/** Hold work before or inside its callback while the parent terminates this environment. */
 import assert from 'node:assert/strict';
 import { createHook } from 'node:async_hooks';
 import { parentPort, workerData } from 'node:worker_threads';

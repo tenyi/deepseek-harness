@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Native backend of the directory-picker seam: registers `ctx.directoryPicker`
  * with the `native` capability, opening one native OS chooser on the host
  * display per pick (macOS `osascript`, Linux Zenity with a KDialog fallback;

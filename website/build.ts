@@ -1,4 +1,4 @@
-/** Production documentation-site build with project-owned output preparation. */
+﻿/** Production documentation-site build with project-owned output preparation. */
 
 import { lstatSync, realpathSync, rmSync, unlinkSync } from 'node:fs'
 import { dirname, isAbsolute, relative, resolve, sep } from 'node:path'

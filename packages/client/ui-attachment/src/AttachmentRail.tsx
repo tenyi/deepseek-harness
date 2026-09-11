@@ -1,4 +1,4 @@
-/** Draft-attachment rail: scrollbar-less horizontal overflow paged by edge arrows. */
+﻿/** Draft-attachment rail: scrollbar-less horizontal overflow paged by edge arrows. */
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'

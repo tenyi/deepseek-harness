@@ -1,4 +1,4 @@
-# Test-only agent and persistence patch over the shipped base + headless
+﻿# Test-only agent and persistence patch over the shipped base + headless
 # profile. The shared driver owns the turn, so the product runner stays off.
 - id: headless-startup
   disabled: true

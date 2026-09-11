@@ -1,5 +1,5 @@
----
-description: "Web GUI 的外壳布局：三栏 AppFrame（右栏作为贴边面板的轨道）、面板几何服务与主题呈现；供窗口外壳的使用者与维护者阅读。"
+﻿---
+description: "Web GUI 的外殼布局：三欄 AppFrame（右欄作為貼邊面板的軌道）、面板幾何服務與主題呈現；供窗口外殼的使用者與維護者閱讀。"
 kind: "package-reference"
 ---
 
@@ -9,88 +9,88 @@ kind: "package-reference"
 
 ## 概述
 
-本包提供 Web GUI 的三栏 AppFrame、左右栏宽度与 `ctx.layout` 呈现控制。右栏先让步以保护中栏空间，全屏由占用方呈现，框架保留宽屏底层轨道。主题呈现器负责配色、别名 token、正文字号与 document 元数据；布局状态在刷新后重置。
+本包提供 Web GUI 的三欄 AppFrame、左右欄寬度與 `ctx.layout` 呈現控制。右欄先讓步以保護中欄空間，全屏由占用方呈現，框架保留寬屏底層軌道。主題呈現器負責配色、別名 token、正文字號與 document 元數據；布局狀態在刷新后重置。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-本插件在 root slot 中组合侧边栏、主内容和右栏。侧边栏宽度为 264～420px，默认为 280px，收起后保留 56px 控制栏；窗口宽度低于 1024px 时自动收起，打开右侧面板也会收起手动展开的侧边栏。右侧面板首次打开时使用视口宽度的 45%，之后保留用户的像素宽度偏好，上限为 70%。为给中栏保留 400px，框架先将右侧面板缩减至 300px，再报告空间不足，使占用方将其关闭，最后才进一步压缩中栏。拖动没有过渡延迟；右侧手柄在关闭或全屏时不显示。
+本插件在 root slot 中組合側邊欄、主內容和右欄。側邊欄寬度為 264～420px，默認為 280px，收起后保留 56px 控制欄；窗口寬度低于 1024px 時自動收起，打開右側面板也會收起手動展開的側邊欄。右側面板首次打開時使用視口寬度的 45%，之后保留用戶的像素寬度偏好，上限為 70%。為給中欄保留 400px，框架先將右側面板縮減至 300px，再報告空間不足，使占用方將其關閉，最后才進一步壓縮中欄。拖動沒有過渡延遲；右側手柄在關閉或全屏時不顯示。
 
-全局面板占据 root 作用域的 `main` keyed slot；`conversation` 是为会话界面保留的 key。`ctx.layout.selectPanel(id)` 选中已注册面板，`null` 则选中会话界面，但不改变当前会话。默认组合不注册任何全局面板。
+全局面板占據 root 作用域的 `main` keyed slot；`conversation` 是為會話界面保留的 key。`ctx.layout.selectPanel(id)` 選中已注冊面板，`null` 則選中會話界面，但不改變當前會話。默認組合不注冊任何全局面板。
 
-### 主题呈现
+### 主題呈現
 
-呈现器消费解析后的主题快照，并投影到 document：`html { color-scheme }` 驱动原生 UA 控件，依据当前配色方案设置 `body[data-ds-dark-theme]`，把主题的别名 token 与 `--dsh-content-font-size` 设为 body 上的内联变量，并持有一个 `<meta name="theme-color">`，其内容随计算后的 body 背景色更新。对呈现器执行 dispose（资源释放）时，它会连同其他全局写入一起移除自己的元数据节点。
+呈現器消費解析后的主題快照，并投影到 document：`html { color-scheme }` 驅動原生 UA 控件，依據當前配色方案設置 `body[data-ds-dark-theme]`，把主題的別名 token 與 `--dsh-content-font-size` 設為 body 上的內聯變量，并持有一個 `<meta name="theme-color">`，其內容隨計算后的 body 背景色更新。對呈現器執行 dispose（資源釋放）時，它會連同其他全局寫入一起移除自己的元數據節點。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-`selectPanel(id)` 在改变选中态前检查实时 `main` 注册表；缺失的 key 会抛错并保留当前面板。`beginNavigation()` 为异步 UI 导航返回 abort signal。后续调用、有效面板选择（包括重复选择）或布局释放会中止该 signal，但不取消底层会话创建。消费方在提交导航或搬移草稿前检查 signal。
+`selectPanel(id)` 在改變選中態前檢查實時 `main` 注冊表；缺失的 key 會拋錯并保留當前面板。`beginNavigation()` 為異步 UI 導航返回 abort signal。后續調用、有效面板選擇（包括重復選擇）或布局釋放會中止該 signal，但不取消底層會話創建。消費方在提交導航或搬移草稿前檢查 signal。
 
-一次注册声明四个子 slot，并绑定 `ctx.layout` 的 `selectPanel`、`toggleSidebar`、`openRightbar(track, fullscreen)` 与 `closeRightbar`。同一个 root 存储把 `panelInfo` 选中态与 `layoutInfo` 测量、宽度偏好、呈现报告分开。`usePanelInfo` 订阅引用稳定的选中态对象，AppFrame 订阅引用稳定的布局对象。`rightbar` owner 提供实际 `width`、`viewportWidth`，以及表示能否以普通模式呈现的 `canShow`；占用方在空间不足时执行确定性的收起，变宽不自行重新展开。全屏隐藏宽度手柄，但不自行释放占用方要求保留的轨道。AppFrame 保持各列容器挂载。右栏的 root 控制器仅在选中会话界面时，经 `SessionProvider` 渲染 `rightbar.session`；内容卸载时的报告释放轨道。独立的标题组件仅在会话界面可见时使用所选会话标题，以构建配置的产品标题或本地化 `common.brand.localBuild` 为回退值；语言变化会更新该回退值。主题呈现器是第二个 effect：从解析后的快照做纯 DOM 写入——初始状态经 getter 读取一次，此后仅事件驱动，不经过 React。它先应用调色板、字号与 token 变量，再把渲染出的背景测量为唯一的颜色依据。全屏呈现禁用网格和手柄过渡；占用方完全覆盖框架后才报告新的列布局。退出全屏时，框架先保持无过渡并安装目标布局：关闭移除右轨道，恢复保留右轨道。后续普通几何操作恢复正常过渡。
+一次注冊聲明四個子 slot，并綁定 `ctx.layout` 的 `selectPanel`、`toggleSidebar`、`openRightbar(track, fullscreen)` 與 `closeRightbar`。同一個 root 存儲把 `panelInfo` 選中態與 `layoutInfo` 測量、寬度偏好、呈現報告分開。`usePanelInfo` 訂閱引用穩定的選中態對象，AppFrame 訂閱引用穩定的布局對象。`rightbar` owner 提供實際 `width`、`viewportWidth`，以及表示能否以普通模式呈現的 `canShow`；占用方在空間不足時執行確定性的收起，變寬不自行重新展開。全屏隱藏寬度手柄，但不自行釋放占用方要求保留的軌道。AppFrame 保持各列容器掛載。右欄的 root 控制器僅在選中會話界面時，經 `SessionProvider` 渲染 `rightbar.session`；內容卸載時的報告釋放軌道。獨立的標題組件僅在會話界面可見時使用所選會話標題，以構建配置的產品標題或本地化 `common.brand.localBuild` 為回退值；語言變化會更新該回退值。主題呈現器是第二個 effect：從解析后的快照做純 DOM 寫入——初始狀態經 getter 讀取一次，此后僅事件驅動，不經過 React。它先應用調色板、字號與 token 變量，再把渲染出的背景測量為唯一的顏色依據。全屏呈現禁用網格和手柄過渡；占用方完全覆蓋框架后才報告新的列布局。退出全屏時，框架先保持無過渡并安裝目標布局：關閉移除右軌道，恢復保留右軌道。后續普通幾何操作恢復正常過渡。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当布局面不够用时阅读以下页面。它们从框架进入它所渲染的栏与它所呈现的主题。
+當布局面不夠用時閱讀以下頁面。它們從框架進入它所渲染的欄與它所呈現的主題。
 
-- [ui-sidebar](../ui-sidebar/README.zh.md)——占据 `sidebar` 栏及其座位。
-- [ui-conversation](../ui-conversation/README.zh.md)——占据 `main` 中的 `conversation` key。
-- [ui-sidebar-right](../ui-sidebar-right/README.zh.md)——以每会话一个停靠面占据 `rightbar` 栏。
-- [ui-theme](../ui-theme/README.zh.md)——呈现器消费其解析快照的主题 seam。
-- [Web 客户端架构](../../../.agents/notes/implemented/architecture/2026-07-19-gui-web-client-architecture.zh.md)——浏览器插件行如何加载并注册槽位。
+- [ui-sidebar](../ui-sidebar/README.zh.md)——占據 `sidebar` 欄及其座位。
+- [ui-conversation](../ui-conversation/README.zh.md)——占據 `main` 中的 `conversation` key。
+- [ui-sidebar-right](../ui-sidebar-right/README.zh.md)——以每會話一個停靠面占據 `rightbar` 欄。
+- [ui-theme](../ui-theme/README.zh.md)——呈現器消費其解析快照的主題 seam。
+- [Web 客戶端架構](../../../.agents/notes/implemented/architecture/2026-07-19-gui-web-client-architecture.zh.md)——瀏覽器插件行如何加載并注冊槽位。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-无。布局外壳管理浏览器查看状态；这里没有任何内容进入模型请求。
+無。布局外殼管理瀏覽器查看狀態；這里沒有任何內容進入模型請求。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-无；该包既不组装也不发送提供方请求。
+無；該包既不組裝也不發送提供方請求。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制界定了当前布局行为。它们是当前包约束，不是通用窗口管理器对比或任务积压。
+這些限制界定了當前布局行為。它們是當前包約束，不是通用窗口管理器對比或任務積壓。
 
-- **面板几何是瞬时状态**——重新加载会恢复侧栏默认值并隐藏右侧面板；拖动设置的宽度是整个框架共用的一份偏好，而非每个会话各自的属性。
-- **极窄窗口**——右侧面板关闭后，中栏仍可能小于 400px；左侧 56px 控制栏仍会保留。
-- **轨道与面板沿同一条曲线运动**——框架的轨道过渡和占用方的滑入读取同一组时长与缓动变量；占用方若自用一套，挤压时面板边缘就会与会话界面的边缘脱开。
-- **挤压重排期间无滚动锚定**——布局变化可能移动读者的视口。
+- **面板幾何是瞬時狀態**——重新加載會恢復側欄默認值并隱藏右側面板；拖動設置的寬度是整個框架共用的一份偏好，而非每個會話各自的屬性。
+- **極窄窗口**——右側面板關閉后，中欄仍可能小于 400px；左側 56px 控制欄仍會保留。
+- **軌道與面板沿同一條曲線運動**——框架的軌道過渡和占用方的滑入讀取同一組時長與緩動變量；占用方若自用一套，擠壓時面板邊緣就會與會話界面的邊緣脫開。
+- **擠壓重排期間無滾動錨定**——布局變化可能移動讀者的視口。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。外壳中 `ctx.layout` 背后的浏览状态存储不发出 Cordis 事件；clamp 与轨道的时序由本包各栏与服务规格直接断言。
+**運行時不變式：** 不發布伴生入口。外殼中 `ctx.layout` 背后的瀏覽狀態存儲不發出 Cordis 事件；clamp 與軌道的時序由本包各欄與服務規格直接斷言。

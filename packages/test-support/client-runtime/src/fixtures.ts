@@ -1,4 +1,4 @@
-/** Controller and UI-domain fixture shapes for the client test runtime. */
+﻿/** Controller and UI-domain fixture shapes for the client test runtime. */
 import type {
   ISession, SessionEventLikeEntry, SessionSnapshot, SessionSummary,
 } from '@deepseek-ai/dsh-api-session-controller/client'

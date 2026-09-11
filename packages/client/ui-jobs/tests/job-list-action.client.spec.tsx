@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
@@ -72,10 +72,10 @@ describe('JobListAction visibility', () => {
 
   it('counts only live jobs, and falls back to the total when none are live', () => {
     const { rerender } = render(<JobListAction {...props([job(), job({ id: 'bash-2' as JobView['id'] })])} />)
-    expect(screen.getByRole('button', { name: '2 个后台任务运行中' })).toBeDefined()
+    expect(screen.getByRole('button', { name: '2 個后臺任務運行中' })).toBeDefined()
 
     rerender(<JobListAction {...props([job({ status: 'completed', finishedAt: START + 3_000 })])} />)
-    expect(screen.getByRole('button', { name: '1 个后台任务' })).toBeDefined()
+    expect(screen.getByRole('button', { name: '1 個后臺任務' })).toBeDefined()
   })
 
   it('closes and unmounts when the last job disappears while the list is open', () => {
@@ -98,9 +98,9 @@ describe('JobListAction rows', () => {
     ])} />)
     fireEvent.click(screen.getByRole('button'))
     expect(rowCells()).toEqual([
-      ['bash', 'earlier live', '运行中', '0秒'],
-      ['bash', 'later live', '运行中', '0秒'],
-      ['bash', 'new done', '已失败', '9秒'],
+      ['bash', 'earlier live', '運行中', '0秒'],
+      ['bash', 'later live', '運行中', '0秒'],
+      ['bash', 'new done', '已失敗', '9秒'],
       ['bash', 'old done', '已完成', '1秒'],
     ])
   })
@@ -132,7 +132,7 @@ describe('JobListAction rows', () => {
     ])} />)
     fireEvent.click(screen.getByRole('button'))
     const words = rowCells().map(cells => cells[2])
-    expect(new Set(words)).toEqual(new Set(['运行中', '正在停止', '已完成', '已取消', '已失败']))
+    expect(new Set(words)).toEqual(new Set(['運行中', '正在停止', '已完成', '已取消', '已失敗']))
   })
 })
 
@@ -160,7 +160,7 @@ describe('JobListAction duration', () => {
       job({ id: 'bash-3' as JobView['id'], label: 'skew', status: 'completed', startedAt: START + 5_000, finishedAt: START }),
     ])} />)
     fireEvent.click(screen.getByRole('button'))
-    expect(rowCells().map(cells => cells[3])).toEqual(['2小时3分', '2分5秒', '0秒'])
+    expect(rowCells().map(cells => cells[3])).toEqual(['2小時3分', '2分5秒', '0秒'])
   })
 
   it('runs no clock while the list is closed', () => {

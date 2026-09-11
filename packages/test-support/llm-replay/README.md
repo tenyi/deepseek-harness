@@ -1,4 +1,4 @@
----
+﻿---
 description: "Keyless LLM replay plugin for snapshot tests, for test authors booting the real agent against recorded model transcripts."
 kind: "package-reference"
 ---

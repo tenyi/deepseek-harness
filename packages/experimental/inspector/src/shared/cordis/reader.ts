@@ -1,4 +1,4 @@
-/** Environment-independent Cordis runtime tree reader. */
+﻿/** Environment-independent Cordis runtime tree reader. */
 
 import type { CordisRuntimeTree } from './model.ts'
 

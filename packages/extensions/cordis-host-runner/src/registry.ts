@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Process-local dynamic Plugin registry and its opaque identity mints.
  * @module @deepseek-ai/dsh-cordis-host-runner/registry
  */

@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { LlmError } from '@deepseek-ai/dsh-llm'
 import { DONE, parseSse } from '../src/sse.ts'
 

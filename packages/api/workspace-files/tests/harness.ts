@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared fixture: a real local backend over a temp workspace beside a sibling
  * directory outside it, and a sandbox policy whose only job is naming the root.
  *

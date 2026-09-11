@@ -1,4 +1,4 @@
----
+﻿---
 description: "Run your existing Claude Code hooks.json or settings hook config during agent runs — block prompts and tools, attach context, or force continuation — for users and maintainers of the bridge."
 kind: "package-reference"
 ---

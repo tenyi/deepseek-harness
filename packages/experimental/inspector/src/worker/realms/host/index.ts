@@ -1,4 +1,4 @@
-/** Host realm adapter backed by a connection-local Node inspector session. */
+﻿/** Host realm adapter backed by a connection-local Node inspector session. */
 
 import { randomUUID } from 'node:crypto'
 import { inspectorId } from '../../../shared/identity.ts'

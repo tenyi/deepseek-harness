@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Models settings and product-onboarding plugin, browser half. It registers
  * the Models page plus the ordered internal-testing and official-DeepSeek
  * onboarding dialogs, whose UI shares this package's modal wrapper. The Host

@@ -1,4 +1,4 @@
-/** Shared indeterminate loading feedback for document reads and rendering. */
+﻿/** Shared indeterminate loading feedback for document reads and rendering. */
 import type { ReactNode } from 'react'
 import clsx from 'clsx'
 import { IconLoadingOutline16 } from '@deepseek-ai/dsh-client-ui-primitives'

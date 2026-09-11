@@ -1,4 +1,4 @@
-/** Released preset references change after strict source admission without rewriting opaque ids. */
+﻿/** Released preset references change after strict source admission without rewriting opaque ids. */
 
 import { describe, expect, it } from 'vitest'
 import { SessionFormatError, SessionFormatEventCollector, SessionFormatUnsupportedMigrationError } from '@deepseek-ai/dsh-session-format'

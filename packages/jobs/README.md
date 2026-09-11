@@ -1,4 +1,4 @@
----
+﻿---
 description: "The jobs group map: background-job control — the registry contract, process-local storage, and the model-facing job tools — for users and maintainers navigating the group."
 kind: "package-group"
 ---

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Unit tests for model-facing guarded-mutation diagnostics: normalized unread
  * failures, the stale-version remedy, code preservation, and passthrough.
  */

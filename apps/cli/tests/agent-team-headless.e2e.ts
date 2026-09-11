@@ -1,4 +1,4 @@
-import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
+﻿import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
@@ -54,7 +54,7 @@ describe('dsh run with Agent Teams enabled', () => {
       ].join('\n'))
       const launch = resolveExampleLaunch({
         srcBin: dshBinScript,
-        configArgs: ['--profile', 'headless', '请明确使用 Agent Teams，把调研和实现拆给两个 teammate，等待完成后汇总。'],
+        configArgs: ['--profile', 'headless', '請明確使用 Agent Teams，把調研和實現拆給兩個 teammate，等待完成后匯總。'],
         tsconfigPath,
         env: {
           DSH_HOME: home,

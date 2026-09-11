@@ -1,4 +1,4 @@
-/* The card width leaves four categories on the first row and three on the
+﻿/* The card width leaves four categories on the first row and three on the
    second. The doubled selector overrides the Modal card geometry. */
 .dialog.dialog {
   gap: 38px;

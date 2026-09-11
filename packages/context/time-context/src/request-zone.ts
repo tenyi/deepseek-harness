@@ -1,4 +1,4 @@
-/** Browser-zone derivation and model-facing policy text for one open request turn. */
+﻿/** Browser-zone derivation and model-facing policy text for one open request turn. */
 
 import type { UserMessage } from '@deepseek-ai/dsh-llm'
 import { assertNever } from '@deepseek-ai/dsh-util-values'

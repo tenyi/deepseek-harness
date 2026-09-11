@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The paged read this type performs, bound to the Client Remote.
  *
  * Content is the consumer's business: the `file` resource carries metadata only,

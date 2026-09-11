@@ -1,4 +1,4 @@
----
+﻿---
 description: "The extensions group map: model-facing tools and dual-half runners for defining, running, and removing dynamic Cordis packages, for users and maintainers navigating the group."
 kind: "package-group"
 ---

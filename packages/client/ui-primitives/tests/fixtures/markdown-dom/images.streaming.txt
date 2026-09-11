@@ -1,4 +1,4 @@
-<div class="_markdown_404681">
+﻿<div class="_markdown_404681">
   <p>
     <img alt="https image" class="_image_404681" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://example.com/secure.png">
   <p>

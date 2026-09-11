@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Windows ACL write-restriction sandbox backend for the DeepSeek Harness
  * sandbox seam. Mirrors the mechanism of github.com/huoyaoyuan/
  * windows-acl-restrict-poc @ 10e4dfb (the fixed revision): a WRITE_RESTRICTED

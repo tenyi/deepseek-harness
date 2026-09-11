@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The `file` provider's frame stream: how the two address scopes resolve to a
  * Host call and a change-feed key, the opening stat, the write version that
  * carries no content, the disappearance that stats again, failures

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The launcher-to-app command line over a REAL Loader tree, mounted the way a
  * profile boot mounts it: Loader holds each row until its injections are
  * active, then resolves that row's config against its injection-ready context.

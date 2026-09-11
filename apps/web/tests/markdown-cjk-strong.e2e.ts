@@ -1,4 +1,4 @@
-import { fileURLToPath } from 'node:url'
+﻿import { fileURLToPath } from 'node:url'
 import type { Browser, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it, onTestFailed } from 'vitest'
@@ -23,14 +23,14 @@ const MODE = webSnapshotMode()
 const SEED_ID = 'markdown-cjk-strong-web-e2e'
 const DONE = 'CJK_STRONG_DONE'
 const CASES = [
-  ['**注意：**内容', '注意：', '注意：内容'],
-  ['**Notice:**内容', 'Notice:', 'Notice:内容'],
-  ['**事件中间件（waterfall）**实现', '事件中间件（waterfall）', '事件中间件（waterfall）实现'],
-  ['**事件中间件(waterfall)**实现', '事件中间件(waterfall)', '事件中间件(waterfall)实现'],
-  ['**句号。**后续', '句号。', '句号。后续'],
-  ['**Period.**后续', 'Period.', 'Period.后续'],
-  ['**提醒！**继续', '提醒！', '提醒！继续'],
-  ['**Warning!**继续', 'Warning!', 'Warning!继续'],
+  ['**注意：**內容', '注意：', '注意：內容'],
+  ['**Notice:**內容', 'Notice:', 'Notice:內容'],
+  ['**事件中間件（waterfall）**實現', '事件中間件（waterfall）', '事件中間件（waterfall）實現'],
+  ['**事件中間件(waterfall)**實現', '事件中間件(waterfall)', '事件中間件(waterfall)實現'],
+  ['**句號。**后續', '句號。', '句號。后續'],
+  ['**Period.**后續', 'Period.', 'Period.后續'],
+  ['**提醒！**繼續', '提醒！', '提醒！繼續'],
+  ['**Warning!**繼續', 'Warning!', 'Warning!繼續'],
 ] as const
 
 /** Build one settled assistant reply covering CJK-adjacent strong punctuation boundaries. */

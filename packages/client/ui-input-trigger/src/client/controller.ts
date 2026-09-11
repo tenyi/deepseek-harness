@@ -1,4 +1,4 @@
-/**
+﻿/**
  * InputTriggerController: the per-session half of the trigger pipeline. Owns every
  * piece of mutable interaction state — the authoritative trigger hit (span
  * included; it outlives menu close for space adjudication), the menu store,

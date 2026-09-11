@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Private teardown ladder for the runtime subprocess: stdin EOF (cooperative
  * quiesce), then SIGTERM, then SIGKILL, resolving only after the process has
  * actually exited. The SDK client runs OUTSIDE any harness context, so it

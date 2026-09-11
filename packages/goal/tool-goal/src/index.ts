@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-facing `get_goal`, `create_goal`, and `update_goal` tools over the
  * persisted same-session goal domain.
  * @module @deepseek-ai/dsh-tool-goal

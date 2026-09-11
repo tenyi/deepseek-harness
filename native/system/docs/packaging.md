@@ -1,4 +1,4 @@
-# Packaging
+﻿# Packaging
 
 The family publishes one ESM entry package plus OS/CPU-selected optional platform packages. All share one version; platform packages publish before the entry.
 

@@ -1,4 +1,4 @@
-/** Session Remote owner: cold reads, explicit Agent commands, and live control state. */
+﻿/** Session Remote owner: cold reads, explicit Agent commands, and live control state. */
 
 import { hostname } from 'node:os'
 import { Context } from '@deepseek-ai/cordis'

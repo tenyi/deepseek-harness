@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Register a {@link DeepSeekAdapter} for the `deepseek-official` provider route on
  * `ctx.llm`, with connection facts resolved per request instead of frozen at
  * load: the plugin layers its `cordis.yml` entry config under the optional

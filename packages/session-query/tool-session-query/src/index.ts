@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-facing, workspace-authorized session-history search and read tools.
  *
  * @module @deepseek-ai/dsh-tool-session-query

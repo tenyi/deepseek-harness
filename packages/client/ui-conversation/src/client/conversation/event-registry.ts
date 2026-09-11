@@ -1,4 +1,4 @@
-import type { ConversationNodeDefinition } from '../contract/conversation.ts'
+﻿import type { ConversationNodeDefinition } from '../contract/conversation.ts'
 import { ConversationDefinitionRegistry } from './definition-registry.ts'
 
 /** Runtime registry of independently owned Conversation business Definitions. */

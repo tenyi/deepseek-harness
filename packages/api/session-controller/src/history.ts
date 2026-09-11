@@ -1,4 +1,4 @@
-/** Cold Session history pagination and live-event source. */
+﻿/** Cold Session history pagination and live-event source. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { Deque } from '@deepseek-ai/dsh-deque'

@@ -1,4 +1,4 @@
-/** Exact decoders for Host, Worker, and injected Client lifecycle values. */
+﻿/** Exact decoders for Host, Worker, and injected Client lifecycle values. */
 
 import type {
   InspectorClientBootstrap,

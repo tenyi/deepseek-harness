@@ -1,5 +1,5 @@
----
-description: "面向用户与维护者的共享模型标题生成策略说明，用于配置标题提供方或排查辅助 LLM 请求。"
+﻿---
+description: "面向用戶與維護者的共享模型標題生成策略說明，用于配置標題提供方或排查輔助 LLM 請求。"
 kind: "package-library"
 ---
 
@@ -9,123 +9,123 @@ kind: "package-library"
 
 ## 概述
 
-`dsh-session-title-llm` 使用一致的模型请求策略，根据选中的用户消息生成简洁的会话标题。调用方选择每次修订包含哪些消息，以及成对提供 `provider`／`model` 路由，还是使用当前会话记录的路由。必填上限约束封装后的输入、生成输出与端到端时长，调用方取消在整个流式处理期间持续生效。无效、空、迟到、包含工具调用或其他非纯文本的结果会在替换标题前被拒绝。
+`dsh-session-title-llm` 使用一致的模型請求策略，根據選中的用戶消息生成簡潔的會話標題。調用方選擇每次修訂包含哪些消息，以及成對提供 `provider`／`model` 路由，還是使用當前會話記錄的路由。必填上限約束封裝后的輸入、生成輸出與端到端時長，調用方取消在整個流式處理期間持續生效。無效、空、遲到、包含工具調用或其他非純文本的結果會在替換標題前被拒絕。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-作为部署方，通过[首消息](../session-title-first-prompt-llm/README.zh.md)或[全消息](../session-title-all-prompts-llm/README.zh.md)提供方插件配置此策略。作为提供方作者，通过共享辅助函数注册，而不是手写生成逻辑。
+作為部署方，通過[首消息](../session-title-first-prompt-llm/README.zh.md)或[全消息](../session-title-all-prompts-llm/README.zh.md)提供方插件配置此策略。作為提供方作者，通過共享輔助函數注冊，而不是手寫生成邏輯。
 
-### 注册提供方
+### 注冊提供方
 
-提供方插件调用 `registerSessionTitleLlmProvider(ctx, config, id, automatic, selectMessages)`；辅助函数验证共享配置、在 `ctx.sessionTitle` 上注册提供方，并让每次生成都经过共享策略。两个随附插件以各自的 `first-prompt` 与 `all-prompts` 节奏和消息选择器注册；服务上的第二次注册会立即抛出。
+提供方插件調用 `registerSessionTitleLlmProvider(ctx, config, id, automatic, selectMessages)`；輔助函數驗證共享配置、在 `ctx.sessionTitle` 上注冊提供方，并讓每次生成都經過共享策略。兩個隨附插件以各自的 `first-prompt` 與 `all-prompts` 節奏和消息選擇器注冊；服務上的第二次注冊會立即拋出。
 
-### 路由与失败约定
+### 路由與失敗約定
 
-`provider` 与 `model` 覆盖项都是可选的，但必须同时作为非空字符串提供。如果没有这一对取值，辅助函数使用当前会话已记录 `request/header` 中捕获的确切提供方／模型路由，因此在任何路由出现前显式刷新时必须提供覆盖项。辅助函数在记录或分发前，依据 `maxInputBytes` 检查最终 JSON 封装用户提示词的大小，而不是将其截断，并在消费流期间与完成后重新检查超时与调用方取消，因此即使拦截器或适配器忽略 abort，也不能接受迟到的成功结果。格式错误或空输出、工具调用与非 stop 结束原因都会拒绝；会话标题服务决定该拒绝属于自动警告还是显式调用方失败。
+`provider` 與 `model` 覆蓋項都是可選的，但必須同時作為非空字符串提供。如果沒有這一對取值，輔助函數使用當前會話已記錄 `request/header` 中捕獲的確切提供方／模型路由，因此在任何路由出現前顯式刷新時必須提供覆蓋項。輔助函數在記錄或分發前，依據 `maxInputBytes` 檢查最終 JSON 封裝用戶提示詞的大小，而不是將其截斷，并在消費流期間與完成后重新檢查超時與調用方取消，因此即使攔截器或適配器忽略 abort，也不能接受遲到的成功結果。格式錯誤或空輸出、工具調用與非 stop 結束原因都會拒絕；會話標題服務決定該拒絕屬于自動警告還是顯式調用方失敗。
 
 ### 配置
 
 <a id="configuration"></a>
 
-除成对的路由覆盖项外，每个字段都必填；库不提供默认值。
+除成對的路由覆蓋項外，每個字段都必填；庫不提供默認值。
 
-| 键 | 默认值 | 含义 |
+| 鍵 | 默認值 | 含義 |
 |---|---|---|
-| `targetWords` | 必填 | 非 CJK 标题的目标词数 |
-| `targetCjkCharacters` | 必填 | 中文、日文或韩文标题的目标字符数 |
-| `maxInputBytes` | 必填 | 最终 JSON 封装用户提示词的 UTF-8 字节上限 |
-| `maxOutputTokens` | 必填 | 辅助生成的 token 上限 |
-| `timeoutMs` | 必填 | 运行时定时器限制内的端到端时限 |
-| `provider`, `model` | 可选 | 显式路由；二者同时提供或同时省略 |
+| `targetWords` | 必填 | 非 CJK 標題的目標詞數 |
+| `targetCjkCharacters` | 必填 | 中文、日文或韓文標題的目標字符數 |
+| `maxInputBytes` | 必填 | 最終 JSON 封裝用戶提示詞的 UTF-8 字節上限 |
+| `maxOutputTokens` | 必填 | 輔助生成的 token 上限 |
+| `timeoutMs` | 必填 | 運行時定時器限制內的端到端時限 |
+| `provider`, `model` | 可選 | 顯式路由；二者同時提供或同時省略 |
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释生成路径；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋生成路徑；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-一份共享策略让提供方插件无法漂移：配置校验、路由解析、提示词封装、预算执行、取消与输出校验都在这里，只以提供方的节奏与消息选择器为参数。
+一份共享策略讓提供方插件無法漂移：配置校驗、路由解析、提示詞封裝、預算執行、取消與輸出校驗都在這里，只以提供方的節奏與消息選擇器為參數。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 配置 schema 与校验、提供方注册辅助、请求封装、分发与输出校验 |
+| [`src/index.ts`](src/index.ts) | 配置 schema 與校驗、提供方注冊輔助、請求封裝、分發與輸出校驗 |
 
-### 请求流程
+### 請求流程
 
-生成在注册时校验一次配置；每次修订把选中的消息封装为 JSON，依据 `maxInputBytes` 检查封装提示词的 UTF-8 字节数，解析路由（显式对或已记录 `request/header`），追加一条携带确切可分发请求的仅日志 `session/title-llm-request` 事件，然后在组合的超时与取消截止时间内通过 `ctx.llm` 流式生成。分发的封套携带 `purpose: 'session-title'`，且有意不包含 agent loop 的进程本地请求身份；DeepSeek 适配器根据该用途禁用思考，使少量输出预算全部用于可见标题文本，其他适配器负责自身用途专用行为。输出只组装为文本块；工具调用、格式错误或空输出与非 stop 结束原因都会拒绝，后续模型失败会保留请求记录。
+生成在注冊時校驗一次配置；每次修訂把選中的消息封裝為 JSON，依據 `maxInputBytes` 檢查封裝提示詞的 UTF-8 字節數，解析路由（顯式對或已記錄 `request/header`），追加一條攜帶確切可分發請求的僅日志 `session/title-llm-request` 事件，然后在組合的超時與取消截止時間內通過 `ctx.llm` 流式生成。分發的封套攜帶 `purpose: 'session-title'`，且有意不包含 agent loop 的進程本地請求身份；DeepSeek 適配器根據該用途禁用思考，使少量輸出預算全部用于可見標題文本，其他適配器負責自身用途專用行為。輸出只組裝為文本塊；工具調用、格式錯誤或空輸出與非 stop 結束原因都會拒絕，后續模型失敗會保留請求記錄。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当生成策略不够用时阅读以下页面。它们从它所插入的服务逐步进入消费它的提供方插件。
+當生成策略不夠用時閱讀以下頁面。它們從它所插入的服務逐步進入消費它的提供方插件。
 
-- [会话标题服务](../session-title/README.zh.md)——标题服务、回退行为与提供方注册约定。
-- [会话标题子系统](../../../docs/subsystems/session-title.zh.md)——持久标题状态与辅助请求记录。
-- [首消息标题提供方](../session-title-first-prompt-llm/README.zh.md)——根据第一条符合条件的用户消息生成标题。
-- [全消息标题提供方](../session-title-all-prompts-llm/README.zh.md)——根据所有符合条件的用户消息生成标题。
-- [会话包映射](../README.zh.md)——相邻的持久化、投影、标题与遥测包。
+- [會話標題服務](../session-title/README.zh.md)——標題服務、回退行為與提供方注冊約定。
+- [會話標題子系統](../../../docs/subsystems/session-title.zh.md)——持久標題狀態與輔助請求記錄。
+- [首消息標題提供方](../session-title-first-prompt-llm/README.zh.md)——根據第一條符合條件的用戶消息生成標題。
+- [全消息標題提供方](../session-title-all-prompts-llm/README.zh.md)——根據所有符合條件的用戶消息生成標題。
+- [會話包映射](../README.zh.md)——相鄰的持久化、投影、標題與遙測包。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-### 辅助标题请求
+### 輔助標題請求
 
 #### 模型看到什么
 
-标题模型会收到固定系统指令，要求以输入语言返回一个简洁且无装饰的标题；该指令包含所配置的词数与 CJK 字符数目标。它唯一的用户消息包含一个 JSON 数组，其中是精确选中的用户消息及其 seq。
+標題模型會收到固定系統指令，要求以輸入語言返回一個簡潔且無裝飾的標題；該指令包含所配置的詞數與 CJK 字符數目標。它唯一的用戶消息包含一個 JSON 數組，其中是精確選中的用戶消息及其 seq。
 
-#### Token 影响
+#### Token 影響
 
-辅助请求根据所选输入大小与 `maxOutputTokens` 消耗 token。它与主 agent 请求相互独立，不会向 agent 历史增加标题文本或封装内容。DeepSeek 标题调用会关闭思考；主对话保留自身配置的思考模式。
+輔助請求根據所選輸入大小與 `maxOutputTokens` 消耗 token。它與主 agent 請求相互獨立，不會向 agent 歷史增加標題文本或封裝內容。DeepSeek 標題調用會關閉思考；主對話保留自身配置的思考模式。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-不会使主请求的 KV Cache 失效。辅助缓存复用由提供方决定；固定指令可复用，而 JSON 消息数组会随每次修订变化。
+不會使主請求的 KV Cache 失效。輔助緩存復用由提供方決定；固定指令可復用，而 JSON 消息數組會隨每次修訂變化。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制定义被接受的生成形态。它们是当前包约束。
+這些限制定義被接受的生成形態。它們是當前包約束。
 
-- **仅文本输出**——辅助函数只接受文本输出并拒绝工具调用；不公开结构化输出适配器或提供方专用提示词变体。
-- **整体提示词字节上限**——它对整个封装用户提示词强制执行字节上限，而不是剪裁单条消息或应用保留策略。
+- **僅文本輸出**——輔助函數只接受文本輸出并拒絕工具調用；不公開結構化輸出適配器或提供方專用提示詞變體。
+- **整體提示詞字節上限**——它對整個封裝用戶提示詞強制執行字節上限，而不是剪裁單條消息或應用保留策略。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>
 
-**运行时不变式：** 不发布伴生入口。这个无状态 helper 会在 dispatch 前校验并冻结每个辅助请求；deadline、stream、message seq、provider 与 model 由同步检查和测试覆盖。
+**運行時不變式：** 不發布伴生入口。這個無狀態 helper 會在 dispatch 前校驗并凍結每個輔助請求；deadline、stream、message seq、provider 與 model 由同步檢查和測試覆蓋。

@@ -1,4 +1,4 @@
-// Web e2e scenario: a hand-declared model's `reasoningEfforts` reaches the
+﻿// Web e2e scenario: a hand-declared model's `reasoningEfforts` reaches the
 // composer's effort pane — the levels a settings profile declares are exactly
 // what the picker offers, and picking one records it with the Agent default.
 // Zero model calls: declaring, describing, and switching are settings/llm
@@ -62,10 +62,10 @@ describe.skipIf(MODE === 'record')('web e2e: declared reasoning efforts reach th
 
   it('offers exactly the declared levels and records the picked one', async () => {
     onTestFailed(() => saveFailureShot(page, 'web-e2e-declared-reasoning'))
-    const trigger = page.getByRole('button', { name: /^选择模型/ })
+    const trigger = page.getByRole('button', { name: /^選擇模型/ })
     await trigger.waitFor({ timeout: 15_000 })
     await trigger.click()
-    await page.getByRole('menuitem', { name: /推理等级/ }).click()
+    await page.getByRole('menuitem', { name: /推理等級/ }).click()
 
     // Declared levels, nothing else: the provider-default entry (the route
     // configures no `reasoning`), then Off/High/Max — minimal, low, medium,
@@ -84,7 +84,7 @@ describe.skipIf(MODE === 'record')('web e2e: declared reasoning efforts reach th
       { timeout: 10_000 },
     ).toContain('reasoningEffort: high')
     await expect.poll(() => trigger.getAttribute('aria-label'), { timeout: 10_000 })
-      .toBe('选择模型，当前 Acme Think，推理等级 High')
+      .toBe('選擇模型，當前 Acme Think，推理等級 High')
     expect(tripwire.pageErrors).toEqual([])
   }, 60_000)
 

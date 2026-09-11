@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest'
+﻿import { describe, expect, it, vi } from 'vitest'
 import { userAgent } from '@deepseek-ai/dsh-llm'
 import { DeepSeekFileId } from '../src/file-id.ts'
 import {

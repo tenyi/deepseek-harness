@@ -1,4 +1,4 @@
-/**
+﻿/**
  * SessionProjectionRegistry unit drive: eager apply on committed events with
  * lazy cell build (registration after events, session after registration),
  * the Object.is no-change gates (same state or raw view reference ⇒ zero

@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { describe, expect, it } from 'vitest'
 import { stubSettingsScope } from '@deepseek-ai/dsh-client-test-runtime'
 import type { ChatSettings } from '../src/chat-settings.ts'

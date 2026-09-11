@@ -1,4 +1,4 @@
-import type { NotarizeOptions } from '@electron/notarize'
+﻿import type { NotarizeOptions } from '@electron/notarize'
 import type { MacOSSigningEnvironment } from './desktop-release-environment.mjs'
 
 /** Completed electron-builder artifact needed for disk-image notarization. */

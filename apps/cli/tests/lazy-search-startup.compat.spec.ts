@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Node 22 startup-output smoke for the shipped Web CLI composition.
  *
  * Only the dedicated Node compatibility gate opts this test in after building

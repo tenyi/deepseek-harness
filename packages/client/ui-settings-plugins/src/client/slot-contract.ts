@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The `settings.plugin.item` slot type — one plugin's card inside the
  * configurable-plugins tab, keyed by the settings namespace the card edits.
  * Options: `key` (the namespace). A card draws its own internals; the tab only

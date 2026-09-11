@@ -1,4 +1,4 @@
-/** Test-owned Session Controller faces over declarative fixtures. */
+﻿/** Test-owned Session Controller faces over declarative fixtures. */
 import type { Context } from '@deepseek-ai/cordis'
 import type { AttachmentIdType } from '@deepseek-ai/dsh-attachment'
 import {

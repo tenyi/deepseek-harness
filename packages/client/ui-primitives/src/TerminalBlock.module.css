@@ -1,4 +1,4 @@
-.block {
+﻿.block {
   --dsl-terminal-radius: 12px;
   --dsl-terminal-line-height: 22px;
   /* Rebindable by consumers (CodeBlock's --dsl-code-block-content-font

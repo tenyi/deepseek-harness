@@ -1,4 +1,4 @@
-/** Versioned source lifecycle, observation, and extension frames shared by both carriers. */
+﻿/** Versioned source lifecycle, observation, and extension frames shared by both carriers. */
 
 import { inspectorId, type InspectorSourceGeneration, type InspectorSourceId } from '../ids.ts'
 import { isJsonValue, isPlainObject, type InspectorJsonValue } from '../../json.ts'

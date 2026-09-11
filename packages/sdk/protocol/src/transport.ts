@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Newline-delimited JSON-RPC 2.0 over byte streams. Frames with `id` and
  * `method` are requests, `id` alone is a response, and `method` alone is a
  * notification. Malformed lines are ignored; handler failures become error frames.

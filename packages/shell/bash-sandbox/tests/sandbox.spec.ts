@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Consumer-side `SandboxBashExecutor` tests. A fake Cordis sandbox service makes wrapping,
  * policy hand-off, fail-closed propagation, classification, and fact stamping deterministic;
  * real-provider integration lives in `tests/landlock.e2e.ts`. A mode-0555 directory supplies

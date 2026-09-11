@@ -1,4 +1,4 @@
-/** Present status remains readable beside long workspace paths. */
+﻿/** Present status remains readable beside long workspace paths. */
 .summary { margin-left: 8px; display: flex; align-items: center; gap: 8px; min-width: 0; color: var(--dsw-alias-label-secondary); font-size: 12px; }
 .summary > :first-child { flex-shrink: 0; }
 .paths { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

@@ -1,4 +1,4 @@
----
+﻿---
 description: "Permission preset surfaces for the Web GUI: the General settings default row and the /permission picker for the current session; for users and maintainers of permission policy."
 kind: "package-reference"
 ---
@@ -29,7 +29,7 @@ Mount this plugin alongside the settings and commands packages; the permission r
 
 ### The picker
 
-A pick submits the `/permission <preset>` command line. The argument-bearing form (`/permission <preset>` typed directly) still switches directly; the decoration replaces only the bare invocation. The built-in labels are `Read Only`, `Workspace Write`, and `Full access` in English and `仅可查看`, `工作区内修改`, and `完全权限` in Chinese; `custom` is display state, never a target.
+A pick submits the `/permission <preset>` command line. The argument-bearing form (`/permission <preset>` typed directly) still switches directly; the decoration replaces only the bare invocation. The built-in labels are `Read Only`, `Workspace Write`, and `Full access` in English and `僅可查看`, `工作區內修改`, and `完全權限` in Chinese; `custom` is display state, never a target.
 
 ### The Settings row
 

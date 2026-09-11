@@ -1,4 +1,4 @@
-/** Web-localized copy for the four shipped presets and file copy for every other row. */
+﻿/** Web-localized copy for the four shipped presets and file copy for every other row. */
 
 import { describe, expect, it } from 'vitest'
 import { en, presetDisplayText, zh } from '../src/client/locales.ts'
@@ -21,7 +21,7 @@ describe('preset display copy', () => {
   })
 
   it('keeps file metadata for user and unknown system presets', () => {
-    const fileCopy = { name: '我的标准', description: '团队自己的 preset。' }
+    const fileCopy = { name: '我的標準', description: '團隊自己的 preset。' }
 
     expect(presetDisplayText({ id: 'standard', trust: 'user', ...fileCopy }, translate(en)))
       .toEqual(fileCopy)

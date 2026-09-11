@@ -1,4 +1,4 @@
-/** Client observation and Runtime endpoint over the Inspector Worker's ingest WebSocket. */
+﻿/** Client observation and Runtime endpoint over the Inspector Worker's ingest WebSocket. */
 
 import type { InspectorClientBootstrap } from '../../shared/bridge/messages/control.ts'
 import type {

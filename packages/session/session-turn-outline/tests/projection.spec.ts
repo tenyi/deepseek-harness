@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The `turnOutline` projection unit: mounting the plugin beside the
  * projection registry serves the whole-log turn outline (turn number,
  * `turn/start` seq, bounded prompt and final-response previews);

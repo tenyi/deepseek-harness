@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { describe, expect, it, vi } from 'vitest'
 import { AttachmentId } from '@deepseek-ai/dsh-attachment'
 import type { SessionFace } from '@deepseek-ai/dsh-api-session-controller/client'

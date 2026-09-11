@@ -1,4 +1,4 @@
-/** Internal React bindings for renderer hosts and standard-source scopes. */
+﻿/** Internal React bindings for renderer hosts and standard-source scopes. */
 import { createContext, useContext, type ReactNode } from 'react'
 import type {
   HostObservable,

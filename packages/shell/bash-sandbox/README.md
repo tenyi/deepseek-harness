@@ -1,4 +1,4 @@
----
+﻿---
 description: "The sandbox-consuming Bash executor for deployments and maintainers choosing, configuring, or debugging confined command execution with denial and escalation facts."
 kind: "package-reference"
 ---

@@ -1,5 +1,5 @@
----
-description: "DeepSeek Harness 包工作区：packages/ 下的 npm 包如何分组、每个组负责什么，以及约束它们的约定。"
+﻿---
+description: "DeepSeek Harness 包工作區：packages/ 下的 npm 包如何分組、每個組負責什么，以及約束它們的約定。"
 kind: "package-group"
 ---
 
@@ -9,106 +9,106 @@ kind: "package-group"
 
 ## 概述
 
-harness 由 `packages/` 下的 npm 包组装而成，按能力系列分组：会话与 agent loop（智能体循环）、面向模型的工具、shell 与文件系统执行、Web 访问、subagent 等等。把本页当作顶层地图使用：先找到拥有某能力的组，再打开其 README 查看包列表。每个包都以 `@deepseek-ai/dsh-*` 为作用域、只属于一个组；每个组的 README 都是该能力系列的权威包映射。
+harness 由 `packages/` 下的 npm 包組裝而成，按能力系列分組：會話與 agent loop（智能體循環）、面向模型的工具、shell 與文件系統執行、Web 訪問、subagent 等等。把本頁當作頂層地圖使用：先找到擁有某能力的組，再打開其 README 查看包列表。每個包都以 `@deepseek-ai/dsh-*` 為作用域、只屬于一個組；每個組的 README 都是該能力系列的權威包映射。
 
-## 目录
+## 目錄
 
-- [包分组](#package-groups)
-- [发布预期](#release-expectations)
-- [依赖](#dependencies)
-- [包 README 约定](#package-readme-contracts)
-- [开发备注](#dev-note)
+- [包分組](#package-groups)
+- [發布預期](#release-expectations)
+- [依賴](#dependencies)
+- [包 README 約定](#package-readme-contracts)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="package-groups"></a>
-## 包分组
+## 包分組
 
-每个包只属于一个组；新包加入现有组，新组则更新其自身 README 与本表。
+每個包只屬于一個組；新包加入現有組，新組則更新其自身 README 與本表。
 
-| 组 | 职责 |
+| 組 | 職責 |
 |---|---|
-| [`core/`](core/README.zh.md) | 产品 API 主干：会话、提示词、工具、agent 服务与具体循环 |
-| [`api/`](api/README.zh.md) | Remote BFF 装配与 Typert RPC 网关 |
-| [`typert/`](typert/README.zh.md) | 类型图生成、产物加载与运行时注册表 |
-| [`goal/`](goal/README.zh.md) | 同会话 goal 的持久化与生命周期 |
-| [`schedule/`](schedule/README.zh.md) | 仅限会话内的定时后续操作 |
-| [`feedback/`](feedback/README.zh.md) | 人类反馈的采集与命令 |
+| [`core/`](core/README.zh.md) | 產品 API 主干：會話、提示詞、工具、agent 服務與具體循環 |
+| [`api/`](api/README.zh.md) | Remote BFF 裝配與 Typert RPC 網關 |
+| [`typert/`](typert/README.zh.md) | 類型圖生成、產物加載與運行時注冊表 |
+| [`goal/`](goal/README.zh.md) | 同會話 goal 的持久化與生命周期 |
+| [`schedule/`](schedule/README.zh.md) | 僅限會話內的定時后續操作 |
+| [`feedback/`](feedback/README.zh.md) | 人類反饋的采集與命令 |
 | [`identity/`](identity/README.zh.md) | 共享匿名身份 |
-| [`llm/`](llm/README.zh.md) | LLM（大语言模型）能力系列：抽象服务 + 提供方适配器 |
-| [`e2b/`](e2b/README.zh.md) | E2B 远程运行时提供方 |
-| [`subprocess/`](subprocess/README.zh.md) | 子进程能力系列：Service Definition + 本地进程树提供方 |
-| [`shell/`](shell/README.zh.md) | Bash 能力系列：执行器 seam、本地实现、面向模型的工具 |
-| [`terminal/`](terminal/README.zh.md) | 持久 PTY 能力系列：限定所有者范围的会话、本地实现、面向模型的工具 |
-| [`code-runtime/`](code-runtime/README.zh.md) | 代码执行能力系列：Service Definition + worker 线程提供方 + PTC mode Consumer |
-| [`sandbox/`](sandbox/README.zh.md) | 进程限制 seam；bwrap、Landlock、Seatbelt 后端 |
-| [`fs/`](fs/README.zh.md) | 文件系统能力系列：seam、本地实现、面向模型的文件工具、发现工具 |
+| [`llm/`](llm/README.zh.md) | LLM（大語言模型）能力系列：抽象服務 + 提供方適配器 |
+| [`e2b/`](e2b/README.zh.md) | E2B 遠程運行時提供方 |
+| [`subprocess/`](subprocess/README.zh.md) | 子進程能力系列：Service Definition + 本地進程樹提供方 |
+| [`shell/`](shell/README.zh.md) | Bash 能力系列：執行器 seam、本地實現、面向模型的工具 |
+| [`terminal/`](terminal/README.zh.md) | 持久 PTY 能力系列：限定所有者范圍的會話、本地實現、面向模型的工具 |
+| [`code-runtime/`](code-runtime/README.zh.md) | 代碼執行能力系列：Service Definition + worker 線程提供方 + PTC mode Consumer |
+| [`sandbox/`](sandbox/README.zh.md) | 進程限制 seam；bwrap、Landlock、Seatbelt 后端 |
+| [`fs/`](fs/README.zh.md) | 文件系統能力系列：seam、本地實現、面向模型的文件工具、發現工具 |
 | [`lsp/`](lsp/README.zh.md) | LSP 能力系列：seam、通用 stdio 提供方和 `lsp` 工具 |
-| [`skill/`](skill/README.zh.md) | skill（技能）能力系列：提供方注册表、本地提供方、面向模型的目录／loader |
-| [`compaction/`](compaction/README.zh.md) | 压缩（compaction）能力系列：Service Definition + 基础提供方 + 命令 Consumer |
-| [`context/`](context/README.zh.md) | 模型可见请求上下文：workspace 指令、时间上下文、引用 |
-| [`subagent/`](subagent/README.zh.md) | subagent 能力系列：提供方注册表约定和面向模型的委托工具 |
-| [`jobs/`](jobs/README.zh.md) | 通用后台任务运行时和面向模型的作业控制工具 |
-| [`experimental/`](experimental/README.zh.md) | 私有原型与内部专用插件 |
-| [`workflow/`](workflow/README.zh.md) | 工作流 seam、worker 线程引擎、面向模型的 `workflow`／`ralph` 工具 |
-| [`webhook/`](webhook/README.zh.md) | 已验证外部事件、受信规则与即发即弃 Workspace 会话 |
-| [`web/`](web/README.zh.md) | Web 能力系列：seam、搜索／获取提供方、面向模型的 Web 工具 |
-| [`attachment/`](attachment/README.zh.md) | 持久附件标识、校验、本地内容寻址存储 |
-| [`spill/`](spill/README.zh.md) | spill 能力系列：存储 seam、本地实现、工具结果 spill 策略 |
+| [`skill/`](skill/README.zh.md) | skill（技能）能力系列：提供方注冊表、本地提供方、面向模型的目錄／loader |
+| [`compaction/`](compaction/README.zh.md) | 壓縮（compaction）能力系列：Service Definition + 基礎提供方 + 命令 Consumer |
+| [`context/`](context/README.zh.md) | 模型可見請求上下文：workspace 指令、時間上下文、引用 |
+| [`subagent/`](subagent/README.zh.md) | subagent 能力系列：提供方注冊表約定和面向模型的委托工具 |
+| [`jobs/`](jobs/README.zh.md) | 通用后臺任務運行時和面向模型的作業控制工具 |
+| [`experimental/`](experimental/README.zh.md) | 私有原型與內部專用插件 |
+| [`workflow/`](workflow/README.zh.md) | 工作流 seam、worker 線程引擎、面向模型的 `workflow`／`ralph` 工具 |
+| [`webhook/`](webhook/README.zh.md) | 已驗證外部事件、受信規則與即發即棄 Workspace 會話 |
+| [`web/`](web/README.zh.md) | Web 能力系列：seam、搜索／獲取提供方、面向模型的 Web 工具 |
+| [`attachment/`](attachment/README.zh.md) | 持久附件標識、校驗、本地內容尋址存儲 |
+| [`spill/`](spill/README.zh.md) | spill 能力系列：存儲 seam、本地實現、工具結果 spill 策略 |
 | [`todo/`](todo/README.zh.md) | 面向模型的 `todo_write` 工具 |
-| [`plan/`](plan/README.zh.md) | Plan 协作状态，提供直接进入命令与经评审的退出 |
-| [`preset/`](preset/README.zh.md) | 由 preset `cordis.yml` 按会话组装 agent |
-| [`guard/`](guard/README.zh.md) | 循环卫生守卫：建议性重复调用提醒 + `tools/execute` 截止时间强制执行器 |
-| [`bundle/`](bundle/README.zh.md) | 可安装的 `dsh --profile` 补丁层 |
-| [`extensions/`](extensions/README.zh.md) | agent 运行时自修改：实时插件／服务检查与模型所写挂载／卸载 |
-| [`hooks/`](hooks/README.zh.md) | 钩子桥接 + 共享的 Claude Code／Codex 线协议库 |
-| [`session/`](session/README.zh.md) | 持久会话数据平面：持久化 seam + 后端、投影 seam、基于日志的标题、会话上报 |
-| [`session-query/`](session-query/README.zh.md) | 会话检索系列：逻辑语料库、有界读取、血缘、语义过滤、SQLite 全文搜索 |
-| [`settings/`](settings/README.zh.md) | 用户设置 seam + 基于文件的提供方 |
-| [`credentials/`](credentials/README.zh.md) | 凭据引用与凭据记录 seam + 环境变量优先于 `.env` 的提供方 + 需要向人询问的授权流程 |
-| [`storage/`](storage/README.zh.md) | 非会话存储中枢 + 后端 + 领域形式 |
-| [`workspace/`](workspace/README.zh.md) | Workspace 实体 |
-| [`sdk/`](sdk/README.zh.md) | 进程外 SDK：JSON-RPC 协议与 TypeScript 客户端／服务器 |
-| [`acp/`](acp/README.zh.md) | 仅面向自动化的 ACP（Agent Client Protocol）服务器 |
-| [`interaction/`](interaction/README.zh.md) | 人机协作平面：批准／交互 seam、权限预设、命令、询问用户的工具 |
-| [`boot/`](boot/README.zh.md) | 共享的 app bin 启动粘合层 |
-| [`host/`](host/README.zh.md) | web GUI 宿主半侧：API 网关 + HTTP 路由服务器 |
-| [`client/`](client/README.zh.md) | web GUI 浏览器半侧：shell、协议层、对象服务、slot、`ui-*` 插件 |
-| [`test-support/`](test-support/README.zh.md) | 支持基础设施（testkit、不变式、回放、Loader 冒烟测试） |
-| [`runtime-diagnostics/`](runtime-diagnostics/README.zh.md) | 运行时诊断：按包归属的运行时不变式检查与报告 |
-| [`util/`](util/README.zh.md) | 组间共享的低层零依赖工具（`Branded<B>`、home／路径辅助函数、超时、留存） |
+| [`plan/`](plan/README.zh.md) | Plan 協作狀態，提供直接進入命令與經評審的退出 |
+| [`preset/`](preset/README.zh.md) | 由 preset `cordis.yml` 按會話組裝 agent |
+| [`guard/`](guard/README.zh.md) | 循環衛生守衛：建議性重復調用提醒 + `tools/execute` 截止時間強制執行器 |
+| [`bundle/`](bundle/README.zh.md) | 可安裝的 `dsh --profile` 補丁層 |
+| [`extensions/`](extensions/README.zh.md) | agent 運行時自修改：實時插件／服務檢查與模型所寫掛載／卸載 |
+| [`hooks/`](hooks/README.zh.md) | 鉤子橋接 + 共享的 Claude Code／Codex 線協議庫 |
+| [`session/`](session/README.zh.md) | 持久會話數據平面：持久化 seam + 后端、投影 seam、基于日志的標題、會話上報 |
+| [`session-query/`](session-query/README.zh.md) | 會話檢索系列：邏輯語料庫、有界讀取、血緣、語義過濾、SQLite 全文搜索 |
+| [`settings/`](settings/README.zh.md) | 用戶設置 seam + 基于文件的提供方 |
+| [`credentials/`](credentials/README.zh.md) | 憑據引用與憑據記錄 seam + 環境變量優先于 `.env` 的提供方 + 需要向人詢問的授權流程 |
+| [`storage/`](storage/README.zh.md) | 非會話存儲中樞 + 后端 + 領域形式 |
+| [`workspace/`](workspace/README.zh.md) | Workspace 實體 |
+| [`sdk/`](sdk/README.zh.md) | 進程外 SDK：JSON-RPC 協議與 TypeScript 客戶端／服務器 |
+| [`acp/`](acp/README.zh.md) | 僅面向自動化的 ACP（Agent Client Protocol）服務器 |
+| [`interaction/`](interaction/README.zh.md) | 人機協作平面：批準／交互 seam、權限預設、命令、詢問用戶的工具 |
+| [`boot/`](boot/README.zh.md) | 共享的 app bin 啟動粘合層 |
+| [`host/`](host/README.zh.md) | web GUI 宿主半側：API 網關 + HTTP 路由服務器 |
+| [`client/`](client/README.zh.md) | web GUI 瀏覽器半側：shell、協議層、對象服務、slot、`ui-*` 插件 |
+| [`test-support/`](test-support/README.zh.md) | 支持基礎設施（testkit、不變式、回放、Loader 冒煙測試） |
+| [`runtime-diagnostics/`](runtime-diagnostics/README.zh.md) | 運行時診斷：按包歸屬的運行時不變式檢查與報告 |
+| [`util/`](util/README.zh.md) | 組間共享的低層零依賴工具（`Branded<B>`、home／路徑輔助函數、超時、留存） |
 
 -----
 
 <a id="release-expectations"></a>
-## 发布预期
+## 發布預期
 
-大多数组属于产品组，提供稳定 API。例外：`e2b/` 是 POC，`experimental/` 不发布，`test-support/`、`runtime-diagnostics/` 与 `util/` 是兼容性预期较低的支持组。
+大多數組屬于產品組，提供穩定 API。例外：`e2b/` 是 POC，`experimental/` 不發布，`test-support/`、`runtime-diagnostics/` 與 `util/` 是兼容性預期較低的支持組。
 
 -----
 
 <a id="dependencies"></a>
-## 依赖
+## 依賴
 
-依赖图由工具生成：[docs/module-graph.md](../docs/module-graph.zh.md)（`pnpm run gen-module-graph`，CI 中有新鲜度门禁）。
+依賴圖由工具生成：[docs/module-graph.md](../docs/module-graph.zh.md)（`pnpm run gen-module-graph`，CI 中有新鮮度門禁）。
 
-**扩展插件依赖 Service Definition，绝不依赖具体提供方。** `dsh-agent-loop` 可替换；UI、钩子和工具插件使用 `dsh-agent`。组合包可以依赖主干插件。能力在需要独立演进时分离 Service Definition／Service Provider／Consumer 角色；详见[能力 seam](../.agents/notes/implemented/architecture/2026-06-13-capability-seams.zh.md)。
+**擴展插件依賴 Service Definition，絕不依賴具體提供方。** `dsh-agent-loop` 可替換；UI、鉤子和工具插件使用 `dsh-agent`。組合包可以依賴主干插件。能力在需要獨立演進時分離 Service Definition／Service Provider／Consumer 角色；詳見[能力 seam](../.agents/notes/implemented/architecture/2026-06-13-capability-seams.zh.md)。
 
 -----
 
 <a id="package-readme-contracts"></a>
-## 包 README 约定
+## 包 README 約定
 
-每个包 README 都覆盖用途、配置、扩展点与[模型体验](../docs/cookbook/adding-a-package.zh.md#4-write-the-package-readme)，列入模型无关[省略允许清单](../scripts/verify-package-readme-model-experience.ts)的包除外。它还要包含 `## Known Limitations and Deferred Work`，或列入其[允许清单](../scripts/verify-package-readme-limitations.ts)。包约定——导出、服务访问、不变式、测试——见 [packages/AGENTS.md](AGENTS.md)。
+每個包 README 都覆蓋用途、配置、擴展點與[模型體驗](../docs/cookbook/adding-a-package.zh.md#4-write-the-package-readme)，列入模型無關[省略允許清單](../scripts/verify-package-readme-model-experience.ts)的包除外。它還要包含 `## Known Limitations and Deferred Work`，或列入其[允許清單](../scripts/verify-package-readme-limitations.ts)。包約定——導出、服務訪問、不變式、測試——見 [packages/AGENTS.md](AGENTS.md)。
 
 -----
 
 <a id="dev-note"></a>
-## 开发备注
+## 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

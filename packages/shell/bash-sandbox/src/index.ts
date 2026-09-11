@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Sandbox-consuming bash executor. It wraps the exact local bash argv through
  * `ctx.sandbox`, inherits local process mechanics, and reports the selected
  * mode, enforcement, and denial facts. Positive runner-executable evidence

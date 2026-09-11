@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 
 import { afterEach, describe, expect, it } from 'vitest'
 import { cleanup, render } from '@testing-library/react'
@@ -28,7 +28,7 @@ describe('tails', () => {
     )
     expect(view.getByText('思考')).toBeTruthy()
     expect(view.getByText('thinking hard')).toBeTruthy()
-    expect(view.getByText(/未知内容块/)).toBeTruthy()
+    expect(view.getByText(/未知內容塊/)).toBeTruthy()
     const stopped = render(
       <AssistantMarkdown
         t={t}

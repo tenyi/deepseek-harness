@@ -1,4 +1,4 @@
-/** Repository-facing Host package entry over the mirrored implementation tree. */
+﻿/** Repository-facing Host package entry over the mirrored implementation tree. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'

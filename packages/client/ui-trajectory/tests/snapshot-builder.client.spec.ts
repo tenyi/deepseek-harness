@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import type { RequestView } from '@deepseek-ai/dsh-client-ui-conversation/client'
 import type {
   TrajectoryContribution, TrajectoryConversationViewNode, TrajectoryRequestHeaderState,

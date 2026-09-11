@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The text type's chip title: the file type's coloured sheet before the name
  * the registry captured at open time. Registered under
  * `sidebar.right.pane.tab.title`; without it the chip would show the bare name.

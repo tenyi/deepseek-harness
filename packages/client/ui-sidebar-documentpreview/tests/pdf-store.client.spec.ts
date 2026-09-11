@@ -1,4 +1,4 @@
-/** PDF view preferences survive body remounts without sharing state between tabs. */
+﻿/** PDF view preferences survive body remounts without sharing state between tabs. */
 import { describe, expect, it } from 'vitest'
 import type { TabId } from '@deepseek-ai/dsh-client-ui-dockkit'
 import { createPdfStore } from '../src/client/pdf/store.ts'

@@ -1,4 +1,4 @@
-/** Client CPU profiling is not exposed by the source bridge. */
+﻿/** Client CPU profiling is not exposed by the source bridge. */
 
 import type { InspectorSourceCapability } from '../../shared/bridge/messages/observation.ts'
 

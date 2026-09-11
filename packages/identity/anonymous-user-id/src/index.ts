@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Per-harness-home anonymous user id shared by telemetry and feedback.
  *
  * The id is a random UUID persisted as a bare line in `.anonymous-user-id` inside the

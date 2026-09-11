@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Lossless-JSON snapshots for the dependency-free source worker closure.
  * @module @deepseek-ai/dsh-code-runtime-worker-thread/worker-json
  */

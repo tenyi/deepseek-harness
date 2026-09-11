@@ -1,4 +1,4 @@
----
+﻿---
 description: "Cross-runtime UUID generation for maintainers replacing secure-context-only crypto.randomUUID calls."
 kind: "package-library"
 ---

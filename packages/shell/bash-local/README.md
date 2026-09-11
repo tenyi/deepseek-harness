@@ -1,4 +1,4 @@
----
+﻿---
 description: "The default POSIX Bash executor for deployments and maintainers choosing, configuring, or debugging unconfined command execution over the shell seam."
 kind: "package-reference"
 ---

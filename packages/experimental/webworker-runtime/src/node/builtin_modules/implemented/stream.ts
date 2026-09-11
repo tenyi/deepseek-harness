@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `node:stream` compatibility backed by readable-stream's browser build.
  *
  * readable-stream is the userland copy of Node's stream implementation. The

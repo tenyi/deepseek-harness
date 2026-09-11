@@ -1,4 +1,4 @@
----
+﻿---
 description: "Automation-only ACP (Agent Client Protocol) server for programmatic clients and maintainers driving DeepSeek Harness agents over JSON-RPC stdio."
 kind: "package-reference"
 ---

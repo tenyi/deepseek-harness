@@ -1,4 +1,4 @@
----
+﻿---
 description: "Web skill references and the dedicated skill tool row for the dsh web client: the /-triggered skill source and the skill call card."
 kind: "package-reference"
 ---

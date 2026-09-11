@@ -1,4 +1,4 @@
-/** Host-realm observation publisher over a dedicated MessagePort. */
+﻿/** Host-realm observation publisher over a dedicated MessagePort. */
 
 import type { MessagePort } from 'node:worker_threads'
 import {

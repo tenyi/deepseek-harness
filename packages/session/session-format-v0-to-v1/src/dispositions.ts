@@ -1,4 +1,4 @@
-/** Exact top-level payload disposition frozen for every released-v0 event type. */
+﻿/** Exact top-level payload disposition frozen for every released-v0 event type. */
 export interface ReleasedV0PayloadDisposition {
   readonly required: readonly string[]
   readonly optional: readonly string[]

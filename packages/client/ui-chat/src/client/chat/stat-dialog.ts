@@ -1,4 +1,4 @@
-// One trigger-anchored stat dialog seat shared by the Turn-stat pills
+﻿// One trigger-anchored stat dialog seat shared by the Turn-stat pills
 // (TurnUsagePanel) and the composer-dock session stats pills (StatsPills);
 // the matching dialog surface skin lives in stat-dialog.module.css.
 

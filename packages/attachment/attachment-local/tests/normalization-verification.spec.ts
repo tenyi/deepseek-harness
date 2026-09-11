@@ -1,4 +1,4 @@
-import sharp from 'sharp'
+﻿import sharp from 'sharp'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 const control = vi.hoisted(() => ({ mismatch: false }))

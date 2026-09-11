@@ -1,4 +1,4 @@
-/** Controller wire behavior: host-base resolution, availability filtering, and launch errors. */
+﻿/** Controller wire behavior: host-base resolution, availability filtering, and launch errors. */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { OpenInAppController } from '../src/client/controller.ts'

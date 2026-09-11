@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ModelSelect: the composer's named model seat (`conversation.input.model`).
  * Two-level selection per figma 496:26454's MenuDropdown: the root menu is
  * the Model / Effort row pair (label + current value + a right chevron),

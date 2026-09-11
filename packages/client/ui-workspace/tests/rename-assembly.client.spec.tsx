@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 /**
  * The session-rename assembly chain on SlotTestRuntime (real apply, real
  * WorkspaceBrowser occupying the sidebar hole): row menu → rename dialog →
@@ -60,7 +60,7 @@ describe('session rename through the assembled browser', () => {
     }))
     await runtime.sessions.add({
       id: SID,
-      summary: { title: '旧标题', displayTitle: '旧标题', cwd: '/w/alpha' },
+      summary: { title: '舊標題', displayTitle: '舊標題', cwd: '/w/alpha' },
       session: { rename },
     })
     await runtime.workspaces.update((draft) => {
@@ -77,26 +77,26 @@ describe('session rename through the assembled browser', () => {
     const view = runtime.renderRoot()
 
     // The current session's group auto-expands; open the row's action menu.
-    const row = (await view.findByText('旧标题')).closest('[role="treeitem"]')!
-    fireEvent.click(within(row as HTMLElement).getByLabelText('会话“旧标题”的操作'))
+    const row = (await view.findByText('舊標題')).closest('[role="treeitem"]')!
+    fireEvent.click(within(row as HTMLElement).getByLabelText('會話“舊標題”的操作'))
     fireEvent.click(view.getByRole('menuitem', { name: '重命名', hidden: true }))
 
     // The dialog seeds from the current title; submit a padded value.
-    const input = await view.findByLabelText('会话名称') as HTMLInputElement
-    expect(input.value).toBe('旧标题')
-    fireEvent.change(input, { target: { value: '  分叉  实验记录  ' } })
+    const input = await view.findByLabelText('會話名稱') as HTMLInputElement
+    expect(input.value).toBe('舊標題')
+    fireEvent.change(input, { target: { value: '  分叉  實驗記錄  ' } })
     fireEvent.click(view.getByRole('button', { name: '重命名' }))
 
     // The injected hop reached the session face with the edge-trimmed draft
     // (the dialog trims edges; interior normalization is host-side).
-    await waitFor(() => { expect(rename).toHaveBeenCalledWith('分叉  实验记录') })
+    await waitFor(() => { expect(rename).toHaveBeenCalledWith('分叉  實驗記錄') })
     // Acceptance closes the dialog without any push-frame wait.
-    await waitFor(() => { expect(view.queryByLabelText('会话名称')).toBeNull() })
+    await waitFor(() => { expect(view.queryByLabelText('會話名稱')).toBeNull() })
     // The manager lands the unary echo in the list store (its own package
     // tests own that hop); the row re-labels from list state alone.
-    await runtime.sessions.updateSummary(SID, { displayTitle: '分叉 实验记录', title: '分叉 实验记录' })
-    await view.findByText('分叉 实验记录')
-    expect(view.queryByText('旧标题')).toBeNull()
+    await runtime.sessions.updateSummary(SID, { displayTitle: '分叉 實驗記錄', title: '分叉 實驗記錄' })
+    await view.findByText('分叉 實驗記錄')
+    expect(view.queryByText('舊標題')).toBeNull()
     await runtime.dispose()
   })
 
@@ -107,7 +107,7 @@ describe('session rename through the assembled browser', () => {
     }))
     await runtime.sessions.add({
       id: SID,
-      summary: { title: '旧标题', displayTitle: '旧标题', cwd: '/w/alpha' },
+      summary: { title: '舊標題', displayTitle: '舊標題', cwd: '/w/alpha' },
       session: { rename },
     })
     await runtime.workspaces.update((draft) => {
@@ -124,10 +124,10 @@ describe('session rename through the assembled browser', () => {
     const view = runtime.renderRoot()
     await runtime.flush()
 
-    const row = (await view.findByText('旧标题')).closest('[role="treeitem"]')!
-    fireEvent.click(within(row as HTMLElement).getByLabelText('会话“旧标题”的操作'))
+    const row = (await view.findByText('舊標題')).closest('[role="treeitem"]')!
+    fireEvent.click(within(row as HTMLElement).getByLabelText('會話“舊標題”的操作'))
     fireEvent.click(view.getByRole('menuitem', { name: '重命名', hidden: true }))
-    const input = await view.findByLabelText('会话名称')
+    const input = await view.findByLabelText('會話名稱')
     fireEvent.change(input, { target: { value: '新名' } })
     fireEvent.click(view.getByRole('button', { name: '重命名' }))
 
@@ -135,8 +135,8 @@ describe('session rename through the assembled browser', () => {
     // stays open with the alert and the row keeps its title.
     const alert = await view.findByRole('alert')
     expect(alert.textContent).toContain('title write failed')
-    expect(view.getByLabelText('会话名称')).toBeTruthy()
-    expect(view.getByText('旧标题')).toBeTruthy()
+    expect(view.getByLabelText('會話名稱')).toBeTruthy()
+    expect(view.getByText('舊標題')).toBeTruthy()
     await runtime.dispose()
   })
 })

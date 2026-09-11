@@ -1,4 +1,4 @@
-/** Remote proxies: namespace discovery from roster injects and mock rules, and per-call routing over the Connection to the mock. */
+﻿/** Remote proxies: namespace discovery from roster injects and mock rules, and per-call routing over the Connection to the mock. */
 import { RemoteMock, frames, ok, openStream } from '@deepseek-ai/dsh-remote-mock'
 import { describe, expect, it, onTestFinished } from 'vitest'
 import type { ClientPluginModule } from '../src/assembly/index.ts'

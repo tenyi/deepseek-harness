@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Deliverables plugin, browser half: registers the produced-files row into
  * the chat view's turn-tail chain, and provides the `chatFileMentions`
  * service that links inline-code mentions of produced or delivered files in the closing

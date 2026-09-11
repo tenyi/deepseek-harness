@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /** Test driver: one delegation turn through a headless Loader composition. */
 
 import { resolveConfigPath } from '@deepseek-ai/dsh-app-boot'

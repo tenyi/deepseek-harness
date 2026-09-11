@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Runs the full-corpus import gate (`transform-corpus-check.ts`) in the
  * launcher it is written for, and reports its findings as this suite's failure.
  *

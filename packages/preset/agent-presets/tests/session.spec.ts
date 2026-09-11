@@ -1,4 +1,4 @@
-/** The Session projection that records which preset a Session runs. */
+﻿/** The Session projection that records which preset a Session runs. */
 
 import { describe, expect, it } from 'vitest'
 import { SESSION_FORMAT_VERSION, SessionId, SessionSeq } from '@deepseek-ai/dsh-session'

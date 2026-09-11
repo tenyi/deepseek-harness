@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Assembled-app regression for persisted workspace-instruction resume state.
  * @module workspace-context-resume-snapshot
  */

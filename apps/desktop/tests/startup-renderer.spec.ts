@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+﻿import { readFileSync } from 'node:fs'
 import { runInContext } from 'node:vm'
 import { fileURLToPath } from 'node:url'
 import { JSDOM } from 'jsdom'
@@ -90,19 +90,19 @@ it('shows Chinese loading and recovery copy', async () => {
   await expect.poll(() => page.element('#title').textContent).not.toBe('')
   expect(page.document.documentElement.lang).toBe('zh-CN')
   expect(page.copy()).toMatchInlineSnapshot(`
-    "正在启动 DeepSeek Harness…
-    准备就绪后将自动打开工作区。"
+    "正在啟動 DeepSeek Harness…
+    準備就緒后將自動打開工作區。"
   `)
-  page.publish({ phase: 'error', profileRecovery: true, message: '插件加载失败' })
+  page.publish({ phase: 'error', profileRecovery: true, message: '插件加載失敗' })
   expect(page.copy()).toMatchInlineSnapshot(`
-    "DeepSeek Harness 无法启动
-    请选择下方的恢复操作。禁用第三方插件会保留插件文件。
-    重置 Desktop 会删除桌面端的全部 profile 配置和第三方插件，不保留备份，然后重新初始化并启动。共享任务和设置会保留。
-    如果应用文件缺失或损坏，请关闭应用并重新安装。任务数据存储在独立位置。
-    插件加载失败
-    关闭并重启
-    禁用全部第三方插件并重试
-    重置 Desktop 并重试"
+    "DeepSeek Harness 無法啟動
+    請選擇下方的恢復操作。禁用第三方插件會保留插件文件。
+    重置 Desktop 會刪除桌面端的全部 profile 配置和第三方插件，不保留備份，然后重新初始化并啟動。共享任務和設置會保留。
+    如果應用文件缺失或損壞，請關閉應用并重新安裝。任務數據存儲在獨立位置。
+    插件加載失敗
+    關閉并重啟
+    禁用全部第三方插件并重試
+    重置 Desktop 并重試"
   `)
 })
 
@@ -161,7 +161,7 @@ it('keeps emergency diagnostics inert without shell assets', () => {
   const dom = new JSDOM(html)
   expect(dom.window.document.querySelector('script')).toBeNull()
   expect(dom.window.document.querySelector('pre')?.textContent).toBe('<script>alert(1)</script>')
-  expect(dom.window.document.querySelector('p')?.textContent).toContain('重新安装')
+  expect(dom.window.document.querySelector('p')?.textContent).toContain('重新安裝')
   expect([...dom.window.document.querySelectorAll('form')].map(form => form.action)).toEqual([
     'dsh-recovery://restart', 'dsh-recovery://plugins', 'dsh-recovery://reset',
   ])

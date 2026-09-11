@@ -1,4 +1,4 @@
----
+﻿---
 description: "Low-level Win32 process primitives for maintainers implementing or debugging the Windows ACL sandbox and ordinary subprocess Job runner."
 kind: "package-library"
 ---

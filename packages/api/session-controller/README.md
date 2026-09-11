@@ -1,4 +1,4 @@
----
+﻿---
 description: "Host and Client session control: create, resume, prompt, follow history, and project live session state."
 kind: "package-reference"
 ---

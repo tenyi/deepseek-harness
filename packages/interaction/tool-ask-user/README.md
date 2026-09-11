@@ -1,4 +1,4 @@
----
+﻿---
 description: "The model-facing ask_user_question tool over the user-questions seam, for users and maintainers composing or debugging interactive agent surfaces."
 kind: "package-reference"
 ---

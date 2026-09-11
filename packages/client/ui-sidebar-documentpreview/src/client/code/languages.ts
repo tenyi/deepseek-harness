@@ -1,4 +1,4 @@
-/** File suffixes mapped to grammars already supported by the shared CodeBlock. */
+﻿/** File suffixes mapped to grammars already supported by the shared CodeBlock. */
 const languageExtensions: Readonly<Record<string, readonly string[]>> = {
   typescript: ['ts', 'tsx', 'mts', 'cts'],
   javascript: ['js', 'jsx', 'mjs', 'cjs'],

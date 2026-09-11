@@ -1,4 +1,4 @@
-/** Exercise filtered Desktop native and HTML dependencies under its bundled Node. */
+﻿/** Exercise filtered Desktop native and HTML dependencies under its bundled Node. */
 
 import assert from 'node:assert/strict'
 import { closeSync, mkdtempSync, openSync, readFileSync, readSync, writeFileSync } from 'node:fs'

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ui-job plugin halves: the browser entry's dictionary and header-slot
  * registrations against the real SlotRegistry (with fiber teardown proving
  * removal — HMR safety), and the inert node entry.

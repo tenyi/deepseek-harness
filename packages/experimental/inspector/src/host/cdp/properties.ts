@@ -1,4 +1,4 @@
-/** Host property enumeration never crosses the Host source bridge. */
+﻿/** Host property enumeration never crosses the Host source bridge. */
 
 import { rejectObjectBridgeOperation } from './objects.ts'
 

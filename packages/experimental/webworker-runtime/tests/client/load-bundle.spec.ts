@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+﻿// @vitest-environment jsdom
 import { afterEach, expect, it, vi } from 'vitest'
 import { WorkerTunnel } from '../../src/client/client.ts'
 

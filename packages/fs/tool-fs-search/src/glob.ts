@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The model-facing `glob` tool: discover files whose paths match a glob
  * pattern, sorted by modification time. Execution spawns the packaged
  * ripgrep binary (`@vscode/ripgrep`) directly through the subprocess seam

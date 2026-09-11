@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Internal platform-profile builders for the local sandbox provider.
  *
  * @module @deepseek-ai/dsh-sandbox-local/profiles

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The way into a hidden panel: one button in the conversation header's corner
  * seat, shown only while the panel is collapsed.
  *

@@ -1,4 +1,4 @@
-// Shared assembly for the read-family toolview rows (`read`, `read_image`).
+﻿// Shared assembly for the read-family toolview rows (`read`, `read_image`).
 //
 // Both rows are the same single-file card row: the browse icon in the shared
 // ToolRow chrome, the args-derived summary as an openable host path, no args body

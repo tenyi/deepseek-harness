@@ -1,4 +1,4 @@
-/** Safari-specific textarea layout recovery for the conversation composer. */
+﻿/** Safari-specific textarea layout recovery for the conversation composer. */
 
 /** Browser identity fields needed to distinguish Safari from other WebKit-based browsers. */
 export interface BrowserIdentity {

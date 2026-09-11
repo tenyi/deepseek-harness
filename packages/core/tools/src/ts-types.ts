@@ -1,4 +1,4 @@
-/**
+﻿/**
  * PTC mode codegen: the pure projection from registered tool schemas to the TypeScript SDK
  * text the model programs against (the `tools:sdk` prompt section). Sibling of
  * `json-schema.ts` — `schemas()` (native function calling) and this module (the generated

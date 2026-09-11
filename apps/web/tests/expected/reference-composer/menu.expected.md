@@ -1,4 +1,4 @@
-- listbox "Trigger suggestions":
+﻿- listbox "Trigger suggestions":
   - text: Files & folders
   - option "folderx/ Browse folder" [selected]:
     - text: folderx/

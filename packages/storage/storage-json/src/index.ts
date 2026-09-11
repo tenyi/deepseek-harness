@@ -1,4 +1,4 @@
-/**
+﻿/**
  * JSON storage backend: one human-readable document per unit under a
  * configured root — a whole-unit file (`single` layout) or one document per
  * record (`per-record` layout), published by atomic rewrite. Registers as

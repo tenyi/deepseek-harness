@@ -1,4 +1,4 @@
-/** Boot a test overlay over the shipped profile bundle layers. */
+﻿/** Boot a test overlay over the shipped profile bundle layers. */
 
 import { writeFile } from 'node:fs/promises'
 import { createRequire } from 'node:module'

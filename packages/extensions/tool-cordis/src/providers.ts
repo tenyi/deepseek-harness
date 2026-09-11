@@ -1,4 +1,4 @@
-/** First-party Host inspect providers registered by the Cordis tool package. */
+﻿/** First-party Host inspect providers registered by the Cordis tool package. */
 
 import type { Context } from '@deepseek-ai/cordis'
 import { HOST_BUILTIN_INSPECTION } from '@deepseek-ai/dsh-cordis-host-runner'

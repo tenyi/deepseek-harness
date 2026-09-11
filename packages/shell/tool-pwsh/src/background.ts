@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Generic-task adaptation for background pwsh process handles — the shell-agnostic
  * twin of `dsh-tool-bash`'s background adaptation.
  *

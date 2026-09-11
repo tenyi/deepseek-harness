@@ -1,4 +1,4 @@
-/** Host CPU profiling is served directly by the Worker-side Node inspector adapter. */
+﻿/** Host CPU profiling is served directly by the Worker-side Node inspector adapter. */
 
 import type { InspectorSourceCapability } from '../../shared/bridge/messages/observation.ts'
 

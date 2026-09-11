@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model-facing PowerShell Consumer of the `ctx.shell` capability seam. Intended for
  * Windows compositions where a PowerShell executor (e.g.
  * `@deepseek-ai/dsh-pwsh-local`) backs `ctx.shell`; the tool contract is

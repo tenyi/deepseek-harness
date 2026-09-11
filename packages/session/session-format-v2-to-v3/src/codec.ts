@@ -1,4 +1,4 @@
-/** V3 framing with hard structural admission and recoverable canonical event validation. */
+﻿/** V3 framing with hard structural admission and recoverable canonical event validation. */
 
 import { SessionFormatError, isSessionFormatJsonObject, snapshotSessionFormatJson } from '@deepseek-ai/dsh-session-format'
 import type {

@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import SessionStore, { type Session, type SessionEvent } from '@deepseek-ai/dsh-session'
 import InvariantRegistry, { InvariantError } from '@deepseek-ai/dsh-invariants'

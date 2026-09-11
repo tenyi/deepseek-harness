@@ -1,4 +1,4 @@
-/** Per-DevTools Debugger and source routing across Host and Client realms. */
+﻿/** Per-DevTools Debugger and source routing across Host and Client realms. */
 
 import { respondToCdpRequest, sendCdpFailure, type CdpRequest, type CdpTransport } from '../../protocol.ts'
 import type {

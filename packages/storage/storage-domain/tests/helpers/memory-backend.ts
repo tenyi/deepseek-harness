@@ -1,4 +1,4 @@
-/**
+﻿/**
  * In-memory {@link StorageBackend} test double implementing the full KvUnit
  * primitive set. Shared test infrastructure: the domain suite uses it to
  * exercise open/route/write semantics without touching disk, and the

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One provider's editor card, hand-written per adapter family: the primary
  * field is a single write-only **API key** input (the page never asks for an
  * environment-variable name — a typed key stores through `credentials/set`
@@ -6,7 +6,7 @@
  * has none. The pi-ai profile records that derivation as `apiKeyEnv` only when
  * a key is entered; a blank key materializes a reference-free profile for
  * provider-native authentication);
- * the collapsed 自定义设置 area carries the per-family extras (`baseURL` for
+ * the collapsed 自定義設置 area carries the per-family extras (`baseURL` for
  * both families, DeepSeek's id/name/context-window model catalog, and the
  * display name and wire protocol of a pi-ai route the adapter does not ship —
  * the two fields the create card asked that route for, editable here for the

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Per-package browser lifecycle: evaluate the closure, wrap `apply` in the guard
  * facade, seat a ready-made factory in the module table, and create a loader
  * entry — so dynamic packages ride the exact machinery static plugins do

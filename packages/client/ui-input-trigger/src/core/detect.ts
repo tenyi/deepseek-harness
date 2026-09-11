@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Trigger detection pure core. Scans backward from
  * the caret for a live trigger char under the guard tier and applies the
  * word-boundary rules. Zero React / DOM / cordis.

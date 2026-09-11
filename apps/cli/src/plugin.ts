@@ -1,4 +1,4 @@
-/**
+﻿/**
  * `dsh plugin --profile <name> <args...>` — profile plugin management as a
  * thin pnpm forwarder: initialize the profile on first use, run
  * `pnpm <args...>` in the profile directory, then reconcile the

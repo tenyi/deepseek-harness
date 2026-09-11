@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsdown'
+﻿import { defineConfig } from 'tsdown'
 
 /**
  * The dsh CLI ships one entry: the `bin` referenced by package.json `bin`.

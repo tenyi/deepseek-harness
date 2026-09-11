@@ -1,4 +1,4 @@
----
+﻿---
 description: "The Exa-backed search provider for ctx.web: how deployments mount vendor-native web search with portable snippets and publication dates."
 kind: "package-reference"
 ---

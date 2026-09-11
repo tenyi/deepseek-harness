@@ -1,4 +1,4 @@
-/**
+﻿/**
  * InputHub: the SessionInputResolver implementation (`ctx.conversation.input`) — one
  * SessionInputShell per session, created inside the uiSession provide
  * materialization (the 'input' standard-kit entry IS the

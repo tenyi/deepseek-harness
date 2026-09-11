@@ -1,5 +1,5 @@
----
-description: "后台任务注册表约定，供组合、实现或排查后台工作的用户与维护者阅读：id、归属、生命周期与完成监听器。"
+﻿---
+description: "后臺任務注冊表約定，供組合、實現或排查后臺工作的用戶與維護者閱讀：id、歸屬、生命周期與完成監聽器。"
 kind: "package-reference"
 ---
 
@@ -9,124 +9,124 @@ kind: "package-reference"
 
 ## 概述
 
-`dsh-jobs` 让工具可以在 agent（智能体）继续推进时保持长时间工作运行。每项任务都会获得稳定的 `<kind>-N` id，拥有它的 agent 可以读取输出、带超时等待或请求取消。归属范围限定在 agent 会话内，因此其他 agent 无法查看或停止任务；任务完成时会通过会话内通知送达，无需轮询。只有部署提供任务执行能力时，后台任务才能启动。
+`dsh-jobs` 讓工具可以在 agent（智能體）繼續推進時保持長時間工作運行。每項任務都會獲得穩定的 `<kind>-N` id，擁有它的 agent 可以讀取輸出、帶超時等待或請求取消。歸屬范圍限定在 agent 會話內，因此其他 agent 無法查看或停止任務；任務完成時會通過會話內通知送達，無需輪詢。只有部署提供任務執行能力時，后臺任務才能啟動。
 
-## 目录
+## 目錄
 
 - [使用本包](#use-this-package)
-- [理解实现](#understand-the-implementation)
-- [进一步探索](#further-exploration)
-- [模型体验](#model-experience)
-- [已知限制与延期工作](#known-limitations-and-deferred-work)
-- [开发备注](#dev-note)
+- [理解實現](#understand-the-implementation)
+- [進一步探索](#further-exploration)
+- [模型體驗](#model-experience)
+- [已知限制與延期工作](#known-limitations-and-deferred-work)
+- [開發備注](#dev-note)
 
 -----
 
 <a id="use-this-package"></a>
 ## 使用本包
 
-在组合后台任务能力或编写注册长时间工作的生产方时使用本包。本包本身定义约定；组合通过加载 `dsh-jobs-local` 这样的实现，以及模型侧的 `dsh-tool-jobs`，获得该功能。
+在組合后臺任務能力或編寫注冊長時間工作的生產方時使用本包。本包本身定義約定；組合通過加載 `dsh-jobs-local` 這樣的實現，以及模型側的 `dsh-tool-jobs`，獲得該功能。
 
-### 后台任务提供什么
+### 后臺任務提供什么
 
-生产方以 kind 和一行标签注册工作；注册表返回 `<kind>-N` id，例如 `bash-1`。拥有任务的任何一方都可以读取输出、列出任务、带超时等待结算或请求取消——每次调用都返回任务状态的全新快照，从 `running`、`stopping` 到终止态的 `completed`、`killed` 或 `failed`。任务结算时，拥有它的 agent 会通过 `dsh-tool-jobs` 转成会话内通知的完成监听器得到通知，因此无需轮询。生产方还可以附加可选的字节上限，让每次完整的模型侧输出读取或完成通知保持有界。
+生產方以 kind 和一行標簽注冊工作；注冊表返回 `<kind>-N` id，例如 `bash-1`。擁有任務的任何一方都可以讀取輸出、列出任務、帶超時等待結算或請求取消——每次調用都返回任務狀態的全新快照，從 `running`、`stopping` 到終止態的 `completed`、`killed` 或 `failed`。任務結算時，擁有它的 agent 會通過 `dsh-tool-jobs` 轉成會話內通知的完成監聽器得到通知，因此無需輪詢。生產方還可以附加可選的字節上限，讓每次完整的模型側輸出讀取或完成通知保持有界。
 
-### 归属边界
+### 歸屬邊界
 
-任务属于启动它的 agent 会话：其他 agent 无法读取或停止它。`bash-1` 这样的 id 可预测，因此这道隔离是授权，而非保密。没有所有者启动的任务对任何调用方开放，并持续到服务被释放为止。
+任務屬于啟動它的 agent 會話：其他 agent 無法讀取或停止它。`bash-1` 這樣的 id 可預測，因此這道隔離是授權，而非保密。沒有所有者啟動的任務對任何調用方開放，并持續到服務被釋放為止。
 
-### 启动后台工作需要一个控制器
+### 啟動后臺工作需要一個控制器
 
-只有附加了服务于所有者的控制器时，生产方才能启动工作——加载 `dsh-tool-jobs` 即附加一个。组合中未加载任何控制器的 agent 无法启动后台工作；`start()` 会以指出缺失控制器的消息失败，而不会启动 agent 永远无法收集或停止的工作。
+只有附加了服務于所有者的控制器時，生產方才能啟動工作——加載 `dsh-tool-jobs` 即附加一個。組合中未加載任何控制器的 agent 無法啟動后臺工作；`start()` 會以指出缺失控制器的消息失敗，而不會啟動 agent 永遠無法收集或停止的工作。
 
-### 最小可用组合
+### 最小可用組合
 
 ```yaml
 - name: '@deepseek-ai/dsh-jobs-local'
 - name: '@deepseek-ai/dsh-tool-jobs'
 ```
 
-在已提供 agent、工具与系统提示词服务的 harness 基础上加载这两个插件，即可获得完整功能：`dsh-jobs-local` 提供进程内后台任务注册表，`dsh-tool-jobs` 提供 `job_output`、`job_list`、`job_kill` 工具以及完成通知投递。
+在已提供 agent、工具與系統提示詞服務的 harness 基礎上加載這兩個插件，即可獲得完整功能：`dsh-jobs-local` 提供進程內后臺任務注冊表，`dsh-tool-jobs` 提供 `job_output`、`job_list`、`job_kill` 工具以及完成通知投遞。
 
-### 可能出什么问题
+### 可能出什么問題
 
-任何预检拒绝都不会留下 job id 或已注册的工作。由随附的进程内注册表管理的任务会随 harness 进程终止而消失；跨重启的持久执行需要一个实现本约定的不同后端。
+任何預檢拒絕都不會留下 job id 或已注冊的工作。由隨附的進程內注冊表管理的任務會隨 harness 進程終止而消失；跨重啟的持久執行需要一個實現本約定的不同后端。
 
 -----
 
 <a id="understand-the-implementation"></a>
-## 理解实现
+## 理解實現
 
 <details>
-<summary>实现细节——点击展开</summary>
+<summary>實現細節——點擊展開</summary>
 
-本节解释约定背后的设计决策，并指出实现它们的代码位置；可观察行为已在[使用本包](#use-this-package)中完整说明。
+本節解釋約定背后的設計決策，并指出實現它們的代碼位置；可觀察行為已在[使用本包](#use-this-package)中完整說明。
 
-### 设计理念
+### 設計理念
 
-- **约定与实现分属不同包。** `JobRegistry` 是抽象 Cordis 服务；直接加载该类会抛出异常，因此错误配置的组合会在加载时失败，而不是注册一个空的 `ctx.jobs`。
-- **每个进程一个注册表，按所有者返回结果。** 一个实例服务进程内的每套组合，因此注册与投递都相对注册方所在 scope：从不带 scope 的上下文注册的控制器或监听器服务于每个所有者；在某套 agent 组合的 scope 下注册的，恰好服务于该组合下组合出的 agent。
-- **访问以所有者的会话 id 为界。** id 可预测，因此是授权——而非保密——构成边界。
-- **结算首次优先，完成最后宣布。** 一条终止记录、释放的等待方，以及一轮受到隔离的监听器通知；完成在记录提交且该结算的所有其他观察者都已看到之后才宣布，因为报告方可能同步开启一个模型轮次。
-- **注册的存续期长于生产方与控制器 fiber。** 所有者与服务释放会取消正在运行的工作并等待守约的生产方；销毁期间的取消若抛出异常，只会将记录强制标记为失败。
+- **約定與實現分屬不同包。** `JobRegistry` 是抽象 Cordis 服務；直接加載該類會拋出異常，因此錯誤配置的組合會在加載時失敗，而不是注冊一個空的 `ctx.jobs`。
+- **每個進程一個注冊表，按所有者返回結果。** 一個實例服務進程內的每套組合，因此注冊與投遞都相對注冊方所在 scope：從不帶 scope 的上下文注冊的控制器或監聽器服務于每個所有者；在某套 agent 組合的 scope 下注冊的，恰好服務于該組合下組合出的 agent。
+- **訪問以所有者的會話 id 為界。** id 可預測，因此是授權——而非保密——構成邊界。
+- **結算首次優先，完成最后宣布。** 一條終止記錄、釋放的等待方，以及一輪受到隔離的監聽器通知；完成在記錄提交且該結算的所有其他觀察者都已看到之后才宣布，因為報告方可能同步開啟一個模型輪次。
+- **注冊的存續期長于生產方與控制器 fiber。** 所有者與服務釋放會取消正在運行的工作并等待守約的生產方；銷毀期間的取消若拋出異常，只會將記錄強制標記為失敗。
 
-### 源码地图
+### 源碼地圖
 
-| 文件 | 职责 |
+| 文件 | 職責 |
 |---|---|
-| [`src/index.ts`](src/index.ts) | 插件入口：抽象 `JobRegistry` 服务及其约定 |
-| [`src/types.ts`](src/types.ts) | 共享词汇：`JobKindMap`、`JobStart`、`JobHooks`、`JobSnapshot`、监听器类型 |
-| [`src/brand.ts`](src/brand.ts) | `JobId` 带类型标记的标识符，无需 agent 依赖即可导入 |
-| [`src/invariant.ts`](src/invariant.ts) | 不变式伴生插件：校验快照标识、状态、时间戳与所有者字段 |
+| [`src/index.ts`](src/index.ts) | 插件入口：抽象 `JobRegistry` 服務及其約定 |
+| [`src/types.ts`](src/types.ts) | 共享詞匯：`JobKindMap`、`JobStart`、`JobHooks`、`JobSnapshot`、監聽器類型 |
+| [`src/brand.ts`](src/brand.ts) | `JobId` 帶類型標記的標識符，無需 agent 依賴即可導入 |
+| [`src/invariant.ts`](src/invariant.ts) | 不變式伴生插件：校驗快照標識、狀態、時間戳與所有者字段 |
 
-### 服务操作
+### 服務操作
 
-每个操作都是已注册任务之上的薄投影：`get` 与 `list` 返回非消费式快照，`read` 推进唯一的流游标，`kill` 在改变状态前调用生产方取消，`wait` 最多阻塞至超时，`start()` 在调用生产方 `run()` 一次之前预检访问、校验与准入，同时拒绝任何没有已附加控制器服务的所有者；监听器按所有者粒度观察终止记录与可见集变化，`attachController` 把控制器可用性限定在其 effect 生命周期内。确切签名与行为见 [`src/index.ts`](src/index.ts) 的 JSDoc 与生成的 [`ctx.jobs` Cordis 接口面](../../../docs/subsystems/jobs.zh.md)。
+每個操作都是已注冊任務之上的薄投影：`get` 與 `list` 返回非消費式快照，`read` 推進唯一的流游標，`kill` 在改變狀態前調用生產方取消，`wait` 最多阻塞至超時，`start()` 在調用生產方 `run()` 一次之前預檢訪問、校驗與準入，同時拒絕任何沒有已附加控制器服務的所有者；監聽器按所有者粒度觀察終止記錄與可見集變化，`attachController` 把控制器可用性限定在其 effect 生命周期內。確切簽名與行為見 [`src/index.ts`](src/index.ts) 的 JSDoc 與生成的 [`ctx.jobs` Cordis 接口面](../../../docs/subsystems/jobs.zh.md)。
 
 </details>
 
 -----
 
 <a id="further-exploration"></a>
-## 进一步探索
+## 進一步探索
 
-当包级约定不够用时阅读以下页面。它们从任务类型逐步进入随附实现、模型侧控制与设计记录。
+當包級約定不夠用時閱讀以下頁面。它們從任務類型逐步進入隨附實現、模型側控制與設計記錄。
 
-- [后台任务运行时子系统](../../../docs/subsystems/jobs.zh.md)——任务类型、快照字段与 `ctx.jobs` 的 Cordis 接口面。
-- [jobs 组映射](../README.zh.md)——同级组页面及其包表格。
-- [进程本地注册表](../jobs-local/README.zh.md)——在本进程中运行任务的随附实现。
-- [模型侧任务控制](../tool-jobs/README.zh.md)——`job_output`、`job_list` 与 `job_kill` 工具及完成通知。
-- [通用长时间运行工具运行时 Agent Note](../../../.agents/notes/implemented/architecture/2026-06-20-generic-long-running-tool-runtime.zh.md)——后台任务运行时背后的设计。
-- [任务注册表 seam Agent Note](../../../.agents/notes/archived/architecture/2026-07-26-job-registry-seam.md)——按所有者隔离的注册表约定及其理由。
+- [后臺任務運行時子系統](../../../docs/subsystems/jobs.zh.md)——任務類型、快照字段與 `ctx.jobs` 的 Cordis 接口面。
+- [jobs 組映射](../README.zh.md)——同級組頁面及其包表格。
+- [進程本地注冊表](../jobs-local/README.zh.md)——在本進程中運行任務的隨附實現。
+- [模型側任務控制](../tool-jobs/README.zh.md)——`job_output`、`job_list` 與 `job_kill` 工具及完成通知。
+- [通用長時間運行工具運行時 Agent Note](../../../.agents/notes/implemented/architecture/2026-06-20-generic-long-running-tool-runtime.zh.md)——后臺任務運行時背后的設計。
+- [任務注冊表 seam Agent Note](../../../.agents/notes/archived/architecture/2026-07-26-job-registry-seam.md)——按所有者隔離的注冊表約定及其理由。
 
 -----
 
 <a id="model-experience"></a>
-## 模型体验
+## 模型體驗
 
-通过生产方插件与控制器插件间接影响模型；它们负责基于任务注册表完成所有面向模型的渲染。
+通過生產方插件與控制器插件間接影響模型；它們負責基于任務注冊表完成所有面向模型的渲染。
 
-#### KV Cache 影响
+#### KV Cache 影響
 
-不会直接导致 KV Cache 失效；请求前缀变更由上述消费方负责。
+不會直接導致 KV Cache 失效；請求前綴變更由上述消費方負責。
 
-## 已知限制与延期工作
+## 已知限制與延期工作
 
 <a id="known-limitations-and-deferred-work"></a>
 
 
-这些限制说明约定何时不合适。它们是当前包约束，不是任务积压。
+這些限制說明約定何時不合適。它們是當前包約束，不是任務積壓。
 
-- **约定是进程内的**——`JobStart.run()` 传入回调和确切的 `Agent` 对象；持久化或跨进程后端必须先重塑身份、重启、所有权与观察语义，才能实现此 seam。
-- **流输出只有一个消费游标**——独立观察者需要游标或快照 API。
-- **前台工作无法转为后台**——生产方在启动前选择前台或后台。
+- **約定是進程內的**——`JobStart.run()` 傳入回調和確切的 `Agent` 對象；持久化或跨進程后端必須先重塑身份、重啟、所有權與觀察語義，才能實現此 seam。
+- **流輸出只有一個消費游標**——獨立觀察者需要游標或快照 API。
+- **前臺工作無法轉為后臺**——生產方在啟動前選擇前臺或后臺。
 
 <a id="dev-note"></a>
-### 开发备注
+### 開發備注
 
 <details>
-<summary>维护者的工作上下文——点击展开</summary>
+<summary>維護者的工作上下文——點擊展開</summary>
 
-无。
+無。
 
 </details>

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The JSONL provider's session storage runtime: its concrete write/read
  * handle with a per-handle mutation chain and a routed live write-behind
  * buffer, the in-process bookkeeping that enforces one active writer per
